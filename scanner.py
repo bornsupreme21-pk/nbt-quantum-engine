@@ -122,7 +122,28 @@ def run_quantum_engine():
 
     df = pd.DataFrame(results)
     if df.empty: return
+# Calculate 20-Day Momentum (Money Flow proxy) for Sector Grouping
+    df['RS_20D'] = 0.0
+    for idx, row in df.iterrows():
+        try:
+            ticker = row['Symbol'] + '.NS'
+            c = raw_data['Close'][ticker].dropna()
+            if len(c) > 20:
+                df.at[idx, 'RS_20D'] = round(((c.iloc[-1] / c.iloc[-20]) - 1) * 100, 2)
+        except Exception: pass
 
+    # Generate Sector Heatmap
+    sector_df = df.groupby('Industry').agg(
+        Total_Stocks=('Symbol', 'count'),
+        Uptrend_Count=('Stage', lambda x: (x == 'PHASE 2: MARKUP').sum()),
+        Avg_Money_Flow=('RS_20D', 'mean')
+    ).reset_index()
+    
+    sector_df['ISAD (Breadth %)'] = round((sector_df['Uptrend_Count'] / sector_df['Total_Stocks']) * 100, 1)
+    sector_df['Sector Status'] = np.where(sector_df['ISAD (Breadth %)'] > 40, "🔥 DOMINANT (Markup)", 
+                                 np.where(sector_df['ISAD (Breadth %)'] < 15, "⚠️ WASHOUT (Oversold)", "🔄 EMERGING / NEUTRAL"))
+    
+    final_sector = sector_df[['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_Money_Flow']].sort_values(by='ISAD (Breadth %)', ascending=False)
     print("3. Exporting CSV files directly to repository...")
     
     # Save Momentum Swings
@@ -144,7 +165,7 @@ def run_quantum_engine():
     for _, r in top_inc.iterrows():
         sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", "Stage-2 Breakout", "50 EMA Floor", "+100% Ride", 5.0, "Near 52W Low", r['Dist from 52W Low (%)']])
     
-    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Weekly Anchor Buy", "Stop Loss", "Target 7%", "R:R Ratio", "52W High", "52W Low"]).to_csv("sniper_output.csv", index=False)
+    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Weekly Anchor Buy", "Stop Loss", "Target 7%", "R:R Ratio", "52W High", "52W Low"]).to_csv("sniper_output.csv", index=False)final_sector.to_csv("sector_output.csv", index=False)
     print("Done!")
 
 if __name__ == "__main__":
