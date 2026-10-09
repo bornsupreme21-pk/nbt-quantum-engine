@@ -9,15 +9,18 @@ warnings.filterwarnings('ignore')
 
 def run_quantum_engine():
     print("1. Loading Master Universe...")
-    # Reads the Universe_List directly from your GitHub repo
     try:
         univ = pd.read_csv("Universe_List.csv")
     except Exception:
-        # Fallback list if Universe_List.csv isn't uploaded yet
         univ = pd.DataFrame({
-            'Symbol': ['RELIANCE', 'TCS', 'HDFCBANK', 'INFY', 'ICICIBANK', 'SBIN', 'BHARTIARTL', 'ITC', 'HFCL', 'IRB'],
-            'Company': ['Reliance Ind', 'TCS Ltd', 'HDFC Bank', 'Infosys', 'ICICI Bank', 'SBI', 'Airtel', 'ITC Ltd', 'HFCL Ltd', 'IRB Infra']
+            'Symbol': ['RELIANCE'],
+            'Company Name': ['Reliance Ind'],
+            'Industry': ['Oil & Gas']
         })
+    
+    # Standardize header names
+    if 'Company' not in univ.columns and 'Company Name' in univ.columns:
+        univ.rename(columns={'Company Name': 'Company'}, inplace=True)
     
     univ['Symbol'] = univ['Symbol'].astype(str).str.strip()
     univ['YF_Ticker'] = univ['Symbol'] + '.NS'
@@ -40,9 +43,8 @@ def run_quantum_engine():
             
             cur_close = c.iloc[-1]
             vol_30d = v.iloc[-30:].mean()
-            if (vol_30d * cur_close) < 10000000: return None  # > 1 Cr ADTV floor
+            if (vol_30d * cur_close) < 10000000: return None
             
-            # 52W High / Low & Dates
             w_52h = h.iloc[-252:]
             w_52l = l.iloc[-252:]
             h_52w = w_52h.max()
@@ -50,13 +52,11 @@ def run_quantum_engine():
             l_52w = w_52l.min()
             l_52w_date = w_52l.idxmin().strftime('%d-%b-%Y')
             
-            # ATH & Date
             ath_val = h.max()
             ath_date = h.idxmax().strftime('%d-%b-%Y')
             dist_to_ath = round(((ath_val - cur_close) / cur_close) * 100, 1)
             dist_from_52w_low = round(((cur_close - l_52w) / l_52w) * 100, 1)
 
-            # Technicals
             ema50 = c.ewm(span=50, adjust=False).mean().iloc[-1]
             ema200 = c.ewm(span=200, adjust=False).mean().iloc[-1]
             slope_200 = ema200 - c.ewm(span=200, adjust=False).mean().iloc[-20]
@@ -73,7 +73,6 @@ def run_quantum_engine():
             
             nbt_stage = "PHASE 2: MARKUP" if (cur_close > ema200 and slope_200 > 0) else "PHASE 1/4"
 
-            # Risk/Reward Targets
             sl_price = round(l.iloc[-10:].min() * 0.99, 2)
             risk = cur_close - sl_price
             target_7 = round(cur_close * 1.07, 2)
@@ -82,7 +81,6 @@ def run_quantum_engine():
 
             trading_verdict = f"🎯 BUY ENTRY: ₹{round(cur_close, 2)}" if (rr_ratio >= 1.5 and alert_type != "Standard") else "⏳ WAIT"
 
-            # Fundamental Proxy
             fund_score, insider_pct, inst_pct, roe, debt_eq = 0, 0, 0, 0, 0
             accum_status = "NEUTRAL"
             if alert_type != "Standard" or dist_from_52w_low < 30:
@@ -101,7 +99,9 @@ def run_quantum_engine():
                 except Exception: pass
 
             return {
-                'Symbol': symbol, 'Company': row.get('Company', symbol),
+                'Symbol': symbol, 
+                'Company': row.get('Company', row.get('Company Name', symbol)), 
+                'Industry': row.get('Industry', 'Unknown Sector'),
                 'Trading Verdict': trading_verdict, 'Alert Type': alert_type, 'Entry Trigger': round(cur_close, 2),
                 'Stop Loss': sl_price, 'Target 7%': target_7, 'F&O Ceiling / Max Pain': fo_ceiling,
                 '52W High': round(h_52w, 2), '52W High Date': h_52w_date,
@@ -122,7 +122,26 @@ def run_quantum_engine():
 
     df = pd.DataFrame(results)
     if df.empty: return
-# Calculate 20-Day Momentum (Money Flow proxy) for Sector Grouping
+    
+    sw_cols = ["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "F&O Ceiling / Max Pain", "52W High", "52W High Date", "52W Low", "52W Low Date", "ATH", "ATH Date", "Dist to ATH (%)"]
+    sw_df = df[sw_cols].sort_values(by="Trading Verdict", ascending=False)
+    sw_df.to_csv("swings_output.csv", index=False)
+
+    inc_cols = ["Symbol", "Company", "🕵️ Accumulation Status", "Opportunity Score", "Promoter Holding (%)", "FII/DII (%)", "Dist from 52W Low (%)", "Dist to ATH (%)", "52W Low Date", "ATH Date", "Debt-to-Equity", "ROE (%)", "Volume Profile"]
+    inc_df = df[df['🕵️ Accumulation Status'] != "NEUTRAL"][inc_cols].sort_values(by="Opportunity Score", ascending=False)
+    inc_df.to_csv("incubator_output.csv", index=False)
+
+    top_swings = sw_df[sw_df['Trading Verdict'].str.contains("BUY")].head(15)
+    top_inc = inc_df.head(15)
+    sniper_rows = []
+    for _, r in top_swings.iterrows():
+        sniper_rows.append([r['Symbol'], r['Company'], "MOMENTUM SWING", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], 2.0, r['52W High'], r['52W Low']])
+    for _, r in top_inc.iterrows():
+        sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", "Stage-2 Breakout", "50 EMA Floor", "+100% Ride", 5.0, "Near 52W Low", r['Dist from 52W Low (%)']])
+    
+    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Weekly Anchor Buy", "Stop Loss", "Target 7%", "R:R Ratio", "52W High", "52W Low"]).to_csv("sniper_output.csv", index=False)
+    
+    # Calculate Sector Data
     df['RS_20D'] = 0.0
     for idx, row in df.iterrows():
         try:
@@ -132,7 +151,6 @@ def run_quantum_engine():
                 df.at[idx, 'RS_20D'] = round(((c.iloc[-1] / c.iloc[-20]) - 1) * 100, 2)
         except Exception: pass
 
-    # Generate Sector Heatmap
     sector_df = df.groupby('Industry').agg(
         Total_Stocks=('Symbol', 'count'),
         Uptrend_Count=('Stage', lambda x: (x == 'PHASE 2: MARKUP').sum()),
@@ -144,29 +162,7 @@ def run_quantum_engine():
                                  np.where(sector_df['ISAD (Breadth %)'] < 15, "⚠️ WASHOUT (Oversold)", "🔄 EMERGING / NEUTRAL"))
     
     final_sector = sector_df[['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_Money_Flow']].sort_values(by='ISAD (Breadth %)', ascending=False)
-    print("3. Exporting CSV files directly to repository...")
-    
-    # Save Momentum Swings
-    sw_cols = ["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "F&O Ceiling / Max Pain", "52W High", "52W High Date", "52W Low", "52W Low Date", "ATH", "ATH Date", "Dist to ATH (%)"]
-    sw_df = df[sw_cols].sort_values(by="Trading Verdict", ascending=False)
-    sw_df.to_csv("swings_output.csv", index=False)
-
-    # Save 10x Incubator
-    inc_cols = ["Symbol", "Company", "🕵️ Accumulation Status", "Opportunity Score", "Promoter Holding (%)", "FII/DII (%)", "Dist from 52W Low (%)", "Dist to ATH (%)", "52W Low Date", "ATH Date", "Debt-to-Equity", "ROE (%)", "Volume Profile"]
-    inc_df = df[df['🕵️ Accumulation Status'] != "NEUTRAL"][inc_cols].sort_values(by="Opportunity Score", ascending=False)
-    inc_df.to_csv("incubator_output.csv", index=False)
-
-    # Save Sniper Watchlist
-    top_swings = sw_df[sw_df['Trading Verdict'].str.contains("BUY")].head(15)
-    top_inc = inc_df.head(15)
-    sniper_rows = []
-    for _, r in top_swings.iterrows():
-        sniper_rows.append([r['Symbol'], r['Company'], "MOMENTUM SWING", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], 2.0, r['52W High'], r['52W Low']])
-    for _, r in top_inc.iterrows():
-        sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", "Stage-2 Breakout", "50 EMA Floor", "+100% Ride", 5.0, "Near 52W Low", r['Dist from 52W Low (%)']])
-    
-    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Weekly Anchor Buy", "Stop Loss", "Target 7%", "R:R Ratio", "52W High", "52W Low"]).to_csv("sniper_output.csv", index=False)final_sector.to_csv("sector_output.csv", index=False)
-    print("Done!")
+    final_sector.to_csv("sector_output.csv", index=False)
 
 if __name__ == "__main__":
     run_quantum_engine()
