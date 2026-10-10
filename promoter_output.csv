@@ -1,0 +1,750 @@
+Symbol,Company,Opportunity Score,Promoter Holding (%),FII/DII (%),Debt-to-Equity,ROE (%)
+MRPL,Mangalore Refinery & Petrochemicals Ltd.,30,89.97%,2.03%,108.06,0%
+ATLANTAELE,Atlanta Electricals Ltd.,60,87.28%,4.81%,5.46,0%
+AIIL,Authum Investment & Infrastructure Ltd.,60,83.07%,7.14%,24.59,0%
+LOTUSDEV,SRI LOTUS DEVELOPERS AND REALTY Ltd.,60,81.87%,1.03%,6.84,0%
+ELLEN,Ellenbarrie Industrial Gases Ltd.,60,77.76%,12.17%,18.87,0%
+AETHER,Aether Industries Ltd.,60,76.58%,11.2%,18.65,0%
+SHYAMMETL,Shyam Metalics and Energy Ltd.,60,76.0%,14.67%,8.13,0%
+INOXINDIA,INOX India Ltd.,60,74.9%,9.28%,7.25,0%
+MIDHANI,Mishra Dhatu Nigam Ltd.,60,74.0%,7.65%,26.56,0%
+MAHABANK,Bank of Maharashtra,100,73.6%,17.2%,0.0,22.96%
+SMLMAH,SML Mahindra Ltd.,30,72.82%,2.21%,55.67,0%
+GODREJAGRO,Godrej Agrovet Ltd.,30,72.7%,10.05%,72.75,0%
+OPTIEMUS,Optiemus Infracom Ltd.,60,72.53%,1.61%,45.35,0%
+ACMESOLAR,ACME Solar Holdings Ltd.,50,71.66%,19.93%,393.19,0%
+GAEL,Gujarat Ambuja Exports Ltd.,60,71.27%,1.26%,13.38,0%
+PNB,Punjab National Bank,80,70.08%,19.15%,0.0,14.97%
+CUB,City Union Bank Ltd.,50,7.97%,51.71%,0.0,0%
+RRKABEL,R R Kabel Ltd.,80,69.99%,17.84%,13.09,0%
+LXCHEM,Laxmi Organic Industries Ltd.,60,69.16%,3.69%,27.34,0%
+TBOTEK,TBO Tek Ltd.,80,67.68%,27.98%,48.76,0%
+TEGA,Tega Industries Ltd.,80,67.44%,18.5%,11.69,0%
+ASAHIINDIA,Asahi India Glass Ltd.,30,67.42%,9.91%,55.87,0%
+JYOTICNC,Jyoti CNC Automation Ltd.,60,67.34%,14.29%,42.61,0%
+GABRIEL,Gabriel India Ltd.,80,67.02%,15.27%,10.64,0%
+ACE,Action Construction Equipment Ltd.,60,66.81%,7.52%,0.39,0%
+FLUOROCHEM,Gujarat Fluorochemicals Ltd.,80,66.44%,15.2%,28.94,0%
+SPLPETRO,Supreme Petrochem Ltd.,60,66.18%,7.04%,5.61,0%
+ADANIPORTS,Adani Ports and Special Economic Zone Ltd.,50,66.06%,23.33%,64.05,0%
+GRAPHITE,Graphite India Ltd.,60,65.96%,13.43%,6.29,0%
+ENTERO,Entero Healthcare Solutions Ltd.,80,64.81%,20.36%,38.64,0%
+WELENT,Welspun Enterprises Ltd.,30,64.69%,10.5%,60.92,0%
+PRUDENT,Prudent Corporate Advisory Services Ltd.,80,64.24%,29.17%,3.87,0%
+CAPILLARY,Capillary Technologies India Ltd.,80,63.94%,19.73%,5.24,0%
+WESTLIFE,Westlife Foodworld Ltd.,50,63.64%,31.52%,291.52,0%
+KAJARIACER,Kajaria Ceramics Ltd.,80,62.71%,30.61%,7.3,0%
+GRWRHITECH,Garware Hi-Tech Films Ltd.,60,62.54%,10.08%,0.59,0%
+ICIL,Indo Count Industries Ltd.,30,61.56%,13.83%,56.99,0%
+CARTRADE,Cartrade Tech Ltd.,50,6.38%,62.46%,5.36,0%
+PGIL,Pearl Global Industries Ltd.,50,59.91%,24.05%,65.57,0%
+BHEL,Bharat Heavy Electricals Ltd.,80,59.82%,22.87%,31.31,0%
+SYRMA,Syrma SGS Technology Ltd.,80,59.61%,17.34%,13.04,0%
+FINCABLES,Finolex Cables Ltd.,80,58.64%,21.06%,0.31,0%
+IIFLCAPS,IIFL Capital Services Ltd.,30,58.48%,14.54%,59.29,0%
+GRINDWELL,Grindwell Norton Ltd.,80,58.31%,21.94%,2.38,0%
+ECLERX,eClerx Services Ltd.,80,58.25%,32.58%,15.01,0%
+NUVAMA,Nuvama Wealth Management Ltd.,50,57.12%,18.46%,282.32,0%
+YATHARTH,Yatharth Hospital & Trauma Care Services Ltd.,60,56.94%,12.77%,14.61,0%
+NYKAA,FSN E-Commerce Ventures Ltd.,50,56.13%,32.29%,82.83,0%
+SHILPAMED,Shilpa Medicare Ltd.,60,55.52%,10.9%,25.46,0%
+INDGN,Indegene Ltd.,80,55.45%,27.3%,5.04,0%
+AUROPHARMA,Aurobindo Pharma Ltd.,80,54.78%,28.96%,21.31,0%
+LALPATHLAB,Dr. Lal Path Labs Ltd.,80,54.7%,32.2%,7.83,0%
+AVALON,Avalon Technologies Ltd.,80,54.4%,27.7%,29.5,0%
+HERITGFOOD,Heritage Foods Ltd.,60,54.2%,6.9%,32.62,0%
+MOTILALOFS,Motilal Oswal Financial Services Ltd.,50,52.7%,29.12%,165.8,0%
+DIVISLAB,Divi's Laboratories Ltd.,80,52.0%,30.47%,0.04,0%
+VMART,V-Mart Retail Ltd.,50,51.9%,35.45%,100.68,0%
+GLAND,Gland Pharma Ltd.,80,51.75%,33.28%,2.74,0%
+CASTROLIND,Castrol India Ltd.,100,51.3%,17.71%,2.78,57.0%
+SAGILITY,Sagility Ltd.,80,50.95%,23.12%,11.5,0%
+PETRONET,Petronet LNG Ltd.,80,50.18%,27.34%,10.51,0%
+KTKBANK,Karnataka Bank Ltd.,50,5.61%,20.67%,0.0,0%
+WELCORP,Welspun Corp Ltd.,50,49.84%,28.48%,25.04,0%
+GROWW,Billionbrains Garage Ventures Ltd.,50,49.22%,38.76%,3.03,0%
+BLUESTONE,BlueStone Jewellery and Lifestyle Ltd.,20,46.93%,34.29%,110.03,0%
+RAIN,Rain Industries Ltd,0,46.83%,7.44%,130.48,8.55%
+BALRAMCHIN,Balrampur Chini Mills Ltd.,20,45.9%,33.8%,76.61,0%
+IPCALAB,Ipca Laboratories Ltd.,50,45.06%,45.53%,8.49,0%
+GPPL,Gujarat Pipavav Port Ltd.,50,44.04%,26.0%,1.54,0%
+AARTIPHARM,Aarti Pharmalabs Ltd.,30,44.0%,12.47%,37.36,0%
+SOLARINDS,Solar Industries India Ltd.,50,43.92%,45.07%,23.27,0%
+GNFC,Gujarat Narmada Valley Fertilizers and Chemicals Ltd.,50,43.47%,16.69%,0.07,0%
+RADICO,Radico Khaitan Ltd,50,42.99%,32.66%,15.03,0%
+KIRLOSENG,Kirloskar Oil Eng Ltd.,20,42.82%,31.92%,154.86,0%
+GMMPFAUDLR,GMM Pfaudler Ltd.,20,40.66%,19.75%,84.46,0%
+SOUTHBANK,South Indian Bank Ltd.,50,4.3%,29.79%,0.0,13.6%
+CARBORUNIV,Carborundum Universal Ltd.,50,39.37%,37.7%,10.29,0%
+MEESHO,Meesho Ltd.,50,39.18%,42.98%,1.43,0%
+TI,Tilaknagar Industries Ltd.,20,38.92%,23.59%,77.18,0%
+HONASA,Honasa Consumer Ltd.,50,38.73%,42.99%,9.59,0%
+LENSKART,Lenskart Solutions Ltd.,50,38.44%,39.33%,34.98,0%
+APLAPOLLO,APL Apollo Tubes Ltd.,50,36.91%,43.97%,9.4,0%
+NAZARA,Nazara Technologies Ltd.,50,35.12%,28.47%,6.05,0%
+KPIL,Kalpataru Projects International Ltd.,50,33.7%,49.34%,45.81,0%
+URBANCO,Urban Company Ltd.,50,32.81%,51.83%,6.33,0%
+LAURUSLABS,Laurus Labs Ltd.,50,32.03%,33.79%,46.37,0%
+GESHIP,Great Eastern Shipping Co. Ltd.,50,30.77%,26.48%,6.41,0%
+AXISBANK,Axis Bank Ltd.,50,3.33%,70.61%,0.0,13.35%
+TMB,Tamilnad Mercantile Bank Ltd.,30,29.59%,4.11%,0.0,14.52%
+MTARTECH,MTAR Technologies Ltd.,50,29.2%,32.76%,45.78,0%
+SANSERA,Sansera Engineering Ltd.,50,29.2%,50.35%,19.02,0%
+NAVINFLUOR,Navin Fluorine International Ltd.,50,28.59%,40.08%,32.09,0%
+PNBHOUSING,PNB Housing Finance Ltd.,20,28.01%,54.98%,287.73,0%
+SONACOMS,Sona BLW Precision Forgings Ltd.,50,27.91%,69.29%,7.21,0%
+REDINGTON,Redington Ltd.,50,26.0%,37.98%,27.26,0%
+PAYTM,One 97 Communications Ltd.,50,23.89%,51.65%,1.07,0%
+ETERNAL,Eternal Ltd.,50,21.8%,50.38%,14.83,0%
+COFORGE,Coforge Ltd.,50,21.34%,59.32%,7.52,0%
+LICHSGFIN,LIC Housing Finance Ltd.,20,2.34%,74.09%,642.52,0%
+MCX,Multi Commodity Exchange of India Ltd.,50,19.53%,51.91%,0.11,0%
+KARURVYSYA,Karur Vysya Bank Ltd.,50,0.53%,42.33%,0.0,0%
+PTCIL,PTC Industries Ltd.,0,0%,0%,0.0,0%
+PNGJL,P N Gadgil Jewellers Ltd.,0,0%,0%,0.0,0%
+ONESOURCE,Onesource Specialty Pharma Ltd.,0,0%,0%,0.0,0%
+PCJEWELLER,PC Jeweller Ltd.,0,0%,0%,0.0,0%
+ZFCVINDIA,ZF Commercial Vehicle Control Systems India Ltd.,0,0%,0%,0.0,0%
+POLICYBZR,PB Fintech Ltd.,0,0%,0%,0.0,0%
+PCBL,PCBL Chemical Ltd.,0,0%,0%,0.0,0%
+ZAGGLE,Zaggle Prepaid Ocean Services Ltd.,0,0%,0%,0.0,0%
+PIIND,PI Industries Ltd.,0,0%,0%,0.0,0%
+ORKLAINDIA,Orkla India Ltd.,0,0%,0%,0.0,0%
+PTC,PTC India Ltd.,0,0%,0%,0.0,0%
+OFSS,Oracle Financial Services Software Ltd.,0,0%,0%,0.0,0%
+PGEL,PG Electroplast Ltd.,0,0%,0%,0.0,0%
+PNCINFRA,PNC Infratech Ltd.,0,0%,0%,0.0,0%
+ZEEL,Zee Entertainment Enterprises Ltd.,0,0%,0%,0.0,0%
+ORIENTCEM,Orient Cement Ltd.,0,0%,0%,0.0,0%
+OSWALPUMPS,Oswal Pumps Ltd.,0,0%,0%,0.0,0%
+YESBANK,Yes Bank Ltd.,0,0%,0%,0.0,0%
+PAGEIND,Page Industries Ltd.,0,0%,0%,0.0,0%
+PVRINOX,PVR INOX Ltd.,0,0%,0%,0.0,0%
+PFC,Power Finance Corporation Ltd.,0,0%,0%,0.0,0%
+WELSPUNLIV,Welspun Living Ltd.,0,0%,0%,0.0,0%
+POLYCAB,Polycab India Ltd.,0,0%,0%,0.0,0%
+POWERGRID,Power Grid Corporation of India Ltd.,0,0%,0%,0.0,0%
+PRAJIND,Praj Industries Ltd.,0,0%,0%,0.0,0%
+POWERMECH,Power Mech Projects Ltd.,0,0%,0%,0.0,0%
+PREMIERENE,Premier Energies Ltd.,0,0%,0%,0.0,0%
+PRESTIGE,Prestige Estates Projects Ltd.,0,0%,0%,0.0,0%
+PFOCUS,Prime Focus Ltd.,0,0%,0%,0.0,0%
+PRICOLLTD,Pricol Ltd.,0,0%,0%,0.0,0%
+WEBELSOLAR,Websol Energy System Ltd.,0,0%,0%,0.0,0%
+PRSMJOHNSN,Prism Johnson Ltd.,0,0%,0%,0.0,0%
+WEWORK,WeWork India Management Ltd.,0,0%,0%,0.0,0%
+VIJAYA,Vijaya Diagnostic Centre Ltd.,0,0%,0%,0.0,0%
+PRIVISCL,Privi Speciality Chemicals Ltd.,0,0%,0%,0.0,0%
+POONAWALLA,Poonawalla Fincorp Ltd.,0,0%,0%,0.0,0%
+PPLPHARMA,Piramal Pharma Ltd.,0,0%,0%,0.0,0%
+PIDILITIND,Pidilite Industries Ltd.,0,0%,0%,0.0,0%
+PWL,Physicswallah Ltd.,0,0%,0%,0.0,0%
+PARAS,Paras Defence and Space Technologies Ltd.,0,0%,0%,0.0,0%
+PARKHOSPS,Park Medi World Ltd.,0,0%,0%,0.0,0%
+PARADEEP,Paradeep Phosphates Ltd.,0,0%,0%,0.0,0%
+PATANJALI,Patanjali Foods Ltd.,0,0%,0%,0.0,0%
+PERSISTENT,Persistent Systems Ltd.,0,0%,0%,0.0,0%
+PFIZER,Pfizer Ltd.,0,0%,0%,0.0,0%
+WOCKPHARMA,Wockhardt Ltd.,0,0%,0%,0.0,0%
+POLYMED,Poly Medicure Ltd.,0,0%,0%,0.0,0%
+PHOENIXLTD,Phoenix Mills Ltd.,0,0%,0%,0.0,0%
+WIPRO,Wipro Ltd.,0,0%,0%,0.0,0%
+PICCADIL,Piccadily Agro Industries Ltd.,0,0%,0%,0.0,0%
+PINELABS,Pine Labs Ltd.,0,0%,0%,0.0,0%
+WHIRLPOOL,Whirlpool of India Ltd.,0,0%,0%,0.0,0%
+PIRAMALFIN,Piramal Finance Ltd.,0,0%,0%,0.0,0%
+OLAELEC,Ola Electric Mobility Ltd.,0,0%,0%,0.0,0%
+NETWEB,Netweb Technologies India Ltd.,0,0%,0%,0.0,0%
+OLECTRA,Olectra Greentech Ltd.,0,0%,0%,0.0,0%
+MAHSCOOTER,Maharashtra Scooters Ltd.,0,0%,0%,0.0,0%
+ZYDUSWELL,Zydus Wellness Ltd.,0,0%,0%,0.0,0%
+MMTC,MMTC Ltd.,0,0%,0%,0.0,0%
+MOIL,MOIL Ltd.,0,0%,0%,0.0,0%
+MSTCLTD,MSTC Ltd.,0,0%,0%,0.0,0%
+MGL,Mahanagar Gas Ltd.,0,0%,0%,0.0,0%
+MRF,MRF Ltd.,0,0%,0%,0.0,0%
+MAHSEAMLES,Maharashtra Seamless Ltd.,0,0%,0%,0.0,0%
+M&MFIN,Mahindra & Mahindra Financial Services Ltd.,0,0%,0%,0.0,0%
+MAXHEALTH,Max Healthcare Institute Ltd.,0,0%,0%,0.0,0%
+M&M,Mahindra & Mahindra Ltd.,0,0%,0%,0.0,0%
+MANAPPURAM,Manappuram Finance Ltd.,0,0%,0%,0.0,0%
+MANKIND,Mankind Pharma Ltd.,0,0%,0%,0.0,0%
+MANORAMA,Manorama Industries Ltd.,0,0%,0%,0.0,0%
+MARICO,Marico Ltd.,0,0%,0%,0.0,0%
+MARKSANS,Marksans Pharma Ltd.,0,0%,0%,0.0,0%
+MASTEK,Mastek Ltd.,0,0%,0%,0.0,0%
+LUPIN,Lupin Ltd.,0,0%,0%,0.0,0%
+LUMAXTECH,Lumax Auto Technologies Ltd.,0,0%,0%,0.0,0%
+LODHA,Lodha Developers Ltd.,0,0%,0%,0.0,0%
+LLOYDSME,Lloyds Metals And Energy Ltd.,0,0%,0%,0.0,0%
+LTF,L&T Finance Ltd.,0,0%,0%,0.0,0%
+KIMS,Krishna Institute of Medical Sciences Ltd.,0,0%,0%,0.0,0%
+LGEINDIA,LG Electronics India Ltd.,0,0%,0%,0.0,0%
+LTTS,L&T Technology Services Ltd.,0,0%,0%,0.0,0%
+LTFOODS,LT Foods Ltd.,0,0%,0%,0.0,0%
+LTM,LTM Ltd.,0,0%,0%,0.0,0%
+LT,Larsen & Toubro Ltd.,0,0%,0%,0.0,0%
+LATENTVIEW,Latent View Analytics Ltd.,0,0%,0%,0.0,0%
+IXIGO,Le Travenues Technology Ltd.,0,0%,0%,0.0,0%
+THELEELA,Leela Palaces Hotels & Resorts Ltd.,0,0%,0%,0.0,0%
+LEMONTREE,Lemon Tree Hotels Ltd.,0,0%,0%,0.0,0%
+LICI,Life Insurance Corporation of India,0,0%,0%,0.0,0%
+LINDEINDIA,Linde India Ltd.,0,0%,0%,0.0,0%
+LLOYDSENT,Lloyds Enterprises Ltd.,0,0%,0%,0.0,0%
+LLOYDSENGG,Lloyds Engineering Works Ltd.,0,0%,0%,0.0,0%
+MARUTI,Maruti Suzuki India Ltd.,0,0%,0%,0.0,0%
+MFSL,Max Financial Services Ltd.,0,0%,0%,0.0,0%
+ZENTEC,Zen Technologies Ltd.,0,0%,0%,0.0,0%
+NETWORK18,Network18 Media & Investments Ltd.,0,0%,0%,0.0,0%
+NH,Narayana Hrudayalaya Ltd.,0,0%,0%,0.0,0%
+NTPC,NTPC Ltd.,0,0%,0%,0.0,0%
+NATIONALUM,National Aluminium Co. Ltd.,0,0%,0%,0.0,0%
+NAVA,Nava Ltd.,0,0%,0%,0.0,0%
+NFL,National Fertilizers Ltd.,0,0%,0%,0.0,0%
+NESTLEIND,Nestle India Ltd.,0,0%,0%,0.0,0%
+PURVA,Puravankara Ltd.,0,0%,0%,0.0,0%
+NEULANDLAB,Neuland Laboratories Ltd.,0,0%,0%,0.0,0%
+MAZDOCK,Mazagoan Dock Shipbuilders Ltd.,0,0%,0%,0.0,0%
+NEWGEN,Newgen Software Technologies Ltd.,0,0%,0%,0.0,0%
+NIVABUPA,Niva Bupa Health Insurance Company Ltd.,0,0%,0%,0.0,0%
+NAM-INDIA,Nippon Life India Asset Management Ltd.,0,0%,0%,0.0,0%
+NUVOCO,Nuvoco Vistas Corporation Ltd.,0,0%,0%,0.0,0%
+OBEROIRLTY,Oberoi Realty Ltd.,0,0%,0%,0.0,0%
+OIL,Oil India Ltd.,0,0%,0%,0.0,0%
+ONGC,Oil & Natural Gas Corporation Ltd.,0,0%,0%,0.0,0%
+NTPCGREEN,NTPC Green Energy Ltd.,0,0%,0%,0.0,0%
+NSLNISP,NMDC Steel Ltd.,0,0%,0%,0.0,0%
+NMDC,NMDC Ltd.,0,0%,0%,0.0,0%
+NLCINDIA,NLC India Ltd.,0,0%,0%,0.0,0%
+METROPOLIS,Metropolis Healthcare Ltd.,0,0%,0%,0.0,0%
+MEDPLUS,Medplus Health Services Ltd.,0,0%,0%,0.0,0%
+MINDACORP,Minda Corporation Ltd.,0,0%,0%,0.0,0%
+ZYDUSLIFE,Zydus Lifesciences Ltd.,0,0%,0%,0.0,0%
+ZENSARTECH,Zensar Technolgies Ltd.,0,0%,0%,0.0,0%
+MPHASIS,MphasiS Ltd.,0,0%,0%,0.0,0%
+BECTORFOOD,Mrs. Bectors Food Specialities Ltd.,0,0%,0%,0.0,0%
+MUTHOOTFIN,Muthoot Finance Ltd.,0,0%,0%,0.0,0%
+MSUMI,Motherson Sumi Wiring India Ltd.,0,0%,0%,0.0,0%
+NBCC,NBCC (India) Ltd.,0,0%,0%,0.0,0%
+NATCOPHARM,NATCO Pharma Ltd.,0,0%,0%,0.0,0%
+NEOGEN,NEOGEN CHEMICALS LTD.,0,0%,0%,0.0,0%
+NCC,NCC Ltd.,0,0%,0%,0.0,0%
+NESCO,NESCO Ltd.,0,0%,0%,0.0,0%
+NHPC,NHPC Ltd.,0,0%,0%,0.0,0%
+QPOWER,QUALITY POWER ELECTRICAL EQUIPMENTS Ltd.,0,0%,0%,0.0,0%
+VIPIND,V.I.P. Industries Ltd.,0,0%,0%,0.0,0%
+QUESS,Quess Corp Ltd.,0,0%,0%,0.0,0%
+TATACAP,Tata Capital Ltd.,0,0%,0%,0.0,0%
+TANLA,Tanla Platforms Ltd.,0,0%,0%,0.0,0%
+TATACHEM,Tata Chemicals Ltd.,0,0%,0%,0.0,0%
+TCS,Tata Consultancy Services Ltd.,0,0%,0%,0.0,0%
+TATACOMM,Tata Communications Ltd.,0,0%,0%,0.0,0%
+TATACONSUM,Tata Consumer Products Ltd.,0,0%,0%,0.0,0%
+TATAINVEST,Tata Investment Corporation Ltd.,0,0%,0%,0.0,0%
+TMCV,Tata Motors Ltd.,0,0%,0%,0.0,0%
+TATAELXSI,Tata Elxsi Ltd.,0,0%,0%,0.0,0%
+TMPV,Tata Motors Passenger Vehicles Ltd.,0,0%,0%,0.0,0%
+VBL,Varun Beverages Ltd.,0,0%,0%,0.0,0%
+TATASTEEL,Tata Steel Ltd.,0,0%,0%,0.0,0%
+TATAPOWER,Tata Power Co. Ltd.,0,0%,0%,0.0,0%
+VAIBHAVGBL,Vaibhav Global Ltd.,0,0%,0%,0.0,0%
+TTML,Tata Teleservices (Maharashtra) Ltd.,0,0%,0%,0.0,0%
+TECHM,Tech Mahindra Ltd.,0,0%,0%,0.0,0%
+TECHNOE,Techno Electric & Engineering Company Ltd.,0,0%,0%,0.0,0%
+VEDL,Vedanta Ltd.,0,0%,0%,0.0,0%
+TVSSCS,TVS Supply Chain Solutions Ltd.,0,0%,0%,0.0,0%
+TSFINV,TSF Investments Ltd.,0,0%,0%,0.0,0%
+STYRENIX,Styrenix Performance Materials Ltd.,0,0%,0%,0.0,0%
+TVSMOTOR,TVS Motor Company Ltd.,0,0%,0%,0.0,0%
+SUBROS,Subros Ltd.,0,0%,0%,0.0,0%
+SUDEEPPHRM,Sudeep Pharma Ltd.,0,0%,0%,0.0,0%
+SUMICHEM,Sumitomo Chemical India Ltd.,0,0%,0%,0.0,0%
+SUNPHARMA,Sun Pharmaceutical Industries Ltd.,0,0%,0%,0.0,0%
+SUNTV,Sun TV Network Ltd.,0,0%,0%,0.0,0%
+SUNTECK,Sunteck Realty Ltd.,0,0%,0%,0.0,0%
+SUNDARMFIN,Sundaram Finance Ltd.,0,0%,0%,0.0,0%
+SPARC,Sun Pharma Advanced Research Company Ltd.,0,0%,0%,0.0,0%
+SUPREMEIND,Supreme Industries Ltd.,0,0%,0%,0.0,0%
+SURYAROSNI,Surya Roshni Ltd.,0,0%,0%,0.0,0%
+SUZLON,Suzlon Energy Ltd.,0,0%,0%,0.0,0%
+SUPRIYA,Supriya Lifescience Ltd.,0,0%,0%,0.0,0%
+SWANCORP,Swan Corp Ltd.,0,0%,0%,0.0,0%
+SWIGGY,Swiggy Ltd.,0,0%,0%,0.0,0%
+SYNGENE,Syngene International Ltd.,0,0%,0%,0.0,0%
+TARC,TARC Ltd.,0,0%,0%,0.0,0%
+TDPOWERSYS,TD Power Systems Ltd.,0,0%,0%,0.0,0%
+TATATECH,Tata Technologies Ltd.,0,0%,0%,0.0,0%
+TEJASNET,Tejas Networks Ltd.,0,0%,0%,0.0,0%
+TENNIND,Tenneco Clean Air India Ltd.,0,0%,0%,0.0,0%
+TEXRAIL,Texmaco Rail & Eng. Ltd.,0,0%,0%,0.0,0%
+TRIVENI,Triveni Engineering & Industries Ltd.,0,0%,0%,0.0,0%
+UCOBANK,UCO Bank,0,0%,0%,0.0,0%
+TRENT,Trent Ltd.,0,0%,0%,0.0,0%
+TITAN,Titan Company Ltd.,0,0%,0%,0.0,0%
+TRIDENT,Trident Ltd.,0,0%,0%,0.0,0%
+DBREALTY,VALOR ESTATE Ltd.,0,0%,0%,0.0,0%
+TIINDIA,Tube Investments of India Ltd.,0,0%,0%,0.0,0%
+TRITURBINE,Triveni Turbine Ltd.,0,0%,0%,0.0,0%
+UPL,UPL Ltd.,0,0%,0%,0.0,0%
+UTIAMC,UTI Asset Management Company Ltd.,0,0%,0%,0.0,0%
+ULTRACEMCO,UltraTech Cement Ltd.,0,0%,0%,0.0,0%
+UNOMINDA,UNO Minda Ltd.,0,0%,0%,0.0,0%
+UJJIVANSFB,Ujjivan Small Finance Bank Ltd.,0,0%,0%,0.0,0%
+UNIONBANK,Union Bank of India,0,0%,0%,0.0,0%
+UBL,United Breweries Ltd.,0,0%,0%,0.0,0%
+VGUARD,V-Guard Industries Ltd.,0,0%,0%,0.0,0%
+UNITDSPR,United Spirits Ltd.,0,0%,0%,0.0,0%
+TARIL,Transformers And Rectifiers (India) Ltd.,0,0%,0%,0.0,0%
+TRAVELFOOD,Travel Food Services Ltd.,0,0%,0%,0.0,0%
+TORNTPHARM,Torrent Pharmaceuticals Ltd.,0,0%,0%,0.0,0%
+THYROCARE,Thyrocare Technologies Ltd.,0,0%,0%,0.0,0%
+ANUP,The Anup Engineering Ltd.,0,0%,0%,0.0,0%
+THANGAMAYL,Thangamayil Jewellery Ltd.,0,0%,0%,0.0,0%
+NIACL,The New India Assurance Company Ltd.,0,0%,0%,0.0,0%
+THOMASCOOK,Thomas Cook (India) Ltd.,0,0%,0%,0.0,0%
+VTL,Vardhman Textiles Ltd.,0,0%,0%,0.0,0%
+RAMCOCEM,The Ramco Cements Ltd.,0,0%,0%,0.0,0%
+WABAG,Va Tech Wabag Ltd.,0,0%,0%,0.0,0%
+V2RETAIL,V2 Retail Ltd.,0,0%,0%,0.0,0%
+TRANSRAILL,Transrail Lighting Ltd.,0,0%,0%,0.0,0%
+TIMETECHNO,Time Technoplast Ltd.,0,0%,0%,0.0,0%
+TIPSMUSIC,Tips Music Ltd.,0,0%,0%,0.0,0%
+THERMAX,Thermax Ltd.,0,0%,0%,0.0,0%
+TORNTPOWER,Torrent Power Ltd.,0,0%,0%,0.0,0%
+TIMKEN,Timken India Ltd.,0,0%,0%,0.0,0%
+TITAGARH,Titagarh Rail Systems Ltd.,0,0%,0%,0.0,0%
+VARROC,Varroc Engineering Ltd.,0,0%,0%,0.0,0%
+SUDARSCHEM,Sudarshan Chemical Industries Ltd.,0,0%,0%,0.0,0%
+VMM,Vishal Mega Mart Ltd.,0,0%,0%,0.0,0%
+RBLBANK,RBL Bank Ltd.,0,0%,0%,0.0,0%
+RELIGARE,Religare Enterprises Ltd.,0,0%,0%,0.0,0%
+RBA,Restaurant Brands Asia Ltd.,0,0%,0%,0.0,0%
+RUBICON,Rubicon Research Ltd.,0,0%,0%,0.0,0%
+ROUTE,Route Mobile Ltd.,0,0%,0%,0.0,0%
+SBICARD,SBI Cards and Payment Services Ltd.,0,0%,0%,0.0,0%
+SBFC,SBFC Finance Ltd.,0,0%,0%,0.0,0%
+SBILIFE,SBI Life Insurance Company Ltd.,0,0%,0%,0.0,0%
+SJVN,SJVN Ltd.,0,0%,0%,0.0,0%
+SKFINDUS,SKF India (Industrial) Ltd.,0,0%,0%,0.0,0%
+SKFINDIA,SKF India Ltd.,0,0%,0%,0.0,0%
+WAAREERTL,Waaree Renewable Technologies Ltd.,0,0%,0%,0.0,0%
+KOTAKBANK,Kotak Mahindra Bank Ltd.,0,0%,0%,0.0,0%
+SKYGOLD,SKY GOLD AND DIAMONDS Ltd.,0,0%,0%,0.0,0%
+VOLTAMP,Voltamp Transformers Ltd,0,0%,0%,0.0,0%
+MANYAVAR,Vedant Fashions Ltd.,0,0%,0%,0.0,0%
+SHRIPISTON,SPR Auto Technologies Ltd.,0,0%,0%,0.0,0%
+SAATVIKGL,Saatvik Green Energy Ltd.,0,0%,0%,0.0,0%
+SAILIFE,Sai Life Sciences Ltd.,0,0%,0%,0.0,0%
+RPOWER,Reliance Power Ltd.,0,0%,0%,0.0,0%
+RELAXO,Relaxo Footwears Ltd.,0,0%,0%,0.0,0%
+STLTECH,Sterlite Technologies Ltd.,0,0%,0%,0.0,0%
+RELIANCE,Reliance Industries Ltd.,0,0%,0%,0.0,0%
+RECLTD,REC Ltd.,0,0%,0%,0.0,0%
+WAKEFIT,Wakefit Innovations Ltd.,0,0%,0%,0.0,0%
+RVNL,Rail Vikas Nigam Ltd.,0,0%,0%,0.0,0%
+RITES,RITES Ltd.,0,0%,0%,0.0,0%
+RHIM,RHI MAGNESITA INDIA LTD.,0,0%,0%,0.0,0%
+RAILTEL,Railtel Corporation Of India Ltd.,0,0%,0%,0.0,0%
+RAINBOW,Rainbow Childrens Medicare Ltd.,0,0%,0%,0.0,0%
+RALLIS,Rallis India Ltd.,0,0%,0%,0.0,0%
+USHAMART,Usha Martin Ltd.,0,0%,0%,0.0,0%
+RKFORGE,Ramkrishna Forgings Ltd.,0,0%,0%,0.0,0%
+RTNINDIA,RattanIndia Enterprises Ltd.,0,0%,0%,0.0,0%
+RATEGAIN,Rategain Travel Technologies Ltd.,0,0%,0%,0.0,0%
+RATNAMANI,Ratnamani Metals & Tubes Ltd.,0,0%,0%,0.0,0%
+RAYMONDLSL,Raymond Lifestyle Ltd.,0,0%,0%,0.0,0%
+RTNPOWER,RattanIndia Power Ltd.,0,0%,0%,0.0,0%
+REFEX,Refex Industries Ltd.,0,0%,0%,0.0,0%
+REDTAPE,Redtape Ltd.,0,0%,0%,0.0,0%
+SRF,SRF Ltd.,0,0%,0%,0.0,0%
+SAFARI,Safari Industries (India) Ltd.,0,0%,0%,0.0,0%
+SAMHI,Samhi Hotels Ltd.,0,0%,0%,0.0,0%
+MOTHERSON,Samvardhana Motherson International Ltd.,0,0%,0%,0.0,0%
+ENRIN,Siemens Energy India Ltd.,0,0%,0%,0.0,0%
+SHRIRAMFIN,Shriram Finance Ltd.,0,0%,0%,0.0,0%
+SIEMENS,Siemens Ltd.,0,0%,0%,0.0,0%
+SIGNATURE,Signatureglobal (India) Ltd.,0,0%,0%,0.0,0%
+SMARTWORKS,Smartworks Coworking Spaces Ltd.,0,0%,0%,0.0,0%
+SKIPPER,Skipper Ltd.,0,0%,0%,0.0,0%
+SOBHA,Sobha Ltd.,0,0%,0%,0.0,0%
+SONATSOFTW,Sonata Software Ltd.,0,0%,0%,0.0,0%
+VIYASH,Viyash Scientific Ltd.,0,0%,0%,0.0,0%
+STARCEMENT,Star Cement Ltd.,0,0%,0%,0.0,0%
+STARHEALTH,Star Health and Allied Insurance Company Ltd.,0,0%,0%,0.0,0%
+SBIN,State Bank of India,0,0%,0%,0.0,0%
+SAIL,Steel Authority of India Ltd.,0,0%,0%,0.0,0%
+IDEA,Vodafone Idea Ltd.,0,0%,0%,0.0,0%
+SWSOLAR,Sterling and Wilson Renewable Energy Ltd.,0,0%,0%,0.0,0%
+VIKRAMSOLR,Vikram Solar Ltd.,0,0%,0%,0.0,0%
+STAR,Strides Pharma Science Ltd.,0,0%,0%,0.0,0%
+SCI,Shipping Corporation of India Ltd.,0,0%,0%,0.0,0%
+RENUKA,Shree Renuka Sugars Ltd.,0,0%,0%,0.0,0%
+SHREECEM,Shree Cement Ltd.,0,0%,0%,0.0,0%
+SAREGAMA,Saregama India Ltd,0,0%,0%,0.0,0%
+SAMMAANCAP,Sammaan Capital Ltd.,0,0%,0%,0.0,0%
+WAAREEENER,Waaree Energies Ltd.,0,0%,0%,0.0,0%
+SANDUMA,Sandur Manganese & Iron Ores Ltd.,0,0%,0%,0.0,0%
+SANOFICONR,Sanofi Consumer Healthcare India Ltd.,0,0%,0%,0.0,0%
+SARDAEN,Sarda Energy and Minerals Ltd.,0,0%,0%,0.0,0%
+VOLTAS,Voltas Ltd.,0,0%,0%,0.0,0%
+SAPPHIRE,Sapphire Foods India Ltd.,0,0%,0%,0.0,0%
+SCHAEFFLER,Schaeffler India Ltd.,0,0%,0%,0.0,0%
+SHAREINDIA,Share India Securities Ltd.,0,0%,0%,0.0,0%
+SCHNEIDER,Schneider Electric Infrastructure Ltd.,0,0%,0%,0.0,0%
+STYL,Seshaasai Technologies Ltd.,0,0%,0%,0.0,0%
+SENCO,Senco Gold Ltd.,0,0%,0%,0.0,0%
+SHAKTIPUMP,Shakti Pumps (India) Ltd.,0,0%,0%,0.0,0%
+SHARDACROP,Sharda Cropchem Ltd.,0,0%,0%,0.0,0%
+SFL,Sheela Foam Ltd.,0,0%,0%,0.0,0%
+SHAILY,Shaily Engineering Plastics Ltd.,0,0%,0%,0.0,0%
+RCF,Rashtriya Chemicals & Fertilizers Ltd.,0,0%,0%,0.0,0%
+ACC,ACC Ltd.,0,0%,0%,0.0,0%
+KITEX,Kitex Garments Ltd.,0,0%,0%,0.0,0%
+CMSINFO,CMS Info Systems Ltd.,0,0%,0%,0.0,0%
+FIRSTCRY,Brainbees Solutions Ltd.,0,0%,0%,0.0,0%
+BRIGADE,Brigade Enterprises Ltd.,0,0%,0%,0.0,0%
+BRITANNIA,Britannia Industries Ltd.,0,0%,0%,0.0,0%
+MAPMYINDIA,C.E. Info Systems Ltd.,0,0%,0%,0.0,0%
+CESC,CESC Ltd.,0,0%,0%,0.0,0%
+CCL,CCL Products (I) Ltd.,0,0%,0%,0.0,0%
+CGPOWER,CG Power and Industrial Solutions Ltd.,0,0%,0%,0.0,0%
+CORONA,CORONA Remedies Ltd.,0,0%,0%,0.0,0%
+CIEINDIA,CIE Automotive India Ltd.,0,0%,0%,0.0,0%
+BBTC,Bombay Burmah Trading Corporation Ltd.,0,0%,0%,0.0,0%
+CSBBANK,CSB Bank Ltd.,0,0%,0%,0.0,0%
+CRISIL,CRISIL Ltd.,0,0%,0%,0.0,0%
+CANFINHOME,Can Fin Homes Ltd.,0,0%,0%,0.0,0%
+CANHLIFE,Canara HSBC Life Insurance Company Ltd.,0,0%,0%,0.0,0%
+CRAMC,Canara Robeco Asset Management Company Ltd.,0,0%,0%,0.0,0%
+CANBK,Canara Bank,0,0%,0%,0.0,0%
+CAMPUS,Campus Activewear Ltd.,0,0%,0%,0.0,0%
+CGCL,Capri Global Capital Ltd.,0,0%,0%,0.0,0%
+BOSCHLTD,Bosch Ltd.,0,0%,0%,0.0,0%
+BORORENEW,Borosil Renewables Ltd.,0,0%,0%,0.0,0%
+CEATLTD,Ceat Ltd.,0,0%,0%,0.0,0%
+BIKAJI,Bikaji Foods International Ltd.,0,0%,0%,0.0,0%
+BATAINDIA,Bata India Ltd.,0,0%,0%,0.0,0%
+BELRISE,Belrise Industries Ltd.,0,0%,0%,0.0,0%
+BERGEPAINT,Berger Paints India Ltd.,0,0%,0%,0.0,0%
+BAYERCROP,Bayer Cropscience Ltd.,0,0%,0%,0.0,0%
+BEL,Bharat Electronics Ltd.,0,0%,0%,0.0,0%
+BPCL,Bharat Petroleum Corporation Ltd.,0,0%,0%,0.0,0%
+BHARATFORG,Bharat Forge Ltd.,0,0%,0%,0.0,0%
+BDL,Bharat Dynamics Ltd.,0,0%,0%,0.0,0%
+BHARTIARTL,Bharti Airtel Ltd.,0,0%,0%,0.0,0%
+BLUEDART,Blue Dart Express Ltd.,0,0%,0%,0.0,0%
+BHARTIHEXA,Bharti Hexacom Ltd.,0,0%,0%,0.0,0%
+BSOFT,Birlasoft Ltd.,0,0%,0%,0.0,0%
+BBOX,Black Box Ltd.,0,0%,0%,0.0,0%
+BLACKBUCK,Blackbuck Ltd.,0,0%,0%,0.0,0%
+BIRLACORPN,Birla Corporation Ltd.,0,0%,0%,0.0,0%
+BIOCON,Biocon Ltd.,0,0%,0%,0.0,0%
+BLUESTARCO,Blue Star Ltd.,0,0%,0%,0.0,0%
+BLUEJET,Blue Jet Healthcare Ltd.,0,0%,0%,0.0,0%
+CAPLIPOINT,Caplin Point Laboratories Ltd.,0,0%,0%,0.0,0%
+CEMPRO,Cemindia Projects Ltd.,0,0%,0%,0.0,0%
+DIXON,Dixon Technologies (India) Ltd.,0,0%,0%,0.0,0%
+DOMS,DOMS Industries Ltd.,0,0%,0%,0.0,0%
+CRIZAC,Crizac Ltd.,0,0%,0%,0.0,0%
+CUMMINSIND,Cummins India Ltd.,0,0%,0%,0.0,0%
+CROMPTON,Crompton Greaves Consumer Electricals Ltd.,0,0%,0%,0.0,0%
+CUPID,Cupid Ltd.,0,0%,0%,0.0,0%
+CYIENT,Cyient Ltd.,0,0%,0%,0.0,0%
+DCBBANK,DCB Bank Ltd.,0,0%,0%,0.0,0%
+DCMSHRIRAM,DCM Shriram Ltd.,0,0%,0%,0.0,0%
+DLF,DLF Ltd.,0,0%,0%,0.0,0%
+DABUR,Dabur India Ltd.,0,0%,0%,0.0,0%
+CRAFTSMAN,Craftsman Automation Ltd.,0,0%,0%,0.0,0%
+DEEPAKNTR,Deepak Nitrite Ltd.,0,0%,0%,0.0,0%
+DATAMATICS,Datamatics Global Services Ltd.,0,0%,0%,0.0,0%
+DALBHARAT,Dalmia Bharat Ltd.,0,0%,0%,0.0,0%
+DATAPATTNS,Data Patterns (India) Ltd.,0,0%,0%,0.0,0%
+DELHIVERY,Delhivery Ltd.,0,0%,0%,0.0,0%
+DIACABS,Diamond Power Infrastructure Ltd.,0,0%,0%,0.0,0%
+DEVYANI,Devyani International Ltd.,0,0%,0%,0.0,0%
+DEEPAKFERT,Deepak Fertilisers & Petrochemicals Corp. Ltd.,0,0%,0%,0.0,0%
+CREDITACC,CreditAccess Grameen Ltd.,0,0%,0%,0.0,0%
+COROMANDEL,Coromandel International Ltd.,0,0%,0%,0.0,0%
+CELLO,Cello World Ltd.,0,0%,0%,0.0,0%
+CHOICEIN,Choice International Ltd.,0,0%,0%,0.0,0%
+CENTRALBK,Central Bank of India,0,0%,0%,0.0,0%
+CDSL,Central Depository Services (India) Ltd.,0,0%,0%,0.0,0%
+CENTURYPLY,Century Plyboards (India) Ltd.,0,0%,0%,0.0,0%
+CHALET,Chalet Hotels Ltd.,0,0%,0%,0.0,0%
+CHAMBLFERT,Chambal Fertilizers & Chemicals Ltd.,0,0%,0%,0.0,0%
+CERA,Cera Sanitaryware Ltd,0,0%,0%,0.0,0%
+CHENNPETRO,Chennai Petroleum Corporation Ltd.,0,0%,0%,0.0,0%
+CHOLAHLDNG,Cholamandalam Financial Holdings Ltd.,0,0%,0%,0.0,0%
+CHOLAFIN,Cholamandalam Investment and Finance Company Ltd.,0,0%,0%,0.0,0%
+CONCOR,Container Corporation of India Ltd.,0,0%,0%,0.0,0%
+CIPLA,Cipla Ltd.,0,0%,0%,0.0,0%
+COCHINSHIP,Cochin Shipyard Ltd.,0,0%,0%,0.0,0%
+CLEAN,Clean Science and Technology Ltd.,0,0%,0%,0.0,0%
+COALINDIA,Coal India Ltd.,0,0%,0%,0.0,0%
+COHANCE,Cohance Lifesciences Ltd.,0,0%,0%,0.0,0%
+COLPAL,Colgate Palmolive (India) Ltd.,0,0%,0%,0.0,0%
+CAMS,Computer Age Management Services Ltd.,0,0%,0%,0.0,0%
+CONCORDBIO,Concord Biotech Ltd.,0,0%,0%,0.0,0%
+BANKINDIA,Bank of India,0,0%,0%,0.0,0%
+BANKBARODA,Bank of Baroda,0,0%,0%,0.0,0%
+BANDHANBNK,Bandhan Bank Ltd.,0,0%,0%,0.0,0%
+AFFLE,Affle 3i Ltd.,0,0%,0%,0.0,0%
+CPPLUS,Aditya Infotech Ltd.,0,0%,0%,0.0,0%
+ABSLAMC,Aditya Birla Sun Life AMC Ltd.,0,0%,0%,0.0,0%
+AVL,Aditya Vision Ltd.,0,0%,0%,0.0,0%
+AEGISVOPAK,Aegis Vopak Terminals Ltd.,0,0%,0%,0.0,0%
+ADVENZYMES,Advanced Enzyme Tech Ltd.,0,0%,0%,0.0,0%
+AEQUS,Aequs Ltd.,0,0%,0%,0.0,0%
+AFCONS,Afcons Infrastructure Ltd.,0,0%,0%,0.0,0%
+AEGISLOG,Aegis Logistics Ltd.,0,0%,0%,0.0,0%
+AHLUCONT,Ahluwalia Contracts (India) Ltd.,0,0%,0%,0.0,0%
+ABLBL,Aditya Birla Lifestyle Brands Ltd.,0,0%,0%,0.0,0%
+AKUMS,Akums Drugs and Pharmaceuticals Ltd.,0,0%,0%,0.0,0%
+AJANTPHARM,Ajanta Pharmaceuticals Ltd.,0,0%,0%,0.0,0%
+APLLTD,Alembic Pharmaceuticals Ltd.,0,0%,0%,0.0,0%
+ALKEM,Alkem Laboratories Ltd.,0,0%,0%,0.0,0%
+ALIVUS,Alivus Life Sciences Ltd.,0,0%,0%,0.0,0%
+ALKYLAMINE,Alkyl Amines Chemicals Ltd.,0,0%,0%,0.0,0%
+ABDL,Allied Blenders and Distillers Ltd.,0,0%,0%,0.0,0%
+ALOKINDS,Alok Industries Ltd.,0,0%,0%,0.0,0%
+ABREL,Aditya Birla Real Estate Ltd.,0,0%,0%,0.0,0%
+ABFRL,Aditya Birla Fashion and Retail Ltd.,0,0%,0%,0.0,0%
+BANCOINDIA,Banco Products (India) Ltd.,0,0%,0%,0.0,0%
+AARTIIND,Aarti Industries Ltd.,0,0%,0%,0.0,0%
+3MINDIA,3M India Ltd.,0,0%,0%,0.0,0%
+360ONE,360 ONE WAM Ltd.,0,0%,0%,0.0,0%
+ASKAUTOLTD,ASK Automotive Ltd.,0,0%,0%,0.0,0%
+AARTIDRUGS,Aarti Drugs Ltd.,0,0%,0%,0.0,0%
+AXISCADES,AXISCADES Technologies Ltd.,0,0%,0%,0.0,0%
+AIAENG,AIA Engineering Ltd.,0,0%,0%,0.0,0%
+AUBANK,AU Small Finance Bank Ltd.,0,0%,0%,0.0,0%
+AADHARHFC,Aadhar Housing Finance Ltd.,0,0%,0%,0.0,0%
+AWL,AWL Agri Business Ltd.,0,0%,0%,0.0,0%
+ABCAPITAL,Aditya Birla Capital Ltd.,0,0%,0%,0.0,0%
+ADANIENSOL,Adani Energy Solutions Ltd.,0,0%,0%,0.0,0%
+AAVAS,Aavas Financiers Ltd.,0,0%,0%,0.0,0%
+ABBOTINDIA,Abbott India Ltd.,0,0%,0%,0.0,0%
+ACUTAAS,Acutaas Chemicals Ltd.,0,0%,0%,0.0,0%
+ADANIGREEN,Adani Green Energy Ltd.,0,0%,0%,0.0,0%
+ADANIPOWER,Adani Power Ltd.,0,0%,0%,0.0,0%
+ADANIENT,Adani Enterprises Ltd.,0,0%,0%,0.0,0%
+ATGL,Adani Total Gas Ltd.,0,0%,0%,0.0,0%
+ARE&M,Amara Raja Energy & Mobility Ltd.,0,0%,0%,0.0,0%
+AMBER,Amber Enterprises India Ltd.,0,0%,0%,0.0,0%
+AMBUJACEM,Ambuja Cements Ltd.,0,0%,0%,0.0,0%
+BSE,BSE Ltd.,0,0%,0%,0.0,0%
+AURIONPRO,Aurionpro Solution Ltd.,0,0%,0%,0.0,0%
+AVANTIFEED,Avanti Feeds Ltd.,0,0%,0%,0.0,0%
+DMART,Avenue Supermarts Ltd.,0,0%,0%,0.0,0%
+CCAVENUE,AvenuesAI Ltd.,0,0%,0%,0.0,0%
+AWFIS,Awfis Space Solutions Ltd.,0,0%,0%,0.0,0%
+AZAD,Azad Engineering Ltd.,0,0%,0%,0.0,0%
+BEML,BEML Ltd.,0,0%,0%,0.0,0%
+BLS,BLS International Services Ltd.,0,0%,0%,0.0,0%
+BAJAJ-AUTO,Bajaj Auto Ltd.,0,0%,0%,0.0,0%
+ANANDRATHI,Anand Rathi Wealth Ltd.,0,0%,0%,0.0,0%
+BAJAJELEC,Bajaj Electricals Ltd,0,0%,0%,0.0,0%
+BAJFINANCE,Bajaj Finance Ltd.,0,0%,0%,0.0,0%
+BAJAJFINSV,Bajaj Finserv Ltd.,0,0%,0%,0.0,0%
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd.,0,0%,0%,0.0,0%
+BAJAJHFL,Bajaj Housing Finance Ltd.,0,0%,0%,0.0,0%
+BALAMINES,Balaji Amines Ltd.,0,0%,0%,0.0,0%
+BALKRISIND,Balkrishna Industries Ltd.,0,0%,0%,0.0,0%
+BALUFORGE,Balu Forge Industries Ltd.,0,0%,0%,0.0,0%
+ATHERENERG,Ather Energy Ltd.,0,0%,0%,0.0,0%
+ATUL,Atul Ltd.,0,0%,0%,0.0,0%
+ASHOKLEY,Ashok Leyland Ltd.,0,0%,0%,0.0,0%
+ASTRAL,Astral Ltd.,0,0%,0%,0.0,0%
+ANTHEM,Anthem Biosciences Ltd.,0,0%,0%,0.0,0%
+ANGELONE,Angel One Ltd.,0,0%,0%,0.0,0%
+ANANTRAJ,Anant Raj Ltd.,0,0%,0%,0.0,0%
+APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,0,0%,0%,0.0,0%
+ANURAS,Anupam Rasayan India Ltd.,0,0%,0%,0.0,0%
+APARINDS,Apar Industries Ltd.,0,0%,0%,0.0,0%
+APOLLO,Apollo Micro Systems Ltd.,0,0%,0%,0.0,0%
+APOLLOTYRE,Apollo Tyres Ltd.,0,0%,0%,0.0,0%
+APTUS,Aptus Value Housing Finance India Ltd.,0,0%,0%,0.0,0%
+ACI,Archean Chemical Industries Ltd.,0,0%,0%,0.0,0%
+ARVINDFASN,Arvind Fashions Ltd.,0,0%,0%,0.0,0%
+ASHAPURMIN,Ashapura Minechem Ltd.,0,0%,0%,0.0,0%
+ASIANPAINT,Asian Paints Ltd.,0,0%,0%,0.0,0%
+ARVIND,Arvind Ltd.,0,0%,0%,0.0,0%
+ASHOKA,Ashoka Buildcon Ltd.,0,0%,0%,0.0,0%
+ASTERDM,Aster DM Quality Care Ltd.,0,0%,0%,0.0,0%
+ASTRAMICRO,Astra Microwave Products Ltd.,0,0%,0%,0.0,0%
+DBL,Dilip Buildcon Ltd.,0,0%,0%,0.0,0%
+AGARWALEYE,Dr. Agarwal's Health Care Ltd.,0,0%,0%,0.0,0%
+KIRLPNU,Kirloskar Pneumatic Company Ltd.,0,0%,0%,0.0,0%
+INFY,Infosys Ltd.,0,0%,0%,0.0,0%
+IOB,Indian Overseas Bank,0,0%,0%,0.0,0%
+IREDA,Indian Renewable Energy Development Agency Ltd.,0,0%,0%,0.0,0%
+IRCTC,Indian Railway Catering And Tourism Corporation Ltd.,0,0%,0%,0.0,0%
+IRFC,Indian Railway Finance Corporation Ltd.,0,0%,0%,0.0,0%
+INDIGOPNTS,Indigo Paints Ltd.,0,0%,0%,0.0,0%
+IGL,Indraprastha Gas Ltd.,0,0%,0%,0.0,0%
+INDUSTOWER,Indus Towers Ltd.,0,0%,0%,0.0,0%
+INDUSINDBK,IndusInd Bank Ltd.,0,0%,0%,0.0,0%
+INOXGREEN,Inox Green Energy Services Ltd.,0,0%,0%,0.0,0%
+IMFA,Indian Metals & Ferro Alloys Ltd.,0,0%,0%,0.0,0%
+NAUKRI,Info Edge (India) Ltd.,0,0%,0%,0.0,0%
+INOXWIND,Inox Wind Ltd.,0,0%,0%,0.0,0%
+INTELLECT,Intellect Design Arena Ltd.,0,0%,0%,0.0,0%
+IGIL,International Gemological Institute Ltd.,0,0%,0%,0.0,0%
+INDIGO,InterGlobe Aviation Ltd.,0,0%,0%,0.0,0%
+IKS,Inventurus Knowledge Solutions Ltd.,0,0%,0%,0.0,0%
+JKLAKSHMI,JK Lakshmi Cement Ltd.,0,0%,0%,0.0,0%
+JAIBALAJI,JAI BALAJI INDUSTRIES Ltd.,0,0%,0%,0.0,0%
+IOC,Indian Oil Corporation Ltd.,0,0%,0%,0.0,0%
+INDHOTEL,Indian Hotels Co. Ltd.,0,0%,0%,0.0,0%
+JBMA,JBM Auto Ltd.,0,0%,0%,0.0,0%
+IIFL,IIFL Finance Ltd.,0,0%,0%,0.0,0%
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd.,0,0%,0%,0.0,0%
+HUDCO,Housing & Urban Development Corporation Ltd.,0,0%,0%,0.0,0%
+IDBI,IDBI Bank Ltd.,0,0%,0%,0.0,0%
+ICICIBANK,ICICI Bank Ltd.,0,0%,0%,0.0,0%
+IDFCFIRSTB,IDFC First Bank Ltd.,0,0%,0%,0.0,0%
+IFBIND,IFB Industries Ltd.,0,0%,0%,0.0,0%
+IFCI,IFCI Ltd.,0,0%,0%,0.0,0%
+IRB,IRB Infrastructure Developers Ltd.,0,0%,0%,0.0,0%
+ITCHOTELS,ITC Hotels Ltd.,0,0%,0%,0.0,0%
+IEX,Indian Energy Exchange Ltd.,0,0%,0%,0.0,0%
+IRCON,IRCON International Ltd.,0,0%,0%,0.0,0%
+ITI,ITI Ltd.,0,0%,0%,0.0,0%
+ITC,ITC Ltd.,0,0%,0%,0.0,0%
+INDIACEM,India Cements Ltd.,0,0%,0%,0.0,0%
+INDIASHLTR,India Shelter Finance Corporation Ltd.,0,0%,0%,0.0,0%
+INDIAGLYCO,India Glycols Ltd.,0,0%,0%,0.0,0%
+INDIANB,Indian Bank,0,0%,0%,0.0,0%
+INDIAMART,Indiamart Intermesh Ltd.,0,0%,0%,0.0,0%
+JKCEMENT,J.K. Cement Ltd.,0,0%,0%,0.0,0%
+IONEXCHANG,Ion Exchange (India) Ltd.,0,0%,0%,0.0,0%
+DRREDDY,Dr. Reddy's Laboratories Ltd.,0,0%,0%,0.0,0%
+KSB,KSB Ltd.,0,0%,0%,0.0,0%
+JLHL,Jupiter Life Line Hospitals Ltd.,0,0%,0%,0.0,0%
+JUBLPHARMA,Jubilant Pharmova Ltd.,0,0%,0%,0.0,0%
+KPRMILL,K.P.R. Mill Ltd.,0,0%,0%,0.0,0%
+JYOTHYLAB,Jyothy Labs Ltd.,0,0%,0%,0.0,0%
+KEI,KEI Industries Ltd.,0,0%,0%,0.0,0%
+KPITTECH,KPIT Technologies Ltd.,0,0%,0%,0.0,0%
+KNRCON,KNR Constructions Ltd.,0,0%,0%,0.0,0%
+KRBL,KRBL Ltd.,0,0%,0%,0.0,0%
+KRN,KRN HEAT EXCHANGER AND REFRIGERATION Ltd.,0,0%,0%,0.0,0%
+JUSTDIAL,Justdial Ltd.,0,0%,0%,0.0,0%
+KPIGREEN,KPI Green Energy Ltd.,0,0%,0%,0.0,0%
+KALYANKJIL,Kalyan Jewellers India Ltd.,0,0%,0%,0.0,0%
+KANSAINER,Kansai Nerolac Paints Ltd.,0,0%,0%,0.0,0%
+KSCL,Kaveri Seed Company Ltd.,0,0%,0%,0.0,0%
+KAYNES,Kaynes Technology India Ltd.,0,0%,0%,0.0,0%
+KEC,Kec International Ltd.,0,0%,0%,0.0,0%
+KIRLOSBROS,Kirloskar Brothers Ltd.,0,0%,0%,0.0,0%
+KFINTECH,Kfin Technologies Ltd.,0,0%,0%,0.0,0%
+JUBLINGREA,Jubilant Ingrevia Ltd.,0,0%,0%,0.0,0%
+JWL,Jupiter Wagons Ltd.,0,0%,0%,0.0,0%
+JKTYRE,JK Tyre & Industries Ltd.,0,0%,0%,0.0,0%
+J&KBANK,Jammu & Kashmir Bank Ltd.,0,0%,0%,0.0,0%
+JSWENERGY,JSW Energy Ltd.,0,0%,0%,0.0,0%
+JSWCEMENT,JSW Cement Ltd.,0,0%,0%,0.0,0%
+JKPAPER,JK Paper Ltd.,0,0%,0%,0.0,0%
+JAINREC,Jain Resource Recycling Ltd.,0,0%,0%,0.0,0%
+JMFINANCIL,JM Financial Ltd.,0,0%,0%,0.0,0%
+JSWDULUX,JSW Dulux Ltd.,0,0%,0%,0.0,0%
+JPPOWER,Jaiprakash Power Ventures Ltd.,0,0%,0%,0.0,0%
+JSWINFRA,JSW Infrastructure Ltd.,0,0%,0%,0.0,0%
+JAMNAAUTO,Jamna Auto Industries Ltd.,0,0%,0%,0.0,0%
+ABB,ABB India Ltd.,0,0%,0%,0.0,0%
+JAYNECOIND,Jayaswal Neco Industries Ltd.,0,0%,0%,0.0,0%
+JSFB,Jana Small Finance Bank Ltd.,0,0%,0%,0.0,0%
+JSWSTEEL,JSW Steel Ltd.,0,0%,0%,0.0,0%
+JSL,Jindal Stainless Ltd.,0,0%,0%,0.0,0%
+JUBLFOOD,Jubilant Foodworks Ltd.,0,0%,0%,0.0,0%
+JSLL,Jeena Sikho Lifecare Ltd.,0,0%,0%,0.0,0%
+JINDALSAW,Jindal Saw Ltd.,0,0%,0%,0.0,0%
+JINDALSTEL,Jindal Steel Ltd.,0,0%,0%,0.0,0%
+ICICIGI,ICICI Lombard General Insurance Company Ltd.,0,0%,0%,0.0,0%
+HYUNDAI,Hyundai Motor India Ltd.,0,0%,0%,0.0,0%
+HONAUT,Honeywell Automation India Ltd.,0,0%,0%,0.0,0%
+FORCEMOT,Force Motors Ltd.,0,0%,0%,0.0,0%
+EXIDEIND,Exide Industries Ltd.,0,0%,0%,0.0,0%
+FEDFINA,Fedbank Financial Services Ltd.,0,0%,0%,0.0,0%
+FEDERALBNK,Federal Bank Ltd.,0,0%,0%,0.0,0%
+FACT,Fertilisers and Chemicals Travancore Ltd.,0,0%,0%,0.0,0%
+FIEMIND,Fiem Industries Ltd,0,0%,0%,0.0,0%
+FINPIPE,Finolex Industries Ltd.,0,0%,0%,0.0,0%
+FSL,Firstsource Solutions Ltd.,0,0%,0%,0.0,0%
+FIVESTAR,Five-Star Business Finance Ltd.,0,0%,0%,0.0,0%
+FORTIS,Fortis Healthcare Ltd.,0,0%,0%,0.0,0%
+EUREKAFORB,Eureka Forbes Ltd.,0,0%,0%,0.0,0%
+UTLSOLAR,Fujiyama Power Systems Ltd.,0,0%,0%,0.0,0%
+GAIL,GAIL (India) Ltd.,0,0%,0%,0.0,0%
+GVT&D,GE Vernova T&D India Ltd.,0,0%,0%,0.0,0%
+GHCL,GHCL Ltd.,0,0%,0%,0.0,0%
+GMRP&UI,GMR Power and Urban Infra Ltd.,0,0%,0%,0.0,0%
+GMRAIRPORT,GMR Airports Ltd.,0,0%,0%,0.0,0%
+GALLANTT,Gallantt Ispat Ltd.,0,0%,0%,0.0,0%
+GRSE,Garden Reach Shipbuilders & Engineers Ltd.,0,0%,0%,0.0,0%
+ETHOSLTD,Ethos Ltd.,0,0%,0%,0.0,0%
+ERIS,Eris Lifesciences Ltd.,0,0%,0%,0.0,0%
+HOMEFIRST,Home First Finance Company India Ltd.,0,0%,0%,0.0,0%
+EMIL,Electronics Mart India Ltd.,0,0%,0%,0.0,0%
+EIDPARRY,E.I.D. Parry (India) Ltd.,0,0%,0%,0.0,0%
+EPL,EPL Ltd.,0,0%,0%,0.0,0%
+EICHERMOT,Eicher Motors Ltd.,0,0%,0%,0.0,0%
+DYNAMATECH,Dynamatic Technologies Ltd.,0,0%,0%,0.0,0%
+EIHOTEL,EIH Ltd.,0,0%,0%,0.0,0%
+ELECTCAST,Electrosteel Castings Ltd.,0,0%,0%,0.0,0%
+EDELWEISS,Edelweiss Financial Services Ltd.,0,0%,0%,0.0,0%
+ELECON,Elecon Engineering Co. Ltd.,0,0%,0%,0.0,0%
+ELGIEQUIP,Elgi Equipments Ltd.,0,0%,0%,0.0,0%
+ESCORTS,Escorts Kubota Ltd.,0,0%,0%,0.0,0%
+EMCURE,Emcure Pharmaceuticals Ltd.,0,0%,0%,0.0,0%
+EMMVEE,Emmvee Photovoltaic Power Ltd.,0,0%,0%,0.0,0%
+EMAMILTD,Emami Ltd.,0,0%,0%,0.0,0%
+EMBDL,Embassy Developments Ltd.,0,0%,0%,0.0,0%
+EIEL,Enviro Infra Engineers Ltd.,0,0%,0%,0.0,0%
+ENGINERSIN,Engineers India Ltd.,0,0%,0%,0.0,0%
+ENDURANCE,Endurance Technologies Ltd.,0,0%,0%,0.0,0%
+EQUITASBNK,Equitas Small Finance Bank Ltd.,0,0%,0%,0.0,0%
+GICRE,General Insurance Corporation of India,0,0%,0%,0.0,0%
+GILLETTE,Gillette India Ltd.,0,0%,0%,0.0,0%
+GLAXO,Glaxosmithkline Pharmaceuticals Ltd.,0,0%,0%,0.0,0%
+HEROMOTOCO,Hero MotoCorp Ltd.,0,0%,0%,0.0,0%
+HDFCLIFE,HDFC Life Insurance Company Ltd.,0,0%,0%,0.0,0%
+HEGAM,HEG Advanced Materials Ltd.,0,0%,0%,0.0,0%
+HFCL,HFCL Ltd.,0,0%,0%,0.0,0%
+HAPPSTMNDS,Happiest Minds Technologies Ltd.,0,0%,0%,0.0,0%
+HCG,Healthcare Global Enterprises Ltd.,0,0%,0%,0.0,0%
+HAVELLS,Havells India Ltd.,0,0%,0%,0.0,0%
+HEMIPROP,Hemisphere Properties India Ltd.,0,0%,0%,0.0,0%
+HEXT,Hexaware Technologies Ltd.,0,0%,0%,0.0,0%
+HSCL,Himadri Speciality Chemical Ltd.,0,0%,0%,0.0,0%
+GLENMARK,Glenmark Pharmaceuticals Ltd.,0,0%,0%,0.0,0%
+HCC,Hindustan Construction Co. Ltd.,0,0%,0%,0.0,0%
+HINDALCO,Hindalco Industries Ltd.,0,0%,0%,0.0,0%
+HINDCOPPER,Hindustan Copper Ltd.,0,0%,0%,0.0,0%
+HINDPETRO,Hindustan Petroleum Corporation Ltd.,0,0%,0%,0.0,0%
+HINDUNILVR,Hindustan Unilever Ltd.,0,0%,0%,0.0,0%
+HAL,Hindustan Aeronautics Ltd.,0,0%,0%,0.0,0%
+POWERINDIA,Hitachi Energy India Ltd.,0,0%,0%,0.0,0%
+HINDZINC,Hindustan Zinc Ltd.,0,0%,0%,0.0,0%
+HDFCBANK,HDFC Bank Ltd.,0,0%,0%,0.0,0%
+HDFCAMC,HDFC Asset Management Company Ltd.,0,0%,0%,0.0,0%
+HCLTECH,HCL Technologies Ltd.,0,0%,0%,0.0,0%
+HDBFS,HDB Financial Services Ltd.,0,0%,0%,0.0,0%
+MEDANTA,Global Health Ltd.,0,0%,0%,0.0,0%
+GODIGIT,Go Digit General Insurance Ltd.,0,0%,0%,0.0,0%
+GODFRYPHLP,Godfrey Phillips India Ltd.,0,0%,0%,0.0,0%
+GPIL,Godawari Power & Ispat Ltd.,0,0%,0%,0.0,0%
+GODREJCP,Godrej Consumer Products Ltd.,0,0%,0%,0.0,0%
+GODREJPROP,Godrej Properties Ltd.,0,0%,0%,0.0,0%
+GODREJIND,Godrej Industries Ltd.,0,0%,0%,0.0,0%
+GOKULAGRO,Gokul Agro Resources Ltd.,0,0%,0%,0.0,0%
+GOKEX,Gokaldas Exports Ltd.,0,0%,0%,0.0,0%
+GRANULES,Granules India Ltd.,0,0%,0%,0.0,0%
+GRASIM,Grasim Industries Ltd.,0,0%,0%,0.0,0%
+GRAVITA,Gravita India Ltd.,0,0%,0%,0.0,0%
+GREAVESCOT,Greaves Cotton Ltd.,0,0%,0%,0.0,0%
+GMDCLTD,Gujarat Mineral Development Corporation Ltd.,0,0%,0%,0.0,0%
+GSFC,Gujarat State Fertilizers & Chemicals Ltd.,0,0%,0%,0.0,0%
+HGINFRA,H.G. Infra Engineering Ltd.,0,0%,0%,0.0,0%
+HBLENGINE,HBL Engineering Ltd.,0,0%,0%,0.0,0%
+JIOFIN,Jio Financial Services Ltd.,0,0%,0%,0.0,0%
