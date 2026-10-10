@@ -61,7 +61,6 @@ def run_quantum_engine():
             fall_3d = (cur_close - c.iloc[-4]) / c.iloc[-4]
             wick_pct = (cur_close - l.iloc[-1]) / (h.iloc[-1] - l.iloc[-1]) if (h.iloc[-1] - l.iloc[-1]) > 0 else 0
             
-            # FIX 3: ADVANCED RSI AND DOWNTREND ALERTS
             try:
                 delta = c.diff()
                 gain = (delta.where(delta > 0, 0)).rolling(14).mean()
@@ -86,7 +85,6 @@ def run_quantum_engine():
             rr_ratio = round((target_7 - cur_close) / risk, 2) if risk > 0 else 0
             fo_ceiling = round(np.ceil(cur_close / 50.0) * 50.0, 2) if cur_close > 200 else round(np.ceil(cur_close / 10.0) * 10.0, 2)
 
-            # ADVANCED TRADING VERDICTS
             if rr_ratio >= 2.0 and alert_type in ["⚡ VCP + VDU", "🚀 5x VOL AWAKENING", "🔥 DEAD BOTTOM"]:
                 trading_verdict = f"🎯 STRONG BUY: ₹{round(cur_close, 2)}"
             elif rr_ratio >= 1.5 and alert_type not in ["Standard", "📉 DOWNTREND (Avoid)", "🚨 OVERBOUGHT (Caution)"]:
@@ -101,8 +99,8 @@ def run_quantum_engine():
             fund_score, insider_pct, inst_pct, roe, debt_eq = 0, 0, 0, 0, 0
             accum_status = "NEUTRAL"
             
-            # Fetch fundamentals for 10x & Promoter tab
-            if alert_type not in ["Standard", "📉 DOWNTREND (Avoid)"] or dist_from_52w_low < 30:
+            # THE SNIPER FIX V2: Only query fundamentals for stocks actively flashing a setup
+            if alert_type not in ["Standard", "📉 DOWNTREND (Avoid)", "🚨 OVERBOUGHT (Caution)"]:
                 try:
                     info = yf.Ticker(ticker).info
                     insider_pct = round((info.get('heldPercentInsiders', 0) or 0) * 100, 2)
@@ -138,7 +136,6 @@ def run_quantum_engine():
     df = pd.DataFrame(results)
     if df.empty: return
     
-    # OUTPUT GENERATION
     sw_cols = ["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "F&O Ceiling / Max Pain", "52W High", "52W High Date", "52W Low", "52W Low Date"]
     sw_df = df[sw_cols].sort_values(by="Trading Verdict", ascending=False)
     sw_df.to_csv("swings_output.csv", index=False)
@@ -147,24 +144,20 @@ def run_quantum_engine():
     inc_df = df[df['🕵️ Accumulation Status'] != "NEUTRAL"][inc_cols].sort_values(by="Opportunity Score", ascending=False)
     inc_df.to_csv("incubator_output.csv", index=False)
 
-    # FIX 2: FULL DATA FOR 10X SNIPER STOCKS
     top_swings = sw_df[sw_df['Trading Verdict'].str.contains("BUY")].head(15)
     top_inc = inc_df.head(15)
     sniper_rows = []
     for _, r in top_swings.iterrows():
         sniper_rows.append([r['Symbol'], r['Company'], "MOMENTUM SWING", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], 2.0, r['52W High'], r['52W Low']])
     for _, r in top_inc.iterrows():
-        # Map proper numerical data instead of text
         matched_row = df[df['Symbol'] == r['Symbol']].iloc[0]
         sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", matched_row['Entry Trigger'], matched_row['Stop Loss'], round(matched_row['Entry Trigger']*2, 2), 5.0, matched_row['52W High'], matched_row['52W Low']])
     
     pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "R:R Ratio", "52W High", "52W Low"]).to_csv("sniper_output.csv", index=False)
     
-    # NEW PROMOTER INTELLIGENCE CSV
     promoter_cols = ["Symbol", "Company", "Opportunity Score", "Promoter Holding (%)", "FII/DII (%)", "Debt-to-Equity", "ROE (%)"]
     df[promoter_cols].sort_values(by="Promoter Holding (%)", ascending=False).to_csv("promoter_output.csv", index=False)
 
-    # FIX 4: 50-DAY SECTOR MONEY FLOW
     df['RS_20D'] = 0.0
     df['RS_50D'] = 0.0
     for idx, row in df.iterrows():
