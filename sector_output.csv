@@ -1,0 +1,23 @@
+Industry,Sector Status,ISAD (Breadth %),Avg_Money_Flow
+Media Entertainment & Publication,🔥 DOMINANT (Markup),75.0,1.2137500000000006
+Healthcare,🔥 DOMINANT (Markup),52.9,-6.154142857142857
+Capital Goods,🔥 DOMINANT (Markup),49.6,-4.196725663716815
+Services,🔥 DOMINANT (Markup),46.2,-5.317692307692307
+Textiles,🔥 DOMINANT (Markup),41.7,-2.5725
+Chemicals,🔄 EMERGING / NEUTRAL,40.0,-5.7462222222222215
+Automobile and Auto Components,🔄 EMERGING / NEUTRAL,37.5,-7.965208333333333
+Consumer Services,🔄 EMERGING / NEUTRAL,37.0,-5.383695652173913
+Oil Gas & Consumable Fuels,🔄 EMERGING / NEUTRAL,35.3,-4.78
+Financial Services,🔄 EMERGING / NEUTRAL,31.7,-5.980166666666666
+Telecommunication,🔄 EMERGING / NEUTRAL,30.8,-0.10615384615384607
+Information Technology,🔄 EMERGING / NEUTRAL,27.8,-2.3475
+Utilities,🔄 EMERGING / NEUTRAL,25.0,-10.7625
+Fast Moving Consumer Goods,🔄 EMERGING / NEUTRAL,24.4,-3.8397777777777775
+Consumer Durables,🔄 EMERGING / NEUTRAL,19.5,-6.4104878048780485
+Construction,🔄 EMERGING / NEUTRAL,17.4,-8.288695652173912
+Metals & Mining,⚠️ WASHOUT (Oversold),12.5,-8.786666666666667
+Realty,⚠️ WASHOUT (Oversold),11.8,-7.64
+Power,⚠️ WASHOUT (Oversold),9.5,-5.572857142857143
+Construction Materials,⚠️ WASHOUT (Oversold),0.0,-8.170625
+Forest Materials,⚠️ WASHOUT (Oversold),0.0,-10.15
+Diversified,⚠️ WASHOUT (Oversold),0.0,-8.6
