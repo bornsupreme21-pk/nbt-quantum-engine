@@ -99,18 +99,29 @@ def run_quantum_engine():
             fund_score, insider_pct, inst_pct, roe, debt_eq = 0, 0, 0, 0, 0
             accum_status = "NEUTRAL"
             
-            # THE SNIPER FIX V2: Only query fundamentals for stocks actively flashing a setup
+           # THE SNIPER FIX V3: Handle Missing Yahoo Data Gracefully
             if alert_type not in ["Standard", "📉 DOWNTREND (Avoid)", "🚨 OVERBOUGHT (Caution)"]:
                 try:
                     info = yf.Ticker(ticker).info
-                    insider_pct = round((info.get('heldPercentInsiders', 0) or 0) * 100, 2)
-                    inst_pct = round((info.get('heldPercentInstitutions', 0) or 0) * 100, 2)
-                    roe = round((info.get('returnOnEquity', 0) or 0) * 100, 2)
-                    debt_eq = round((info.get('debtToEquity', 0) or 0), 2)
-                    if insider_pct >= 50: fund_score += 30
-                    if inst_pct >= 15: fund_score += 20
-                    if roe > 15: fund_score += 20
-                    if debt_eq < 50: fund_score += 30
+                    
+                    # Fetch raw values
+                    raw_insider = info.get('heldPercentInsiders', None)
+                    raw_inst = info.get('heldPercentInstitutions', None)
+                    raw_roe = info.get('returnOnEquity', None)
+                    raw_debt = info.get('debtToEquity', None)
+                    
+                    # Format strictly (if missing, output "N/A")
+                    insider_pct = f"{round(raw_insider * 100, 2)}%" if raw_insider is not None else "N/A"
+                    inst_pct = f"{round(raw_inst * 100, 2)}%" if raw_inst is not None else "N/A"
+                    roe = f"{round(raw_roe * 100, 2)}%" if raw_roe is not None else "N/A"
+                    debt_eq = round(raw_debt, 2) if raw_debt is not None else "N/A"
+                    
+                    # Scoring Logic (Only score if data exists)
+                    if raw_insider is not None and raw_insider >= 0.50: fund_score += 30
+                    if raw_inst is not None and raw_inst >= 0.15: fund_score += 20
+                    if raw_roe is not None and raw_roe > 0.15: fund_score += 20
+                    if raw_debt is not None and raw_debt < 50: fund_score += 30
+                    
                     if fund_score >= 70 and is_vdu and dist_from_52w_low < 30: accum_status = "💎 SILENT ACCUMULATION"
                     elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
                 except Exception: pass
