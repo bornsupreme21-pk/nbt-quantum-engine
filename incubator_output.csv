@@ -1,26 +1,25 @@
 Symbol,Company,🕵️ Accumulation Status,Opportunity Score,Promoter Holding (%),FII/DII (%),Dist from 52W Low (%),Debt-to-Equity,ROE (%),Volume Profile
-MAHABANK,Bank of Maharashtra,🟢 STRONG HOLDINGS,100,73.6%,17.2%,56.8%,0.0,22.96%,Normal
-CASTROLIND,Castrol India Ltd.,🟢 STRONG HOLDINGS,100,51.3%,17.71%,18.3%,2.78,57.0%,Normal
-AVALON,Avalon Technologies Ltd.,🟢 STRONG HOLDINGS,80,54.4%,27.7%,196.0%,29.5,0%,VDU
-AUROPHARMA,Aurobindo Pharma Ltd.,🟢 STRONG HOLDINGS,80,54.78%,28.96%,58.7%,21.31,0%,Normal
-BHEL,Bharat Heavy Electricals Ltd.,🟢 STRONG HOLDINGS,80,59.82%,22.87%,89.5%,31.31,0%,Normal
-CAPILLARY,Capillary Technologies India Ltd.,💎 SILENT ACCUMULATION,80,63.94%,19.73%,29.3%,5.24,0%,VDU
-DIVISLAB,Divi's Laboratories Ltd.,🟢 STRONG HOLDINGS,80,52.0%,30.47%,66.1%,0.04,0%,Normal
-LALPATHLAB,Dr. Lal Path Labs Ltd.,🟢 STRONG HOLDINGS,80,54.7%,32.2%,52.7%,7.83,0%,Normal
-ENTERO,Entero Healthcare Solutions Ltd.,🟢 STRONG HOLDINGS,80,64.81%,20.36%,77.6%,38.64,0%,VDU
-FINCABLES,Finolex Cables Ltd.,🟢 STRONG HOLDINGS,80,58.64%,21.06%,99.6%,0.31,0%,VDU
-GABRIEL,Gabriel India Ltd.,🟢 STRONG HOLDINGS,80,67.02%,15.27%,71.5%,10.64,0%,VDU
-GLAND,Gland Pharma Ltd.,🟢 STRONG HOLDINGS,80,51.75%,33.28%,96.0%,2.74,0%,VDU
-GRINDWELL,Grindwell Norton Ltd.,🟢 STRONG HOLDINGS,80,58.31%,21.94%,51.2%,2.38,0%,Normal
-FLUOROCHEM,Gujarat Fluorochemicals Ltd.,🟢 STRONG HOLDINGS,80,66.44%,15.2%,53.6%,28.94,0%,Normal
-INDGN,Indegene Ltd.,🟢 STRONG HOLDINGS,80,55.45%,27.3%,40.7%,5.04,0%,VDU
-KAJARIACER,Kajaria Ceramics Ltd.,🟢 STRONG HOLDINGS,80,62.71%,30.61%,40.5%,7.3,0%,Normal
-PETRONET,Petronet LNG Ltd.,🟢 STRONG HOLDINGS,80,50.18%,27.34%,25.3%,10.51,0%,Normal
-PNB,Punjab National Bank,🟢 STRONG HOLDINGS,80,70.08%,19.15%,22.2%,0.0,14.97%,Normal
-PRUDENT,Prudent Corporate Advisory Services Ltd.,🟢 STRONG HOLDINGS,80,64.24%,29.17%,53.6%,3.87,0%,Normal
-RRKABEL,R R Kabel Ltd.,🟢 STRONG HOLDINGS,80,69.99%,17.84%,123.2%,13.09,0%,VDU
-SAGILITY,Sagility Ltd.,🟢 STRONG HOLDINGS,80,50.95%,23.12%,23.1%,11.5,0%,Normal
-TBOTEK,TBO Tek Ltd.,🟢 STRONG HOLDINGS,80,67.68%,27.98%,65.9%,48.76,0%,Normal
-SYRMA,Syrma SGS Technology Ltd.,🟢 STRONG HOLDINGS,80,59.61%,17.34%,171.3%,13.04,0%,VDU
-TEGA,Tega Industries Ltd.,🟢 STRONG HOLDINGS,80,67.44%,18.5%,31.5%,11.69,0%,VDU
-ECLERX,eClerx Services Ltd.,🟢 STRONG HOLDINGS,80,58.25%,32.58%,41.5%,15.01,0%,VDU
+CASTROLIND,Castrol India Ltd.,🟢 STRONG HOLDINGS,100,51.3%%,17.71%%,18.3%,2.78,57.0%%,Normal
+AVALON,Avalon Technologies Ltd.,🟢 STRONG HOLDINGS,80,54.4%%,27.7%%,196.0%,29.5,N/A%,VDU
+BHEL,Bharat Heavy Electricals Ltd.,🟢 STRONG HOLDINGS,80,59.82%%,22.87%%,89.5%,31.31,N/A%,Normal
+AUROPHARMA,Aurobindo Pharma Ltd.,🟢 STRONG HOLDINGS,80,54.78%%,28.96%%,58.7%,21.31,N/A%,Normal
+LALPATHLAB,Dr. Lal Path Labs Ltd.,🟢 STRONG HOLDINGS,80,54.7%%,32.2%%,52.7%,7.83,N/A%,Normal
+CAPILLARY,Capillary Technologies India Ltd.,💎 SILENT ACCUMULATION,80,63.94%%,19.73%%,29.3%,5.24,N/A%,VDU
+DIVISLAB,Divi's Laboratories Ltd.,🟢 STRONG HOLDINGS,80,52.0%%,30.47%%,66.1%,0.04,N/A%,Normal
+ENTERO,Entero Healthcare Solutions Ltd.,🟢 STRONG HOLDINGS,80,64.81%%,20.36%%,77.6%,38.64,N/A%,VDU
+PETRONET,Petronet LNG Ltd.,🟢 STRONG HOLDINGS,80,50.18%%,27.34%%,25.3%,10.51,N/A%,Normal
+FINCABLES,Finolex Cables Ltd.,🟢 STRONG HOLDINGS,80,58.64%%,21.06%%,99.6%,0.31,N/A%,VDU
+GABRIEL,Gabriel India Ltd.,🟢 STRONG HOLDINGS,80,67.02%%,15.27%%,71.5%,10.64,N/A%,VDU
+GLAND,Gland Pharma Ltd.,🟢 STRONG HOLDINGS,80,51.75%%,33.28%%,96.0%,2.74,N/A%,VDU
+GRINDWELL,Grindwell Norton Ltd.,🟢 STRONG HOLDINGS,80,58.31%%,21.94%%,51.2%,2.38,N/A%,Normal
+FLUOROCHEM,Gujarat Fluorochemicals Ltd.,🟢 STRONG HOLDINGS,80,66.44%%,15.2%%,53.6%,28.94,N/A%,Normal
+INDGN,Indegene Ltd.,🟢 STRONG HOLDINGS,80,55.45%%,27.3%%,40.7%,5.04,N/A%,VDU
+KAJARIACER,Kajaria Ceramics Ltd.,🟢 STRONG HOLDINGS,80,62.71%%,30.61%%,40.5%,7.3,N/A%,Normal
+SYRMA,Syrma SGS Technology Ltd.,🟢 STRONG HOLDINGS,80,59.61%%,17.34%%,171.3%,13.04,N/A%,VDU
+PRUDENT,Prudent Corporate Advisory Services Ltd.,🟢 STRONG HOLDINGS,80,64.24%%,29.17%%,53.6%,3.87,N/A%,Normal
+RRKABEL,R R Kabel Ltd.,🟢 STRONG HOLDINGS,80,69.99%%,17.84%%,123.2%,13.09,N/A%,VDU
+SAGILITY,Sagility Ltd.,🟢 STRONG HOLDINGS,80,50.95%%,23.12%%,23.1%,11.5,N/A%,Normal
+TEGA,Tega Industries Ltd.,🟢 STRONG HOLDINGS,80,67.44%%,18.5%%,31.5%,11.69,N/A%,VDU
+TBOTEK,TBO Tek Ltd.,🟢 STRONG HOLDINGS,80,67.68%%,27.98%%,65.9%,48.76,N/A%,Normal
+ECLERX,eClerx Services Ltd.,🟢 STRONG HOLDINGS,80,58.25%%,32.58%%,41.5%,15.01,N/A%,VDU
+MAHABANK,Bank of Maharashtra,🟢 STRONG HOLDINGS,70,73.6%%,17.2%%,56.8%,N/A,22.96%%,Normal
