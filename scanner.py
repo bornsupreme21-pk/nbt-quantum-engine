@@ -21,10 +21,21 @@ def run_quantum_engine():
     univ['YF_Ticker'] = univ['Symbol'] + '.NS'
     tickers = univ['YF_Ticker'].tolist()
     
-    print(f"2. Downloading 5-Year Data for {len(tickers)} stocks...")
+    print(f"2. Downloading 5-Year Data for {len(tickers)} stocks... (This will take ~4 minutes for full fundamentals)")
     raw_data = yf.download(tickers, period="5y", interval="1d", progress=False)
     
     results = []
+    
+    # Pre-fetch bulk fundamentals to populate Promoter Tab fully
+    fundamentals = {}
+    try:
+        tickers_obj = yf.Tickers(" ".join(tickers))
+        for t in tickers:
+            try:
+                info = tickers_obj.tickers[t].info
+                fundamentals[t] = info
+            except: fundamentals[t] = {}
+    except: pass
     
     def process(row):
         symbol, ticker = row['Symbol'], row['YF_Ticker']
@@ -96,35 +107,40 @@ def run_quantum_engine():
             else:
                 trading_verdict = "⏳ WAIT"
 
-            fund_score, insider_pct, inst_pct, roe, debt_eq = 0, 0, 0, 0, 0
-            accum_status = "NEUTRAL"
+            fund_score, accum_status = 0, "NEUTRAL"
             
-           # THE SNIPER FIX V3: Handle Missing Yahoo Data Gracefully
-            if alert_type not in ["Standard", "📉 DOWNTREND (Avoid)", "🚨 OVERBOUGHT (Caution)"]:
-                try:
-                    info = yf.Ticker(ticker).info
-                    
-                    # Fetch raw values
-                    raw_insider = info.get('heldPercentInsiders', None)
-                    raw_inst = info.get('heldPercentInstitutions', None)
-                    raw_roe = info.get('returnOnEquity', None)
-                    raw_debt = info.get('debtToEquity', None)
-                    
-                    # Format strictly (if missing, output "N/A")
-                    insider_pct = f"{round(raw_insider * 100, 2)}%" if raw_insider is not None else "N/A"
-                    inst_pct = f"{round(raw_inst * 100, 2)}%" if raw_inst is not None else "N/A"
-                    roe = f"{round(raw_roe * 100, 2)}%" if raw_roe is not None else "N/A"
-                    debt_eq = round(raw_debt, 2) if raw_debt is not None else "N/A"
-                    
-                    # Scoring Logic (Only score if data exists)
-                    if raw_insider is not None and raw_insider >= 0.50: fund_score += 30
-                    if raw_inst is not None and raw_inst >= 0.15: fund_score += 20
-                    if raw_roe is not None and raw_roe > 0.15: fund_score += 20
-                    if raw_debt is not None and raw_debt < 50: fund_score += 30
-                    
-                    if fund_score >= 70 and is_vdu and dist_from_52w_low < 30: accum_status = "💎 SILENT ACCUMULATION"
-                    elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
-                except Exception: pass
+            # FULL FUNDAMENTAL FETCH (NO LONGER SKIPPED)
+            info = fundamentals.get(ticker, {})
+            if not info:
+                try: info = yf.Ticker(ticker).info
+                except: info = {}
+                
+            raw_insider = info.get('heldPercentInsiders', None)
+            raw_inst = info.get('heldPercentInstitutions', None)
+            raw_roe = info.get('returnOnEquity', None)
+            raw_debt = info.get('debtToEquity', None)
+            
+            insider_pct = f"{round(raw_insider * 100, 2)}%" if raw_insider is not None else "Data Not Pub."
+            inst_pct = f"{round(raw_inst * 100, 2)}%" if raw_inst is not None else "Data Not Pub."
+            roe = f"{round(raw_roe * 100, 2)}%" if raw_roe is not None else "Data Not Pub."
+            debt_eq = round(raw_debt, 2) if raw_debt is not None else "Data Not Pub."
+            
+            if raw_insider is not None and raw_insider >= 0.50: fund_score += 30
+            if raw_inst is not None and raw_inst >= 0.15: fund_score += 20
+            if raw_roe is not None and raw_roe > 0.15: fund_score += 20
+            if raw_debt is not None and raw_debt < 50: fund_score += 30
+            
+            if fund_score >= 70 and is_vdu and dist_from_52w_low < 30: accum_status = "💎 SILENT ACCUMULATION"
+            elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
+
+            # Historical Monthly Seasonality Calculation
+            monthly = c.resample('M').last().pct_change()
+            month_names = monthly.index.month_name()
+            best_month, worst_month = "N/A", "N/A"
+            if len(monthly) > 12:
+                monthly_avg = monthly.groupby(month_names).mean()
+                best_month = monthly_avg.idxmax()
+                worst_month = monthly_avg.idxmin()
 
             return {
                 'Symbol': symbol, 'Company': row.get('Company', symbol), 'Industry': row.get('Industry', 'Unknown'),
@@ -132,9 +148,10 @@ def run_quantum_engine():
                 'Stop Loss': sl_price, 'Target 7%': target_7, 'F&O Ceiling / Max Pain': fo_ceiling,
                 '52W High': round(h_52w, 2), '52W High Date': h_52w_date, '52W Low': round(l_52w, 2), '52W Low Date': l_52w_date,
                 'R:R Ratio': rr_ratio, 'Opportunity Score': fund_score, 'Stage': nbt_stage,
-                '🕵️ Accumulation Status': accum_status, 'Promoter Holding (%)': f"{insider_pct}%",
-                'FII/DII (%)': f"{inst_pct}%", 'Dist from 52W Low (%)': f"{dist_from_52w_low}%",
-                'Debt-to-Equity': debt_eq, 'ROE (%)': f"{roe}%", 'Volume Profile': "VDU" if is_vdu else "Normal"
+                '🕵️ Accumulation Status': accum_status, 'Promoter Holding (%)': insider_pct,
+                'FII/DII (%)': inst_pct, 'Dist from 52W Low (%)': f"{dist_from_52w_low}%",
+                'Debt-to-Equity': debt_eq, 'ROE (%)': roe, 'Volume Profile': "VDU" if is_vdu else "Normal",
+                'Best_Month': best_month, 'Worst_Month': worst_month
             }
         except Exception: return None
 
@@ -161,14 +178,16 @@ def run_quantum_engine():
     for _, r in top_swings.iterrows():
         sniper_rows.append([r['Symbol'], r['Company'], "MOMENTUM SWING", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], 2.0, r['52W High'], r['52W Low']])
     for _, r in top_inc.iterrows():
+        # FIX: Explicitly mapped exact 52W Low price, not the Dist %
         matched_row = df[df['Symbol'] == r['Symbol']].iloc[0]
         sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", matched_row['Entry Trigger'], matched_row['Stop Loss'], round(matched_row['Entry Trigger']*2, 2), 5.0, matched_row['52W High'], matched_row['52W Low']])
     
     pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "R:R Ratio", "52W High", "52W Low"]).to_csv("sniper_output.csv", index=False)
     
     promoter_cols = ["Symbol", "Company", "Opportunity Score", "Promoter Holding (%)", "FII/DII (%)", "Debt-to-Equity", "ROE (%)"]
-    df[promoter_cols].sort_values(by="Promoter Holding (%)", ascending=False).to_csv("promoter_output.csv", index=False)
+    df[promoter_cols].sort_values(by="Promoter Holding (%)", ascending=False, na_position='last').to_csv("promoter_output.csv", index=False)
 
+    # SECTOR SEASONALITY & ROTATION ENGINE
     df['RS_20D'] = 0.0
     df['RS_50D'] = 0.0
     for idx, row in df.iterrows():
@@ -184,14 +203,28 @@ def run_quantum_engine():
         Total_Stocks=('Symbol', 'count'),
         Uptrend_Count=('Stage', lambda x: (x == 'PHASE 2: MARKUP').sum()),
         Avg_Money_Flow=('RS_20D', 'mean'),
-        Avg_50D_Flow=('RS_50D', 'mean')
+        Avg_50D_Flow=('RS_50D', 'mean'),
+        Hist_Best_Month=('Best_Month', lambda x: x.mode()[0] if not x.empty else "N/A"),
+        Hist_Worst_Month=('Worst_Month', lambda x: x.mode()[0] if not x.empty else "N/A")
     ).reset_index()
     
     sector_df['ISAD (Breadth %)'] = round((sector_df['Uptrend_Count'] / sector_df['Total_Stocks']) * 100, 1)
     sector_df['Sector Status'] = np.where(sector_df['ISAD (Breadth %)'] > 40, "🔥 DOMINANT (Markup)", 
                                  np.where(sector_df['ISAD (Breadth %)'] < 15, "⚠️ WASHOUT (Oversold)", "🔄 EMERGING / NEUTRAL"))
     
-    sector_df[['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_Money_Flow', 'Avg_50D_Flow']].sort_values(by='ISAD (Breadth %)', ascending=False).to_csv("sector_output.csv", index=False)
+    # 2-Year Forward Prediction Cycle mapping
+    def get_cycle(industry):
+        i = str(industry).lower()
+        if any(x in i for x in ['bank', 'financial', 'real estate', 'auto']): return "Interest Rate Cut Cycle (Boom)"
+        if any(x in i for x in ['capital goods', 'infrastructure', 'defense', 'power']): return "Govt Capex Cycle (Pre-Election Boom)"
+        if any(x in i for x in ['fmcg', 'consumer', 'fertilizer', 'agri']): return "Rural / Monsoon Cycle (Defensive)"
+        if any(x in i for x in ['it ', 'technology', 'pharma']): return "Global Tech / Export Cycle (USD Dependent)"
+        return "Idiosyncratic / Stock Specific"
+        
+    sector_df['2-Year Macro Prediction'] = sector_df['Industry'].apply(get_cycle)
+    
+    final_sector_cols = ['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_Money_Flow', 'Avg_50D_Flow', 'Hist_Best_Month', 'Hist_Worst_Month', '2-Year Macro Prediction']
+    sector_df[final_sector_cols].sort_values(by='ISAD (Breadth %)', ascending=False).to_csv("sector_output.csv", index=False)
 
 if __name__ == "__main__":
     run_quantum_engine()
