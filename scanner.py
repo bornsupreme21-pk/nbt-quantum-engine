@@ -1,3 +1,4 @@
+import os
 import warnings
 import datetime
 import pandas as pd
@@ -8,7 +9,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 warnings.filterwarnings('ignore')
 
 def run_quantum_engine():
-    print("1. Loading Master Universe...")
+    print("1. Loading Master Universe & Memory Bank...")
     try:
         univ = pd.read_csv("Universe_List.csv")
     except Exception:
@@ -20,12 +21,29 @@ def run_quantum_engine():
     univ['Symbol'] = univ['Symbol'].astype(str).str.strip()
     univ['YF_Ticker'] = univ['Symbol'] + '.NS'
     tickers = univ['YF_Ticker'].tolist()
+
+    # THE HISTORICAL MEMORY BANK INITIALIZATION
+    memory_file = "Historical_Holdings.csv"
+    today_date = pd.to_datetime(datetime.date.today())
+    try:
+        mem_df = pd.read_csv(memory_file)
+        mem_df['Date'] = pd.to_datetime(mem_df['Date'])
+        cutoff = today_date - pd.Timedelta(days=180) # Keep exactly 6 months of memory
+        mem_df = mem_df[mem_df['Date'] >= cutoff]
+    except Exception:
+        mem_df = pd.DataFrame(columns=['Symbol', 'Date', 'Prom_Pct', 'FII_Pct'])
+
+    oldest_records = {}
+    if not mem_df.empty:
+        oldest_df = mem_df.sort_values('Date').groupby('Symbol').first()
+        oldest_records = oldest_df.to_dict('index')
+    
+    today_memory_records = []
     
     print(f"2. Downloading Data for {len(tickers)} stocks... (Wait ~4 mins for Full Fundamentals)")
     raw_data = yf.download(tickers, period="5y", interval="1d", progress=False)
     
     results = []
-    
     fundamentals = {}
     try:
         tickers_obj = yf.Tickers(" ".join(tickers))
@@ -114,7 +132,18 @@ def run_quantum_engine():
             raw_pe = info.get('trailingPE', info.get('forwardPE', None))
             raw_bv = info.get('bookValue', None)
             
-            # Export Raw Numbers (Empty Strings if missing) to stop Sheets from guessing
+            # MEMORY DELTA CALCULATION
+            prom_curr = raw_in if raw_in is not None else 0.0
+            fii_curr = raw_inst if raw_inst is not None else 0.0
+            
+            prom_old = oldest_records.get(symbol, {}).get('Prom_Pct', prom_curr)
+            fii_old = oldest_records.get(symbol, {}).get('FII_Pct', fii_curr)
+            
+            prom_delta = round(prom_curr - prom_old, 4)
+            fii_delta = round(fii_curr - fii_old, 4)
+            
+            today_memory_records.append({'Symbol': symbol, 'Date': datetime.date.today(), 'Prom_Pct': prom_curr, 'FII_Pct': fii_curr})
+            
             insider_val = round(raw_in, 4) if raw_in is not None else ""
             inst_val = round(raw_inst, 4) if raw_inst is not None else ""
             roe_val = round(raw_roe, 4) if raw_roe is not None else ""
@@ -138,8 +167,8 @@ def run_quantum_engine():
                 'Stop Loss': sl_price, 'Target 7%': target_7, 'F&O Ceiling': fo_ceiling,
                 '52W High': round(h_52w, 2), '52W Low': round(l_52w, 2),
                 'R:R Ratio': rr_ratio, 'Opportunity Score': fund_score, 'Stage': nbt_stage,
-                'Accumulation Status': accum_status, 'Promoter Holding': insider_val,
-                'FII/DII': inst_val, 'Dist from 52W Low': dist_from_52w_low,
+                'Accumulation Status': accum_status, 'Promoter Holding': insider_val, 'Promoter Delta': prom_delta,
+                'FII/DII': inst_val, 'FII Delta': fii_delta, 'Dist from 52W Low': dist_from_52w_low,
                 'Debt-to-Eq': debt_val, 'Growth': growth_val, 'ROE': roe_val, 'PE Ratio': pe_val, 'Book Value': bv_val, 
                 'QoQ Growth': q_growth_val, 'Volume Profile': "VDU" if is_vdu else "Normal"
             }
@@ -154,17 +183,22 @@ def run_quantum_engine():
     df = pd.DataFrame(results)
     if df.empty: return
     
-    # 1. Swings Output
+    # Commit Today's Data to Memory Bank
+    new_mem_df = pd.DataFrame(today_memory_records)
+    combined_mem = pd.concat([mem_df, new_mem_df]).drop_duplicates(subset=['Symbol', 'Date'], keep='last')
+    combined_mem.to_csv(memory_file, index=False)
+    
+    # Generate Swings Output
     sw_cols = ["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "F&O Ceiling", "52W High", "52W Low", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value"]
     sw_df = df[sw_cols].sort_values(by="Trading Verdict", ascending=False)
     sw_df.to_csv("swings_output.csv", index=False)
 
-    # 2. Incubator Output
+    # Generate Incubator Output
     inc_cols = ["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Volume Profile"]
     inc_df = df[df['Accumulation Status'] != "NEUTRAL"][inc_cols].sort_values(by="Opportunity Score", ascending=False)
     inc_df.to_csv("incubator_output.csv", index=False)
 
-    # 3. Sniper Output
+    # Generate Sniper Output
     top_swings = sw_df[sw_df['Trading Verdict'].str.contains("BUY")].head(15)
     top_inc = inc_df.head(15)
     sniper_rows = []
@@ -175,11 +209,11 @@ def run_quantum_engine():
         sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", matched_row['Entry Trigger'], matched_row['Stop Loss'], round(matched_row['Entry Trigger']*2, 2), 5.0, matched_row['52W High'], matched_row['52W Low']])
     pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "R:R Ratio", "52W High", "52W Low"]).to_csv("sniper_output.csv", index=False)
     
-    # 4. Promoter Output
-    promoter_cols = ["Symbol", "Company", "Opportunity Score", "Promoter Holding", "FII/DII", "Debt-to-Eq", "ROE"]
+    # Generate Promoter Intelligence (WITH 6M DELTAS)
+    promoter_cols = ["Symbol", "Company", "Opportunity Score", "Promoter Holding", "Promoter Delta", "FII/DII", "FII Delta", "Debt-to-Eq", "ROE"]
     df[promoter_cols].sort_values(by="Promoter Holding", ascending=False).to_csv("promoter_output.csv", index=False)
 
-    # 5. Sector Output
+    # Generate Sector Output
     df['RS_20D'] = 0.0
     df['RS_50D'] = 0.0
     for idx, row in df.iterrows():
