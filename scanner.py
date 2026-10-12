@@ -22,13 +22,12 @@ def run_quantum_engine():
     univ['YF_Ticker'] = univ['Symbol'] + '.NS'
     tickers = univ['YF_Ticker'].tolist()
 
-    # THE HISTORICAL MEMORY BANK INITIALIZATION
     memory_file = "Historical_Holdings.csv"
     today_date = pd.to_datetime(datetime.date.today())
     try:
         mem_df = pd.read_csv(memory_file)
         mem_df['Date'] = pd.to_datetime(mem_df['Date'])
-        cutoff = today_date - pd.Timedelta(days=180) # Keep exactly 6 months of memory
+        cutoff = today_date - pd.Timedelta(days=180)
         mem_df = mem_df[mem_df['Date'] >= cutoff]
     except Exception:
         mem_df = pd.DataFrame(columns=['Symbol', 'Date', 'Prom_Pct', 'FII_Pct'])
@@ -40,7 +39,7 @@ def run_quantum_engine():
     
     today_memory_records = []
     
-    print(f"2. Downloading Data for {len(tickers)} stocks... (Wait ~4 mins for Full Fundamentals)")
+    print(f"2. Downloading Data for {len(tickers)} stocks... (Wait ~4 mins)")
     raw_data = yf.download(tickers, period="5y", interval="1d", progress=False)
     
     results = []
@@ -70,6 +69,8 @@ def run_quantum_engine():
             w_52l = l.iloc[-252:]
             h_52w = w_52h.max()
             l_52w = w_52l.min()
+            h_52w_date = w_52h.idxmax().strftime('%d-%b-%Y')
+            l_52w_date = w_52l.idxmin().strftime('%d-%b-%Y')
             
             dist_from_52w_low = round(((cur_close - l_52w) / l_52w), 4)
 
@@ -132,16 +133,12 @@ def run_quantum_engine():
             raw_pe = info.get('trailingPE', info.get('forwardPE', None))
             raw_bv = info.get('bookValue', None)
             
-            # MEMORY DELTA CALCULATION
             prom_curr = raw_in if raw_in is not None else 0.0
             fii_curr = raw_inst if raw_inst is not None else 0.0
-            
             prom_old = oldest_records.get(symbol, {}).get('Prom_Pct', prom_curr)
             fii_old = oldest_records.get(symbol, {}).get('FII_Pct', fii_curr)
-            
             prom_delta = round(prom_curr - prom_old, 4)
             fii_delta = round(fii_curr - fii_old, 4)
-            
             today_memory_records.append({'Symbol': symbol, 'Date': datetime.date.today(), 'Prom_Pct': prom_curr, 'FII_Pct': fii_curr})
             
             insider_val = round(raw_in, 4) if raw_in is not None else ""
@@ -161,16 +158,28 @@ def run_quantum_engine():
             if fund_score >= 70 and is_vdu and dist_from_52w_low < 0.30: accum_status = "💎 SILENT ACCUMULATION"
             elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
 
+            best_month, worst_month = "N/A", "N/A"
+            try:
+                c_monthly = c.groupby(c.index.to_period('M')).last()
+                m_ret = c_monthly.pct_change().dropna()
+                if len(m_ret) > 12:
+                    m_names = m_ret.index.strftime('%B')
+                    m_avg = m_ret.groupby(m_names).mean()
+                    best_month = m_avg.idxmax()
+                    worst_month = m_avg.idxmin()
+            except: pass
+
             return {
                 'Symbol': symbol, 'Company': row.get('Company', symbol), 'Industry': row.get('Industry', 'Unknown'),
                 'Trading Verdict': trading_verdict, 'Alert Type': alert_type, 'Entry Trigger': round(cur_close, 2),
                 'Stop Loss': sl_price, 'Target 7%': target_7, 'F&O Ceiling': fo_ceiling,
-                '52W High': round(h_52w, 2), '52W Low': round(l_52w, 2),
+                '52W High': round(h_52w, 2), '52W High Date': h_52w_date, '52W Low': round(l_52w, 2), '52W Low Date': l_52w_date,
                 'R:R Ratio': rr_ratio, 'Opportunity Score': fund_score, 'Stage': nbt_stage,
                 'Accumulation Status': accum_status, 'Promoter Holding': insider_val, 'Promoter Delta': prom_delta,
                 'FII/DII': inst_val, 'FII Delta': fii_delta, 'Dist from 52W Low': dist_from_52w_low,
                 'Debt-to-Eq': debt_val, 'Growth': growth_val, 'ROE': roe_val, 'PE Ratio': pe_val, 'Book Value': bv_val, 
-                'QoQ Growth': q_growth_val, 'Volume Profile': "VDU" if is_vdu else "Normal"
+                'QoQ Growth': q_growth_val, 'Volume Profile': "VDU" if is_vdu else "Normal",
+                'Best_Month': best_month, 'Worst_Month': worst_month
             }
         except Exception: return None
 
@@ -183,22 +192,21 @@ def run_quantum_engine():
     df = pd.DataFrame(results)
     if df.empty: return
     
-    # Commit Today's Data to Memory Bank
     new_mem_df = pd.DataFrame(today_memory_records)
     combined_mem = pd.concat([mem_df, new_mem_df]).drop_duplicates(subset=['Symbol', 'Date'], keep='last')
     combined_mem.to_csv(memory_file, index=False)
     
-    # Generate Swings Output
-    sw_cols = ["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "F&O Ceiling", "52W High", "52W Low", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value"]
+    # OUTPUT 1: SWINGS (All 52W Dates Restored)
+    sw_cols = ["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value"]
     sw_df = df[sw_cols].sort_values(by="Trading Verdict", ascending=False)
     sw_df.to_csv("swings_output.csv", index=False)
 
-    # Generate Incubator Output
+    # OUTPUT 2: INCUBATOR
     inc_cols = ["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Volume Profile"]
     inc_df = df[df['Accumulation Status'] != "NEUTRAL"][inc_cols].sort_values(by="Opportunity Score", ascending=False)
     inc_df.to_csv("incubator_output.csv", index=False)
 
-    # Generate Sniper Output
+    # OUTPUT 3: SNIPER
     top_swings = sw_df[sw_df['Trading Verdict'].str.contains("BUY")].head(15)
     top_inc = inc_df.head(15)
     sniper_rows = []
@@ -209,11 +217,11 @@ def run_quantum_engine():
         sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", matched_row['Entry Trigger'], matched_row['Stop Loss'], round(matched_row['Entry Trigger']*2, 2), 5.0, matched_row['52W High'], matched_row['52W Low']])
     pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "R:R Ratio", "52W High", "52W Low"]).to_csv("sniper_output.csv", index=False)
     
-    # Generate Promoter Intelligence (WITH 6M DELTAS)
+    # OUTPUT 4: PROMOTER
     promoter_cols = ["Symbol", "Company", "Opportunity Score", "Promoter Holding", "Promoter Delta", "FII/DII", "FII Delta", "Debt-to-Eq", "ROE"]
     df[promoter_cols].sort_values(by="Promoter Holding", ascending=False).to_csv("promoter_output.csv", index=False)
 
-    # Generate Sector Output
+    # OUTPUT 5: SECTOR (Best & Worst Months Restored)
     df['RS_20D'] = 0.0
     df['RS_50D'] = 0.0
     for idx, row in df.iterrows():
@@ -227,7 +235,9 @@ def run_quantum_engine():
 
     sector_df = df.groupby('Industry').agg(
         Total_Stocks=('Symbol', 'count'), Uptrend_Count=('Stage', lambda x: (x == 'PHASE 2: MARKUP').sum()),
-        Avg_Money_Flow=('RS_20D', 'mean'), Avg_50D_Flow=('RS_50D', 'mean')
+        Avg_Money_Flow=('RS_20D', 'mean'), Avg_50D_Flow=('RS_50D', 'mean'),
+        Hist_Best_Month=('Best_Month', lambda x: x.mode()[0] if not x.empty else "N/A"),
+        Hist_Worst_Month=('Worst_Month', lambda x: x.mode()[0] if not x.empty else "N/A")
     ).reset_index()
     sector_df['ISAD (Breadth %)'] = round((sector_df['Uptrend_Count'] / sector_df['Total_Stocks']) * 100, 1)
     sector_df['Sector Status'] = np.where(sector_df['ISAD (Breadth %)'] > 40, "🔥 DOMINANT", np.where(sector_df['ISAD (Breadth %)'] < 15, "⚠️ WASHOUT", "🔄 EMERGING"))
@@ -241,7 +251,9 @@ def run_quantum_engine():
         return "Idiosyncratic / Stock Specific"
         
     sector_df['2-Year Macro Prediction'] = sector_df['Industry'].apply(get_cycle)
-    final_sector_cols = ['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_Money_Flow', 'Avg_50D_Flow', '2-Year Macro Prediction']
+    
+    # ALL SECTOR COLUMNS RESTORED
+    final_sector_cols = ['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_Money_Flow', 'Avg_50D_Flow', 'Hist_Best_Month', 'Hist_Worst_Month', '2-Year Macro Prediction']
     sector_df[final_sector_cols].sort_values(by='ISAD (Breadth %)', ascending=False).to_csv("sector_output.csv", index=False)
 
 if __name__ == "__main__":
