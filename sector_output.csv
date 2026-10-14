@@ -1,23 +1,23 @@
 Industry,Sector Status,ISAD (Breadth %),Avg_Money_Flow,Avg_50D_Flow,Hist_Best_Month,Hist_Worst_Month,2-Year Macro Prediction
-Forest Materials,🔥 DOMINANT,100.0,-8.59,-2.03,April,February,Idiosyncratic / Stock Specific
-Media Entertainment & Publication,🔥 DOMINANT,75.0,5.365,2.86125,July,January,Idiosyncratic / Stock Specific
-Healthcare,🔥 DOMINANT,52.9,-5.948428571428571,-2.103142857142857,July,January,Idiosyncratic / Stock Specific
-Capital Goods,🔥 DOMINANT,50.4,-2.4124778761061947,1.770796460176991,April,February,Govt Capex Cycle (Pre-Election Boom)
-Services,🔥 DOMINANT,46.2,-3.6553846153846155,-3.039615384615385,April,February,Idiosyncratic / Stock Specific
-Textiles,🔥 DOMINANT,41.7,-1.5099999999999998,-1.9416666666666664,April,February,Idiosyncratic / Stock Specific
-Consumer Services,🔥 DOMINANT,41.3,-4.88195652173913,-0.8756521739130435,April,February,Rural / Monsoon Cycle (Defensive)
-Automobile and Auto Components,🔄 EMERGING,39.6,-5.7941666666666665,-4.957083333333333,April,February,Interest Rate Cut Cycle (Boom)
-Chemicals,🔄 EMERGING,37.8,-4.378,-3.310888888888889,April,February,Idiosyncratic / Stock Specific
-Financial Services,🔄 EMERGING,37.2,-4.082727272727273,-4.083636363636364,April,February,Interest Rate Cut Cycle (Boom)
-Oil Gas & Consumable Fuels,🔄 EMERGING,35.3,-3.855294117647059,-2.438823529411765,April,October,Idiosyncratic / Stock Specific
-Information Technology,🔄 EMERGING,33.3,1.4,-3.9936111111111114,July,February,Global Tech / Export Cycle (USD Dependent)
-Telecommunication,🔄 EMERGING,30.8,-0.5153846153846151,3.6584615384615384,April,February,Idiosyncratic / Stock Specific
-Fast Moving Consumer Goods,🔄 EMERGING,28.9,-1.291777777777778,-3.4080000000000004,April,February,Rural / Monsoon Cycle (Defensive)
-Utilities,🔄 EMERGING,25.0,-11.495000000000001,-10.3625,July,January,Idiosyncratic / Stock Specific
-Realty,🔄 EMERGING,23.5,-3.7970588235294116,-8.708235294117646,April,February,Idiosyncratic / Stock Specific
-Consumer Durables,🔄 EMERGING,22.0,-4.586585365853659,-6.202439024390244,April,February,Rural / Monsoon Cycle (Defensive)
-Construction,🔄 EMERGING,17.4,-6.161304347826087,-9.25695652173913,April,February,Idiosyncratic / Stock Specific
-Metals & Mining,⚠️ WASHOUT,12.5,-6.24125,-8.701666666666666,April,February,Idiosyncratic / Stock Specific
-Power,⚠️ WASHOUT,9.5,-3.4990476190476185,-9.885714285714286,April,February,Govt Capex Cycle (Pre-Election Boom)
-Construction Materials,⚠️ WASHOUT,0.0,-7.06,-13.12,July,February,Idiosyncratic / Stock Specific
-Diversified,⚠️ WASHOUT,0.0,-7.039999999999999,-14.096666666666666,April,February,Idiosyncratic / Stock Specific
+Forest Materials,🔥 DOMINANT,100.0,-5.83,-0.81,April,February,Idiosyncratic / Stock Specific
+Media Entertainment & Publication,🔥 DOMINANT,75.0,5.82625,3.62125,July,January,Idiosyncratic / Stock Specific
+Capital Goods,🔥 DOMINANT,51.3,-0.05929203539823005,0.9875221238938052,April,February,Govt Capex Cycle (Pre-Election Boom)
+Healthcare,🔥 DOMINANT,50.0,-4.986142857142856,-2.553,July,January,Idiosyncratic / Stock Specific
+Services,🔥 DOMINANT,46.2,-3.1769230769230767,-4.488076923076923,April,February,Idiosyncratic / Stock Specific
+Textiles,🔥 DOMINANT,41.7,-0.030833333333333417,-1.855833333333333,April,February,Idiosyncratic / Stock Specific
+Chemicals,🔄 EMERGING,40.0,-3.2319999999999998,-3.739111111111111,April,February,Idiosyncratic / Stock Specific
+Automobile and Auto Components,🔄 EMERGING,39.6,-4.689583333333333,-6.026875,April,February,Interest Rate Cut Cycle (Boom)
+Consumer Services,🔄 EMERGING,37.0,-4.160652173913044,-2.467391304347826,April,February,Rural / Monsoon Cycle (Defensive)
+Financial Services,🔄 EMERGING,36.4,-3.0831404958677684,-5.04694214876033,April,February,Interest Rate Cut Cycle (Boom)
+Oil Gas & Consumable Fuels,🔄 EMERGING,35.3,-2.4123529411764704,-3.9611764705882355,April,October,Idiosyncratic / Stock Specific
+Information Technology,🔄 EMERGING,34.3,0.13371428571428573,-6.073714285714285,July,February,Global Tech / Export Cycle (USD Dependent)
+Telecommunication,🔄 EMERGING,30.8,0.10307692307692293,1.4069230769230772,April,February,Idiosyncratic / Stock Specific
+Fast Moving Consumer Goods,🔄 EMERGING,26.7,-0.8608888888888888,-4.879333333333333,April,February,Rural / Monsoon Cycle (Defensive)
+Utilities,🔄 EMERGING,25.0,-7.905,-11.325,July,January,Idiosyncratic / Stock Specific
+Realty,🔄 EMERGING,23.5,-2.355294117647059,-9.395294117647058,April,February,Idiosyncratic / Stock Specific
+Consumer Durables,🔄 EMERGING,22.0,-3.765121951219512,-7.18,April,February,Rural / Monsoon Cycle (Defensive)
+Construction,🔄 EMERGING,17.4,-4.18608695652174,-10.509130434782609,April,February,Idiosyncratic / Stock Specific
+Metals & Mining,⚠️ WASHOUT,12.5,-4.3975,-9.447916666666666,April,February,Idiosyncratic / Stock Specific
+Power,⚠️ WASHOUT,9.5,-2.4842857142857144,-10.439047619047619,April,February,Govt Capex Cycle (Pre-Election Boom)
+Construction Materials,⚠️ WASHOUT,0.0,-7.510625,-14.0225,July,February,Idiosyncratic / Stock Specific
+Diversified,⚠️ WASHOUT,0.0,-8.12,-15.086666666666666,April,February,Idiosyncratic / Stock Specific
