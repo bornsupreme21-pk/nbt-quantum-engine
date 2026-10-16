@@ -1,750 +1,751 @@
-Symbol,Company,Opportunity Score,Promoter Holding,Promoter Delta,FII/DII,FII Delta,Debt-to-Eq,ROE
-ITI,ITI Ltd.,60,0.979,0.0,0.0007,0.0,40.14,
-IOB,Indian Overseas Bank,50,0.9244,0.0,0.0431,0.0,,0.1653
-UCOBANK,UCO Bank,30,0.9095,0.0,0.0261,0.0,,0.0854
-STARCEMENT,Star Cement Ltd.,60,0.9035,0.0,0.0422,0.0,18.92,
-LICI,Life Insurance Corporation of India,60,0.9,0.0,0.0592,0.0,0.43,
-MRPL,Mangalore Refinery & Petrochemicals Ltd.,30,0.8996,0.0,0.0206,0.0,108.06,
-MMTC,MMTC Ltd.,60,0.8993,0.0,0.0173,0.0,0.11,
-NTPCGREEN,NTPC Green Energy Ltd.,30,0.8901,0.0,0.0628,0.0,165.28,
-HINDZINC,Hindustan Zinc Ltd.,60,0.8863,0.0,0.0561,0.0,39.03,
-UTLSOLAR,Fujiyama Power Systems Ltd.,60,0.8786,0.0,0.0315,0.0,40.8,
-AEGISVOPAK,Aegis Vopak Terminals Ltd.,30,0.8735,0.0,0.0491,0.0,84.44,
-ATLANTAELE,Atlanta Electricals Ltd.,60,0.8728,0.0,0.0516,0.0,5.46,
-GODREJIND,Godrej Industries Ltd.,30,0.8719,0.0,0.0635,0.0,222.41,
-BAJAJHFL,Bajaj Housing Finance Ltd.,30,0.8674,0.0,0.0113,0.0,460.74,0.1268
-BHARTIHEXA,Bharti Hexacom Ltd.,30,0.8652,0.0,0.111,0.0,85.65,
-TRAVELFOOD,Travel Food Services Ltd.,60,0.8617,0.0,0.0912,0.0,16.72,
-TATACAP,Tata Capital Ltd.,30,0.8597,0.0,0.0492,0.0,502.93,
-STYL,Seshaasai Technologies Ltd.,60,0.8587,0.0,0.0696,0.0,5.87,
-PFOCUS,Prime Focus Ltd.,30,0.8556,0.0,0.0054,0.0,224.57,
-NIACL,The New India Assurance Company Ltd.,30,0.8544,0.0,0.1084,0.0,,
-SUDEEPPHRM,Sudeep Pharma Ltd.,60,0.8514,0.0,0.0661,0.0,16.75,
-LGEINDIA,LG Electronics India Ltd.,60,0.85,0.0,0.0749,0.0,5.99,
-AKUMS,Akums Drugs and Pharmaceuticals Ltd.,60,0.8493,0.0,0.1251,0.0,5.76,
-SAATVIKGL,Saatvik Green Energy Ltd.,30,0.8477,0.0,0.1076,0.0,69.03,
-PARKHOSPS,Park Medi World Ltd.,60,0.8394,0.0,0.0565,0.0,17.31,
-ANURAS,Anupam Rasayan India Ltd.,60,0.8385,0.0,0.0103,0.0,41.32,
-ORKLAINDIA,Orkla India Ltd.,60,0.8333,0.0,0.0922,0.0,2.28,
-AIIL,Authum Investment & Infrastructure Ltd.,60,0.8307,0.0,0.0714,0.0,24.59,
-JBMA,JBM Auto Ltd.,30,0.83,0.0,0.0156,0.0,190.28,
-IRFC,Indian Railway Finance Corporation Ltd.,30,0.829,0.0,0.0486,0.0,773.35,
-HYUNDAI,Hyundai Motor India Ltd.,60,0.825,0.0,0.1319,0.0,5.48,
-ADANIGREEN,Adani Green Energy Ltd.,30,0.8227,0.0,0.1099,0.0,346.55,
-LOTUSDEV,SRI LOTUS DEVELOPERS AND REALTY Ltd.,60,0.8187,0.0,0.0103,0.0,6.84,
-SJVN,SJVN Ltd.,30,0.8185,0.0,0.0583,0.0,226.53,
-MAZDOCK,Mazagoan Dock Shipbuilders Ltd.,60,0.8122,0.0,0.0623,0.0,4.48,
-CENTRALBK,Central Bank of India,30,0.8119,0.0,0.0951,0.0,,0.1156
-ANTHEM,Anthem Biosciences Ltd.,60,0.8089,0.0,0.1246,0.0,1.77,
-JAINREC,Jain Resource Recycling Ltd.,30,0.8056,0.0,0.0642,0.0,81.89,
-DATAMATICS,Datamatics Global Services Ltd.,60,0.8034,0.0,0.0066,0.0,14.38,
-EMMVEE,Emmvee Photovoltaic Power Ltd.,80,0.8003,0.0,0.0741,0.0,25.24,0.5305
-CRIZAC,Crizac Ltd.,60,0.7994,0.0,0.0286,0.0,0.31,
-RTNINDIA,RattanIndia Enterprises Ltd.,30,0.799,0.0,0.0027,0.0,143.03,
-SMARTWORKS,Smartworks Coworking Spaces Ltd.,30,0.7981,0.0,0.0396,0.0,900.42,
-ATGL,Adani Total Gas Ltd.,30,0.7977,0.0,0.074,0.0,58.65,
-JAIBALAJI,JAI BALAJI INDUSTRIES Ltd.,60,0.7956,0.0,0.015,0.0,18.45,
-PURVA,Puravankara Ltd.,30,0.7938,0.0,0.097,0.0,315.04,
-GOKULAGRO,Gokul Agro Resources Ltd.,60,0.7914,0.0,0.016,0.0,41.41,
-ABDL,Allied Blenders and Distillers Ltd.,30,0.7896,0.0,0.0619,0.0,68.25,
-DMART,Avenue Supermarts Ltd.,60,0.7891,0.0,0.1375,0.0,16.34,0.1272
-SUNTV,Sun TV Network Ltd.,60,0.7847,0.0,0.1366,0.0,0.84,
-LINDEINDIA,Linde India Ltd.,60,0.7798,0.0,0.0784,0.0,1.85,
-GILLETTE,Gillette India Ltd.,60,0.7795,0.0,0.1062,0.0,0.0,
-IFBIND,IFB Industries Ltd.,60,0.7792,0.0,0.0516,0.0,15.67,
-EMCURE,Emcure Pharmaceuticals Ltd.,60,0.7782,0.0,0.096,0.0,30.57,
-ELLEN,Ellenbarrie Industrial Gases Ltd.,60,0.7776,0.0,0.1189,0.0,18.87,
-LLOYDSME,Lloyds Metals And Energy Ltd.,30,0.7769,0.0,0.0318,0.0,145.21,
-DIACABS,Diamond Power Infrastructure Ltd.,30,0.7769,0.0,0.1094,0.0,,
-CORONA,CORONA Remedies Ltd.,80,0.7761,0.0,0.1974,0.0,22.07,
-GICRE,General Insurance Corporation of India,50,0.774,0.0,0.1705,0.0,,0.0911
-SCHNEIDER,Schneider Electric Infrastructure Ltd.,30,0.7694,0.0,0.0637,0.0,70.8,
-SIEMENS,Siemens Ltd.,60,0.7691,0.0,0.1077,0.0,2.21,
-PRSMJOHNSN,Prism Johnson Ltd.,30,0.7682,0.0,0.0896,0.0,77.2,
-SIGNATURE,Signatureglobal (India) Ltd.,30,0.7681,0.0,0.1238,0.0,161.04,
-CPPLUS,Aditya Infotech Ltd.,80,0.768,0.0,0.1641,0.0,9.6,
-PNGJL,P N Gadgil Jewellers Ltd.,30,0.7662,0.0,0.0533,0.0,88.5,
-AETHER,Aether Industries Ltd.,60,0.7658,0.0,0.1179,0.0,18.65,
-IGIL,International Gemological Institute Ltd.,60,0.7655,0.0,0.094,0.0,9.59,
-INDIANB,Indian Bank,70,0.7654,0.0,0.1719,0.0,,0.1617
-3MINDIA,3M India Ltd.,60,0.7648,0.0,0.0962,0.0,9.6,
-ABB,ABB India Ltd.,80,0.7634,0.0,0.1274,0.0,1.55,0.1913
-DBL,Dilip Buildcon Ltd.,30,0.7624,0.0,0.0627,0.0,115.51,
-BLUEDART,Blue Dart Express Ltd.,50,0.7619,0.0,0.1659,0.0,64.27,
-JSWCEMENT,JSW Cement Ltd.,50,0.7611,0.0,0.1866,0.0,68.39,
-ALIVUS,Alivus Life Sciences Ltd.,60,0.7608,0.0,0.0727,0.0,1.7,
-BLUEJET,Blue Jet Healthcare Ltd.,60,0.7602,0.0,0.0574,0.0,3.1,
-SHYAMMETL,Shyam Metalics and Energy Ltd.,60,0.76,0.0,0.1467,0.0,8.13,
-THELEELA,Leela Palaces Hotels & Resorts Ltd.,60,0.7591,0.0,0.1256,0.0,27.51,0.0724
-SANDUMA,Sandur Manganese & Iron Ores Ltd.,60,0.759,0.0,0.0072,0.0,30.58,
-TRANSRAILL,Transrail Lighting Ltd.,60,0.7584,0.0,0.0034,0.0,29.73,
-DCMSHRIRAM,DCM Shriram Ltd.,60,0.7584,0.0,0.0927,0.0,37.8,
-OSWALPUMPS,Oswal Pumps Ltd.,60,0.7565,0.0,0.0398,0.0,14.11,
-GLAXO,Glaxosmithkline Pharmaceuticals Ltd.,60,0.7563,0.0,0.0985,0.0,1.47,
-BERGEPAINT,Berger Paints India Ltd.,80,0.756,0.0,0.157,0.0,9.16,
-ABBOTINDIA,Abbott India Ltd.,60,0.7554,0.0,0.0689,0.0,3.6,
-TRIDENT,Trident Ltd.,60,0.7553,0.0,0.0251,0.0,38.32,
-SUMICHEM,Sumitomo Chemical India Ltd.,60,0.7546,0.0,0.0969,0.0,1.86,
-QPOWER,QUALITY POWER ELECTRICAL EQUIPMENTS Ltd.,60,0.7546,0.0,0.0536,0.0,5.2,
-MANKIND,Mankind Pharma Ltd.,80,0.7539,0.0,0.1852,0.0,38.11,
-WAAREERTL,Waaree Renewable Technologies Ltd.,60,0.7535,0.0,0.0109,0.0,15.6,
-CANHLIFE,Canara HSBC Life Insurance Company Ltd.,80,0.7533,0.0,0.2074,0.0,15.26,0.084
-BBTC,Bombay Burmah Trading Corporation Ltd.,60,0.7524,0.0,0.0683,0.0,16.57,
-INDIACEM,India Cements Ltd.,60,0.7523,0.0,0.1122,0.0,12.89,
-HEXT,Hexaware Technologies Ltd.,100,0.7521,0.0,0.191,0.0,10.18,0.2147
-ZYDUSLIFE,Zydus Lifesciences Ltd.,80,0.7519,0.0,0.1618,0.0,42.3,
-HONAUT,Honeywell Automation India Ltd.,60,0.7515,0.0,0.1412,0.0,2.48,
-NIVABUPA,Niva Bupa Health Insurance Company Ltd.,80,0.7512,0.0,0.1574,0.0,6.8,0.1214
-VARROC,Varroc Engineering Ltd.,30,0.75,0.0,0.1223,0.0,50.85,
-ALOKINDS,Alok Industries Ltd.,30,0.75,0.0,0.0115,0.0,,
-CRAMC,Canara Robeco Asset Management Company Ltd.,80,0.75,0.0,0.0928,0.0,3.04,0.3023
-ENDURANCE,Endurance Technologies Ltd.,80,0.75,0.0,0.1934,0.0,19.39,
-RCF,Rashtriya Chemicals & Fertilizers Ltd.,30,0.75,0.0,0.0121,0.0,80.61,
-HUDCO,Housing & Urban Development Corporation Ltd.,30,0.75,0.0,0.1008,0.0,645.77,
-ADANIENT,Adani Enterprises Ltd.,50,0.7497,0.0,0.1833,0.0,119.56,
-ASKAUTOLTD,ASK Automotive Ltd.,50,0.7495,0.0,0.195,0.0,51.79,
-KANSAINER,Kansai Nerolac Paints Ltd.,60,0.7495,0.0,0.1052,0.0,4.53,
-MANYAVAR,Vedant Fashions Ltd.,80,0.7494,0.0,0.1855,0.0,23.3,
-BDL,Bharat Dynamics Ltd.,60,0.7493,0.0,0.1094,0.0,0.01,
-INOXINDIA,INOX India Ltd.,60,0.749,0.0,0.0937,0.0,7.25,
-SARDAEN,Sarda Energy and Minerals Ltd.,60,0.7485,0.0,0.0288,0.0,35.2,
-ROUTE,Route Mobile Ltd.,60,0.7485,0.0,0.0424,0.0,1.49,
-SHARDACROP,Sharda Cropchem Ltd.,60,0.7482,0.0,0.1007,0.0,0.1,
-UNIONBANK,Union Bank of India,70,0.7476,0.0,0.1507,0.0,,0.158
-NFL,National Fertilizers Ltd.,30,0.7471,0.0,0.0416,0.0,139.52,
-IDEA,Vodafone Idea Ltd.,30,0.7464,0.0,0.0998,0.0,,
-AADHARHFC,Aadhar Housing Finance Ltd.,30,0.746,0.0,0.1173,0.0,255.57,
-SUBROS,Subros Ltd.,60,0.7459,0.0,0.1142,0.0,6.01,
-IMFA,Indian Metals & Ferro Alloys Ltd.,60,0.7454,0.0,0.0076,0.0,35.12,
-GODIGIT,Go Digit General Insurance Ltd.,80,0.7451,0.0,0.1693,0.0,7.47,
-ESCORTS,Escorts Kubota Ltd.,60,0.7451,0.0,0.1379,0.0,1.31,
-GRSE,Garden Reach Shipbuilders & Engineers Ltd.,60,0.745,0.0,0.0392,0.0,1.42,
-AFFLE,Affle 3i Ltd.,80,0.7448,0.0,0.2895,0.0,0.41,
-HDBFS,HDB Financial Services Ltd.,30,0.7444,0.0,0.1189,0.0,471.46,0.1427
-ORIENTCEM,Orient Cement Ltd.,60,0.7438,0.0,0.0181,0.0,3.38,
-TTML,Tata Teleservices (Maharashtra) Ltd.,30,0.7436,0.0,0.0197,0.0,,
-SCHAEFFLER,Schaeffler India Ltd.,100,0.743,0.0,0.1852,0.0,0.78,0.2165
-DLF,DLF Ltd.,60,0.7414,0.0,0.1459,0.0,0.67,0.101
-JSWINFRA,JSW Infrastructure Ltd.,50,0.7414,0.0,0.1579,0.0,59.0,
-BBOX,Black Box Ltd.,30,0.7408,0.0,0.0561,0.0,89.59,
-GMDCLTD,Gujarat Mineral Development Corporation Ltd.,60,0.74,0.0,0.0245,0.0,4.47,
-MIDHANI,Mishra Dhatu Nigam Ltd.,60,0.74,0.0,0.0779,0.0,26.56,
-BIKAJI,Bikaji Foods International Ltd.,80,0.7388,0.0,0.1946,0.0,17.53,
-JUSTDIAL,Justdial Ltd.,60,0.7386,0.0,0.1267,0.0,1.66,
-TATAINVEST,Tata Investment Corporation Ltd.,60,0.7381,0.0,0.0197,0.0,0.01,
-THERMAX,Thermax Ltd.,80,0.7366,0.0,0.1887,0.0,42.17,
-MAHABANK,Bank of Maharashtra,70,0.736,0.0,0.1734,0.0,,0.2296
-GODFRYPHLP,Godfrey Phillips India Ltd.,60,0.7354,0.0,0.1017,0.0,3.76,
-LTTS,L&T Technology Services Ltd.,60,0.7351,0.0,0.1327,0.0,8.91,
-CELLO,Cello World Ltd.,80,0.7348,0.0,0.1579,0.0,1.41,
-CAPLIPOINT,Caplin Point Laboratories Ltd.,60,0.7344,0.0,0.057,0.0,0.13,
-AEQUS,Aequs Ltd.,60,0.734,0.0,0.1304,0.0,47.18,
-ADANIENSOL,Adani Energy Solutions Ltd.,50,0.7339,0.0,0.2256,0.0,194.5,
-IOC,Indian Oil Corporation Ltd.,30,0.7339,0.0,0.1429,0.0,58.45,
-BANKINDIA,Bank of India,50,0.7338,0.0,0.1504,0.0,,0.137
-MUTHOOTFIN,Muthoot Finance Ltd.,70,0.7335,0.0,0.1694,0.0,393.56,0.3174
-PICCADIL,Piccadily Agro Industries Ltd.,30,0.7323,0.0,0.0015,0.0,58.89,
-IFCI,IFCI Ltd.,60,0.7314,0.0,0.0355,0.0,22.72,
-SPARC,Sun Pharma Advanced Research Company Ltd.,60,0.7296,0.0,0.0183,0.0,41.78,
-RAILTEL,Railtel Corporation Of India Ltd.,80,0.7284,0.0,0.0295,0.0,2.82,0.1625
-RVNL,Rail Vikas Nigam Ltd.,60,0.7284,0.0,0.0821,0.0,49.08,
-UBL,United Breweries Ltd.,80,0.7283,0.0,0.2071,0.0,29.08,
-SMLMAH,SML Mahindra Ltd.,30,0.7282,0.0,0.0214,0.0,55.67,
-SHREECEM,Shree Cement Ltd.,80,0.7275,0.0,0.2034,0.0,8.01,
-ALKYLAMINE,Alkyl Amines Chemicals Ltd.,60,0.7273,0.0,0.054,0.0,0.08,
-GODREJAGRO,Godrej Agrovet Ltd.,30,0.727,0.0,0.1006,0.0,72.75,
-WIPRO,Wipro Ltd.,80,0.7269,0.0,0.1077,0.0,27.4,0.1613
-KRBL,KRBL Ltd.,60,0.7269,0.0,0.0471,0.0,2.92,
-HEGAM,HEG Advanced Materials Ltd.,60,0.7259,0.0,0.0785,0.0,16.73,
-OPTIEMUS,Optiemus Infracom Ltd.,60,0.7253,0.0,0.0426,0.0,45.35,
-SANOFICONR,Sanofi Consumer Healthcare India Ltd.,100,0.7252,0.0,0.1841,0.0,5.98,0.8795
-NLCINDIA,NLC India Ltd.,30,0.7252,0.0,0.1462,0.0,110.36,
-JSLL,Jeena Sikho Lifecare Ltd.,60,0.7248,0.0,0.0032,0.0,27.26,
-CONCORDBIO,Concord Biotech Ltd.,60,0.7248,0.0,0.1491,0.0,0.12,
-JWL,Jupiter Wagons Ltd.,60,0.7243,0.0,0.065,0.0,33.37,
-CEMPRO,Cemindia Projects Ltd.,60,0.7242,0.0,0.0768,0.0,37.71,
-OFSS,Oracle Financial Services Software Ltd.,80,0.7239,0.0,0.1337,0.0,0.57,0.499
-RITES,RITES Ltd.,60,0.722,0.0,0.1038,0.0,0.24,
-REDTAPE,Redtape Ltd.,30,0.7217,0.0,0.1413,0.0,70.49,
-MAHSEAMLES,Maharashtra Seamless Ltd.,60,0.7213,0.0,0.0695,0.0,0.19,
-CAMPUS,Campus Activewear Ltd.,80,0.7211,0.0,0.1771,0.0,26.06,
-NUVOCO,Nuvoco Vistas Corporation Ltd.,80,0.7202,0.0,0.1958,0.0,48.06,
-CENTURYPLY,Century Plyboards (India) Ltd.,50,0.7188,0.0,0.2061,0.0,67.11,
-CRISIL,CRISIL Ltd.,100,0.7188,0.0,0.1535,0.0,10.23,0.2905
-TCS,Tata Consultancy Services Ltd.,100,0.7179,0.0,0.1755,0.0,9.83,0.4557
-HGINFRA,H.G. Infra Engineering Ltd.,30,0.7178,0.0,0.1035,0.0,153.26,
-IREDA,Indian Renewable Energy Development Agency Ltd.,30,0.7176,0.0,0.0426,0.0,565.67,
-ADANIPOWER,Adani Power Ltd.,50,0.7174,0.0,0.1909,0.0,82.33,
-KSCL,Kaveri Seed Company Ltd.,30,0.7172,0.0,0.0546,0.0,,
-BAYERCROP,Bayer Cropscience Ltd.,60,0.7171,0.0,0.1185,0.0,2.76,
-ACMESOLAR,ACME Solar Holdings Ltd.,50,0.7166,0.0,0.1949,0.0,393.19,
-HAL,Hindustan Aeronautics Ltd.,80,0.7164,0.0,0.1642,0.0,0.16,
-POWERINDIA,Hitachi Energy India Ltd.,60,0.7154,0.0,0.1013,0.0,1.66,
-LATENTVIEW,Latent View Analytics Ltd.,60,0.7135,0.0,0.0321,0.0,1.86,
-SUPRIYA,Supriya Lifescience Ltd.,60,0.7128,0.0,0.0487,0.0,0.45,
-GAEL,Gujarat Ambuja Exports Ltd.,60,0.7127,0.0,0.0126,0.0,13.38,
-RELAXO,Relaxo Footwears Ltd.,60,0.7127,0.0,0.1166,0.0,10.54,
-PWL,Physicswallah Ltd.,80,0.7108,0.0,0.2195,0.0,23.02,
-IKS,Inventurus Knowledge Solutions Ltd.,60,0.7098,0.0,0.0991,0.0,26.87,
-AVANTIFEED,Avanti Feeds Ltd.,60,0.7091,0.0,0.1058,0.0,0.36,
-JYOTHYLAB,Jyothy Labs Ltd.,80,0.7075,0.0,0.1519,0.0,3.25,
-APLLTD,Alembic Pharmaceuticals Ltd.,80,0.7067,0.0,0.1655,0.0,25.22,
-BOSCHLTD,Bosch Ltd.,80,0.7067,0.0,0.1837,0.0,0.8,
-HCG,Healthcare Global Enterprises Ltd.,50,0.7064,0.0,0.2051,0.0,123.06,
-BLS,BLS International Services Ltd.,60,0.706,0.0,0.0523,0.0,15.47,
-EIHOTEL,EIH Ltd.,80,0.7052,0.0,0.152,0.0,4.67,
-GMRP&UI,GMR Power and Urban Infra Ltd.,30,0.7036,0.0,0.0356,0.0,549.82,
-LODHA,Lodha Developers Ltd.,80,0.7029,0.0,0.191,0.0,42.24,
-NESCO,NESCO Ltd.,60,0.7023,0.0,0.0471,0.0,9.07,
-EIEL,Enviro Infra Engineers Ltd.,60,0.7023,0.0,0.0056,0.0,34.13,
-PNB,Punjab National Bank,50,0.7008,0.0,0.1891,0.0,,0.1497
-RRKABEL,R R Kabel Ltd.,80,0.6999,0.0,0.1784,0.0,13.09,
-KSB,KSB Ltd.,80,0.6997,0.0,0.1387,0.0,0.37,0.1519
-BANCOINDIA,Banco Products (India) Ltd.,60,0.6995,0.0,0.0123,0.0,36.44,
-LLOYDSENT,Lloyds Enterprises Ltd.,60,0.6994,0.0,0.002,0.0,14.69,
-ZYDUSWELL,Zydus Wellness Ltd.,50,0.6985,0.0,0.2129,0.0,54.97,
-ERIS,Eris Lifesciences Ltd.,50,0.6984,0.0,0.2223,0.0,60.55,
-GMRAIRPORT,GMR Airports Ltd.,50,0.6982,0.0,0.1579,0.0,,
-PATANJALI,Patanjali Foods Ltd.,80,0.695,0.0,0.1804,0.0,21.3,
-MAPMYINDIA,C.E. Info Systems Ltd.,60,0.6943,0.0,0.1228,0.0,0.78,
-AMBUJACEM,Ambuja Cements Ltd.,80,0.6935,0.0,0.2304,0.0,1.21,
-PIDILITIND,Pidilite Industries Ltd.,80,0.6928,0.0,0.1609,0.0,3.78,
-KIRLOSBROS,Kirloskar Brothers Ltd.,60,0.6924,0.0,0.1306,0.0,10.1,
-ONGC,Oil & Natural Gas Corporation Ltd.,80,0.6921,0.0,0.2232,0.0,42.55,
-AWL,AWL Agri Business Ltd.,80,0.6918,0.0,0.1511,0.0,10.62,
-LXCHEM,Laxmi Organic Industries Ltd.,60,0.6916,0.0,0.037,0.0,27.34,
-RUBICON,Rubicon Research Ltd.,80,0.6915,0.0,0.1842,0.0,24.13,
-WELSPUNLIV,Welspun Living Ltd.,60,0.6898,0.0,0.1495,0.0,46.5,
-CHENNPETRO,Chennai Petroleum Corporation Ltd.,60,0.688,0.0,0.0571,0.0,17.68,
-ABCAPITAL,Aditya Birla Capital Ltd.,50,0.6871,0.0,0.1606,0.0,495.94,
-LTM,LTM Ltd.,100,0.6858,0.0,0.1862,0.0,9.87,0.2197
-SBICARD,SBI Cards and Payment Services Ltd.,50,0.6858,0.0,0.2496,0.0,280.21,
-KRN,KRN HEAT EXCHANGER AND REFRIGERATION Ltd.,60,0.6849,0.0,0.0823,0.0,32.63,
-UNOMINDA,UNO Minda Ltd.,80,0.6849,0.0,0.2019,0.0,37.74,
-QUESS,Quess Corp Ltd.,60,0.6821,0.0,0.1341,0.0,10.66,
-JAYNECOIND,Jayaswal Neco Industries Ltd.,30,0.6818,0.0,0.0038,0.0,74.73,
-WAAREEENER,Waaree Energies Ltd.,60,0.6815,0.0,0.0918,0.0,21.4,
-IRB,IRB Infrastructure Developers Ltd.,30,0.68,0.0,0.149,0.0,95.6,
-SURYAROSNI,Surya Roshni Ltd.,60,0.6779,0.0,0.0142,0.0,3.03,
-OIL,Oil India Ltd.,50,0.6773,0.0,0.2106,0.0,58.74,
-OBEROIRLTY,Oberoi Realty Ltd.,80,0.677,0.0,0.2418,0.0,15.77,
-TBOTEK,TBO Tek Ltd.,80,0.6768,0.0,0.2868,0.0,48.76,
-DABUR,Dabur India Ltd.,80,0.6767,0.0,0.2222,0.0,10.91,
-BALAMINES,Balaji Amines Ltd.,60,0.6756,0.0,0.025,0.0,6.19,
-AEGISLOG,Aegis Logistics Ltd.,80,0.6754,0.0,0.1586,0.0,47.24,
-KPRMILL,K.P.R. Mill Ltd.,80,0.6754,0.0,0.2274,0.0,10.46,
-MINDACORP,Minda Corporation Ltd.,50,0.6747,0.0,0.2166,0.0,55.35,
-TEGA,Tega Industries Ltd.,80,0.6744,0.0,0.185,0.0,11.69,
-ASAHIINDIA,Asahi India Glass Ltd.,30,0.6742,0.0,0.099,0.0,55.87,
-TRIVENI,Triveni Engineering & Industries Ltd.,30,0.6742,0.0,0.0927,0.0,64.65,
-PREMIERENE,Premier Energies Ltd.,50,0.6742,0.0,0.2004,0.0,86.0,
-MANORAMA,Manorama Industries Ltd.,30,0.6741,0.0,0.0364,0.0,52.15,
-CHALET,Chalet Hotels Ltd.,50,0.674,0.0,0.2756,0.0,64.04,
-JYOTICNC,Jyoti CNC Automation Ltd.,60,0.6734,0.0,0.1435,0.0,42.61,
-NH,Narayana Hrudayalaya Ltd.,30,0.6723,0.0,0.1289,0.0,129.03,
-GABRIEL,Gabriel India Ltd.,80,0.6702,0.0,0.153,0.0,10.64,
-PFIZER,Pfizer Ltd.,80,0.6695,0.0,0.1616,0.0,1.67,
-ACE,Action Construction Equipment Ltd.,60,0.6681,0.0,0.079,0.0,0.39,
-TARC,TARC Ltd.,30,0.6679,0.0,0.0616,0.0,178.38,
-JSWENERGY,JSW Energy Ltd.,50,0.6671,0.0,0.2181,0.0,229.16,
-BANKBARODA,Bank of Baroda,50,0.6646,0.0,0.2048,0.0,,0.1132
-FLUOROCHEM,Gujarat Fluorochemicals Ltd.,80,0.6644,0.0,0.1555,0.0,28.94,
-CIEINDIA,CIE Automotive India Ltd.,80,0.6642,0.0,0.2363,0.0,6.63,0.1222
-MEDANTA,Global Health Ltd.,80,0.6639,0.0,0.2352,0.0,29.87,
-SPLPETRO,Supreme Petrochem Ltd.,60,0.6618,0.0,0.0695,0.0,5.61,
-CREDITACC,CreditAccess Grameen Ltd.,70,0.661,0.0,0.2058,0.0,302.87,0.1636
-ADANIPORTS,Adani Ports and Special Economic Zone Ltd.,50,0.6606,0.0,0.2311,0.0,64.05,
-KITEX,Kitex Garments Ltd.,30,0.6602,0.0,0.0071,0.0,96.81,
-TVSSCS,TVS Supply Chain Solutions Ltd.,30,0.6599,0.0,0.135,0.0,133.61,
-GRAPHITE,Graphite India Ltd.,60,0.6596,0.0,0.14,0.0,6.29,
-LTF,L&T Finance Ltd.,50,0.6595,0.0,0.1807,0.0,393.44,
-SKIPPER,Skipper Ltd.,30,0.658,0.0,0.0858,0.0,63.56,
-JLHL,Jupiter Life Line Hospitals Ltd.,80,0.6577,0.0,0.2433,0.0,37.84,
-THOMASCOOK,Thomas Cook (India) Ltd.,60,0.6573,0.0,0.1131,0.0,21.37,
-TIPSMUSIC,Tips Music Ltd.,60,0.6571,0.0,0.0715,0.0,1.96,
-VTL,Vardhman Textiles Ltd.,80,0.6551,0.0,0.1599,0.0,17.52,
-RATNAMANI,Ratnamani Metals & Tubes Ltd.,80,0.6546,0.0,0.256,0.0,7.55,
-DEVYANI,Devyani International Ltd.,50,0.6542,0.0,0.1841,0.0,203.33,
-SFL,Sheela Foam Ltd.,80,0.6539,0.0,0.1835,0.0,27.85,
-EUREKAFORB,Eureka Forbes Ltd.,60,0.6528,0.0,0.1216,0.0,0.63,
-RAYMONDLSL,Raymond Lifestyle Ltd.,60,0.6519,0.0,0.0739,0.0,22.68,
-IRCON,IRCON International Ltd.,30,0.6517,0.0,0.0337,0.0,85.83,
-EMIL,Electronics Mart India Ltd.,50,0.6517,0.0,0.2752,0.0,122.81,
-SAIL,Steel Authority of India Ltd.,50,0.651,0.0,0.1698,0.0,52.9,
-EMBDL,Embassy Developments Ltd.,30,0.649,0.0,0.0856,0.0,53.41,
-VIKRAMSOLR,Vikram Solar Ltd.,60,0.6485,0.0,0.0374,0.0,20.37,
-MSTCLTD,MSTC Ltd.,60,0.6475,0.0,0.0362,0.0,16.04,
-ENTERO,Entero Healthcare Solutions Ltd.,80,0.6474,0.0,0.2175,0.0,38.64,
-SAREGAMA,Saregama India Ltd,60,0.647,0.0,0.109,0.0,4.28,
-MOIL,MOIL Ltd.,30,0.6469,0.0,0.0656,0.0,,
-WELENT,Welspun Enterprises Ltd.,30,0.6469,0.0,0.105,0.0,60.92,
-JSL,Jindal Stainless Ltd.,80,0.6466,0.0,0.1667,0.0,37.52,
-SENCO,Senco Gold Ltd.,30,0.6453,0.0,0.1467,0.0,107.38,
-CUPID,Cupid Ltd.,60,0.6445,0.0,0.0068,0.0,12.51,
-TARIL,Transformers And Rectifiers (India) Ltd.,80,0.6441,0.0,0.0664,0.0,34.45,0.205
-POLYCAB,Polycab India Ltd.,100,0.6441,0.0,0.1705,0.0,1.74,0.2555
-BIRLACORPN,Birla Corporation Ltd.,80,0.6434,0.0,0.2058,0.0,46.04,
-J&KBANK,Jammu & Kashmir Bank Ltd.,30,0.6432,0.0,0.1131,0.0,,0.1461
-CANBK,Canara Bank,70,0.6432,0.0,0.1782,0.0,,0.1512
-PRESTIGE,Prestige Estates Projects Ltd.,50,0.6427,0.0,0.29,0.0,105.49,0.0775
-ASTERDM,Aster DM Quality Care Ltd.,80,0.6426,0.0,0.2106,0.0,45.92,
-GODREJCP,Godrej Consumer Products Ltd.,80,0.6425,0.0,0.2334,0.0,34.9,
-PRUDENT,Prudent Corporate Advisory Services Ltd.,80,0.6424,0.0,0.2897,0.0,3.87,
-NETWEB,Netweb Technologies India Ltd.,60,0.6416,0.0,0.1136,0.0,39.02,
-COHANCE,Cohance Lifesciences Ltd.,80,0.6396,0.0,0.227,0.0,9.93,
-CAPILLARY,Capillary Technologies India Ltd.,80,0.6394,0.0,0.1823,0.0,5.24,
-BAJAJFINSV,Bajaj Finserv Ltd.,30,0.6387,0.0,0.1493,0.0,256.4,
-JINDALSTEL,Jindal Steel Ltd.,80,0.6386,0.0,0.2317,0.0,43.61,
-INDIAGLYCO,India Glycols Ltd.,30,0.6384,0.0,0.0344,0.0,57.65,
-SCI,Shipping Corporation of India Ltd.,60,0.6375,0.0,0.0476,0.0,29.45,
-SHAREINDIA,Share India Securities Ltd.,60,0.6372,0.0,0.0077,0.0,27.93,
-THANGAMAYL,Thangamayil Jewellery Ltd.,50,0.6365,0.0,0.1972,0.0,64.49,
-WESTLIFE,Westlife Foodworld Ltd.,50,0.6364,0.0,0.3146,0.0,291.52,
-JSWSTEEL,JSW Steel Ltd.,50,0.636,0.0,0.1734,0.0,95.37,
-POLYMED,Poly Medicure Ltd.,80,0.6358,0.0,0.182,0.0,11.23,
-JINDALSAW,Jindal Saw Ltd.,80,0.6355,0.0,0.162,0.0,38.19,
-HAVELLS,Havells India Ltd.,80,0.6352,0.0,0.2369,0.0,2.8,
-WEWORK,WeWork India Management Ltd.,50,0.6343,0.0,0.2605,0.0,1854.96,
-NEWGEN,Newgen Software Technologies Ltd.,60,0.634,0.0,0.0865,0.0,2.21,
-DOMS,DOMS Industries Ltd.,80,0.6339,0.0,0.2916,0.0,10.85,
-GPIL,Godawari Power & Ispat Ltd.,60,0.6334,0.0,0.0677,0.0,7.58,
-COCHINSHIP,Cochin Shipyard Ltd.,60,0.6333,0.0,0.1081,0.0,28.47,
-CHAMBLFERT,Chambal Fertilizers & Chemicals Ltd.,60,0.6329,0.0,0.1271,0.0,10.27,
-FORCEMOT,Force Motors Ltd.,30,0.6324,0.0,0.0617,0.0,,
-TORNTPHARM,Torrent Pharmaceuticals Ltd.,50,0.6318,0.0,0.1971,0.0,85.45,
-ELECON,Elecon Engineering Co. Ltd.,60,0.6316,0.0,0.1155,0.0,14.4,0.1029
-PTCIL,PTC Industries Ltd.,60,0.6316,0.0,0.0871,0.0,17.82,0.0859
-BALUFORGE,Balu Forge Industries Ltd.,60,0.6315,0.0,0.0152,0.0,9.52,
-SUNTECK,Sunteck Realty Ltd.,80,0.6303,0.0,0.152,0.0,17.31,
-BAJAJELEC,Bajaj Electricals Ltd,50,0.6299,0.0,0.2133,0.0,104.58,
-KALYANKJIL,Kalyan Jewellers India Ltd.,50,0.6286,0.0,0.2076,0.0,96.97,
-AGARWALEYE,Dr. Agarwal's Health Care Ltd.,50,0.6284,0.0,0.2898,0.0,50.3,
-HCLTECH,HCL Technologies Ltd.,100,0.6278,0.0,0.2827,0.0,7.91,0.2465
-NESTLEIND,Nestle India Ltd.,80,0.6277,0.0,0.1746,0.0,8.62,
-KAJARIACER,Kajaria Ceramics Ltd.,80,0.6271,0.0,0.3037,0.0,7.3,
-RENUKA,Shree Renuka Sugars Ltd.,30,0.6262,0.0,0.0861,0.0,,
-GRWRHITECH,Garware Hi-Tech Films Ltd.,60,0.6254,0.0,0.1,0.0,0.59,
-NHPC,NHPC Ltd.,50,0.6248,0.0,0.2193,0.0,113.11,
-IRCTC,Indian Railway Catering And Tourism Corporation Ltd.,80,0.624,0.0,0.1686,0.0,1.87,
-TORNTPOWER,Torrent Power Ltd.,50,0.6231,0.0,0.2666,0.0,70.89,
-ANANTRAJ,Anant Raj Ltd.,60,0.623,0.0,0.1095,0.0,11.7,
-HINDUNILVR,Hindustan Unilever Ltd.,80,0.6227,0.0,0.2078,0.0,3.02,
-CGCL,Capri Global Capital Ltd.,50,0.6227,0.0,0.2317,0.0,334.73,
-JSWDULUX,JSW Dulux Ltd.,80,0.6222,0.0,0.2852,0.0,3.23,
-BELRISE,Belrise Industries Ltd.,80,0.622,0.0,0.1739,0.0,29.1,
-STARHEALTH,Star Health and Allied Insurance Company Ltd.,50,0.6218,0.0,0.2432,0.0,,0.0751
-MAHSCOOTER,Maharashtra Scooters Ltd.,30,0.6213,0.0,0.0789,0.0,,
-DBREALTY,VALOR ESTATE Ltd.,60,0.6213,0.0,0.0205,0.0,18.41,
-ULTRACEMCO,UltraTech Cement Ltd.,80,0.6197,0.0,0.2266,0.0,29.43,
-SHRIPISTON,SPR Auto Technologies Ltd.,50,0.6186,0.0,0.1645,0.0,65.22,
-MSUMI,Motherson Sumi Wiring India Ltd.,80,0.6175,0.0,0.2133,0.0,10.79,
-NBCC,NBCC (India) Ltd.,60,0.6175,0.0,0.1452,0.0,0.01,
-LTFOODS,LT Foods Ltd.,80,0.6161,0.0,0.1603,0.0,35.62,
-MARUTI,Maruti Suzuki India Ltd.,80,0.6159,0.0,0.2584,0.0,0.1,
-BAJAJHLDNG,Bajaj Holdings & Investment Ltd.,60,0.6159,0.0,0.1322,0.0,0.01,0.116
-ICIL,Indo Count Industries Ltd.,30,0.6156,0.0,0.1375,0.0,56.99,
-NETWORK18,Network18 Media & Investments Ltd.,30,0.6152,0.0,0.0188,0.0,65.92,
-ALKEM,Alkem Laboratories Ltd.,80,0.6141,0.0,0.2813,0.0,14.27,
-SBFC,SBFC Finance Ltd.,50,0.6131,0.0,0.2389,0.0,195.69,
-COALINDIA,Coal India Ltd.,80,0.6114,0.0,0.2692,0.0,11.63,
-JKTYRE,JK Tyre & Industries Ltd.,30,0.6105,0.0,0.1475,0.0,80.55,
-HEMIPROP,Hemisphere Properties India Ltd.,60,0.6101,0.0,0.0901,0.0,20.14,
-BAJAJ-AUTO,Bajaj Auto Ltd.,50,0.6096,0.0,0.1664,0.0,56.35,
-NMDC,NMDC Ltd.,80,0.608,0.0,0.2061,0.0,18.8,
-NSLNISP,NMDC Steel Ltd.,80,0.6079,0.0,0.1708,0.0,35.02,
-FEDFINA,Fedbank Financial Services Ltd.,50,0.6064,0.0,0.1584,0.0,467.34,
-VBL,Varun Beverages Ltd.,100,0.6059,0.0,0.2306,0.0,15.87,0.1685
-TATACOMM,Tata Communications Ltd.,50,0.6047,0.0,0.251,0.0,335.85,
-DALBHARAT,Dalmia Bharat Ltd.,80,0.6046,0.0,0.2942,0.0,40.99,
-POONAWALLA,Poonawalla Fincorp Ltd.,50,0.6036,0.0,0.2001,0.0,431.21,0.0921
-ZFCVINDIA,ZF Commercial Vehicle Control Systems India Ltd.,80,0.6027,0.0,0.2643,0.0,1.49,
-PGIL,Pearl Global Industries Ltd.,50,0.6025,0.0,0.248,0.0,65.57,
-TATATECH,Tata Technologies Ltd.,80,0.6015,0.0,0.0794,0.0,28.96,0.1522
-HINDCOPPER,Hindustan Copper Ltd.,60,0.6014,0.0,0.0864,0.0,3.32,
-CHOICEIN,Choice International Ltd.,60,0.6005,0.0,0.107,0.0,49.77,
-CGPOWER,CG Power and Industrial Solutions Ltd.,80,0.6,0.0,0.1971,0.0,1.45,
-RBLBANK,RBL Bank Ltd.,50,0.5987,0.0,0.1713,0.0,,0.0404
-BHEL,Bharat Heavy Electricals Ltd.,80,0.5982,0.0,0.2282,0.0,31.31,
-TRITURBINE,Triveni Turbine Ltd.,80,0.5973,0.0,0.2671,0.0,2.48,
-SYRMA,Syrma SGS Technology Ltd.,80,0.5961,0.0,0.1781,0.0,13.04,
-AARTIDRUGS,Aarti Drugs Ltd.,60,0.5956,0.0,0.1098,0.0,37.22,
-COROMANDEL,Coromandel International Ltd.,80,0.5956,0.0,0.2565,0.0,11.47,
-UNITDSPR,United Spirits Ltd.,80,0.5949,0.0,0.2488,0.0,4.61,
-EMAMILTD,Emami Ltd.,80,0.594,0.0,0.2859,0.0,5.54,
-GRAVITA,Gravita India Ltd.,60,0.5936,0.0,0.1084,0.0,29.93,
-FINPIPE,Finolex Industries Ltd.,80,0.5935,0.0,0.156,0.0,7.17,
-VAIBHAVGBL,Vaibhav Global Ltd.,80,0.5925,0.0,0.1518,0.0,25.23,
-INOXGREEN,Inox Green Energy Services Ltd.,60,0.5916,0.0,0.0502,0.0,5.15,
-GAIL,GAIL (India) Ltd.,80,0.5898,0.0,0.2677,0.0,27.81,
-MARICO,Marico Ltd.,80,0.5894,0.0,0.2567,0.0,12.39,
-MOTHERSON,Samvardhana Motherson International Ltd.,80,0.5891,0.0,0.2527,0.0,43.91,
-SBILIFE,SBI Life Insurance Company Ltd.,50,0.5881,0.0,0.3081,0.0,,0.137
-FIRSTCRY,Brainbees Solutions Ltd.,80,0.5879,0.0,0.2388,0.0,29.76,
-TITAN,Titan Company Ltd.,50,0.5876,0.0,0.2188,0.0,195.0,
-FINCABLES,Finolex Cables Ltd.,80,0.5864,0.0,0.2202,0.0,0.31,
-AFCONS,Afcons Infrastructure Ltd.,50,0.586,0.0,0.2498,0.0,66.54,
-PRIVISCL,Privi Speciality Chemicals Ltd.,30,0.5854,0.0,0.0856,0.0,74.4,
-BALKRISIND,Balkrishna Industries Ltd.,80,0.5854,0.0,0.3112,0.0,37.52,
-AIAENG,AIA Engineering Ltd.,80,0.5853,0.0,0.3419,0.0,0.13,
-IIFLCAPS,IIFL Capital Services Ltd.,30,0.5848,0.0,0.1454,0.0,59.29,
-SOBHA,Sobha Ltd.,80,0.5848,0.0,0.273,0.0,24.62,
-PARADEEP,Paradeep Phosphates Ltd.,50,0.5843,0.0,0.2236,0.0,101.82,
-POWERMECH,Power Mech Projects Ltd.,80,0.5842,0.0,0.25,0.0,25.63,
-GRINDWELL,Grindwell Norton Ltd.,80,0.5831,0.0,0.2194,0.0,2.38,
-ECLERX,eClerx Services Ltd.,80,0.5824,0.0,0.3272,0.0,15.01,
-RKFORGE,Ramkrishna Forgings Ltd.,50,0.5815,0.0,0.1599,0.0,74.42,
-INDIAMART,Indiamart Intermesh Ltd.,80,0.5808,0.0,0.1261,0.0,0.97,0.2315
-TENNIND,Tenneco Clean Air India Ltd.,80,0.5806,0.0,0.2599,0.0,4.29,
-BORORENEW,Borosil Renewables Ltd.,60,0.5784,0.0,0.0432,0.0,10.74,
-RHIM,RHI MAGNESITA INDIA LTD.,80,0.5761,0.0,0.2459,0.0,12.6,
-JKPAPER,JK Paper Ltd.,60,0.5761,0.0,0.1097,0.0,44.54,
-GODREJPROP,Godrej Properties Ltd.,50,0.5758,0.0,0.2429,0.0,82.12,
-ACC,ACC Ltd.,80,0.5751,0.0,0.2284,0.0,2.08,
-HSCL,Himadri Speciality Chemical Ltd.,60,0.5743,0.0,0.0591,0.0,16.17,
-HDFCLIFE,HDFC Life Insurance Company Ltd.,80,0.5742,0.0,0.2936,0.0,15.88,0.1083
-CONCOR,Container Corporation of India Ltd.,80,0.574,0.0,0.4228,0.0,7.39,
-SBIN,State Bank of India,70,0.5723,0.0,0.2917,0.0,,0.1518
-LUMAXTECH,Lumax Auto Technologies Ltd.,50,0.572,0.0,0.1942,0.0,83.41,
-ABLBL,Aditya Birla Lifestyle Brands Ltd.,50,0.5717,0.0,0.2246,0.0,213.72,
-NUVAMA,Nuvama Wealth Management Ltd.,50,0.5712,0.0,0.1824,0.0,282.32,
-VEDL,Vedanta Ltd.,80,0.5707,0.0,0.1817,0.0,48.04,
-CERA,Cera Sanitaryware Ltd,80,0.5702,0.0,0.2627,0.0,3.17,
-TECHNOE,Techno Electric & Engineering Company Ltd.,80,0.5696,0.0,0.2614,0.0,1.74,
-YATHARTH,Yatharth Hospital & Trauma Care Services Ltd.,60,0.5694,0.0,0.1278,0.0,14.61,
-BPCL,Bharat Petroleum Corporation Ltd.,50,0.5666,0.0,0.2878,0.0,54.33,
-HDFCAMC,HDFC Asset Management Company Ltd.,80,0.5664,0.0,0.2747,0.0,2.36,
-GREAVESCOT,Greaves Cotton Ltd.,60,0.5656,0.0,0.0313,0.0,26.05,
-BAJFINANCE,Bajaj Finance Ltd.,50,0.565,0.0,0.2791,0.0,314.83,
-JUBLPHARMA,Jubilant Pharmova Ltd.,50,0.5623,0.0,0.2396,0.0,50.94,
-RALLIS,Rallis India Ltd.,60,0.5618,0.0,0.1044,0.0,2.99,
-NYKAA,FSN E-Commerce Ventures Ltd.,50,0.5613,0.0,0.3237,0.0,82.83,
-PNCINFRA,PNC Infratech Ltd.,50,0.5607,0.0,0.2713,0.0,75.88,
-PARAS,Paras Defence and Space Technologies Ltd.,60,0.5605,0.0,0.0759,0.0,3.73,
-PFC,Power Finance Corporation Ltd.,50,0.56,0.0,0.2488,0.0,536.84,
-AZAD,Azad Engineering Ltd.,80,0.5584,0.0,0.197,0.0,31.02,
-ELECTCAST,Electrosteel Castings Ltd.,60,0.5575,0.0,0.0576,0.0,26.35,
-APARINDS,Apar Industries Ltd.,80,0.5569,0.0,0.2875,0.0,17.72,
-SWANCORP,Swan Corp Ltd.,80,0.5562,0.0,0.1827,0.0,24.56,
-SUNPHARMA,Sun Pharmaceutical Industries Ltd.,80,0.5561,0.0,0.2984,0.0,5.52,
-VIYASH,Viyash Scientific Ltd.,60,0.556,0.0,0.0974,0.0,15.72,
-TANLA,Tanla Platforms Ltd.,60,0.5555,0.0,0.0556,0.0,2.12,
-SHILPAMED,Shilpa Medicare Ltd.,60,0.5552,0.0,0.1106,0.0,25.46,
-ADVENZYMES,Advanced Enzyme Tech Ltd.,80,0.5546,0.0,0.1869,0.0,1.9,
-INDGN,Indegene Ltd.,80,0.5545,0.0,0.2684,0.0,5.04,
-VGUARD,V-Guard Industries Ltd.,80,0.5544,0.0,0.3085,0.0,6.96,
-AHLUCONT,Ahluwalia Contracts (India) Ltd.,80,0.5536,0.0,0.3361,0.0,3.55,
-APOLLO,Apollo Micro Systems Ltd.,60,0.5526,0.0,0.0187,0.0,41.53,
-CLEAN,Clean Science and Technology Ltd.,80,0.5521,0.0,0.2303,0.0,0.14,
-AVL,Aditya Vision Ltd.,50,0.5514,0.0,0.317,0.0,83.2,
-HINDPETRO,Hindustan Petroleum Corporation Ltd.,50,0.55,0.0,0.2824,0.0,85.37,
-KAYNES,Kaynes Technology India Ltd.,60,0.5491,0.0,0.1391,0.0,19.17,
-FSL,Firstsource Solutions Ltd.,50,0.5487,0.0,0.3093,0.0,67.14,
-AUROPHARMA,Aurobindo Pharma Ltd.,80,0.5478,0.0,0.2917,0.0,21.31,
-LALPATHLAB,Dr. Lal Path Labs Ltd.,80,0.547,0.0,0.3225,0.0,7.83,
-KPIGREEN,KPI Green Energy Ltd.,30,0.5469,0.0,0.0499,0.0,158.76,
-PPLPHARMA,Piramal Pharma Ltd.,50,0.5453,0.0,0.1977,0.0,69.98,
-FIEMIND,Fiem Industries Ltd,60,0.5452,0.0,0.1149,0.0,5.39,
-ASHOKA,Ashoka Buildcon Ltd.,80,0.5449,0.0,0.1729,0.0,24.46,
-SKYGOLD,SKY GOLD AND DIAMONDS Ltd.,30,0.5447,0.0,0.1394,0.0,72.07,
-SAFARI,Safari Industries (India) Ltd.,80,0.5446,0.0,0.3265,0.0,10.46,
-AVALON,Avalon Technologies Ltd.,80,0.544,0.0,0.3142,0.0,29.5,
-ASTRAL,Astral Ltd.,80,0.5434,0.0,0.2865,0.0,6.17,
-AJANTPHARM,Ajanta Pharmaceuticals Ltd.,80,0.5429,0.0,0.2439,0.0,5.87,
-JKCEMENT,J.K. Cement Ltd.,50,0.5427,0.0,0.343,0.0,87.52,
-PCJEWELLER,PC Jeweller Ltd.,60,0.5424,0.0,0.0116,0.0,14.27,
-AURIONPRO,Aurionpro Solution Ltd.,60,0.5424,0.0,0.1426,0.0,3.48,
-BEML,BEML Ltd.,80,0.5422,0.0,0.2235,0.0,10.53,
-HERITGFOOD,Heritage Foods Ltd.,60,0.542,0.0,0.0849,0.0,32.62,
-ABREL,Aditya Birla Real Estate Ltd.,50,0.5415,0.0,0.2139,0.0,152.37,
-V2RETAIL,V2 Retail Ltd.,30,0.541,0.0,0.1092,0.0,110.22,
-SHAKTIPUMP,Shakti Pumps (India) Ltd.,60,0.5403,0.0,0.0522,0.0,29.62,
-NTPC,NTPC Ltd.,50,0.54,0.0,0.3491,0.0,128.34,
-INDIGOPNTS,Indigo Paints Ltd.,80,0.5381,0.0,0.2784,0.0,1.83,
-RATEGAIN,Rategain Travel Technologies Ltd.,80,0.5378,0.0,0.2246,0.0,47.3,
-ABFRL,Aditya Birla Fashion and Retail Ltd.,30,0.5368,0.0,0.1272,0.0,98.82,
-M&MFIN,Mahindra & Mahindra Financial Services Ltd.,50,0.5363,0.0,0.3749,0.0,429.85,
-VIJAYA,Vijaya Diagnostic Centre Ltd.,80,0.5348,0.0,0.394,0.0,44.15,
-ACI,Archean Chemical Industries Ltd.,80,0.5343,0.0,0.2403,0.0,24.13,
-BEL,Bharat Electronics Ltd.,80,0.5342,0.0,0.2858,0.0,0.27,
-CCAVENUE,AvenuesAI Ltd.,60,0.5323,0.0,0.038,0.0,8.63,
-BHARTIARTL,Bharti Airtel Ltd.,70,0.5315,0.0,0.3569,0.0,100.42,0.2015
-SKFINDIA,SKF India Ltd.,80,0.5315,0.0,0.2752,0.0,0.22,
-POWERGRID,Power Grid Corporation of India Ltd.,50,0.5291,0.0,0.3616,0.0,150.81,
-ASIANPAINT,Asian Paints Ltd.,80,0.529,0.0,0.2731,0.0,17.85,
-ETHOSLTD,Ethos Ltd.,80,0.5287,0.0,0.3384,0.0,19.37,
-SYNGENE,Syngene International Ltd.,80,0.5282,0.0,0.3891,0.0,9.47,
-MOTILALOFS,Motilal Oswal Financial Services Ltd.,50,0.5271,0.0,0.2908,0.0,165.8,
-RECLTD,REC Ltd.,50,0.5265,0.0,0.2319,0.0,607.46,
-SKFINDUS,SKF India (Industrial) Ltd.,80,0.5258,0.0,0.2904,0.0,0.31,
-TIMKEN,Timken India Ltd.,80,0.524,0.0,0.3053,0.0,0.5,
-SRF,SRF Ltd.,80,0.5239,0.0,0.2957,0.0,36.2,
-CSBBANK,CSB Bank Ltd.,50,0.5236,0.0,0.183,0.0,,
-TVSMOTOR,TVS Motor Company Ltd.,50,0.5227,0.0,0.3092,0.0,306.09,
-DATAPATTNS,Data Patterns (India) Ltd.,80,0.5223,0.0,0.1973,0.0,0.3,
-RAINBOW,Rainbow Childrens Medicare Ltd.,50,0.5218,0.0,0.34,0.0,53.56,
-ZAGGLE,Zaggle Prepaid Ocean Services Ltd.,60,0.5207,0.0,0.0432,0.0,3.88,
-DIVISLAB,Divi's Laboratories Ltd.,80,0.52,0.0,0.2858,0.0,0.04,
-CHOLAFIN,Cholamandalam Investment and Finance Company Ltd.,50,0.5195,0.0,0.3269,0.0,695.28,
-VMART,V-Mart Retail Ltd.,50,0.519,0.0,0.3544,0.0,100.68,
-RELIANCE,Reliance Industries Ltd.,80,0.518,0.0,0.2816,0.0,46.28,
-GLAND,Gland Pharma Ltd.,80,0.5175,0.0,0.3702,0.0,2.74,
-GVT&D,GE Vernova T&D India Ltd.,80,0.5174,0.0,0.2968,0.0,0.89,
-SUPREMEIND,Supreme Industries Ltd.,80,0.5169,0.0,0.2947,0.0,1.47,
-COLPAL,Colgate Palmolive (India) Ltd.,80,0.5141,0.0,0.2198,0.0,2.99,
-ENGINERSIN,Engineers India Ltd.,80,0.5137,0.0,0.1873,0.0,0.53,
-EICHERMOT,Eicher Motors Ltd.,80,0.5133,0.0,0.2602,0.0,2.05,
-INDUSTOWER,Indus Towers Ltd.,70,0.5131,0.0,0.3356,0.0,51.79,0.1891
-CASTROLIND,Castrol India Ltd.,100,0.513,0.0,0.1665,0.0,2.78,0.57
-CUMMINSIND,Cummins India Ltd.,80,0.5129,0.0,0.3038,0.0,0.43,
-NATIONALUM,National Aluminium Co. Ltd.,80,0.5128,0.0,0.22,0.0,0.28,
-THYROCARE,Thyrocare Technologies Ltd.,80,0.5118,0.0,0.2202,0.0,8.65,
-BRITANNIA,Britannia Industries Ltd.,80,0.5118,0.0,0.249,0.0,26.88,
-WOCKPHARMA,Wockhardt Ltd.,60,0.5102,0.0,0.1313,0.0,42.28,
-SAGILITY,Sagility Ltd.,80,0.5095,0.0,0.2345,0.0,11.5,
-EXIDEIND,Exide Industries Ltd.,80,0.5094,0.0,0.2328,0.0,11.31,
-NATCOPHARM,NATCO Pharma Ltd.,60,0.5088,0.0,0.1296,0.0,7.74,
-JUBLINGREA,Jubilant Ingrevia Ltd.,80,0.5088,0.0,0.2793,0.0,25.33,
-STLTECH,Sterlite Technologies Ltd.,50,0.5083,0.0,0.2096,0.0,85.63,
-AAVAS,Aavas Financiers Ltd.,50,0.5077,0.0,0.3079,0.0,310.55,
-ATHERENERG,Ather Energy Ltd.,80,0.5062,0.0,0.2545,0.0,25.82,
-NAVA,Nava Ltd.,60,0.505,0.0,0.0569,0.0,20.68,
-BATAINDIA,Bata India Ltd.,50,0.5047,0.0,0.3074,0.0,86.9,
-BECTORFOOD,Mrs. Bectors Food Specialities Ltd.,80,0.5029,0.0,0.3155,0.0,15.01,
-OLECTRA,Olectra Greentech Ltd.,60,0.5027,0.0,0.0518,0.0,30.84,
-NEOGEN,NEOGEN CHEMICALS LTD.,50,0.5025,0.0,0.1859,0.0,170.91,
-JIOFIN,Jio Financial Services Ltd.,80,0.5019,0.0,0.1953,0.0,16.29,
-PETRONET,Petronet LNG Ltd.,80,0.5018,0.0,0.2717,0.0,10.51,
-RTNPOWER,RattanIndia Power Ltd.,30,0.5016,0.0,0.0303,0.0,80.01,
-ZENSARTECH,Zensar Technolgies Ltd.,80,0.5012,0.0,0.255,0.0,1.68,
-IGL,Indraprastha Gas Ltd.,80,0.5,0.0,0.327,0.0,0.85,
-ZENTEC,Zen Technologies Ltd.,30,0.4991,0.0,0.1163,0.0,0.95,
-DEEPAKNTR,Deepak Nitrite Ltd.,50,0.4985,0.0,0.2668,0.0,27.9,
-WELCORP,Welspun Corp Ltd.,50,0.4985,0.0,0.2863,0.0,25.04,
-ASHAPURMIN,Ashapura Minechem Ltd.,20,0.4983,0.0,0.1759,0.0,87.77,
-RELIGARE,Religare Enterprises Ltd.,30,0.4979,0.0,0.0585,0.0,12.72,
-APOLLOTYRE,Apollo Tyres Ltd.,50,0.4966,0.0,0.3437,0.0,21.99,
-GROWW,Billionbrains Garage Ventures Ltd.,50,0.4922,0.0,0.3969,0.0,3.03,
-MASTEK,Mastek Ltd.,50,0.4915,0.0,0.2477,0.0,14.65,
-RAMCOCEM,The Ramco Cements Ltd.,50,0.4915,0.0,0.3071,0.0,47.9,
-CCL,CCL Products (I) Ltd.,20,0.4914,0.0,0.2639,0.0,56.49,
-ANGELONE,Angel One Ltd.,20,0.4899,0.0,0.2361,0.0,129.31,
-GLENMARK,Glenmark Pharmaceuticals Ltd.,50,0.4896,0.0,0.271,0.0,5.65,
-STYRENIX,Styrenix Performance Materials Ltd.,50,0.4889,0.0,0.1601,0.0,40.12,
-KNRCON,KNR Constructions Ltd.,50,0.4882,0.0,0.2145,0.0,49.16,
-GRASIM,Grasim Industries Ltd.,20,0.488,0.0,0.2241,0.0,135.04,
-TATAPOWER,Tata Power Co. Ltd.,20,0.4871,0.0,0.2034,0.0,168.05,
-CEATLTD,Ceat Ltd.,20,0.4866,0.0,0.3348,0.0,81.81,0.1079
-TIMETECHNO,Time Technoplast Ltd.,50,0.486,0.0,0.2042,0.0,17.61,
-TEXRAIL,Texmaco Rail & Eng. Ltd.,30,0.4853,0.0,0.0908,0.0,37.09,
-RBA,Restaurant Brands Asia Ltd.,20,0.4832,0.0,0.3152,0.0,285.66,
-BIOCON,Biocon Ltd.,50,0.4812,0.0,0.3157,0.0,42.15,
-JAMNAAUTO,Jamna Auto Industries Ltd.,30,0.4808,0.0,0.0856,0.0,13.05,
-MRF,MRF Ltd.,50,0.4788,0.0,0.1868,0.0,15.29,
-METROPOLIS,Metropolis Healthcare Ltd.,50,0.4782,0.0,0.4429,0.0,15.21,
-PHOENIXLTD,Phoenix Mills Ltd.,50,0.4782,0.0,0.3793,0.0,37.21,
-JSFB,Jana Small Finance Bank Ltd.,20,0.4743,0.0,0.1685,0.0,,
-INOXWIND,Inox Wind Ltd.,50,0.4723,0.0,0.2097,0.0,20.63,
-JKLAKSHMI,JK Lakshmi Cement Ltd.,20,0.4723,0.0,0.2954,0.0,66.59,
-DEEPAKFERT,Deepak Fertilisers & Petrochemicals Corp. Ltd.,20,0.4709,0.0,0.1907,0.0,75.97,
-NAUKRI,Info Edge (India) Ltd.,50,0.4706,0.0,0.3638,0.0,0.64,
-BHARATFORG,Bharat Forge Ltd.,20,0.4703,0.0,0.3746,0.0,76.47,
-LUPIN,Lupin Ltd.,50,0.4702,0.0,0.35,0.0,29.39,
-CHOLAHLDNG,Cholamandalam Financial Holdings Ltd.,20,0.4693,0.0,0.3305,0.0,623.16,
-BLUESTONE,BlueStone Jewellery and Lifestyle Ltd.,20,0.4693,0.0,0.3485,0.0,110.03,
-EIDPARRY,E.I.D. Parry (India) Ltd.,50,0.4692,0.0,0.2582,0.0,23.65,
-IIFL,IIFL Finance Ltd.,20,0.4688,0.0,0.2039,0.0,447.42,
-DYNAMATECH,Dynamatic Technologies Ltd.,20,0.4687,0.0,0.1584,0.0,80.39,
-RAIN,Rain Industries Ltd,0,0.4683,0.0,0.0745,0.0,130.48,0.0855
-SWSOLAR,Sterling and Wilson Renewable Energy Ltd.,0,0.4673,0.0,0.0826,0.0,182.95,
-BRIGADE,Brigade Enterprises Ltd.,20,0.4671,0.0,0.3769,0.0,84.32,
-PIRAMALFIN,Piramal Finance Ltd.,20,0.4658,0.0,0.258,0.0,286.78,0.0604
-SHAILY,Shaily Engineering Plastics Ltd.,50,0.4655,0.0,0.3538,0.0,24.75,
-PAGEIND,Page Industries Ltd.,50,0.4643,0.0,0.4446,0.0,18.42,
-ITCHOTELS,ITC Hotels Ltd.,50,0.4635,0.0,0.3154,0.0,0.63,
-ANUP,The Anup Engineering Ltd.,50,0.4623,0.0,0.1748,0.0,17.66,
-PIIND,PI Industries Ltd.,50,0.462,0.0,0.4014,0.0,3.05,
-ATUL,Atul Ltd.,50,0.4617,0.0,0.2805,0.0,2.91,
-WAKEFIT,Wakefit Innovations Ltd.,50,0.4611,0.0,0.4419,0.0,24.02,
-HAPPSTMNDS,Happiest Minds Technologies Ltd.,0,0.4602,0.0,0.0796,0.0,98.7,0.1332
-BALRAMCHIN,Balrampur Chini Mills Ltd.,20,0.459,0.0,0.3417,0.0,76.61,
-IDBI,IDBI Bank Ltd.,20,0.4555,0.0,0.498,0.0,,0.1387
-TMCV,Tata Motors Ltd.,50,0.4517,0.0,0.2577,0.0,44.09,
-PGEL,PG Electroplast Ltd.,50,0.4507,0.0,0.2783,0.0,19.57,
-IPCALAB,Ipca Laboratories Ltd.,50,0.4506,0.0,0.4547,0.0,8.49,
-ELGIEQUIP,Elgi Equipments Ltd.,50,0.4503,0.0,0.2033,0.0,23.89,
-TATAELXSI,Tata Elxsi Ltd.,50,0.4485,0.0,0.1477,0.0,4.9,0.2387
-ABSLAMC,Aditya Birla Sun Life AMC Ltd.,50,0.448,0.0,0.4516,0.0,1.58,
-KIRLPNU,Kirloskar Pneumatic Company Ltd.,50,0.4456,0.0,0.3054,0.0,0.27,
-KPITTECH,KPIT Technologies Ltd.,50,0.443,0.0,0.2923,0.0,23.62,
-YESBANK,Yes Bank Ltd.,20,0.4416,0.0,0.1806,0.0,,0.0747
-TMPV,Tata Motors Passenger Vehicles Ltd.,20,0.4409,0.0,0.2551,0.0,70.36,
-IONEXCHANG,Ion Exchange (India) Ltd.,50,0.4404,0.0,0.2024,0.0,35.98,
-GPPL,Gujarat Pipavav Port Ltd.,50,0.4404,0.0,0.26,0.0,1.54,
-AARTIPHARM,Aarti Pharmalabs Ltd.,30,0.44,0.0,0.1248,0.0,37.36,
-SOLARINDS,Solar Industries India Ltd.,50,0.4392,0.0,0.4542,0.0,23.27,
-TIINDIA,Tube Investments of India Ltd.,50,0.4392,0.0,0.3888,0.0,5.36,
-MARKSANS,Marksans Pharma Ltd.,50,0.4387,0.0,0.184,0.0,11.25,
-GNFC,Gujarat Narmada Valley Fertilizers and Chemicals Ltd.,50,0.4347,0.0,0.153,0.0,0.07,
-INTELLECT,Intellect Design Arena Ltd.,30,0.4345,0.0,0.1479,0.0,4.96,
-RADICO,Radico Khaitan Ltd,50,0.4299,0.0,0.3261,0.0,15.03,
-GSFC,Gujarat State Fertilizers & Chemicals Ltd.,30,0.4286,0.0,0.1176,0.0,0.22,
-KIRLOSENG,Kirloskar Oil Eng Ltd.,20,0.4282,0.0,0.3275,0.0,154.86,
-MGL,Mahanagar Gas Ltd.,50,0.425,0.0,0.3482,0.0,3.46,
-CRAFTSMAN,Craftsman Automation Ltd.,20,0.4241,0.0,0.403,0.0,111.01,
-WHIRLPOOL,Whirlpool of India Ltd.,50,0.4237,0.0,0.3934,0.0,8.62,
-AARTIIND,Aarti Industries Ltd.,20,0.4215,0.0,0.2383,0.0,83.39,
-SONATSOFTW,Sonata Software Ltd.,50,0.4189,0.0,0.3058,0.0,37.96,
-TRENT,Trent Ltd.,50,0.4186,0.0,0.3026,0.0,36.03,
-KIMS,Krishna Institute of Medical Sciences Ltd.,20,0.4174,0.0,0.4126,0.0,166.23,
-INDIGO,InterGlobe Aviation Ltd.,20,0.4157,0.0,0.4393,0.0,1112.71,
-BSOFT,Birlasoft Ltd.,50,0.4091,0.0,0.2656,0.0,3.42,
-JUBLFOOD,Jubilant Foodworks Ltd.,20,0.4071,0.0,0.4491,0.0,205.32,
-GMMPFAUDLR,GMM Pfaudler Ltd.,20,0.4066,0.0,0.1994,0.0,84.46,
-TITAGARH,Titagarh Rail Systems Ltd.,50,0.4062,0.0,0.2072,0.0,25.36,
-ARVIND,Arvind Ltd.,50,0.4052,0.0,0.3083,0.0,40.07,
-USHAMART,Usha Martin Ltd.,50,0.4017,0.0,0.287,0.0,6.92,
-DIXON,Dixon Technologies (India) Ltd.,50,0.4012,0.0,0.3527,0.0,18.46,
-VMM,Vishal Mega Mart Ltd.,50,0.4002,0.0,0.4814,0.0,26.82,
-SWIGGY,Swiggy Ltd.,50,0.3976,0.0,0.3989,0.0,13.93,
-PRICOLLTD,Pricol Ltd.,50,0.3966,0.0,0.2428,0.0,30.21,
-GRANULES,Granules India Ltd.,50,0.3963,0.0,0.2472,0.0,29.73,
-CARBORUNIV,Carborundum Universal Ltd.,50,0.3937,0.0,0.3744,0.0,10.29,
-INDHOTEL,Indian Hotels Co. Ltd.,50,0.3935,0.0,0.3659,0.0,18.99,
-AMBER,Amber Enterprises India Ltd.,50,0.3924,0.0,0.4235,0.0,46.57,
-MEESHO,Meesho Ltd.,50,0.3918,0.0,0.4363,0.0,1.43,
-TI,Tilaknagar Industries Ltd.,20,0.3892,0.0,0.2361,0.0,77.18,
-HONASA,Honasa Consumer Ltd.,50,0.3873,0.0,0.4307,0.0,9.59,
-TATACHEM,Tata Chemicals Ltd.,50,0.3871,0.0,0.2661,0.0,36.08,
-CANFINHOME,Can Fin Homes Ltd.,40,0.3868,0.0,0.2997,0.0,608.66,0.1941
-LENSKART,Lenskart Solutions Ltd.,50,0.386,0.0,0.4046,0.0,34.98,
-ACUTAAS,Acutaas Chemicals Ltd.,50,0.3831,0.0,0.2818,0.0,2.08,
-NEULANDLAB,Neuland Laboratories Ltd.,50,0.3774,0.0,0.2803,0.0,16.07,
-BANDHANBNK,Bandhan Bank Ltd.,20,0.3761,0.0,0.3974,0.0,,
-HINDALCO,Hindalco Industries Ltd.,20,0.3757,0.0,0.4045,0.0,72.6,
-GHCL,GHCL Ltd.,50,0.3755,0.0,0.2071,0.0,2.35,
-ARVINDFASN,Arvind Fashions Ltd.,20,0.3732,0.0,0.2947,0.0,115.11,
-HEROMOTOCO,Hero MotoCorp Ltd.,50,0.3724,0.0,0.371,0.0,3.57,
-TECHM,Tech Mahindra Ltd.,50,0.3709,0.0,0.4406,0.0,7.27,
-EDELWEISS,Edelweiss Financial Services Ltd.,20,0.3708,0.0,0.159,0.0,319.99,
-BLUESTARCO,Blue Star Ltd.,50,0.3699,0.0,0.3473,0.0,23.59,
-VOLTAS,Voltas Ltd.,50,0.3694,0.0,0.4053,0.0,15.51,
-APLAPOLLO,APL Apollo Tubes Ltd.,50,0.3691,0.0,0.4428,0.0,9.4,
-ASHOKLEY,Ashok Leyland Ltd.,20,0.3636,0.0,0.3141,0.0,344.74,
-SAILIFE,Sai Life Sciences Ltd.,50,0.3628,0.0,0.4377,0.0,11.61,
-KEI,KEI Industries Ltd.,50,0.3602,0.0,0.44,0.0,3.8,
-NCC,NCC Ltd.,20,0.3576,0.0,0.2342,0.0,57.39,
-SAMMAANCAP,Sammaan Capital Ltd.,0,0.3567,0.0,0.1121,0.0,273.03,
-ONESOURCE,Onesource Specialty Pharma Ltd.,50,0.3549,0.0,0.3328,0.0,25.79,
-TATASTEEL,Tata Steel Ltd.,20,0.354,0.0,0.3491,0.0,89.02,
-SUDARSCHEM,Sudarshan Chemical Industries Ltd.,20,0.3528,0.0,0.3286,0.0,64.17,
-FORTIS,Fortis Healthcare Ltd.,50,0.3519,0.0,0.5143,0.0,34.15,
-UTIAMC,UTI Asset Management Company Ltd.,50,0.3474,0.0,0.5209,0.0,3.13,
-ICICIAMC,ICICI Prudential Asset Management Company Ltd.,40,0.3459,0.0,0.6049,0.0,,0.7623
-TATACONSUM,Tata Consumer Products Ltd.,50,0.3437,0.0,0.3467,0.0,12.16,
-PRAJIND,Praj Industries Ltd.,50,0.3437,0.0,0.2721,0.0,13.22,
-HFCL,HFCL Ltd.,50,0.3423,0.0,0.1935,0.0,38.32,
-UPL,UPL Ltd.,20,0.3373,0.0,0.4204,0.0,57.13,
-KPIL,Kalpataru Projects International Ltd.,50,0.337,0.0,0.4887,0.0,45.81,
-ARE&M,Amara Raja Energy & Mobility Ltd.,50,0.3327,0.0,0.2873,0.0,5.01,
-PERSISTENT,Persistent Systems Ltd.,70,0.3313,0.0,0.4415,0.0,6.94,0.252
-NAZARA,Nazara Technologies Ltd.,50,0.3307,0.0,0.2678,0.0,6.05,
-JPPOWER,Jaiprakash Power Ventures Ltd.,30,0.3299,0.0,0.1133,0.0,26.63,
-URBANCO,Urban Company Ltd.,50,0.3258,0.0,0.5,0.0,6.33,
-BLACKBUCK,Blackbuck Ltd.,50,0.3237,0.0,0.4164,0.0,4.16,
-MEDPLUS,Medplus Health Services Ltd.,20,0.3234,0.0,0.3911,0.0,72.13,
-LAURUSLABS,Laurus Labs Ltd.,50,0.3203,0.0,0.3382,0.0,46.37,
-MANAPPURAM,Manappuram Finance Ltd.,20,0.3191,0.0,0.4051,0.0,360.19,
-AUBANK,AU Small Finance Bank Ltd.,20,0.3141,0.0,0.4941,0.0,,
-CIPLA,Cipla Ltd.,50,0.3113,0.0,0.4482,0.0,1.78,
-MPHASIS,MphasiS Ltd.,70,0.3112,0.0,0.5614,0.0,24.68,0.1774
-STAR,Strides Pharma Science Ltd.,20,0.3078,0.0,0.2833,0.0,55.82,
-GESHIP,Great Eastern Shipping Co. Ltd.,50,0.3077,0.0,0.2656,0.0,6.41,
-ASTRAMICRO,Astra Microwave Products Ltd.,50,0.3015,0.0,0.2308,0.0,21.88,
-DRREDDY,Dr. Reddy's Laboratories Ltd.,50,0.3014,0.0,0.5326,0.0,18.61,0.0884
-VOLTAMP,Voltamp Transformers Ltd,50,0.3001,0.0,0.4729,0.0,0.03,
-EPL,EPL Ltd.,50,0.2989,0.0,0.2463,0.0,33.58,
-RPOWER,Reliance Power Ltd.,0,0.2981,0.0,0.1053,0.0,92.35,
-TMB,Tamilnad Mercantile Bank Ltd.,0,0.2959,0.0,0.0412,0.0,,0.1452
-ITC,ITC Ltd.,50,0.2949,0.0,0.5216,0.0,3.29,
-PVRINOX,PVR INOX Ltd.,20,0.294,0.0,0.4109,0.0,91.87,
-SANSERA,Sansera Engineering Ltd.,50,0.292,0.0,0.5053,0.0,19.02,
-MTARTECH,MTAR Technologies Ltd.,50,0.292,0.0,0.336,0.0,45.78,
-NAVINFLUOR,Navin Fluorine International Ltd.,50,0.2859,0.0,0.4061,0.0,32.09,
-INDIASHLTR,India Shelter Finance Corporation Ltd.,20,0.2848,0.0,0.5459,0.0,195.3,
-KOTAKBANK,Kotak Mahindra Bank Ltd.,20,0.2841,0.0,0.4746,0.0,,
-APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,20,0.2839,0.0,0.5105,0.0,85.15,
-MAXHEALTH,Max Healthcare Institute Ltd.,50,0.282,0.0,0.5949,0.0,32.37,
-PNBHOUSING,PNB Housing Finance Ltd.,20,0.2801,0.0,0.5487,0.0,287.73,
-SONACOMS,Sona BLW Precision Forgings Ltd.,50,0.2791,0.0,0.696,0.0,7.21,
-IXIGO,Le Travenues Technology Ltd.,50,0.2758,0.0,0.5382,0.0,2.15,
-ENRIN,Siemens Energy India Ltd.,50,0.2753,0.0,0.5555,0.0,4.48,
-LLOYDSENGG,Lloyds Engineering Works Ltd.,30,0.2738,0.0,0.0127,0.0,6.45,
-PINELABS,Pine Labs Ltd.,50,0.2725,0.0,0.6179,0.0,7.47,
-WABAG,Va Tech Wabag Ltd.,50,0.2705,0.0,0.1826,0.0,8.87,
-ANANDRATHI,Anand Rathi Wealth Ltd.,70,0.2703,0.0,0.3104,0.0,5.34,0.4299
-AWFIS,Awfis Space Solutions Ltd.,20,0.2665,0.0,0.4998,0.0,271.73,
-APTUS,Aptus Value Housing Finance India Ltd.,20,0.266,0.0,0.4971,0.0,156.2,
-TDPOWERSYS,TD Power Systems Ltd.,70,0.2657,0.0,0.3741,0.0,1.69,0.2847
-FIVESTAR,Five-Star Business Finance Ltd.,20,0.2632,0.0,0.4755,0.0,111.93,
-SAPPHIRE,Sapphire Foods India Ltd.,20,0.261,0.0,0.678,0.0,102.06,
-REDINGTON,Redington Ltd.,50,0.2601,0.0,0.3842,0.0,27.26,
-REFEX,Refex Industries Ltd.,30,0.2562,0.0,0.0052,0.0,14.92,
-CYIENT,Cyient Ltd.,50,0.2533,0.0,0.522,0.0,7.53,
-M&M,Mahindra & Mahindra Ltd.,20,0.2517,0.0,0.5343,0.0,125.28,
-JMFINANCIL,JM Financial Ltd.,20,0.2458,0.0,0.5008,0.0,102.44,
-SAMHI,Samhi Hotels Ltd.,20,0.2404,0.0,0.3238,0.0,81.1,
-PAYTM,One 97 Communications Ltd.,50,0.2389,0.0,0.5072,0.0,1.07,
-ICICIPRULI,ICICI Prudential Life Insurance Company Ltd.,50,0.2364,0.0,0.704,0.0,17.73,0.1292
-LEMONTREE,Lemon Tree Hotels Ltd.,20,0.2233,0.0,0.4004,0.0,96.37,
-POLICYBZR,PB Fintech Ltd.,50,0.2222,0.0,0.6022,0.0,4.92,
-SHRIRAMFIN,Shriram Finance Ltd.,40,0.2217,0.0,0.5944,0.0,276.21,0.185
-ETERNAL,Eternal Ltd.,50,0.2178,0.0,0.5027,0.0,14.83,
-PTC,PTC India Ltd.,50,0.2169,0.0,0.2515,0.0,25.06,
-COFORGE,Coforge Ltd.,50,0.2134,0.0,0.5957,0.0,7.52,
-HCC,Hindustan Construction Co. Ltd.,30,0.2087,0.0,0.0641,0.0,47.91,
-DCBBANK,DCB Bank Ltd.,20,0.1997,0.0,0.3607,0.0,,
-MCX,Multi Commodity Exchange of India Ltd.,50,0.1953,0.0,0.526,0.0,0.11,
-SUZLON,Suzlon Energy Ltd.,70,0.1764,0.0,0.2346,0.0,2.81,0.3937
-DELHIVERY,Delhivery Ltd.,50,0.1672,0.0,0.5714,0.0,15.1,
-INDUSINDBK,IndusInd Bank Ltd.,20,0.1634,0.0,0.5408,0.0,,
-OLAELEC,Ola Electric Mobility Ltd.,20,0.16,0.0,0.2466,0.0,82.45,
-INFY,Infosys Ltd.,70,0.1599,0.0,0.5102,0.0,9.54,0.32
-LT,Larsen & Toubro Ltd.,20,0.1483,0.0,0.5249,0.0,97.64,
-360ONE,360 ONE WAM Ltd.,20,0.1471,0.0,0.6683,0.0,161.98,
-KFINTECH,Kfin Technologies Ltd.,50,0.145,0.0,0.6512,0.0,3.31,
-IEX,Indian Energy Exchange Ltd.,50,0.1344,0.0,0.3392,0.0,0.82,
-IDFCFIRSTB,IDFC First Bank Ltd.,20,0.1286,0.0,0.4546,0.0,,0.0526
-GOKEX,Gokaldas Exports Ltd.,20,0.1264,0.0,0.5383,0.0,58.93,
-VIPIND,V.I.P. Industries Ltd.,20,0.122,0.0,0.3955,0.0,335.61,
-EQUITASBNK,Equitas Small Finance Bank Ltd.,20,0.1218,0.0,0.5525,0.0,94.25,
-FEDERALBNK,Federal Bank Ltd.,20,0.109,0.0,0.6057,0.0,,
-HOMEFIRST,Home First Finance Company India Ltd.,20,0.0934,0.0,0.671,0.0,243.94,
-HBLENGINE,HBL Engineering Ltd.,50,0.0807,0.0,0.5538,0.0,3.02,
-CUB,City Union Bank Ltd.,20,0.0797,0.0,0.5214,0.0,,
-CMSINFO,CMS Info Systems Ltd.,50,0.0771,0.0,0.4641,0.0,9.1,
-WEBELSOLAR,Websol Energy System Ltd.,30,0.0751,0.0,0.0306,0.0,20.73,
-PCBL,PCBL Chemical Ltd.,20,0.0705,0.0,0.6442,0.0,124.13,
-AXISCADES,AXISCADES Technologies Ltd.,0,0.0703,0.0,0.0656,0.0,52.83,
-CARTRADE,Cartrade Tech Ltd.,50,0.0638,0.0,0.6264,0.0,5.36,
-CESC,CESC Ltd.,20,0.0634,0.0,0.7715,0.0,164.31,
-KTKBANK,Karnataka Bank Ltd.,20,0.0561,0.0,0.21,0.0,,
-ZEEL,Zee Entertainment Enterprises Ltd.,30,0.0503,0.0,0.1482,0.0,2.26,
-KEC,Kec International Ltd.,20,0.0456,0.0,0.733,0.0,87.31,
-SOUTHBANK,South Indian Bank Ltd.,20,0.043,0.0,0.298,0.0,,0.136
-ICICIBANK,ICICI Bank Ltd.,40,0.0354,0.0,0.5964,0.0,,0.1607
-AXISBANK,Axis Bank Ltd.,20,0.0333,0.0,0.7051,0.0,,0.1335
-CAMS,Computer Age Management Services Ltd.,50,0.0313,0.0,0.5822,0.0,4.86,
-ICICIGI,ICICI Lombard General Insurance Company Ltd.,20,0.0247,0.0,0.832,0.0,,0.1463
-LICHSGFIN,LIC Housing Finance Ltd.,20,0.0234,0.0,0.7414,0.0,642.52,
-MFSL,Max Financial Services Ltd.,50,0.0208,0.0,0.7943,0.0,36.45,
-TEJASNET,Tejas Networks Ltd.,20,0.0157,0.0,0.607,0.0,142.52,
-NAM-INDIA,Nippon Life India Asset Management Ltd.,50,0.0056,0.0,0.8852,0.0,1.62,
-KARURVYSYA,Karur Vysya Bank Ltd.,20,0.0053,0.0,0.4236,0.0,,
-HDFCBANK,HDFC Bank Ltd.,20,0.0018,0.0,0.6101,0.0,,0.1384
-UJJIVANSFB,Ujjivan Small Finance Bank Ltd.,20,0.0004,0.0,0.4127,0.0,,
-CROMPTON,Crompton Greaves Consumer Electricals Ltd.,50,0.0,0.0,0.775,0.0,5.8,
-CDSL,Central Depository Services (India) Ltd.,50,0.0,0.0,0.1615,0.0,0.11,
-SUNDARMFIN,Sundaram Finance Ltd.,20,0.0,0.0,0.1666,0.0,409.16,
-FACT,Fertilisers and Chemicals Travancore Ltd.,0,0.0,0.0,0.0009,0.0,295.15,
-TSFINV,TSF Investments Ltd.,30,0.0,0.0,0.0594,0.0,3.85,
-BSE,BSE Ltd.,50,0.0,0.0,0.2784,0.0,0.0,
+Symbol,Company,Opportunity Score,Promoter Holding,Promoter Delta,FII/DII,FII Delta,Debt-to-Eq,ROE,Div Yield,Industry,Beta,Ret_20D,Disc from 52W High
+ITI,ITI Ltd.,60,0.979,0.0,0.0007,0.0,40.14,,0.0,Telecommunication,0.09,-0.0463,-0.3208
+GALLANTT,Gallantt Ispat Ltd.,60,0.9473,0.0,0.0009,0.0,16.52,,0.0032,Capital Goods,1.11,0.1375,-0.3548
+IOB,Indian Overseas Bank,50,0.9244,0.0,0.0431,-0.0,,0.1653,0.0,PSU Banks,0.29,-0.0346,-0.2586
+UCOBANK,UCO Bank,30,0.9095,0.0,0.0261,0.0,,0.089,0.0187,PSU Banks,0.73,0.0059,-0.2946
+STARCEMENT,Star Cement Ltd.,60,0.9035,0.0,0.0429,0.0007,18.92,,0.0117,Construction Materials,-0.02,-0.0858,-0.3664
+LICI,Life Insurance Corporation of India,60,0.9,0.0,0.0586,-0.0006,0.43,,0.0254,Financial Services,0.55,-0.0056,-0.1311
+MRPL,Mangalore Refinery & Petrochemicals Ltd.,30,0.8996,0.0,0.0206,0.0,108.06,,0.0343,Oil Gas & Consumable Fuels,0.11,0.0546,-0.1853
+MMTC,MMTC Ltd.,60,0.8993,0.0,0.0173,0.0,0.11,,0.0,Services,0.66,-0.0607,-0.279
+NTPCGREEN,NTPC Green Energy Ltd.,30,0.8901,0.0,0.063,0.0001,165.28,,0.0,Power,0.4,0.0256,-0.2512
+HINDZINC,Hindustan Zinc Ltd.,60,0.8863,0.0,0.0571,0.001,39.03,,0.0207,Metals & Mining,0.67,-0.0564,-0.2498
+UTLSOLAR,Fujiyama Power Systems Ltd.,60,0.8774,-0.0012,0.0315,-0.0001,40.8,,0.0,Capital Goods,1.05,-0.0344,-0.201
+AEGISVOPAK,Aegis Vopak Terminals Ltd.,30,0.8735,0.0,0.0498,0.0006,84.44,,0.07,Oil Gas & Consumable Fuels,1.37,-0.1117,-0.1401
+ATLANTAELE,Atlanta Electricals Ltd.,60,0.8728,0.0,0.0488,-0.0028,5.46,,0.0,Capital Goods,0.82,0.0379,-0.2125
+GODREJIND,Godrej Industries Ltd.,30,0.8719,0.0,0.0637,0.0002,222.41,,0.0,Diversified,0.63,-0.0737,-0.2764
+BAJAJHFL,Bajaj Housing Finance Ltd.,30,0.8674,-0.0,0.0112,-0.0001,460.74,0.1268,0.0,Financial Services,0.72,0.008,-0.2584
+BHARTIHEXA,Bharti Hexacom Ltd.,30,0.8652,0.0,0.1118,0.0008,85.65,,0.0109,Telecommunication,0.11,0.0951,-0.1615
+TRAVELFOOD,Travel Food Services Ltd.,60,0.8617,0.0,0.0917,0.0005,16.72,,0.0085,Consumer Services,0.54,-0.0249,-0.1768
+TATACAP,Tata Capital Ltd.,30,0.8596,-0.0002,0.0494,0.0002,502.93,,0.18,Financial Services,1.05,-0.0607,-0.1727
+STYL,Seshaasai Technologies Ltd.,60,0.8587,0.0,0.0697,0.0,5.87,,0.0075,Financial Services,0.91,-0.1009,-0.2385
+PFOCUS,Prime Focus Ltd.,30,0.8556,0.0,0.0054,0.0,224.57,,0.0,Media Entertainment & Publication,0.12,-0.1333,-0.209
+NIACL,The New India Assurance Company Ltd.,30,0.8544,0.0,0.1084,0.0,,,0.0082,Financial Services,1.14,-0.0887,-0.2598
+SUDEEPPHRM,Sudeep Pharma Ltd.,60,0.8514,0.0,0.0684,0.0022,16.75,,0.15,Chemicals,1.05,-0.0947,-0.2738
+LGEINDIA,LG Electronics India Ltd.,60,0.85,0.0,0.0775,0.0026,5.99,,0.0,Consumer Durables,1.05,0.0406,-0.0575
+AKUMS,Akums Drugs and Pharmaceuticals Ltd.,60,0.8493,0.0,0.1256,0.0005,5.76,,0.13,Healthcare,0.56,-0.046,-0.128
+SAATVIKGL,Saatvik Green Energy Ltd.,30,0.8477,0.0,0.1076,0.0,69.03,,0.0,Capital Goods,0.88,-0.0192,-0.3003
+PARKHOSPS,Park Medi World Ltd.,60,0.8394,0.0,0.0565,0.0,17.31,,0.0,Healthcare,1.05,-0.1519,-0.2272
+ANURAS,Anupam Rasayan India Ltd.,60,0.8385,0.0,0.0107,0.0004,41.32,,0.13,Chemicals,0.13,-0.0032,-0.1678
+ORKLAINDIA,Orkla India Ltd.,60,0.8333,0.0,0.0906,-0.0017,2.28,,0.0,Fast Moving Consumer Goods,1.05,-0.0378,-0.2679
+AIIL,Authum Investment & Infrastructure Ltd.,60,0.8307,0.0,0.0714,0.0,24.59,,0.0,Financial Services,-0.05,0.0848,-0.1627
+JBMA,JBM Auto Ltd.,30,0.83,0.0,0.0156,0.0,190.28,,0.16,Automobile and Auto Components,0.17,-0.0918,-0.269
+IRFC,Indian Railway Finance Corporation Ltd.,30,0.829,0.0,0.0486,0.0,773.35,,0.0266,Railways & Infra EPC,0.31,0.0119,-0.4087
+HYUNDAI,Hyundai Motor India Ltd.,60,0.825,0.0,0.1321,0.0003,5.48,,0.0106,Automobile and Auto Components,0.8,-0.0801,-0.1911
+ADANIGREEN,Adani Green Energy Ltd.,30,0.8227,0.0,0.1099,-0.0,346.55,,0.0,Power,1.08,0.0218,-0.202
+SJVN,SJVN Ltd.,30,0.8185,0.0,0.0582,-0.0001,226.53,,0.0271,"Power, Renewables & PSU",0.5,-0.1679,-0.3979
+MAZDOCK,Mazagoan Dock Shipbuilders Ltd.,60,0.8122,0.0,0.0614,-0.0009,4.48,,0.0086,Defense & Aerospace,0.64,-0.0534,-0.2808
+CENTRALBK,Central Bank of India,30,0.8119,0.0,0.0951,0.0,,0.1156,0.0325,PSU Banks,0.39,0.0158,-0.233
+ANTHEM,Anthem Biosciences Ltd.,60,0.8089,0.0,0.1233,-0.0013,1.77,,0.24,Healthcare,0.5,-0.1135,-0.159
+JAINREC,Jain Resource Recycling Ltd.,30,0.8056,0.0,0.064,-0.0002,81.89,,0.0,Metals & Mining,0.69,0.0575,-0.5121
+DATAMATICS,Datamatics Global Services Ltd.,60,0.8034,0.0,0.0066,0.0,14.38,,0.0063,Information Technology,0.2,0.0409,-0.2134
+EMMVEE,Emmvee Photovoltaic Power Ltd.,80,0.8003,0.0,0.0734,-0.0007,25.24,0.5305,0.0035,Capital Goods,1.05,-0.1458,-0.2516
+CRIZAC,Crizac Ltd.,60,0.7994,0.0,0.0286,0.0,0.31,,0.105,Consumer Services,1.39,-0.1145,-0.515
+RTNINDIA,RattanIndia Enterprises Ltd.,30,0.799,0.0,0.0027,-0.0,143.03,,0.0,Consumer Services,0.66,-0.0353,-0.5323
+LOTUSDEV,SRI LOTUS DEVELOPERS AND REALTY Ltd.,80,0.7987,-0.02,0.0241,0.0138,6.41,0.1608,0.21,Realty,1.4,0.1566,-0.0087
+SMARTWORKS,Smartworks Coworking Spaces Ltd.,30,0.7981,0.0,0.0426,0.003,900.42,,0.0,Services,1.01,-0.1032,-0.2468
+ATGL,Adani Total Gas Ltd.,30,0.7977,0.0,0.074,0.0,58.65,,0.04,Oil Gas & Consumable Fuels,0.6,-0.013,-0.326
+JAIBALAJI,JAI BALAJI INDUSTRIES Ltd.,60,0.7956,0.0,0.015,0.0,18.45,,0.0,Metals & Mining,0.38,0.1335,-0.2697
+PURVA,Puravankara Ltd.,30,0.7938,0.0,0.097,0.0,315.04,,0.0,Realty,0.45,-0.0699,-0.2935
+GOKULAGRO,Gokul Agro Resources Ltd.,60,0.7914,0.0,0.016,0.0,41.41,,0.0,Fast Moving Consumer Goods,-0.06,-0.0232,-0.1797
+ABDL,Allied Blenders and Distillers Ltd.,30,0.7896,0.0,0.0616,-0.0003,68.25,,0.0073,Fast Moving Consumer Goods,0.75,0.1463,-0.0238
+DMART,Avenue Supermarts Ltd.,60,0.7891,0.0,0.1369,-0.0006,16.34,0.1272,0.0,Consumer Services,0.25,-0.0995,-0.2804
+SUNTV,Sun TV Network Ltd.,60,0.7847,0.0,0.1409,0.0043,0.84,,0.0318,Media Entertainment & Publication,0.12,0.3621,-0.0533
+LINDEINDIA,Linde India Ltd.,60,0.7798,0.0,0.0783,-0.0,1.85,,0.07,Chemicals,-0.03,0.0148,-0.2303
+GILLETTE,Gillette India Ltd.,60,0.7795,0.0,0.1065,0.0003,0.0,,0.0255,Fast Moving Consumer Goods,0.28,-0.011,-0.2305
+IFBIND,IFB Industries Ltd.,60,0.7792,0.0,0.0516,0.0,15.67,,0.0,Consumer Durables,0.43,-0.0116,-0.404
+EMCURE,Emcure Pharmaceuticals Ltd.,60,0.7782,0.0,0.0959,-0.0,30.57,,0.2,Healthcare,-0.08,-0.0467,-0.1333
+ELLEN,Ellenbarrie Industrial Gases Ltd.,60,0.7776,0.0,0.1228,0.0039,18.87,,0.0,Chemicals,1.36,-0.0861,-0.284
+LLOYDSME,Lloyds Metals And Energy Ltd.,30,0.7769,0.0,0.0319,0.0,145.21,,0.06,Metals & Mining,0.17,0.0291,-0.1286
+DIACABS,Diamond Power Infrastructure Ltd.,30,0.7769,0.0,0.1093,-0.0,,,0.0,Capital Goods,0.83,-0.0363,-0.103
+CORONA,CORONA Remedies Ltd.,80,0.7761,0.0,0.1975,0.0002,22.07,,0.0049,Healthcare,1.05,-0.0764,-0.1259
+GICRE,General Insurance Corporation of India,50,0.774,0.0,0.1714,0.0009,,0.0911,0.0406,Financial Services,0.33,-0.0361,-0.186
+SCHNEIDER,Schneider Electric Infrastructure Ltd.,30,0.7694,0.0,0.0623,-0.0014,70.8,,0.0,Capital Goods,0.42,-0.0369,-0.2523
+SIEMENS,Siemens Ltd.,60,0.7691,0.0,0.1075,-0.0002,2.21,,0.0049,Capital Goods,0.57,-0.0371,-0.1266
+PRSMJOHNSN,Prism Johnson Ltd.,30,0.7682,0.0,0.0896,-0.0,77.2,,0.0,Construction Materials,0.41,-0.1049,-0.3879
+SIGNATURE,Signatureglobal (India) Ltd.,30,0.7681,0.0,0.1239,0.0001,161.04,,0.0,Realty,0.82,-0.0337,-0.3675
+CPPLUS,Aditya Infotech Ltd.,80,0.768,0.0,0.1667,0.0026,9.6,,0.04,Capital Goods,0.59,0.2028,-0.1204
+PNGJL,P N Gadgil Jewellers Ltd.,30,0.7662,0.0,0.0533,0.0,88.5,,0.0,Consumer Durables,0.26,0.0037,-0.1807
+AETHER,Aether Industries Ltd.,60,0.7658,0.0,0.1181,0.0002,18.65,,0.0,Chemicals,-0.12,-0.0522,-0.1519
+IGIL,International Gemological Institute Ltd.,60,0.7655,0.0,0.0945,0.0005,9.59,,0.0158,Services,1.25,0.0375,-0.1523
+INDIANB,Indian Bank,70,0.7654,0.0,0.1718,-0.0002,,0.1614,0.0219,PSU Banks,0.33,0.0162,-0.1285
+3MINDIA,3M India Ltd.,60,0.7648,0.0,0.0961,-0.0,9.6,,0.0052,Diversified,0.28,-0.0655,-0.1891
+ABB,ABB India Ltd.,80,0.7634,0.0,0.1276,0.0002,1.55,0.1913,0.0043,Capital Goods,0.49,-0.0462,-0.1317
+DBL,Dilip Buildcon Ltd.,30,0.7624,0.0,0.0627,0.0,115.51,,0.0025,Construction,0.66,-0.0156,-0.242
+BLUEDART,Blue Dart Express Ltd.,50,0.7619,0.0,0.1657,-0.0002,64.27,,0.0056,Services,0.26,-0.0874,-0.3727
+JSWCEMENT,JSW Cement Ltd.,50,0.7611,0.0,0.1864,-0.0002,68.39,,0.0044,Construction Materials,0.96,-0.0165,-0.2001
+ALIVUS,Alivus Life Sciences Ltd.,60,0.7608,0.0,0.0729,0.0001,1.7,,0.0037,Healthcare,0.07,-0.0564,-0.1202
+BLUEJET,Blue Jet Healthcare Ltd.,60,0.7602,0.0,0.0465,-0.0108,3.1,,0.23,Healthcare,0.64,-0.0837,-0.247
+SHYAMMETL,Shyam Metalics and Energy Ltd.,60,0.76,0.0,0.1467,0.0,8.13,,0.0039,Capital Goods,0.5,0.1128,-0.02
+THELEELA,Leela Palaces Hotels & Resorts Ltd.,60,0.7591,0.0,0.1252,-0.0004,27.51,0.0724,0.0,Consumer Services,0.62,0.1628,-0.0524
+SANDUMA,Sandur Manganese & Iron Ores Ltd.,60,0.759,0.0,0.0072,0.0,30.58,,0.0029,Metals & Mining,0.84,-0.0421,-0.358
+DCMSHRIRAM,DCM Shriram Ltd.,60,0.7584,0.0,0.0935,0.0009,37.8,,0.0158,Diversified,-0.33,0.0307,-0.273
+TRANSRAILL,Transrail Lighting Ltd.,60,0.7584,0.0,0.0034,0.0,29.73,,0.0043,Capital Goods,1.39,0.1357,-0.3844
+OSWALPUMPS,Oswal Pumps Ltd.,60,0.7565,0.0,0.0404,0.0006,14.11,,0.0,Capital Goods,1.58,-0.0911,-0.6856
+GLAXO,Glaxosmithkline Pharmaceuticals Ltd.,60,0.7563,0.0,0.0998,0.0013,1.47,,0.0226,Healthcare,0.07,-0.0835,-0.1777
+BERGEPAINT,Berger Paints India Ltd.,80,0.756,0.0,0.1555,-0.0014,9.16,,0.0085,Consumer Durables,0.45,0.0565,-0.1968
+ABBOTINDIA,Abbott India Ltd.,60,0.7554,0.0,0.0689,-0.0001,3.6,,0.0201,Healthcare,0.06,0.01,-0.1263
+TRIDENT,Trident Ltd.,60,0.7553,0.0,0.0251,0.0,38.32,,0.0226,Textiles,0.12,-0.0351,-0.2653
+QPOWER,QUALITY POWER ELECTRICAL EQUIPMENTS Ltd.,60,0.7546,0.0,0.0535,-0.0001,5.2,,0.07,Capital Goods,1.09,-0.0232,-0.1349
+SUMICHEM,Sumitomo Chemical India Ltd.,60,0.7546,0.0,0.096,-0.0009,1.86,,0.0032,Chemicals,0.21,-0.1113,-0.2925
+MANKIND,Mankind Pharma Ltd.,80,0.7539,0.0,0.1872,0.002,38.11,,0.0,Healthcare,0.45,-0.0107,-0.1387
+WAAREERTL,Waaree Renewable Technologies Ltd.,60,0.7535,0.0,0.0109,0.0,15.6,,0.0,Capital Goods,0.46,0.0321,-0.3836
+CANHLIFE,Canara HSBC Life Insurance Company Ltd.,80,0.7533,0.0,0.2074,0.0,15.26,0.084,0.003,Financial Services,1.05,-0.1609,-0.2158
+BBTC,Bombay Burmah Trading Corporation Ltd.,60,0.7524,0.0,0.0677,-0.0006,16.57,,0.0138,Fast Moving Consumer Goods,0.61,-0.1093,-0.4106
+INDIACEM,India Cements Ltd.,60,0.7523,0.0,0.1115,-0.0007,12.89,,0.0,Construction Materials,0.3,-0.1405,-0.3777
+HEXT,Hexaware Technologies Ltd.,100,0.7521,0.0,0.1913,0.0004,10.18,0.2147,0.0148,Information Technology,0.77,0.1069,-0.2649
+ZYDUSLIFE,Zydus Lifesciences Ltd.,80,0.7518,-0.0,0.1544,-0.0074,42.3,,0.09,Healthcare,0.37,-0.0107,-0.0885
+HONAUT,Honeywell Automation India Ltd.,60,0.7515,0.0,0.1412,0.0,2.48,,0.0034,Capital Goods,0.56,-0.0537,-0.2265
+NIVABUPA,Niva Bupa Health Insurance Company Ltd.,80,0.7512,0.0,0.1585,0.0011,6.8,0.1214,0.0,Financial Services,0.4,-0.0457,-0.1689
+ALOKINDS,Alok Industries Ltd.,30,0.75,0.0,0.0115,0.0,,,0.0,Textiles,0.24,0.2057,-0.5393
+ENDURANCE,Endurance Technologies Ltd.,80,0.75,0.0,0.1936,0.0003,19.39,,0.0048,Automobile and Auto Components,0.72,-0.1057,-0.2167
+CRAMC,Canara Robeco Asset Management Company Ltd.,80,0.75,0.0,0.0869,-0.0059,3.04,0.3023,0.0179,Financial Services,1.05,-0.0237,-0.3432
+VARROC,Varroc Engineering Ltd.,30,0.75,0.0,0.1223,-0.0,50.85,,0.18,Automobile and Auto Components,0.33,-0.0339,-0.1039
+RCF,Rashtriya Chemicals & Fertilizers Ltd.,30,0.75,0.0,0.0121,0.0,80.61,,0.0224,Chemicals,0.43,-0.0343,-0.3201
+HUDCO,Housing & Urban Development Corporation Ltd.,30,0.75,0.0,0.1001,-0.0007,645.77,,0.0373,Railways & Infra EPC,0.84,-0.0499,-0.3266
+ADANIENT,Adani Enterprises Ltd.,50,0.7497,0.0,0.1833,0.0,119.56,,0.05,Metals & Mining,0.78,-0.0791,-0.1704
+KANSAINER,Kansai Nerolac Paints Ltd.,60,0.7495,0.0,0.1051,-0.0001,4.53,,0.014,Consumer Durables,0.39,0.0056,-0.29
+ASKAUTOLTD,ASK Automotive Ltd.,50,0.7495,0.0,0.195,0.0,51.79,,0.0031,Automobile and Auto Components,-0.21,-0.0499,-0.145
+MANYAVAR,Vedant Fashions Ltd.,80,0.7494,0.0,0.1857,0.0002,23.3,,0.0151,Consumer Services,-0.06,-0.0709,-0.252
+BDL,Bharat Dynamics Ltd.,60,0.7493,0.0,0.1069,-0.0025,0.01,,0.0044,Defense & Aerospace,0.32,-0.032,-0.3149
+INOXINDIA,INOX India Ltd.,60,0.749,0.0,0.094,0.0004,7.25,,0.1,Capital Goods,0.55,-0.0135,-0.1504
+ROUTE,Route Mobile Ltd.,60,0.7485,0.0,0.0424,0.0,1.49,,0.0183,Telecommunication,0.39,-0.0888,-0.4069
+SARDAEN,Sarda Energy and Minerals Ltd.,60,0.7485,0.0,0.0288,-0.0,35.2,,0.0041,Metals & Mining,0.52,-0.0357,-0.2136
+SHARDACROP,Sharda Cropchem Ltd.,60,0.7482,0.0,0.1007,0.0,0.1,,0.0207,Chemicals,0.6,-0.022,-0.4346
+UNIONBANK,Union Bank of India,70,0.7476,0.0,0.1503,-0.0003,,0.158,0.029,PSU Banks,0.92,-0.036,-0.1399
+NFL,National Fertilizers Ltd.,30,0.7471,0.0,0.0416,0.0,139.52,,0.0166,Chemicals,0.44,-0.0592,-0.3506
+IDEA,Vodafone Idea Ltd.,30,0.7464,0.0,0.1001,0.0002,,,0.0,Telecommunication,0.74,-0.1146,-0.2027
+AADHARHFC,Aadhar Housing Finance Ltd.,30,0.746,0.0,0.1183,0.001,255.57,,0.0,Financial Services,0.41,-0.0476,-0.206
+SUBROS,Subros Ltd.,60,0.7459,0.0,0.1141,-0.0001,6.01,,0.0045,Capital Goods,0.57,-0.0354,-0.4304
+IMFA,Indian Metals & Ferro Alloys Ltd.,60,0.7454,0.0,0.0076,0.0,35.12,,0.0104,Metals & Mining,0.45,-0.0737,-0.2939
+ESCORTS,Escorts Kubota Ltd.,60,0.7451,0.0,0.138,0.0001,1.31,,0.0121,Capital Goods,0.32,-0.0279,-0.2988
+GODIGIT,Go Digit General Insurance Ltd.,80,0.7451,0.0,0.1675,-0.0017,7.47,,0.0,Financial Services,0.22,0.1211,-0.2341
+GRSE,Garden Reach Shipbuilders & Engineers Ltd.,60,0.745,0.0,0.0388,-0.0004,1.42,,0.0093,Defense & Aerospace,0.69,-0.0913,-0.3632
+AFFLE,Affle 3i Ltd.,80,0.7448,0.0,0.2904,0.0009,0.41,,0.0,Information Technology,0.14,-0.0699,-0.2789
+HDBFS,HDB Financial Services Ltd.,30,0.7444,0.0,0.1188,-0.0001,471.46,0.1427,0.0074,Financial Services,0.98,-0.2478,-0.3548
+ORIENTCEM,Orient Cement Ltd.,60,0.7438,0.0,0.0181,0.0,3.38,,0.0044,Construction Materials,0.11,-0.0591,-0.4869
+TTML,Tata Teleservices (Maharashtra) Ltd.,30,0.7436,0.0,0.0197,0.0,,,0.0,Telecommunication,0.44,-0.0843,-0.437
+SCHAEFFLER,Schaeffler India Ltd.,100,0.743,0.0,0.1848,-0.0004,0.78,0.2165,0.0096,Automobile and Auto Components,0.13,-0.0806,-0.1745
+DLF,DLF Ltd.,60,0.7414,0.0,0.1427,-0.0032,0.67,0.101,0.0119,Realty,0.48,0.0547,-0.131
+JSWINFRA,JSW Infrastructure Ltd.,50,0.7414,0.0,0.1565,-0.0014,59.0,,0.0027,Services,0.55,0.0412,-0.0943
+BBOX,Black Box Ltd.,30,0.7408,0.0,0.0566,0.0005,89.59,,0.11,Information Technology,0.95,0.1838,-0.1764
+GMDCLTD,Gujarat Mineral Development Corporation Ltd.,60,0.74,0.0,0.0245,-0.0,4.47,,0.0203,Metals & Mining,0.36,-0.1275,-0.3793
+MIDHANI,Mishra Dhatu Nigam Ltd.,60,0.74,0.0,0.0779,0.0,26.56,,0.006,Defense & Aerospace,0.66,0.032,-0.1275
+BIKAJI,Bikaji Foods International Ltd.,80,0.7388,0.0,0.1936,-0.001,17.53,,0.0027,Fast Moving Consumer Goods,0.26,-0.142,-0.3818
+JUSTDIAL,Justdial Ltd.,60,0.7386,0.0,0.132,0.0053,1.66,,0.0,Consumer Services,0.11,0.0582,-0.1882
+TATAINVEST,Tata Investment Corporation Ltd.,60,0.7381,0.0,0.0197,-0.0,0.01,,0.0056,Financial Services,0.32,-0.147,-0.43
+THERMAX,Thermax Ltd.,80,0.7366,0.0,0.1924,0.0037,42.17,,0.0043,Capital Goods,0.3,-0.068,-0.3671
+MAHABANK,Bank of Maharashtra,70,0.736,0.0,0.1723,-0.0011,,0.2296,0.0274,PSU Banks,0.82,-0.0125,-0.1557
+GODFRYPHLP,Godfrey Phillips India Ltd.,60,0.7355,0.0,0.1012,-0.0005,3.76,,0.0272,Fast Moving Consumer Goods,0.39,-0.0468,-0.4551
+LTTS,L&T Technology Services Ltd.,60,0.7351,0.0,0.133,0.0003,8.91,,0.0157,Information Technology,0.23,0.1174,-0.2051
+CELLO,Cello World Ltd.,80,0.7348,0.0,0.1583,0.0004,1.41,,0.0041,Consumer Durables,0.27,0.1496,-0.4386
+CAPLIPOINT,Caplin Point Laboratories Ltd.,60,0.7344,0.0,0.057,0.0,0.13,,0.0035,Healthcare,0.42,-0.1124,-0.2303
+AEQUS,Aequs Ltd.,60,0.734,0.0,0.1326,0.0022,47.18,,0.0,Capital Goods,1.05,0.1433,-0.1103
+IOC,Indian Oil Corporation Ltd.,30,0.7339,0.0,0.1428,-0.0,58.45,,0.0252,Oil Gas & Consumable Fuels,0.82,-0.029,-0.2951
+ADANIENSOL,Adani Energy Solutions Ltd.,50,0.7339,0.0,0.227,0.0014,194.5,,0.0,Power,0.66,-0.0151,-0.2365
+BANKINDIA,Bank of India,50,0.7338,0.0,0.1503,-0.0001,,0.137,0.0357,PSU Banks,0.74,-0.042,-0.2337
+MUTHOOTFIN,Muthoot Finance Ltd.,70,0.7335,0.0,0.1696,0.0002,393.56,0.3174,0.0115,Financial Services,0.52,-0.0621,-0.3685
+PICCADIL,Piccadily Agro Industries Ltd.,30,0.7323,0.0,0.0015,0.0,58.89,,0.17,Fast Moving Consumer Goods,-0.67,-0.0161,-0.2702
+IFCI,IFCI Ltd.,60,0.7314,0.0,0.0355,0.0,22.72,,0.0,Financial Services,0.67,-0.131,-0.3768
+SPARC,Sun Pharma Advanced Research Company Ltd.,60,0.7296,0.0,0.0183,0.0,41.78,,0.0,Healthcare,0.65,-0.0234,-0.3473
+RAILTEL,Railtel Corporation Of India Ltd.,80,0.7284,0.0,0.0295,0.0,2.82,0.1625,0.0128,Railways & Infra EPC,0.73,-0.0149,-0.3416
+RVNL,Rail Vikas Nigam Ltd.,60,0.7284,0.0,0.0817,-0.0004,49.08,,0.0087,Railways & Infra EPC,0.84,-0.0112,-0.4991
+UBL,United Breweries Ltd.,80,0.7283,0.0,0.209,0.0019,29.08,,0.0083,Fast Moving Consumer Goods,-0.01,-0.0125,-0.3437
+SMLMAH,SML Mahindra Ltd.,30,0.7282,0.0,0.0213,-0.0001,55.67,,0.0039,Capital Goods,0.01,-0.0155,-0.1123
+SHREECEM,Shree Cement Ltd.,80,0.7275,0.0,0.201,-0.0024,8.01,,0.0063,Construction Materials,0.3,0.0228,-0.2543
+ALKYLAMINE,Alkyl Amines Chemicals Ltd.,60,0.7273,0.0,0.054,0.0,0.08,,0.0054,Chemicals,0.62,0.0005,-0.1278
+GODREJAGRO,Godrej Agrovet Ltd.,30,0.727,0.0,0.1031,0.0025,72.75,,0.0177,Fast Moving Consumer Goods,0.32,-0.0317,-0.0939
+KRBL,KRBL Ltd.,60,0.7269,0.0,0.0471,0.0,2.92,,0.0114,Fast Moving Consumer Goods,0.27,0.0086,-0.1193
+WIPRO,Wipro Ltd.,80,0.7269,-0.0,0.1048,-0.0029,27.75,0.1594,0.046,Information Technology,0.41,0.1082,-0.2994
+HEGAM,HEG Advanced Materials Ltd.,60,0.7259,0.0,0.0714,-0.0071,16.73,,0.015,Capital Goods,0.76,-0.0048,-0.7019
+OPTIEMUS,Optiemus Infracom Ltd.,60,0.7253,0.0,0.0428,0.0002,45.35,,0.0,Telecommunication,0.21,0.2929,-0.1473
+SANOFICONR,Sanofi Consumer Healthcare India Ltd.,100,0.7252,0.0,0.1843,0.0001,5.98,0.8795,0.021,Healthcare,0.27,-0.1105,-0.3143
+NLCINDIA,NLC India Ltd.,30,0.7252,0.0,0.1468,0.0006,110.36,,0.0153,Power,0.54,-0.0332,-0.3461
+JSLL,Jeena Sikho Lifecare Ltd.,60,0.7248,0.0,0.0032,0.0,27.26,,0.0116,Consumer Services,1.04,-0.2017,-0.5308
+CONCORDBIO,Concord Biotech Ltd.,60,0.7248,0.0,0.1474,-0.0017,0.12,,0.0056,Healthcare,0.37,-0.0836,-0.1721
+JWL,Jupiter Wagons Ltd.,60,0.7243,0.0,0.065,0.0,33.37,,0.0,Railways & Infra EPC,0.34,-0.1108,-0.426
+CEMPRO,Cemindia Projects Ltd.,60,0.7242,0.0,0.0782,0.0014,37.71,,0.0025,Construction,0.81,-0.0457,-0.2738
+OFSS,Oracle Financial Services Software Ltd.,80,0.7239,0.0,0.1331,-0.0006,0.57,0.499,0.039,Information Technology,0.51,-0.1062,-0.1718
+RITES,RITES Ltd.,60,0.722,0.0,0.1038,0.0,0.24,,0.0513,Railways & Infra EPC,0.26,0.0225,-0.1695
+REDTAPE,Redtape Ltd.,30,0.7217,0.0,0.1406,-0.0007,70.49,,0.0177,Consumer Durables,0.14,-0.0379,-0.2711
+MAHSEAMLES,Maharashtra Seamless Ltd.,60,0.7213,0.0,0.0731,0.0036,0.19,,0.0168,Capital Goods,0.04,-0.1872,-0.2378
+CAMPUS,Campus Activewear Ltd.,80,0.7211,0.0,0.1769,-0.0002,26.06,,0.0076,Consumer Durables,0.13,-0.0434,-0.2905
+NUVOCO,Nuvoco Vistas Corporation Ltd.,80,0.7202,0.0,0.1975,0.0017,48.06,,0.0,Construction Materials,0.32,0.0694,-0.2244
+CENTURYPLY,Century Plyboards (India) Ltd.,50,0.7188,0.0,0.2055,-0.0006,67.11,,0.15,Consumer Durables,0.26,-0.0637,-0.2153
+CRISIL,CRISIL Ltd.,100,0.7188,0.0,0.1539,0.0004,10.23,0.2905,0.0091,Financial Services,0.19,-0.0027,-0.0915
+TCS,Tata Consultancy Services Ltd.,100,0.7179,0.0,0.1749,-0.0006,9.83,0.4557,0.0204,Information Technology,0.18,0.1316,-0.2461
+HGINFRA,H.G. Infra Engineering Ltd.,30,0.7178,0.0,0.1035,-0.0,153.26,,0.0049,Construction,0.47,-0.1155,-0.5663
+IREDA,Indian Renewable Energy Development Agency Ltd.,30,0.7176,0.0,0.0426,0.0,565.67,,0.0139,"Power, Renewables & PSU",0.05,-0.0017,-0.3062
+KSCL,Kaveri Seed Company Ltd.,30,0.7172,0.0,0.0546,0.0,,,0.0068,Fast Moving Consumer Goods,0.11,0.0395,-0.3328
+BAYERCROP,Bayer Cropscience Ltd.,60,0.7171,0.0,0.1206,0.0021,2.76,,0.0419,Chemicals,0.22,-0.0654,-0.2712
+ACMESOLAR,ACME Solar Holdings Ltd.,50,0.7166,0.0,0.202,0.0071,393.19,,0.05,"Power, Renewables & PSU",0.4,-0.0032,-0.1403
+HAL,Hindustan Aeronautics Ltd.,80,0.7164,0.0,0.1628,-0.0014,0.16,,0.0092,Defense & Aerospace,0.49,0.042,-0.0312
+POWERINDIA,Hitachi Energy India Ltd.,60,0.7154,0.0,0.1024,0.001,1.66,,0.03,Capital Goods,0.61,-0.0717,-0.2524
+LATENTVIEW,Latent View Analytics Ltd.,60,0.7135,0.0,0.0319,-0.0002,1.86,,0.0,Information Technology,0.45,-0.0464,-0.5301
+SUPRIYA,Supriya Lifescience Ltd.,60,0.7128,0.0,0.0486,-0.0002,0.45,,0.11,Healthcare,0.63,-0.0163,-0.1824
+GAEL,Gujarat Ambuja Exports Ltd.,60,0.7127,0.0,0.0135,0.0009,13.38,,0.17,Fast Moving Consumer Goods,-0.01,0.0924,-0.057
+RELAXO,Relaxo Footwears Ltd.,60,0.7127,0.0,0.1166,0.0,10.54,,0.0119,Consumer Durables,0.61,-0.0422,-0.3392
+ADANIPOWER,Adani Power Ltd.,50,0.711,-0.0065,0.1809,-0.01,82.33,,0.0,Power,0.44,-0.0489,-0.2295
+PWL,Physicswallah Ltd.,80,0.7108,0.0,0.2249,0.0054,23.02,,0.0,Consumer Services,1.05,0.0457,-0.175
+IKS,Inventurus Knowledge Solutions Ltd.,60,0.7098,0.0,0.0988,-0.0003,26.87,,0.0,Information Technology,0.7,0.0014,-0.1211
+AVANTIFEED,Avanti Feeds Ltd.,60,0.7091,0.0,0.106,0.0003,0.36,,0.0137,Fast Moving Consumer Goods,0.15,-0.0626,-0.5415
+JYOTHYLAB,Jyothy Labs Ltd.,80,0.7075,0.0,0.1524,0.0005,3.25,,0.0183,Fast Moving Consumer Goods,0.48,-0.019,-0.4045
+BOSCHLTD,Bosch Ltd.,80,0.7067,0.0,0.1835,-0.0001,0.8,,0.006,Automobile and Auto Components,0.71,-0.0456,-0.0888
+APLLTD,Alembic Pharmaceuticals Ltd.,80,0.7067,0.0,0.1676,0.0021,25.22,,0.0151,Healthcare,0.32,-0.0442,-0.1972
+HCG,Healthcare Global Enterprises Ltd.,50,0.7064,0.0,0.209,0.004,123.06,,0.0,Healthcare,-0.01,-0.144,-0.269
+BLS,BLS International Services Ltd.,60,0.706,0.0,0.0524,0.0,15.47,,0.011,Consumer Services,-0.13,-0.0009,-0.3423
+EIHOTEL,EIH Ltd.,60,0.7052,0.0,0.1426,-0.0094,4.67,,0.0051,Consumer Services,-0.23,0.0078,-0.2503
+GMRP&UI,GMR Power and Urban Infra Ltd.,30,0.7036,0.0,0.0356,0.0,549.82,,0.0,Power,0.79,0.099,-0.2572
+LODHA,Lodha Developers Ltd.,80,0.7029,0.0,0.1898,-0.0012,42.24,,0.004,Realty,0.65,-0.0403,-0.2101
+NESCO,NESCO Ltd.,60,0.7023,0.0,0.0501,0.003,9.07,,0.0067,Services,0.55,-0.0286,-0.2543
+EIEL,Enviro Infra Engineers Ltd.,60,0.7023,0.0,0.0056,0.0,34.13,,0.0,Utilities,1.42,-0.0647,-0.2753
+PNB,Punjab National Bank,50,0.7008,0.0,0.1885,-0.0006,,0.1497,0.0261,PSU Banks,0.53,-0.0015,-0.1145
+RRKABEL,R R Kabel Ltd.,80,0.6999,0.0,0.1761,-0.0023,13.09,,0.0042,Capital Goods,1.42,-0.001,-0.1997
+KSB,KSB Ltd.,80,0.6997,0.0,0.1388,0.0001,0.37,0.1519,0.0057,Capital Goods,-0.17,0.0023,-0.2381
+BANCOINDIA,Banco Products (India) Ltd.,60,0.6995,0.0,0.0123,0.0,36.44,,0.0266,Automobile and Auto Components,0.66,0.0194,-0.2756
+LLOYDSENT,Lloyds Enterprises Ltd.,60,0.6994,0.0,0.002,0.0,14.69,,0.21,Metals & Mining,1.03,0.051,-0.1686
+ZYDUSWELL,Zydus Wellness Ltd.,50,0.6985,0.0,0.2134,0.0005,54.97,,0.24,Fast Moving Consumer Goods,-0.1,-0.0612,-0.162
+ERIS,Eris Lifesciences Ltd.,50,0.6984,0.0,0.2225,0.0002,60.55,,0.0126,Healthcare,-0.03,-0.1269,-0.3388
+GMRAIRPORT,GMR Airports Ltd.,50,0.6982,0.0,0.1576,-0.0003,,,0.0,Services,0.65,-0.0583,-0.226
+PATANJALI,Patanjali Foods Ltd.,80,0.695,0.0,0.1786,-0.0018,21.3,,0.0111,Fast Moving Consumer Goods,-0.19,0.0363,-0.3939
+MAPMYINDIA,C.E. Info Systems Ltd.,60,0.6936,-0.0007,0.1226,-0.0003,0.78,,0.0038,Information Technology,0.01,0.0167,-0.5459
+AMBUJACEM,Ambuja Cements Ltd.,80,0.6935,0.0,0.2305,0.0001,1.21,,0.0057,Construction Materials,0.2,-0.0607,-0.3855
+PIDILITIND,Pidilite Industries Ltd.,80,0.6928,0.0,0.1615,0.0006,3.78,,0.0076,Chemicals,0.43,-0.0314,-0.1199
+KIRLOSBROS,Kirloskar Brothers Ltd.,60,0.6924,0.0,0.1313,0.0008,10.1,,0.0041,Capital Goods,0.31,-0.0496,-0.2283
+ONGC,Oil & Natural Gas Corporation Ltd.,80,0.6921,0.0,0.2237,0.0005,42.55,,0.0645,Oil Gas & Consumable Fuels,0.16,-0.0449,-0.275
+AWL,AWL Agri Business Ltd.,80,0.6918,0.0,0.1502,-0.0008,10.62,,0.0052,Fast Moving Consumer Goods,-0.15,0.0177,-0.3345
+LXCHEM,Laxmi Organic Industries Ltd.,60,0.6916,0.0,0.037,0.0,27.34,,0.17,Chemicals,0.35,-0.0012,-0.142
+RUBICON,Rubicon Research Ltd.,80,0.6915,0.0,0.1829,-0.0013,24.13,,0.1,Healthcare,1.05,-0.1517,-0.2056
+WELSPUNLIV,Welspun Living Ltd.,60,0.6898,0.0,0.1497,0.0002,46.5,,0.05,Textiles,0.22,0.0332,-0.1067
+CHENNPETRO,Chennai Petroleum Corporation Ltd.,60,0.688,0.0,0.058,0.0009,17.68,,0.0429,Oil Gas & Consumable Fuels,0.07,-0.0053,-0.1615
+ABCAPITAL,Aditya Birla Capital Ltd.,50,0.6871,0.0,0.1591,-0.0016,495.94,,0.0,Financial Services,0.7,-0.0272,-0.1191
+SBICARD,SBI Cards and Payment Services Ltd.,50,0.6858,0.0,0.2518,0.0021,280.21,,0.0044,Financial Services,0.23,-0.1142,-0.4133
+LTM,LTM Ltd.,100,0.6858,0.0,0.1853,-0.0009,9.87,0.2197,0.0177,Information Technology,0.3,0.0292,-0.3081
+UNOMINDA,UNO Minda Ltd.,80,0.6849,0.0,0.2,-0.0019,37.74,,0.24,Automobile and Auto Components,0.31,-0.0805,-0.1804
+KRN,KRN HEAT EXCHANGER AND REFRIGERATION Ltd.,60,0.6849,0.0,0.0821,-0.0002,32.63,,0.0,Capital Goods,0.79,-0.1818,-0.3245
+QUESS,Quess Corp Ltd.,60,0.6835,0.0014,0.1342,0.0001,10.66,,0.0179,Services,0.06,-0.0568,-0.1435
+JAYNECOIND,Jayaswal Neco Industries Ltd.,30,0.6818,0.0,0.0038,0.0,74.73,,0.0,Capital Goods,0.95,0.1313,-0.14
+WAAREEENER,Waaree Energies Ltd.,60,0.6815,0.0,0.0918,-0.0,21.4,,0.16,"Power, Renewables & PSU",0.9,0.0374,-0.3092
+IRB,IRB Infrastructure Developers Ltd.,30,0.68,0.0,0.149,0.0,95.6,,0.0114,Railways & Infra EPC,-0.01,-0.0653,-0.2608
+SURYAROSNI,Surya Roshni Ltd.,60,0.6779,0.0,0.0142,0.0,3.03,,0.0235,Capital Goods,0.66,0.0116,-0.3106
+OIL,Oil India Ltd.,50,0.6773,0.0,0.2115,0.001,58.74,,0.0292,Oil Gas & Consumable Fuels,0.39,-0.0679,-0.1602
+OBEROIRLTY,Oberoi Realty Ltd.,80,0.677,0.0,0.2413,-0.0006,15.77,,0.0047,Realty,0.44,-0.0217,-0.1416
+TBOTEK,TBO Tek Ltd.,80,0.6768,0.0,0.2918,0.005,48.76,,0.0,Consumer Services,0.64,-0.0123,-0.0818
+DABUR,Dabur India Ltd.,80,0.6767,0.0,0.2232,0.001,10.91,,0.0215,Fast Moving Consumer Goods,0.42,0.0012,-0.2697
+BALAMINES,Balaji Amines Ltd.,60,0.6756,0.0,0.025,0.0,6.19,,0.0054,Chemicals,0.91,-0.0381,-0.214
+KPRMILL,K.P.R. Mill Ltd.,80,0.6754,0.0,0.2267,-0.0007,10.46,,0.0046,Textiles,0.36,0.0045,-0.1734
+AEGISLOG,Aegis Logistics Ltd.,80,0.6754,0.0,0.1587,0.0001,47.24,,0.0095,Oil Gas & Consumable Fuels,0.49,0.0095,-0.106
+MINDACORP,Minda Corporation Ltd.,50,0.6747,0.0,0.2172,0.0006,55.35,,0.0025,Automobile and Auto Components,0.48,-0.0461,-0.1549
+TRIVENI,Triveni Engineering & Industries Ltd.,30,0.6742,0.0,0.0905,-0.0022,64.65,,0.0111,Fast Moving Consumer Goods,0.37,0.077,-0.4869
+PREMIERENE,Premier Energies Ltd.,50,0.6742,0.0,0.1972,-0.0031,86.0,,0.08,"Power, Renewables & PSU",-0.22,0.0239,-0.2054
+ASAHIINDIA,Asahi India Glass Ltd.,30,0.6742,0.0,0.0988,-0.0003,55.87,,0.22,Automobile and Auto Components,0.38,-0.0286,-0.1383
+MANORAMA,Manorama Industries Ltd.,30,0.6741,0.0,0.0379,0.0016,52.15,,0.04,Fast Moving Consumer Goods,0.28,-0.0144,-0.1105
+CHALET,Chalet Hotels Ltd.,50,0.674,0.0,0.272,-0.0035,64.04,,0.24,Consumer Services,0.07,0.0094,-0.1384
+JYOTICNC,Jyoti CNC Automation Ltd.,60,0.6734,0.0,0.1453,0.0018,42.61,,0.0,Capital Goods,-0.42,0.0167,-0.1211
+NH,Narayana Hrudayalaya Ltd.,30,0.6723,0.0,0.1287,-0.0001,129.03,,0.0026,Healthcare,0.12,-0.0798,-0.1785
+GABRIEL,Gabriel India Ltd.,80,0.6702,0.0,0.1563,0.0033,10.64,,0.0035,Automobile and Auto Components,0.74,0.1287,-0.0926
+TEGA,Tega Industries Ltd.,80,0.6701,-0.0043,0.1782,-0.0068,11.69,,0.11,Capital Goods,0.38,0.0016,-0.1251
+PFIZER,Pfizer Ltd.,80,0.6695,0.0,0.1545,-0.0071,1.67,,0.0197,Healthcare,0.13,-0.05,-0.3052
+ACE,Action Construction Equipment Ltd.,60,0.6681,0.0,0.0802,0.0011,0.39,,0.17,Capital Goods,0.4,-0.0575,-0.1039
+TARC,TARC Ltd.,30,0.6679,0.0,0.059,-0.0026,178.38,,0.0,Realty,0.3,-0.049,-0.3329
+JSWENERGY,JSW Energy Ltd.,50,0.6671,0.0,0.2185,0.0005,229.16,,0.0042,"Power, Renewables & PSU",0.27,-0.0574,-0.2156
+BANKBARODA,Bank of Baroda,50,0.6646,0.0,0.2042,-0.0006,,0.1132,0.0373,PSU Banks,0.44,-0.0082,-0.2693
+FLUOROCHEM,Gujarat Fluorochemicals Ltd.,80,0.6644,0.0,0.1571,0.0016,28.94,,0.07,Chemicals,0.03,-0.0154,-0.1115
+CIEINDIA,CIE Automotive India Ltd.,80,0.6642,0.0,0.2379,0.0016,6.63,0.1222,0.0186,Automobile and Auto Components,-0.02,-0.022,-0.2726
+MEDANTA,Global Health Ltd.,80,0.6639,0.0,0.2332,-0.002,29.87,,0.04,Healthcare,0.16,-0.1292,-0.1969
+SPLPETRO,Supreme Petrochem Ltd.,60,0.6618,0.0,0.0703,0.0007,5.61,,0.0137,Chemicals,-0.06,-0.0493,-0.1466
+CREDITACC,CreditAccess Grameen Ltd.,70,0.661,0.0,0.2069,0.0011,302.87,0.1636,0.0,Financial Services,0.06,-0.1004,-0.2453
+ADANIPORTS,Adani Ports and Special Economic Zone Ltd.,50,0.6606,0.0,0.2172,-0.0139,64.05,,0.0043,Services,0.48,0.0072,-0.0742
+KITEX,Kitex Garments Ltd.,30,0.6602,0.0,0.0071,0.0,96.81,,0.0043,Textiles,0.5,0.0177,-0.4727
+TVSSCS,TVS Supply Chain Solutions Ltd.,30,0.6599,0.0,0.135,0.0,133.61,,0.0,Services,0.86,-0.0567,-0.1623
+GRAPHITE,Graphite India Ltd.,60,0.6596,0.0,0.1455,0.0054,6.29,,0.0091,Capital Goods,0.96,-0.0539,-0.1191
+LTF,L&T Finance Ltd.,50,0.6595,0.0,0.2008,0.0201,393.44,,0.0105,Financial Services,0.68,-0.1603,-0.2503
+SKIPPER,Skipper Ltd.,30,0.658,0.0,0.0868,0.0011,63.56,,0.02,Capital Goods,0.66,-0.0115,-0.1465
+JLHL,Jupiter Life Line Hospitals Ltd.,80,0.6577,0.0,0.2434,0.0001,37.84,,0.08,Healthcare,0.12,-0.1105,-0.2734
+THOMASCOOK,Thomas Cook (India) Ltd.,60,0.6573,0.0,0.1131,0.0,21.37,,0.005,Consumer Services,-0.23,-0.0234,-0.3997
+TIPSMUSIC,Tips Music Ltd.,60,0.6571,0.0,0.0715,0.0,1.96,,0.0125,Media Entertainment & Publication,0.24,0.1375,-0.0146
+VTL,Vardhman Textiles Ltd.,80,0.6551,0.0,0.16,0.0002,17.52,,0.0093,Textiles,0.21,-0.0524,-0.2203
+RATNAMANI,Ratnamani Metals & Tubes Ltd.,80,0.6546,0.0,0.256,0.0,7.55,,0.0039,Capital Goods,0.36,-0.0661,-0.2421
+DEVYANI,Devyani International Ltd.,50,0.6542,0.0,0.1839,-0.0002,203.33,,0.0,Consumer Services,0.33,-0.1197,-0.2817
+SFL,Sheela Foam Ltd.,80,0.6539,0.0,0.1806,-0.0029,27.85,,0.17,Consumer Durables,0.25,-0.0834,-0.259
+EUREKAFORB,Eureka Forbes Ltd.,60,0.6528,0.0,0.1214,-0.0002,0.63,,0.0,Consumer Durables,-0.02,-0.1119,-0.4802
+RAYMONDLSL,Raymond Lifestyle Ltd.,60,0.6519,0.0,0.0739,0.0,22.68,,0.18,Textiles,0.63,-0.1264,-0.5387
+IRCON,IRCON International Ltd.,30,0.6517,0.0,0.0336,-0.0001,85.83,,0.0179,Railways & Infra EPC,0.65,-0.0115,-0.4199
+EMIL,Electronics Mart India Ltd.,50,0.6517,0.0,0.276,0.0008,122.81,,0.0,Consumer Services,0.5,-0.0122,-0.1403
+SAIL,Steel Authority of India Ltd.,50,0.651,0.0,0.1689,-0.0009,52.9,,0.0138,Metals & Mining,1.04,-0.0104,-0.1741
+EMBDL,Embassy Developments Ltd.,30,0.649,0.0,0.0856,0.0,53.41,,0.0,Realty,1.04,0.0046,-0.4338
+VIKRAMSOLR,Vikram Solar Ltd.,60,0.6485,0.0,0.0377,0.0003,20.37,,0.0,Capital Goods,1.13,-0.1186,-0.5937
+MSTCLTD,MSTC Ltd.,60,0.6475,0.0,0.0362,0.0,16.04,,0.0242,Services,0.6,-0.096,-0.1874
+ENTERO,Entero Healthcare Solutions Ltd.,80,0.6474,0.0,0.2175,0.0,38.64,,0.0,Consumer Services,-0.49,-0.049,-0.1745
+SAREGAMA,Saregama India Ltd,60,0.647,0.0,0.1092,0.0002,4.28,,0.0091,Media Entertainment & Publication,0.65,0.0301,-0.1227
+MOIL,MOIL Ltd.,30,0.6469,0.0,0.0656,0.0,,,0.0607,Metals & Mining,0.34,-0.0388,-0.3951
+WELENT,Welspun Enterprises Ltd.,30,0.6469,0.0,0.105,0.0,60.92,,0.0041,Construction,0.43,-0.0663,-0.1364
+JSL,Jindal Stainless Ltd.,80,0.6466,0.0,0.1693,0.0026,37.52,,0.0055,Metals & Mining,0.56,0.0167,-0.1623
+SENCO,Senco Gold Ltd.,30,0.6453,0.0,0.1466,-0.0001,107.38,,0.0055,Consumer Durables,0.38,-0.0149,-0.2134
+CUPID,Cupid Ltd.,60,0.6445,0.0,0.0081,0.0013,12.51,,0.0,Fast Moving Consumer Goods,0.28,0.2671,-0.0413
+TARIL,Transformers And Rectifiers (India) Ltd.,80,0.6441,0.0,0.0664,-0.0,34.45,0.205,0.08,Capital Goods,-0.27,0.1935,-0.3398
+POLYCAB,Polycab India Ltd.,100,0.6441,0.0,0.169,-0.0015,2.05,0.2677,0.0057,Capital Goods,0.7,0.0013,-0.1883
+BIRLACORPN,Birla Corporation Ltd.,80,0.6434,0.0,0.2044,-0.0014,46.04,,0.0158,Construction Materials,0.49,-0.0071,-0.3443
+CANBK,Canara Bank,70,0.6432,0.0,0.1782,0.0,,0.1512,0.0359,PSU Banks,0.53,-0.0453,-0.2498
+J&KBANK,Jammu & Kashmir Bank Ltd.,30,0.6432,0.0,0.1124,-0.0007,,0.1461,0.0,Financial Services,0.49,-0.0879,-0.3342
+PRESTIGE,Prestige Estates Projects Ltd.,50,0.6427,0.0,0.2875,-0.0024,105.49,0.0775,0.13,Realty,0.56,0.036,-0.1725
+ASTERDM,Aster DM Quality Care Ltd.,80,0.6426,0.0,0.2111,0.0006,45.92,,0.0044,Healthcare,-0.08,-0.1135,-0.2434
+GODREJCP,Godrej Consumer Products Ltd.,80,0.6425,0.0,0.2328,-0.0006,34.9,,0.023,Fast Moving Consumer Goods,0.33,-0.0206,-0.3188
+PRUDENT,Prudent Corporate Advisory Services Ltd.,80,0.6424,0.0,0.2876,-0.0021,3.87,,0.11,Financial Services,0.41,-0.0808,-0.2566
+NETWEB,Netweb Technologies India Ltd.,60,0.6416,0.0,0.1168,0.0032,39.02,,0.06,Information Technology,1.77,0.0335,-0.186
+COHANCE,Cohance Lifesciences Ltd.,80,0.6396,0.0,0.2287,0.0017,9.93,,0.0,Healthcare,0.62,0.0548,-0.4944
+CAPILLARY,Capillary Technologies India Ltd.,80,0.6394,0.0,0.1851,0.0028,5.24,,0.0,Information Technology,1.05,0.2148,-0.3174
+BAJAJFINSV,Bajaj Finserv Ltd.,30,0.6387,0.0,0.1496,0.0003,256.4,,0.08,Financial Services,0.4,-0.07,-0.2116
+JINDALSTEL,Jindal Steel Ltd.,80,0.6386,0.0,0.2311,-0.0007,43.61,,0.19,Metals & Mining,0.69,-0.0737,-0.1984
+INDIAGLYCO,India Glycols Ltd.,30,0.6384,0.0,0.0331,-0.0013,57.65,,0.0228,Fast Moving Consumer Goods,0.35,0.3347,-0.7277
+SCI,Shipping Corporation of India Ltd.,60,0.6375,0.0,0.0441,-0.0034,29.45,,0.0264,Services,0.52,0.0552,-0.2248
+SHAREINDIA,Share India Securities Ltd.,60,0.6372,0.0,0.0077,0.0,27.93,,0.0103,Financial Services,-0.09,-0.1165,-0.173
+THANGAMAYL,Thangamayil Jewellery Ltd.,50,0.6365,0.0,0.1958,-0.0014,64.49,,0.0038,Consumer Durables,0.59,0.0597,-0.3139
+WESTLIFE,Westlife Foodworld Ltd.,50,0.6363,-0.0001,0.306,-0.0086,291.52,,0.14,Consumer Services,-0.02,0.0548,-0.1425
+JSWSTEEL,JSW Steel Ltd.,50,0.636,0.0,0.1734,0.0001,95.37,,0.0059,Metals & Mining,0.63,-0.0296,-0.0997
+POLYMED,Poly Medicure Ltd.,80,0.6358,0.0,0.1808,-0.0012,11.23,,0.22,Healthcare,0.0,-0.0694,-0.2374
+JINDALSAW,Jindal Saw Ltd.,80,0.6355,0.0,0.1623,0.0003,38.19,,0.0067,Capital Goods,0.47,0.0355,-0.0577
+HAVELLS,Havells India Ltd.,80,0.6352,0.0,0.2342,-0.0027,2.8,,0.0108,Consumer Durables,0.34,0.0266,-0.2566
+WEWORK,WeWork India Management Ltd.,50,0.6343,0.0,0.2587,-0.0018,1854.96,,0.0,Services,1.05,-0.0317,-0.1678
+NEWGEN,Newgen Software Technologies Ltd.,60,0.634,0.0,0.0863,-0.0002,2.21,,0.0123,Information Technology,0.55,0.009,-0.5207
+DOMS,DOMS Industries Ltd.,80,0.6339,0.0,0.2908,-0.0008,10.85,,0.17,Fast Moving Consumer Goods,-0.26,-0.0081,-0.2348
+GPIL,Godawari Power & Ispat Ltd.,60,0.6334,0.0,0.0737,0.006,7.58,,0.0048,Capital Goods,0.76,-0.1123,-0.336
+COCHINSHIP,Cochin Shipyard Ltd.,60,0.6333,0.0,0.1075,-0.0006,28.47,,0.009,Defense & Aerospace,0.6,-0.063,-0.3262
+CHAMBLFERT,Chambal Fertilizers & Chemicals Ltd.,60,0.6329,0.0,0.1275,0.0004,10.27,,0.0307,Chemicals,0.31,-0.0623,-0.219
+FORCEMOT,Force Motors Ltd.,30,0.6324,0.0,0.0634,0.0017,,,0.0028,Automobile and Auto Components,0.67,0.0028,-0.3289
+TORNTPHARM,Torrent Pharmaceuticals Ltd.,50,0.6318,0.0,0.197,-0.0001,85.45,,0.0083,Healthcare,0.14,-0.0648,-0.1316
+ELECON,Elecon Engineering Co. Ltd.,60,0.6316,0.0,0.1163,0.0008,14.4,0.1029,0.0041,Capital Goods,1.52,0.1586,-0.2081
+PTCIL,PTC Industries Ltd.,60,0.6316,0.0,0.0872,0.0001,17.82,0.0859,0.0,Capital Goods,0.34,0.0887,-0.0539
+BALUFORGE,Balu Forge Industries Ltd.,60,0.6315,0.0,0.0152,0.0,9.52,,0.03,Capital Goods,0.65,-0.0414,-0.2908
+SUNTECK,Sunteck Realty Ltd.,80,0.6303,0.0,0.152,0.0,17.31,,0.0055,Realty,0.85,-0.0222,-0.4149
+BAJAJELEC,Bajaj Electricals Ltd,50,0.6299,0.0,0.2133,-0.0,104.58,,0.0098,Consumer Durables,0.04,-0.0738,-0.458
+KALYANKJIL,Kalyan Jewellers India Ltd.,50,0.6286,0.0,0.2067,-0.0009,96.97,,0.0045,Consumer Durables,-0.2,-0.0403,-0.1366
+AGARWALEYE,Dr. Agarwal's Health Care Ltd.,50,0.6284,0.0,0.291,0.0012,50.3,,0.0,Healthcare,0.4,-0.0687,-0.1799
+HCLTECH,HCL Technologies Ltd.,100,0.6278,0.0,0.282,-0.0007,7.91,0.2465,0.0353,Information Technology,0.03,0.1065,-0.1947
+NESTLEIND,Nestle India Ltd.,100,0.6277,0.0,0.175,0.0004,8.04,0.7986,0.0094,Fast Moving Consumer Goods,0.43,-0.0767,-0.1851
+KAJARIACER,Kajaria Ceramics Ltd.,80,0.6271,0.0,0.3031,-0.0005,7.3,,0.0099,Consumer Durables,0.49,-0.0001,-0.0531
+RENUKA,Shree Renuka Sugars Ltd.,30,0.6262,0.0,0.0861,0.0,,,0.0,Fast Moving Consumer Goods,-0.25,-0.0289,-0.2832
+GRWRHITECH,Garware Hi-Tech Films Ltd.,60,0.6254,0.0,0.1002,0.0002,0.59,,0.17,Capital Goods,0.72,0.0719,-0.1261
+NHPC,NHPC Ltd.,50,0.6248,0.0,0.2195,0.0002,113.11,,0.0221,"Power, Renewables & PSU",0.22,-0.05,-0.175
+IRCTC,Indian Railway Catering And Tourism Corporation Ltd.,80,0.624,0.0,0.1689,0.0002,1.87,,0.0192,Railways & Infra EPC,0.29,0.0222,-0.3569
+TORNTPOWER,Torrent Power Ltd.,50,0.6231,0.0,0.267,0.0004,70.89,,0.0161,Power,0.64,-0.0393,-0.3254
+ANANTRAJ,Anant Raj Ltd.,60,0.623,0.0,0.1099,0.0004,11.7,,0.19,Realty,0.4,-0.1427,-0.2725
+HINDUNILVR,Hindustan Unilever Ltd.,80,0.6227,0.0,0.2074,-0.0004,3.02,,0.0232,Fast Moving Consumer Goods,0.33,-0.0249,-0.2771
+CGCL,Capri Global Capital Ltd.,50,0.6227,0.0,0.2324,0.0007,334.73,,0.08,Financial Services,-0.01,-0.0564,-0.1388
+JSWDULUX,JSW Dulux Ltd.,80,0.6222,0.0,0.2844,-0.0008,3.23,,0.0165,Consumer Durables,0.19,-0.0094,-0.1742
+BELRISE,Belrise Industries Ltd.,80,0.622,0.0,0.1741,0.0002,29.1,,0.24,Automobile and Auto Components,1.05,0.0093,-0.1347
+STARHEALTH,Star Health and Allied Insurance Company Ltd.,50,0.6218,0.0,0.2435,0.0003,,0.0751,0.0,Financial Services,0.19,-0.0209,-0.1217
+DBREALTY,VALOR ESTATE Ltd.,60,0.6213,0.0,0.0205,0.0,18.41,,0.0,Realty,-0.39,-0.0803,-0.4596
+MAHSCOOTER,Maharashtra Scooters Ltd.,30,0.6213,0.0,0.0791,0.0002,,,0.0177,Financial Services,0.08,-0.0459,-0.289
+ULTRACEMCO,UltraTech Cement Ltd.,80,0.6197,0.0,0.2261,-0.0005,29.43,,0.0221,Construction Materials,0.49,0.0133,-0.1511
+SHRIPISTON,SPR Auto Technologies Ltd.,50,0.6186,0.0,0.1663,0.0018,65.22,,0.23,Automobile and Auto Components,0.79,0.0558,-0.044
+NBCC,NBCC (India) Ltd.,60,0.6175,0.0,0.1429,-0.0023,0.01,,0.0125,Railways & Infra EPC,0.71,-0.0806,-0.3951
+MSUMI,Motherson Sumi Wiring India Ltd.,80,0.6175,0.0,0.2138,0.0005,10.79,,0.0166,Automobile and Auto Components,0.05,-0.0175,-0.3291
+LTFOODS,LT Foods Ltd.,80,0.6161,0.0,0.1611,0.0008,35.62,,0.0095,Fast Moving Consumer Goods,0.39,-0.0077,-0.1468
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd.,60,0.6159,0.0,0.1337,0.0015,0.01,0.116,0.0116,Financial Services,0.18,0.023,-0.1394
+MARUTI,Maruti Suzuki India Ltd.,80,0.6159,0.0,0.2582,-0.0002,0.1,,0.0122,Automobile and Auto Components,0.26,-0.0688,-0.3319
+ICIL,Indo Count Industries Ltd.,30,0.6156,0.0,0.1374,-0.0,56.99,,0.0034,Textiles,0.44,0.0126,-0.0925
+NETWORK18,Network18 Media & Investments Ltd.,30,0.6152,0.0,0.0188,0.0,65.92,,0.0,Media Entertainment & Publication,0.27,0.0,-0.503
+ALKEM,Alkem Laboratories Ltd.,80,0.6141,0.0,0.2829,0.0016,14.27,,0.0039,Healthcare,0.29,-0.0558,-0.1405
+SBFC,SBFC Finance Ltd.,50,0.6131,0.0,0.2468,0.0079,195.69,,0.0,Financial Services,0.63,-0.087,-0.3073
+COALINDIA,Coal India Ltd.,80,0.6114,0.0,0.2804,0.0111,11.63,,0.0634,Oil Gas & Consumable Fuels,0.02,-0.0019,-0.1285
+JKTYRE,JK Tyre & Industries Ltd.,30,0.6105,0.0,0.1487,0.0011,80.55,,0.0118,Automobile and Auto Components,0.51,-0.0291,-0.4414
+HEMIPROP,Hemisphere Properties India Ltd.,60,0.6101,0.0,0.0901,-0.0,20.14,,0.0,Services,0.3,-0.0747,-0.3178
+BAJAJ-AUTO,Bajaj Auto Ltd.,50,0.6096,0.0,0.1663,-0.0002,56.35,,0.0144,Automobile and Auto Components,0.66,-0.0952,-0.1656
+NMDC,NMDC Ltd.,80,0.608,0.0,0.2067,0.0006,18.8,,0.0282,Metals & Mining,0.64,-0.1007,-0.2547
+NSLNISP,NMDC Steel Ltd.,80,0.6079,0.0,0.1708,0.0,35.02,,0.0,Metals & Mining,0.71,-0.0336,-0.2513
+FEDFINA,Fedbank Financial Services Ltd.,50,0.6064,0.0,0.1576,-0.0008,468.11,0.1476,0.0,Financial Services,0.65,0.063,-0.0931
+VBL,Varun Beverages Ltd.,100,0.6059,0.0,0.2323,0.0017,15.87,0.1685,0.0047,Fast Moving Consumer Goods,0.29,0.0362,-0.2246
+TATACOMM,Tata Communications Ltd.,70,0.6047,0.0,0.2534,0.0023,371.46,0.3376,0.0099,Telecommunication,0.82,-0.0272,-0.174
+DALBHARAT,Dalmia Bharat Ltd.,80,0.6046,0.0,0.2945,0.0003,40.99,,0.0062,Construction Materials,0.19,-0.0053,-0.2704
+POONAWALLA,Poonawalla Fincorp Ltd.,50,0.6036,0.0,0.2003,0.0002,431.21,0.0921,0.0,Financial Services,0.3,0.0373,-0.1759
+ZFCVINDIA,ZF Commercial Vehicle Control Systems India Ltd.,80,0.6027,0.0,0.2644,0.0001,1.49,,0.19,Automobile and Auto Components,-0.0,-0.1179,-0.2902
+PGIL,Pearl Global Industries Ltd.,50,0.6025,0.0,0.2477,-0.0003,65.57,,0.0057,Textiles,0.03,0.1278,-0.0506
+TATATECH,Tata Technologies Ltd.,80,0.6015,0.0,0.0794,-0.0,28.96,0.1522,0.0113,Information Technology,0.89,-0.046,-0.1876
+HINDCOPPER,Hindustan Copper Ltd.,60,0.6014,0.0,0.0861,-0.0003,3.32,,0.0063,Metals & Mining,1.51,-0.0557,-0.3936
+CHOICEIN,Choice International Ltd.,60,0.6005,0.0,0.1069,-0.0,49.77,,0.0,Financial Services,-0.29,0.0035,-0.1394
+CGPOWER,CG Power and Industrial Solutions Ltd.,80,0.6,0.0,0.1976,0.0005,1.45,,0.16,Capital Goods,0.55,-0.0386,-0.1375
+RBLBANK,RBL Bank Ltd.,50,0.5987,0.0,0.1719,0.0006,,0.0404,0.0027,Private Banks,0.7,-0.0641,-0.1195
+BHEL,Bharat Heavy Electricals Ltd.,80,0.5982,0.0,0.2266,-0.0016,22.5,0.1125,0.0032,Capital Goods,0.92,0.0126,-0.0634
+TRITURBINE,Triveni Turbine Ltd.,80,0.5973,0.0,0.2671,0.0,2.48,,0.0079,Capital Goods,0.61,-0.1094,-0.3682
+SYRMA,Syrma SGS Technology Ltd.,80,0.5961,0.0,0.1764,-0.0017,13.04,,0.09,EMS & Semiconductors,0.18,-0.0081,-0.1196
+COROMANDEL,Coromandel International Ltd.,80,0.5956,0.0,0.255,-0.0014,11.47,,0.0062,Chemicals,0.13,-0.0887,-0.2928
+AARTIDRUGS,Aarti Drugs Ltd.,60,0.5956,0.0,0.1097,-0.0,37.22,,0.005,Healthcare,0.31,-0.0747,-0.2538
+UNITDSPR,United Spirits Ltd.,80,0.5949,0.0,0.2492,0.0004,4.61,,0.0123,Fast Moving Consumer Goods,0.21,-0.0072,-0.1173
+EMAMILTD,Emami Ltd.,80,0.594,0.0,0.2882,0.0023,5.54,,0.0268,Fast Moving Consumer Goods,0.13,0.0001,-0.3103
+GRAVITA,Gravita India Ltd.,60,0.5936,0.0,0.1086,0.0002,29.93,,0.0,Metals & Mining,0.49,-0.0821,-0.227
+FINPIPE,Finolex Industries Ltd.,80,0.5935,0.0,0.1565,0.0006,7.17,,0.0129,Capital Goods,0.68,-0.0051,-0.2197
+VAIBHAVGBL,Vaibhav Global Ltd.,80,0.5925,0.0,0.1518,0.0,25.23,,0.0296,Consumer Durables,0.21,-0.0022,-0.2629
+INOXGREEN,Inox Green Energy Services Ltd.,60,0.5916,0.0,0.0542,0.004,5.15,,0.0,Services,1.37,-0.3204,-0.5746
+GAIL,GAIL (India) Ltd.,80,0.5898,0.0,0.268,0.0003,27.81,,0.0325,Oil Gas & Consumable Fuels,0.54,-0.0227,-0.0756
+MARICO,Marico Ltd.,80,0.5894,0.0,0.2575,0.0008,12.39,,0.0051,Fast Moving Consumer Goods,0.18,-0.0392,-0.1171
+MOTHERSON,Samvardhana Motherson International Ltd.,80,0.5891,0.0,0.2528,0.0001,43.91,,0.0031,Automobile and Auto Components,1.07,-0.0116,-0.0766
+SBILIFE,SBI Life Insurance Company Ltd.,50,0.5881,0.0,0.3101,0.002,,0.137,0.16,Financial Services,0.36,-0.0623,-0.2218
+FIRSTCRY,Brainbees Solutions Ltd.,80,0.5879,0.0,0.2388,-0.0,29.76,,0.0,Consumer Services,0.39,0.0554,-0.5294
+TITAN,Titan Company Ltd.,50,0.5879,0.0003,0.2192,0.0005,195.0,,0.0034,Consumer Durables,0.23,-0.0818,-0.143
+FINCABLES,Finolex Cables Ltd.,80,0.5864,0.0,0.2249,0.0048,0.31,,0.0065,Capital Goods,0.62,-0.0201,-0.0876
+AFCONS,Afcons Infrastructure Ltd.,50,0.586,0.0,0.2485,-0.0013,66.54,,0.0081,Construction,0.72,-0.0858,-0.4867
+BALKRISIND,Balkrishna Industries Ltd.,80,0.5854,0.0,0.3148,0.0036,37.52,,0.0078,Automobile and Auto Components,0.39,-0.0544,-0.2577
+PRIVISCL,Privi Speciality Chemicals Ltd.,30,0.5854,0.0,0.0858,0.0002,74.4,,0.003,Chemicals,0.09,-0.0406,-0.1128
+AIAENG,AIA Engineering Ltd.,80,0.5853,0.0,0.3413,-0.0006,0.13,,0.0043,Capital Goods,0.25,-0.0662,-0.2792
+SOBHA,Sobha Ltd.,80,0.5848,0.0,0.2736,0.0006,24.62,,0.005,Realty,0.51,-0.0008,-0.311
+IIFLCAPS,IIFL Capital Services Ltd.,30,0.5848,0.0,0.1454,0.0,59.29,,0.0086,Financial Services,0.78,0.0309,-0.1476
+PARADEEP,Paradeep Phosphates Ltd.,50,0.5843,0.0,0.2261,0.0025,101.82,,0.0102,Chemicals,-0.08,-0.0432,-0.183
+POWERMECH,Power Mech Projects Ltd.,80,0.5842,0.0,0.2504,0.0004,25.63,,0.06,Construction,0.69,0.0205,-0.2059
+GRINDWELL,Grindwell Norton Ltd.,80,0.5831,0.0,0.2194,-0.0,2.38,,0.01,Capital Goods,0.54,0.0095,-0.2343
+ECLERX,eClerx Services Ltd.,80,0.5824,0.0,0.3261,-0.0011,15.01,,0.05,Services,0.4,0.0177,-0.216
+RKFORGE,Ramkrishna Forgings Ltd.,50,0.5815,0.0,0.1602,0.0004,74.42,,0.15,Automobile and Auto Components,0.46,-0.0198,-0.1053
+INDIAMART,Indiamart Intermesh Ltd.,80,0.5808,0.0,0.127,0.0009,0.97,0.2315,0.0184,Consumer Services,0.29,-0.0214,-0.3372
+TENNIND,Tenneco Clean Air India Ltd.,80,0.5806,0.0,0.2642,0.0043,4.29,,0.0,Automobile and Auto Components,1.05,-0.112,-0.3052
+BORORENEW,Borosil Renewables Ltd.,60,0.5784,0.0,0.0394,-0.0038,10.74,,0.0,Capital Goods,0.11,-0.0464,-0.4057
+RHIM,RHI MAGNESITA INDIA LTD.,80,0.5761,0.0,0.2551,0.0092,12.6,,0.0068,Capital Goods,0.35,0.0115,-0.2542
+JKPAPER,JK Paper Ltd.,60,0.5761,0.0,0.1086,-0.0012,44.54,,0.0102,Forest Materials,0.3,-0.0525,-0.1038
+GODREJPROP,Godrej Properties Ltd.,50,0.5758,0.0,0.2421,-0.0007,82.12,,0.0062,Realty,0.65,-0.0446,-0.315
+ACC,ACC Ltd.,80,0.5751,0.0,0.2284,0.0,2.08,,0.0066,Construction Materials,0.34,-0.0368,-0.3991
+HSCL,Himadri Speciality Chemical Ltd.,60,0.5743,0.0,0.0593,0.0002,16.17,,0.12,Chemicals,0.25,0.0112,-0.1938
+HDFCLIFE,HDFC Life Insurance Company Ltd.,80,0.5742,0.0,0.2945,0.0009,15.92,0.1126,0.0038,Financial Services,0.51,-0.0072,-0.2962
+CONCOR,Container Corporation of India Ltd.,80,0.574,0.0,0.4202,-0.0026,7.39,,0.0193,Railways & Infra EPC,0.25,-0.0805,-0.1822
+SBIN,State Bank of India,70,0.5723,-0.0,0.2902,-0.0015,,0.1518,0.0181,PSU Banks,0.41,-0.0264,-0.2063
+LUMAXTECH,Lumax Auto Technologies Ltd.,50,0.572,0.0,0.1955,0.0013,83.41,,0.0029,Automobile and Auto Components,0.53,-0.0245,-0.1011
+ABLBL,Aditya Birla Lifestyle Brands Ltd.,50,0.5717,0.0,0.2243,-0.0002,213.72,,0.0069,Consumer Services,1.22,-0.1176,-0.4897
+NUVAMA,Nuvama Wealth Management Ltd.,50,0.5712,0.0,0.1823,-0.0001,282.32,,0.0163,Financial Services,0.4,0.0111,-0.1742
+VEDL,Vedanta Ltd.,80,0.5707,0.0,0.1802,-0.0015,48.04,,0.0651,Metals & Mining,0.36,-0.0251,-0.6843
+CERA,Cera Sanitaryware Ltd,80,0.5702,0.0,0.2632,0.0004,3.17,,0.0149,Consumer Durables,-0.06,-0.0885,-0.235
+TECHNOE,Techno Electric & Engineering Company Ltd.,80,0.5696,0.0,0.2614,0.0,1.74,,0.0074,Construction,0.76,-0.0387,-0.3139
+YATHARTH,Yatharth Hospital & Trauma Care Services Ltd.,60,0.5694,0.0,0.1282,0.0004,14.61,,0.1,Healthcare,1.0,-0.0749,-0.1621
+BPCL,Bharat Petroleum Corporation Ltd.,50,0.5666,0.0,0.2853,-0.0024,54.33,,0.0681,Oil Gas & Consumable Fuels,0.86,-0.044,-0.2506
+HDFCAMC,HDFC Asset Management Company Ltd.,70,0.5664,0.0,0.2735,-0.0012,,0.3641,0.0224,Financial Services,0.55,0.0046,-0.174
+GREAVESCOT,Greaves Cotton Ltd.,60,0.5656,0.0,0.0313,0.0,26.05,,0.0098,Capital Goods,0.53,0.0656,-0.2425
+BAJFINANCE,Bajaj Finance Ltd.,50,0.565,0.0,0.2802,0.0011,314.83,,0.0056,Financial Services,0.32,-0.0324,-0.1652
+JUBLPHARMA,Jubilant Pharmova Ltd.,50,0.5623,0.0,0.2426,0.003,50.94,,0.0053,Healthcare,0.47,-0.0726,-0.2037
+RALLIS,Rallis India Ltd.,60,0.5618,0.0,0.1125,0.0081,2.99,,0.0149,Chemicals,0.51,0.0039,-0.3208
+NYKAA,FSN E-Commerce Ventures Ltd.,50,0.5613,0.0,0.3232,-0.0005,82.83,,0.0,Consumer Services,0.36,0.0656,-0.013
+PNCINFRA,PNC Infratech Ltd.,50,0.5607,0.0,0.2652,-0.0061,75.88,,0.0042,Construction,0.63,0.0382,-0.5032
+PARAS,Paras Defence and Space Technologies Ltd.,60,0.5605,0.0,0.0769,0.001,3.73,,0.08,Defense & Aerospace,0.55,-0.0525,-0.1799
+PFC,Power Finance Corporation Ltd.,50,0.56,0.0,0.2534,0.0045,536.84,,0.0456,"Power, Renewables & PSU",0.63,-0.0339,-0.3011
+AZAD,Azad Engineering Ltd.,80,0.5584,0.0,0.197,0.0,31.02,,0.0,Capital Goods,0.64,0.0521,-0.1237
+ELECTCAST,Electrosteel Castings Ltd.,60,0.5575,0.0,0.0576,0.0,26.35,,0.0118,Capital Goods,0.09,0.0355,-0.2156
+APARINDS,Apar Industries Ltd.,80,0.5569,0.0,0.2868,-0.0007,17.72,,0.0035,Capital Goods,0.16,-0.0993,-0.1678
+SWANCORP,Swan Corp Ltd.,80,0.5562,0.0,0.1826,-0.0001,24.56,,0.06,Chemicals,-0.15,-0.0844,-0.4622
+SUNPHARMA,Sun Pharmaceutical Industries Ltd.,80,0.5561,0.0,0.2917,-0.0067,5.52,,0.0091,Healthcare,0.14,-0.0581,-0.1407
+VIYASH,Viyash Scientific Ltd.,60,0.556,0.0,0.1081,0.0107,15.72,,0.0,Healthcare,0.98,-0.0757,-0.2416
+TANLA,Tanla Platforms Ltd.,60,0.5555,0.0,0.0556,0.0,2.12,,0.0218,Information Technology,0.74,0.1303,-0.2136
+SHILPAMED,Shilpa Medicare Ltd.,60,0.5552,0.0,0.1111,0.0005,25.46,,0.07,Healthcare,0.35,-0.0217,-0.1437
+ADVENZYMES,Advanced Enzyme Tech Ltd.,80,0.5546,0.0,0.1869,0.0,1.9,,0.0051,Healthcare,0.7,-0.0732,-0.36
+INDGN,Indegene Ltd.,80,0.5545,0.0,0.2686,0.0002,5.04,,0.0038,Healthcare,0.75,0.0111,-0.0458
+VGUARD,V-Guard Industries Ltd.,80,0.5544,-0.0,0.3119,0.0035,6.96,,0.0052,Consumer Durables,0.02,-0.1289,-0.2475
+AHLUCONT,Ahluwalia Contracts (India) Ltd.,80,0.5536,0.0,0.3352,-0.0009,3.55,,0.12,Construction,0.51,-0.021,-0.4845
+APOLLO,Apollo Micro Systems Ltd.,60,0.5526,0.0,0.019,0.0003,41.53,,0.06,Capital Goods,1.32,0.1349,-0.0798
+CLEAN,Clean Science and Technology Ltd.,80,0.5521,0.0,0.2356,0.0053,0.14,,0.0076,Chemicals,0.38,-0.0536,-0.2805
+AVL,Aditya Vision Ltd.,50,0.5514,0.0,0.3201,0.0031,83.2,,0.22,Consumer Services,0.1,-0.0985,-0.1885
+HINDPETRO,Hindustan Petroleum Corporation Ltd.,50,0.55,0.0,0.2812,-0.0012,85.37,,0.0696,Oil Gas & Consumable Fuels,0.94,-0.0131,-0.2844
+KAYNES,Kaynes Technology India Ltd.,60,0.5491,0.0,0.1393,0.0002,19.17,,0.0,EMS & Semiconductors,-0.14,-0.0679,-0.5432
+FSL,Firstsource Solutions Ltd.,50,0.5487,0.0,0.3142,0.0049,67.14,,0.0195,Services,0.19,0.0319,-0.2254
+AUROPHARMA,Aurobindo Pharma Ltd.,80,0.5478,0.0,0.2921,0.0004,21.31,,0.0,Healthcare,0.03,-0.0137,-0.042
+LALPATHLAB,Dr. Lal Path Labs Ltd.,80,0.547,0.0,0.3239,0.0014,7.83,,0.0106,Healthcare,0.16,-0.0337,-0.0877
+KPIGREEN,KPI Green Energy Ltd.,30,0.5469,0.0,0.0499,0.0,158.76,,0.0031,Power,0.6,0.1487,-0.4089
+PPLPHARMA,Piramal Pharma Ltd.,50,0.5453,0.0,0.1998,0.002,69.98,,0.0,Healthcare,0.34,-0.0341,-0.1475
+FIEMIND,Fiem Industries Ltd,60,0.5452,0.0,0.1143,-0.0007,5.39,,0.0219,Automobile and Auto Components,0.48,0.0096,-0.2825
+ASHOKA,Ashoka Buildcon Ltd.,80,0.5449,0.0,0.1729,0.0,24.46,,0.0,Construction,0.52,-0.0354,-0.5107
+SKYGOLD,SKY GOLD AND DIAMONDS Ltd.,30,0.5447,0.0,0.1386,-0.0008,72.07,,0.0,Consumer Durables,0.1,0.3369,-0.0131
+SAFARI,Safari Industries (India) Ltd.,80,0.5446,0.0,0.3333,0.0068,10.46,,0.003,Consumer Durables,-0.39,-0.1299,-0.4748
+AVALON,Avalon Technologies Ltd.,80,0.544,0.0,0.3152,0.001,29.5,,0.0,EMS & Semiconductors,0.89,-0.1088,-0.2409
+ASTRAL,Astral Ltd.,80,0.5434,0.0,0.2901,0.0035,6.17,,0.0028,Capital Goods,0.2,0.0204,-0.1917
+AJANTPHARM,Ajanta Pharmaceuticals Ltd.,80,0.5429,0.0,0.2438,-0.0,5.87,,0.0191,Healthcare,0.22,-0.049,-0.123
+JKCEMENT,J.K. Cement Ltd.,50,0.5427,0.0,0.3427,-0.0002,87.52,,0.0041,Construction Materials,0.39,-0.0207,-0.2695
+AURIONPRO,Aurionpro Solution Ltd.,60,0.5424,0.0,0.1426,0.0,3.48,,0.0048,Information Technology,-0.18,-0.095,-0.485
+PCJEWELLER,PC Jeweller Ltd.,60,0.5424,0.0,0.0116,0.0,14.27,,0.0,Consumer Durables,0.35,0.3182,-0.0507
+BEML,BEML Ltd.,80,0.5422,0.0,0.2242,0.0006,10.53,,0.0091,Defense & Aerospace,0.71,-0.0165,-0.1275
+HERITGFOOD,Heritage Foods Ltd.,60,0.542,0.0,0.0806,-0.0043,33.7,0.1047,0.0063,Fast Moving Consumer Goods,1.15,-0.0001,-0.1892
+ABREL,Aditya Birla Real Estate Ltd.,50,0.5415,0.0,0.2127,-0.0011,152.37,,0.22,Realty,0.49,-0.1091,-0.4137
+V2RETAIL,V2 Retail Ltd.,30,0.541,0.0,0.109,-0.0002,110.22,,0.0,Consumer Services,0.37,-0.1836,-0.3374
+SHAKTIPUMP,Shakti Pumps (India) Ltd.,60,0.5403,0.0,0.0522,0.0,29.62,,0.24,Capital Goods,-0.16,-0.0891,-0.4896
+NTPC,NTPC Ltd.,50,0.54,0.0,0.3489,-0.0003,128.34,,0.0393,"Power, Renewables & PSU",0.35,-0.0438,-0.2313
+INDIGOPNTS,Indigo Paints Ltd.,80,0.5381,0.0,0.282,0.0035,1.83,,0.0048,Consumer Durables,0.54,-0.0521,-0.2227
+RATEGAIN,Rategain Travel Technologies Ltd.,80,0.5378,0.0,0.2257,0.001,47.3,,0.0,Information Technology,0.82,-0.0442,-0.2122
+ABFRL,Aditya Birla Fashion and Retail Ltd.,30,0.5368,0.0,0.127,-0.0002,98.82,,0.0,Consumer Services,0.07,-0.1114,-0.4794
+M&MFIN,Mahindra & Mahindra Financial Services Ltd.,50,0.5363,0.0,0.3755,0.0006,429.85,,0.0237,Financial Services,0.39,-0.0988,-0.2493
+VIJAYA,Vijaya Diagnostic Centre Ltd.,80,0.5348,0.0,0.3939,-0.0,44.15,,0.14,Healthcare,0.36,-0.0826,-0.133
+ACI,Archean Chemical Industries Ltd.,80,0.5343,0.0,0.2485,0.0082,24.13,,0.0053,Chemicals,0.18,0.035,-0.2887
+BEL,Bharat Electronics Ltd.,80,0.5342,0.0,0.2854,-0.0004,0.27,,0.0066,Defense & Aerospace,0.31,-0.047,-0.203
+CCAVENUE,AvenuesAI Ltd.,60,0.5323,0.0,0.038,0.0,8.63,,0.0,Financial Services,-0.01,-0.0973,-0.3254
+SKFINDIA,SKF India Ltd.,80,0.5315,0.0,0.2754,0.0002,0.22,,0.0278,Automobile and Auto Components,0.39,-0.0583,-0.707
+BHARTIARTL,Bharti Airtel Ltd.,70,0.5315,0.0,0.3574,0.0006,100.42,0.2015,0.0129,Telecommunication,0.01,0.0376,-0.1129
+POWERGRID,Power Grid Corporation of India Ltd.,50,0.5291,0.0,0.3621,0.0005,150.81,,0.036,"Power, Renewables & PSU",0.18,-0.0504,-0.2257
+ASIANPAINT,Asian Paints Ltd.,80,0.529,0.0,0.2733,0.0002,17.85,,0.0117,Consumer Durables,0.3,-0.0498,-0.2122
+ETHOSLTD,Ethos Ltd.,80,0.5287,0.0,0.338,-0.0005,19.37,,0.0,Consumer Durables,0.09,-0.0149,-0.1955
+SYNGENE,Syngene International Ltd.,80,0.5282,0.0,0.3906,0.0015,9.47,,0.0033,Healthcare,0.07,0.0155,-0.4297
+MOTILALOFS,Motilal Oswal Financial Services Ltd.,50,0.5271,0.0,0.2925,0.0017,165.8,,0.0056,Financial Services,0.38,0.0697,-0.0299
+RECLTD,REC Ltd.,50,0.5265,0.0,0.2301,-0.0018,607.46,,0.0439,"Power, Renewables & PSU",0.34,-0.0087,-0.1929
+SKFINDUS,SKF India (Industrial) Ltd.,80,0.5258,0.0,0.2913,0.0009,0.31,,0.012,Capital Goods,1.05,-0.1448,-0.2188
+TIMKEN,Timken India Ltd.,80,0.524,0.0,0.3075,0.0021,0.5,,0.09,Capital Goods,0.4,-0.0928,-0.2632
+SRF,SRF Ltd.,80,0.5238,-0.0,0.2951,-0.0006,36.2,,0.004,Chemicals,0.16,-0.0252,-0.227
+RAINBOW,Rainbow Childrens Medicare Ltd.,50,0.5229,0.0011,0.3378,-0.0022,53.56,,0.0028,Healthcare,0.15,-0.1524,-0.2243
+CSBBANK,CSB Bank Ltd.,50,0.5227,-0.0009,0.1844,0.0014,,,0.0,Financial Services,0.31,-0.0592,-0.4622
+TVSMOTOR,TVS Motor Company Ltd.,50,0.5227,0.0,0.3093,0.0001,306.09,,0.003,Automobile and Auto Components,-0.03,-0.0016,-0.0868
+DATAPATTNS,Data Patterns (India) Ltd.,80,0.5223,0.0,0.1979,0.0006,0.3,,0.0025,Defense & Aerospace,0.55,-0.0769,-0.1856
+ZAGGLE,Zaggle Prepaid Ocean Services Ltd.,60,0.5207,0.0,0.0432,-0.0,3.88,,0.0,Information Technology,0.6,-0.065,-0.5817
+DIVISLAB,Divi's Laboratories Ltd.,80,0.52,0.0,0.291,0.0052,0.04,,0.0033,Healthcare,0.23,-0.0191,-0.0611
+CHOLAFIN,Cholamandalam Investment and Finance Company Ltd.,50,0.5195,0.0,0.3293,0.0024,695.28,,0.13,Financial Services,0.49,-0.1077,-0.1936
+VMART,V-Mart Retail Ltd.,50,0.519,0.0,0.3544,0.0,100.68,,0.12,Consumer Services,0.71,0.0008,-0.1084
+RELIANCE,Reliance Industries Ltd.,80,0.518,0.0,0.2824,0.0008,46.28,,0.0049,Oil Gas & Consumable Fuels,0.19,-0.0263,-0.2451
+GLAND,Gland Pharma Ltd.,80,0.5175,0.0,0.3755,0.0053,2.74,,0.0065,Healthcare,0.58,0.0466,-0.0402
+GVT&D,GE Vernova T&D India Ltd.,80,0.5174,0.0,0.2969,0.0001,0.89,,0.0025,Capital Goods,0.59,-0.088,-0.2975
+SUPREMEIND,Supreme Industries Ltd.,80,0.5169,0.0,0.2957,0.001,1.47,,0.01,Capital Goods,0.21,0.0751,-0.152
+COLPAL,Colgate Palmolive (India) Ltd.,80,0.5141,0.0,0.2221,0.0023,2.99,,0.027,Fast Moving Consumer Goods,0.51,-0.0377,-0.2226
+ENGINERSIN,Engineers India Ltd.,80,0.5137,0.0,0.1874,0.0002,0.53,,0.018,Construction,0.95,0.0453,-0.1492
+EICHERMOT,Eicher Motors Ltd.,80,0.5133,0.0,0.2599,-0.0004,2.05,,0.0113,Automobile and Auto Components,0.24,-0.0279,-0.1078
+INDUSTOWER,Indus Towers Ltd.,70,0.5131,0.0,0.3379,0.0023,51.79,0.1891,0.0367,Telecommunication,0.18,0.0051,-0.174
+CASTROLIND,Castrol India Ltd.,100,0.513,0.0,0.1658,-0.0007,2.78,0.57,0.0637,Oil Gas & Consumable Fuels,0.32,0.0314,-0.0278
+CUMMINSIND,Cummins India Ltd.,80,0.5129,0.0,0.3048,0.001,0.43,,0.0142,Capital Goods,0.53,-0.0821,-0.2383
+NATIONALUM,National Aluminium Co. Ltd.,80,0.5128,0.0,0.2177,-0.0023,0.28,,0.0126,Metals & Mining,0.74,-0.0884,-0.2687
+BRITANNIA,Britannia Industries Ltd.,80,0.5118,0.0,0.2486,-0.0004,26.88,,0.0187,Fast Moving Consumer Goods,0.42,-0.0438,-0.2277
+THYROCARE,Thyrocare Technologies Ltd.,80,0.5118,0.0,0.2201,-0.0,8.65,,0.0191,Healthcare,0.45,-0.1323,-0.267
+WOCKPHARMA,Wockhardt Ltd.,60,0.5102,0.0,0.1313,0.0001,42.28,,0.0,Healthcare,1.0,-0.0567,-0.193
+SAGILITY,Sagility Ltd.,80,0.5095,0.0,0.2351,0.0006,11.5,,0.0044,Information Technology,0.98,0.0166,-0.2149
+EXIDEIND,Exide Industries Ltd.,80,0.5094,0.0,0.2336,0.0008,11.31,,0.0053,Automobile and Auto Components,0.58,-0.1138,-0.2527
+JUBLINGREA,Jubilant Ingrevia Ltd.,80,0.5088,0.0,0.2817,0.0024,25.33,,0.0079,Chemicals,0.28,-0.0036,-0.2037
+NATCOPHARM,NATCO Pharma Ltd.,60,0.5088,0.0,0.1335,0.0039,7.74,,0.0076,Healthcare,0.15,-0.0406,-0.359
+STLTECH,Sterlite Technologies Ltd.,50,0.5083,0.0,0.2116,0.002,85.63,,0.0,Telecommunication,1.6,0.0465,-0.1762
+AAVAS,Aavas Financiers Ltd.,50,0.5077,0.0,0.3141,0.0062,310.55,,0.0,Financial Services,0.56,-0.0748,-0.3255
+ATHERENERG,Ather Energy Ltd.,80,0.5062,0.0,0.2515,-0.003,25.82,,0.0,Automobile and Auto Components,0.59,-0.0516,-0.1571
+NAVA,Nava Ltd.,60,0.505,0.0,0.057,0.0001,20.68,,0.0157,Power,0.47,-0.0025,-0.2557
+BATAINDIA,Bata India Ltd.,50,0.5047,0.0,0.3052,-0.0023,86.9,,0.0552,Consumer Durables,0.39,0.0031,-0.44
+BECTORFOOD,Mrs. Bectors Food Specialities Ltd.,80,0.5029,0.0,0.3161,0.0006,15.01,,0.0062,Fast Moving Consumer Goods,0.19,-0.0467,-0.2438
+OLECTRA,Olectra Greentech Ltd.,60,0.5027,0.0,0.0518,0.0,30.84,,0.06,Automobile and Auto Components,0.18,-0.1006,-0.3221
+NEOGEN,NEOGEN CHEMICALS LTD.,50,0.5025,0.0,0.2033,0.0174,170.91,,0.04,Chemicals,0.73,0.0372,-0.1078
+JIOFIN,Jio Financial Services Ltd.,80,0.5019,0.0,0.1953,-0.0001,31.95,0.0129,0.0027,Financial Services,0.52,-0.0569,-0.3159
+PETRONET,Petronet LNG Ltd.,80,0.5018,0.0,0.2731,0.0014,10.51,,0.0339,Oil Gas & Consumable Fuels,0.48,0.0337,-0.092
+RTNPOWER,RattanIndia Power Ltd.,30,0.5016,0.0,0.0303,0.0,80.01,,0.0,Power,0.42,-0.0737,-0.4523
+ZENSARTECH,Zensar Technolgies Ltd.,80,0.5012,0.0,0.2566,0.0017,1.68,,0.0297,Information Technology,0.23,0.1491,-0.3651
+IGL,Indraprastha Gas Ltd.,80,0.5,0.0,0.3261,-0.0008,0.85,,0.0207,Oil Gas & Consumable Fuels,0.53,-0.0277,-0.3276
+ZENTEC,Zen Technologies Ltd.,30,0.4991,0.0,0.1165,0.0002,0.95,,0.06,Defense & Aerospace,0.4,-0.0155,-0.1895
+DEEPAKNTR,Deepak Nitrite Ltd.,50,0.4985,0.0,0.267,0.0002,27.9,,0.0047,Chemicals,0.49,-0.0039,-0.1539
+WELCORP,Welspun Corp Ltd.,50,0.4985,0.0,0.2837,-0.0026,25.04,,0.2,Capital Goods,0.58,0.0452,-0.1133
+ASHAPURMIN,Ashapura Minechem Ltd.,20,0.4983,0.0,0.1759,0.0,87.77,,0.0043,Metals & Mining,0.62,-0.0994,-0.496
+RELIGARE,Religare Enterprises Ltd.,30,0.4979,0.0,0.0585,0.0,12.72,,0.0,Financial Services,-0.21,-0.1177,-0.2126
+APOLLOTYRE,Apollo Tyres Ltd.,50,0.4966,0.0,0.3441,0.0004,21.99,,0.0145,Automobile and Auto Components,0.17,-0.008,-0.2339
+GROWW,Billionbrains Garage Ventures Ltd.,50,0.4922,0.0,0.3971,0.0002,3.03,,0.0,Financial Services,1.05,0.0715,-0.116
+RAMCOCEM,The Ramco Cements Ltd.,50,0.4915,0.0,0.3102,0.0031,47.9,,0.0032,Construction Materials,0.1,-0.0623,-0.335
+MASTEK,Mastek Ltd.,50,0.4915,0.0,0.2477,0.0,14.65,,0.0137,Information Technology,0.28,0.1231,-0.2175
+CCL,CCL Products (I) Ltd.,20,0.4914,0.0,0.2637,-0.0001,56.49,,0.0053,Fast Moving Consumer Goods,0.02,-0.0508,-0.186
+ANGELONE,Angel One Ltd.,40,0.4899,0.0,0.2366,0.0005,113.71,0.1842,0.0161,Financial Services,1.63,0.0169,-0.1651
+GLENMARK,Glenmark Pharmaceuticals Ltd.,50,0.4896,0.0,0.2692,-0.0018,5.65,,0.11,Healthcare,0.25,-0.0784,-0.1216
+STYRENIX,Styrenix Performance Materials Ltd.,50,0.4889,0.0,0.1601,-0.0,40.12,,0.0222,Chemicals,0.41,-0.0022,-0.215
+KNRCON,KNR Constructions Ltd.,50,0.4882,0.0,0.2145,-0.0,49.16,,0.22,Construction,0.44,-0.0776,-0.4253
+GRASIM,Grasim Industries Ltd.,20,0.488,0.0,0.223,-0.0011,135.04,,0.0035,Construction Materials,0.41,-0.0798,-0.144
+TATAPOWER,Tata Power Co. Ltd.,20,0.4871,0.0,0.2028,-0.0006,168.05,,0.0071,"Power, Renewables & PSU",0.39,-0.0411,-0.2342
+CEATLTD,Ceat Ltd.,20,0.4866,0.0,0.3357,0.0009,81.81,0.1079,0.0109,Automobile and Auto Components,0.48,-0.0397,-0.25
+TIMETECHNO,Time Technoplast Ltd.,50,0.486,0.0,0.2044,0.0002,17.61,,0.0084,Capital Goods,0.2,0.0284,-0.2044
+TEXRAIL,Texmaco Rail & Eng. Ltd.,30,0.4853,0.0,0.0908,0.0,37.09,,0.0066,Railways & Infra EPC,0.65,0.014,-0.2027
+RBA,Restaurant Brands Asia Ltd.,20,0.4832,0.0,0.3143,-0.0009,285.66,,0.0,Consumer Services,0.42,-0.0395,-0.1694
+BIOCON,Biocon Ltd.,50,0.4812,0.0,0.3176,0.0019,42.15,,0.14,Healthcare,0.32,-0.0811,-0.2191
+JAMNAAUTO,Jamna Auto Industries Ltd.,30,0.4808,0.0,0.0826,-0.003,13.05,,0.0175,Automobile and Auto Components,0.29,0.1224,-0.0854
+MRF,MRF Ltd.,50,0.4788,0.0,0.1873,0.0005,15.29,,0.19,Automobile and Auto Components,0.15,-0.0144,-0.2481
+PHOENIXLTD,Phoenix Mills Ltd.,50,0.4782,0.0,0.379,-0.0003,37.21,,0.13,Realty,0.34,0.0132,-0.1246
+METROPOLIS,Metropolis Healthcare Ltd.,50,0.4782,-0.0,0.4429,-0.0001,15.21,,0.0038,Healthcare,0.2,-0.0954,-0.1292
+JSFB,Jana Small Finance Bank Ltd.,20,0.4743,0.0,0.1682,-0.0002,,,0.0,Financial Services,0.56,-0.0567,-0.1917
+JKLAKSHMI,JK Lakshmi Cement Ltd.,20,0.4723,0.0,0.2957,0.0003,66.59,,0.0137,Construction Materials,0.45,-0.063,-0.4534
+INOXWIND,Inox Wind Ltd.,50,0.4723,0.0,0.2111,0.0014,20.63,,0.0,"Power, Renewables & PSU",0.42,-0.0873,-0.5755
+DEEPAKFERT,Deepak Fertilisers & Petrochemicals Corp. Ltd.,20,0.4709,0.0,0.1897,-0.0011,75.97,,0.0076,Chemicals,0.05,0.0147,-0.195
+NAUKRI,Info Edge (India) Ltd.,50,0.4706,0.0,0.3641,0.0003,0.64,,0.0117,Consumer Services,0.32,0.0001,-0.1027
+BHARATFORG,Bharat Forge Ltd.,20,0.4703,0.0,0.3713,-0.0033,76.47,,0.0046,Automobile and Auto Components,0.52,-0.0436,-0.2004
+LUPIN,Lupin Ltd.,50,0.4702,0.0,0.3513,0.0012,29.39,,0.0091,Healthcare,0.17,-0.0651,-0.2227
+BLUESTONE,BlueStone Jewellery and Lifestyle Ltd.,20,0.4693,0.0,0.3596,0.0111,110.03,,0.0,Consumer Durables,0.4,-0.0629,-0.1969
+CHOLAHLDNG,Cholamandalam Financial Holdings Ltd.,20,0.4693,0.0,0.3378,0.0073,623.16,,0.09,Financial Services,0.41,-0.0928,-0.3406
+EIDPARRY,E.I.D. Parry (India) Ltd.,50,0.4692,0.0,0.2602,0.002,23.65,,0.0,Fast Moving Consumer Goods,0.05,-0.0127,-0.3791
+IIFL,IIFL Finance Ltd.,40,0.4688,0.0,0.2036,-0.0003,490.05,0.166,0.0067,Financial Services,0.31,0.0316,-0.1271
+DYNAMATECH,Dynamatic Technologies Ltd.,20,0.4687,0.0,0.1647,0.0063,80.39,,0.06,Capital Goods,0.52,0.1654,-0.0499
+RAIN,Rain Industries Ltd,0,0.4683,0.0,0.0745,0.0,130.48,0.0855,0.0045,Chemicals,1.13,0.1258,-0.0888
+SWSOLAR,Sterling and Wilson Renewable Energy Ltd.,20,0.4673,0.0,0.0826,0.0,131.21,0.3618,0.0,Construction,0.82,-0.0767,-0.3655
+BRIGADE,Brigade Enterprises Ltd.,20,0.4671,0.0,0.3807,0.0038,84.32,,0.0034,Realty,0.25,-0.0737,-0.2804
+PIRAMALFIN,Piramal Finance Ltd.,20,0.4658,0.0,0.2606,0.0027,286.78,0.0604,0.0056,Financial Services,1.05,-0.1347,-0.1617
+SHAILY,Shaily Engineering Plastics Ltd.,50,0.4655,0.0,0.3577,0.0038,24.75,,0.1,Consumer Durables,-0.08,0.0008,-0.1391
+PAGEIND,Page Industries Ltd.,50,0.4643,0.0,0.4454,0.0009,18.42,,0.0219,Textiles,0.03,0.0321,-0.1713
+ITCHOTELS,ITC Hotels Ltd.,50,0.4635,0.0,0.2998,-0.0156,0.63,,0.0063,Consumer Services,1.25,0.0528,-0.2784
+ANUP,The Anup Engineering Ltd.,50,0.4623,0.0,0.1748,-0.0,17.66,,0.0081,Capital Goods,-0.02,-0.096,-0.3959
+PIIND,PI Industries Ltd.,50,0.462,0.0,0.4034,0.002,3.05,,0.0068,Chemicals,0.36,-0.0507,-0.4256
+ATUL,Atul Ltd.,50,0.4617,0.0,0.2823,0.0018,2.91,,0.0048,Chemicals,0.21,0.0103,-0.1327
+WAKEFIT,Wakefit Innovations Ltd.,50,0.4611,0.0,0.4419,0.0,24.02,,0.0,Consumer Durables,1.05,-0.0548,-0.3857
+HAPPSTMNDS,Happiest Minds Technologies Ltd.,0,0.4602,0.0,0.0834,0.0038,98.7,0.1332,0.0219,Information Technology,0.08,0.0244,-0.3579
+BALRAMCHIN,Balrampur Chini Mills Ltd.,20,0.459,0.0,0.3419,0.0002,76.61,,0.0096,Fast Moving Consumer Goods,0.38,0.0673,-0.0766
+IDBI,IDBI Bank Ltd.,20,0.4555,0.0,0.497,-0.001,,0.1387,0.0,PSU Banks,0.91,0.0272,-0.2894
+TMCV,Tata Motors Ltd.,50,0.4517,0.0,0.2581,0.0004,44.09,,0.0095,Capital Goods,1.05,-0.0345,-0.1635
+PGEL,PG Electroplast Ltd.,50,0.4507,0.0,0.2802,0.0019,19.57,,0.05,EMS & Semiconductors,-0.11,-0.0152,-0.191
+IPCALAB,Ipca Laboratories Ltd.,50,0.4506,0.0,0.4568,0.0021,8.49,,0.0031,Healthcare,0.04,-0.0699,-0.1008
+ELGIEQUIP,Elgi Equipments Ltd.,50,0.4503,0.0,0.2037,0.0004,23.89,,0.0047,Capital Goods,0.12,-0.0356,-0.1243
+TATAELXSI,Tata Elxsi Ltd.,50,0.4485,0.0,0.1474,-0.0003,4.9,0.2387,0.0203,Information Technology,0.38,0.1385,-0.3413
+ABSLAMC,Aditya Birla Sun Life AMC Ltd.,50,0.448,0.0,0.4522,0.0006,1.58,,0.026,Financial Services,0.37,-0.1084,-0.1866
+KIRLPNU,Kirloskar Pneumatic Company Ltd.,50,0.4456,0.0,0.3053,-0.0001,0.27,,0.0095,Capital Goods,0.56,-0.0817,-0.4174
+KPITTECH,KPIT Technologies Ltd.,50,0.443,0.0,0.2912,-0.0011,23.62,,0.0143,Information Technology,0.01,-0.0077,-0.5634
+YESBANK,Yes Bank Ltd.,20,0.4416,0.0,0.18,-0.0005,,0.0747,0.0,Financial Services,0.54,-0.2434,-0.3212
+TMPV,Tata Motors Passenger Vehicles Ltd.,20,0.4409,0.0,0.2532,-0.0019,70.36,,0.0105,Automobile and Auto Components,0.84,-0.0879,-0.58
+GPPL,Gujarat Pipavav Port Ltd.,50,0.4404,0.0,0.2606,0.0006,1.54,,0.0595,Services,0.49,0.0228,-0.1436
+IONEXCHANG,Ion Exchange (India) Ltd.,50,0.4404,0.0,0.2024,0.0,35.98,,0.0033,Utilities,0.38,-0.1104,-0.2206
+AARTIPHARM,Aarti Pharmalabs Ltd.,30,0.44,0.0,0.1246,-0.0002,37.36,,0.0046,Healthcare,0.26,0.0565,-0.1284
+SOLARINDS,Solar Industries India Ltd.,50,0.4392,0.0,0.4521,-0.0021,23.27,,0.06,Defense & Aerospace,0.3,0.0636,-0.1185
+TIINDIA,Tube Investments of India Ltd.,50,0.4392,0.0,0.388,-0.0007,5.36,,0.16,Automobile and Auto Components,0.02,-0.1545,-0.3408
+MARKSANS,Marksans Pharma Ltd.,50,0.4387,0.0,0.184,-0.0001,11.25,,0.0029,Healthcare,1.15,-0.0272,-0.1138
+GNFC,Gujarat Narmada Valley Fertilizers and Chemicals Ltd.,50,0.4347,0.0,0.153,-0.0,0.07,,0.0367,Chemicals,0.29,-0.0353,-0.1129
+INTELLECT,Intellect Design Arena Ltd.,30,0.4345,0.0,0.1479,0.0,4.96,,0.0063,Information Technology,0.67,-0.0075,-0.4756
+RADICO,Radico Khaitan Ltd,50,0.4299,0.0,0.3289,0.0028,15.03,,0.2,Fast Moving Consumer Goods,0.5,0.0213,-0.0576
+GSFC,Gujarat State Fertilizers & Chemicals Ltd.,30,0.4286,0.0,0.1176,0.0,0.22,,0.0341,Chemicals,0.33,-0.0224,-0.2292
+KIRLOSENG,Kirloskar Oil Eng Ltd.,20,0.4282,0.0,0.329,0.0014,154.86,,0.0034,Capital Goods,0.7,-0.0448,-0.2537
+MGL,Mahanagar Gas Ltd.,50,0.425,0.0,0.3547,0.0066,3.46,,0.0344,Oil Gas & Consumable Fuels,0.73,-0.0161,-0.1856
+CRAFTSMAN,Craftsman Automation Ltd.,20,0.4241,0.0,0.4023,-0.0007,111.01,,0.1,Automobile and Auto Components,0.37,0.0021,-0.0866
+WHIRLPOOL,Whirlpool of India Ltd.,50,0.4237,0.0,0.3992,0.0058,8.62,,0.006,Consumer Durables,0.38,0.1688,-0.4048
+AARTIIND,Aarti Industries Ltd.,20,0.4215,0.0,0.2383,0.0,83.39,,0.2,Chemicals,0.65,0.0554,-0.0865
+SONATSOFTW,Sonata Software Ltd.,50,0.4189,0.0,0.3055,-0.0003,37.96,,0.0322,Information Technology,0.41,-0.1195,-0.365
+TRENT,Trent Ltd.,50,0.4186,0.0,0.3039,0.0014,36.03,,0.14,Consumer Services,0.38,0.0608,-0.3911
+KIMS,Krishna Institute of Medical Sciences Ltd.,20,0.4174,0.0,0.4118,-0.0007,166.23,,0.0,Healthcare,0.27,-0.1342,-0.2009
+INDIGO,InterGlobe Aviation Ltd.,20,0.4157,0.0,0.4412,0.0019,1112.71,,0.0,Services,0.64,-0.0326,-0.2149
+BSOFT,Birlasoft Ltd.,50,0.4091,0.0,0.265,-0.0005,3.42,,0.021,Information Technology,0.38,0.1212,-0.3188
+JUBLFOOD,Jubilant Foodworks Ltd.,20,0.407,-0.0001,0.4503,0.0012,205.32,,0.0028,Consumer Services,0.19,-0.1296,-0.3272
+GMMPFAUDLR,GMM Pfaudler Ltd.,20,0.4066,0.0,0.2093,0.0099,84.46,,0.15,Capital Goods,0.06,-0.0376,-0.1444
+TITAGARH,Titagarh Rail Systems Ltd.,50,0.4062,0.0,0.2073,0.0001,25.36,,0.13,Railways & Infra EPC,0.82,-0.0932,-0.2276
+ARVIND,Arvind Ltd.,50,0.4052,0.0,0.3087,0.0004,40.07,,0.0087,Textiles,0.19,-0.0294,-0.1342
+USHAMART,Usha Martin Ltd.,50,0.4017,0.0,0.2883,0.0013,6.92,,0.0078,Capital Goods,0.33,-0.0088,-0.0945
+DIXON,Dixon Technologies (India) Ltd.,50,0.4012,0.0,0.3511,-0.0015,18.46,,0.08,EMS & Semiconductors,-0.12,-0.0708,-0.2945
+VMM,Vishal Mega Mart Ltd.,50,0.4002,0.0,0.4805,-0.0009,26.82,,0.0,Consumer Services,0.98,-0.0518,-0.3592
+SWIGGY,Swiggy Ltd.,50,0.3976,0.0,0.4015,0.0026,13.93,,0.0,Consumer Services,1.14,-0.1526,-0.4906
+PRICOLLTD,Pricol Ltd.,50,0.3966,0.0,0.2421,-0.0007,30.21,,0.006,Automobile and Auto Components,-0.1,-0.111,-0.1871
+GRANULES,Granules India Ltd.,50,0.3963,0.0,0.223,-0.0242,29.73,,0.22,Healthcare,0.12,-0.0518,-0.1064
+CARBORUNIV,Carborundum Universal Ltd.,50,0.3937,0.0,0.3738,-0.0007,10.29,,0.0036,Capital Goods,0.36,0.0245,-0.1891
+INDHOTEL,Indian Hotels Co. Ltd.,50,0.3935,0.0,0.3666,0.0007,18.99,,0.0044,Consumer Services,-0.09,0.0625,-0.0052
+AMBER,Amber Enterprises India Ltd.,50,0.3924,0.0,0.4247,0.0012,46.57,,0.0,EMS & Semiconductors,0.24,-0.0536,-0.257
+MEESHO,Meesho Ltd.,50,0.3918,0.0,0.4412,0.0049,1.43,,0.0,Consumer Services,1.05,0.0959,-0.1069
+TI,Tilaknagar Industries Ltd.,20,0.3892,0.0,0.2388,0.0027,77.18,,0.18,Fast Moving Consumer Goods,0.22,0.0141,-0.0926
+HONASA,Honasa Consumer Ltd.,50,0.3873,0.0,0.4438,0.0131,9.59,,0.0067,Fast Moving Consumer Goods,0.65,-0.0171,-0.1074
+TATACHEM,Tata Chemicals Ltd.,50,0.3871,0.0,0.2587,-0.0074,36.08,,0.0175,Chemicals,0.61,-0.1875,-0.3193
+CANFINHOME,Can Fin Homes Ltd.,40,0.3868,0.0,0.3013,0.0016,608.66,0.1941,0.0218,Financial Services,0.48,-0.0546,-0.2395
+LENSKART,Lenskart Solutions Ltd.,50,0.386,0.0,0.4081,0.0035,34.98,,0.0,Consumer Services,1.05,-0.0492,-0.1083
+ACUTAAS,Acutaas Chemicals Ltd.,50,0.3831,0.0,0.2856,0.0038,2.08,,0.08,Healthcare,0.02,-0.0329,-0.1421
+NAZARA,Nazara Technologies Ltd.,50,0.3822,0.0515,0.2671,-0.0007,6.05,,0.0,Media Entertainment & Publication,0.23,0.1534,-0.0042
+NEULANDLAB,Neuland Laboratories Ltd.,50,0.3774,0.0,0.2795,-0.0008,16.07,,0.17,Healthcare,0.28,-0.1319,-0.1878
+BANDHANBNK,Bandhan Bank Ltd.,20,0.3761,0.0,0.4077,0.0103,,,0.0088,Private Banks,0.79,-0.0233,-0.2347
+HINDALCO,Hindalco Industries Ltd.,20,0.3757,0.0,0.4049,0.0005,72.6,,0.0056,Metals & Mining,0.95,-0.0739,-0.2239
+ARVINDFASN,Arvind Fashions Ltd.,20,0.3732,0.0,0.2945,-0.0001,115.11,,0.004,Consumer Services,0.12,-0.0593,-0.2948
+HEROMOTOCO,Hero MotoCorp Ltd.,50,0.3724,0.0,0.3692,-0.0018,3.57,,0.0355,Automobile and Auto Components,0.49,-0.0188,-0.1539
+TECHM,Tech Mahindra Ltd.,70,0.3709,0.0,0.4415,0.0009,7.25,0.1919,0.0309,Information Technology,0.15,0.1467,-0.0094
+EDELWEISS,Edelweiss Financial Services Ltd.,20,0.3708,0.0,0.16,0.0011,319.99,,0.0112,Financial Services,0.69,0.0506,-0.0764
+BLUESTARCO,Blue Star Ltd.,50,0.3699,0.0,0.3485,0.0013,23.59,,0.0053,Consumer Durables,0.19,0.0094,-0.2251
+VOLTAS,Voltas Ltd.,50,0.3694,0.0,0.4034,-0.0018,15.51,,0.0038,Consumer Durables,0.2,-0.0933,-0.3477
+APLAPOLLO,APL Apollo Tubes Ltd.,50,0.3691,0.0,0.4424,-0.0005,9.4,,0.004,Capital Goods,0.33,0.002,-0.061
+ASHOKLEY,Ashok Leyland Ltd.,20,0.3636,0.0,0.3153,0.0012,344.74,,0.0236,Capital Goods,0.49,-0.0612,-0.297
+SAILIFE,Sai Life Sciences Ltd.,50,0.3628,0.0,0.4324,-0.0053,11.61,,0.0,Healthcare,0.74,-0.1011,-0.1813
+GHCL,GHCL Ltd.,50,0.3626,-0.0129,0.2257,0.0186,2.35,,0.0311,Chemicals,-0.04,-0.0699,-0.3986
+KEI,KEI Industries Ltd.,50,0.3602,0.0,0.4424,0.0024,3.8,,0.1,Capital Goods,0.62,-0.017,-0.2402
+NCC,NCC Ltd.,20,0.3576,0.0,0.2344,0.0002,57.39,,0.0178,Railways & Infra EPC,0.58,-0.0733,-0.4127
+SAMMAANCAP,Sammaan Capital Ltd.,0,0.3567,0.0,0.1121,0.0,273.03,,0.0,Financial Services,0.61,-0.0588,-0.3062
+ONESOURCE,Onesource Specialty Pharma Ltd.,50,0.3549,0.0,0.3336,0.0008,25.79,,0.0,Healthcare,0.4,-0.109,-0.2687
+TATASTEEL,Tata Steel Ltd.,20,0.354,0.0,0.3522,0.0031,89.02,,0.0227,Metals & Mining,0.83,-0.063,-0.2018
+SUDARSCHEM,Sudarshan Chemical Industries Ltd.,20,0.3528,0.0,0.3287,0.0001,64.17,,0.0044,Chemicals,0.51,-0.0557,-0.1549
+FORTIS,Fortis Healthcare Ltd.,50,0.3519,0.0,0.5146,0.0003,34.15,,0.13,Healthcare,0.64,-0.1688,-0.3324
+UTIAMC,UTI Asset Management Company Ltd.,50,0.3474,0.0,0.5268,0.0059,3.13,,0.0457,Financial Services,0.37,-0.0316,-0.3576
+ICICIAMC,ICICI Prudential Asset Management Company Ltd.,40,0.3459,0.0,0.608,0.003,,0.7623,0.0096,Financial Services,1.05,-0.0923,-0.2182
+TATACONSUM,Tata Consumer Products Ltd.,50,0.3437,0.0,0.3467,0.0,12.16,,0.0101,Fast Moving Consumer Goods,0.4,-0.0343,-0.2304
+PRAJIND,Praj Industries Ltd.,50,0.3437,0.0,0.2732,0.0011,13.22,,0.0125,Capital Goods,0.16,-0.0944,-0.3208
+HFCL,HFCL Ltd.,50,0.3423,0.0,0.1935,-0.0,38.32,,0.08,Telecommunication,0.99,0.2234,-0.0721
+UPL,UPL Ltd.,20,0.3373,0.0,0.4218,0.0014,57.13,,0.0111,Chemicals,0.54,-0.0362,-0.3354
+KPIL,Kalpataru Projects International Ltd.,50,0.337,0.0,0.4939,0.0052,45.81,,0.0079,Railways & Infra EPC,0.46,-0.025,-0.0844
+ARE&M,Amara Raja Energy & Mobility Ltd.,50,0.3327,0.0,0.291,0.0036,5.01,,0.0144,Automobile and Auto Components,0.86,-0.0658,-0.2696
+PERSISTENT,Persistent Systems Ltd.,70,0.3313,0.0,0.4413,-0.0002,6.7,0.2292,0.0062,Information Technology,0.86,0.049,-0.1239
+JPPOWER,Jaiprakash Power Ventures Ltd.,30,0.3299,0.0,0.1133,-0.0,26.63,,0.0,Power,0.34,-0.019,-0.389
+URBANCO,Urban Company Ltd.,50,0.3258,0.0,0.5201,0.0201,6.33,,0.0,Consumer Services,1.13,-0.0288,-0.1405
+BLACKBUCK,Blackbuck Ltd.,50,0.3237,0.0,0.4171,0.0007,4.16,,0.0,Services,1.09,-0.0279,-0.2053
+MEDPLUS,Medplus Health Services Ltd.,20,0.3234,0.0,0.3917,0.0005,72.13,,0.0,Consumer Services,0.46,-0.0643,-0.4013
+WEBELSOLAR,Websol Energy System Ltd.,30,0.323,0.2479,0.0306,0.0,20.73,,0.0037,Capital Goods,0.24,-0.0488,-0.5035
+LAURUSLABS,Laurus Labs Ltd.,50,0.3203,0.0,0.3388,0.0006,46.37,,0.12,Healthcare,0.34,0.0575,-0.0124
+MANAPPURAM,Manappuram Finance Ltd.,20,0.3191,0.0,0.4107,0.0056,360.19,,0.0124,Financial Services,0.82,0.025,-0.1485
+AUBANK,AU Small Finance Bank Ltd.,20,0.3139,-0.0002,0.4954,0.0014,,,0.1,Private Banks,0.58,-0.048,-0.1352
+CIPLA,Cipla Ltd.,50,0.3113,0.0,0.4499,0.0018,1.78,,0.0098,Healthcare,0.09,-0.0372,-0.2005
+MPHASIS,MphasiS Ltd.,70,0.3112,0.0,0.5596,-0.0018,24.68,0.1774,0.0253,Information Technology,0.53,0.0776,-0.1371
+STAR,Strides Pharma Science Ltd.,20,0.3078,0.0,0.2828,-0.0004,55.82,,0.0047,Healthcare,0.37,-0.1291,-0.1711
+GESHIP,Great Eastern Shipping Co. Ltd.,50,0.3077,0.0,0.2667,0.0011,6.41,,0.0388,Services,0.41,0.0578,-0.1468
+ASTRAMICRO,Astra Microwave Products Ltd.,50,0.3015,0.0,0.2308,-0.0001,21.88,,0.15,Defense & Aerospace,0.59,0.0108,-0.1696
+DRREDDY,Dr. Reddy's Laboratories Ltd.,50,0.3014,0.0,0.5375,0.0048,18.61,0.0884,0.0066,Healthcare,0.25,0.0494,-0.123
+VOLTAMP,Voltamp Transformers Ltd,50,0.3001,0.0,0.4727,-0.0003,0.03,,0.0096,Capital Goods,0.02,-0.0105,-0.1652
+EPL,EPL Ltd.,50,0.2989,0.0,0.2538,0.0076,33.58,,0.0212,Capital Goods,0.39,0.0029,-0.1531
+RPOWER,Reliance Power Ltd.,0,0.2981,0.0,0.1049,-0.0004,92.35,,0.0,Power,0.9,-0.1121,-0.6316
+TMB,Tamilnad Mercantile Bank Ltd.,0,0.2959,0.0,0.0414,0.0002,,0.1452,0.0146,Private Banks,0.39,-0.0383,-0.1016
+ITC,ITC Ltd.,50,0.2949,0.0,0.5226,0.001,3.29,,0.0606,Fast Moving Consumer Goods,-0.06,-0.0101,-0.3519
+PVRINOX,PVR INOX Ltd.,20,0.294,0.0,0.4109,0.0,91.87,,0.0,Media Entertainment & Publication,0.39,0.1008,-0.0178
+SANSERA,Sansera Engineering Ltd.,50,0.292,0.0,0.5055,0.0002,19.02,,0.1,Automobile and Auto Components,0.77,0.0257,-0.1313
+MTARTECH,MTAR Technologies Ltd.,50,0.292,0.0,0.3371,0.0012,45.78,,0.0,Defense & Aerospace,1.39,-0.0008,-0.1904
+NAVINFLUOR,Navin Fluorine International Ltd.,50,0.2859,0.0,0.4073,0.0012,32.09,,0.18,Chemicals,0.24,-0.0064,-0.0874
+INDIASHLTR,India Shelter Finance Corporation Ltd.,20,0.2848,0.0,0.5462,0.0003,195.3,,0.016,Financial Services,-0.01,-0.074,-0.3195
+KOTAKBANK,Kotak Mahindra Bank Ltd.,20,0.2841,0.0,0.4741,-0.0004,,,0.15,Private Banks,0.33,0.0742,-0.0126
+APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,20,0.2839,0.0,0.5083,-0.0023,85.15,,0.0025,Healthcare,0.17,-0.1002,-0.1301
+MAXHEALTH,Max Healthcare Institute Ltd.,50,0.282,0.0,0.5946,-0.0003,32.37,,0.23,Healthcare,0.1,-0.1842,-0.3064
+LLOYDSENGG,Lloyds Engineering Works Ltd.,30,0.2809,0.0071,0.0127,0.0,6.45,,0.0027,Capital Goods,1.18,0.2016,-0.0751
+PNBHOUSING,PNB Housing Finance Ltd.,20,0.2801,0.0,0.5517,0.003,287.73,,0.0068,Financial Services,0.29,0.0582,-0.0466
+SONACOMS,Sona BLW Precision Forgings Ltd.,50,0.2791,0.0,0.6986,0.0026,7.21,,0.0045,Automobile and Auto Components,0.49,0.0284,-0.0521
+IXIGO,Le Travenues Technology Ltd.,50,0.2758,0.0,0.5382,-0.0,2.15,,0.0,Consumer Services,-0.54,-0.0975,-0.5741
+ENRIN,Siemens Energy India Ltd.,50,0.2753,0.0,0.556,0.0004,4.48,,0.14,Capital Goods,0.66,-0.0708,-0.2719
+PINELABS,Pine Labs Ltd.,50,0.2725,0.0,0.618,0.0002,7.47,,0.0,Financial Services,1.05,-0.1054,-0.4189
+WABAG,Va Tech Wabag Ltd.,50,0.2705,0.0,0.1834,0.0008,8.87,,0.0026,Utilities,0.78,-0.0916,-0.1872
+ANANDRATHI,Anand Rathi Wealth Ltd.,70,0.2703,0.0,0.3101,-0.0002,5.34,0.4299,0.0035,Financial Services,0.34,-0.0198,-0.0461
+AWFIS,Awfis Space Solutions Ltd.,20,0.2665,0.0,0.4929,-0.0069,271.73,,0.0,Services,1.06,-0.0753,-0.6172
+APTUS,Aptus Value Housing Finance India Ltd.,20,0.266,0.0,0.497,-0.0002,156.2,,0.0223,Financial Services,0.67,-0.0697,-0.2994
+TDPOWERSYS,TD Power Systems Ltd.,70,0.2657,0.0,0.375,0.0008,1.69,0.2847,0.14,Capital Goods,0.6,0.0181,-0.1413
+FIVESTAR,Five-Star Business Finance Ltd.,20,0.2632,0.0,0.4812,0.0056,111.93,,0.0039,Financial Services,0.58,-0.0467,-0.2373
+SAPPHIRE,Sapphire Foods India Ltd.,20,0.261,0.0,0.676,-0.002,102.06,,0.0,Consumer Services,0.35,-0.1547,-0.3651
+REDINGTON,Redington Ltd.,50,0.2601,0.0,0.3846,0.0005,27.26,,0.0153,Services,0.86,-0.0415,-0.0858
+REFEX,Refex Industries Ltd.,30,0.2562,0.0,0.0052,0.0,14.92,,0.0077,Utilities,1.72,-0.0559,-0.3263
+CYIENT,Cyient Ltd.,50,0.2533,0.0,0.5231,0.0012,7.53,,0.0269,Information Technology,0.7,0.1227,-0.0244
+M&M,Mahindra & Mahindra Ltd.,20,0.2517,0.0,0.5342,-0.0,125.28,,0.0115,Automobile and Auto Components,0.29,-0.0506,-0.2313
+JMFINANCIL,JM Financial Ltd.,20,0.2458,0.0,0.5028,0.002,102.44,,0.0146,Financial Services,0.41,-0.0092,-0.3181
+SAMHI,Samhi Hotels Ltd.,20,0.2404,0.0,0.3206,-0.0032,81.1,,0.0,Consumer Services,0.79,-0.0575,-0.3205
+PAYTM,One 97 Communications Ltd.,50,0.2389,0.0,0.5031,-0.0041,1.07,,0.0,Financial Services,-0.26,-0.0394,-0.0873
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd.,50,0.2364,0.0,0.7054,0.0013,17.73,0.1292,0.0037,Financial Services,0.49,-0.0928,-0.3682
+LEMONTREE,Lemon Tree Hotels Ltd.,20,0.2233,0.0,0.4,-0.0004,96.37,,0.0,Consumer Services,-0.13,0.0899,-0.3355
+POLICYBZR,PB Fintech Ltd.,50,0.2222,0.0,0.6027,0.0005,4.92,,0.0,Financial Services,0.44,-0.3938,-0.4552
+SHRIRAMFIN,Shriram Finance Ltd.,40,0.2217,0.0,0.595,0.0006,276.21,0.185,0.0114,Financial Services,0.61,-0.0553,-0.1853
+ETERNAL,Eternal Ltd.,50,0.2178,0.0,0.5018,-0.001,14.83,,0.0,Consumer Services,0.24,0.0092,-0.1171
+PTC,PTC India Ltd.,50,0.2169,0.0,0.2521,0.0006,25.06,,0.0733,Power,0.7,-0.0036,-0.2367
+COFORGE,Coforge Ltd.,50,0.2134,0.0,0.5968,0.0011,7.52,,0.0083,Information Technology,0.33,0.0886,-0.0343
+HCC,Hindustan Construction Co. Ltd.,30,0.2087,0.0,0.0641,0.0,47.91,,0.0,Construction,0.7,-0.0988,-0.3414
+DCBBANK,DCB Bank Ltd.,20,0.1997,0.0,0.3653,0.0046,,,0.0069,Financial Services,0.48,-0.04,-0.1066
+MCX,Multi Commodity Exchange of India Ltd.,50,0.1953,0.0,0.5276,0.0016,0.11,,0.0025,Financial Services,0.71,-0.0316,-0.0917
+SUZLON,Suzlon Energy Ltd.,70,0.1764,0.0,0.2351,0.0005,2.81,0.3937,0.0,"Power, Renewables & PSU",0.68,-0.0127,-0.3171
+DELHIVERY,Delhivery Ltd.,50,0.1672,0.0,0.5724,0.001,15.1,,0.0,Services,0.18,-0.0433,-0.2223
+INDUSINDBK,IndusInd Bank Ltd.,20,0.1634,0.0,0.5434,0.0025,,,0.17,Private Banks,0.54,-0.0847,-0.1863
+OLAELEC,Ola Electric Mobility Ltd.,20,0.16,0.0,0.2466,0.0,82.45,,0.0,Automobile and Auto Components,1.38,-0.0489,-0.3962
+INFY,Infosys Ltd.,70,0.1599,0.0,0.5104,0.0002,9.54,0.32,0.045,Information Technology,0.12,0.0969,-0.3135
+LT,Larsen & Toubro Ltd.,20,0.1483,0.0,0.5249,-0.0001,97.64,,0.0105,Railways & Infra EPC,0.52,-0.0545,-0.1751
+360ONE,360 ONE WAM Ltd.,20,0.1471,0.0,0.6706,0.0023,161.98,,0.0112,Financial Services,0.47,0.0129,-0.1254
+KFINTECH,Kfin Technologies Ltd.,50,0.145,0.0,0.6483,-0.0029,3.31,,0.0134,Financial Services,-0.21,-0.0111,-0.2601
+IEX,Indian Energy Exchange Ltd.,50,0.1344,0.0,0.3384,-0.0008,0.82,,0.0372,"Power, Renewables & PSU",0.44,-0.0516,-0.3101
+IDFCFIRSTB,IDFC First Bank Ltd.,20,0.1286,0.0,0.4546,0.0,,0.0526,0.0032,Private Banks,0.58,-0.0956,-0.1287
+GOKEX,Gokaldas Exports Ltd.,20,0.1264,0.0,0.5352,-0.0031,58.93,,0.0,Textiles,-0.03,-0.0156,-0.25
+VIPIND,V.I.P. Industries Ltd.,20,0.122,0.0,0.3955,0.0,335.61,,0.0,Consumer Durables,0.09,-0.1134,-0.3969
+EQUITASBNK,Equitas Small Finance Bank Ltd.,20,0.1218,0.0,0.553,0.0005,94.25,,0.0,Financial Services,0.46,-0.0244,-0.1613
+FEDERALBNK,Federal Bank Ltd.,20,0.109,0.0,0.6055,-0.0002,,,0.0036,Private Banks,0.29,0.0158,-0.0876
+HOMEFIRST,Home First Finance Company India Ltd.,20,0.0934,0.0,0.6703,-0.0007,243.94,,0.0047,Financial Services,0.59,-0.0626,-0.1615
+HBLENGINE,HBL Engineering Ltd.,50,0.0807,0.0,0.5617,0.0079,3.02,,0.0042,Capital Goods,0.03,0.101,-0.2545
+CUB,City Union Bank Ltd.,20,0.0797,0.0,0.5215,0.0001,,,0.0089,Financial Services,0.37,-0.0192,-0.0863
+CMSINFO,CMS Info Systems Ltd.,50,0.0771,0.0,0.4641,0.0,9.1,,0.0229,Services,0.32,-0.0567,-0.4348
+PCBL,PCBL Chemical Ltd.,20,0.0705,0.0,0.6442,-0.0,124.13,,0.0146,Chemicals,0.61,-0.061,-0.1841
+AXISCADES,AXISCADES Technologies Ltd.,0,0.0703,0.0,0.0657,0.0,52.83,,0.0,Capital Goods,0.39,0.1424,-0.1034
+CARTRADE,Cartrade Tech Ltd.,50,0.0638,0.0,0.632,0.0056,5.36,,0.0,Consumer Services,-0.04,0.025,-0.0848
+CESC,CESC Ltd.,20,0.0634,0.0,0.7716,0.0,164.31,,0.0442,Power,0.42,-0.04,-0.3108
+KTKBANK,Karnataka Bank Ltd.,20,0.0561,-0.0,0.2134,0.0034,,,0.0149,Financial Services,0.33,0.0508,-0.045
+ZEEL,Zee Entertainment Enterprises Ltd.,30,0.0503,0.0,0.1481,-0.0,2.26,,0.0275,Media Entertainment & Publication,0.67,-0.0825,-0.3784
+KEC,Kec International Ltd.,20,0.0456,0.0,0.7345,0.0015,87.31,,0.0154,Railways & Infra EPC,0.08,-0.1236,-0.6009
+SOUTHBANK,South Indian Bank Ltd.,20,0.0431,0.0001,0.2998,0.0018,,0.1395,0.0087,Financial Services,0.17,0.1214,-0.02
+ICICIBANK,ICICI Bank Ltd.,40,0.0354,0.0,0.5916,-0.0048,,0.1607,0.0086,Private Banks,0.26,0.0367,-0.0481
+AXISBANK,Axis Bank Ltd.,20,0.0333,0.0,0.7048,-0.0003,,0.1335,0.08,Private Banks,0.42,0.0403,-0.0898
+CAMS,Computer Age Management Services Ltd.,50,0.0313,0.0,0.5813,-0.0009,4.86,,0.0182,Financial Services,0.16,-0.0209,-0.1646
+ICICIGI,ICICI Lombard General Insurance Company Ltd.,20,0.0247,0.0,0.8364,0.0045,,0.1363,0.0083,Financial Services,0.45,0.1301,-0.1833
+LICHSGFIN,LIC Housing Finance Ltd.,20,0.0234,0.0,0.7528,0.0114,642.52,,0.0188,Financial Services,0.25,-0.0456,-0.1116
+MFSL,Max Financial Services Ltd.,50,0.0208,0.0,0.7899,-0.0044,36.45,,0.0,Financial Services,0.7,-0.1667,-0.3158
+TEJASNET,Tejas Networks Ltd.,20,0.0157,0.0,0.607,0.0,142.52,,0.0,EMS & Semiconductors,0.03,-0.0944,-0.2637
+NAM-INDIA,Nippon Life India Asset Management Ltd.,50,0.0056,0.0,0.8968,0.0116,1.62,,0.0197,Financial Services,0.64,-0.048,-0.1609
+KARURVYSYA,Karur Vysya Bank Ltd.,40,0.0053,0.0,0.4243,0.0007,,0.2099,0.0075,Private Banks,-0.11,0.0729,-0.028
+HDFCBANK,HDFC Bank Ltd.,20,0.0018,0.0,0.6116,0.0015,,0.1384,0.0179,Private Banks,0.41,0.0222,-0.274
+UJJIVANSFB,Ujjivan Small Finance Bank Ltd.,20,0.0004,0.0,0.4129,0.0002,,,0.0,Financial Services,0.42,-0.0113,-0.1446
+FACT,Fertilisers and Chemicals Travancore Ltd.,0,0.0,0.0,0.0009,0.0,295.15,,0.0,Chemicals,0.21,-0.035,-0.3074
+CDSL,Central Depository Services (India) Ltd.,50,0.0,0.0,0.1616,0.0001,0.11,,0.0099,Financial Services,0.43,-0.0463,-0.2241
+CROMPTON,Crompton Greaves Consumer Electricals Ltd.,50,0.0,0.0,0.7719,-0.003,5.8,,0.0139,Consumer Durables,0.35,-0.0426,-0.2976
+BSE,BSE Ltd.,50,0.0,0.0,0.2832,0.0049,0.0,,0.0029,Financial Services,0.45,0.0319,-0.2417
+SUNDARMFIN,Sundaram Finance Ltd.,20,0.0,0.0,0.1668,0.0002,409.16,,0.0095,Financial Services,0.17,-0.0914,-0.2451
+TSFINV,TSF Investments Ltd.,30,0.0,0.0,0.0601,0.0008,3.85,,0.0282,Financial Services,0.46,-0.0913,-0.408

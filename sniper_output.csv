@@ -1,31 +1,41 @@
-Symbol,Company,Watchlist Type,Trigger Price,Stop Loss,Target,R:R Ratio,52W High,52W Low
-JYOTICNC,Jyoti CNC Automation Ltd.,MOMENTUM SWING,979.4,964.26,1047.96,2.0,1134.6,580.1
-AARTIPHARM,Aarti Pharmalabs Ltd.,MOMENTUM SWING,863.8,836.7,924.27,2.0,1002.4,583.59
-GRAPHITE,Graphite India Ltd.,MOMENTUM SWING,767.2,749.33,820.9,2.0,874.35,510.59
-WELENT,Welspun Enterprises Ltd.,MOMENTUM SWING,727.7,705.87,778.64,2.0,841.9,409.98
-WESTLIFE,Westlife Foodworld Ltd.,MOMENTUM SWING,573.6,564.5,613.75,2.0,682.83,398.12
-GNFC,Gujarat Narmada Valley Fertilizers and Chemicals Ltd.,MOMENTUM SWING,572.15,562.32,612.2,2.0,636.0,351.99
-CAPILLARY,Capillary Technologies India Ltd.,MOMENTUM SWING,535.15,517.32,572.61,2.0,798.95,438.15
-CUB,City Union Bank Ltd.,MOMENTUM SWING,224.02,217.18,239.7,2.0,248.85,157.22
-WELSPUNLIV,Welspun Living Ltd.,MOMENTUM SWING,216.8,213.94,231.98,2.0,245.5,107.04
-AXISCADES,AXISCADES Technologies Ltd.,MOMENTUM SWING,2020.5,1963.27,2161.94,2.0,2360.0,1063.3
-TEGA,Tega Industries Ltd.,MOMENTUM SWING,1888.7,1847.34,2020.91,2.0,2198.0,1471.29
-EMIL,Electronics Mart India Ltd.,MOMENTUM SWING,182.11,177.36,194.86,2.0,212.64,84.9
-LGEINDIA,LG Electronics India Ltd.,MOMENTUM SWING,1732.1,1675.77,1853.35,2.0,1825.0,1304.1
-SYRMA,Syrma SGS Technology Ltd.,MOMENTUM SWING,1687.3,1638.45,1805.41,2.0,1822.6,633.85
-FINCABLES,Finolex Cables Ltd.,MOMENTUM SWING,1393.9,1364.12,1491.47,2.0,1499.0,695.85
-CRISIL,CRISIL Ltd.,10X MULTIBAGGER,4415.5,4301.55,8831.0,5.0,5005.77,3669.91
-CASTROLIND,Castrol India Ltd.,10X MULTIBAGGER,196.23,190.87,392.46,5.0,203.4,164.6
-SANOFICONR,Sanofi Consumer Healthcare India Ltd.,10X MULTIBAGGER,3573.3,3494.8,7146.6,5.0,5175.36,3530.1
-SCHAEFFLER,Schaeffler India Ltd.,10X MULTIBAGGER,3650.3,3532.32,7300.6,5.0,4445.0,3489.69
-TCS,Tata Consultancy Services Ltd.,10X MULTIBAGGER,2350.0,2013.94,4700.0,5.0,3269.78,1955.62
-VBL,Varun Beverages Ltd.,10X MULTIBAGGER,429.25,411.2,858.5,5.0,555.18,379.74
-LTM,LTM Ltd.,10X MULTIBAGGER,4235.0,3866.54,8470.0,5.0,6344.47,3528.0
-HCLTECH,HCL Technologies Ltd.,10X MULTIBAGGER,1360.0,1161.07,2720.0,5.0,1729.01,1019.59
-HEXT,Hexaware Technologies Ltd.,10X MULTIBAGGER,575.8,476.78,1151.6,5.0,792.77,392.78
-POLYCAB,Polycab India Ltd.,10X MULTIBAGGER,8207.0,7763.58,16414.0,5.0,10126.0,6631.53
-ACC,ACC Ltd.,10X MULTIBAGGER,1137.4,1111.77,2274.8,5.0,1975.57,1123.0
-ABB,ABB India Ltd.,10X MULTIBAGGER,6816.0,6509.25,13632.0,5.0,7832.29,4564.87
-AIAENG,AIA Engineering Ltd.,10X MULTIBAGGER,3679.3,3622.9,7358.6,5.0,5160.6,3141.49
-ADVENZYMES,Advanced Enzyme Tech Ltd.,10X MULTIBAGGER,262.9,259.33,525.8,5.0,417.2,250.87
-AEGISLOG,Aegis Logistics Ltd.,10X MULTIBAGGER,1410.6,1319.57,2821.2,5.0,1528.7,573.05
+Symbol,Company,Watchlist Type,Trigger Price,Stop Loss,Target,R:R Ratio,RS vs Nifty,52W High,52W Low,Catalyst / Fear Diagnosis,Corporate Event
+JYOTICNC,Jyoti CNC Automation Ltd.,MOMENTUM SWING,997.2,961.78,1067.0,1.97,0.022,1134.6,580.1,💎 VALUE FEAR ZONE (-12.1% off High),Regular Trading
+SHILPAMED,Shilpa Medicare Ltd.,MOMENTUM SWING,937.6,903.87,1003.23,1.95,-0.0164,1095.0,259.34,🌊 SECTOR CONTAGION DIP (-8.2% 5D • RSI 37),Regular Trading
+RBA,Restaurant Brands Asia Ltd.,MOMENTUM SWING,92.32,88.28,98.78,1.6,-0.0342,111.15,57.15,⚪ Normal Flow,Regular Trading
+DIVISLAB,Divi's Laboratories Ltd.,MOMENTUM SWING,9144.5,8848.12,9784.61,2.16,-0.0138,9740.0,5624.31,🟢 BULL NEWS: Divi's Laboratories posts 65% PAT surge in Q1FY27 on...,Regular Trading
+AARTIPHARM,Aarti Pharmalabs Ltd.,MOMENTUM SWING,873.65,836.7,934.81,1.66,0.0618,1002.4,583.59,⚪ Normal Flow,Regular Trading
+SONACOMS,Sona BLW Precision Forgings Ltd.,MOMENTUM SWING,800.0,766.75,856.0,1.68,0.0337,844.0,422.0,📰 NEWS: Is Sona BLW Precision Forgings the Best Stock in Its...,📅 Board/Result (26-Oct)
+CAPILLARY,Capillary Technologies India Ltd.,MOMENTUM SWING,545.4,523.76,583.58,1.76,0.2201,798.95,438.15,💎 VALUE FEAR ZONE (-31.7% off High),🆕 RECENT IPO
+BHEL,Bharat Heavy Electricals Ltd.,MOMENTUM SWING,434.6,416.44,465.02,1.68,0.0179,464.0,228.8,"📰 NEWS: BHEL Share Price Today, BHEL Stock Price Live NSE/BS...",📅 Board/Result (14-Oct)
+COALINDIA,Coal India Ltd.,MOMENTUM SWING,417.2,398.08,446.4,1.53,0.0034,478.71,355.18,📰 NEWS: Coal India reports 7.60 percent offtake growth: what...,Regular Trading
+SANSERA,Sansera Engineering Ltd.,MOMENTUM SWING,4120.7,3960.0,4409.15,1.79,0.031,4743.5,1381.31,💎 VALUE FEAR ZONE (-13.1% off High),Regular Trading
+ACMESOLAR,ACME Solar Holdings Ltd.,MOMENTUM SWING,410.0,394.02,438.7,1.8,0.0021,476.9,195.73,"💎 VALUE FEAR ZONE (-14.0% off High) | 📰 NEWS: Acme Solar shares: Axis Capital initiates coverage, ...",Regular Trading
+REDINGTON,Redington Ltd.,MOMENTUM SWING,383.5,374.17,410.35,2.88,-0.0362,419.5,187.2,🏛️ GOVT/POLICY: Redington SEBI Reg 74(5) Certificate Q2 FY27 Complia...,Regular Trading
+JSWINFRA,JSW Infrastructure Ltd.,MOMENTUM SWING,340.1,328.14,363.91,1.99,0.0465,375.5,232.72,📰 NEWS: JSW Infrastructure Q2FY27 Earnings Call Date and Det...,Regular Trading
+ELLEN,Ellenbarrie Industrial Gases Ltd.,MOMENTUM SWING,339.05,326.8,362.78,1.94,-0.0808,473.55,175.0,💎 VALUE FEAR ZONE (-28.4% off High),Regular Trading
+PETRONET,Petronet LNG Ltd.,MOMENTUM SWING,293.0,283.63,313.51,2.19,0.039,322.68,232.67,"📰 NEWS: Axiom Gas Engineering Ltd Share Price Today,, AXIOMG...",Regular Trading
+CRISIL,CRISIL Ltd.,10X MULTIBAGGER,4547.9,4312.54,9095.8,5.0,0.0026,5005.77,3669.91,📰 NEWS: LT Foods assigned Crisil ESG 61 rating for FY26,Regular Trading
+CASTROLIND,Castrol India Ltd.,10X MULTIBAGGER,197.74,190.87,395.48,5.0,0.0367,203.4,164.6,⚪ Normal Flow,Regular Trading
+LTM,LTM Ltd.,10X MULTIBAGGER,4390.0,3866.54,8780.0,5.0,0.0345,6344.47,3528.0,📰 NEWS: LTI Mindtree Share Price,🚨 EARNINGS BLACKOUT (16-Oct)
+NESTLEIND,Nestle India Ltd.,10X MULTIBAGGER,1265.5,1237.8,2531.0,5.0,-0.0714,1553.0,1153.85,🔥 EVENT + VOL SURGE (1.4x Vol) | 📰 NEWS: Neutral Nestle India; target of Rs 1350: Motilal Osw...,📅 Board/Result (15-Oct)
+HCLTECH,HCL Technologies Ltd.,10X MULTIBAGGER,1380.0,1150.83,2760.0,5.0,0.1118,1713.75,1010.59,🔥 EVENT + VOL SURGE (1.7x Vol) | 🟢 BULL NEWS: HCLTech lifts fiscal 2027 growth floor and declares ...,💰 EX-DIV SHIELD (16-Oct)
+VBL,Varun Beverages Ltd.,10X MULTIBAGGER,430.5,419.76,861.0,5.0,0.0415,555.18,379.74,⚪ Normal Flow,Regular Trading
+POLYCAB,Polycab India Ltd.,10X MULTIBAGGER,8219.0,7763.58,16438.0,5.0,0.0066,10126.0,6631.53,📰 NEWS: How high can the Polycab India share price go? Three...,📅 Board/Result (15-Oct)
+SANOFICONR,Sanofi Consumer Healthcare India Ltd.,10X MULTIBAGGER,3548.7,3494.8,7097.4,5.0,-0.1052,5175.36,3530.1,⚪ Normal Flow,Regular Trading
+SCHAEFFLER,Schaeffler India Ltd.,10X MULTIBAGGER,3669.2,3532.32,7338.4,5.0,-0.0753,4445.0,3489.69,📰 NEWS: Schaeffler India SCHAEFFLER Reg 74(5) Certificate Q2...,Regular Trading
+TCS,Tata Consultancy Services Ltd.,10X MULTIBAGGER,2465.0,2028.62,4930.0,5.0,0.1369,3269.78,1955.62,🔥 EVENT + VOL SURGE (2.7x Vol) | 📰 NEWS: Tata Consultancy Services Limited (TCS.NS) Stock Pri...,💰 Ex-Div (14-Oct)
+HEXT,Hexaware Technologies Ltd.,10X MULTIBAGGER,582.75,484.9,1165.5,5.0,0.1122,792.77,392.78,🟢 BULL NEWS: Hexaware Technologies (NSE:HEXT): Is a Second Interi...,Regular Trading
+AIAENG,AIA Engineering Ltd.,10X MULTIBAGGER,3719.7,3567.07,7439.4,5.0,-0.0609,5160.6,3174.07,⚪ Normal Flow,Regular Trading
+ABB,ABB India Ltd.,10X MULTIBAGGER,6801.0,6509.25,13602.0,5.0,-0.0409,7832.29,4564.87,🟢 BULL NEWS: ABB India Shares Crash Over 12% In 5 Days Despite 27...,Regular Trading
+AWL,AWL Agri Business Ltd.,10X MULTIBAGGER,187.3,172.32,374.6,5.0,0.023,281.43,170.3,📰 NEWS: AWL Share Price Today,Regular Trading
+ACI,Archean Chemical Industries Ltd.,10X MULTIBAGGER,478.6,446.84,957.2,5.0,0.0403,672.82,446.0,⚪ Normal Flow,Regular Trading
+TECHM,Tech Mahindra Ltd.,⚡ CONTRARIAN FEAR DIP / EVENT,1790.0,1428.08,1969.0,2.0,0.152,1807.04,1271.07,🚀 POST-EARNINGS BREAKOUT (8.5% • 7.1x Vol) | 🔴 RISK NEWS: Tech Mahindra (NSE:TECHM): What Does Its Lost Share ...,🚀 POST-RESULT SURGE (15-Oct)
+KARURVYSYA,Karur Vysya Bank Ltd.,⚡ CONTRARIAN FEAR DIP / EVENT,355.65,317.34,391.22,2.0,0.0782,365.9,218.55,🚀 POST-EARNINGS BREAKOUT (2.9% • 6.7x Vol) | 🔴 RISK NEWS: Karur Vysya Bank ESOS 2018 Share Allotment October 2...,🚀 POST-RESULT SURGE (15-Oct)
+WIPRO,Wipro Ltd.,⚡ CONTRARIAN FEAR DIP / EVENT,184.4,156.72,202.84,2.0,0.1135,263.22,156.79,"🚀 POST-EARNINGS BREAKOUT (5.9% • 3.7x Vol) | 📰 NEWS: Wipro (NSE:WIPRO) Q2 FY27 Earnings, Margins and Shar...",🚀 POST-RESULT SURGE (15-Oct)
+HDBFS,HDB Financial Services Ltd.,⚡ CONTRARIAN FEAR DIP / EVENT,512.6,501.93,563.86,3.36,-0.2425,794.43,507.0,🔥 EVENT + VOL SURGE (6.8x Vol) | 🟢 BULL NEWS: HDB Financial Services Ltd (NSE:HDBFS) Q2 2027 Earni...,💰 EX-DIV SHIELD (23-Oct)
+PERSISTENT,Persistent Systems Ltd.,⚡ CONTRARIAN FEAR DIP / EVENT,5741.0,5333.62,6315.1,2.0,0.0543,6552.65,4229.81,🔥 EVENT + VOL SURGE (4.0x Vol) | 🔴 RISK NEWS: Persistent Systems shares drop 6% on mixed Q2 show a...,📅 Board/Result (15-Oct)
+BHARTIARTL,Bharti Airtel Ltd.,⚡ CONTRARIAN FEAR DIP / EVENT,1905.0,1724.88,2095.5,2.0,0.0429,2147.47,1718.87,🔥 EVENT + VOL SURGE (3.8x Vol) | 📰 NEWS: Bharti Airtel Ltd. Share Price Rise Streak and valua...,📅 Board/Result (05-Nov)
+SPARC,Sun Pharma Advanced Research Company Ltd.,⚡ CONTRARIAN FEAR DIP / EVENT,188.64,180.68,207.5,2.0,-0.0181,289.0,108.0,💎 VALUE FEAR ZONE (-34.7% off High) | 📰 NEWS: Sun Pharma Advanced Research Co 21st AGM on Aug 10,Regular Trading
+THYROCARE,Thyrocare Technologies Ltd.,⚡ CONTRARIAN FEAR DIP / EVENT,485.25,475.89,533.78,3.63,-0.127,662.0,338.15,💎 VALUE FEAR ZONE (-26.7% off High) | 🟢 BULL NEWS: 5 Best Small-Cap Stocks To Buy In India October 2026...,Regular Trading
+CANHLIFE,Canara HSBC Life Insurance Company Ltd.,⚡ CONTRARIAN FEAR DIP / EVENT,130.37,127.31,143.41,2.98,-0.1556,166.25,105.72,🔥 EVENT + VOL SURGE (3.1x Vol) | 📰 NEWS: CANHLIFE Share Price Today,🆕 RECENT IPO
+RATNAMANI,Ratnamani Metals & Tubes Ltd.,⚡ CONTRARIAN FEAR DIP / EVENT,2523.9,2424.01,2776.29,2.0,-0.0608,3330.26,1927.97,💎 VALUE FEAR ZONE (-24.2% off High) | 📰 NEWS: Ratnamani Metals ESG Rating 69 Aspiring Category FY2...,Regular Trading
