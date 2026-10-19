@@ -2,16 +2,18 @@ name: Quantum Scanner Automation
 
 on:
   schedule:
-    # 1) 08:00 AM IST (02:30 UTC) - Overnight Filings & Pre-Market Scan
+    # 1) 08:00 AM IST (02:30 UTC) - Overnight News & Pre-Market
     - cron: '30 2 * * 1-5'
-    # 2) 09:30 AM IST (04:00 UTC) - Opening Momentum & Fear-Dip Scan (15m post-open)
+    # 2) 09:30 AM IST (04:00 UTC) - Opening Bell Momentum Settle
     - cron: '0 4 * * 1-5'
-    # 3) 01:00 PM IST (07:30 UTC) - Mid-Day Govt / Cabinet / PIB Policy Break Scan
+    # 3) 11:30 AM IST (06:00 UTC) - Mid-Morning Trend Confirmation
+    - cron: '0 6 * * 1-5'
+    # 4) 01:00 PM IST (07:30 UTC) - Govt Policy Break & EU Open
     - cron: '30 7 * * 1-5'
-    # 4) 02:30 PM IST (09:00 UTC) - Post-Block-Deal & Institutional Hour Scan
+    # 5) 02:30 PM IST (09:00 UTC) - Institutional Accumulation Hour
     - cron: '0 9 * * 1-5'
-    # 5) 04:00 PM IST (10:30 UTC) - Post-Market Closing Master Sync
-    - cron: '30 10 * * 1-5'
+    # 6) 04:30 PM IST (11:00 UTC) - EOD Heavy Master Sync & Cache Refresh
+    - cron: '0 11 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -29,16 +31,16 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install yfinance pandas numpy
 
-      - name: Run V10 Quantum Market Engine
+      - name: Run V18 Quantum Market Engine
         run: python scanner.py
 
       - name: Commit and Push CSVs to GitHub
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add *.csv
-          git commit -m "Auto-refresh V10 market, overnight & govt policy data" || echo "No changes to commit"
+          git add *.csv *.json
+          git commit -m "Auto-refresh V18 fast intraday data & capitulation signals" || echo "No changes to commit"
           git pull --rebase origin main || true
           git push origin HEAD:main
