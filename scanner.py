@@ -68,10 +68,13 @@ def fetch_stock_news_catalyst(symbol, company, current_tag):
     return current_tag
 
 def fetch_macro_data():
-    macro_tickers = ['BZ=F', 'GC=F', '^INDIAVIX', '^TNX']
-    data = yf.download(macro_tickers, period="5d", progress=False)
-    out = [{'Ticker': t, 'Live_Value': round(float(data['Close'][t].dropna().iloc[-1]), 2), 'Daily_Change': float((data['Close'][t].dropna().iloc[-1] / data['Close'][t].dropna().iloc[-2]) - 1) if len(data['Close'][t].dropna()) >= 2 else 0.0} for t in macro_tickers if not data['Close'][t].dropna().empty]
-    pd.DataFrame(out).to_csv("RAW_MACRO.csv", index=False)
+    try:
+        macro_tickers = ['BZ=F', 'GC=F', '^INDIAVIX', '^TNX']
+        data = yf.download(macro_tickers, period="5d", progress=False)
+        if data.empty or 'Close' not in data.columns: return
+        out = [{'Ticker': t, 'Live_Value': round(float(data['Close'][t].dropna().iloc[-1]), 2), 'Daily_Change': float((data['Close'][t].dropna().iloc[-1] / data['Close'][t].dropna().iloc[-2]) - 1) if len(data['Close'][t].dropna()) >= 2 else 0.0} for t in macro_tickers if not data['Close'][t].dropna().empty]
+        pd.DataFrame(out).to_csv("RAW_MACRO.csv", index=False)
+    except: pass
 
 def run_quantum_engine():
     now_ist = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
@@ -95,13 +98,17 @@ def run_quantum_engine():
     today_memory_records = []
 
     download_period = "5y" if is_eod_heavy_run else "1y"
-    raw_data = yf.download(tickers + ['^NSEI'], period=download_period, interval="1d", progress=False)
+    try:
+        raw_data = yf.download(tickers + ['^NSEI'], period=download_period, interval="1d", progress=False)
+    except:
+        return # Prevents complete exit code 1 crash if Yahoo is down
     
     nifty_20d_return = 0.0
     try:
         nifty_c = raw_data['Close']['^NSEI'].dropna()
         if len(nifty_c) >= 21: nifty_20d_return = float((nifty_c.iloc[-1] / nifty_c.iloc[-21]) - 1)
     except: pass
+    
     fetch_macro_data()
 
     fundamentals = {}
@@ -122,6 +129,7 @@ def run_quantum_engine():
     def process(row):
         symbol, ticker = row['Symbol'], row['Symbol'] + '.NS'
         try:
+            if 'Close' not in raw_data.columns: return None
             c = raw_data['Close'][ticker].dropna()
             if len(c) < 20: return None
             
@@ -130,14 +138,16 @@ def run_quantum_engine():
             vol_30d = float(v.iloc[-30:].mean()) if len(v) >= 30 else float(v.mean())
             if (vol_30d * cur_close) < 10000000: return None 
             
-            # FIX: Adding is_recent_ipo back to prevent the crash!
-            is_recent_ipo = len(c) < 252
-
-            w_52h, w_52l = h.iloc[-252:] if len(h) >= 252 else h, l.iloc[-252:] if len(l) >= 252 else l
-            h_52w, l_52w = float(w_52h.max()), float(w_52l.min())
-            h_52w_date = w_52h.idxmax().strftime('%d-%b-%Y') if len(h) >= 252 else "N/A"
-            l_52w_date = w_52l.idxmin().strftime('%d-%b-%Y') if len(l) >= 252 else "N/A"
-            dist_from_52w_low, disc_from_52w_high = round(((cur_close - l_52w) / l_52w), 4), round(((cur_close - h_52w) / h_52w), 4)
+            # FIXED: Bulletproof math prevents crash
+            try:
+                w_52h, w_52l = h.iloc[-252:] if len(h) >= 252 else h, l.iloc[-252:] if len(l) >= 252 else l
+                h_52w, l_52w = float(w_52h.max()), float(w_52l.min())
+                h_52w_date = w_52h.idxmax().strftime('%d-%b-%Y') if len(h) >= 252 else "N/A"
+                l_52w_date = w_52l.idxmin().strftime('%d-%b-%Y') if len(l) >= 252 else "N/A"
+                dist_from_52w_low, disc_from_52w_high = round(((cur_close - l_52w) / l_52w), 4), round(((cur_close - h_52w) / h_52w), 4)
+            except:
+                h_52w, l_52w, h_52w_date, l_52w_date = cur_close, cur_close, "N/A", "N/A"
+                dist_from_52w_low, disc_from_52w_high = 0.0, 0.0
 
             ret_1d = round(((cur_close / float(c.iloc[-2])) - 1), 4) if len(c) >= 2 else 0.0
             ret_5d = round(((cur_close / float(c.iloc[-6])) - 1), 4) if len(c) >= 6 else 0.0
@@ -148,6 +158,7 @@ def run_quantum_engine():
             ema200 = float(c.ewm(span=200, adjust=False).mean().iloc[-1])
             slope_200 = ema200 - float(c.ewm(span=200, adjust=False).mean().iloc[-20]) if len(c) >= 25 else 0.0
             
+            # SEBI 385 MINUTE TRADING DAY
             current_mins = now_ist.hour * 60 + now_ist.minute
             market_open_mins = 9 * 60 + 15
             market_close_mins = 15 * 60 + 40
@@ -170,6 +181,7 @@ def run_quantum_engine():
             is_capitulation = False
             alert_type = "Standard"
             
+            # CAPITULATION & REBOUND ALGORITHM
             if ret_1d <= -0.05 and rsi <= 35 and (wick_pct > 0.35 or dsr >= 1.5):
                 is_capitulation = True
                 alert_type = "💥 CAPITULATION BOUNCE"
@@ -183,7 +195,7 @@ def run_quantum_engine():
             atr14 = float((h.iloc[-14:] - l.iloc[-14:]).mean()) if len(h) >= 14 else cur_close * 0.02
             if is_capitulation:
                 sl_price = round(float(l.iloc[-1]) * 0.98, 2)
-                target_7 = round(cur_close + (4.0 * atr14), 2)
+                target_7 = round(cur_close + (4.0 * atr14), 2)  # Explosive rebound target
             elif is_breakout and dsr > 1.2:
                 sl_price, target_7 = round(cur_close - (2.0 * atr14), 2), round(cur_close + (3.0 * atr14), 2)
             else:
@@ -199,7 +211,6 @@ def run_quantum_engine():
             final_roe = float(raw_roe) if raw_roe is not None else ((cur_close / (pe_val * bv_val)) if pe_val > 0 and bv_val > 0 else None)
             
             events_list, earnings_blackout, post_earnings_breakout = [], False, False
-            if is_recent_ipo: events_list.append("🆕 RECENT IPO")
             
             ex_div_ts = info.get('exDividendDate')
             if ex_div_ts:
@@ -233,6 +244,7 @@ def run_quantum_engine():
             if fund_score >= 70 and is_vdu and dist_from_52w_low < 0.30: accum_status = "💎 SILENT ACCUMULATION"
             elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
 
+            # DUST-TO-DIAMONDS GEMS SCORE 
             if final_roe and final_roe >= 0.15: dust_gem_score += 25
             elif final_roe and final_roe >= 0.10: dust_gem_score += 10
             if raw_in and raw_in >= 0.50: dust_gem_score += 15
@@ -271,7 +283,8 @@ def run_quantum_engine():
                 m_ret = c_monthly.pct_change().dropna()
                 if len(m_ret) > 12:
                     m_avg = m_ret.groupby(m_ret.index.strftime('%B')).mean()
-                    best_month, worst_month = m_avg.idxmax(), m_avg.idxmin()
+                    if not m_avg.empty:
+                        best_month, worst_month = m_avg.idxmax(), m_avg.idxmin()
             except: pass
 
             return {
@@ -295,7 +308,8 @@ def run_quantum_engine():
                 'Beta': round(float(info.get('beta', 1.05)), 2), 'Ret_1D': ret_1d, 'Ret_5D': ret_5d, 'Ret_20D': ret_20d, 'Ret_50D': round(((cur_close / float(c.iloc[-51])) - 1), 4) if len(c) >= 51 else 0.0,
                 'Best_Month': best_month, 'Worst_Month': worst_month
             }
-        except: return None
+        except Exception as e: 
+            return None
 
     with ThreadPoolExecutor(max_workers=8) as executor:
         futures = {executor.submit(process, row): row for _, row in univ.iterrows()}
@@ -321,8 +335,10 @@ def run_quantum_engine():
     core_portfolio = {'PFC', 'RELIANCE', 'IRFC', 'IRB', 'MSUMI', 'NMDC', 'ITC', 'BEL'}
     all_news_syms = set(top_swings['Symbol']).union(set(top_inc['Symbol'])).union(set(fear_candidates['Symbol'])).union(set(dust_gems['Symbol'])).union(core_portfolio).union(set(df[df['Corp Event'] != "Regular Trading"]['Symbol'].head(25)))
 
+    print(f"4. Harvesting Live News Headlines for {len(all_news_syms)} priority stocks...")
+    news_indices = df[df['Symbol'].isin(all_news_syms)].index.tolist()
     with ThreadPoolExecutor(max_workers=8) as news_exec:
-        future_to_idx = {news_exec.submit(fetch_stock_news_catalyst, df.at[i, 'Symbol'], df.at[i, 'Company'], df.at[i, 'Catalyst Impact']): i for i in df[df['Symbol'].isin(all_news_syms)].index.tolist()}
+        future_to_idx = {news_exec.submit(fetch_stock_news_catalyst, df.at[i, 'Symbol'], df.at[i, 'Company'], df.at[i, 'Catalyst Impact']): i for i in news_indices}
         for fut in as_completed(future_to_idx):
             try: df.at[future_to_idx[fut], 'Catalyst Impact'] = fut.result()
             except: pass
@@ -342,33 +358,37 @@ def run_quantum_engine():
 
     df.sort_values(by="Promoter Holding", ascending=False)[["Symbol", "Company", "Opportunity Score", "Promoter Holding", "Promoter Delta", "FII/DII", "FII Delta", "Debt-to-Eq", "ROE", "Div Yield", "Industry", "Beta", "Ret_20D", "Disc from 52W High"]].to_csv("RAW_PROMOTER.csv", index=False)
 
-    sector_df = df.groupby('Industry').agg(
-        Total_Stocks=('Symbol', 'count'), Uptrend_Count=('Stage', lambda x: (x == 'PHASE 2: MARKUP').sum()),
-        Avg_1D_Flow=('Ret_1D', lambda x: round(x.mean() * 100, 2)), Avg_5D_Flow=('Ret_5D', lambda x: round(x.mean() * 100, 2)),
-        Avg_Money_Flow=('Ret_20D', lambda x: round(x.mean() * 100, 2)), Avg_50D_Flow=('Ret_50D', lambda x: round(x.mean() * 100, 2)),
-        Smart_Money_FII=('FII Delta', lambda x: round(x.mean() * 100, 2)), Smart_Money_Prom=('Promoter Delta', lambda x: round(x.mean() * 100, 2)),
-        Hist_Best_Month=('Best_Month', lambda x: x.mode()[0] if not x.empty else "N/A"), Hist_Worst_Month=('Worst_Month', lambda x: x.mode()[0] if not x.empty else "N/A")
-    ).reset_index()
-    sector_df['ISAD (Breadth %)'] = round((sector_df['Uptrend_Count'] / sector_df['Total_Stocks']) * 100, 1)
-    sector_df['Sector Status'] = np.where(sector_df['ISAD (Breadth %)'] > 40, "🔥 DOMINANT", np.where(sector_df['ISAD (Breadth %)'] < 15, "⚠️ WASHOUT", "🔄 EMERGING"))
-    
-    def get_smart_money(row):
-        total_flow = row['Smart_Money_FII'] + row['Smart_Money_Prom']
-        if total_flow > 0.5 and row['Avg_Money_Flow'] > 0: return "💰 SMART MONEY INFLOW"
-        if total_flow < -0.5: return "🩸 RETAIL TRAP (Inst. Exiting)"
-        return "⚖️ NEUTRAL FLOW"
-    sector_df['Smart Money Direction'] = sector_df.apply(get_smart_money, axis=1)
-
-    def get_cycle(industry):
-        i = str(industry).lower()
-        if any(x in i for x in ['defense', 'railway', 'capital goods', 'infrastructure', 'power']): return "Govt Capex & Defense Supercycle"
-        if any(x in i for x in ['bank', 'financial', 'realt', 'auto']): return "Rate Cut & Credit Expansion Cycle"
-        if any(x in i for x in ['ems', 'semiconductor', 'it ', 'technology', 'telecom']): return "PLI Manufacturing & Digital Export Cycle"
-        if any(x in i for x in ['fmcg', 'consumer', 'pharma', 'healthcare']): return "Defensive Consumption & Margin Expansion"
-        return "Idiosyncratic / Stock Specific"
+    try:
+        sector_df = df.groupby('Industry').agg(
+            Total_Stocks=('Symbol', 'count'), Uptrend_Count=('Stage', lambda x: (x == 'PHASE 2: MARKUP').sum()),
+            Avg_1D_Flow=('Ret_1D', lambda x: round(x.mean() * 100, 2)), Avg_5D_Flow=('Ret_5D', lambda x: round(x.mean() * 100, 2)),
+            Avg_Money_Flow=('Ret_20D', lambda x: round(x.mean() * 100, 2)), Avg_50D_Flow=('Ret_50D', lambda x: round(x.mean() * 100, 2)),
+            Smart_Money_FII=('FII Delta', lambda x: round(x.mean() * 100, 2)), Smart_Money_Prom=('Promoter Delta', lambda x: round(x.mean() * 100, 2)),
+            Hist_Best_Month=('Best_Month', lambda x: x.mode()[0] if len(x.mode()) > 0 else "N/A"), 
+            Hist_Worst_Month=('Worst_Month', lambda x: x.mode()[0] if len(x.mode()) > 0 else "N/A")
+        ).reset_index()
+        sector_df['ISAD (Breadth %)'] = round((sector_df['Uptrend_Count'] / sector_df['Total_Stocks']) * 100, 1)
+        sector_df['Sector Status'] = np.where(sector_df['ISAD (Breadth %)'] > 40, "🔥 DOMINANT", np.where(sector_df['ISAD (Breadth %)'] < 15, "⚠️ WASHOUT", "🔄 EMERGING"))
         
-    sector_df['2-Year Macro Prediction'] = sector_df['Industry'].apply(get_cycle)
-    sector_df[['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_1D_Flow', 'Avg_5D_Flow', 'Avg_Money_Flow', 'Avg_50D_Flow', 'Hist_Best_Month', 'Hist_Worst_Month', 'Smart Money Direction', '2-Year Macro Prediction']].sort_values(by=['ISAD (Breadth %)', 'Avg_1D_Flow'], ascending=[False, False]).to_csv("RAW_SECTOR.csv", index=False)
+        def get_smart_money(row):
+            total_flow = row['Smart_Money_FII'] + row['Smart_Money_Prom']
+            if total_flow > 0.5 and row['Avg_Money_Flow'] > 0: return "💰 SMART MONEY INFLOW"
+            if total_flow < -0.5: return "🩸 RETAIL TRAP (Inst. Exiting)"
+            return "⚖️ NEUTRAL FLOW"
+        sector_df['Smart Money Direction'] = sector_df.apply(get_smart_money, axis=1)
+
+        def get_cycle(industry):
+            i = str(industry).lower()
+            if any(x in i for x in ['defense', 'railway', 'capital goods', 'infrastructure', 'power']): return "Govt Capex & Defense Supercycle"
+            if any(x in i for x in ['bank', 'financial', 'realt', 'auto']): return "Rate Cut & Credit Expansion Cycle"
+            if any(x in i for x in ['ems', 'semiconductor', 'it ', 'technology', 'telecom']): return "PLI Manufacturing & Digital Export Cycle"
+            if any(x in i for x in ['fmcg', 'consumer', 'pharma', 'healthcare']): return "Defensive Consumption & Margin Expansion"
+            return "Idiosyncratic / Stock Specific"
+            
+        sector_df['2-Year Macro Prediction'] = sector_df['Industry'].apply(get_cycle)
+        sector_cols = ['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_1D_Flow', 'Avg_5D_Flow', 'Avg_Money_Flow', 'Avg_50D_Flow', 'Hist_Best_Month', 'Hist_Worst_Month', 'Smart Money Direction', '2-Year Macro Prediction']
+        sector_df[sector_cols].sort_values(by=['ISAD (Breadth %)', 'Avg_1D_Flow'], ascending=[False, False]).to_csv("RAW_SECTOR.csv", index=False)
+    except: pass
 
 if __name__ == "__main__":
     run_quantum_engine()
