@@ -72,7 +72,7 @@ def fetch_macro_data():
     macro_tickers = ['BZ=F', 'GC=F', '^INDIAVIX', '^TNX']
     data = yf.download(macro_tickers, period="5d", progress=False)
     out = [{'Ticker': t, 'Live_Value': round(float(data['Close'][t].dropna().iloc[-1]), 2), 'Daily_Change': float((data['Close'][t].dropna().iloc[-1] / data['Close'][t].dropna().iloc[-2]) - 1) if len(data['Close'][t].dropna()) >= 2 else 0.0} for t in macro_tickers if not data['Close'][t].dropna().empty]
-    pd.DataFrame(out).to_csv("macro_output.csv", index=False)
+    pd.DataFrame(out).to_csv("RAW_MACRO.csv", index=False)
 
 def run_quantum_engine():
     now_ist = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
@@ -149,8 +149,7 @@ def run_quantum_engine():
             ema200 = float(c.ewm(span=200, adjust=False).mean().iloc[-1])
             slope_200 = ema200 - float(c.ewm(span=200, adjust=False).mean().iloc[-20]) if len(c) >= 25 else 0.0
             
-            # --- SEBI NEW MARKET HOURS INTEGRATION (385 MINUTE TRADING DAY) ---
-            # 9:15 AM to 3:40 PM F&O Close / CAS End
+            # SEBI NEW MARKET HOURS INTEGRATION (385 MINUTE TRADING DAY)
             current_mins = now_ist.hour * 60 + now_ist.minute
             market_open_mins = 9 * 60 + 15
             market_close_mins = 15 * 60 + 40
@@ -187,7 +186,7 @@ def run_quantum_engine():
             atr14 = float((h.iloc[-14:] - l.iloc[-14:]).mean()) if len(h) >= 14 else cur_close * 0.02
             if is_capitulation:
                 sl_price = round(float(l.iloc[-1]) * 0.98, 2)
-                target_7 = round(cur_close + (4.0 * atr14), 2)
+                target_7 = round(cur_close + (4.0 * atr14), 2)  # Explosive rebound target
             elif is_breakout and dsr > 1.2:
                 sl_price, target_7 = round(cur_close - (2.0 * atr14), 2), round(cur_close + (3.0 * atr14), 2)
             else:
@@ -197,6 +196,8 @@ def run_quantum_engine():
             rr_ratio = round((target_7 - cur_close) / risk, 2) if risk > 0 else 0.0
 
             info = fundamentals.get(ticker, {})
+            is_recent_ipo = False # Simplify IPO check
+            
             raw_in, raw_inst, raw_roe, raw_debt, raw_growth, raw_q_growth, raw_pe, raw_bv = info.get('heldPercentInsiders'), info.get('heldPercentInstitutions'), info.get('returnOnEquity'), info.get('debtToEquity'), info.get('revenueGrowth'), info.get('earningsQuarterlyGrowth'), info.get('trailingPE', info.get('forwardPE')), info.get('bookValue')
             pe_val = float(raw_pe) if raw_pe is not None else 0.0
             bv_val = float(raw_bv) if raw_bv is not None else 0.0
@@ -270,6 +271,15 @@ def run_quantum_engine():
                     fear_event_score = round(abs(ret_5d) * 800 + fund_score, 1)
                     catalyst_tag = f"🌊 SECTOR CONTAGION DIP ({round(ret_5d*100,1)}% 5D • RSI {int(rsi)})"
 
+            best_month, worst_month = "N/A", "N/A"
+            try:
+                c_monthly = c.groupby(c.index.to_period('M')).last()
+                m_ret = c_monthly.pct_change().dropna()
+                if len(m_ret) > 12:
+                    m_avg = m_ret.groupby(m_ret.index.strftime('%B')).mean()
+                    best_month, worst_month = m_avg.idxmax(), m_avg.idxmin()
+            except: pass
+
             return {
                 'Symbol': symbol, 'Company': row.get('Company', symbol), 'Industry': classify_sector(symbol, row.get('Industry', 'Unknown')),
                 'Sort_Priority': sort_priority, 'Trading Verdict': trading_verdict, 'Alert Type': alert_type, 
@@ -288,7 +298,8 @@ def run_quantum_engine():
                 'Div Yield': round(float(info.get('dividendYield', 0)), 4) if info.get('dividendYield') else 0.0, 
                 'QoQ Growth': round(max(-3.0, min(3.0, float(raw_q_growth))), 4) if raw_q_growth else "", 'Volume Profile': "VDU" if is_vdu else "Normal",
                 'Corp Event': " | ".join(events_list) if events_list else "Regular Trading", 'Catalyst Impact': catalyst_tag, 'Fear_Event_Score': fear_event_score,
-                'Beta': round(float(info.get('beta', 1.05)), 2), 'Ret_1D': ret_1d, 'Ret_5D': ret_5d, 'Ret_20D': ret_20d, 'Ret_50D': round(((cur_close / float(c.iloc[-51])) - 1), 4) if len(c) >= 51 else 0.0
+                'Beta': round(float(info.get('beta', 1.05)), 2), 'Ret_1D': ret_1d, 'Ret_5D': ret_5d, 'Ret_20D': ret_20d, 'Ret_50D': round(((cur_close / float(c.iloc[-51])) - 1), 4) if len(c) >= 51 else 0.0,
+                'Best_Month': best_month, 'Worst_Month': worst_month
             }
         except: return None
 
@@ -330,32 +341,41 @@ def run_quantum_engine():
     dust_gems = df.loc[dust_gems.index]
 
     sw_cols = ["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]
-    df.sort_values(by=["Sort_Priority", "R:R Ratio"], ascending=[True, False])[sw_cols].to_csv("swings_output.csv", index=False)
+    df.sort_values(by=["Sort_Priority", "R:R Ratio"], ascending=[True, False])[sw_cols].to_csv("RAW_SWINGS.csv", index=False)
 
     inc_cols = ["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Div Yield", "Volume Profile", "Corp Event", "Catalyst Impact"]
-    df[df['Accumulation Status'] != "NEUTRAL"].sort_values(by="Opportunity Score", ascending=False)[inc_cols].to_csv("incubator_output.csv", index=False)
+    df[df['Accumulation Status'] != "NEUTRAL"].sort_values(by="Opportunity Score", ascending=False)[inc_cols].to_csv("RAW_INCUBATOR.csv", index=False)
 
     sniper_rows = []
     for _, r in top_swings.iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "MOMENTUM SWING", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], r['R:R Ratio'], r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
     for _, r in top_inc.iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*2, 2), 5.0, r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
     for _, r in fear_candidates.iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "⚡ CONTRARIAN FEAR DIP / EVENT", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*1.10, 2), round(max(2.0, r['R:R Ratio']), 2), r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
-    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "R:R Ratio", "RS vs Nifty", "52W High", "52W Low", "Catalyst / Fear Diagnosis", "Corporate Event"]).to_csv("sniper_output.csv", index=False)
+    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "R:R Ratio", "RS vs Nifty", "52W High", "52W Low", "Catalyst / Fear Diagnosis", "Corporate Event"]).to_csv("RAW_SNIPER.csv", index=False)
     
     fear_rows = []
     for _, r in dust_gems.iterrows(): fear_rows.append([r['Symbol'], r['Company'], r['Entry Trigger'], r['Disc from 52W High'], r['Dist from 52W Low'], r['Dust_Gem_Score'], r['PE Ratio'], r['ROE'], r['Promoter Holding'], r['FII/DII'], r['Debt-to-Eq'], r['Corp Event']])
-    pd.DataFrame(fear_rows, columns=["Symbol", "Company", "Live CMP", "Disc from 52W High", "Dist from 52W Low", "Dust Gem Score", "PE Ratio", "ROE", "Promoter %", "FII/DII %", "Debt-to-Eq", "Corporate Event"]).to_csv("fear_dip_output.csv", index=False)
+    pd.DataFrame(fear_rows, columns=["Symbol", "Company", "Live CMP", "Disc from 52W High", "Dist from 52W Low", "Dust Gem Score", "PE Ratio", "ROE", "Promoter %", "FII/DII %", "Debt-to-Eq", "Corporate Event"]).to_csv("RAW_FEAR_DIP.csv", index=False)
 
     promoter_cols = ["Symbol", "Company", "Opportunity Score", "Promoter Holding", "Promoter Delta", "FII/DII", "FII Delta", "Debt-to-Eq", "ROE", "Div Yield", "Industry", "Beta", "Ret_20D", "Disc from 52W High"]
-    df.sort_values(by="Promoter Holding", ascending=False)[promoter_cols].to_csv("promoter_output.csv", index=False)
+    df.sort_values(by="Promoter Holding", ascending=False)[promoter_cols].to_csv("RAW_PROMOTER.csv", index=False)
 
     sector_df = df.groupby('Industry').agg(
         Total_Stocks=('Symbol', 'count'), Uptrend_Count=('Stage', lambda x: (x == 'PHASE 2: MARKUP').sum()),
         Avg_1D_Flow=('Ret_1D', lambda x: round(x.mean() * 100, 2)), Avg_5D_Flow=('Ret_5D', lambda x: round(x.mean() * 100, 2)),
-        Avg_Money_Flow=('Ret_20D', lambda x: round(x.mean() * 100, 2)), Avg_50D_Flow=('Ret_50D', lambda x: round(x.mean() * 100, 2))
+        Avg_Money_Flow=('Ret_20D', lambda x: round(x.mean() * 100, 2)), Avg_50D_Flow=('Ret_50D', lambda x: round(x.mean() * 100, 2)),
+        Smart_Money_FII=('FII Delta', lambda x: round(x.mean() * 100, 2)), Smart_Money_Prom=('Promoter Delta', lambda x: round(x.mean() * 100, 2)),
+        Hist_Best_Month=('Best_Month', lambda x: x.mode()[0] if not x.empty else "N/A"), Hist_Worst_Month=('Worst_Month', lambda x: x.mode()[0] if not x.empty else "N/A")
     ).reset_index()
     sector_df['ISAD (Breadth %)'] = round((sector_df['Uptrend_Count'] / sector_df['Total_Stocks']) * 100, 1)
     sector_df['Sector Status'] = np.where(sector_df['ISAD (Breadth %)'] > 40, "🔥 DOMINANT", np.where(sector_df['ISAD (Breadth %)'] < 15, "⚠️ WASHOUT", "🔄 EMERGING"))
     
+    def get_smart_money(row):
+        total_flow = row['Smart_Money_FII'] + row['Smart_Money_Prom']
+        if total_flow > 0.5 and row['Avg_Money_Flow'] > 0: return "💰 SMART MONEY INFLOW"
+        if total_flow < -0.5: return "🩸 RETAIL TRAP (Inst. Exiting)"
+        return "⚖️ NEUTRAL FLOW"
+    sector_df['Smart Money Direction'] = sector_df.apply(get_smart_money, axis=1)
+
     def get_cycle(industry):
         i = str(industry).lower()
         if any(x in i for x in ['defense', 'railway', 'capital goods', 'infrastructure', 'power']): return "Govt Capex & Defense Supercycle"
@@ -365,7 +385,10 @@ def run_quantum_engine():
         return "Idiosyncratic / Stock Specific"
         
     sector_df['2-Year Macro Prediction'] = sector_df['Industry'].apply(get_cycle)
-    sector_df[['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_1D_Flow', 'Avg_5D_Flow', 'Avg_Money_Flow', 'Avg_50D_Flow', '2-Year Macro Prediction']].sort_values(by=['ISAD (Breadth %)', 'Avg_1D_Flow'], ascending=[False, False]).to_csv("sector_output.csv", index=False)
+    
+    # 11 Columns for Sector Time Machine
+    sector_cols = ['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_1D_Flow', 'Avg_5D_Flow', 'Avg_Money_Flow', 'Avg_50D_Flow', 'Hist_Best_Month', 'Hist_Worst_Month', 'Smart Money Direction', '2-Year Macro Prediction']
+    sector_df[sector_cols].sort_values(by=['ISAD (Breadth %)', 'Avg_1D_Flow'], ascending=[False, False]).to_csv("RAW_SECTOR.csv", index=False)
 
 if __name__ == "__main__":
     run_quantum_engine()
