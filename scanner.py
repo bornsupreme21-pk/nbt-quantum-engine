@@ -100,8 +100,7 @@ def run_quantum_engine():
     download_period = "5y" if is_eod_heavy_run else "1y"
     try:
         raw_data = yf.download(tickers + ['^NSEI'], period=download_period, interval="1d", progress=False)
-    except:
-        return 
+    except: return 
     
     nifty_20d_return = 0.0
     try:
@@ -136,12 +135,20 @@ def run_quantum_engine():
             h, l, v = raw_data['High'][ticker].reindex(c.index).ffill(), raw_data['Low'][ticker].reindex(c.index).ffill(), raw_data['Volume'][ticker].reindex(c.index).ffill()
             cur_close = float(c.iloc[-1])
             vol_30d = float(v.iloc[-30:].mean()) if len(v) >= 30 else float(v.mean())
-            if (vol_30d * cur_close) < 10000000: return None 
+            turnover_30d = vol_30d * cur_close
             
-            w_52h, w_52l = h.iloc[-252:] if len(h) >= 252 else h, l.iloc[-252:] if len(l) >= 252 else l
-            h_52w, l_52w = float(w_52h.max()), float(w_52l.min())
-            
+            is_penny_spike = False
+            if turnover_30d < 10000000:
+                # Microcap / Penny Awakening bypass
+                if cur_close < 100 and turnover_30d > 2000000 and float(v.iloc[-1]) > (vol_30d * 3.5):
+                    is_penny_spike = True
+                else:
+                    return None 
+
+            is_recent_ipo = len(c) < 252
             try:
+                w_52h, w_52l = h.iloc[-252:] if len(h) >= 252 else h, l.iloc[-252:] if len(l) >= 252 else l
+                h_52w, l_52w = float(w_52h.max()), float(w_52l.min())
                 h_52w_date = w_52h.idxmax().strftime('%d-%b-%Y') if len(h) >= 252 else "N/A"
                 l_52w_date = w_52l.idxmin().strftime('%d-%b-%Y') if len(l) >= 252 else "N/A"
                 dist_from_52w_low, disc_from_52w_high = round(((cur_close - l_52w) / l_52w), 4), round(((cur_close - h_52w) / h_52w), 4)
@@ -180,7 +187,9 @@ def run_quantum_engine():
             is_capitulation = False
             alert_type = "Standard"
             
-            if ret_1d <= -0.05 and rsi <= 35 and (wick_pct > 0.35 or dsr >= 1.5):
+            if is_penny_spike:
+                alert_type = "🌋 MICROCAP PENNY SPIKE"
+            elif ret_1d <= -0.05 and rsi <= 35 and (wick_pct > 0.35 or dsr >= 1.5):
                 is_capitulation = True
                 alert_type = "💥 CAPITULATION BOUNCE"
             elif rsi > 80: alert_type = "🚨 OVERBOUGHT (Caution)"
@@ -194,6 +203,9 @@ def run_quantum_engine():
             if is_capitulation:
                 sl_price = round(float(l.iloc[-1]) * 0.98, 2)
                 target_7 = round(cur_close + (4.0 * atr14), 2)  
+            elif is_penny_spike or dsr >= 3.0:
+                sl_price = round(cur_close * 0.92, 2)
+                target_7 = round(cur_close * 1.15, 2)
             elif is_breakout and dsr > 1.2:
                 sl_price, target_7 = round(cur_close - (2.0 * atr14), 2), round(cur_close + (3.0 * atr14), 2)
             else:
@@ -209,6 +221,7 @@ def run_quantum_engine():
             final_roe = float(raw_roe) if raw_roe is not None else ((cur_close / (pe_val * bv_val)) if pe_val > 0 and bv_val > 0 else None)
             
             events_list, earnings_blackout, post_earnings_breakout = [], False, False
+            if is_recent_ipo: events_list.append("🆕 RECENT IPO")
             
             ex_div_ts = info.get('exDividendDate')
             if ex_div_ts:
@@ -222,7 +235,7 @@ def run_quantum_engine():
 
             sort_priority = 6
             if earnings_blackout: trading_verdict, sort_priority = "🚨 EARNINGS BLACKOUT (WAIT)", 5
-            elif rr_ratio >= 1.5 and alert_type in ["🚀 20D BREAKOUT", "⚡ VCP + VDU", "💥 CAPITULATION BOUNCE"]: trading_verdict, sort_priority = f"🎯 STRONG BUY: ₹{round(cur_close, 2)}", 1
+            elif rr_ratio >= 1.5 and alert_type in ["🚀 20D BREAKOUT", "⚡ VCP + VDU", "💥 CAPITULATION BOUNCE", "🌋 MICROCAP PENNY SPIKE"]: trading_verdict, sort_priority = f"🎯 STRONG BUY: ₹{round(cur_close, 2)}", 1
             elif rr_ratio >= 1.2 and alert_type not in ["📉 DOWNTREND (Avoid)", "🚨 OVERBOUGHT (Caution)"]: trading_verdict, sort_priority = f"🟢 ACCUMULATE: ₹{round(cur_close, 2)}", 2
             elif alert_type == "🚨 OVERBOUGHT (Caution)": trading_verdict, sort_priority = "⚠️ TRIM / AVOID", 4
             elif alert_type == "📉 DOWNTREND (Avoid)": trading_verdict, sort_priority = "⛔ STRICT SKIP", 6
@@ -284,7 +297,7 @@ def run_quantum_engine():
                         best_month, worst_month = m_avg.idxmax(), m_avg.idxmin()
             except: pass
 
-            # CRITICAL FIX: ALL FALLBACKS ARE STRICTLY 0.0 (NO MORE CRASHES DURING SORTING)
+            # V28 FIX: Enforcing strict floats (0.0) so Pandas NEVER crashes during sorting!
             return {
                 'Symbol': symbol, 'Company': row.get('Company', symbol), 'Industry': classify_sector(symbol, row.get('Industry', 'Unknown')),
                 'Sort_Priority': sort_priority, 'Trading Verdict': trading_verdict, 'Alert Type': alert_type, 
@@ -348,9 +361,14 @@ def run_quantum_engine():
     for _, r in df.loc[fear_candidates.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "⚡ CONTRARIAN FEAR DIP / EVENT", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*1.10, 2), round(max(2.0, r['R:R Ratio']), 2), r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
     pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "R:R Ratio", "RS vs Nifty", "52W High", "52W Low", "Catalyst / Fear Diagnosis", "Corporate Event"]).to_csv("RAW_SNIPER.csv", index=False)
     
+    # V28: FEAR DIP INCLUDES EXPLICIT TARGETS, STOPS, AND VERDICTS
     fear_rows = []
-    for _, r in df.loc[dust_gems.index].iterrows(): fear_rows.append([r['Symbol'], r['Company'], r['Entry Trigger'], r['Disc from 52W High'], r['Dist from 52W Low'], r['Dust_Gem_Score'], r['PE Ratio'], r['ROE'], r['Promoter Holding'], r['FII/DII'], r['Debt-to-Eq'], r['Corp Event']])
-    pd.DataFrame(fear_rows, columns=["Symbol", "Company", "Live CMP", "Disc from 52W High", "Dist from 52W Low", "Dust Gem Score", "PE Ratio", "ROE", "Promoter %", "FII/DII %", "Debt-to-Eq", "Corporate Event"]).to_csv("RAW_FEAR_DIP.csv", index=False)
+    for _, r in df.loc[dust_gems.index].iterrows(): 
+        action = "💎 ACCUMULATE (Deep Value)" if r['Disc from 52W High'] <= -0.30 else "🟢 PULLBACK ENTRY"
+        target_rebound = round(r['Entry Trigger'] * 1.15, 2)
+        fear_sl = round(r['Entry Trigger'] * 0.90, 2)
+        fear_rows.append([r['Symbol'], r['Company'], action, r['Entry Trigger'], fear_sl, target_rebound, r['Disc from 52W High'], r['Dist from 52W Low'], r['Dust_Gem_Score'], r['PE Ratio'], r['ROE'], r['Promoter Holding'], r['FII/DII'], r['Debt-to-Eq'], r['Corp Event']])
+    pd.DataFrame(fear_rows, columns=["Symbol", "Company", "Actionable Verdict", "Live CMP", "Fear Stop Loss", "Rebound Target (+15%)", "Disc from 52W High", "Dist from 52W Low", "Dust Gem Score", "PE Ratio", "ROE", "Promoter %", "FII/DII %", "Debt-to-Eq", "Corporate Event"]).to_csv("RAW_FEAR_DIP.csv", index=False)
 
     df.sort_values(by="Promoter Holding", ascending=False)[["Symbol", "Company", "Opportunity Score", "Promoter Holding", "Promoter Delta", "FII/DII", "FII Delta", "Debt-to-Eq", "ROE", "Div Yield", "Industry", "Beta", "Ret_20D", "Disc from 52W High"]].to_csv("RAW_PROMOTER.csv", index=False)
 
@@ -366,10 +384,13 @@ def run_quantum_engine():
         sector_df['ISAD (Breadth %)'] = round((sector_df['Uptrend_Count'] / sector_df['Total_Stocks']) * 100, 1)
         sector_df['Sector Status'] = np.where(sector_df['ISAD (Breadth %)'] > 40, "🔥 DOMINANT", np.where(sector_df['ISAD (Breadth %)'] < 15, "⚠️ WASHOUT", "🔄 EMERGING"))
         
+        # V28: SENSITIVE SMART MONEY ROTATION (0.1% Threshold + 20D Money Flow logic)
         def get_smart_money(row):
             total_flow = row['Smart_Money_FII'] + row['Smart_Money_Prom']
-            if total_flow > 0.5 and row['Avg_Money_Flow'] > 0: return "💰 SMART MONEY INFLOW"
-            if total_flow < -0.5: return "🩸 RETAIL TRAP (Inst. Exiting)"
+            if total_flow >= 0.1 and row['Avg_Money_Flow'] > 0: return "💰 SMART MONEY INFLOW"
+            if total_flow <= -0.1 and row['Avg_Money_Flow'] < 0: return "🩸 RETAIL TRAP (Inst. Exiting)"
+            if row['Avg_Money_Flow'] > 3.0: return "🌊 SECTOR MOMENTUM"
+            if row['Avg_Money_Flow'] < -3.0: return "⚠️ SECTOR EXHAUSTION"
             return "⚖️ NEUTRAL FLOW"
         sector_df['Smart Money Direction'] = sector_df.apply(get_smart_money, axis=1)
 
