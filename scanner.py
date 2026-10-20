@@ -42,7 +42,6 @@ def update_universe_with_new_ipos(univ_df):
         if new_rows:
             univ_df = pd.concat([univ_df, pd.DataFrame(new_rows)], ignore_index=True)
             univ_df.to_csv("Universe_List.csv", index=False)
-            print(f"🚀 AUTO-IPO INGESTION: Found and added {len(new_rows)} new NSE listings!")
     except: pass
     return univ_df
 
@@ -77,11 +76,8 @@ def fetch_macro_data():
 def run_quantum_engine():
     now_ist = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
     current_mins_global = now_ist.hour * 60 + now_ist.minute
-    
-    # EOD Heavy Run triggers post 4:20 PM IST (Safely after 4:15 PM Trade Mod Ends)
     is_eod_heavy_run = current_mins_global >= (16 * 60 + 20) or not os.path.exists('fundamentals_cache.json')
     
-    print(f"1. Engine Mode: {'HEAVY EOD BUILDER' if is_eod_heavy_run else 'FAST INTRADAY SNIPER'}")
     try: univ = pd.read_csv("Universe_List.csv")
     except: univ = pd.DataFrame({'Symbol': ['RELIANCE'], 'Company': ['Reliance Ind'], 'Industry': ['Oil & Gas']})
     
@@ -98,7 +94,6 @@ def run_quantum_engine():
     today_memory_records = []
 
     download_period = "5y" if is_eod_heavy_run else "1y"
-    print(f"2. Pulling {download_period} Price Arrays for {len(tickers)} stocks...")
     raw_data = yf.download(tickers + ['^NSEI'], period=download_period, interval="1d", progress=False)
     
     nifty_20d_return = 0.0
@@ -110,7 +105,6 @@ def run_quantum_engine():
 
     fundamentals = {}
     if is_eod_heavy_run:
-        print("3. EOD Phase: Caching Institutional Fundamentals...")
         try:
             tickers_obj = yf.Tickers(" ".join(tickers))
             for t in tickers:
@@ -119,7 +113,6 @@ def run_quantum_engine():
             with open('fundamentals_cache.json', 'w') as f: json.dump(fundamentals, f)
         except: pass
     else:
-        print("3. Intraday Phase: Loading Fundamentals Cache (Zero Latency)...")
         try:
             with open('fundamentals_cache.json', 'r') as f: fundamentals = json.load(f)
         except: fundamentals = {}
@@ -149,7 +142,7 @@ def run_quantum_engine():
             ema200 = float(c.ewm(span=200, adjust=False).mean().iloc[-1])
             slope_200 = ema200 - float(c.ewm(span=200, adjust=False).mean().iloc[-20]) if len(c) >= 25 else 0.0
             
-            # SEBI NEW MARKET HOURS INTEGRATION (385 MINUTE TRADING DAY)
+            # 385 MINUTE TRADING DAY
             current_mins = now_ist.hour * 60 + now_ist.minute
             market_open_mins = 9 * 60 + 15
             market_close_mins = 15 * 60 + 40
@@ -172,7 +165,6 @@ def run_quantum_engine():
             is_capitulation = False
             alert_type = "Standard"
             
-            # THE CAPITULATION & REBOUND ALGORITHM
             if ret_1d <= -0.05 and rsi <= 35 and (wick_pct > 0.35 or dsr >= 1.5):
                 is_capitulation = True
                 alert_type = "💥 CAPITULATION BOUNCE"
@@ -186,7 +178,7 @@ def run_quantum_engine():
             atr14 = float((h.iloc[-14:] - l.iloc[-14:]).mean()) if len(h) >= 14 else cur_close * 0.02
             if is_capitulation:
                 sl_price = round(float(l.iloc[-1]) * 0.98, 2)
-                target_7 = round(cur_close + (4.0 * atr14), 2)  # Explosive rebound target
+                target_7 = round(cur_close + (4.0 * atr14), 2)
             elif is_breakout and dsr > 1.2:
                 sl_price, target_7 = round(cur_close - (2.0 * atr14), 2), round(cur_close + (3.0 * atr14), 2)
             else:
@@ -196,13 +188,9 @@ def run_quantum_engine():
             rr_ratio = round((target_7 - cur_close) / risk, 2) if risk > 0 else 0.0
 
             info = fundamentals.get(ticker, {})
-            is_recent_ipo = False # Simplify IPO check
-            
             raw_in, raw_inst, raw_roe, raw_debt, raw_growth, raw_q_growth, raw_pe, raw_bv = info.get('heldPercentInsiders'), info.get('heldPercentInstitutions'), info.get('returnOnEquity'), info.get('debtToEquity'), info.get('revenueGrowth'), info.get('earningsQuarterlyGrowth'), info.get('trailingPE', info.get('forwardPE')), info.get('bookValue')
             pe_val = float(raw_pe) if raw_pe is not None else 0.0
             bv_val = float(raw_bv) if raw_bv is not None else 0.0
-            
-            # Implied ROE Math Fix
             final_roe = float(raw_roe) if raw_roe is not None else ((cur_close / (pe_val * bv_val)) if pe_val > 0 and bv_val > 0 else None)
             
             events_list, earnings_blackout, post_earnings_breakout = [], False, False
@@ -238,7 +226,7 @@ def run_quantum_engine():
             if fund_score >= 70 and is_vdu and dist_from_52w_low < 0.30: accum_status = "💎 SILENT ACCUMULATION"
             elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
 
-            # DUST-TO-DIAMONDS GEMS SCORE (The Disconnect Engine)
+            # DUST-TO-DIAMONDS GEMS SCORE 
             if final_roe and final_roe >= 0.15: dust_gem_score += 25
             elif final_roe and final_roe >= 0.10: dust_gem_score += 10
             if raw_in and raw_in >= 0.50: dust_gem_score += 15
@@ -256,7 +244,7 @@ def run_quantum_engine():
             catalyst_tag = "⚪ Normal Flow"
             
             if is_capitulation:
-                fear_event_score = 1000 + fund_score # Force Capitulations to the absolute top
+                fear_event_score = 1000 + fund_score
                 catalyst_tag = f"💥 CAPITULATION REVERSAL ({round(ret_1d*100,1)}% Drop • Bounce Incoming)"
             elif ret_1d <= -0.05 and dsr >= 3.5:
                 catalyst_tag = "⛔ TOXIC STANDALONE DUMP (AVOID)"
@@ -352,6 +340,7 @@ def run_quantum_engine():
     for _, r in fear_candidates.iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "⚡ CONTRARIAN FEAR DIP / EVENT", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*1.10, 2), round(max(2.0, r['R:R Ratio']), 2), r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
     pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "R:R Ratio", "RS vs Nifty", "52W High", "52W Low", "Catalyst / Fear Diagnosis", "Corporate Event"]).to_csv("RAW_SNIPER.csv", index=False)
     
+    # GUARANTEED FIX FOR FEAR DIP OUTPUT
     fear_rows = []
     for _, r in dust_gems.iterrows(): fear_rows.append([r['Symbol'], r['Company'], r['Entry Trigger'], r['Disc from 52W High'], r['Dist from 52W Low'], r['Dust_Gem_Score'], r['PE Ratio'], r['ROE'], r['Promoter Holding'], r['FII/DII'], r['Debt-to-Eq'], r['Corp Event']])
     pd.DataFrame(fear_rows, columns=["Symbol", "Company", "Live CMP", "Disc from 52W High", "Dist from 52W Low", "Dust Gem Score", "PE Ratio", "ROE", "Promoter %", "FII/DII %", "Debt-to-Eq", "Corporate Event"]).to_csv("RAW_FEAR_DIP.csv", index=False)
@@ -386,7 +375,7 @@ def run_quantum_engine():
         
     sector_df['2-Year Macro Prediction'] = sector_df['Industry'].apply(get_cycle)
     
-    # 11 Columns for Sector Time Machine
+    # OUTPUT ALL 11 COLUMNS TO SECTOR TIME MACHINE
     sector_cols = ['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_1D_Flow', 'Avg_5D_Flow', 'Avg_Money_Flow', 'Avg_50D_Flow', 'Hist_Best_Month', 'Hist_Worst_Month', 'Smart Money Direction', '2-Year Macro Prediction']
     sector_df[sector_cols].sort_values(by=['ISAD (Breadth %)', 'Avg_1D_Flow'], ascending=[False, False]).to_csv("RAW_SECTOR.csv", index=False)
 
