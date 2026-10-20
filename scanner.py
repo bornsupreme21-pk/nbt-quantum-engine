@@ -101,7 +101,7 @@ def run_quantum_engine():
     try:
         raw_data = yf.download(tickers + ['^NSEI'], period=download_period, interval="1d", progress=False)
     except:
-        return # Prevents complete exit code 1 crash if Yahoo is down
+        return 
     
     nifty_20d_return = 0.0
     try:
@@ -138,10 +138,10 @@ def run_quantum_engine():
             vol_30d = float(v.iloc[-30:].mean()) if len(v) >= 30 else float(v.mean())
             if (vol_30d * cur_close) < 10000000: return None 
             
-            # FIXED: Bulletproof math prevents crash
+            w_52h, w_52l = h.iloc[-252:] if len(h) >= 252 else h, l.iloc[-252:] if len(l) >= 252 else l
+            h_52w, l_52w = float(w_52h.max()), float(w_52l.min())
+            
             try:
-                w_52h, w_52l = h.iloc[-252:] if len(h) >= 252 else h, l.iloc[-252:] if len(l) >= 252 else l
-                h_52w, l_52w = float(w_52h.max()), float(w_52l.min())
                 h_52w_date = w_52h.idxmax().strftime('%d-%b-%Y') if len(h) >= 252 else "N/A"
                 l_52w_date = w_52l.idxmin().strftime('%d-%b-%Y') if len(l) >= 252 else "N/A"
                 dist_from_52w_low, disc_from_52w_high = round(((cur_close - l_52w) / l_52w), 4), round(((cur_close - h_52w) / h_52w), 4)
@@ -158,7 +158,6 @@ def run_quantum_engine():
             ema200 = float(c.ewm(span=200, adjust=False).mean().iloc[-1])
             slope_200 = ema200 - float(c.ewm(span=200, adjust=False).mean().iloc[-20]) if len(c) >= 25 else 0.0
             
-            # SEBI 385 MINUTE TRADING DAY
             current_mins = now_ist.hour * 60 + now_ist.minute
             market_open_mins = 9 * 60 + 15
             market_close_mins = 15 * 60 + 40
@@ -181,7 +180,6 @@ def run_quantum_engine():
             is_capitulation = False
             alert_type = "Standard"
             
-            # CAPITULATION & REBOUND ALGORITHM
             if ret_1d <= -0.05 and rsi <= 35 and (wick_pct > 0.35 or dsr >= 1.5):
                 is_capitulation = True
                 alert_type = "💥 CAPITULATION BOUNCE"
@@ -195,7 +193,7 @@ def run_quantum_engine():
             atr14 = float((h.iloc[-14:] - l.iloc[-14:]).mean()) if len(h) >= 14 else cur_close * 0.02
             if is_capitulation:
                 sl_price = round(float(l.iloc[-1]) * 0.98, 2)
-                target_7 = round(cur_close + (4.0 * atr14), 2)  # Explosive rebound target
+                target_7 = round(cur_close + (4.0 * atr14), 2)  
             elif is_breakout and dsr > 1.2:
                 sl_price, target_7 = round(cur_close - (2.0 * atr14), 2), round(cur_close + (3.0 * atr14), 2)
             else:
@@ -244,7 +242,6 @@ def run_quantum_engine():
             if fund_score >= 70 and is_vdu and dist_from_52w_low < 0.30: accum_status = "💎 SILENT ACCUMULATION"
             elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
 
-            # DUST-TO-DIAMONDS GEMS SCORE 
             if final_roe and final_roe >= 0.15: dust_gem_score += 25
             elif final_roe and final_roe >= 0.10: dust_gem_score += 10
             if raw_in and raw_in >= 0.50: dust_gem_score += 15
@@ -287,6 +284,7 @@ def run_quantum_engine():
                         best_month, worst_month = m_avg.idxmax(), m_avg.idxmin()
             except: pass
 
+            # CRITICAL FIX: ALL FALLBACKS ARE STRICTLY 0.0 (NO MORE CRASHES DURING SORTING)
             return {
                 'Symbol': symbol, 'Company': row.get('Company', symbol), 'Industry': classify_sector(symbol, row.get('Industry', 'Unknown')),
                 'Sort_Priority': sort_priority, 'Trading Verdict': trading_verdict, 'Alert Type': alert_type, 
@@ -296,14 +294,14 @@ def run_quantum_engine():
                 'R:R Ratio': rr_ratio, 'Pos Size (₹5k Risk)': int(max(1, round(5000.0 / risk))) if risk > 0 else 1, 'RS vs Nifty': rs_vs_nifty,
                 'Opportunity Score': fund_score, 'Dust_Gem_Score': dust_gem_score, 'Stage': "PHASE 2: MARKUP" if (cur_close > ema200 and slope_200 > 0) else "PHASE 1/4", 
                 'Accumulation Status': accum_status, 
-                'Promoter Holding': round(raw_in, 4) if raw_in else "", 'Promoter Delta': prom_delta,
-                'FII/DII': round(raw_inst, 4) if raw_inst else "", 'FII Delta': fii_delta, 
+                'Promoter Holding': round(raw_in, 4) if raw_in else 0.0, 'Promoter Delta': prom_delta,
+                'FII/DII': round(raw_inst, 4) if raw_inst else 0.0, 'FII Delta': fii_delta, 
                 'Dist from 52W Low': dist_from_52w_low, 'Disc from 52W High': disc_from_52w_high,
-                'Debt-to-Eq': debt_val if debt_val > 0 else "", 'Growth': round(max(-3.0, min(3.0, float(raw_growth))), 4) if raw_growth else "", 
-                'ROE': round(final_roe, 4) if final_roe else "", 'PE Ratio': round(pe_val, 2) if pe_val > 0 else "", 
-                'Book Value': round(bv_val, 2) if bv_val > 0 else "",
+                'Debt-to-Eq': debt_val if debt_val > 0 else 0.0, 'Growth': round(max(-3.0, min(3.0, float(raw_growth))), 4) if raw_growth else 0.0, 
+                'ROE': round(final_roe, 4) if final_roe else 0.0, 'PE Ratio': round(pe_val, 2) if pe_val > 0 else 0.0, 
+                'Book Value': round(bv_val, 2) if bv_val > 0 else 0.0,
                 'Div Yield': round(float(info.get('dividendYield', 0)), 4) if info.get('dividendYield') else 0.0, 
-                'QoQ Growth': round(max(-3.0, min(3.0, float(raw_q_growth))), 4) if raw_q_growth else "", 'Volume Profile': "VDU" if is_vdu else "Normal",
+                'QoQ Growth': round(max(-3.0, min(3.0, float(raw_q_growth))), 4) if raw_q_growth else 0.0, 'Volume Profile': "VDU" if is_vdu else "Normal",
                 'Corp Event': " | ".join(events_list) if events_list else "Regular Trading", 'Catalyst Impact': catalyst_tag, 'Fear_Event_Score': fear_event_score,
                 'Beta': round(float(info.get('beta', 1.05)), 2), 'Ret_1D': ret_1d, 'Ret_5D': ret_5d, 'Ret_20D': ret_20d, 'Ret_50D': round(((cur_close / float(c.iloc[-51])) - 1), 4) if len(c) >= 51 else 0.0,
                 'Best_Month': best_month, 'Worst_Month': worst_month
@@ -335,10 +333,8 @@ def run_quantum_engine():
     core_portfolio = {'PFC', 'RELIANCE', 'IRFC', 'IRB', 'MSUMI', 'NMDC', 'ITC', 'BEL'}
     all_news_syms = set(top_swings['Symbol']).union(set(top_inc['Symbol'])).union(set(fear_candidates['Symbol'])).union(set(dust_gems['Symbol'])).union(core_portfolio).union(set(df[df['Corp Event'] != "Regular Trading"]['Symbol'].head(25)))
 
-    print(f"4. Harvesting Live News Headlines for {len(all_news_syms)} priority stocks...")
-    news_indices = df[df['Symbol'].isin(all_news_syms)].index.tolist()
     with ThreadPoolExecutor(max_workers=8) as news_exec:
-        future_to_idx = {news_exec.submit(fetch_stock_news_catalyst, df.at[i, 'Symbol'], df.at[i, 'Company'], df.at[i, 'Catalyst Impact']): i for i in news_indices}
+        future_to_idx = {news_exec.submit(fetch_stock_news_catalyst, df.at[i, 'Symbol'], df.at[i, 'Company'], df.at[i, 'Catalyst Impact']): i for i in df[df['Symbol'].isin(all_news_syms)].index.tolist()}
         for fut in as_completed(future_to_idx):
             try: df.at[future_to_idx[fut], 'Catalyst Impact'] = fut.result()
             except: pass
