@@ -25,6 +25,12 @@ GOVT_KEYWORDS = ['cabinet', 'govt', 'government', 'pib', 'ministry', 'rbi', 'seb
 BULL_KEYWORDS = ['order', 'win', 'bag', 'profit', 'surge', 'jump', 'dividend', 'bonus', 'split', 'upgrade', 'buy', 'approval', 'acquire', 'expansion', 'record', 'mou', 'partner', 'launch']
 BEAR_KEYWORDS = ['loss', 'fall', 'drop', 'penalty', 'raid', 'fraud', 'downgrade', 'default', 'resign', 'pledge', 'ban', 'notice', 'probe', 'fire', 'strike', 'weak']
 
+def classify_sector(symbol, raw_industry):
+    sym = str(symbol).upper().strip()
+    if sym in THEMATIC_MAP: return THEMATIC_MAP[sym]
+    ind = str(raw_industry).strip()
+    return ind if ind not in ['Unknown', '', 'nan', 'None'] else 'Diversified / IPO'
+
 def update_universe_with_new_ipos(univ_df):
     try:
         req = urllib.request.Request("https://archives.nseindia.com/content/equities/EQUITY_L.csv", headers={'User-Agent': 'Mozilla/5.0'})
@@ -63,10 +69,17 @@ def fetch_stock_news_catalyst(symbol, company, current_tag):
 
 def fetch_macro_data():
     try:
-        macro_tickers = ['BZ=F', 'GC=F', '^INDIAVIX', '^TNX', 'INR=X']
-        data = yf.download(macro_tickers, period="5d", progress=False)
+        macro_tickers = ['BZ=F', 'GC=F', '^INDIAVIX', '^TNX', 'INR=X', '^NSEI']
+        data = yf.download(macro_tickers, period="1y", progress=False)
         if data.empty or 'Close' not in data.columns: return
-        out = [{'Ticker': t, 'Live_Value': round(float(data['Close'][t].dropna().iloc[-1]), 2), 'Daily_Change': float((data['Close'][t].dropna().iloc[-1] / data['Close'][t].dropna().iloc[-2]) - 1) if len(data['Close'][t].dropna()) >= 2 else 0.0} for t in macro_tickers if not data['Close'][t].dropna().empty]
+        
+        # V33: Fetching 1-Year Ago Nifty data specifically
+        try:
+            nifty_1y_ago = float(data['Close']['^NSEI'].dropna().iloc[0])
+        except: nifty_1y_ago = 0.0
+
+        out = [{'Ticker': t, 'Live_Value': round(float(data['Close'][t].dropna().iloc[-1]), 2), 'Daily_Change': float((data['Close'][t].dropna().iloc[-1] / data['Close'][t].dropna().iloc[-2]) - 1) if len(data['Close'][t].dropna()) >= 2 else 0.0} for t in macro_tickers if t != '^NSEI' and not data['Close'][t].dropna().empty]
+        out.append({'Ticker': 'NIFTY_1Y_AGO', 'Live_Value': round(nifty_1y_ago, 2), 'Daily_Change': 0.0})
         pd.DataFrame(out).to_csv("RAW_MACRO.csv", index=False)
     except: pass
 
@@ -121,7 +134,6 @@ def run_quantum_engine():
     results = []
     def process(row):
         symbol, ticker = row['Symbol'], row['Symbol'] + '.NS'
-        # V30 COMPANY NAME FALLBACK
         company_name = row.get('Company')
         if not company_name or str(company_name).strip() == symbol:
             company_name = fundamentals.get(ticker, {}).get('shortName', symbol)
@@ -136,7 +148,6 @@ def run_quantum_engine():
             vol_30d = float(v.iloc[-30:].mean()) if len(v) >= 30 else float(v.mean())
             turnover_30d = vol_30d * cur_close
             
-            # V30 MICROCAP VOLCANIC PENNY SPIKE DETECTOR
             is_penny_spike = False
             if turnover_30d < 10000000:
                 if cur_close < 100 and turnover_30d > 2000000 and float(v.iloc[-1]) > (vol_30d * 3.5):
@@ -164,7 +175,7 @@ def run_quantum_engine():
             ema200 = float(c.ewm(span=200, adjust=False).mean().iloc[-1])
             slope_200 = ema200 - float(c.ewm(span=200, adjust=False).mean().iloc[-20]) if len(c) >= 25 else 0.0
             
-            projected_vol = float(v.iloc[-1]) * 1.5 # Safe approx if timing missing
+            projected_vol = float(v.iloc[-1]) * 1.5 
             dsr = projected_vol / vol_30d if vol_30d > 0 else 1.0
             is_vdu = dsr <= 0.50
             wick_pct = (cur_close - float(l.iloc[-1])) / (float(h.iloc[-1]) - float(l.iloc[-1])) if (float(h.iloc[-1]) - float(l.iloc[-1])) > 0 else 0.0
@@ -216,7 +227,6 @@ def run_quantum_engine():
             prom_delta, fii_delta = round(prom_curr - prom_old, 4), round(fii_curr - fii_old, 4)
             today_memory_records.append({'Symbol': symbol, 'Date': datetime.date.today(), 'Prom_Pct': prom_curr, 'FII_Pct': fii_curr})
 
-            # V30 EXPANDED CORPORATE EVENTS ALERTS
             events_list, earnings_blackout, post_earnings_breakout = [], False, False
             if is_recent_ipo: events_list.append("🆕 RECENT IPO")
             if prom_delta > 0.01: events_list.append(f"🐋 PROMOTER WHALE ENTRY (+{round(prom_delta*100, 1)}%)")
@@ -296,10 +306,11 @@ def run_quantum_engine():
                         best_month, worst_month = m_avg.idxmax(), m_avg.idxmin()
             except: pass
 
+            # V33: Adding RSI directly into the pipeline output
             return {
                 'Symbol': symbol, 'Company': company_name, 'Industry': classify_sector(symbol, row.get('Industry', 'Unknown')),
                 'Sort_Priority': sort_priority, 'Trading Verdict': trading_verdict, 'Alert Type': alert_type, 
-                'Entry Trigger': round(cur_close, 2), 'Stop Loss': sl_price, 'Target 7%': target_7, 
+                'Entry Trigger': round(cur_close, 2), 'Stop Loss': sl_price, 'Target 7%': target_7, 'RSI_14': round(rsi, 2),
                 'F&O Ceiling': round(np.ceil(cur_close / 50.0) * 50.0, 2) if cur_close > 200 else round(np.ceil(cur_close / 10.0) * 10.0, 2), 
                 '52W High': round(h_52w, 2), '52W High Date': h_52w_date, '52W Low': round(l_52w, 2), '52W Low Date': l_52w_date,
                 'R:R Ratio': rr_ratio, 'Pos Size (₹5k Risk)': int(max(1, round(5000.0 / risk))) if risk > 0 else 1, 'RS vs Nifty': rs_vs_nifty,
@@ -350,22 +361,26 @@ def run_quantum_engine():
             try: df.at[future_to_idx[fut], 'Catalyst Impact'] = fut.result()
             except: pass
 
-    df.loc[top_swings.index].sort_values(by=["Sort_Priority", "R:R Ratio"], ascending=[True, False])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
+    # V33: Exporting RSI to Swings
+    df.loc[top_swings.index].sort_values(by=["Sort_Priority", "R:R Ratio"], ascending=[True, False])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
     df.loc[top_inc.index].sort_values(by="Opportunity Score", ascending=False)[["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Div Yield", "Volume Profile", "Corp Event", "Catalyst Impact"]].to_csv("RAW_INCUBATOR.csv", index=False)
 
+    # V33: Exporting RSI to Sniper Watchlist
     sniper_rows = []
-    for _, r in df.loc[top_swings.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "MOMENTUM SWING", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], r['R:R Ratio'], r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
-    for _, r in df.loc[top_inc.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*2, 2), 5.0, r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
-    for _, r in df.loc[fear_candidates.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "⚡ CONTRARIAN FEAR DIP / EVENT", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*1.10, 2), round(max(2.0, r['R:R Ratio']), 2), r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
-    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "R:R Ratio", "RS vs Nifty", "52W High", "52W Low", "Catalyst / Fear Diagnosis", "Corporate Event"]).to_csv("RAW_SNIPER.csv", index=False)
+    for _, r in df.loc[top_swings.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "MOMENTUM SWING", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], r['RSI_14'], r['R:R Ratio'], r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
+    for _, r in df.loc[top_inc.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*2, 2), r['RSI_14'], 5.0, r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
+    for _, r in df.loc[fear_candidates.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "⚡ CONTRARIAN FEAR DIP / EVENT", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*1.10, 2), r['RSI_14'], round(max(2.0, r['R:R Ratio']), 2), r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
+    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "RSI_14", "R:R Ratio", "RS vs Nifty", "52W High", "52W Low", "Catalyst / Fear Diagnosis", "Corporate Event"]).to_csv("RAW_SNIPER.csv", index=False)
     
+    # V33: Exporting Target Buy Zone and RSI to Fear Dip Hunter
     fear_rows = []
     for _, r in df.loc[dust_gems.index].iterrows(): 
         action = "💎 ACCUMULATE (Deep Value)" if r['Disc from 52W High'] <= -0.30 else "🟢 PULLBACK ENTRY"
         target_rebound = round(r['Entry Trigger'] * 1.15, 2)
         fear_sl = round(r['Entry Trigger'] * 0.90, 2)
-        fear_rows.append([r['Symbol'], r['Company'], action, r['Entry Trigger'], fear_sl, target_rebound, r['Disc from 52W High'], r['Dist from 52W Low'], r['Dust_Gem_Score'], r['PE Ratio'], r['ROE'], r['Promoter Holding'], r['FII/DII'], r['Debt-to-Eq'], r['Corp Event']])
-    pd.DataFrame(fear_rows, columns=["Symbol", "Company", "Actionable Verdict", "Live CMP", "Fear Stop Loss", "Rebound Target (+15%)", "Disc from 52W High", "Dist from 52W Low", "Dust Gem Score", "PE Ratio", "ROE", "Promoter %", "FII/DII %", "Debt-to-Eq", "Corporate Event"]).to_csv("RAW_FEAR_DIP.csv", index=False)
+        target_buy = f"₹{round(r['Entry Trigger']*0.98, 2)} - ₹{round(r['Entry Trigger']*1.01, 2)}"
+        fear_rows.append([r['Symbol'], r['Company'], action, r['Entry Trigger'], target_buy, fear_sl, target_rebound, r['RSI_14'], r['Disc from 52W High'], r['Dist from 52W Low'], r['Dust_Gem_Score'], r['PE Ratio'], r['ROE'], r['Promoter Holding'], r['FII/DII'], r['Debt-to-Eq'], r['Corp Event']])
+    pd.DataFrame(fear_rows, columns=["Symbol", "Company", "Actionable Verdict", "Live CMP", "Target Buy Zone", "Fear Stop Loss", "Rebound Target (+15%)", "RSI_14", "Disc from 52W High", "Dist from 52W Low", "Dust Gem Score", "PE Ratio", "ROE", "Promoter %", "FII/DII %", "Debt-to-Eq", "Corporate Event"]).to_csv("RAW_FEAR_DIP.csv", index=False)
 
     df.sort_values(by="Promoter Holding", ascending=False)[["Symbol", "Company", "Opportunity Score", "Promoter Holding", "Promoter Delta", "FII/DII", "FII Delta", "Debt-to-Eq", "ROE", "Div Yield", "Industry", "Beta", "Ret_20D", "Disc from 52W High"]].to_csv("RAW_PROMOTER.csv", index=False)
 
