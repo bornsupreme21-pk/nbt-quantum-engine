@@ -6,6 +6,7 @@ import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 import io
+import re
 import pandas as pd
 import numpy as np
 import yfinance as yf
@@ -73,20 +74,28 @@ def fetch_macro_data():
         data = yf.download(macro_tickers, period="1y", progress=False)
         if data.empty or 'Close' not in data.columns: return
         
-        # V33: Fetching 1-Year Ago Nifty data specifically
-        try:
-            nifty_1y_ago = float(data['Close']['^NSEI'].dropna().iloc[0])
+        try: nifty_1y_ago = float(data['Close']['^NSEI'].dropna().iloc[0])
         except: nifty_1y_ago = 0.0
 
         out = [{'Ticker': t, 'Live_Value': round(float(data['Close'][t].dropna().iloc[-1]), 2), 'Daily_Change': float((data['Close'][t].dropna().iloc[-1] / data['Close'][t].dropna().iloc[-2]) - 1) if len(data['Close'][t].dropna()) >= 2 else 0.0} for t in macro_tickers if t != '^NSEI' and not data['Close'][t].dropna().empty]
         out.append({'Ticker': 'NIFTY_1Y_AGO', 'Live_Value': round(nifty_1y_ago, 2), 'Daily_Change': 0.0})
+        
+        # V35: MANUAL WEB SCRAPER TO BYPASS GOOGLE FINANCE RESTRICTIONS ON GIFT NIFTY
+        gift_price = 0.0
+        try:
+            req = urllib.request.Request("https://www.google.com/finance/quote/GIFTNIFTY:INDEXNSE", headers={'User-Agent': 'Mozilla/5.0'})
+            html = urllib.request.urlopen(req, timeout=5).read().decode('utf-8')
+            match = re.search(r'class="YMlKec fxKbKc"[^>]*>([^<]+)</div>', html)
+            if match: gift_price = float(match.group(1).replace(',', ''))
+        except: pass
+        out.append({'Ticker': 'GIFT_NIFTY', 'Live_Value': gift_price, 'Daily_Change': 0.0})
+
         pd.DataFrame(out).to_csv("RAW_MACRO.csv", index=False)
     except: pass
 
 def run_quantum_engine():
     now_ist = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
     current_mins_global = now_ist.hour * 60 + now_ist.minute
-    
     is_eod_heavy_run = current_mins_global >= (16 * 60 + 20) or not os.path.exists('fundamentals_cache.json')
     
     try: univ = pd.read_csv("Universe_List.csv")
@@ -105,8 +114,7 @@ def run_quantum_engine():
     today_memory_records = []
 
     download_period = "5y" if is_eod_heavy_run else "1y"
-    try:
-        raw_data = yf.download(tickers + ['^NSEI'], period=download_period, interval="1d", progress=False)
+    try: raw_data = yf.download(tickers + ['^NSEI'], period=download_period, interval="1d", progress=False)
     except: return 
     
     nifty_20d_return = 0.0
@@ -152,8 +160,7 @@ def run_quantum_engine():
             if turnover_30d < 10000000:
                 if cur_close < 100 and turnover_30d > 2000000 and float(v.iloc[-1]) > (vol_30d * 3.5):
                     is_penny_spike = True
-                else:
-                    return None 
+                else: return None 
 
             is_recent_ipo = len(c) < 252
             try:
@@ -189,8 +196,7 @@ def run_quantum_engine():
             is_capitulation = False
             alert_type = "Standard"
             
-            if is_penny_spike:
-                alert_type = "🌋 MICROCAP PENNY SPIKE"
+            if is_penny_spike: alert_type = "🌋 MICROCAP PENNY SPIKE"
             elif ret_1d <= -0.05 and rsi <= 35 and (wick_pct > 0.35 or dsr >= 1.5):
                 is_capitulation = True
                 alert_type = "💥 CAPITULATION BOUNCE"
@@ -302,11 +308,9 @@ def run_quantum_engine():
                 m_ret = c_monthly.pct_change().dropna()
                 if len(m_ret) > 12:
                     m_avg = m_ret.groupby(m_ret.index.strftime('%B')).mean()
-                    if not m_avg.empty:
-                        best_month, worst_month = m_avg.idxmax(), m_avg.idxmin()
+                    if not m_avg.empty: best_month, worst_month = m_avg.idxmax(), m_avg.idxmin()
             except: pass
 
-            # V33: Adding RSI directly into the pipeline output
             return {
                 'Symbol': symbol, 'Company': company_name, 'Industry': classify_sector(symbol, row.get('Industry', 'Unknown')),
                 'Sort_Priority': sort_priority, 'Trading Verdict': trading_verdict, 'Alert Type': alert_type, 
@@ -328,8 +332,7 @@ def run_quantum_engine():
                 'Beta': round(float(info.get('beta', 1.05)), 2), 'Ret_1D': ret_1d, 'Ret_5D': ret_5d, 'Ret_20D': ret_20d, 'Ret_50D': round(((cur_close / float(c.iloc[-51])) - 1), 4) if len(c) >= 51 else 0.0,
                 'Best_Month': best_month, 'Worst_Month': worst_month
             }
-        except Exception as e: 
-            return None
+        except Exception as e: return None
 
     with ThreadPoolExecutor(max_workers=8) as executor:
         futures = {executor.submit(process, row): row for _, row in univ.iterrows()}
@@ -361,18 +364,15 @@ def run_quantum_engine():
             try: df.at[future_to_idx[fut], 'Catalyst Impact'] = fut.result()
             except: pass
 
-    # V33: Exporting RSI to Swings
     df.loc[top_swings.index].sort_values(by=["Sort_Priority", "R:R Ratio"], ascending=[True, False])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
     df.loc[top_inc.index].sort_values(by="Opportunity Score", ascending=False)[["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Div Yield", "Volume Profile", "Corp Event", "Catalyst Impact"]].to_csv("RAW_INCUBATOR.csv", index=False)
 
-    # V33: Exporting RSI to Sniper Watchlist
     sniper_rows = []
     for _, r in df.loc[top_swings.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "MOMENTUM SWING", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], r['RSI_14'], r['R:R Ratio'], r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
     for _, r in df.loc[top_inc.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*2, 2), r['RSI_14'], 5.0, r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
     for _, r in df.loc[fear_candidates.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "⚡ CONTRARIAN FEAR DIP / EVENT", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*1.10, 2), r['RSI_14'], round(max(2.0, r['R:R Ratio']), 2), r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
     pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "RSI_14", "R:R Ratio", "RS vs Nifty", "52W High", "52W Low", "Catalyst / Fear Diagnosis", "Corporate Event"]).to_csv("RAW_SNIPER.csv", index=False)
     
-    # V33: Exporting Target Buy Zone and RSI to Fear Dip Hunter
     fear_rows = []
     for _, r in df.loc[dust_gems.index].iterrows(): 
         action = "💎 ACCUMULATE (Deep Value)" if r['Disc from 52W High'] <= -0.30 else "🟢 PULLBACK ENTRY"
