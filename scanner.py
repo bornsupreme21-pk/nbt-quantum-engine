@@ -79,17 +79,6 @@ def fetch_macro_data():
 
         out = [{'Ticker': t, 'Live_Value': round(float(data['Close'][t].dropna().iloc[-1]), 2), 'Daily_Change': float((data['Close'][t].dropna().iloc[-1] / data['Close'][t].dropna().iloc[-2]) - 1) if len(data['Close'][t].dropna()) >= 2 else 0.0} for t in macro_tickers if t != '^NSEI' and not data['Close'][t].dropna().empty]
         out.append({'Ticker': 'NIFTY_1Y_AGO', 'Live_Value': round(nifty_1y_ago, 2), 'Daily_Change': 0.0})
-        
-        # V35: MANUAL WEB SCRAPER TO BYPASS GOOGLE FINANCE RESTRICTIONS ON GIFT NIFTY
-        gift_price = 0.0
-        try:
-            req = urllib.request.Request("https://www.google.com/finance/quote/GIFTNIFTY:INDEXNSE", headers={'User-Agent': 'Mozilla/5.0'})
-            html = urllib.request.urlopen(req, timeout=5).read().decode('utf-8')
-            match = re.search(r'class="YMlKec fxKbKc"[^>]*>([^<]+)</div>', html)
-            if match: gift_price = float(match.group(1).replace(',', ''))
-        except: pass
-        out.append({'Ticker': 'GIFT_NIFTY', 'Live_Value': gift_price, 'Daily_Change': 0.0})
-
         pd.DataFrame(out).to_csv("RAW_MACRO.csv", index=False)
     except: pass
 
@@ -228,6 +217,12 @@ def run_quantum_engine():
             bv_val = float(raw_bv) if raw_bv is not None else 0.0
             final_roe = float(raw_roe) if raw_roe is not None else ((cur_close / (pe_val * bv_val)) if pe_val > 0 and bv_val > 0 else None)
             
+            # V36: DIVIDEND YIELD MATH FIX (Normalizes raw numbers returned by Yahoo)
+            raw_dy = float(info.get('dividendYield', 0))
+            if raw_dy > 0:
+                normalized_dy = raw_dy / 100 if raw_dy > 0.5 else raw_dy
+            else: normalized_dy = 0.0
+            
             prom_curr, fii_curr = raw_in if raw_in else 0.0, raw_inst if raw_inst else 0.0
             prom_old, fii_old = oldest_records.get(symbol, {}).get('Prom_Pct', prom_curr), oldest_records.get(symbol, {}).get('FII_Pct', fii_curr)
             prom_delta, fii_delta = round(prom_curr - prom_old, 4), round(fii_curr - fii_old, 4)
@@ -326,7 +321,7 @@ def run_quantum_engine():
                 'Debt-to-Eq': debt_val if debt_val > 0 else 0.0, 'Growth': round(max(-3.0, min(3.0, float(raw_growth))), 4) if raw_growth else 0.0, 
                 'ROE': round(final_roe, 4) if final_roe else 0.0, 'PE Ratio': round(pe_val, 2) if pe_val > 0 else 0.0, 
                 'Book Value': round(bv_val, 2) if bv_val > 0 else 0.0,
-                'Div Yield': round(float(info.get('dividendYield', 0)), 4) if info.get('dividendYield') else 0.0, 
+                'Div Yield': round(normalized_dy, 4), 
                 'QoQ Growth': round(max(-3.0, min(3.0, float(raw_q_growth))), 4) if raw_q_growth else 0.0, 'Volume Profile': "VDU" if is_vdu else "Normal",
                 'Corp Event': " | ".join(events_list) if events_list else "Regular Trading", 'Catalyst Impact': catalyst_tag, 'Fear_Event_Score': fear_event_score,
                 'Beta': round(float(info.get('beta', 1.05)), 2), 'Ret_1D': ret_1d, 'Ret_5D': ret_5d, 'Ret_20D': ret_20d, 'Ret_50D': round(((cur_close / float(c.iloc[-51])) - 1), 4) if len(c) >= 51 else 0.0,
