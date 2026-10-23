@@ -79,6 +79,16 @@ def fetch_macro_data():
 
         out = [{'Ticker': t, 'Live_Value': round(float(data['Close'][t].dropna().iloc[-1]), 2), 'Daily_Change': float((data['Close'][t].dropna().iloc[-1] / data['Close'][t].dropna().iloc[-2]) - 1) if len(data['Close'][t].dropna()) >= 2 else 0.0} for t in macro_tickers if t != '^NSEI' and not data['Close'][t].dropna().empty]
         out.append({'Ticker': 'NIFTY_1Y_AGO', 'Live_Value': round(nifty_1y_ago, 2), 'Daily_Change': 0.0})
+        
+        gift_price = 0.0
+        try:
+            req = urllib.request.Request("https://www.google.com/finance/quote/GIFTNIFTY:INDEXNSE", headers={'User-Agent': 'Mozilla/5.0'})
+            html = urllib.request.urlopen(req, timeout=5).read().decode('utf-8')
+            match = re.search(r'class="YMlKec fxKbKc"[^>]*>([^<]+)</div>', html)
+            if match: gift_price = float(match.group(1).replace(',', ''))
+        except: pass
+        out.append({'Ticker': 'GIFT_NIFTY', 'Live_Value': gift_price, 'Daily_Change': 0.0})
+
         pd.DataFrame(out).to_csv("RAW_MACRO.csv", index=False)
     except: pass
 
@@ -217,7 +227,6 @@ def run_quantum_engine():
             bv_val = float(raw_bv) if raw_bv is not None else 0.0
             final_roe = float(raw_roe) if raw_roe is not None else ((cur_close / (pe_val * bv_val)) if pe_val > 0 and bv_val > 0 else None)
             
-            # V36: DIVIDEND YIELD MATH FIX (Normalizes raw numbers returned by Yahoo)
             raw_dy = float(info.get('dividendYield', 0))
             if raw_dy > 0:
                 normalized_dy = raw_dy / 100 if raw_dy > 0.5 else raw_dy
@@ -377,7 +386,8 @@ def run_quantum_engine():
         fear_rows.append([r['Symbol'], r['Company'], action, r['Entry Trigger'], target_buy, fear_sl, target_rebound, r['RSI_14'], r['Disc from 52W High'], r['Dist from 52W Low'], r['Dust_Gem_Score'], r['PE Ratio'], r['ROE'], r['Promoter Holding'], r['FII/DII'], r['Debt-to-Eq'], r['Corp Event']])
     pd.DataFrame(fear_rows, columns=["Symbol", "Company", "Actionable Verdict", "Live CMP", "Target Buy Zone", "Fear Stop Loss", "Rebound Target (+15%)", "RSI_14", "Disc from 52W High", "Dist from 52W Low", "Dust Gem Score", "PE Ratio", "ROE", "Promoter %", "FII/DII %", "Debt-to-Eq", "Corporate Event"]).to_csv("RAW_FEAR_DIP.csv", index=False)
 
-    df.sort_values(by="Promoter Holding", ascending=False)[["Symbol", "Company", "Opportunity Score", "Promoter Holding", "Promoter Delta", "FII/DII", "FII Delta", "Debt-to-Eq", "ROE", "Div Yield", "Industry", "Beta", "Ret_20D", "Disc from 52W High"]].to_csv("RAW_PROMOTER.csv", index=False)
+    # V38: VITAL - We export RSI_14 to the RAW_PROMOTER database so the Cockpit has a master list to VLOOKUP for the Golden Exception logic.
+    df.sort_values(by="Promoter Holding", ascending=False)[["Symbol", "Company", "Opportunity Score", "Promoter Holding", "Promoter Delta", "FII/DII", "FII Delta", "Debt-to-Eq", "ROE", "Div Yield", "Industry", "Beta", "Ret_20D", "Disc from 52W High", "RSI_14"]].to_csv("RAW_PROMOTER.csv", index=False)
 
     try:
         sector_df = df.groupby('Industry').agg(
