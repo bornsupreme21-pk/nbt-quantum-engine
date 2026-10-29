@@ -7,6 +7,7 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 import io
 import re
+import zipfile
 import pandas as pd
 import numpy as np
 import yfinance as yf
@@ -64,10 +65,39 @@ def fetch_nse_delivery_map():
                         if 0 < d_pct <= 1.0:
                             deliv_map[sym] = round(d_pct, 4)
                     except: pass
-                if deliv_map:
-                    break
+                if deliv_map: break
         except: pass
     return deliv_map
+
+# V43: FETCH NSE F&O BHAVCOPY TO DECODE OPEN INTEREST
+def fetch_fo_oi_map():
+    oi_map = {}
+    for offset in range(0, 5):
+        dt = datetime.date.today() - datetime.timedelta(days=offset)
+        mth = dt.strftime('%b').upper()
+        yr = dt.strftime('%Y')
+        dy = dt.strftime('%d')
+        url = f"https://archives.nseindia.com/content/historical/DERIVATIVES/{yr}/{mth}/fo{dy}{mth}{yr}bhav.csv.zip"
+        try:
+            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req, timeout=5) as resp:
+                with zipfile.ZipFile(io.BytesIO(resp.read())) as z:
+                    csv_file = z.namelist()[0]
+                    with z.open(csv_file) as f:
+                        b_df = pd.read_csv(f)
+            b_df.columns = [c.strip().upper() for c in b_df.columns]
+            fut_df = b_df[b_df['INSTRUMENT'] == 'FUTSTK']
+            if not fut_df.empty:
+                agg_fo = fut_df.groupby('SYMBOL').agg({'OPEN_INT': 'sum', 'CHG_IN_OI': 'sum'}).reset_index()
+                for _, r in agg_fo.iterrows():
+                    sym = str(r['SYMBOL']).strip()
+                    oi = float(r['OPEN_INT'])
+                    chg = float(r['CHG_IN_OI'])
+                    oi_pct = chg / (oi - chg) if (oi - chg) > 0 else 0.0
+                    oi_map[sym] = {'OI_Total': oi, 'OI_Chg_Pct': round(oi_pct, 4)}
+                if oi_map: break
+        except: pass
+    return oi_map
 
 def fetch_stock_news_catalyst(symbol, company, current_tag):
     try:
@@ -243,6 +273,7 @@ def run_quantum_engine():
     tickers = (univ['Symbol'] + '.NS').tolist()
 
     nse_deliv_map = fetch_nse_delivery_map()
+    nse_fo_map = fetch_fo_oi_map()
 
     try:
         mem_df = pd.read_csv("Historical_Holdings.csv")
@@ -352,6 +383,19 @@ def run_quantum_engine():
                 inst_base = min(0.65, max(0.32, 0.38 + (fii_curr * 0.35) + (wick_pct * 0.15)))
                 deliv_pct = round(inst_base, 4)
 
+            # V43: F&O Open Interest Regime Logic
+            fo_regime = "CASH STOCK"
+            oi_chg_pct = 0.0
+            oi_total = 0
+            if symbol in nse_fo_map:
+                oi_total = nse_fo_map[symbol]['OI_Total']
+                oi_chg_pct = nse_fo_map[symbol]['OI_Chg_Pct']
+                if ret_1d > 0.005 and oi_chg_pct > 0.01: fo_regime = "🟢 LONG BUILDUP"
+                elif ret_1d < -0.005 and oi_chg_pct > 0.01: fo_regime = "🔴 SHORT BUILDUP"
+                elif ret_1d > 0.005 and oi_chg_pct < -0.01: fo_regime = "⚠️ SHORT COVERING"
+                elif ret_1d < -0.005 and oi_chg_pct < -0.01: fo_regime = "🩸 LONG UNWINDING"
+                else: fo_regime = "⚖️ RANGEBOUND OI"
+
             is_breakout = cur_close > float(h.iloc[-21:-1].max()) if len(h) >= 21 else False
             is_capitulation = False
             alert_type = "Standard"
@@ -451,6 +495,17 @@ def run_quantum_engine():
                     fear_event_score = round(abs(ret_5d) * 800 + fund_score, 1)
                     catalyst_tag = f"🌊 SECTOR CONTAGION DIP ({round(ret_5d*100,1)}% 5D • RSI {int(rsi)})"
 
+            # Machine Prediction Engine Math (Alpha Spread vs Center)
+            expected_beta_move = float(info.get('beta', 1.05)) * nifty_20d_return if nifty_20d_return else 0
+            alpha_spread = ret_1d - expected_beta_move
+            if rsi >= 72 and ret_1d > 0.02: machine_pred = "⚠️ OVEREXTENDED (Profit Booking)"
+            elif rsi <= 35 and alpha_spread >= 0: machine_pred = "💎 OVERSOLD REBOUND (Strong Floor)"
+            elif alpha_spread >= 0.0075 and ret_1d > 0: machine_pred = "🟢 BULLISH OUTPERFORMER (+Alpha)"
+            elif ret_1d > 0 and nifty_20d_return < -0.003: machine_pred = "⚡ CONTRA STRENGTH (Defying Nifty)"
+            elif alpha_spread <= -0.0075 and ret_1d < 0: machine_pred = "🔴 BEARISH DRAG (Weak vs Nifty)"
+            elif ret_1d >= 0: machine_pred = "🟢 POSITIVE BIAS (Tracking Trend)"
+            else: machine_pred = "⚖️ MILD DRIFT / CONSOLIDATING"
+
             best_month, worst_month = "N/A", "N/A"
             try:
                 c_monthly = c.groupby(c.index.to_period('M')).last()
@@ -465,6 +520,8 @@ def run_quantum_engine():
                 'Sort_Priority': sort_priority, 'Trading Verdict': trading_verdict, 'Alert Type': alert_type, 
                 'Entry Trigger': round(cur_close, 2), 'Stop Loss': sl_price, 'Target 7%': target_7, 'RSI_14': round(rsi, 2),
                 'Delivery_Pct': deliv_pct, 'Last_Vol': last_vol,
+                'FO_Regime': fo_regime, 'OI_Total': oi_total, 'OI_Chg_Pct': oi_chg_pct, 'Machine_Prediction': machine_pred,
+                '52W High Disc %': disc_from_52w_high,
                 'F&O Ceiling': round(np.ceil(cur_close / 50.0) * 50.0, 2) if cur_close > 200 else round(np.ceil(cur_close / 10.0) * 10.0, 2), 
                 '52W High': round(h_52w, 2), '52W High Date': h_52w_date, '52W Low': round(l_52w, 2), '52W Low Date': l_52w_date,
                 'R:R Ratio': rr_ratio, 'Pos Size (₹5k Risk)': int(max(1, round(5000.0 / risk))) if risk > 0 else 1, 'RS vs Nifty': rs_vs_nifty,
@@ -519,6 +576,11 @@ def run_quantum_engine():
         for fut in as_completed(future_to_idx):
             try: df.at[future_to_idx[fut], 'Catalyst Impact'] = fut.result()
             except: pass
+
+    # V43: F&O Dark Pool Exporter
+    fo_df = df[df['FO_Regime'] != "CASH STOCK"].sort_values(by="OI_Total", ascending=False)
+    if not fo_df.empty:
+        fo_df[["Symbol", "Company", "Entry Trigger", "Ret_1D", "FO_Regime", "OI_Chg_Pct", "OI_Total", "RSI_14", "Volume Profile", "Machine_Prediction", "52W High Disc %", "Industry"]].to_csv("RAW_FO_DECRYPTOR.csv", index=False)
 
     df.loc[top_swings.index].sort_values(by=["Sort_Priority", "R:R Ratio"], ascending=[True, False])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
     df.loc[top_inc.index].sort_values(by="Opportunity Score", ascending=False)[["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Div Yield", "Volume Profile", "Corp Event", "Catalyst Impact"]].to_csv("RAW_INCUBATOR.csv", index=False)
