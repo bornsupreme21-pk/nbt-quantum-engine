@@ -6,7 +6,6 @@ import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 import io
-import zipfile
 import pandas as pd
 import numpy as np
 import yfinance as yf
@@ -34,7 +33,7 @@ def classify_sector(symbol, raw_industry):
 
 def update_universe_with_new_ipos(univ_df):
     try:
-        req = urllib.request.Request("https://archives.nseindia.com/content/equities/EQUITY_L.csv", headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'})
+        req = urllib.request.Request("https://archives.nseindia.com/content/equities/EQUITY_L.csv", headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'})
         with urllib.request.urlopen(req, timeout=10) as response:
             nse_df = pd.read_csv(io.StringIO(response.read().decode('utf-8')))
         nse_df = nse_df[nse_df[' SERIES'] == 'EQ']
@@ -68,39 +67,36 @@ def fetch_nse_delivery_map():
         except: pass
     return deliv_map
 
-def fetch_fo_oi_map():
-    oi_map = {}
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5'
-    }
-    for offset in range(0, 5):
-        dt = datetime.date.today() - datetime.timedelta(days=offset)
-        mth = dt.strftime('%b').upper()
-        yr = dt.strftime('%Y')
-        dy = dt.strftime('%d')
-        url = f"https://archives.nseindia.com/content/historical/DERIVATIVES/{yr}/{mth}/fo{dy}{mth}{yr}bhav.csv.zip"
-        try:
-            req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=7) as resp:
-                with zipfile.ZipFile(io.BytesIO(resp.read())) as z:
-                    csv_file = z.namelist()[0]
-                    with z.open(csv_file) as f:
-                        b_df = pd.read_csv(f)
-            b_df.columns = [c.strip().upper() for c in b_df.columns]
-            fut_df = b_df[b_df['INSTRUMENT'] == 'FUTSTK']
-            if not fut_df.empty:
-                agg_fo = fut_df.groupby('SYMBOL').agg({'OPEN_INT': 'sum', 'CHG_IN_OI': 'sum'}).reset_index()
-                for _, r in agg_fo.iterrows():
-                    sym = str(r['SYMBOL']).strip()
-                    oi = float(r['OPEN_INT'])
-                    chg = float(r['CHG_IN_OI'])
-                    oi_pct = chg / (oi - chg) if (oi - chg) > 0 else 0.0
-                    oi_map[sym] = {'OI_Total': oi, 'OI_Chg_Pct': round(oi_pct, 4)}
-                if oi_map: break
-        except: pass
-    return oi_map
+# V50 FIX: Bypasses NSE ZIP blocking by scanning live Options Chain Data from yfinance
+def fetch_options_oi_regime(symbol, ret_1d):
+    try:
+        tkr = yf.Ticker(symbol + ".NS")
+        exps = tkr.options
+        if not exps:
+            return "CASH STOCK", 0.0, 0
+            
+        opt = tkr.option_chain(exps[0])
+        calls = opt.calls
+        puts = opt.puts
+        
+        call_vol = calls['volume'].sum() if not calls.empty else 1.0
+        put_vol = puts['volume'].sum() if not puts.empty else 1.0
+        total_oi = calls['openInterest'].sum() + puts['openInterest'].sum()
+        
+        pcr = put_vol / max(1.0, call_vol)
+        
+        if ret_1d > 0.005 and pcr > 1.1: 
+            return "🟢 LONG BUILDUP", round((pcr - 1.0) / 10.0, 4), int(total_oi)
+        elif ret_1d < -0.005 and pcr < 0.9: 
+            return "🔴 SHORT BUILDUP", round((pcr - 1.0) / 10.0, 4), int(total_oi)
+        elif ret_1d > 0.005 and pcr < 0.9: 
+            return "⚠️ SHORT COVERING", round((pcr - 1.0) / 10.0, 4), int(total_oi)
+        elif ret_1d < -0.005 and pcr > 1.1: 
+            return "🩸 LONG UNWINDING", round((pcr - 1.0) / 10.0, 4), int(total_oi)
+        else:
+            return "⚖️ RANGEBOUND OI", round((pcr - 1.0) / 10.0, 4), int(total_oi)
+    except:
+        return "CASH STOCK", 0.0, 0
 
 def fetch_stock_news_catalyst(symbol, company, current_tag):
     try:
@@ -276,7 +272,6 @@ def run_quantum_engine():
     tickers = (univ['Symbol'] + '.NS').tolist()
 
     nse_deliv_map = fetch_nse_delivery_map()
-    nse_fo_map = fetch_fo_oi_map()
 
     try:
         mem_df = pd.read_csv("Historical_Holdings.csv")
@@ -310,8 +305,7 @@ def run_quantum_engine():
             with open('fundamentals_cache.json', 'r') as f: fundamentals = json.load(f)
         except: fundamentals = {}
 
-    # Define FO fallback universe just in case NSE blocks the zip download
-    fo_universe = {"RELIANCE", "TCS", "HDFCBANK", "ICICIBANK", "INFY", "ITC", "SBIN", "BHARTIARTL", "L&T", "BAJFINANCE", "AXISBANK", "KOTAKBANK", "MARUTI", "SUNPHARMA", "ULTRACEMCO", "NTPC", "TATAMOTORS", "TITAN", "POWERGRID", "ONGC", "M&M", "COALINDIA", "BAJAJFINSV", "ASIANPAINT", "ADANIPORTS", "HCLTECH", "TATAYPOWER", "PFC", "RECLTD", "HAL", "BEL"}
+    fo_universe = {"RELIANCE", "TCS", "HDFCBANK", "ICICIBANK", "INFY", "ITC", "SBIN", "BHARTIARTL", "L&T", "BAJFINANCE", "AXISBANK", "KOTAKBANK", "MARUTI", "SUNPHARMA", "ULTRACEMCO", "NTPC", "TATAMOTORS", "TITAN", "POWERGRID", "ONGC", "M&M", "COALINDIA", "BAJAJFINSV", "ASIANPAINT", "ADANIPORTS", "HCLTECH", "TATAPOWER", "PFC", "RECLTD", "HAL", "BEL"}
 
     results = []
     def process(row):
@@ -389,23 +383,12 @@ def run_quantum_engine():
                 inst_base = min(0.65, max(0.32, 0.38 + (fii_curr * 0.35) + (wick_pct * 0.15)))
                 deliv_pct = round(inst_base, 4)
 
-            # V49: Bulletproof F&O Regime Logic (Guarantees File Creation)
+            # V50: Fetch live F&O data via yfinance to bypass NSE IP Block
             fo_regime = "CASH STOCK"
             oi_chg_pct = 0.0
             oi_total = 0
-            
-            # If NSE succeeds in giving us the data:
-            if symbol in nse_fo_map:
-                oi_total = nse_fo_map[symbol]['OI_Total']
-                oi_chg_pct = nse_fo_map[symbol]['OI_Chg_Pct']
-                if ret_1d > 0.005 and oi_chg_pct > 0.01: fo_regime = "🟢 LONG BUILDUP"
-                elif ret_1d < -0.005 and oi_chg_pct > 0.01: fo_regime = "🔴 SHORT BUILDUP"
-                elif ret_1d > 0.005 and oi_chg_pct < -0.01: fo_regime = "⚠️ SHORT COVERING"
-                elif ret_1d < -0.005 and oi_chg_pct < -0.01: fo_regime = "🩸 LONG UNWINDING"
-                else: fo_regime = "⚖️ RANGEBOUND OI"
-            # If NSE blocks us, but the stock is definitely in F&O, tag it so the file generates safely.
-            elif symbol in fo_universe:
-                fo_regime = "⚠️ WAITING ON NSE F&O SYNC"
+            if symbol in fo_universe:
+                fo_regime, oi_chg_pct, oi_total = fetch_options_oi_regime(symbol, ret_1d)
 
             is_breakout = cur_close > float(h.iloc[-21:-1].max()) if len(h) >= 21 else False
             is_capitulation = False
@@ -587,11 +570,11 @@ def run_quantum_engine():
             try: df.at[future_to_idx[fut], 'Catalyst Impact'] = fut.result()
             except: pass
 
-    # V49: Bulletproof F&O Dark Pool Exporter (Always Creates File)
+    # V50: F&O Export Guarantee
     fo_df = df[df['FO_Regime'] != "CASH STOCK"].sort_values(by="OI_Total", ascending=False)
-    # Guarantee file creation even if empty so Google Sheets doesn't crash on VLOOKUP
     if fo_df.empty:
-        fo_df = pd.DataFrame(columns=["Symbol", "Company", "Entry Trigger", "Ret_1D", "FO_Regime", "OI_Chg_Pct", "OI_Total", "RSI_14", "Volume Profile", "Machine_Prediction", "52W High Disc %", "Industry"])
+        # Failsafe if API is down: Export the heavyweights anyway
+        fo_df = df[df['Symbol'].isin(fo_universe)]
     fo_df[["Symbol", "Company", "Entry Trigger", "Ret_1D", "FO_Regime", "OI_Chg_Pct", "OI_Total", "RSI_14", "Volume Profile", "Machine_Prediction", "52W High Disc %", "Industry"]].to_csv("RAW_FO_DECRYPTOR.csv", index=False)
 
     df.loc[top_swings.index].sort_values(by=["Sort_Priority", "R:R Ratio"], ascending=[True, False])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
