@@ -1,10 +1,10 @@
 Industry,Sector Status,ISAD (Breadth %),Avg_1D_Flow,Avg_5D_Flow,Avg_Money_Flow,Avg_50D_Flow,Hist_Best_Month,Hist_Worst_Month,Smart Money Direction,2-Year Macro Prediction
-Media Entertainment & Publication,🔥 DOMINANT,75.0,-1.38,5.14,2.83,4.79,July,January,💰 SMART MONEY INFLOW,Idiosyncratic / Stock Specific
+Media Entertainment & Publication,🔥 DOMINANT,75.0,-1.38,5.14,2.83,4.79,July,January,⚖️ NEUTRAL FLOW,Idiosyncratic / Stock Specific
 Healthcare,🔥 DOMINANT,50.0,-0.21,6.47,-2.6,-3.94,July,January,⚖️ NEUTRAL FLOW,Defensive Consumption & Margin Expansion
 PSU Banks,🔥 DOMINANT,50.0,-0.94,1.2,4.45,-1.6,April,August,🌊 SECTOR MOMENTUM,Rate Cut & Credit Expansion Cycle
 Textiles,🔥 DOMINANT,41.7,-1.27,1.25,-5.68,-9.85,April,February,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
 Private Banks,🔄 EMERGING,33.3,0.52,0.08,0.93,-2.42,April,January,⚖️ NEUTRAL FLOW,Rate Cut & Credit Expansion Cycle
-Information Technology,🔄 EMERGING,33.3,-1.81,-0.38,3.9,-4.74,July,February,💰 SMART MONEY INFLOW,PLI Manufacturing & Digital Export Cycle
+Information Technology,🔄 EMERGING,33.3,-1.81,-0.38,3.9,-4.74,July,February,🌊 SECTOR MOMENTUM,PLI Manufacturing & Digital Export Cycle
 Capital Goods,🔄 EMERGING,33.3,-2.62,1.0,-11.15,-12.42,April,February,⚠️ SECTOR EXHAUSTION,Govt Capex & Defense Supercycle
 EMS & Semiconductors,🔄 EMERGING,33.3,-2.88,3.31,-11.81,-9.31,April,January,⚠️ SECTOR EXHAUSTION,PLI Manufacturing & Digital Export Cycle
 Telecommunication,🔄 EMERGING,33.3,-2.88,1.51,-1.2,-0.55,April,February,⚖️ NEUTRAL FLOW,PLI Manufacturing & Digital Export Cycle
@@ -23,7 +23,7 @@ Fast Moving Consumer Goods,⚠️ WASHOUT,11.1,-1.97,-0.05,-5.94,-13.2,April,Feb
 Power,⚠️ WASHOUT,10.5,-1.62,4.73,-7.09,-10.76,April,February,⚠️ SECTOR EXHAUSTION,Govt Capex & Defense Supercycle
 Metals & Mining,⚠️ WASHOUT,4.2,-1.91,0.58,-9.66,-14.54,December,February,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
 "Power, Renewables & PSU",⚠️ WASHOUT,0.0,-0.65,0.7,-3.22,-11.14,July,February,⚠️ SECTOR EXHAUSTION,Govt Capex & Defense Supercycle
-Construction Materials,⚠️ WASHOUT,0.0,-0.97,-1.88,-5.82,-12.85,April,February,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
+Construction Materials,⚠️ WASHOUT,0.0,-0.97,-1.89,-5.82,-12.85,April,February,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
 Diversified,⚠️ WASHOUT,0.0,-1.98,-3.54,-8.97,-19.31,April,February,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
 Forest Materials,⚠️ WASHOUT,0.0,-3.01,3.67,-5.99,-2.98,April,February,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
 Railways & Infra EPC,⚠️ WASHOUT,0.0,-3.09,-1.4,-10.92,-17.16,April,February,⚠️ SECTOR EXHAUSTION,Govt Capex & Defense Supercycle
