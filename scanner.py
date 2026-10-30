@@ -6,7 +6,6 @@ import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 import io
-import zipfile
 import pandas as pd
 import numpy as np
 import yfinance as yf
@@ -68,30 +67,6 @@ def fetch_nse_delivery_map():
         except: pass
     return deliv_map
 
-def fetch_options_oi_regime(symbol, ret_1d):
-    try:
-        tkr = yf.Ticker(symbol + ".NS")
-        exps = tkr.options
-        if not exps:
-            return "CASH STOCK", 0.0, 0
-            
-        opt = tkr.option_chain(exps[0])
-        calls, puts = opt.calls, opt.puts
-        
-        call_vol = calls['volume'].sum() if not calls.empty else 1.0
-        put_vol = puts['volume'].sum() if not puts.empty else 1.0
-        total_oi = calls['openInterest'].sum() + puts['openInterest'].sum()
-        
-        pcr = put_vol / max(1.0, call_vol)
-        
-        if ret_1d > 0.005 and pcr > 1.1: return "🟢 LONG BUILDUP", round((pcr - 1.0) / 10.0, 4), int(total_oi)
-        elif ret_1d < -0.005 and pcr < 0.9: return "🔴 SHORT BUILDUP", round((pcr - 1.0) / 10.0, 4), int(total_oi)
-        elif ret_1d > 0.005 and pcr < 0.9: return "⚠️ SHORT COVERING", round((pcr - 1.0) / 10.0, 4), int(total_oi)
-        elif ret_1d < -0.005 and pcr > 1.1: return "🩸 LONG UNWINDING", round((pcr - 1.0) / 10.0, 4), int(total_oi)
-        else: return "⚖️ RANGEBOUND OI", round((pcr - 1.0) / 10.0, 4), int(total_oi)
-    except:
-        return "CASH STOCK", 0.0, 0
-
 def fetch_stock_news_catalyst(symbol, company, current_tag):
     try:
         query = urllib.parse.quote(f"{company} {symbol} NSE stock")
@@ -127,7 +102,8 @@ def fetch_macro_and_history(adv_count=400, dec_count=350, avg_deliv_pct=0.48, to
                 last_v = float(s.iloc[-1])
                 chg_v = float((s.iloc[-1] / s.iloc[-2]) - 1) if len(s) >= 2 else 0.0
                 return round(last_v, 2), round(chg_v, 4)
-            except: return 0.0, 0.0
+            except:
+                return 0.0, 0.0
 
         out = []
         for t in ['BZ=F', 'GC=F', '^INDIAVIX', '^TNX', 'INR=X', 'ES=F']:
@@ -248,7 +224,8 @@ def fetch_macro_and_history(adv_count=400, dec_count=350, avg_deliv_pct=0.48, to
                 'Market_Breadth_Summary': breadth_str
             })
 
-        pd.DataFrame(hist_rows).sort_values(by='Date', ascending=False).head(260).to_csv("RAW_NIFTY_HISTORY.csv", index=False)
+        hist_df = pd.DataFrame(hist_rows).sort_values(by='Date', ascending=False).head(260)
+        hist_df.to_csv("RAW_NIFTY_HISTORY.csv", index=False)
     except Exception as e: pass
 
 def run_quantum_engine():
@@ -348,7 +325,6 @@ def run_quantum_engine():
             is_vdu = dsr <= 0.50
             wick_pct = (cur_close - float(l.iloc[-1])) / (float(h.iloc[-1]) - float(l.iloc[-1])) if (float(h.iloc[-1]) - float(l.iloc[-1])) > 0 else 0.0
             
-            # V51 MATH UPGRADE: TRUE WILDER'S RSI (Exponential Smoothing instead of Simple Average)
             try:
                 delta = c.diff()
                 gain = delta.where(delta > 0, 0.0)
@@ -356,18 +332,9 @@ def run_quantum_engine():
                 avg_gain = gain.ewm(alpha=1/14, adjust=False).mean()
                 avg_loss = loss.ewm(alpha=1/14, adjust=False).mean()
                 rs = avg_gain / avg_loss
-                rsi = float((100 - (100 / (1 + rs))).iloc[-1])
+                rsi = float(100 - (100 / (1 + rs)).iloc[-1])
                 if np.isnan(rsi): rsi = 50.0
             except: rsi = 50.0
-
-            # V51 MATH UPGRADE: TRUE ATR (Average True Range including overnight gaps)
-            try:
-                tr1 = h - l
-                tr2 = (h - c.shift(1)).abs()
-                tr3 = (l - c.shift(1)).abs()
-                tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
-                atr14 = float(tr.iloc[-14:].mean())
-            except: atr14 = cur_close * 0.02
 
             info = fundamentals.get(ticker, {})
             raw_in, raw_inst, raw_roe, raw_debt, raw_growth, raw_q_growth, raw_pe, raw_bv = info.get('heldPercentInsiders'), info.get('heldPercentInstitutions'), info.get('returnOnEquity'), info.get('debtToEquity'), info.get('revenueGrowth'), info.get('earningsQuarterlyGrowth'), info.get('trailingPE', info.get('forwardPE')), info.get('bookValue')
@@ -375,9 +342,10 @@ def run_quantum_engine():
             bv_val = float(raw_bv) if raw_bv is not None else 0.0
             final_roe = float(raw_roe) if raw_roe is not None else ((cur_close / (pe_val * bv_val)) if pe_val > 0 and bv_val > 0 else None)
 
-            # V51 MATH UPGRADE: Safely bounded Dividend Yield to prevent false 200% yields
             raw_dy = float(info.get('dividendYield', 0))
-            normalized_dy = raw_dy if raw_dy <= 0.35 else (raw_dy / 100.0)
+            if raw_dy > 0:
+                normalized_dy = raw_dy / 100 if raw_dy > 0.5 else raw_dy
+            else: normalized_dy = 0.0
 
             prom_curr, fii_curr = raw_in if raw_in else 0.0, raw_inst if raw_inst else 0.0
             prom_old, fii_old = oldest_records.get(symbol, {}).get('Prom_Pct', prom_curr), oldest_records.get(symbol, {}).get('FII_Pct', fii_curr)
@@ -390,11 +358,33 @@ def run_quantum_engine():
                 inst_base = min(0.65, max(0.32, 0.38 + (fii_curr * 0.35) + (wick_pct * 0.15)))
                 deliv_pct = round(inst_base, 4)
 
+            # V52: SYNTHETIC F&O REGIME PROXY (Because NSE blocks ZIPs and Yahoo options are broken)
             fo_regime = "CASH STOCK"
             oi_chg_pct = 0.0
             oi_total = 0
             if symbol in fo_universe:
-                fo_regime, oi_chg_pct, oi_total = fetch_options_oi_regime(symbol, ret_1d)
+                # We synthesize Institutional Open Interest intent using Volume Spikes (dsr) and true Delivery absorption.
+                # If a stock is surging on massive volume AND institutions are taking heavy delivery:
+                if ret_1d > 0.005 and dsr > 1.2 and deliv_pct > 0.45:
+                    fo_regime = "🟢 LONG BUILDUP"
+                    oi_chg_pct = round(dsr * 0.02, 4) # Synthetic proxy
+                # If a stock is crashing on massive volume:
+                elif ret_1d < -0.005 and dsr > 1.2:
+                    fo_regime = "🔴 SHORT BUILDUP"
+                    oi_chg_pct = round(dsr * 0.02, 4) 
+                # If a stock is rising but volume is dead (No institutional delivery):
+                elif ret_1d > 0.005 and dsr < 0.8 and deliv_pct < 0.40:
+                    fo_regime = "⚠️ SHORT COVERING"
+                    oi_chg_pct = round(-dsr * 0.015, 4)
+                # If a stock is falling and volume is dead:
+                elif ret_1d < -0.005 and dsr < 0.8:
+                    fo_regime = "🩸 LONG UNWINDING"
+                    oi_chg_pct = round(-dsr * 0.015, 4)
+                else:
+                    fo_regime = "⚖️ RANGEBOUND OI"
+                    oi_chg_pct = round((dsr - 1.0) * 0.01, 4)
+                
+                oi_total = int(vol_30d * 3.5) # Synthetic OI baseline
 
             is_breakout = cur_close > float(h.iloc[-21:-1].max()) if len(h) >= 21 else False
             is_capitulation = False
@@ -410,6 +400,16 @@ def run_quantum_engine():
             elif is_vdu and cur_close > ema50: alert_type = "⚡ VCP + VDU"
             elif dsr >= 5.0 and cur_close < 250: alert_type = "🚀 5x VOL AWAKENING"
             elif cur_close > ema50 and cur_close < (ema50 * 1.05): alert_type = "🛡️ PULLBACK SUPPORT"
+
+            try:
+                prev_c = c.shift(1)
+                tr1 = h.iloc[-14:] - l.iloc[-14:]
+                tr2 = (h.iloc[-14:] - prev_c.iloc[-14:]).abs()
+                tr3 = (l.iloc[-14:] - prev_c.iloc[-14:]).abs()
+                true_range = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
+                atr14 = float(true_range.mean())
+            except:
+                atr14 = cur_close * 0.02
 
             if is_capitulation:
                 sl_price = round(float(l.iloc[-1]) * 0.98, 2)
@@ -576,7 +576,8 @@ def run_quantum_engine():
             except: pass
 
     fo_df = df[df['FO_Regime'] != "CASH STOCK"].sort_values(by="OI_Total", ascending=False)
-    if fo_df.empty: fo_df = df[df['Symbol'].isin(fo_universe)]
+    if fo_df.empty:
+        fo_df = df[df['Symbol'].isin(fo_universe)]
     fo_df[["Symbol", "Company", "Entry Trigger", "Ret_1D", "FO_Regime", "OI_Chg_Pct", "OI_Total", "RSI_14", "Volume Profile", "Machine_Prediction", "52W High Disc %", "Industry"]].to_csv("RAW_FO_DECRYPTOR.csv", index=False)
 
     df.loc[top_swings.index].sort_values(by=["Sort_Priority", "R:R Ratio"], ascending=[True, False])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
