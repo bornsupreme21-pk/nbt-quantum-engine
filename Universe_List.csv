@@ -1,756 +1,2595 @@
-Company Name,Industry,Symbol,Series
-360 ONE WAM Ltd.,Financial Services,360ONE,EQ
-3M India Ltd.,Diversified,3MINDIA,EQ
-ABB India Ltd.,Capital Goods,ABB,EQ
-ACC Ltd.,Construction Materials,ACC,EQ
-ACME Solar Holdings Ltd.,Power,ACMESOLAR,EQ
-AIA Engineering Ltd.,Capital Goods,AIAENG,EQ
-APL Apollo Tubes Ltd.,Capital Goods,APLAPOLLO,EQ
-ASK Automotive Ltd.,Automobile and Auto Components,ASKAUTOLTD,EQ
-AU Small Finance Bank Ltd.,Financial Services,AUBANK,EQ
-AWL Agri Business Ltd.,Fast Moving Consumer Goods,AWL,EQ
-AXISCADES Technologies Ltd.,Capital Goods,AXISCADES,EQ
-Aadhar Housing Finance Ltd.,Financial Services,AADHARHFC,EQ
-Aarti Drugs Ltd.,Healthcare,AARTIDRUGS,EQ
-Aarti Industries Ltd.,Chemicals,AARTIIND,EQ
-Aarti Pharmalabs Ltd.,Healthcare,AARTIPHARM,EQ
-Aavas Financiers Ltd.,Financial Services,AAVAS,EQ
-Abbott India Ltd.,Healthcare,ABBOTINDIA,EQ
-Action Construction Equipment Ltd.,Capital Goods,ACE,EQ
-Acutaas Chemicals Ltd.,Healthcare,ACUTAAS,EQ
-Adani Energy Solutions Ltd.,Power,ADANIENSOL,EQ
-Adani Enterprises Ltd.,Metals & Mining,ADANIENT,EQ
-Adani Green Energy Ltd.,Power,ADANIGREEN,EQ
-Adani Ports and Special Economic Zone Ltd.,Services,ADANIPORTS,EQ
-Adani Power Ltd.,Power,ADANIPOWER,EQ
-Adani Total Gas Ltd.,Oil Gas & Consumable Fuels,ATGL,EQ
-Aditya Birla Capital Ltd.,Financial Services,ABCAPITAL,EQ
-Aditya Birla Fashion and Retail Ltd.,Consumer Services,ABFRL,EQ
-Aditya Birla Lifestyle Brands Ltd.,Consumer Services,ABLBL,EQ
-Aditya Birla Real Estate Ltd.,Realty,ABREL,EQ
-Aditya Birla Sun Life AMC Ltd.,Financial Services,ABSLAMC,EQ
-Aditya Infotech Ltd.,Capital Goods,CPPLUS,EQ
-Aditya Vision Ltd.,Consumer Services,AVL,EQ
-Advanced Enzyme Tech Ltd.,Healthcare,ADVENZYMES,EQ
-Aegis Logistics Ltd.,Oil Gas & Consumable Fuels,AEGISLOG,EQ
-Aegis Vopak Terminals Ltd.,Oil Gas & Consumable Fuels,AEGISVOPAK,EQ
-Aequs Ltd.,Capital Goods,AEQUS,EQ
-Aether Industries Ltd.,Chemicals,AETHER,EQ
-Afcons Infrastructure Ltd.,Construction,AFCONS,EQ
-Affle 3i Ltd.,Information Technology,AFFLE,EQ
-Ahluwalia Contracts (India) Ltd.,Construction,AHLUCONT,EQ
-Ajanta Pharmaceuticals Ltd.,Healthcare,AJANTPHARM,EQ
-Akums Drugs and Pharmaceuticals Ltd.,Healthcare,AKUMS,EQ
-Alembic Pharmaceuticals Ltd.,Healthcare,APLLTD,EQ
-Alivus Life Sciences Ltd.,Healthcare,ALIVUS,EQ
-Alkem Laboratories Ltd.,Healthcare,ALKEM,EQ
-Alkyl Amines Chemicals Ltd.,Chemicals,ALKYLAMINE,EQ
-Allied Blenders and Distillers Ltd.,Fast Moving Consumer Goods,ABDL,EQ
-Alok Industries Ltd.,Textiles,ALOKINDS,EQ
-Amara Raja Energy & Mobility Ltd.,Automobile and Auto Components,ARE&M,EQ
-Amber Enterprises India Ltd.,Consumer Durables,AMBER,EQ
-Ambuja Cements Ltd.,Construction Materials,AMBUJACEM,EQ
-Anand Rathi Wealth Ltd.,Financial Services,ANANDRATHI,EQ
-Anant Raj Ltd.,Realty,ANANTRAJ,EQ
-Angel One Ltd.,Financial Services,ANGELONE,EQ
-Anthem Biosciences Ltd.,Healthcare,ANTHEM,EQ
-Anupam Rasayan India Ltd.,Chemicals,ANURAS,EQ
-Apar Industries Ltd.,Capital Goods,APARINDS,EQ
-Apollo Hospitals Enterprise Ltd.,Healthcare,APOLLOHOSP,EQ
-Apollo Micro Systems Ltd.,Capital Goods,APOLLO,EQ
-Apollo Tyres Ltd.,Automobile and Auto Components,APOLLOTYRE,EQ
-Aptus Value Housing Finance India Ltd.,Financial Services,APTUS,EQ
-Archean Chemical Industries Ltd.,Chemicals,ACI,EQ
-Arvind Fashions Ltd.,Consumer Services,ARVINDFASN,EQ
-Arvind Ltd.,Textiles,ARVIND,EQ
-Asahi India Glass Ltd.,Automobile and Auto Components,ASAHIINDIA,EQ
-Ashapura Minechem Ltd.,Metals & Mining,ASHAPURMIN,EQ
-Ashok Leyland Ltd.,Capital Goods,ASHOKLEY,EQ
-Ashoka Buildcon Ltd.,Construction,ASHOKA,EQ
-Asian Paints Ltd.,Consumer Durables,ASIANPAINT,EQ
-Aster DM Quality Care Ltd.,Healthcare,ASTERDM,EQ
-Astra Microwave Products Ltd.,Capital Goods,ASTRAMICRO,EQ
-Astral Ltd.,Capital Goods,ASTRAL,EQ
-Ather Energy Ltd.,Automobile and Auto Components,ATHERENERG,EQ
-Atlanta Electricals Ltd.,Capital Goods,ATLANTAELE,EQ
-Atul Ltd.,Chemicals,ATUL,EQ
-Aurionpro Solution Ltd.,Information Technology,AURIONPRO,EQ
-Aurobindo Pharma Ltd.,Healthcare,AUROPHARMA,EQ
-Authum Investment & Infrastructure Ltd.,Financial Services,AIIL,EQ
-Avalon Technologies Ltd.,Capital Goods,AVALON,EQ
-Avanti Feeds Ltd.,Fast Moving Consumer Goods,AVANTIFEED,EQ
-Avenue Supermarts Ltd.,Consumer Services,DMART,EQ
-AvenuesAI Ltd.,Financial Services,CCAVENUE,EQ
-Awfis Space Solutions Ltd.,Services,AWFIS,EQ
-Axis Bank Ltd.,Financial Services,AXISBANK,EQ
-Azad Engineering Ltd.,Capital Goods,AZAD,EQ
-BEML Ltd.,Capital Goods,BEML,EQ
-BLS International Services Ltd.,Consumer Services,BLS,EQ
-BSE Ltd.,Financial Services,BSE,EQ
-Bajaj Auto Ltd.,Automobile and Auto Components,BAJAJ-AUTO,EQ
-Bajaj Electricals Ltd,Consumer Durables,BAJAJELEC,EQ
-Bajaj Finance Ltd.,Financial Services,BAJFINANCE,EQ
-Bajaj Finserv Ltd.,Financial Services,BAJAJFINSV,EQ
-Bajaj Holdings & Investment Ltd.,Financial Services,BAJAJHLDNG,EQ
-Bajaj Housing Finance Ltd.,Financial Services,BAJAJHFL,EQ
-Balaji Amines Ltd.,Chemicals,BALAMINES,EQ
-Balkrishna Industries Ltd.,Automobile and Auto Components,BALKRISIND,EQ
-Balrampur Chini Mills Ltd.,Fast Moving Consumer Goods,BALRAMCHIN,EQ
-Balu Forge Industries Ltd.,Capital Goods,BALUFORGE,EQ
-Banco Products (India) Ltd.,Automobile and Auto Components,BANCOINDIA,EQ
-Bandhan Bank Ltd.,Financial Services,BANDHANBNK,EQ
-Bank of Baroda,Financial Services,BANKBARODA,EQ
-Bank of India,Financial Services,BANKINDIA,EQ
-Bank of Maharashtra,Financial Services,MAHABANK,EQ
-Bata India Ltd.,Consumer Durables,BATAINDIA,EQ
-Bayer Cropscience Ltd.,Chemicals,BAYERCROP,EQ
-Belrise Industries Ltd.,Automobile and Auto Components,BELRISE,EQ
-Berger Paints India Ltd.,Consumer Durables,BERGEPAINT,EQ
-Bharat Dynamics Ltd.,Capital Goods,BDL,EQ
-Bharat Electronics Ltd.,Capital Goods,BEL,EQ
-Bharat Forge Ltd.,Automobile and Auto Components,BHARATFORG,EQ
-Bharat Heavy Electricals Ltd.,Capital Goods,BHEL,EQ
-Bharat Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,BPCL,EQ
-Bharti Airtel Ltd.,Telecommunication,BHARTIARTL,EQ
-Bharti Hexacom Ltd.,Telecommunication,BHARTIHEXA,EQ
-Bikaji Foods International Ltd.,Fast Moving Consumer Goods,BIKAJI,EQ
-Billionbrains Garage Ventures Ltd.,Financial Services,GROWW,EQ
-Biocon Ltd.,Healthcare,BIOCON,EQ
-Birla Corporation Ltd.,Construction Materials,BIRLACORPN,EQ
-Birlasoft Ltd.,Information Technology,BSOFT,EQ
-Black Box Ltd.,Information Technology,BBOX,EQ
-Blackbuck Ltd.,Services,BLACKBUCK,EQ
-Blue Dart Express Ltd.,Services,BLUEDART,EQ
-Blue Jet Healthcare Ltd.,Healthcare,BLUEJET,EQ
-Blue Star Ltd.,Consumer Durables,BLUESTARCO,EQ
-BlueStone Jewellery and Lifestyle Ltd.,Consumer Durables,BLUESTONE,EQ
-Bombay Burmah Trading Corporation Ltd.,Fast Moving Consumer Goods,BBTC,EQ
-Borosil Renewables Ltd.,Capital Goods,BORORENEW,EQ
-Bosch Ltd.,Automobile and Auto Components,BOSCHLTD,EQ
-Brainbees Solutions Ltd.,Consumer Services,FIRSTCRY,EQ
-Brigade Enterprises Ltd.,Realty,BRIGADE,EQ
-Britannia Industries Ltd.,Fast Moving Consumer Goods,BRITANNIA,EQ
-C.E. Info Systems Ltd.,Information Technology,MAPMYINDIA,EQ
-CCL Products (I) Ltd.,Fast Moving Consumer Goods,CCL,EQ
-CESC Ltd.,Power,CESC,EQ
-CG Power and Industrial Solutions Ltd.,Capital Goods,CGPOWER,EQ
-CIE Automotive India Ltd.,Automobile and Auto Components,CIEINDIA,EQ
-CMS Info Systems Ltd.,Services,CMSINFO,EQ
-CORONA Remedies Ltd.,Healthcare,CORONA,EQ
-CRISIL Ltd.,Financial Services,CRISIL,EQ
-CSB Bank Ltd.,Financial Services,CSBBANK,EQ
-Campus Activewear Ltd.,Consumer Durables,CAMPUS,EQ
-Can Fin Homes Ltd.,Financial Services,CANFINHOME,EQ
-Canara Bank,Financial Services,CANBK,EQ
-Canara HSBC Life Insurance Company Ltd.,Financial Services,CANHLIFE,EQ
-Canara Robeco Asset Management Company Ltd.,Financial Services,CRAMC,EQ
-Capillary Technologies India Ltd.,Information Technology,CAPILLARY,EQ
-Caplin Point Laboratories Ltd.,Healthcare,CAPLIPOINT,EQ
-Capri Global Capital Ltd.,Financial Services,CGCL,EQ
-Carborundum Universal Ltd.,Capital Goods,CARBORUNIV,EQ
-Cartrade Tech Ltd.,Consumer Services,CARTRADE,EQ
-Castrol India Ltd.,Oil Gas & Consumable Fuels,CASTROLIND,EQ
-Ceat Ltd.,Automobile and Auto Components,CEATLTD,EQ
-Cello World Ltd.,Consumer Durables,CELLO,EQ
-Cemindia Projects Ltd.,Construction,CEMPRO,EQ
-Central Bank of India,Financial Services,CENTRALBK,EQ
-Central Depository Services (India) Ltd.,Financial Services,CDSL,EQ
-Century Plyboards (India) Ltd.,Consumer Durables,CENTURYPLY,EQ
-Cera Sanitaryware Ltd,Consumer Durables,CERA,EQ
-Chalet Hotels Ltd.,Consumer Services,CHALET,EQ
-Chambal Fertilizers & Chemicals Ltd.,Chemicals,CHAMBLFERT,EQ
-Chennai Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,CHENNPETRO,EQ
-Choice International Ltd.,Financial Services,CHOICEIN,EQ
-Cholamandalam Financial Holdings Ltd.,Financial Services,CHOLAHLDNG,EQ
-Cholamandalam Investment and Finance Company Ltd.,Financial Services,CHOLAFIN,EQ
-Cipla Ltd.,Healthcare,CIPLA,EQ
-City Union Bank Ltd.,Financial Services,CUB,EQ
-Clean Science and Technology Ltd.,Chemicals,CLEAN,EQ
-Coal India Ltd.,Oil Gas & Consumable Fuels,COALINDIA,EQ
-Cochin Shipyard Ltd.,Capital Goods,COCHINSHIP,EQ
-Coforge Ltd.,Information Technology,COFORGE,EQ
-Cohance Lifesciences Ltd.,Healthcare,COHANCE,EQ
-Colgate Palmolive (India) Ltd.,Fast Moving Consumer Goods,COLPAL,EQ
-Computer Age Management Services Ltd.,Financial Services,CAMS,EQ
-Concord Biotech Ltd.,Healthcare,CONCORDBIO,EQ
-Container Corporation of India Ltd.,Services,CONCOR,EQ
-Coromandel International Ltd.,Chemicals,COROMANDEL,EQ
-Craftsman Automation Ltd.,Automobile and Auto Components,CRAFTSMAN,EQ
-CreditAccess Grameen Ltd.,Financial Services,CREDITACC,EQ
-Crizac Ltd.,Consumer Services,CRIZAC,EQ
-Crompton Greaves Consumer Electricals Ltd.,Consumer Durables,CROMPTON,EQ
-Cummins India Ltd.,Capital Goods,CUMMINSIND,EQ
-Cupid Ltd.,Fast Moving Consumer Goods,CUPID,EQ
-Cyient Ltd.,Information Technology,CYIENT,EQ
-DCB Bank Ltd.,Financial Services,DCBBANK,EQ
-DCM Shriram Ltd.,Diversified,DCMSHRIRAM,EQ
-DLF Ltd.,Realty,DLF,EQ
-DOMS Industries Ltd.,Fast Moving Consumer Goods,DOMS,EQ
-Dabur India Ltd.,Fast Moving Consumer Goods,DABUR,EQ
-Dalmia Bharat Ltd.,Construction Materials,DALBHARAT,EQ
-Data Patterns (India) Ltd.,Capital Goods,DATAPATTNS,EQ
-Datamatics Global Services Ltd.,Information Technology,DATAMATICS,EQ
-Deepak Fertilisers & Petrochemicals Corp. Ltd.,Chemicals,DEEPAKFERT,EQ
-Deepak Nitrite Ltd.,Chemicals,DEEPAKNTR,EQ
-Delhivery Ltd.,Services,DELHIVERY,EQ
-Devyani International Ltd.,Consumer Services,DEVYANI,EQ
-Diamond Power Infrastructure Ltd.,Capital Goods,DIACABS,BE
-Dilip Buildcon Ltd.,Construction,DBL,EQ
-Divi's Laboratories Ltd.,Healthcare,DIVISLAB,EQ
-Dixon Technologies (India) Ltd.,Consumer Durables,DIXON,EQ
-Dr. Agarwal's Health Care Ltd.,Healthcare,AGARWALEYE,EQ
-Dr. Lal Path Labs Ltd.,Healthcare,LALPATHLAB,EQ
-Dr. Reddy's Laboratories Ltd.,Healthcare,DRREDDY,EQ
-Dummy HEG Ltd.,Metals & Mining,DUMMYHEG,EQ
-Dummy India Glycols ltd. 1,Healthcare,DUMMYINGL1,EQ
-Dummy India Glycols ltd. 2,Fast Moving Consumer Goods,DUMMYINGL2,EQ
-Dummy Inox Green Ltd.,Construction,DUMMYINXGN,EQ
-Dummy Triveni Ltd.,Capital Goods,DUMMYTRVN,EQ
-Dynamatic Technologies Ltd.,Capital Goods,DYNAMATECH,EQ
-E.I.D. Parry (India) Ltd.,Fast Moving Consumer Goods,EIDPARRY,EQ
-EIH Ltd.,Consumer Services,EIHOTEL,EQ
-EPL Ltd.,Capital Goods,EPL,EQ
-Edelweiss Financial Services Ltd.,Financial Services,EDELWEISS,EQ
-Eicher Motors Ltd.,Automobile and Auto Components,EICHERMOT,EQ
-Elecon Engineering Co. Ltd.,Capital Goods,ELECON,EQ
-Electronics Mart India Ltd.,Consumer Services,EMIL,EQ
-Electrosteel Castings Ltd.,Capital Goods,ELECTCAST,EQ
-Elgi Equipments Ltd.,Capital Goods,ELGIEQUIP,EQ
-Ellenbarrie Industrial Gases Ltd.,Chemicals,ELLEN,EQ
-Emami Ltd.,Fast Moving Consumer Goods,EMAMILTD,EQ
-Embassy Developments Ltd.,Realty,EMBDL,EQ
-Emcure Pharmaceuticals Ltd.,Healthcare,EMCURE,EQ
-Emmvee Photovoltaic Power Ltd.,Capital Goods,EMMVEE,EQ
-Endurance Technologies Ltd.,Automobile and Auto Components,ENDURANCE,EQ
-Engineers India Ltd.,Construction,ENGINERSIN,EQ
-Entero Healthcare Solutions Ltd.,Consumer Services,ENTERO,EQ
-Enviro Infra Engineers Ltd.,Utilities,EIEL,EQ
-Equitas Small Finance Bank Ltd.,Financial Services,EQUITASBNK,EQ
-Eris Lifesciences Ltd.,Healthcare,ERIS,EQ
-Escorts Kubota Ltd.,Capital Goods,ESCORTS,EQ
-Eternal Ltd.,Consumer Services,ETERNAL,EQ
-Ethos Ltd.,Consumer Durables,ETHOSLTD,EQ
-Eureka Forbes Ltd.,Consumer Durables,EUREKAFORB,EQ
-Exide Industries Ltd.,Automobile and Auto Components,EXIDEIND,EQ
-FSN E-Commerce Ventures Ltd.,Consumer Services,NYKAA,EQ
-Fedbank Financial Services Ltd.,Financial Services,FEDFINA,EQ
-Federal Bank Ltd.,Financial Services,FEDERALBNK,EQ
-Fertilisers and Chemicals Travancore Ltd.,Chemicals,FACT,EQ
-Fiem Industries Ltd,Automobile and Auto Components,FIEMIND,EQ
-Finolex Cables Ltd.,Capital Goods,FINCABLES,EQ
-Finolex Industries Ltd.,Capital Goods,FINPIPE,EQ
-Firstsource Solutions Ltd.,Services,FSL,EQ
-Five-Star Business Finance Ltd.,Financial Services,FIVESTAR,EQ
-Force Motors Ltd.,Automobile and Auto Components,FORCEMOT,EQ
-Fortis Healthcare Ltd.,Healthcare,FORTIS,EQ
-Fujiyama Power Systems Ltd.,Capital Goods,UTLSOLAR,EQ
-GAIL (India) Ltd.,Oil Gas & Consumable Fuels,GAIL,EQ
-GE Vernova T&D India Ltd.,Capital Goods,GVT&D,EQ
-GHCL Ltd.,Chemicals,GHCL,EQ
-GMM Pfaudler Ltd.,Capital Goods,GMMPFAUDLR,EQ
-GMR Airports Ltd.,Services,GMRAIRPORT,EQ
-GMR Power and Urban Infra Ltd.,Power,GMRP&UI,EQ
-Gabriel India Ltd.,Automobile and Auto Components,GABRIEL,EQ
-Gallantt Ispat Ltd.,Capital Goods,GALLANTT,EQ
-Garden Reach Shipbuilders & Engineers Ltd.,Capital Goods,GRSE,EQ
-Garware Hi-Tech Films Ltd.,Capital Goods,GRWRHITECH,EQ
-General Insurance Corporation of India,Financial Services,GICRE,EQ
-Gillette India Ltd.,Fast Moving Consumer Goods,GILLETTE,EQ
-Gland Pharma Ltd.,Healthcare,GLAND,EQ
-Glaxosmithkline Pharmaceuticals Ltd.,Healthcare,GLAXO,EQ
-Glenmark Pharmaceuticals Ltd.,Healthcare,GLENMARK,EQ
-Global Health Ltd.,Healthcare,MEDANTA,EQ
-Go Digit General Insurance Ltd.,Financial Services,GODIGIT,EQ
-Godawari Power & Ispat Ltd.,Capital Goods,GPIL,EQ
-Godfrey Phillips India Ltd.,Fast Moving Consumer Goods,GODFRYPHLP,EQ
-Godrej Agrovet Ltd.,Fast Moving Consumer Goods,GODREJAGRO,EQ
-Godrej Consumer Products Ltd.,Fast Moving Consumer Goods,GODREJCP,EQ
-Godrej Industries Ltd.,Diversified,GODREJIND,EQ
-Godrej Properties Ltd.,Realty,GODREJPROP,EQ
-Gokaldas Exports Ltd.,Textiles,GOKEX,EQ
-Gokul Agro Resources Ltd.,Fast Moving Consumer Goods,GOKULAGRO,EQ
-Granules India Ltd.,Healthcare,GRANULES,EQ
-Graphite India Ltd.,Capital Goods,GRAPHITE,EQ
-Grasim Industries Ltd.,Construction Materials,GRASIM,EQ
-Gravita India Ltd.,Metals & Mining,GRAVITA,EQ
-Great Eastern Shipping Co. Ltd.,Services,GESHIP,EQ
-Greaves Cotton Ltd.,Capital Goods,GREAVESCOT,EQ
-Grindwell Norton Ltd.,Capital Goods,GRINDWELL,EQ
-Gujarat Ambuja Exports Ltd.,Fast Moving Consumer Goods,GAEL,EQ
-Gujarat Fluorochemicals Ltd.,Chemicals,FLUOROCHEM,EQ
-Gujarat Mineral Development Corporation Ltd.,Metals & Mining,GMDCLTD,EQ
-Gujarat Narmada Valley Fertilizers and Chemicals Ltd.,Chemicals,GNFC,EQ
-Gujarat Pipavav Port Ltd.,Services,GPPL,EQ
-Gujarat State Fertilizers & Chemicals Ltd.,Chemicals,GSFC,EQ
-H.G. Infra Engineering Ltd.,Construction,HGINFRA,EQ
-HBL Engineering Ltd.,Capital Goods,HBLENGINE,EQ
-HCL Technologies Ltd.,Information Technology,HCLTECH,EQ
-HDB Financial Services Ltd.,Financial Services,HDBFS,EQ
-HDFC Asset Management Company Ltd.,Financial Services,HDFCAMC,EQ
-HDFC Bank Ltd.,Financial Services,HDFCBANK,EQ
-HDFC Life Insurance Company Ltd.,Financial Services,HDFCLIFE,EQ
-HEG Advanced Materials Ltd.,Capital Goods,HEGAM,EQ
-HFCL Ltd.,Telecommunication,HFCL,BE
-Happiest Minds Technologies Ltd.,Information Technology,HAPPSTMNDS,EQ
-Havells India Ltd.,Consumer Durables,HAVELLS,EQ
-Healthcare Global Enterprises Ltd.,Healthcare,HCG,EQ
-Hemisphere Properties India Ltd.,Services,HEMIPROP,EQ
-Heritage Foods Ltd.,Fast Moving Consumer Goods,HERITGFOOD,EQ
-Hero MotoCorp Ltd.,Automobile and Auto Components,HEROMOTOCO,EQ
-Hexaware Technologies Ltd.,Information Technology,HEXT,EQ
-Himadri Speciality Chemical Ltd.,Chemicals,HSCL,EQ
-Hindalco Industries Ltd.,Metals & Mining,HINDALCO,EQ
-Hindustan Aeronautics Ltd.,Capital Goods,HAL,EQ
-Hindustan Construction Co. Ltd.,Construction,HCC,EQ
-Hindustan Copper Ltd.,Metals & Mining,HINDCOPPER,EQ
-Hindustan Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,HINDPETRO,EQ
-Hindustan Unilever Ltd.,Fast Moving Consumer Goods,HINDUNILVR,EQ
-Hindustan Zinc Ltd.,Metals & Mining,HINDZINC,EQ
-Hitachi Energy India Ltd.,Capital Goods,POWERINDIA,EQ
-Home First Finance Company India Ltd.,Financial Services,HOMEFIRST,EQ
-Honasa Consumer Ltd.,Fast Moving Consumer Goods,HONASA,EQ
-Honeywell Automation India Ltd.,Capital Goods,HONAUT,EQ
-Housing & Urban Development Corporation Ltd.,Financial Services,HUDCO,EQ
-Hyundai Motor India Ltd.,Automobile and Auto Components,HYUNDAI,EQ
-ICICI Bank Ltd.,Financial Services,ICICIBANK,EQ
-ICICI Lombard General Insurance Company Ltd.,Financial Services,ICICIGI,EQ
-ICICI Prudential Asset Management Company Ltd.,Financial Services,ICICIAMC,EQ
-ICICI Prudential Life Insurance Company Ltd.,Financial Services,ICICIPRULI,EQ
-IDBI Bank Ltd.,Financial Services,IDBI,EQ
-IDFC First Bank Ltd.,Financial Services,IDFCFIRSTB,EQ
-IFB Industries Ltd.,Consumer Durables,IFBIND,EQ
-IFCI Ltd.,Financial Services,IFCI,EQ
-IIFL Capital Services Ltd.,Financial Services,IIFLCAPS,EQ
-IIFL Finance Ltd.,Financial Services,IIFL,EQ
-INOX India Ltd.,Capital Goods,INOXINDIA,EQ
-IRB Infrastructure Developers Ltd.,Construction,IRB,EQ
-IRCON International Ltd.,Construction,IRCON,EQ
-ITC Hotels Ltd.,Consumer Services,ITCHOTELS,EQ
-ITC Ltd.,Fast Moving Consumer Goods,ITC,EQ
-ITI Ltd.,Telecommunication,ITI,EQ
-Indegene Ltd.,Healthcare,INDGN,EQ
-India Cements Ltd.,Construction Materials,INDIACEM,EQ
-India Glycols Ltd.,Fast Moving Consumer Goods,INDIAGLYCO,EQ
-India Shelter Finance Corporation Ltd.,Financial Services,INDIASHLTR,EQ
-Indiamart Intermesh Ltd.,Consumer Services,INDIAMART,EQ
-Indian Bank,Financial Services,INDIANB,EQ
-Indian Energy Exchange Ltd.,Financial Services,IEX,EQ
-Indian Hotels Co. Ltd.,Consumer Services,INDHOTEL,EQ
-Indian Metals & Ferro Alloys Ltd.,Metals & Mining,IMFA,EQ
-Indian Oil Corporation Ltd.,Oil Gas & Consumable Fuels,IOC,EQ
-Indian Overseas Bank,Financial Services,IOB,EQ
-Indian Railway Catering And Tourism Corporation Ltd.,Consumer Services,IRCTC,EQ
-Indian Railway Finance Corporation Ltd.,Financial Services,IRFC,EQ
-Indian Renewable Energy Development Agency Ltd.,Financial Services,IREDA,EQ
-Indigo Paints Ltd.,Consumer Durables,INDIGOPNTS,EQ
-Indo Count Industries Ltd.,Textiles,ICIL,EQ
-Indraprastha Gas Ltd.,Oil Gas & Consumable Fuels,IGL,EQ
-Indus Towers Ltd.,Telecommunication,INDUSTOWER,EQ
-IndusInd Bank Ltd.,Financial Services,INDUSINDBK,EQ
-Info Edge (India) Ltd.,Consumer Services,NAUKRI,EQ
-Infosys Ltd.,Information Technology,INFY,EQ
-Inox Green Energy Services Ltd.,Services,INOXGREEN,EQ
-Inox Wind Ltd.,Capital Goods,INOXWIND,EQ
-Intellect Design Arena Ltd.,Information Technology,INTELLECT,EQ
-InterGlobe Aviation Ltd.,Services,INDIGO,EQ
-International Gemological Institute Ltd.,Services,IGIL,EQ
-Inventurus Knowledge Solutions Ltd.,Information Technology,IKS,EQ
-Ion Exchange (India) Ltd.,Utilities,IONEXCHANG,EQ
-Ipca Laboratories Ltd.,Healthcare,IPCALAB,EQ
-J.K. Cement Ltd.,Construction Materials,JKCEMENT,EQ
-JAI BALAJI INDUSTRIES Ltd.,Metals & Mining,JAIBALAJI,EQ
-JBM Auto Ltd.,Automobile and Auto Components,JBMA,EQ
-JK Lakshmi Cement Ltd.,Construction Materials,JKLAKSHMI,EQ
-JK Paper Ltd.,Forest Materials,JKPAPER,EQ
-JK Tyre & Industries Ltd.,Automobile and Auto Components,JKTYRE,EQ
-JM Financial Ltd.,Financial Services,JMFINANCIL,EQ
-JSW Cement Ltd.,Construction Materials,JSWCEMENT,EQ
-JSW Dulux Ltd.,Consumer Durables,JSWDULUX,EQ
-JSW Energy Ltd.,Power,JSWENERGY,EQ
-JSW Infrastructure Ltd.,Services,JSWINFRA,EQ
-JSW Steel Ltd.,Metals & Mining,JSWSTEEL,EQ
-Jain Resource Recycling Ltd.,Metals & Mining,JAINREC,EQ
-Jaiprakash Power Ventures Ltd.,Power,JPPOWER,EQ
-Jammu & Kashmir Bank Ltd.,Financial Services,J&KBANK,EQ
-Jamna Auto Industries Ltd.,Automobile and Auto Components,JAMNAAUTO,EQ
-Jana Small Finance Bank Ltd.,Financial Services,JSFB,EQ
-Jayaswal Neco Industries Ltd.,Capital Goods,JAYNECOIND,EQ
-Jeena Sikho Lifecare Ltd.,Consumer Services,JSLL,EQ
-Jindal Saw Ltd.,Capital Goods,JINDALSAW,EQ
-Jindal Stainless Ltd.,Metals & Mining,JSL,EQ
-Jindal Steel Ltd.,Metals & Mining,JINDALSTEL,EQ
-Jio Financial Services Ltd.,Financial Services,JIOFIN,EQ
-Jubilant Foodworks Ltd.,Consumer Services,JUBLFOOD,EQ
-Jubilant Ingrevia Ltd.,Chemicals,JUBLINGREA,EQ
-Jubilant Pharmova Ltd.,Healthcare,JUBLPHARMA,EQ
-Jupiter Life Line Hospitals Ltd.,Healthcare,JLHL,EQ
-Jupiter Wagons Ltd.,Capital Goods,JWL,EQ
-Justdial Ltd.,Consumer Services,JUSTDIAL,EQ
-Jyothy Labs Ltd.,Fast Moving Consumer Goods,JYOTHYLAB,EQ
-Jyoti CNC Automation Ltd.,Capital Goods,JYOTICNC,EQ
-K.P.R. Mill Ltd.,Textiles,KPRMILL,EQ
-KEI Industries Ltd.,Capital Goods,KEI,EQ
-KNR Constructions Ltd.,Construction,KNRCON,EQ
-KPI Green Energy Ltd.,Power,KPIGREEN,EQ
-KPIT Technologies Ltd.,Information Technology,KPITTECH,EQ
-KRBL Ltd.,Fast Moving Consumer Goods,KRBL,EQ
-KRN HEAT EXCHANGER AND REFRIGERATION Ltd.,Capital Goods,KRN,EQ
-KSB Ltd.,Capital Goods,KSB,EQ
-Kajaria Ceramics Ltd.,Consumer Durables,KAJARIACER,EQ
-Kalpataru Projects International Ltd.,Construction,KPIL,EQ
-Kalyan Jewellers India Ltd.,Consumer Durables,KALYANKJIL,EQ
-Kansai Nerolac Paints Ltd.,Consumer Durables,KANSAINER,EQ
-Karnataka Bank Ltd.,Financial Services,KTKBANK,EQ
-Karur Vysya Bank Ltd.,Financial Services,KARURVYSYA,EQ
-Kaveri Seed Company Ltd.,Fast Moving Consumer Goods,KSCL,EQ
-Kaynes Technology India Ltd.,Capital Goods,KAYNES,EQ
-Kec International Ltd.,Construction,KEC,EQ
-Kfin Technologies Ltd.,Financial Services,KFINTECH,EQ
-Kirloskar Brothers Ltd.,Capital Goods,KIRLOSBROS,EQ
-Kirloskar Oil Eng Ltd.,Capital Goods,KIRLOSENG,EQ
-Kirloskar Pneumatic Company Ltd.,Capital Goods,KIRLPNU,EQ
-Kitex Garments Ltd.,Textiles,KITEX,EQ
-Kotak Mahindra Bank Ltd.,Financial Services,KOTAKBANK,EQ
-Krishna Institute of Medical Sciences Ltd.,Healthcare,KIMS,EQ
-L&T Finance Ltd.,Financial Services,LTF,EQ
-L&T Technology Services Ltd.,Information Technology,LTTS,EQ
-LG Electronics India Ltd.,Consumer Durables,LGEINDIA,EQ
-LIC Housing Finance Ltd.,Financial Services,LICHSGFIN,EQ
-LT Foods Ltd.,Fast Moving Consumer Goods,LTFOODS,EQ
-LTM Ltd.,Information Technology,LTM,EQ
-Larsen & Toubro Ltd.,Construction,LT,EQ
-Latent View Analytics Ltd.,Information Technology,LATENTVIEW,EQ
-Laurus Labs Ltd.,Healthcare,LAURUSLABS,EQ
-Laxmi Organic Industries Ltd.,Chemicals,LXCHEM,EQ
-Le Travenues Technology Ltd.,Consumer Services,IXIGO,EQ
-Leela Palaces Hotels & Resorts Ltd.,Consumer Services,THELEELA,EQ
-Lemon Tree Hotels Ltd.,Consumer Services,LEMONTREE,EQ
-Lenskart Solutions Ltd.,Consumer Services,LENSKART,EQ
-Life Insurance Corporation of India,Financial Services,LICI,EQ
-Linde India Ltd.,Chemicals,LINDEINDIA,EQ
-Lloyds Engineering Works Ltd.,Capital Goods,LLOYDSENGG,EQ
-Lloyds Enterprises Ltd.,Metals & Mining,LLOYDSENT,EQ
-Lloyds Metals And Energy Ltd.,Metals & Mining,LLOYDSME,EQ
-Lodha Developers Ltd.,Realty,LODHA,EQ
-Lumax Auto Technologies Ltd.,Automobile and Auto Components,LUMAXTECH,EQ
-Lupin Ltd.,Healthcare,LUPIN,EQ
-MMTC Ltd.,Services,MMTC,EQ
-MOIL Ltd.,Metals & Mining,MOIL,EQ
-MRF Ltd.,Automobile and Auto Components,MRF,EQ
-MSTC Ltd.,Services,MSTCLTD,EQ
-MTAR Technologies Ltd.,Capital Goods,MTARTECH,BE
-Mahanagar Gas Ltd.,Oil Gas & Consumable Fuels,MGL,EQ
-Maharashtra Scooters Ltd.,Financial Services,MAHSCOOTER,EQ
-Maharashtra Seamless Ltd.,Capital Goods,MAHSEAMLES,EQ
-Mahindra & Mahindra Financial Services Ltd.,Financial Services,M&MFIN,EQ
-Mahindra & Mahindra Ltd.,Automobile and Auto Components,M&M,EQ
-Manappuram Finance Ltd.,Financial Services,MANAPPURAM,EQ
-Mangalore Refinery & Petrochemicals Ltd.,Oil Gas & Consumable Fuels,MRPL,EQ
-Mankind Pharma Ltd.,Healthcare,MANKIND,EQ
-Manorama Industries Ltd.,Fast Moving Consumer Goods,MANORAMA,EQ
-Marico Ltd.,Fast Moving Consumer Goods,MARICO,EQ
-Marksans Pharma Ltd.,Healthcare,MARKSANS,EQ
-Maruti Suzuki India Ltd.,Automobile and Auto Components,MARUTI,EQ
-Mastek Ltd.,Information Technology,MASTEK,EQ
-Max Financial Services Ltd.,Financial Services,MFSL,EQ
-Max Healthcare Institute Ltd.,Healthcare,MAXHEALTH,EQ
-Mazagoan Dock Shipbuilders Ltd.,Capital Goods,MAZDOCK,EQ
-Medplus Health Services Ltd.,Consumer Services,MEDPLUS,EQ
-Meesho Ltd.,Consumer Services,MEESHO,EQ
-Metropolis Healthcare Ltd.,Healthcare,METROPOLIS,EQ
-Minda Corporation Ltd.,Automobile and Auto Components,MINDACORP,EQ
-Mishra Dhatu Nigam Ltd.,Capital Goods,MIDHANI,EQ
-Motherson Sumi Wiring India Ltd.,Automobile and Auto Components,MSUMI,EQ
-Motilal Oswal Financial Services Ltd.,Financial Services,MOTILALOFS,EQ
-MphasiS Ltd.,Information Technology,MPHASIS,EQ
-Mrs. Bectors Food Specialities Ltd.,Fast Moving Consumer Goods,BECTORFOOD,EQ
-Multi Commodity Exchange of India Ltd.,Financial Services,MCX,EQ
-Muthoot Finance Ltd.,Financial Services,MUTHOOTFIN,EQ
-NATCO Pharma Ltd.,Healthcare,NATCOPHARM,EQ
-NBCC (India) Ltd.,Construction,NBCC,EQ
-NCC Ltd.,Construction,NCC,EQ
-NEOGEN CHEMICALS LTD.,Chemicals,NEOGEN,EQ
-NESCO Ltd.,Services,NESCO,EQ
-NHPC Ltd.,Power,NHPC,EQ
-NLC India Ltd.,Power,NLCINDIA,EQ
-NMDC Ltd.,Metals & Mining,NMDC,EQ
-NMDC Steel Ltd.,Metals & Mining,NSLNISP,EQ
-NTPC Green Energy Ltd.,Power,NTPCGREEN,EQ
-NTPC Ltd.,Power,NTPC,EQ
-Narayana Hrudayalaya Ltd.,Healthcare,NH,EQ
-National Aluminium Co. Ltd.,Metals & Mining,NATIONALUM,EQ
-National Fertilizers Ltd.,Chemicals,NFL,EQ
-Nava Ltd.,Power,NAVA,EQ
-Navin Fluorine International Ltd.,Chemicals,NAVINFLUOR,EQ
-Nazara Technologies Ltd.,Media Entertainment & Publication,NAZARA,EQ
-Nestle India Ltd.,Fast Moving Consumer Goods,NESTLEIND,EQ
-Netweb Technologies India Ltd.,Information Technology,NETWEB,EQ
-Network18 Media & Investments Ltd.,Media Entertainment & Publication,NETWORK18,EQ
-Neuland Laboratories Ltd.,Healthcare,NEULANDLAB,EQ
-Newgen Software Technologies Ltd.,Information Technology,NEWGEN,EQ
-Nippon Life India Asset Management Ltd.,Financial Services,NAM-INDIA,EQ
-Niva Bupa Health Insurance Company Ltd.,Financial Services,NIVABUPA,EQ
-Nuvama Wealth Management Ltd.,Financial Services,NUVAMA,EQ
-Nuvoco Vistas Corporation Ltd.,Construction Materials,NUVOCO,EQ
-Oberoi Realty Ltd.,Realty,OBEROIRLTY,EQ
-Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,ONGC,EQ
-Oil India Ltd.,Oil Gas & Consumable Fuels,OIL,EQ
-Ola Electric Mobility Ltd.,Automobile and Auto Components,OLAELEC,EQ
-Olectra Greentech Ltd.,Automobile and Auto Components,OLECTRA,EQ
-One 97 Communications Ltd.,Financial Services,PAYTM,EQ
-Onesource Specialty Pharma Ltd.,Healthcare,ONESOURCE,EQ
-Optiemus Infracom Ltd.,Telecommunication,OPTIEMUS,EQ
-Oracle Financial Services Software Ltd.,Information Technology,OFSS,EQ
-Orient Cement Ltd.,Construction Materials,ORIENTCEM,EQ
-Orkla India Ltd.,Fast Moving Consumer Goods,ORKLAINDIA,EQ
-Oswal Pumps Ltd.,Capital Goods,OSWALPUMPS,EQ
-P N Gadgil Jewellers Ltd.,Consumer Durables,PNGJL,EQ
-PB Fintech Ltd.,Financial Services,POLICYBZR,EQ
-PC Jeweller Ltd.,Consumer Durables,PCJEWELLER,EQ
-PCBL Chemical Ltd.,Chemicals,PCBL,EQ
-PG Electroplast Ltd.,Consumer Durables,PGEL,EQ
-PI Industries Ltd.,Chemicals,PIIND,EQ
-PNB Housing Finance Ltd.,Financial Services,PNBHOUSING,EQ
-PNC Infratech Ltd.,Construction,PNCINFRA,EQ
-PTC India Ltd.,Power,PTC,EQ
-PTC Industries Ltd.,Capital Goods,PTCIL,EQ
-PVR INOX Ltd.,Media Entertainment & Publication,PVRINOX,EQ
-Page Industries Ltd.,Textiles,PAGEIND,EQ
-Paradeep Phosphates Ltd.,Chemicals,PARADEEP,EQ
-Paras Defence and Space Technologies Ltd.,Capital Goods,PARAS,EQ
-Park Medi World Ltd.,Healthcare,PARKHOSPS,EQ
-Patanjali Foods Ltd.,Fast Moving Consumer Goods,PATANJALI,EQ
-Pearl Global Industries Ltd.,Textiles,PGIL,EQ
-Persistent Systems Ltd.,Information Technology,PERSISTENT,EQ
-Petronet LNG Ltd.,Oil Gas & Consumable Fuels,PETRONET,EQ
-Pfizer Ltd.,Healthcare,PFIZER,EQ
-Phoenix Mills Ltd.,Realty,PHOENIXLTD,EQ
-Physicswallah Ltd.,Consumer Services,PWL,EQ
-Piccadily Agro Industries Ltd.,Fast Moving Consumer Goods,PICCADIL,EQ
-Pidilite Industries Ltd.,Chemicals,PIDILITIND,EQ
-Pine Labs Ltd.,Financial Services,PINELABS,EQ
-Piramal Finance Ltd.,Financial Services,PIRAMALFIN,EQ
-Piramal Pharma Ltd.,Healthcare,PPLPHARMA,EQ
-Poly Medicure Ltd.,Healthcare,POLYMED,EQ
-Polycab India Ltd.,Capital Goods,POLYCAB,EQ
-Poonawalla Fincorp Ltd.,Financial Services,POONAWALLA,EQ
-Power Finance Corporation Ltd.,Financial Services,PFC,EQ
-Power Grid Corporation of India Ltd.,Power,POWERGRID,EQ
-Power Mech Projects Ltd.,Construction,POWERMECH,EQ
-Praj Industries Ltd.,Capital Goods,PRAJIND,EQ
-Premier Energies Ltd.,Capital Goods,PREMIERENE,EQ
-Prestige Estates Projects Ltd.,Realty,PRESTIGE,EQ
-Pricol Ltd.,Automobile and Auto Components,PRICOLLTD,EQ
-Prime Focus Ltd.,Media Entertainment & Publication,PFOCUS,EQ
-Prism Johnson Ltd.,Construction Materials,PRSMJOHNSN,EQ
-Privi Speciality Chemicals Ltd.,Chemicals,PRIVISCL,EQ
-Prudent Corporate Advisory Services Ltd.,Financial Services,PRUDENT,EQ
-Punjab National Bank,Financial Services,PNB,EQ
-Puravankara Ltd.,Realty,PURVA,EQ
-QUALITY POWER ELECTRICAL EQUIPMENTS Ltd.,Capital Goods,QPOWER,EQ
-Quess Corp Ltd.,Services,QUESS,EQ
-R R Kabel Ltd.,Capital Goods,RRKABEL,EQ
-RBL Bank Ltd.,Financial Services,RBLBANK,EQ
-REC Ltd.,Financial Services,RECLTD,EQ
-RHI MAGNESITA INDIA LTD.,Capital Goods,RHIM,EQ
-RITES Ltd.,Construction,RITES,EQ
-Radico Khaitan Ltd,Fast Moving Consumer Goods,RADICO,EQ
-Rail Vikas Nigam Ltd.,Construction,RVNL,EQ
-Railtel Corporation Of India Ltd.,Telecommunication,RAILTEL,EQ
-Rain Industries Ltd,Chemicals,RAIN,EQ
-Rainbow Childrens Medicare Ltd.,Healthcare,RAINBOW,EQ
-Rallis India Ltd.,Chemicals,RALLIS,EQ
-Ramkrishna Forgings Ltd.,Automobile and Auto Components,RKFORGE,EQ
-Rashtriya Chemicals & Fertilizers Ltd.,Chemicals,RCF,EQ
-Rategain Travel Technologies Ltd.,Information Technology,RATEGAIN,EQ
-Ratnamani Metals & Tubes Ltd.,Capital Goods,RATNAMANI,EQ
-RattanIndia Enterprises Ltd.,Consumer Services,RTNINDIA,EQ
-RattanIndia Power Ltd.,Power,RTNPOWER,EQ
-Raymond Lifestyle Ltd.,Textiles,RAYMONDLSL,EQ
-Redington Ltd.,Services,REDINGTON,EQ
-Redtape Ltd.,Consumer Durables,REDTAPE,EQ
-Refex Industries Ltd.,Utilities,REFEX,EQ
-Relaxo Footwears Ltd.,Consumer Durables,RELAXO,EQ
-Reliance Industries Ltd.,Oil Gas & Consumable Fuels,RELIANCE,EQ
-Reliance Power Ltd.,Power,RPOWER,EQ
-Religare Enterprises Ltd.,Financial Services,RELIGARE,EQ
-Restaurant Brands Asia Ltd.,Consumer Services,RBA,EQ
-Route Mobile Ltd.,Telecommunication,ROUTE,EQ
-Rubicon Research Ltd.,Healthcare,RUBICON,EQ
-SBFC Finance Ltd.,Financial Services,SBFC,EQ
-SBI Cards and Payment Services Ltd.,Financial Services,SBICARD,EQ
-SBI Life Insurance Company Ltd.,Financial Services,SBILIFE,EQ
-SJVN Ltd.,Power,SJVN,EQ
-SKF India (Industrial) Ltd.,Capital Goods,SKFINDUS,EQ
-SKF India Ltd.,Automobile and Auto Components,SKFINDIA,EQ
-SKY GOLD AND DIAMONDS Ltd.,Consumer Durables,SKYGOLD,EQ
-SML Mahindra Ltd.,Capital Goods,SMLMAH,EQ
-SPR Auto Technologies Ltd.,Automobile and Auto Components,SHRIPISTON,EQ
-SRF Ltd.,Chemicals,SRF,EQ
-SRI LOTUS DEVELOPERS AND REALTY Ltd.,Realty,LOTUSDEV,BE
-Saatvik Green Energy Ltd.,Capital Goods,SAATVIKGL,EQ
-Safari Industries (India) Ltd.,Consumer Durables,SAFARI,EQ
-Sagility Ltd.,Information Technology,SAGILITY,EQ
-Sai Life Sciences Ltd.,Healthcare,SAILIFE,EQ
-Samhi Hotels Ltd.,Consumer Services,SAMHI,EQ
-Sammaan Capital Ltd.,Financial Services,SAMMAANCAP,EQ
-Samvardhana Motherson International Ltd.,Automobile and Auto Components,MOTHERSON,EQ
-Sandur Manganese & Iron Ores Ltd.,Metals & Mining,SANDUMA,EQ
-Sanofi Consumer Healthcare India Ltd.,Healthcare,SANOFICONR,EQ
-Sansera Engineering Ltd.,Automobile and Auto Components,SANSERA,EQ
-Sapphire Foods India Ltd.,Consumer Services,SAPPHIRE,EQ
-Sarda Energy and Minerals Ltd.,Metals & Mining,SARDAEN,EQ
-Saregama India Ltd,Media Entertainment & Publication,SAREGAMA,EQ
-Schaeffler India Ltd.,Automobile and Auto Components,SCHAEFFLER,EQ
-Schneider Electric Infrastructure Ltd.,Capital Goods,SCHNEIDER,EQ
-Senco Gold Ltd.,Consumer Durables,SENCO,EQ
-Seshaasai Technologies Ltd.,Financial Services,STYL,EQ
-Shaily Engineering Plastics Ltd.,Consumer Durables,SHAILY,EQ
-Shakti Pumps (India) Ltd.,Capital Goods,SHAKTIPUMP,EQ
-Sharda Cropchem Ltd.,Chemicals,SHARDACROP,EQ
-Share India Securities Ltd.,Financial Services,SHAREINDIA,EQ
-Sheela Foam Ltd.,Consumer Durables,SFL,EQ
-Shilpa Medicare Ltd.,Healthcare,SHILPAMED,EQ
-Shipping Corporation of India Ltd.,Services,SCI,EQ
-Shree Cement Ltd.,Construction Materials,SHREECEM,EQ
-Shree Renuka Sugars Ltd.,Fast Moving Consumer Goods,RENUKA,EQ
-Shriram Finance Ltd.,Financial Services,SHRIRAMFIN,EQ
-Shyam Metalics and Energy Ltd.,Capital Goods,SHYAMMETL,EQ
-Siemens Energy India Ltd.,Capital Goods,ENRIN,EQ
-Siemens Ltd.,Capital Goods,SIEMENS,EQ
-Signatureglobal (India) Ltd.,Realty,SIGNATURE,EQ
-Skipper Ltd.,Capital Goods,SKIPPER,EQ
-Smartworks Coworking Spaces Ltd.,Services,SMARTWORKS,EQ
-Sobha Ltd.,Realty,SOBHA,EQ
-Solar Industries India Ltd.,Chemicals,SOLARINDS,EQ
-Sona BLW Precision Forgings Ltd.,Automobile and Auto Components,SONACOMS,EQ
-Sonata Software Ltd.,Information Technology,SONATSOFTW,EQ
-South Indian Bank Ltd.,Financial Services,SOUTHBANK,EQ
-Star Cement Ltd.,Construction Materials,STARCEMENT,EQ
-Star Health and Allied Insurance Company Ltd.,Financial Services,STARHEALTH,EQ
-State Bank of India,Financial Services,SBIN,EQ
-Steel Authority of India Ltd.,Metals & Mining,SAIL,EQ
-Sterling and Wilson Renewable Energy Ltd.,Construction,SWSOLAR,EQ
-Sterlite Technologies Ltd.,Telecommunication,STLTECH,BE
-Strides Pharma Science Ltd.,Healthcare,STAR,EQ
-Styrenix Performance Materials Ltd.,Chemicals,STYRENIX,EQ
-Subros Ltd.,Capital Goods,SUBROS,EQ
-Sudarshan Chemical Industries Ltd.,Chemicals,SUDARSCHEM,EQ
-Sudeep Pharma Ltd.,Chemicals,SUDEEPPHRM,EQ
-Sumitomo Chemical India Ltd.,Chemicals,SUMICHEM,EQ
-Sun Pharma Advanced Research Company Ltd.,Healthcare,SPARC,EQ
-Sun Pharmaceutical Industries Ltd.,Healthcare,SUNPHARMA,EQ
-Sun TV Network Ltd.,Media Entertainment & Publication,SUNTV,EQ
-Sundaram Finance Ltd.,Financial Services,SUNDARMFIN,EQ
-Sunteck Realty Ltd.,Realty,SUNTECK,EQ
-Supreme Industries Ltd.,Capital Goods,SUPREMEIND,EQ
-Supreme Petrochem Ltd.,Chemicals,SPLPETRO,EQ
-Supriya Lifescience Ltd.,Healthcare,SUPRIYA,EQ
-Surya Roshni Ltd.,Capital Goods,SURYAROSNI,EQ
-Suzlon Energy Ltd.,Capital Goods,SUZLON,EQ
-Swan Corp Ltd.,Chemicals,SWANCORP,EQ
-Swiggy Ltd.,Consumer Services,SWIGGY,EQ
-Syngene International Ltd.,Healthcare,SYNGENE,EQ
-Syrma SGS Technology Ltd.,Capital Goods,SYRMA,EQ
-TARC Ltd.,Realty,TARC,EQ
-TBO Tek Ltd.,Consumer Services,TBOTEK,EQ
-TD Power Systems Ltd.,Capital Goods,TDPOWERSYS,EQ
-TSF Investments Ltd.,Financial Services,TSFINV,EQ
-TVS Motor Company Ltd.,Automobile and Auto Components,TVSMOTOR,EQ
-TVS Supply Chain Solutions Ltd.,Services,TVSSCS,EQ
-Tamilnad Mercantile Bank Ltd.,Financial Services,TMB,EQ
-Tanla Platforms Ltd.,Information Technology,TANLA,EQ
-Tata Capital Ltd.,Financial Services,TATACAP,EQ
-Tata Chemicals Ltd.,Chemicals,TATACHEM,EQ
-Tata Communications Ltd.,Telecommunication,TATACOMM,EQ
-Tata Consultancy Services Ltd.,Information Technology,TCS,EQ
-Tata Consumer Products Ltd.,Fast Moving Consumer Goods,TATACONSUM,EQ
-Tata Elxsi Ltd.,Information Technology,TATAELXSI,EQ
-Tata Investment Corporation Ltd.,Financial Services,TATAINVEST,EQ
-Tata Motors Ltd.,Capital Goods,TMCV,EQ
-Tata Motors Passenger Vehicles Ltd.,Automobile and Auto Components,TMPV,EQ
-Tata Power Co. Ltd.,Power,TATAPOWER,EQ
-Tata Steel Ltd.,Metals & Mining,TATASTEEL,EQ
-Tata Technologies Ltd.,Information Technology,TATATECH,EQ
-Tata Teleservices (Maharashtra) Ltd.,Telecommunication,TTML,EQ
-Tech Mahindra Ltd.,Information Technology,TECHM,EQ
-Techno Electric & Engineering Company Ltd.,Construction,TECHNOE,EQ
-Tega Industries Ltd.,Capital Goods,TEGA,EQ
-Tejas Networks Ltd.,Telecommunication,TEJASNET,EQ
-Tenneco Clean Air India Ltd.,Automobile and Auto Components,TENNIND,EQ
-Texmaco Rail & Eng. Ltd.,Capital Goods,TEXRAIL,EQ
-Thangamayil Jewellery Ltd.,Consumer Durables,THANGAMAYL,EQ
-The Anup Engineering Ltd.,Capital Goods,ANUP,EQ
-The New India Assurance Company Ltd.,Financial Services,NIACL,EQ
-The Ramco Cements Ltd.,Construction Materials,RAMCOCEM,EQ
-Thermax Ltd.,Capital Goods,THERMAX,EQ
-Thomas Cook (India) Ltd.,Consumer Services,THOMASCOOK,EQ
-Thyrocare Technologies Ltd.,Healthcare,THYROCARE,EQ
-Tilaknagar Industries Ltd.,Fast Moving Consumer Goods,TI,EQ
-Time Technoplast Ltd.,Capital Goods,TIMETECHNO,EQ
-Timken India Ltd.,Capital Goods,TIMKEN,EQ
-Tips Music Ltd.,Media Entertainment & Publication,TIPSMUSIC,EQ
-Titagarh Rail Systems Ltd.,Capital Goods,TITAGARH,EQ
-Titan Company Ltd.,Consumer Durables,TITAN,EQ
-Torrent Pharmaceuticals Ltd.,Healthcare,TORNTPHARM,EQ
-Torrent Power Ltd.,Power,TORNTPOWER,EQ
-Transformers And Rectifiers (India) Ltd.,Capital Goods,TARIL,EQ
-Transrail Lighting Ltd.,Capital Goods,TRANSRAILL,EQ
-Travel Food Services Ltd.,Consumer Services,TRAVELFOOD,EQ
-Trent Ltd.,Consumer Services,TRENT,EQ
-Trident Ltd.,Textiles,TRIDENT,EQ
-Triveni Engineering & Industries Ltd.,Fast Moving Consumer Goods,TRIVENI,EQ
-Triveni Turbine Ltd.,Capital Goods,TRITURBINE,EQ
-Tube Investments of India Ltd.,Automobile and Auto Components,TIINDIA,EQ
-UCO Bank,Financial Services,UCOBANK,EQ
-UNO Minda Ltd.,Automobile and Auto Components,UNOMINDA,EQ
-UPL Ltd.,Chemicals,UPL,EQ
-UTI Asset Management Company Ltd.,Financial Services,UTIAMC,EQ
-Ujjivan Small Finance Bank Ltd.,Financial Services,UJJIVANSFB,EQ
-UltraTech Cement Ltd.,Construction Materials,ULTRACEMCO,EQ
-Union Bank of India,Financial Services,UNIONBANK,EQ
-United Breweries Ltd.,Fast Moving Consumer Goods,UBL,EQ
-United Spirits Ltd.,Fast Moving Consumer Goods,UNITDSPR,EQ
-Urban Company Ltd.,Consumer Services,URBANCO,EQ
-Usha Martin Ltd.,Capital Goods,USHAMART,EQ
-V-Guard Industries Ltd.,Consumer Durables,VGUARD,EQ
-V-Mart Retail Ltd.,Consumer Services,VMART,EQ
-V.I.P. Industries Ltd.,Consumer Durables,VIPIND,EQ
-V2 Retail Ltd.,Consumer Services,V2RETAIL,EQ
-VALOR ESTATE Ltd.,Realty,DBREALTY,EQ
-Va Tech Wabag Ltd.,Utilities,WABAG,EQ
-Vaibhav Global Ltd.,Consumer Durables,VAIBHAVGBL,EQ
-Vardhman Textiles Ltd.,Textiles,VTL,EQ
-Varroc Engineering Ltd.,Automobile and Auto Components,VARROC,EQ
-Varun Beverages Ltd.,Fast Moving Consumer Goods,VBL,EQ
-Vedant Fashions Ltd.,Consumer Services,MANYAVAR,EQ
-Vedanta Ltd.,Metals & Mining,VEDL,EQ
-Vijaya Diagnostic Centre Ltd.,Healthcare,VIJAYA,EQ
-Vikram Solar Ltd.,Capital Goods,VIKRAMSOLR,EQ
-Vishal Mega Mart Ltd.,Consumer Services,VMM,EQ
-Viyash Scientific Ltd.,Healthcare,VIYASH,EQ
-Vodafone Idea Ltd.,Telecommunication,IDEA,EQ
-Voltamp Transformers Ltd,Capital Goods,VOLTAMP,EQ
-Voltas Ltd.,Consumer Durables,VOLTAS,EQ
-Waaree Energies Ltd.,Capital Goods,WAAREEENER,EQ
-Waaree Renewable Technologies Ltd.,Capital Goods,WAAREERTL,EQ
-Wakefit Innovations Ltd.,Consumer Durables,WAKEFIT,EQ
-WeWork India Management Ltd.,Services,WEWORK,EQ
-Websol Energy System Ltd.,Capital Goods,WEBELSOLAR,EQ
-Welspun Corp Ltd.,Capital Goods,WELCORP,EQ
-Welspun Enterprises Ltd.,Construction,WELENT,EQ
-Welspun Living Ltd.,Textiles,WELSPUNLIV,EQ
-Westlife Foodworld Ltd.,Consumer Services,WESTLIFE,EQ
-Whirlpool of India Ltd.,Consumer Durables,WHIRLPOOL,EQ
-Wipro Ltd.,Information Technology,WIPRO,EQ
-Wockhardt Ltd.,Healthcare,WOCKPHARMA,EQ
-Yatharth Hospital & Trauma Care Services Ltd.,Healthcare,YATHARTH,EQ
-Yes Bank Ltd.,Financial Services,YESBANK,EQ
-ZF Commercial Vehicle Control Systems India Ltd.,Automobile and Auto Components,ZFCVINDIA,EQ
-Zaggle Prepaid Ocean Services Ltd.,Information Technology,ZAGGLE,EQ
-Zee Entertainment Enterprises Ltd.,Media Entertainment & Publication,ZEEL,EQ
-Zen Technologies Ltd.,Capital Goods,ZENTEC,EQ
-Zensar Technolgies Ltd.,Information Technology,ZENSARTECH,EQ
-Zydus Lifesciences Ltd.,Healthcare,ZYDUSLIFE,EQ
-Zydus Wellness Ltd.,Fast Moving Consumer Goods,ZYDUSWELL,EQ
-eClerx Services Ltd.,Services,ECLERX,EQ
+Company Name,Industry,Symbol,Series,Company
+360 ONE WAM Ltd.,Financial Services,360ONE,EQ,
+3M India Ltd.,Diversified,3MINDIA,EQ,
+ABB India Ltd.,Capital Goods,ABB,EQ,
+ACC Ltd.,Construction Materials,ACC,EQ,
+ACME Solar Holdings Ltd.,Power,ACMESOLAR,EQ,
+AIA Engineering Ltd.,Capital Goods,AIAENG,EQ,
+APL Apollo Tubes Ltd.,Capital Goods,APLAPOLLO,EQ,
+ASK Automotive Ltd.,Automobile and Auto Components,ASKAUTOLTD,EQ,
+AU Small Finance Bank Ltd.,Financial Services,AUBANK,EQ,
+AWL Agri Business Ltd.,Fast Moving Consumer Goods,AWL,EQ,
+AXISCADES Technologies Ltd.,Capital Goods,AXISCADES,EQ,
+Aadhar Housing Finance Ltd.,Financial Services,AADHARHFC,EQ,
+Aarti Drugs Ltd.,Healthcare,AARTIDRUGS,EQ,
+Aarti Industries Ltd.,Chemicals,AARTIIND,EQ,
+Aarti Pharmalabs Ltd.,Healthcare,AARTIPHARM,EQ,
+Aavas Financiers Ltd.,Financial Services,AAVAS,EQ,
+Abbott India Ltd.,Healthcare,ABBOTINDIA,EQ,
+Action Construction Equipment Ltd.,Capital Goods,ACE,EQ,
+Acutaas Chemicals Ltd.,Healthcare,ACUTAAS,EQ,
+Adani Energy Solutions Ltd.,Power,ADANIENSOL,EQ,
+Adani Enterprises Ltd.,Metals & Mining,ADANIENT,EQ,
+Adani Green Energy Ltd.,Power,ADANIGREEN,EQ,
+Adani Ports and Special Economic Zone Ltd.,Services,ADANIPORTS,EQ,
+Adani Power Ltd.,Power,ADANIPOWER,EQ,
+Adani Total Gas Ltd.,Oil Gas & Consumable Fuels,ATGL,EQ,
+Aditya Birla Capital Ltd.,Financial Services,ABCAPITAL,EQ,
+Aditya Birla Fashion and Retail Ltd.,Consumer Services,ABFRL,EQ,
+Aditya Birla Lifestyle Brands Ltd.,Consumer Services,ABLBL,EQ,
+Aditya Birla Real Estate Ltd.,Realty,ABREL,EQ,
+Aditya Birla Sun Life AMC Ltd.,Financial Services,ABSLAMC,EQ,
+Aditya Infotech Ltd.,Capital Goods,CPPLUS,EQ,
+Aditya Vision Ltd.,Consumer Services,AVL,EQ,
+Advanced Enzyme Tech Ltd.,Healthcare,ADVENZYMES,EQ,
+Aegis Logistics Ltd.,Oil Gas & Consumable Fuels,AEGISLOG,EQ,
+Aegis Vopak Terminals Ltd.,Oil Gas & Consumable Fuels,AEGISVOPAK,EQ,
+Aequs Ltd.,Capital Goods,AEQUS,EQ,
+Aether Industries Ltd.,Chemicals,AETHER,EQ,
+Afcons Infrastructure Ltd.,Construction,AFCONS,EQ,
+Affle 3i Ltd.,Information Technology,AFFLE,EQ,
+Ahluwalia Contracts (India) Ltd.,Construction,AHLUCONT,EQ,
+Ajanta Pharmaceuticals Ltd.,Healthcare,AJANTPHARM,EQ,
+Akums Drugs and Pharmaceuticals Ltd.,Healthcare,AKUMS,EQ,
+Alembic Pharmaceuticals Ltd.,Healthcare,APLLTD,EQ,
+Alivus Life Sciences Ltd.,Healthcare,ALIVUS,EQ,
+Alkem Laboratories Ltd.,Healthcare,ALKEM,EQ,
+Alkyl Amines Chemicals Ltd.,Chemicals,ALKYLAMINE,EQ,
+Allied Blenders and Distillers Ltd.,Fast Moving Consumer Goods,ABDL,EQ,
+Alok Industries Ltd.,Textiles,ALOKINDS,EQ,
+Amara Raja Energy & Mobility Ltd.,Automobile and Auto Components,ARE&M,EQ,
+Amber Enterprises India Ltd.,Consumer Durables,AMBER,EQ,
+Ambuja Cements Ltd.,Construction Materials,AMBUJACEM,EQ,
+Anand Rathi Wealth Ltd.,Financial Services,ANANDRATHI,EQ,
+Anant Raj Ltd.,Realty,ANANTRAJ,EQ,
+Angel One Ltd.,Financial Services,ANGELONE,EQ,
+Anthem Biosciences Ltd.,Healthcare,ANTHEM,EQ,
+Anupam Rasayan India Ltd.,Chemicals,ANURAS,EQ,
+Apar Industries Ltd.,Capital Goods,APARINDS,EQ,
+Apollo Hospitals Enterprise Ltd.,Healthcare,APOLLOHOSP,EQ,
+Apollo Micro Systems Ltd.,Capital Goods,APOLLO,EQ,
+Apollo Tyres Ltd.,Automobile and Auto Components,APOLLOTYRE,EQ,
+Aptus Value Housing Finance India Ltd.,Financial Services,APTUS,EQ,
+Archean Chemical Industries Ltd.,Chemicals,ACI,EQ,
+Arvind Fashions Ltd.,Consumer Services,ARVINDFASN,EQ,
+Arvind Ltd.,Textiles,ARVIND,EQ,
+Asahi India Glass Ltd.,Automobile and Auto Components,ASAHIINDIA,EQ,
+Ashapura Minechem Ltd.,Metals & Mining,ASHAPURMIN,EQ,
+Ashok Leyland Ltd.,Capital Goods,ASHOKLEY,EQ,
+Ashoka Buildcon Ltd.,Construction,ASHOKA,EQ,
+Asian Paints Ltd.,Consumer Durables,ASIANPAINT,EQ,
+Aster DM Quality Care Ltd.,Healthcare,ASTERDM,EQ,
+Astra Microwave Products Ltd.,Capital Goods,ASTRAMICRO,EQ,
+Astral Ltd.,Capital Goods,ASTRAL,EQ,
+Ather Energy Ltd.,Automobile and Auto Components,ATHERENERG,EQ,
+Atlanta Electricals Ltd.,Capital Goods,ATLANTAELE,EQ,
+Atul Ltd.,Chemicals,ATUL,EQ,
+Aurionpro Solution Ltd.,Information Technology,AURIONPRO,EQ,
+Aurobindo Pharma Ltd.,Healthcare,AUROPHARMA,EQ,
+Authum Investment & Infrastructure Ltd.,Financial Services,AIIL,EQ,
+Avalon Technologies Ltd.,Capital Goods,AVALON,EQ,
+Avanti Feeds Ltd.,Fast Moving Consumer Goods,AVANTIFEED,EQ,
+Avenue Supermarts Ltd.,Consumer Services,DMART,EQ,
+AvenuesAI Ltd.,Financial Services,CCAVENUE,EQ,
+Awfis Space Solutions Ltd.,Services,AWFIS,EQ,
+Axis Bank Ltd.,Financial Services,AXISBANK,EQ,
+Azad Engineering Ltd.,Capital Goods,AZAD,EQ,
+BEML Ltd.,Capital Goods,BEML,EQ,
+BLS International Services Ltd.,Consumer Services,BLS,EQ,
+BSE Ltd.,Financial Services,BSE,EQ,
+Bajaj Auto Ltd.,Automobile and Auto Components,BAJAJ-AUTO,EQ,
+Bajaj Electricals Ltd,Consumer Durables,BAJAJELEC,EQ,
+Bajaj Finance Ltd.,Financial Services,BAJFINANCE,EQ,
+Bajaj Finserv Ltd.,Financial Services,BAJAJFINSV,EQ,
+Bajaj Holdings & Investment Ltd.,Financial Services,BAJAJHLDNG,EQ,
+Bajaj Housing Finance Ltd.,Financial Services,BAJAJHFL,EQ,
+Balaji Amines Ltd.,Chemicals,BALAMINES,EQ,
+Balkrishna Industries Ltd.,Automobile and Auto Components,BALKRISIND,EQ,
+Balrampur Chini Mills Ltd.,Fast Moving Consumer Goods,BALRAMCHIN,EQ,
+Balu Forge Industries Ltd.,Capital Goods,BALUFORGE,EQ,
+Banco Products (India) Ltd.,Automobile and Auto Components,BANCOINDIA,EQ,
+Bandhan Bank Ltd.,Financial Services,BANDHANBNK,EQ,
+Bank of Baroda,Financial Services,BANKBARODA,EQ,
+Bank of India,Financial Services,BANKINDIA,EQ,
+Bank of Maharashtra,Financial Services,MAHABANK,EQ,
+Bata India Ltd.,Consumer Durables,BATAINDIA,EQ,
+Bayer Cropscience Ltd.,Chemicals,BAYERCROP,EQ,
+Belrise Industries Ltd.,Automobile and Auto Components,BELRISE,EQ,
+Berger Paints India Ltd.,Consumer Durables,BERGEPAINT,EQ,
+Bharat Dynamics Ltd.,Capital Goods,BDL,EQ,
+Bharat Electronics Ltd.,Capital Goods,BEL,EQ,
+Bharat Forge Ltd.,Automobile and Auto Components,BHARATFORG,EQ,
+Bharat Heavy Electricals Ltd.,Capital Goods,BHEL,EQ,
+Bharat Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,BPCL,EQ,
+Bharti Airtel Ltd.,Telecommunication,BHARTIARTL,EQ,
+Bharti Hexacom Ltd.,Telecommunication,BHARTIHEXA,EQ,
+Bikaji Foods International Ltd.,Fast Moving Consumer Goods,BIKAJI,EQ,
+Billionbrains Garage Ventures Ltd.,Financial Services,GROWW,EQ,
+Biocon Ltd.,Healthcare,BIOCON,EQ,
+Birla Corporation Ltd.,Construction Materials,BIRLACORPN,EQ,
+Birlasoft Ltd.,Information Technology,BSOFT,EQ,
+Black Box Ltd.,Information Technology,BBOX,EQ,
+Blackbuck Ltd.,Services,BLACKBUCK,EQ,
+Blue Dart Express Ltd.,Services,BLUEDART,EQ,
+Blue Jet Healthcare Ltd.,Healthcare,BLUEJET,EQ,
+Blue Star Ltd.,Consumer Durables,BLUESTARCO,EQ,
+BlueStone Jewellery and Lifestyle Ltd.,Consumer Durables,BLUESTONE,EQ,
+Bombay Burmah Trading Corporation Ltd.,Fast Moving Consumer Goods,BBTC,EQ,
+Borosil Renewables Ltd.,Capital Goods,BORORENEW,EQ,
+Bosch Ltd.,Automobile and Auto Components,BOSCHLTD,EQ,
+Brainbees Solutions Ltd.,Consumer Services,FIRSTCRY,EQ,
+Brigade Enterprises Ltd.,Realty,BRIGADE,EQ,
+Britannia Industries Ltd.,Fast Moving Consumer Goods,BRITANNIA,EQ,
+C.E. Info Systems Ltd.,Information Technology,MAPMYINDIA,EQ,
+CCL Products (I) Ltd.,Fast Moving Consumer Goods,CCL,EQ,
+CESC Ltd.,Power,CESC,EQ,
+CG Power and Industrial Solutions Ltd.,Capital Goods,CGPOWER,EQ,
+CIE Automotive India Ltd.,Automobile and Auto Components,CIEINDIA,EQ,
+CMS Info Systems Ltd.,Services,CMSINFO,EQ,
+CORONA Remedies Ltd.,Healthcare,CORONA,EQ,
+CRISIL Ltd.,Financial Services,CRISIL,EQ,
+CSB Bank Ltd.,Financial Services,CSBBANK,EQ,
+Campus Activewear Ltd.,Consumer Durables,CAMPUS,EQ,
+Can Fin Homes Ltd.,Financial Services,CANFINHOME,EQ,
+Canara Bank,Financial Services,CANBK,EQ,
+Canara HSBC Life Insurance Company Ltd.,Financial Services,CANHLIFE,EQ,
+Canara Robeco Asset Management Company Ltd.,Financial Services,CRAMC,EQ,
+Capillary Technologies India Ltd.,Information Technology,CAPILLARY,EQ,
+Caplin Point Laboratories Ltd.,Healthcare,CAPLIPOINT,EQ,
+Capri Global Capital Ltd.,Financial Services,CGCL,EQ,
+Carborundum Universal Ltd.,Capital Goods,CARBORUNIV,EQ,
+Cartrade Tech Ltd.,Consumer Services,CARTRADE,EQ,
+Castrol India Ltd.,Oil Gas & Consumable Fuels,CASTROLIND,EQ,
+Ceat Ltd.,Automobile and Auto Components,CEATLTD,EQ,
+Cello World Ltd.,Consumer Durables,CELLO,EQ,
+Cemindia Projects Ltd.,Construction,CEMPRO,EQ,
+Central Bank of India,Financial Services,CENTRALBK,EQ,
+Central Depository Services (India) Ltd.,Financial Services,CDSL,EQ,
+Century Plyboards (India) Ltd.,Consumer Durables,CENTURYPLY,EQ,
+Cera Sanitaryware Ltd,Consumer Durables,CERA,EQ,
+Chalet Hotels Ltd.,Consumer Services,CHALET,EQ,
+Chambal Fertilizers & Chemicals Ltd.,Chemicals,CHAMBLFERT,EQ,
+Chennai Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,CHENNPETRO,EQ,
+Choice International Ltd.,Financial Services,CHOICEIN,EQ,
+Cholamandalam Financial Holdings Ltd.,Financial Services,CHOLAHLDNG,EQ,
+Cholamandalam Investment and Finance Company Ltd.,Financial Services,CHOLAFIN,EQ,
+Cipla Ltd.,Healthcare,CIPLA,EQ,
+City Union Bank Ltd.,Financial Services,CUB,EQ,
+Clean Science and Technology Ltd.,Chemicals,CLEAN,EQ,
+Coal India Ltd.,Oil Gas & Consumable Fuels,COALINDIA,EQ,
+Cochin Shipyard Ltd.,Capital Goods,COCHINSHIP,EQ,
+Coforge Ltd.,Information Technology,COFORGE,EQ,
+Cohance Lifesciences Ltd.,Healthcare,COHANCE,EQ,
+Colgate Palmolive (India) Ltd.,Fast Moving Consumer Goods,COLPAL,EQ,
+Computer Age Management Services Ltd.,Financial Services,CAMS,EQ,
+Concord Biotech Ltd.,Healthcare,CONCORDBIO,EQ,
+Container Corporation of India Ltd.,Services,CONCOR,EQ,
+Coromandel International Ltd.,Chemicals,COROMANDEL,EQ,
+Craftsman Automation Ltd.,Automobile and Auto Components,CRAFTSMAN,EQ,
+CreditAccess Grameen Ltd.,Financial Services,CREDITACC,EQ,
+Crizac Ltd.,Consumer Services,CRIZAC,EQ,
+Crompton Greaves Consumer Electricals Ltd.,Consumer Durables,CROMPTON,EQ,
+Cummins India Ltd.,Capital Goods,CUMMINSIND,EQ,
+Cupid Ltd.,Fast Moving Consumer Goods,CUPID,EQ,
+Cyient Ltd.,Information Technology,CYIENT,EQ,
+DCB Bank Ltd.,Financial Services,DCBBANK,EQ,
+DCM Shriram Ltd.,Diversified,DCMSHRIRAM,EQ,
+DLF Ltd.,Realty,DLF,EQ,
+DOMS Industries Ltd.,Fast Moving Consumer Goods,DOMS,EQ,
+Dabur India Ltd.,Fast Moving Consumer Goods,DABUR,EQ,
+Dalmia Bharat Ltd.,Construction Materials,DALBHARAT,EQ,
+Data Patterns (India) Ltd.,Capital Goods,DATAPATTNS,EQ,
+Datamatics Global Services Ltd.,Information Technology,DATAMATICS,EQ,
+Deepak Fertilisers & Petrochemicals Corp. Ltd.,Chemicals,DEEPAKFERT,EQ,
+Deepak Nitrite Ltd.,Chemicals,DEEPAKNTR,EQ,
+Delhivery Ltd.,Services,DELHIVERY,EQ,
+Devyani International Ltd.,Consumer Services,DEVYANI,EQ,
+Diamond Power Infrastructure Ltd.,Capital Goods,DIACABS,BE,
+Dilip Buildcon Ltd.,Construction,DBL,EQ,
+Divi's Laboratories Ltd.,Healthcare,DIVISLAB,EQ,
+Dixon Technologies (India) Ltd.,Consumer Durables,DIXON,EQ,
+Dr. Agarwal's Health Care Ltd.,Healthcare,AGARWALEYE,EQ,
+Dr. Lal Path Labs Ltd.,Healthcare,LALPATHLAB,EQ,
+Dr. Reddy's Laboratories Ltd.,Healthcare,DRREDDY,EQ,
+Dummy HEG Ltd.,Metals & Mining,DUMMYHEG,EQ,
+Dummy India Glycols ltd. 1,Healthcare,DUMMYINGL1,EQ,
+Dummy India Glycols ltd. 2,Fast Moving Consumer Goods,DUMMYINGL2,EQ,
+Dummy Inox Green Ltd.,Construction,DUMMYINXGN,EQ,
+Dummy Triveni Ltd.,Capital Goods,DUMMYTRVN,EQ,
+Dynamatic Technologies Ltd.,Capital Goods,DYNAMATECH,EQ,
+E.I.D. Parry (India) Ltd.,Fast Moving Consumer Goods,EIDPARRY,EQ,
+EIH Ltd.,Consumer Services,EIHOTEL,EQ,
+EPL Ltd.,Capital Goods,EPL,EQ,
+Edelweiss Financial Services Ltd.,Financial Services,EDELWEISS,EQ,
+Eicher Motors Ltd.,Automobile and Auto Components,EICHERMOT,EQ,
+Elecon Engineering Co. Ltd.,Capital Goods,ELECON,EQ,
+Electronics Mart India Ltd.,Consumer Services,EMIL,EQ,
+Electrosteel Castings Ltd.,Capital Goods,ELECTCAST,EQ,
+Elgi Equipments Ltd.,Capital Goods,ELGIEQUIP,EQ,
+Ellenbarrie Industrial Gases Ltd.,Chemicals,ELLEN,EQ,
+Emami Ltd.,Fast Moving Consumer Goods,EMAMILTD,EQ,
+Embassy Developments Ltd.,Realty,EMBDL,EQ,
+Emcure Pharmaceuticals Ltd.,Healthcare,EMCURE,EQ,
+Emmvee Photovoltaic Power Ltd.,Capital Goods,EMMVEE,EQ,
+Endurance Technologies Ltd.,Automobile and Auto Components,ENDURANCE,EQ,
+Engineers India Ltd.,Construction,ENGINERSIN,EQ,
+Entero Healthcare Solutions Ltd.,Consumer Services,ENTERO,EQ,
+Enviro Infra Engineers Ltd.,Utilities,EIEL,EQ,
+Equitas Small Finance Bank Ltd.,Financial Services,EQUITASBNK,EQ,
+Eris Lifesciences Ltd.,Healthcare,ERIS,EQ,
+Escorts Kubota Ltd.,Capital Goods,ESCORTS,EQ,
+Eternal Ltd.,Consumer Services,ETERNAL,EQ,
+Ethos Ltd.,Consumer Durables,ETHOSLTD,EQ,
+Eureka Forbes Ltd.,Consumer Durables,EUREKAFORB,EQ,
+Exide Industries Ltd.,Automobile and Auto Components,EXIDEIND,EQ,
+FSN E-Commerce Ventures Ltd.,Consumer Services,NYKAA,EQ,
+Fedbank Financial Services Ltd.,Financial Services,FEDFINA,EQ,
+Federal Bank Ltd.,Financial Services,FEDERALBNK,EQ,
+Fertilisers and Chemicals Travancore Ltd.,Chemicals,FACT,EQ,
+Fiem Industries Ltd,Automobile and Auto Components,FIEMIND,EQ,
+Finolex Cables Ltd.,Capital Goods,FINCABLES,EQ,
+Finolex Industries Ltd.,Capital Goods,FINPIPE,EQ,
+Firstsource Solutions Ltd.,Services,FSL,EQ,
+Five-Star Business Finance Ltd.,Financial Services,FIVESTAR,EQ,
+Force Motors Ltd.,Automobile and Auto Components,FORCEMOT,EQ,
+Fortis Healthcare Ltd.,Healthcare,FORTIS,EQ,
+Fujiyama Power Systems Ltd.,Capital Goods,UTLSOLAR,EQ,
+GAIL (India) Ltd.,Oil Gas & Consumable Fuels,GAIL,EQ,
+GE Vernova T&D India Ltd.,Capital Goods,GVT&D,EQ,
+GHCL Ltd.,Chemicals,GHCL,EQ,
+GMM Pfaudler Ltd.,Capital Goods,GMMPFAUDLR,EQ,
+GMR Airports Ltd.,Services,GMRAIRPORT,EQ,
+GMR Power and Urban Infra Ltd.,Power,GMRP&UI,EQ,
+Gabriel India Ltd.,Automobile and Auto Components,GABRIEL,EQ,
+Gallantt Ispat Ltd.,Capital Goods,GALLANTT,EQ,
+Garden Reach Shipbuilders & Engineers Ltd.,Capital Goods,GRSE,EQ,
+Garware Hi-Tech Films Ltd.,Capital Goods,GRWRHITECH,EQ,
+General Insurance Corporation of India,Financial Services,GICRE,EQ,
+Gillette India Ltd.,Fast Moving Consumer Goods,GILLETTE,EQ,
+Gland Pharma Ltd.,Healthcare,GLAND,EQ,
+Glaxosmithkline Pharmaceuticals Ltd.,Healthcare,GLAXO,EQ,
+Glenmark Pharmaceuticals Ltd.,Healthcare,GLENMARK,EQ,
+Global Health Ltd.,Healthcare,MEDANTA,EQ,
+Go Digit General Insurance Ltd.,Financial Services,GODIGIT,EQ,
+Godawari Power & Ispat Ltd.,Capital Goods,GPIL,EQ,
+Godfrey Phillips India Ltd.,Fast Moving Consumer Goods,GODFRYPHLP,EQ,
+Godrej Agrovet Ltd.,Fast Moving Consumer Goods,GODREJAGRO,EQ,
+Godrej Consumer Products Ltd.,Fast Moving Consumer Goods,GODREJCP,EQ,
+Godrej Industries Ltd.,Diversified,GODREJIND,EQ,
+Godrej Properties Ltd.,Realty,GODREJPROP,EQ,
+Gokaldas Exports Ltd.,Textiles,GOKEX,EQ,
+Gokul Agro Resources Ltd.,Fast Moving Consumer Goods,GOKULAGRO,EQ,
+Granules India Ltd.,Healthcare,GRANULES,EQ,
+Graphite India Ltd.,Capital Goods,GRAPHITE,EQ,
+Grasim Industries Ltd.,Construction Materials,GRASIM,EQ,
+Gravita India Ltd.,Metals & Mining,GRAVITA,EQ,
+Great Eastern Shipping Co. Ltd.,Services,GESHIP,EQ,
+Greaves Cotton Ltd.,Capital Goods,GREAVESCOT,EQ,
+Grindwell Norton Ltd.,Capital Goods,GRINDWELL,EQ,
+Gujarat Ambuja Exports Ltd.,Fast Moving Consumer Goods,GAEL,EQ,
+Gujarat Fluorochemicals Ltd.,Chemicals,FLUOROCHEM,EQ,
+Gujarat Mineral Development Corporation Ltd.,Metals & Mining,GMDCLTD,EQ,
+Gujarat Narmada Valley Fertilizers and Chemicals Ltd.,Chemicals,GNFC,EQ,
+Gujarat Pipavav Port Ltd.,Services,GPPL,EQ,
+Gujarat State Fertilizers & Chemicals Ltd.,Chemicals,GSFC,EQ,
+H.G. Infra Engineering Ltd.,Construction,HGINFRA,EQ,
+HBL Engineering Ltd.,Capital Goods,HBLENGINE,EQ,
+HCL Technologies Ltd.,Information Technology,HCLTECH,EQ,
+HDB Financial Services Ltd.,Financial Services,HDBFS,EQ,
+HDFC Asset Management Company Ltd.,Financial Services,HDFCAMC,EQ,
+HDFC Bank Ltd.,Financial Services,HDFCBANK,EQ,
+HDFC Life Insurance Company Ltd.,Financial Services,HDFCLIFE,EQ,
+HEG Advanced Materials Ltd.,Capital Goods,HEGAM,EQ,
+HFCL Ltd.,Telecommunication,HFCL,BE,
+Happiest Minds Technologies Ltd.,Information Technology,HAPPSTMNDS,EQ,
+Havells India Ltd.,Consumer Durables,HAVELLS,EQ,
+Healthcare Global Enterprises Ltd.,Healthcare,HCG,EQ,
+Hemisphere Properties India Ltd.,Services,HEMIPROP,EQ,
+Heritage Foods Ltd.,Fast Moving Consumer Goods,HERITGFOOD,EQ,
+Hero MotoCorp Ltd.,Automobile and Auto Components,HEROMOTOCO,EQ,
+Hexaware Technologies Ltd.,Information Technology,HEXT,EQ,
+Himadri Speciality Chemical Ltd.,Chemicals,HSCL,EQ,
+Hindalco Industries Ltd.,Metals & Mining,HINDALCO,EQ,
+Hindustan Aeronautics Ltd.,Capital Goods,HAL,EQ,
+Hindustan Construction Co. Ltd.,Construction,HCC,EQ,
+Hindustan Copper Ltd.,Metals & Mining,HINDCOPPER,EQ,
+Hindustan Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,HINDPETRO,EQ,
+Hindustan Unilever Ltd.,Fast Moving Consumer Goods,HINDUNILVR,EQ,
+Hindustan Zinc Ltd.,Metals & Mining,HINDZINC,EQ,
+Hitachi Energy India Ltd.,Capital Goods,POWERINDIA,EQ,
+Home First Finance Company India Ltd.,Financial Services,HOMEFIRST,EQ,
+Honasa Consumer Ltd.,Fast Moving Consumer Goods,HONASA,EQ,
+Honeywell Automation India Ltd.,Capital Goods,HONAUT,EQ,
+Housing & Urban Development Corporation Ltd.,Financial Services,HUDCO,EQ,
+Hyundai Motor India Ltd.,Automobile and Auto Components,HYUNDAI,EQ,
+ICICI Bank Ltd.,Financial Services,ICICIBANK,EQ,
+ICICI Lombard General Insurance Company Ltd.,Financial Services,ICICIGI,EQ,
+ICICI Prudential Asset Management Company Ltd.,Financial Services,ICICIAMC,EQ,
+ICICI Prudential Life Insurance Company Ltd.,Financial Services,ICICIPRULI,EQ,
+IDBI Bank Ltd.,Financial Services,IDBI,EQ,
+IDFC First Bank Ltd.,Financial Services,IDFCFIRSTB,EQ,
+IFB Industries Ltd.,Consumer Durables,IFBIND,EQ,
+IFCI Ltd.,Financial Services,IFCI,EQ,
+IIFL Capital Services Ltd.,Financial Services,IIFLCAPS,EQ,
+IIFL Finance Ltd.,Financial Services,IIFL,EQ,
+INOX India Ltd.,Capital Goods,INOXINDIA,EQ,
+IRB Infrastructure Developers Ltd.,Construction,IRB,EQ,
+IRCON International Ltd.,Construction,IRCON,EQ,
+ITC Hotels Ltd.,Consumer Services,ITCHOTELS,EQ,
+ITC Ltd.,Fast Moving Consumer Goods,ITC,EQ,
+ITI Ltd.,Telecommunication,ITI,EQ,
+Indegene Ltd.,Healthcare,INDGN,EQ,
+India Cements Ltd.,Construction Materials,INDIACEM,EQ,
+India Glycols Ltd.,Fast Moving Consumer Goods,INDIAGLYCO,EQ,
+India Shelter Finance Corporation Ltd.,Financial Services,INDIASHLTR,EQ,
+Indiamart Intermesh Ltd.,Consumer Services,INDIAMART,EQ,
+Indian Bank,Financial Services,INDIANB,EQ,
+Indian Energy Exchange Ltd.,Financial Services,IEX,EQ,
+Indian Hotels Co. Ltd.,Consumer Services,INDHOTEL,EQ,
+Indian Metals & Ferro Alloys Ltd.,Metals & Mining,IMFA,EQ,
+Indian Oil Corporation Ltd.,Oil Gas & Consumable Fuels,IOC,EQ,
+Indian Overseas Bank,Financial Services,IOB,EQ,
+Indian Railway Catering And Tourism Corporation Ltd.,Consumer Services,IRCTC,EQ,
+Indian Railway Finance Corporation Ltd.,Financial Services,IRFC,EQ,
+Indian Renewable Energy Development Agency Ltd.,Financial Services,IREDA,EQ,
+Indigo Paints Ltd.,Consumer Durables,INDIGOPNTS,EQ,
+Indo Count Industries Ltd.,Textiles,ICIL,EQ,
+Indraprastha Gas Ltd.,Oil Gas & Consumable Fuels,IGL,EQ,
+Indus Towers Ltd.,Telecommunication,INDUSTOWER,EQ,
+IndusInd Bank Ltd.,Financial Services,INDUSINDBK,EQ,
+Info Edge (India) Ltd.,Consumer Services,NAUKRI,EQ,
+Infosys Ltd.,Information Technology,INFY,EQ,
+Inox Green Energy Services Ltd.,Services,INOXGREEN,EQ,
+Inox Wind Ltd.,Capital Goods,INOXWIND,EQ,
+Intellect Design Arena Ltd.,Information Technology,INTELLECT,EQ,
+InterGlobe Aviation Ltd.,Services,INDIGO,EQ,
+International Gemological Institute Ltd.,Services,IGIL,EQ,
+Inventurus Knowledge Solutions Ltd.,Information Technology,IKS,EQ,
+Ion Exchange (India) Ltd.,Utilities,IONEXCHANG,EQ,
+Ipca Laboratories Ltd.,Healthcare,IPCALAB,EQ,
+J.K. Cement Ltd.,Construction Materials,JKCEMENT,EQ,
+JAI BALAJI INDUSTRIES Ltd.,Metals & Mining,JAIBALAJI,EQ,
+JBM Auto Ltd.,Automobile and Auto Components,JBMA,EQ,
+JK Lakshmi Cement Ltd.,Construction Materials,JKLAKSHMI,EQ,
+JK Paper Ltd.,Forest Materials,JKPAPER,EQ,
+JK Tyre & Industries Ltd.,Automobile and Auto Components,JKTYRE,EQ,
+JM Financial Ltd.,Financial Services,JMFINANCIL,EQ,
+JSW Cement Ltd.,Construction Materials,JSWCEMENT,EQ,
+JSW Dulux Ltd.,Consumer Durables,JSWDULUX,EQ,
+JSW Energy Ltd.,Power,JSWENERGY,EQ,
+JSW Infrastructure Ltd.,Services,JSWINFRA,EQ,
+JSW Steel Ltd.,Metals & Mining,JSWSTEEL,EQ,
+Jain Resource Recycling Ltd.,Metals & Mining,JAINREC,EQ,
+Jaiprakash Power Ventures Ltd.,Power,JPPOWER,EQ,
+Jammu & Kashmir Bank Ltd.,Financial Services,J&KBANK,EQ,
+Jamna Auto Industries Ltd.,Automobile and Auto Components,JAMNAAUTO,EQ,
+Jana Small Finance Bank Ltd.,Financial Services,JSFB,EQ,
+Jayaswal Neco Industries Ltd.,Capital Goods,JAYNECOIND,EQ,
+Jeena Sikho Lifecare Ltd.,Consumer Services,JSLL,EQ,
+Jindal Saw Ltd.,Capital Goods,JINDALSAW,EQ,
+Jindal Stainless Ltd.,Metals & Mining,JSL,EQ,
+Jindal Steel Ltd.,Metals & Mining,JINDALSTEL,EQ,
+Jio Financial Services Ltd.,Financial Services,JIOFIN,EQ,
+Jubilant Foodworks Ltd.,Consumer Services,JUBLFOOD,EQ,
+Jubilant Ingrevia Ltd.,Chemicals,JUBLINGREA,EQ,
+Jubilant Pharmova Ltd.,Healthcare,JUBLPHARMA,EQ,
+Jupiter Life Line Hospitals Ltd.,Healthcare,JLHL,EQ,
+Jupiter Wagons Ltd.,Capital Goods,JWL,EQ,
+Justdial Ltd.,Consumer Services,JUSTDIAL,EQ,
+Jyothy Labs Ltd.,Fast Moving Consumer Goods,JYOTHYLAB,EQ,
+Jyoti CNC Automation Ltd.,Capital Goods,JYOTICNC,EQ,
+K.P.R. Mill Ltd.,Textiles,KPRMILL,EQ,
+KEI Industries Ltd.,Capital Goods,KEI,EQ,
+KNR Constructions Ltd.,Construction,KNRCON,EQ,
+KPI Green Energy Ltd.,Power,KPIGREEN,EQ,
+KPIT Technologies Ltd.,Information Technology,KPITTECH,EQ,
+KRBL Ltd.,Fast Moving Consumer Goods,KRBL,EQ,
+KRN HEAT EXCHANGER AND REFRIGERATION Ltd.,Capital Goods,KRN,EQ,
+KSB Ltd.,Capital Goods,KSB,EQ,
+Kajaria Ceramics Ltd.,Consumer Durables,KAJARIACER,EQ,
+Kalpataru Projects International Ltd.,Construction,KPIL,EQ,
+Kalyan Jewellers India Ltd.,Consumer Durables,KALYANKJIL,EQ,
+Kansai Nerolac Paints Ltd.,Consumer Durables,KANSAINER,EQ,
+Karnataka Bank Ltd.,Financial Services,KTKBANK,EQ,
+Karur Vysya Bank Ltd.,Financial Services,KARURVYSYA,EQ,
+Kaveri Seed Company Ltd.,Fast Moving Consumer Goods,KSCL,EQ,
+Kaynes Technology India Ltd.,Capital Goods,KAYNES,EQ,
+Kec International Ltd.,Construction,KEC,EQ,
+Kfin Technologies Ltd.,Financial Services,KFINTECH,EQ,
+Kirloskar Brothers Ltd.,Capital Goods,KIRLOSBROS,EQ,
+Kirloskar Oil Eng Ltd.,Capital Goods,KIRLOSENG,EQ,
+Kirloskar Pneumatic Company Ltd.,Capital Goods,KIRLPNU,EQ,
+Kitex Garments Ltd.,Textiles,KITEX,EQ,
+Kotak Mahindra Bank Ltd.,Financial Services,KOTAKBANK,EQ,
+Krishna Institute of Medical Sciences Ltd.,Healthcare,KIMS,EQ,
+L&T Finance Ltd.,Financial Services,LTF,EQ,
+L&T Technology Services Ltd.,Information Technology,LTTS,EQ,
+LG Electronics India Ltd.,Consumer Durables,LGEINDIA,EQ,
+LIC Housing Finance Ltd.,Financial Services,LICHSGFIN,EQ,
+LT Foods Ltd.,Fast Moving Consumer Goods,LTFOODS,EQ,
+LTM Ltd.,Information Technology,LTM,EQ,
+Larsen & Toubro Ltd.,Construction,LT,EQ,
+Latent View Analytics Ltd.,Information Technology,LATENTVIEW,EQ,
+Laurus Labs Ltd.,Healthcare,LAURUSLABS,EQ,
+Laxmi Organic Industries Ltd.,Chemicals,LXCHEM,EQ,
+Le Travenues Technology Ltd.,Consumer Services,IXIGO,EQ,
+Leela Palaces Hotels & Resorts Ltd.,Consumer Services,THELEELA,EQ,
+Lemon Tree Hotels Ltd.,Consumer Services,LEMONTREE,EQ,
+Lenskart Solutions Ltd.,Consumer Services,LENSKART,EQ,
+Life Insurance Corporation of India,Financial Services,LICI,EQ,
+Linde India Ltd.,Chemicals,LINDEINDIA,EQ,
+Lloyds Engineering Works Ltd.,Capital Goods,LLOYDSENGG,EQ,
+Lloyds Enterprises Ltd.,Metals & Mining,LLOYDSENT,EQ,
+Lloyds Metals And Energy Ltd.,Metals & Mining,LLOYDSME,EQ,
+Lodha Developers Ltd.,Realty,LODHA,EQ,
+Lumax Auto Technologies Ltd.,Automobile and Auto Components,LUMAXTECH,EQ,
+Lupin Ltd.,Healthcare,LUPIN,EQ,
+MMTC Ltd.,Services,MMTC,EQ,
+MOIL Ltd.,Metals & Mining,MOIL,EQ,
+MRF Ltd.,Automobile and Auto Components,MRF,EQ,
+MSTC Ltd.,Services,MSTCLTD,EQ,
+MTAR Technologies Ltd.,Capital Goods,MTARTECH,BE,
+Mahanagar Gas Ltd.,Oil Gas & Consumable Fuels,MGL,EQ,
+Maharashtra Scooters Ltd.,Financial Services,MAHSCOOTER,EQ,
+Maharashtra Seamless Ltd.,Capital Goods,MAHSEAMLES,EQ,
+Mahindra & Mahindra Financial Services Ltd.,Financial Services,M&MFIN,EQ,
+Mahindra & Mahindra Ltd.,Automobile and Auto Components,M&M,EQ,
+Manappuram Finance Ltd.,Financial Services,MANAPPURAM,EQ,
+Mangalore Refinery & Petrochemicals Ltd.,Oil Gas & Consumable Fuels,MRPL,EQ,
+Mankind Pharma Ltd.,Healthcare,MANKIND,EQ,
+Manorama Industries Ltd.,Fast Moving Consumer Goods,MANORAMA,EQ,
+Marico Ltd.,Fast Moving Consumer Goods,MARICO,EQ,
+Marksans Pharma Ltd.,Healthcare,MARKSANS,EQ,
+Maruti Suzuki India Ltd.,Automobile and Auto Components,MARUTI,EQ,
+Mastek Ltd.,Information Technology,MASTEK,EQ,
+Max Financial Services Ltd.,Financial Services,MFSL,EQ,
+Max Healthcare Institute Ltd.,Healthcare,MAXHEALTH,EQ,
+Mazagoan Dock Shipbuilders Ltd.,Capital Goods,MAZDOCK,EQ,
+Medplus Health Services Ltd.,Consumer Services,MEDPLUS,EQ,
+Meesho Ltd.,Consumer Services,MEESHO,EQ,
+Metropolis Healthcare Ltd.,Healthcare,METROPOLIS,EQ,
+Minda Corporation Ltd.,Automobile and Auto Components,MINDACORP,EQ,
+Mishra Dhatu Nigam Ltd.,Capital Goods,MIDHANI,EQ,
+Motherson Sumi Wiring India Ltd.,Automobile and Auto Components,MSUMI,EQ,
+Motilal Oswal Financial Services Ltd.,Financial Services,MOTILALOFS,EQ,
+MphasiS Ltd.,Information Technology,MPHASIS,EQ,
+Mrs. Bectors Food Specialities Ltd.,Fast Moving Consumer Goods,BECTORFOOD,EQ,
+Multi Commodity Exchange of India Ltd.,Financial Services,MCX,EQ,
+Muthoot Finance Ltd.,Financial Services,MUTHOOTFIN,EQ,
+NATCO Pharma Ltd.,Healthcare,NATCOPHARM,EQ,
+NBCC (India) Ltd.,Construction,NBCC,EQ,
+NCC Ltd.,Construction,NCC,EQ,
+NEOGEN CHEMICALS LTD.,Chemicals,NEOGEN,EQ,
+NESCO Ltd.,Services,NESCO,EQ,
+NHPC Ltd.,Power,NHPC,EQ,
+NLC India Ltd.,Power,NLCINDIA,EQ,
+NMDC Ltd.,Metals & Mining,NMDC,EQ,
+NMDC Steel Ltd.,Metals & Mining,NSLNISP,EQ,
+NTPC Green Energy Ltd.,Power,NTPCGREEN,EQ,
+NTPC Ltd.,Power,NTPC,EQ,
+Narayana Hrudayalaya Ltd.,Healthcare,NH,EQ,
+National Aluminium Co. Ltd.,Metals & Mining,NATIONALUM,EQ,
+National Fertilizers Ltd.,Chemicals,NFL,EQ,
+Nava Ltd.,Power,NAVA,EQ,
+Navin Fluorine International Ltd.,Chemicals,NAVINFLUOR,EQ,
+Nazara Technologies Ltd.,Media Entertainment & Publication,NAZARA,EQ,
+Nestle India Ltd.,Fast Moving Consumer Goods,NESTLEIND,EQ,
+Netweb Technologies India Ltd.,Information Technology,NETWEB,EQ,
+Network18 Media & Investments Ltd.,Media Entertainment & Publication,NETWORK18,EQ,
+Neuland Laboratories Ltd.,Healthcare,NEULANDLAB,EQ,
+Newgen Software Technologies Ltd.,Information Technology,NEWGEN,EQ,
+Nippon Life India Asset Management Ltd.,Financial Services,NAM-INDIA,EQ,
+Niva Bupa Health Insurance Company Ltd.,Financial Services,NIVABUPA,EQ,
+Nuvama Wealth Management Ltd.,Financial Services,NUVAMA,EQ,
+Nuvoco Vistas Corporation Ltd.,Construction Materials,NUVOCO,EQ,
+Oberoi Realty Ltd.,Realty,OBEROIRLTY,EQ,
+Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,ONGC,EQ,
+Oil India Ltd.,Oil Gas & Consumable Fuels,OIL,EQ,
+Ola Electric Mobility Ltd.,Automobile and Auto Components,OLAELEC,EQ,
+Olectra Greentech Ltd.,Automobile and Auto Components,OLECTRA,EQ,
+One 97 Communications Ltd.,Financial Services,PAYTM,EQ,
+Onesource Specialty Pharma Ltd.,Healthcare,ONESOURCE,EQ,
+Optiemus Infracom Ltd.,Telecommunication,OPTIEMUS,EQ,
+Oracle Financial Services Software Ltd.,Information Technology,OFSS,EQ,
+Orient Cement Ltd.,Construction Materials,ORIENTCEM,EQ,
+Orkla India Ltd.,Fast Moving Consumer Goods,ORKLAINDIA,EQ,
+Oswal Pumps Ltd.,Capital Goods,OSWALPUMPS,EQ,
+P N Gadgil Jewellers Ltd.,Consumer Durables,PNGJL,EQ,
+PB Fintech Ltd.,Financial Services,POLICYBZR,EQ,
+PC Jeweller Ltd.,Consumer Durables,PCJEWELLER,EQ,
+PCBL Chemical Ltd.,Chemicals,PCBL,EQ,
+PG Electroplast Ltd.,Consumer Durables,PGEL,EQ,
+PI Industries Ltd.,Chemicals,PIIND,EQ,
+PNB Housing Finance Ltd.,Financial Services,PNBHOUSING,EQ,
+PNC Infratech Ltd.,Construction,PNCINFRA,EQ,
+PTC India Ltd.,Power,PTC,EQ,
+PTC Industries Ltd.,Capital Goods,PTCIL,EQ,
+PVR INOX Ltd.,Media Entertainment & Publication,PVRINOX,EQ,
+Page Industries Ltd.,Textiles,PAGEIND,EQ,
+Paradeep Phosphates Ltd.,Chemicals,PARADEEP,EQ,
+Paras Defence and Space Technologies Ltd.,Capital Goods,PARAS,EQ,
+Park Medi World Ltd.,Healthcare,PARKHOSPS,EQ,
+Patanjali Foods Ltd.,Fast Moving Consumer Goods,PATANJALI,EQ,
+Pearl Global Industries Ltd.,Textiles,PGIL,EQ,
+Persistent Systems Ltd.,Information Technology,PERSISTENT,EQ,
+Petronet LNG Ltd.,Oil Gas & Consumable Fuels,PETRONET,EQ,
+Pfizer Ltd.,Healthcare,PFIZER,EQ,
+Phoenix Mills Ltd.,Realty,PHOENIXLTD,EQ,
+Physicswallah Ltd.,Consumer Services,PWL,EQ,
+Piccadily Agro Industries Ltd.,Fast Moving Consumer Goods,PICCADIL,EQ,
+Pidilite Industries Ltd.,Chemicals,PIDILITIND,EQ,
+Pine Labs Ltd.,Financial Services,PINELABS,EQ,
+Piramal Finance Ltd.,Financial Services,PIRAMALFIN,EQ,
+Piramal Pharma Ltd.,Healthcare,PPLPHARMA,EQ,
+Poly Medicure Ltd.,Healthcare,POLYMED,EQ,
+Polycab India Ltd.,Capital Goods,POLYCAB,EQ,
+Poonawalla Fincorp Ltd.,Financial Services,POONAWALLA,EQ,
+Power Finance Corporation Ltd.,Financial Services,PFC,EQ,
+Power Grid Corporation of India Ltd.,Power,POWERGRID,EQ,
+Power Mech Projects Ltd.,Construction,POWERMECH,EQ,
+Praj Industries Ltd.,Capital Goods,PRAJIND,EQ,
+Premier Energies Ltd.,Capital Goods,PREMIERENE,EQ,
+Prestige Estates Projects Ltd.,Realty,PRESTIGE,EQ,
+Pricol Ltd.,Automobile and Auto Components,PRICOLLTD,EQ,
+Prime Focus Ltd.,Media Entertainment & Publication,PFOCUS,EQ,
+Prism Johnson Ltd.,Construction Materials,PRSMJOHNSN,EQ,
+Privi Speciality Chemicals Ltd.,Chemicals,PRIVISCL,EQ,
+Prudent Corporate Advisory Services Ltd.,Financial Services,PRUDENT,EQ,
+Punjab National Bank,Financial Services,PNB,EQ,
+Puravankara Ltd.,Realty,PURVA,EQ,
+QUALITY POWER ELECTRICAL EQUIPMENTS Ltd.,Capital Goods,QPOWER,EQ,
+Quess Corp Ltd.,Services,QUESS,EQ,
+R R Kabel Ltd.,Capital Goods,RRKABEL,EQ,
+RBL Bank Ltd.,Financial Services,RBLBANK,EQ,
+REC Ltd.,Financial Services,RECLTD,EQ,
+RHI MAGNESITA INDIA LTD.,Capital Goods,RHIM,EQ,
+RITES Ltd.,Construction,RITES,EQ,
+Radico Khaitan Ltd,Fast Moving Consumer Goods,RADICO,EQ,
+Rail Vikas Nigam Ltd.,Construction,RVNL,EQ,
+Railtel Corporation Of India Ltd.,Telecommunication,RAILTEL,EQ,
+Rain Industries Ltd,Chemicals,RAIN,EQ,
+Rainbow Childrens Medicare Ltd.,Healthcare,RAINBOW,EQ,
+Rallis India Ltd.,Chemicals,RALLIS,EQ,
+Ramkrishna Forgings Ltd.,Automobile and Auto Components,RKFORGE,EQ,
+Rashtriya Chemicals & Fertilizers Ltd.,Chemicals,RCF,EQ,
+Rategain Travel Technologies Ltd.,Information Technology,RATEGAIN,EQ,
+Ratnamani Metals & Tubes Ltd.,Capital Goods,RATNAMANI,EQ,
+RattanIndia Enterprises Ltd.,Consumer Services,RTNINDIA,EQ,
+RattanIndia Power Ltd.,Power,RTNPOWER,EQ,
+Raymond Lifestyle Ltd.,Textiles,RAYMONDLSL,EQ,
+Redington Ltd.,Services,REDINGTON,EQ,
+Redtape Ltd.,Consumer Durables,REDTAPE,EQ,
+Refex Industries Ltd.,Utilities,REFEX,EQ,
+Relaxo Footwears Ltd.,Consumer Durables,RELAXO,EQ,
+Reliance Industries Ltd.,Oil Gas & Consumable Fuels,RELIANCE,EQ,
+Reliance Power Ltd.,Power,RPOWER,EQ,
+Religare Enterprises Ltd.,Financial Services,RELIGARE,EQ,
+Restaurant Brands Asia Ltd.,Consumer Services,RBA,EQ,
+Route Mobile Ltd.,Telecommunication,ROUTE,EQ,
+Rubicon Research Ltd.,Healthcare,RUBICON,EQ,
+SBFC Finance Ltd.,Financial Services,SBFC,EQ,
+SBI Cards and Payment Services Ltd.,Financial Services,SBICARD,EQ,
+SBI Life Insurance Company Ltd.,Financial Services,SBILIFE,EQ,
+SJVN Ltd.,Power,SJVN,EQ,
+SKF India (Industrial) Ltd.,Capital Goods,SKFINDUS,EQ,
+SKF India Ltd.,Automobile and Auto Components,SKFINDIA,EQ,
+SKY GOLD AND DIAMONDS Ltd.,Consumer Durables,SKYGOLD,EQ,
+SML Mahindra Ltd.,Capital Goods,SMLMAH,EQ,
+SPR Auto Technologies Ltd.,Automobile and Auto Components,SHRIPISTON,EQ,
+SRF Ltd.,Chemicals,SRF,EQ,
+SRI LOTUS DEVELOPERS AND REALTY Ltd.,Realty,LOTUSDEV,BE,
+Saatvik Green Energy Ltd.,Capital Goods,SAATVIKGL,EQ,
+Safari Industries (India) Ltd.,Consumer Durables,SAFARI,EQ,
+Sagility Ltd.,Information Technology,SAGILITY,EQ,
+Sai Life Sciences Ltd.,Healthcare,SAILIFE,EQ,
+Samhi Hotels Ltd.,Consumer Services,SAMHI,EQ,
+Sammaan Capital Ltd.,Financial Services,SAMMAANCAP,EQ,
+Samvardhana Motherson International Ltd.,Automobile and Auto Components,MOTHERSON,EQ,
+Sandur Manganese & Iron Ores Ltd.,Metals & Mining,SANDUMA,EQ,
+Sanofi Consumer Healthcare India Ltd.,Healthcare,SANOFICONR,EQ,
+Sansera Engineering Ltd.,Automobile and Auto Components,SANSERA,EQ,
+Sapphire Foods India Ltd.,Consumer Services,SAPPHIRE,EQ,
+Sarda Energy and Minerals Ltd.,Metals & Mining,SARDAEN,EQ,
+Saregama India Ltd,Media Entertainment & Publication,SAREGAMA,EQ,
+Schaeffler India Ltd.,Automobile and Auto Components,SCHAEFFLER,EQ,
+Schneider Electric Infrastructure Ltd.,Capital Goods,SCHNEIDER,EQ,
+Senco Gold Ltd.,Consumer Durables,SENCO,EQ,
+Seshaasai Technologies Ltd.,Financial Services,STYL,EQ,
+Shaily Engineering Plastics Ltd.,Consumer Durables,SHAILY,EQ,
+Shakti Pumps (India) Ltd.,Capital Goods,SHAKTIPUMP,EQ,
+Sharda Cropchem Ltd.,Chemicals,SHARDACROP,EQ,
+Share India Securities Ltd.,Financial Services,SHAREINDIA,EQ,
+Sheela Foam Ltd.,Consumer Durables,SFL,EQ,
+Shilpa Medicare Ltd.,Healthcare,SHILPAMED,EQ,
+Shipping Corporation of India Ltd.,Services,SCI,EQ,
+Shree Cement Ltd.,Construction Materials,SHREECEM,EQ,
+Shree Renuka Sugars Ltd.,Fast Moving Consumer Goods,RENUKA,EQ,
+Shriram Finance Ltd.,Financial Services,SHRIRAMFIN,EQ,
+Shyam Metalics and Energy Ltd.,Capital Goods,SHYAMMETL,EQ,
+Siemens Energy India Ltd.,Capital Goods,ENRIN,EQ,
+Siemens Ltd.,Capital Goods,SIEMENS,EQ,
+Signatureglobal (India) Ltd.,Realty,SIGNATURE,EQ,
+Skipper Ltd.,Capital Goods,SKIPPER,EQ,
+Smartworks Coworking Spaces Ltd.,Services,SMARTWORKS,EQ,
+Sobha Ltd.,Realty,SOBHA,EQ,
+Solar Industries India Ltd.,Chemicals,SOLARINDS,EQ,
+Sona BLW Precision Forgings Ltd.,Automobile and Auto Components,SONACOMS,EQ,
+Sonata Software Ltd.,Information Technology,SONATSOFTW,EQ,
+South Indian Bank Ltd.,Financial Services,SOUTHBANK,EQ,
+Star Cement Ltd.,Construction Materials,STARCEMENT,EQ,
+Star Health and Allied Insurance Company Ltd.,Financial Services,STARHEALTH,EQ,
+State Bank of India,Financial Services,SBIN,EQ,
+Steel Authority of India Ltd.,Metals & Mining,SAIL,EQ,
+Sterling and Wilson Renewable Energy Ltd.,Construction,SWSOLAR,EQ,
+Sterlite Technologies Ltd.,Telecommunication,STLTECH,BE,
+Strides Pharma Science Ltd.,Healthcare,STAR,EQ,
+Styrenix Performance Materials Ltd.,Chemicals,STYRENIX,EQ,
+Subros Ltd.,Capital Goods,SUBROS,EQ,
+Sudarshan Chemical Industries Ltd.,Chemicals,SUDARSCHEM,EQ,
+Sudeep Pharma Ltd.,Chemicals,SUDEEPPHRM,EQ,
+Sumitomo Chemical India Ltd.,Chemicals,SUMICHEM,EQ,
+Sun Pharma Advanced Research Company Ltd.,Healthcare,SPARC,EQ,
+Sun Pharmaceutical Industries Ltd.,Healthcare,SUNPHARMA,EQ,
+Sun TV Network Ltd.,Media Entertainment & Publication,SUNTV,EQ,
+Sundaram Finance Ltd.,Financial Services,SUNDARMFIN,EQ,
+Sunteck Realty Ltd.,Realty,SUNTECK,EQ,
+Supreme Industries Ltd.,Capital Goods,SUPREMEIND,EQ,
+Supreme Petrochem Ltd.,Chemicals,SPLPETRO,EQ,
+Supriya Lifescience Ltd.,Healthcare,SUPRIYA,EQ,
+Surya Roshni Ltd.,Capital Goods,SURYAROSNI,EQ,
+Suzlon Energy Ltd.,Capital Goods,SUZLON,EQ,
+Swan Corp Ltd.,Chemicals,SWANCORP,EQ,
+Swiggy Ltd.,Consumer Services,SWIGGY,EQ,
+Syngene International Ltd.,Healthcare,SYNGENE,EQ,
+Syrma SGS Technology Ltd.,Capital Goods,SYRMA,EQ,
+TARC Ltd.,Realty,TARC,EQ,
+TBO Tek Ltd.,Consumer Services,TBOTEK,EQ,
+TD Power Systems Ltd.,Capital Goods,TDPOWERSYS,EQ,
+TSF Investments Ltd.,Financial Services,TSFINV,EQ,
+TVS Motor Company Ltd.,Automobile and Auto Components,TVSMOTOR,EQ,
+TVS Supply Chain Solutions Ltd.,Services,TVSSCS,EQ,
+Tamilnad Mercantile Bank Ltd.,Financial Services,TMB,EQ,
+Tanla Platforms Ltd.,Information Technology,TANLA,EQ,
+Tata Capital Ltd.,Financial Services,TATACAP,EQ,
+Tata Chemicals Ltd.,Chemicals,TATACHEM,EQ,
+Tata Communications Ltd.,Telecommunication,TATACOMM,EQ,
+Tata Consultancy Services Ltd.,Information Technology,TCS,EQ,
+Tata Consumer Products Ltd.,Fast Moving Consumer Goods,TATACONSUM,EQ,
+Tata Elxsi Ltd.,Information Technology,TATAELXSI,EQ,
+Tata Investment Corporation Ltd.,Financial Services,TATAINVEST,EQ,
+Tata Motors Ltd.,Capital Goods,TMCV,EQ,
+Tata Motors Passenger Vehicles Ltd.,Automobile and Auto Components,TMPV,EQ,
+Tata Power Co. Ltd.,Power,TATAPOWER,EQ,
+Tata Steel Ltd.,Metals & Mining,TATASTEEL,EQ,
+Tata Technologies Ltd.,Information Technology,TATATECH,EQ,
+Tata Teleservices (Maharashtra) Ltd.,Telecommunication,TTML,EQ,
+Tech Mahindra Ltd.,Information Technology,TECHM,EQ,
+Techno Electric & Engineering Company Ltd.,Construction,TECHNOE,EQ,
+Tega Industries Ltd.,Capital Goods,TEGA,EQ,
+Tejas Networks Ltd.,Telecommunication,TEJASNET,EQ,
+Tenneco Clean Air India Ltd.,Automobile and Auto Components,TENNIND,EQ,
+Texmaco Rail & Eng. Ltd.,Capital Goods,TEXRAIL,EQ,
+Thangamayil Jewellery Ltd.,Consumer Durables,THANGAMAYL,EQ,
+The Anup Engineering Ltd.,Capital Goods,ANUP,EQ,
+The New India Assurance Company Ltd.,Financial Services,NIACL,EQ,
+The Ramco Cements Ltd.,Construction Materials,RAMCOCEM,EQ,
+Thermax Ltd.,Capital Goods,THERMAX,EQ,
+Thomas Cook (India) Ltd.,Consumer Services,THOMASCOOK,EQ,
+Thyrocare Technologies Ltd.,Healthcare,THYROCARE,EQ,
+Tilaknagar Industries Ltd.,Fast Moving Consumer Goods,TI,EQ,
+Time Technoplast Ltd.,Capital Goods,TIMETECHNO,EQ,
+Timken India Ltd.,Capital Goods,TIMKEN,EQ,
+Tips Music Ltd.,Media Entertainment & Publication,TIPSMUSIC,EQ,
+Titagarh Rail Systems Ltd.,Capital Goods,TITAGARH,EQ,
+Titan Company Ltd.,Consumer Durables,TITAN,EQ,
+Torrent Pharmaceuticals Ltd.,Healthcare,TORNTPHARM,EQ,
+Torrent Power Ltd.,Power,TORNTPOWER,EQ,
+Transformers And Rectifiers (India) Ltd.,Capital Goods,TARIL,EQ,
+Transrail Lighting Ltd.,Capital Goods,TRANSRAILL,EQ,
+Travel Food Services Ltd.,Consumer Services,TRAVELFOOD,EQ,
+Trent Ltd.,Consumer Services,TRENT,EQ,
+Trident Ltd.,Textiles,TRIDENT,EQ,
+Triveni Engineering & Industries Ltd.,Fast Moving Consumer Goods,TRIVENI,EQ,
+Triveni Turbine Ltd.,Capital Goods,TRITURBINE,EQ,
+Tube Investments of India Ltd.,Automobile and Auto Components,TIINDIA,EQ,
+UCO Bank,Financial Services,UCOBANK,EQ,
+UNO Minda Ltd.,Automobile and Auto Components,UNOMINDA,EQ,
+UPL Ltd.,Chemicals,UPL,EQ,
+UTI Asset Management Company Ltd.,Financial Services,UTIAMC,EQ,
+Ujjivan Small Finance Bank Ltd.,Financial Services,UJJIVANSFB,EQ,
+UltraTech Cement Ltd.,Construction Materials,ULTRACEMCO,EQ,
+Union Bank of India,Financial Services,UNIONBANK,EQ,
+United Breweries Ltd.,Fast Moving Consumer Goods,UBL,EQ,
+United Spirits Ltd.,Fast Moving Consumer Goods,UNITDSPR,EQ,
+Urban Company Ltd.,Consumer Services,URBANCO,EQ,
+Usha Martin Ltd.,Capital Goods,USHAMART,EQ,
+V-Guard Industries Ltd.,Consumer Durables,VGUARD,EQ,
+V-Mart Retail Ltd.,Consumer Services,VMART,EQ,
+V.I.P. Industries Ltd.,Consumer Durables,VIPIND,EQ,
+V2 Retail Ltd.,Consumer Services,V2RETAIL,EQ,
+VALOR ESTATE Ltd.,Realty,DBREALTY,EQ,
+Va Tech Wabag Ltd.,Utilities,WABAG,EQ,
+Vaibhav Global Ltd.,Consumer Durables,VAIBHAVGBL,EQ,
+Vardhman Textiles Ltd.,Textiles,VTL,EQ,
+Varroc Engineering Ltd.,Automobile and Auto Components,VARROC,EQ,
+Varun Beverages Ltd.,Fast Moving Consumer Goods,VBL,EQ,
+Vedant Fashions Ltd.,Consumer Services,MANYAVAR,EQ,
+Vedanta Ltd.,Metals & Mining,VEDL,EQ,
+Vijaya Diagnostic Centre Ltd.,Healthcare,VIJAYA,EQ,
+Vikram Solar Ltd.,Capital Goods,VIKRAMSOLR,EQ,
+Vishal Mega Mart Ltd.,Consumer Services,VMM,EQ,
+Viyash Scientific Ltd.,Healthcare,VIYASH,EQ,
+Vodafone Idea Ltd.,Telecommunication,IDEA,EQ,
+Voltamp Transformers Ltd,Capital Goods,VOLTAMP,EQ,
+Voltas Ltd.,Consumer Durables,VOLTAS,EQ,
+Waaree Energies Ltd.,Capital Goods,WAAREEENER,EQ,
+Waaree Renewable Technologies Ltd.,Capital Goods,WAAREERTL,EQ,
+Wakefit Innovations Ltd.,Consumer Durables,WAKEFIT,EQ,
+WeWork India Management Ltd.,Services,WEWORK,EQ,
+Websol Energy System Ltd.,Capital Goods,WEBELSOLAR,EQ,
+Welspun Corp Ltd.,Capital Goods,WELCORP,EQ,
+Welspun Enterprises Ltd.,Construction,WELENT,EQ,
+Welspun Living Ltd.,Textiles,WELSPUNLIV,EQ,
+Westlife Foodworld Ltd.,Consumer Services,WESTLIFE,EQ,
+Whirlpool of India Ltd.,Consumer Durables,WHIRLPOOL,EQ,
+Wipro Ltd.,Information Technology,WIPRO,EQ,
+Wockhardt Ltd.,Healthcare,WOCKPHARMA,EQ,
+Yatharth Hospital & Trauma Care Services Ltd.,Healthcare,YATHARTH,EQ,
+Yes Bank Ltd.,Financial Services,YESBANK,EQ,
+ZF Commercial Vehicle Control Systems India Ltd.,Automobile and Auto Components,ZFCVINDIA,EQ,
+Zaggle Prepaid Ocean Services Ltd.,Information Technology,ZAGGLE,EQ,
+Zee Entertainment Enterprises Ltd.,Media Entertainment & Publication,ZEEL,EQ,
+Zen Technologies Ltd.,Capital Goods,ZENTEC,EQ,
+Zensar Technolgies Ltd.,Information Technology,ZENSARTECH,EQ,
+Zydus Lifesciences Ltd.,Healthcare,ZYDUSLIFE,EQ,
+Zydus Wellness Ltd.,Fast Moving Consumer Goods,ZYDUSWELL,EQ,
+eClerx Services Ltd.,Services,ECLERX,EQ,
+,Textiles & Apparel,PASHUPATI,,Pashupati Cotspin Ltd
+,Diversified / Microcap,20MICRONS,,20 Microns Limited
+,Diversified / Microcap,21STCENMGM,,21st Century Management Services Limited
+,Diversified / Microcap,3BBLACKBIO,,3B Blackbio Dx Limited
+,Diversified / Microcap,3IINFOLTD,,3i Infotech Limited
+,Diversified / Microcap,3PLAND,,3P Land Holdings Limited
+,Diversified / Microcap,5PAISA,,5Paisa Capital Limited
+,Diversified / Microcap,63MOONS,,63 moons technologies limited
+,Diversified / Microcap,A2ZINFRA,,A2Z Infra Engineering Limited
+,Diversified / Microcap,AAATECH,,AAA Technologies Limited
+,Diversified / Microcap,AAKASH,,Aakash Exploration Services Limited
+,Diversified / Microcap,AAREYDRUGS,,Aarey Drugs & Pharmaceuticals Limited
+,Diversified / Microcap,AARNAV,,Aarnav Fashions Limited
+,Diversified / Microcap,AARON,,Aaron Industries Limited
+,Diversified / Microcap,AARTECH,,Aartech Solonics Limited
+,Diversified / Microcap,AARTISURF,,Aarti Surfactants Limited
+,Diversified / Microcap,AARVI,,Aarvi Encon Limited
+,Diversified / Microcap,AASTHA,,Aastha Spintex Limited
+,Diversified / Microcap,ABAN,,Aban Offshore Limited
+,Diversified / Microcap,ABANSENT,,Abans Enterprises Limited
+,Diversified / Microcap,ABCOTS,,A B Cotspin India Limited
+,Diversified / Microcap,ABINFRA,,A B Infrabuild Limited
+,Diversified / Microcap,ABMINTLLTD,,ABM International Limited
+,Diversified / Microcap,ABMKNO,,ABM Knowledgeware Limited
+,Diversified / Microcap,ACCELYA,,Accelya Solutions India Limited
+,Diversified / Microcap,ACCURACY,,Accuracy Shipping Limited
+,Diversified / Microcap,ACEINTEG,,Ace Integrated Solutions Limited
+,Diversified / Microcap,ACEVECTOR,,AceVector Limited
+,Diversified / Microcap,ACGL,,Automobile Corporation of Goa Limited
+,Diversified / Microcap,ACL,,Andhra Cements Limited
+,Diversified / Microcap,ACSTECH,,ACS Technologies Limited
+,Diversified / Microcap,ADDIND,,Addi Industries Limited
+,Diversified / Microcap,ADFFOODS,,ADF Foods Limited
+,Diversified / Microcap,ADL,,Archidply Decor Limited
+,Diversified / Microcap,ADOR,,Ador Welding Limited
+,Diversified / Microcap,ADROITIND,,Adroit Industries (India) Limited
+,Diversified / Microcap,ADROITINFO,,Adroit Infotech Limited
+,Diversified / Microcap,ADSL,,Allied Digital Services Limited
+,Diversified / Microcap,ADVAIT,,Advait Energy Transitions Limited
+,Diversified / Microcap,ADVANCE,,Advance Agrolife Limited
+,Diversified / Microcap,ADVANIHOTR,,Advani Hotels & Resorts (India) Limited
+,Diversified / Microcap,ADVENTHTL,,Advent Hotels International Limited
+,Diversified / Microcap,ADVIKCA,,Advik Capital Limited
+,Diversified / Microcap,AEPL,,Artemis Electricals and Projects Limited
+,Diversified / Microcap,AEROENTER,,Aeroflex Enterprises Limited
+,Diversified / Microcap,AEROFLEX,,Aeroflex Industries Limited
+,Diversified / Microcap,AERONEU,,Aeroflex Neu Limited
+,Diversified / Microcap,AEROPLANE,,Amir Chand Jagdish Kumar (Exports) Limited
+,Diversified / Microcap,AFFORDABLE,,Affordable Robotic & Automation Limited
+,Diversified / Microcap,AFIL,,Akme Fintrade (India) Limited
+,Diversified / Microcap,AFSL,,Abans Financial Services Limited
+,Diversified / Microcap,AGARIND,,Agarwal Industrial Corporation Limited
+,Diversified / Microcap,AGASTYAEN,,Agastya Energy and Infrastructure Limited
+,Diversified / Microcap,AGI,,AGI Greenpac Limited
+,Diversified / Microcap,AGIIL,,Agi Infra Limited
+,Diversified / Microcap,AGL,,Allcargo Global Limited
+,Diversified / Microcap,AGOL,,Ashapuri Gold Ornament Limited
+,Diversified / Microcap,AGRITECH,,Agri-Tech (India) Limited
+,Diversified / Microcap,AGROPHOS,,Agro Phos India Limited
+,Diversified / Microcap,AHCL,,Anlon Healthcare Limited
+,Diversified / Microcap,AHLADA,,Ahlada Engineers Limited
+,Diversified / Microcap,AHLEAST,,Asian Hotels (East) Limited
+,Diversified / Microcap,AHLWEST,,Asian Hotels (West) Limited
+,Diversified / Microcap,AIRAN,,Airan Limited
+,Diversified / Microcap,AIROLAM,,Airo Lam limited
+,Diversified / Microcap,AJAXENGG,,Ajax Engineering Limited
+,Diversified / Microcap,AJMERA,,Ajmera Realty & Infra India Limited
+,Diversified / Microcap,AJOONI,,Ajooni Biotech Limited
+,Diversified / Microcap,AKASH,,Akash Infra-Projects Limited
+,Diversified / Microcap,AKCAPIT,,AK Capital Services Limited
+,Diversified / Microcap,AKG,,Akg Exim Limited
+,Diversified / Microcap,AKI,,AKI India Limited
+,Diversified / Microcap,AKSHAR,,Akshar Spintex Limited
+,Diversified / Microcap,AKSHARCHEM,,AksharChem India Limited
+,Diversified / Microcap,AKSHOPTFBR,,Aksh Optifibre Limited
+,Diversified / Microcap,ALANKIT,,Alankit Limited
+,Diversified / Microcap,ALBERTDAVD,,Albert David Limited
+,Diversified / Microcap,ALEMBICLTD,,Alembic Limited
+,Diversified / Microcap,ALFREDHE,,Alfred Herbert India Limited
+,Diversified / Microcap,ALGOQUANT,,Algoquant Fintech Limited
+,Diversified / Microcap,ALICON,,Alicon Castalloy Limited
+,Diversified / Microcap,ALKALI,,Alkali Metals Limited
+,Diversified / Microcap,ALLCARGO,,Allcargo Logistics Limited
+,Diversified / Microcap,ALLDIGI,,Alldigi Tech Limited
+,Diversified / Microcap,ALLTIME,,All Time Plastics Limited
+,Diversified / Microcap,ALMONDZ,,Almondz Global Securities Limited
+,Diversified / Microcap,ALPA,,Alpa Laboratories Limited
+,Diversified / Microcap,ALPHAGEO,,Alphageo (India) Limited
+,Diversified / Microcap,ALPINETEX,,Alpine Texworld Limited
+,Diversified / Microcap,ALUFLUOR,,Alufluoride Limited
+,Diversified / Microcap,AMAGI,,Amagi Media Labs Limited
+,Diversified / Microcap,AMAL,,Amal Limited
+,Diversified / Microcap,AMANTA,,Amanta Healthcare Limited
+,Diversified / Microcap,AMARJOTHI,,Amarjothi Spinning Mills Limited
+,Diversified / Microcap,AMBALALSA,,Ambalal Sarabhai Enterprises Limited
+,Diversified / Microcap,AMBICAAGAR,,Ambica Agarbathies & Aroma industries Limited
+,Diversified / Microcap,AMBIKCO,,Ambika Cotton Mills Limited
+,Diversified / Microcap,AMDIND,,AMD Industries Limited
+,Diversified / Microcap,AMJLAND,,Amj Land Holdings Limited
+,Diversified / Microcap,AMNPLST,,Amines & Plasticizers Limited
+,Diversified / Microcap,AMRUTANJAN,,Amrutanjan Health Care Limited
+,Diversified / Microcap,ANDHRAPAP,,ANDHRA PAPER LIMITED
+,Diversified / Microcap,ANDHRSUGAR,,The Andhra Sugars Limited
+,Diversified / Microcap,ANDREWYU,,Andrew Yule & Company Limited
+,Diversified / Microcap,ANIKINDS,,Anik Industries Limited
+,Diversified / Microcap,ANMOL,,Anmol India Limited
+,Diversified / Microcap,ANNAPURNA,,Annapurna Swadisht Limited
+,Diversified / Microcap,ANNU,,Annu Projects Limited
+,Diversified / Microcap,ANSALBU,,Ansal Buildwell Limited
+,Diversified / Microcap,ANTELOPUS,,Antelopus Selan Energy Limited
+,Diversified / Microcap,ANTGRAPHIC,,Antarctica Limited
+,Diversified / Microcap,ANUHPHR,,Anuh Pharma Limited
+,Diversified / Microcap,AONESTEELS,,A-One Steels India Limited
+,Diversified / Microcap,APCL,,Anjani Portland Cement Limited
+,Diversified / Microcap,APCOTEXIND,,Apcotex Industries Limited
+,Diversified / Microcap,APEX,,Apex Frozen Foods Limited
+,Diversified / Microcap,APOLLOPIPE,,Apollo Pipes Limited
+,Diversified / Microcap,APOLSINHOT,,Apollo Sindoori Hotels Limited
+,Diversified / Microcap,APOORVA,,Apoorva Leasing Finance and Investment Company Limited
+,Diversified / Microcap,APTECHT,,Aptech Limited
+,Diversified / Microcap,AQYLON,,Aqylon Nexus Limited
+,Diversified / Microcap,ARCHIDPLY,,Archidply Industries Limited
+,Diversified / Microcap,ARCHIES,,Archies Limited
+,Diversified / Microcap,ARCIL,,Asset Reconstruction Company (India) Limited
+,Diversified / Microcap,ARCL,,ARCL Organics Limited
+,Diversified / Microcap,ARDEE,,Ardee Industries Limited
+,Diversified / Microcap,ARENTERP,,Rajdarshan Industries Limited
+,Diversified / Microcap,ARFIN,,Arfin India Limited
+,Diversified / Microcap,ARHAM,,Arham Technologies Limited
+,Diversified / Microcap,ARIES,,Aries Agro Limited
+,Diversified / Microcap,ARIHANT,,Arihant Foundations & Housing Limited
+,Diversified / Microcap,ARIHANTCAP,,Arihant Capital Markets Limited
+,Diversified / Microcap,ARIHANTSUP,,Arihant Superstructures Limited
+,Diversified / Microcap,ARIS,,Arisinfra Solutions Limited
+,Diversified / Microcap,ARKADE,,Arkade Developers Limited
+,Diversified / Microcap,ARMANFIN,,Arman Financial Services Limited
+,Diversified / Microcap,ARMEE,,ArMee Infotech Limited
+,Diversified / Microcap,AROGRANITE,,Aro Granite Industries Limited
+,Diversified / Microcap,ARROWGREEN,,Arrow Greentech Limited
+,Diversified / Microcap,ARSSBL,,Anand Rathi Share and Stock Brokers Limited
+,Diversified / Microcap,ARTEMISMED,,Artemis Medicare Services Limited
+,Diversified / Microcap,ARTNIRMAN,,Art Nirman Limited
+,Diversified / Microcap,ARVEE,,Arvee Laboratories (India) Limited
+,Diversified / Microcap,ARVSMART,,Arvind SmartSpaces Limited
+,Diversified / Microcap,ARYAMAN,,Aryaman Financial Services Limited
+,Diversified / Microcap,ASAHISONG,,Asahi Songwon Colors Limited
+,Diversified / Microcap,ASAL,,Automotive Stampings and Assemblies Limited
+,Diversified / Microcap,ASALCBR,,Associated Alcohols & Breweries Ltd.
+,Diversified / Microcap,ASHIANA,,Ashiana Housing Limited
+,Diversified / Microcap,ASHIKAG,,Ashika Global Securities Limited
+,Diversified / Microcap,ASHIMASYN,,Ashima Limited
+,Diversified / Microcap,ASHOKAMET,,Ashoka Metcast Limited
+,Diversified / Microcap,ASIANENE,,Asian Energy Services Limited
+,Diversified / Microcap,ASIANHOTNR,,Asian Hotels (North) Limited
+,Diversified / Microcap,ASIANTILES,,Asian Granito India Limited
+,Diversified / Microcap,ASIANTNE,,Asian Tea & Exports Limited
+,Diversified / Microcap,ASMS,,Avio Smart Market Stack Limited
+,Diversified / Microcap,ASPINWALL,,Aspinwall and Company Limited
+,Diversified / Microcap,ASSAMENT,,Assam Entrade Limited
+,Diversified / Microcap,ASTAR,,Asian Star Company Limited
+,Diversified / Microcap,ASTEC,,Astec LifeSciences Limited
+,Diversified / Microcap,ASTRAZEN,,AstraZeneca Pharma India Limited
+,Diversified / Microcap,ATALREAL,,Atal Realtech Limited
+,Diversified / Microcap,ATAM,,Atam Valves Limited
+,Diversified / Microcap,ATL,,Allcargo Terminals Limited
+,Diversified / Microcap,ATLANTAA,,ATLANTAA LIMITED
+,Diversified / Microcap,ATLASCYCLE,,Atlas Cycles (Haryana) Limited
+,Diversified / Microcap,ATULAUTO,,Atul Auto Limited
+,Diversified / Microcap,AUGMONT,,Augmont Enterprises Limited
+,Diversified / Microcap,AURUM,,Aurum PropTech Limited
+,Diversified / Microcap,AURUS,,AURUS GEM CORPORATION LIMITED
+,Diversified / Microcap,AUSOMENT,,Ausom Enterprise Limited
+,Diversified / Microcap,AUSTENG,,Austin Engineering Company  Limited
+,Diversified / Microcap,AUTOAXLES,,Automotive Axles Limited
+,Diversified / Microcap,AUTOIND,,Autoline Industries Limited
+,Diversified / Microcap,AVADHSUGAR,,Avadh Sugar & Energy Limited
+,Diversified / Microcap,AVANCE,,Avance Technologies Limited
+,Diversified / Microcap,AVANTEL,,Avantel Limited
+,Diversified / Microcap,AVG,,AVG Logistics Limited
+,Diversified / Microcap,AVONMORE,,Avonmore Capital & Management Services Limited
+,Diversified / Microcap,AVROIND,,AVRO INDIA LIMITED
+,Diversified / Microcap,AVTNPL,,AVT Natural Products Limited
+,Diversified / Microcap,AWHCL,,Antony Waste Handling Cell Limited
+,Diversified / Microcap,AXITA,,Axita Cotton Limited
+,Diversified / Microcap,AXTEL,,Axtel Industries Limited
+,Diversified / Microcap,AYE,,Aye Finance Limited
+,Diversified / Microcap,AYMSYNTEX,,AYM Syntex Limited
+,Diversified / Microcap,AZADIND,,Azad India Mobility Limited
+,Diversified / Microcap,BAFNAPH,,Bafna Pharmaceuticals Limited
+,Diversified / Microcap,BAGFILMS,,B.A.G Films and Media Limited
+,Diversified / Microcap,BAIDFIN,,Baid Finserv Limited
+,Diversified / Microcap,BAJAJCON,,Bajaj Consumer Care Limited
+,Diversified / Microcap,BAJAJHCARE,,Bajaj Healthcare Limited
+,Diversified / Microcap,BAJAJHIND,,Bajaj Hindusthan Sugar Limited
+,Diversified / Microcap,BAJAJINDEF,,Indef Manufacturing Limited
+,Diversified / Microcap,BAJAJST,,Bajaj Steel Industries Limited
+,Diversified / Microcap,BAJEL,,Bajel Projects Limited
+,Diversified / Microcap,BALAJEE,,Shree Tirupati Balajee Agro Trading Company Limited
+,Diversified / Microcap,BALAJITELE,,Balaji Telefilms Limited
+,Diversified / Microcap,BALAXI,,BALAXI PHARMACEUTICALS LIMITED
+,Diversified / Microcap,BALKRISHNA,,Balkrishna Paper Mills Limited
+,Diversified / Microcap,BALMLAWRIE,,Balmer Lawrie & Company Limited
+,Diversified / Microcap,BALPHARMA,,Bal Pharma Limited
+,Diversified / Microcap,BANARBEADS,,Banaras Beads Limited
+,Diversified / Microcap,BANARISUG,,Bannari Amman Sugars Limited
+,Diversified / Microcap,BANG,,Bang Overseas Limited
+,Diversified / Microcap,BANKA,,Banka BioLoo Limited
+,Diversified / Microcap,BANSALWIRE,,Bansal Wire Industries Limited
+,Diversified / Microcap,BANSWRAS,,Banswara Syntex Limited
+,Diversified / Microcap,BASF,,BASF India Limited
+,Diversified / Microcap,BASML,,Bannari Amman Spinning Mills Limited
+,Diversified / Microcap,BATLIBOI,,Batliboi Limited
+,Diversified / Microcap,BBL,,Bharat Bijlee Limited
+,Diversified / Microcap,BBTCL,,B&B Triplewall Containers Limited
+,Diversified / Microcap,BCG,,Brightcom Group Limited
+,Diversified / Microcap,BCLIND,,Bcl Industries Limited
+,Diversified / Microcap,BCONCEPTS,,Brand Concepts Limited
+,Diversified / Microcap,BCPL,,BCPL Railway Infrastructure Limited
+,Diversified / Microcap,BEARDSELL,,Beardsell Limited
+,Diversified / Microcap,BEDMUTHA,,Bedmutha Industries Limited
+,Diversified / Microcap,BEEKAY,,Beekay Steel Industries Limited
+,Diversified / Microcap,BELDING,,Belding India Limited
+,Diversified / Microcap,BELLACASA,,Bella Casa Fashion & Retail Limited
+,Diversified / Microcap,BENARAS,,Benares Hotels Limited
+,Diversified / Microcap,BENGALASM,,Bengal & Assam Company Limited
+,Diversified / Microcap,BEPL,,Bhansali Engineering Polymers Limited
+,Diversified / Microcap,BESTAGRO,,Best Agrolife Limited
+,Diversified / Microcap,BETA,,Beta Drugs Limited
+,Diversified / Microcap,BFINVEST,,BF Investment Limited
+,Diversified / Microcap,BFUTILITIE,,BF Utilities Limited
+,Diversified / Microcap,BGRENERGY,,BGR Energy Systems Limited
+,Diversified / Microcap,BHAGCHEM,,Bhagiradha Chemicals & Industries Limited
+,Diversified / Microcap,BHAGERIA,,Bhageria Industries Limited
+,Diversified / Microcap,BHAGYANGR,,Bhagyanagar India Limited
+,Diversified / Microcap,BHANDARI,,Bhandari Hosiery Exports Limited
+,Diversified / Microcap,BHARATCOAL,,Bharat Coking Coal Limited
+,Diversified / Microcap,BHARATGEAR,,Bharat Gears Limited
+,Diversified / Microcap,BHARATRAS,,Bharat Rasayan Limited
+,Diversified / Microcap,BHARATSE,,Bharat Seats Limited
+,Diversified / Microcap,BHARATWIRE,,Bharat Wire Ropes Limited
+,Diversified / Microcap,BI,,Bilcare Limited
+,Diversified / Microcap,BIGBLOC,,Bigbloc Construction Limited
+,Diversified / Microcap,BIL,,Bhartiya International Limited
+,Diversified / Microcap,BILVYAPAR,,BIL VYAPAR LIMITED
+,Diversified / Microcap,BIMETAL,,Bimetal Bearings Limited
+,Diversified / Microcap,BIOFILCHEM,,Biofil Chemicals & Pharmaceuticals Limited
+,Diversified / Microcap,BIRLACABLE,,Birla Cable Limited
+,Diversified / Microcap,BIRLAMONEY,,Aditya Birla Money Limited
+,Diversified / Microcap,BIRLANU,,BirlaNu Limited
+,Diversified / Microcap,BIRLAPREC,,Birla Precision Technologies Limited
+,Diversified / Microcap,BLACKROSE,,Black Rose Inds. Limited
+,Diversified / Microcap,BLAL,,BEML Land Assets Limited
+,Diversified / Microcap,BLBLIMITED,,BLB Limited
+,Diversified / Microcap,BLEL,,Behari Lal Engineering Limited
+,Diversified / Microcap,BLIL,,Balmer Lawrie Investments Limited
+,Diversified / Microcap,BLISSGVS,,Bliss GVS Pharma Limited
+,Diversified / Microcap,BLKASHYAP,,B. L. Kashyap and Sons Limited
+,Diversified / Microcap,BLSE,,BLS E-Services Limited
+,Diversified / Microcap,BLUECHIP,,Blue Chip India Limited
+,Diversified / Microcap,BLUECLOUDS,,Blue Cloud Softech Solutions Limited
+,Diversified / Microcap,BLUECOAST,,Blue Coast Hotels Limited
+,Diversified / Microcap,BLUSPRING,,Bluspring Enterprises Limited
+,Diversified / Microcap,BMWVENTLTD,,BMW Ventures Limited
+,Diversified / Microcap,BNAGROCHEM,,BN Agrochem Limited
+,Diversified / Microcap,BNALTD,,B & A Limited
+,Diversified / Microcap,BODALCHEM,,Bodal Chemicals Limited
+,Diversified / Microcap,BOHRAIND,,Bohra Industries Limited
+,Diversified / Microcap,BOMDYEING,,Bombay Dyeing & Mfg Company Limited
+,Diversified / Microcap,BONDADA,,Bondada Engineering Limited
+,Diversified / Microcap,BONFIG,,Bonfiglioli Transmissions Limited
+,Diversified / Microcap,BONLON,,Bonlon Industries Limited
+,Diversified / Microcap,BORANA,,Borana Weaves Limited
+,Diversified / Microcap,BOROLTD,,Borosil Limited
+,Diversified / Microcap,BOROSCI,,Borosil Scientific Limited
+,Diversified / Microcap,BOSCH-HCIL,,BOSCH HOME COMFORT INDIA LIMITED
+,Diversified / Microcap,BPL,,BPL Limited
+,Diversified / Microcap,BPLPHARMA,,Bharat Parenterals Limited
+,Diversified / Microcap,BRAHMINFRA,,Brahmaputra Infrastructure Limited
+,Diversified / Microcap,BRIGHOTEL,,Brigade Hotel Ventures Limited
+,Diversified / Microcap,BRIGHTBR,,Bright Brothers Limited
+,Diversified / Microcap,BRNL,,Bharat Road Network Limited
+,Diversified / Microcap,BROOKS,,Brooks Laboratories Limited
+,Diversified / Microcap,BSHSL,,Bombay Super Hybrid Seeds Limited
+,Diversified / Microcap,BSL,,BSL Limited
+,Diversified / Microcap,BTML,,Bodhi Tree Multimedia Limited
+,Diversified / Microcap,BTTL,,Bhilwara Technical Textiles Limited
+,Diversified / Microcap,BUILDPRO,,Shankara Buildpro Limited
+,Diversified / Microcap,BURNPUR,,Burnpur Cement Limited
+,Diversified / Microcap,BUTTERFLY,,Butterfly Gandhimathi Appliances Limited
+,Diversified / Microcap,BVCL,,Barak Valley Cements Limited
+,Diversified / Microcap,BYKE,,The Byke Hospitality Ltd
+,Diversified / Microcap,CALSOFT,,California Software Company Limited
+,Diversified / Microcap,CAMLINFINE,,Camlin Fine Sciences Limited
+,Diversified / Microcap,CANTABIL,,Cantabil Retail India Limited
+,Diversified / Microcap,CAPACITE,,Capacit'e Infraprojects Limited
+,Diversified / Microcap,CAPITALSFB,,Capital Small Finance Bank Limited
+,Diversified / Microcap,CAPTRUST,,Capital Trust Limited
+,Diversified / Microcap,CARERATING,,CARE Ratings Limited
+,Diversified / Microcap,CARRARO,,Carraro India Limited
+,Diversified / Microcap,CARYSIL,,CARYSIL LIMITED
+,Diversified / Microcap,CCCL,,Consolidated Construction Consortium Limited
+,Diversified / Microcap,CCHHL,,Country Club Hospitality & Holidays Limited
+,Diversified / Microcap,CEIGALL,,Ceigall India Limited
+,Diversified / Microcap,CEINSYS,,Ceinsys Tech Limited
+,Diversified / Microcap,CELEBRITY,,Celebrity Fashions Limited
+,Diversified / Microcap,CENTENKA,,Century Enka Limited
+,Diversified / Microcap,CENTEXT,,Century Extrusions Limited
+,Diversified / Microcap,CENTRUM,,Centrum Capital Limited
+,Diversified / Microcap,CENTUM,,Centum Electronics Limited
+,Diversified / Microcap,CEWATER,,Concord Enviro Systems Limited
+,Diversified / Microcap,CFEL,,Confidence Futuristic Energetech Limited
+,Diversified / Microcap,CGVAK,,CG Vak Software & Exports Limited
+,Diversified / Microcap,CHEMBOND,,Chembond Material Technologies Limited
+,Diversified / Microcap,CHEMBONDCH,,Chembond Chemicals Limited
+,Diversified / Microcap,CHEMCON,,Chemcon Speciality Chemicals Limited
+,Diversified / Microcap,CHEMCRUX,,Chemcrux Enterprises Limited
+,Diversified / Microcap,CHEMFAB,,Chemfab Alkalis Limited
+,Diversified / Microcap,CHEMPLASTS,,Chemplast Sanmar Limited
+,Diversified / Microcap,CHEVIOT,,Cheviot Company Limited
+,Diversified / Microcap,CIFL,,Capital India Finance Limited
+,Diversified / Microcap,CINELINE,,Cineline India Limited
+,Diversified / Microcap,CINEVISTA,,Cinevista Limited
+,Diversified / Microcap,CLEANMAX,,Clean Max Enviro Energy Solutions Limited
+,Diversified / Microcap,CLEDUCATE,,CL Educate Limited
+,Diversified / Microcap,CLSEL,,Chaman Lal Setia Exports Limited
+,Diversified / Microcap,CMLL,,Caliber Mining and Logistics Limited
+,Diversified / Microcap,CMPDI,,Central Mine Planning & Design Institute Limited
+,Diversified / Microcap,CMRGREEN,,CMR Green Technologies Limited
+,Diversified / Microcap,CNL,,Creative Newtech Limited
+,Diversified / Microcap,COASTCORP,,Coastal Corporation Limited
+,Diversified / Microcap,COCKERILL,,John Cockerill India Limited
+,Diversified / Microcap,COFFEEDAY,,Coffee Day Enterprises Limited
+,Diversified / Microcap,COMFINTE,,Comfort Intech Limited
+,Diversified / Microcap,COMPEAU,,Competent Automobiles Company Limited
+,Diversified / Microcap,COMPUSOFT,,Compucom Software Limited
+,Diversified / Microcap,COMSYN,,Commercial Syn Bags Limited
+,Diversified / Microcap,CONFIPET,,Confidence Petroleum India Limited
+,Diversified / Microcap,CONSOFINVT,,Consolidated Finvest & Holdings Limited
+,Diversified / Microcap,CONTROLPR,,Control Print Limited
+,Diversified / Microcap,CORALFINAC,,Coral India Finance & Housing Limited
+,Diversified / Microcap,CORDELIA,,Waterways Leisure Tourism Limited
+,Diversified / Microcap,CORDSCABLE,,Cords Cable Industries Limited
+,Diversified / Microcap,COSMOFIRST,,COSMO FIRST LIMITED
+,Diversified / Microcap,COUNCODOS,,Country Condo's Limited
+,Diversified / Microcap,CPCAP,,CP Capital Limited
+,Diversified / Microcap,CPEDU,,Career Point Edutech Limited
+,Diversified / Microcap,CPL,,Captain Polyplast Limited
+,Diversified / Microcap,CRAVATEX,,Cravatex Limited
+,Diversified / Microcap,CREATIVEYE,,Creative Eye Limited
+,Diversified / Microcap,CREST,,Crest Ventures Limited
+,Diversified / Microcap,CRESTO,,CRESTO TECHNO LIMITED
+,Diversified / Microcap,CROWN,,Crown Lifters Limited
+,Diversified / Microcap,CSLFINANCE,,CSL Finance Limited
+,Diversified / Microcap,CSM,,CSM Technologies Limited
+,Diversified / Microcap,CTE,,Cambridge Technology Enterprises Limited
+,Diversified / Microcap,CUBEXTUB,,Cubex Tubings Limited
+,Diversified / Microcap,CURAA,,Cura Technologies Limited
+,Diversified / Microcap,CYBERMEDIA,,Cyber Media (India) Limited
+,Diversified / Microcap,CYBERTECH,,Cybertech Systems And Software Limited
+,Diversified / Microcap,CYIENTDLM,,Cyient DLM Limited
+,Diversified / Microcap,DAICHI,,Dai-Ichi Karkaria Limited
+,Diversified / Microcap,DALMIASUG,,Dalmia Bharat Sugar and Industries Limited
+,Diversified / Microcap,DAMCAPITAL,,Dam Capital Advisors Limited
+,Diversified / Microcap,DAMODARIND,,Damodar Industries Limited
+,Diversified / Microcap,DANGEE,,Dangee Dums Limited
+,Diversified / Microcap,DAVANGERE,,Davangere Sugar Company Limited
+,Diversified / Microcap,DBCORP,,D.B.Corp Limited
+,Diversified / Microcap,DBEIL,,Deepak Builders & Engineers India Limited
+,Diversified / Microcap,DBOL,,Dhampur Bio Organics Limited
+,Diversified / Microcap,DBSTOCKBRO,,DB (International) Stock Brokers Limited
+,Diversified / Microcap,DCAL,,Dishman Carbogen Amcis Limited
+,Diversified / Microcap,DCI,,Dc Infotech And Communication Limited
+,Diversified / Microcap,DCM,,DCM  Limited
+,Diversified / Microcap,DCMFINSERV,,DCM Financial Services Limited
+,Diversified / Microcap,DCMNVL,,DCM Nouvelle Limited
+,Diversified / Microcap,DCMSIL,,DCM Shriram International Limited
+,Diversified / Microcap,DCMSRIND,,DCM Shriram Industries Limited
+,Diversified / Microcap,DCW,,DCW Limited
+,Diversified / Microcap,DCXINDIA,,DCX Systems Limited
+,Diversified / Microcap,DDEVPLSTIK,,Ddev Plastiks Industries Limited
+,Diversified / Microcap,DECCANCE,,Deccan Cements Limited
+,Diversified / Microcap,DECNGOLD,,Deccan Gold Mines Limited
+,Diversified / Microcap,DEEDEV,,DEE Development Engineers Limited
+,Diversified / Microcap,DEEP,,Deep Polymers Limited
+,Diversified / Microcap,DEEPA,,Deepa Jewellers Limited
+,Diversified / Microcap,DEEPINDS,,Deep Industries Limited
+,Diversified / Microcap,DELPHIFX,,DELPHI WORLD MONEY LIMITED
+,Diversified / Microcap,DELTACORP,,Delta Corp Limited
+,Diversified / Microcap,DELTAMAGNT,,Delta Manufacturing Limited
+,Diversified / Microcap,DEN,,Den Networks Limited
+,Diversified / Microcap,DENORA,,De Nora India Limited
+,Diversified / Microcap,DENTA,,Denta Water and Infra Solutions Limited
+,Diversified / Microcap,DEVIT,,Dev Information Technology Limited
+,Diversified / Microcap,DEVX,,Dev Accelerator Limited
+,Diversified / Microcap,DGCONTENT,,Digicontent Limited
+,Diversified / Microcap,DHABRIYA,,Dhabriya Polywood Limited
+,Diversified / Microcap,DHAMPURSUG,,Dhampur Sugar Mills Limited
+,Diversified / Microcap,DHANBANK,,Dhanlaxmi Bank Limited
+,Diversified / Microcap,DHANUKA,,Dhanuka Agritech Limited
+,Diversified / Microcap,DHARMAJ,,Dharmaj Crop Guard Limited
+,Diversified / Microcap,DHATRE,,Dhatre Udyog Limited
+,Diversified / Microcap,DHOOTTRANS,,Dhoot Transmission Limited
+,Diversified / Microcap,DHRUV,,Dhruv Consultancy Services Limited
+,Diversified / Microcap,DHUNINV,,Dhunseri Investments Limited
+,Diversified / Microcap,DIAMINESQ,,Diamines & Chemicals Limited
+,Diversified / Microcap,DIAMONDYD,,Prataap Snacks Limited
+,Diversified / Microcap,DICIND,,DIC India Limited
+,Diversified / Microcap,DIFFNKG,,Diffusion Engineers Limited
+,Diversified / Microcap,DIGIDRIVE,,Digidrive Distributors Limited
+,Diversified / Microcap,DIGISPICE,,DiGiSPICE Technologies Limited
+,Diversified / Microcap,DIGITIDE,,Digitide Solutions Limited
+,Diversified / Microcap,DIGJAMLMTD,,Digjam Limited
+,Diversified / Microcap,DISAQ,,Disa India Limited
+,Diversified / Microcap,DISHTV,,Dish TV India Limited
+,Diversified / Microcap,DIVGIITTS,,Divgi Torqtransfer Systems Limited
+,Diversified / Microcap,DJML,,DJ Mediaprint & Logistics Limited
+,Diversified / Microcap,DLINKINDIA,,D-Link (India) Limited
+,Diversified / Microcap,DMCC,,DMCC SPECIALITY CHEMICALS LIMITED
+,Diversified / Microcap,DNAMEDIA,,Diligent Media Corporation Limited
+,Diversified / Microcap,DODLA,,Dodla Dairy Limited
+,Diversified / Microcap,DOLATALGO,,Dolat Algotech Limited
+,Diversified / Microcap,DOLLAR,,Dollar Industries Limited
+,Diversified / Microcap,DOLLEX,,Dollex Agrotech Limited
+,Diversified / Microcap,DOLPHIN,,Dolphin Offshore Enterprises (India) Limited
+,Diversified / Microcap,DONEAR,,Donear Industries Limited
+,Diversified / Microcap,DPABHUSHAN,,D. P. Abhushan Limited
+,Diversified / Microcap,DPSCLTD,,DPSC Limited
+,Diversified / Microcap,DPWIRES,,D P Wires Limited
+,Diversified / Microcap,DRAGARWQ,,Dr Agarwals Eye Hospital Limited
+,Diversified / Microcap,DRCSYSTEMS,,DRC Systems India Limited
+,Diversified / Microcap,DREAMFOLKS,,Dreamfolks Services Limited
+,Diversified / Microcap,DREDGECORP,,Dredging Corporation of India Limited
+,Diversified / Microcap,DSFCL,,DCM Shriram Fine Chemicals Limited
+,Diversified / Microcap,DSKULKARNI,,DS Kulkarni Developers Limited
+,Diversified / Microcap,DSSL,,Dynacons Systems & Solutions Limited
+,Diversified / Microcap,DTIL,,Dhunseri Tea & Industries Limited
+,Diversified / Microcap,DUCON,,Ducon Infratechnologies Limited
+,Diversified / Microcap,DVL,,Dhunseri Ventures Limited
+,Diversified / Microcap,DWARKESH,,Dwarikesh Sugar Industries Limited
+,Diversified / Microcap,DYCL,,Dynamic Cables Limited
+,Diversified / Microcap,DYNPRO,,Dynemic Products Limited
+,Diversified / Microcap,E2E,,E2E Networks Limited
+,Diversified / Microcap,EASEMYTRIP,,Easy Trip Planners Limited
+,Diversified / Microcap,EASTSILK,,Eastern Silk Industries Limited
+,Diversified / Microcap,EASTWEST,,East West Freight Carriers Limited
+,Diversified / Microcap,EBGNG,,GNG Electronics Limited
+,Diversified / Microcap,EBIX,,EBIX Limited
+,Diversified / Microcap,ECORECO,,Eco Recycling Limited
+,Diversified / Microcap,ECOSMOBLTY,,Ecos (India) Mobility & Hospitality Limited
+,Diversified / Microcap,EFCIL,,EFC (I) Limited
+,Diversified / Microcap,EIFFL,,Euro India Fresh Foods Limited
+,Diversified / Microcap,EIHAHOTELS,,EIH Associated Hotels Limited
+,Diversified / Microcap,EIMCOELECO,,Eimco Elecon (India) Limited
+,Diversified / Microcap,EKC,,Everest Kanto Cylinder Limited
+,Diversified / Microcap,EKI,,EKI Energy Services Limited
+,Diversified / Microcap,ELANTAS,,Elantas Beck India Limited
+,Diversified / Microcap,ELCIDIN,,EL CID Investments Limited
+,Diversified / Microcap,ELDEHSG,,Eldeco Housing And Industries Limited
+,Diversified / Microcap,ELECTHERM,,Electrotherm (India) Limited
+,Diversified / Microcap,ELEVATE,,Elevate Campuses Limited
+,Diversified / Microcap,ELGIRUBCO,,Elgi Rubber Company Limited
+,Diversified / Microcap,ELIN,,Elin Electronics Limited
+,Diversified / Microcap,ELITECON,,Elitecon International Limited
+,Diversified / Microcap,ELPROINTL,,Elpro International Limited
+,Diversified / Microcap,EMAMIPAP,,Emami Paper Mills Limited
+,Diversified / Microcap,EMAMIREAL,,Emami Realty Limited
+,Diversified / Microcap,EMKAY,,Emkay Global Financial Services Limited
+,Diversified / Microcap,EMMBI,,Emmbi Industries Limited
+,Diversified / Microcap,EMPIND,,Empire Industries Limited
+,Diversified / Microcap,EMPOWER,,Empower India Limited
+,Diversified / Microcap,EMSLIMITED,,EMS Limited
+,Diversified / Microcap,EMUDHRA,,eMudhra Limited
+,Diversified / Microcap,ENERGYDEV,,Energy Development Company Limited
+,Diversified / Microcap,ENIL,,Entertainment Network (India) Limited
+,Diversified / Microcap,ENKEIWHEL,,Enkei Wheels (India) Limited
+,Diversified / Microcap,EPACK,,EPACK Durable Limited
+,Diversified / Microcap,EPACKPEB,,EPack Prefab Technologies Limited
+,Diversified / Microcap,EPIGRAL,,Epigral Limited
+,Diversified / Microcap,EQUIPPP,,Equippp Social Impact Technologies Limited
+,Diversified / Microcap,ESABINDIA,,Esab India Limited
+,Diversified / Microcap,ESAFSFB,,ESAF Small Finance Bank Limited
+,Diversified / Microcap,ESDS,,ESDS Software Solution Limited
+,Diversified / Microcap,ESSARSHPNG,,Essar Shipping Limited
+,Diversified / Microcap,ESSENTIA,,Integra Essentia Limited
+,Diversified / Microcap,ESTER,,Ester Industries Limited
+,Diversified / Microcap,EUROBOND,,Euro Panel Products Limited
+,Diversified / Microcap,EUROPRATIK,,Euro Pratik Sales Limited
+,Diversified / Microcap,EUROTEXIND,,Eurotex Industries and Exports Limited
+,Diversified / Microcap,EVEREADY,,Eveready Industries India Limited
+,Diversified / Microcap,EVERESTIND,,Everest Industries Limited
+,Diversified / Microcap,EXCELINDUS,,Excel Industries Limited
+,Diversified / Microcap,EXCELSOFT,,Excelsoft Technologies Limited
+,Diversified / Microcap,EXICOM,,Exicom Tele-Systems Limited
+,Diversified / Microcap,EXPLEOSOL,,Expleo Solutions Limited
+,Diversified / Microcap,EXXARO,,Exxaro Tiles Limited
+,Diversified / Microcap,FABTECH,,Fabtech Technologies Limited
+,Diversified / Microcap,FAIRCHEMOR,,Fairchem Organics Limited
+,Diversified / Microcap,FAZE3Q,,Faze Three Limited
+,Diversified / Microcap,FCL,,Fineotex Chemical Limited
+,Diversified / Microcap,FCSSOFT,,FCS Software Solutions Limited
+,Diversified / Microcap,FDC,,FDC Limited
+,Diversified / Microcap,FEDDERSHOL,,Fedders Holding Limited
+,Diversified / Microcap,FERMENTA,,Fermenta Biotech Limited
+,Diversified / Microcap,FIBERWEB,,Fiberweb (India) Limited
+,Diversified / Microcap,FILATEX,,Filatex India Limited
+,Diversified / Microcap,FILATFASH,,Filatex Fashions Limited
+,Diversified / Microcap,FINEORG,,Fine Organic Industries Limited
+,Diversified / Microcap,FINKURVE,,Finkurve Financial Services Limited
+,Diversified / Microcap,FINOPB,,Fino Payments Bank Limited
+,Diversified / Microcap,FISCHER,,Fischer Medical Ventures Limited
+,Diversified / Microcap,FLAIR,,Flair Writing Industries Limited
+,Diversified / Microcap,FLEXITUFF,,Flexituff Ventures International Limited
+,Diversified / Microcap,FMGOETZE,,Federal-Mogul Goetze (India) Limited.
+,Diversified / Microcap,FMNL,,Future Market Networks Limited
+,Diversified / Microcap,FOCUS,,Focus Lighting and Fixtures Limited
+,Diversified / Microcap,FOODSIN,,Foods & Inns Limited
+,Diversified / Microcap,FOSECOIND,,Foseco India Limited
+,Diversified / Microcap,FRACTAL,,Fractal Analytics Limited
+,Diversified / Microcap,FREDUN,,Fredun Pharmaceuticals Limited
+,Diversified / Microcap,FRONTSP,,Frontier Springs Limited
+,Diversified / Microcap,FUSION,,Fusion Finance Limited
+,Diversified / Microcap,FUSIONCX,,Fusion CX Limited
+,Diversified / Microcap,GAJA,,Gaja Alternative Asset Management Limited
+,Diversified / Microcap,GALAPREC,,Gala Precision Engineering Limited
+,Diversified / Microcap,GALAXYSURF,,Galaxy Surfactants Limited
+,Diversified / Microcap,GANDHAR,,Gandhar Oil Refinery (India) Limited
+,Diversified / Microcap,GANDHITUBE,,Gandhi Special Tubes Limited
+,Diversified / Microcap,GANECOS,,Ganesha Ecosphere Limited
+,Diversified / Microcap,GANESHBE,,Ganesh Benzoplast Limited
+,Diversified / Microcap,GANESHCP,,Ganesh Consumer Products Limited
+,Diversified / Microcap,GANESHHOU,,GANESH HOUSING LIMITED
+,Diversified / Microcap,GANGAFORGE,,Ganga Forging Limited
+,Diversified / Microcap,GANGESSECU,,Ganges Securities Limited
+,Diversified / Microcap,GARFIBRES,,Garware Technical Fibres Limited
+,Diversified / Microcap,GARUDA,,Garuda Construction and Engineering Limited
+,Diversified / Microcap,GATECH,,GACM Technologies Limited
+,Diversified / Microcap,GATECHDVR,,GACM Technologies Limited
+,Diversified / Microcap,GATEWAY,,Gateway Distriparks Limited
+,Diversified / Microcap,GAUDIUMIVF,,Gaudium IVF and Women Health Limited
+,Diversified / Microcap,GAYAHWS,,Gayatri Highways Limited
+,Diversified / Microcap,GAYAPROJ,,Gayatri Projects Limited
+,Diversified / Microcap,GCSL,,Gretex Corporate Services Limited
+,Diversified / Microcap,GEECEE,,GeeCee Ventures Limited
+,Diversified / Microcap,GEEKAYWIRE,,Geekay Wires Limited
+,Diversified / Microcap,GEMAROMA,,Gem Aromatics Limited
+,Diversified / Microcap,GENCON,,Generic Engineering Construction and Projects Limited
+,Diversified / Microcap,GENESYS,,Genesys International Corporation Limited
+,Diversified / Microcap,GENUSPAPER,,Genus Paper & Boards Limited
+,Diversified / Microcap,GENUSPOWER,,Genus Power Infrastructures Limited
+,Diversified / Microcap,GEOJITFSL,,Geojit Financial Services Limited
+,Diversified / Microcap,GERMAN,,German Green Steel and Power Limited
+,Diversified / Microcap,GFLLIMITED,,GFL Limited
+,Diversified / Microcap,GHCLTEXTIL,,GHCL Textiles Limited
+,Diversified / Microcap,GICHSGFIN,,GIC Housing Finance Limited
+,Diversified / Microcap,GICL,,Globe International Carriers Limited
+,Diversified / Microcap,GILLANDERS,,Gillanders Arbuthnot & Company Limited
+,Diversified / Microcap,GINNIFILA,,Ginni Filaments Limited
+,Diversified / Microcap,GIPCL,,Gujarat Industries Power Company Limited
+,Diversified / Microcap,GKB,,GKB Ophthalmics Limited
+,Diversified / Microcap,GKENERGY,,GK Energy Limited
+,Diversified / Microcap,GKSL,,Gujarat Kidney And Super Speciality Limited
+,Diversified / Microcap,GKWLIMITED,,GKW Limited
+,Diversified / Microcap,GLASSWALL,,Glass Wall Systems (India) Limited
+,Diversified / Microcap,GLFL,,Gujarat Lease Financing Limited
+,Diversified / Microcap,GLOBAL,,Global Education Limited
+,Diversified / Microcap,GLOBALE,,Globale Tessile Limited
+,Diversified / Microcap,GLOBALVECT,,Global Vectra Helicorp Limited
+,Diversified / Microcap,GLOBE,,GLOBE ENTERPRISES (INDIA) LIMITED
+,Diversified / Microcap,GLOBECIVIL,,Globe Civil Projects Limited
+,Diversified / Microcap,GLOBUSSPR,,Globus Spirits Limited
+,Diversified / Microcap,GLOSTERLTD,,Gloster Limited
+,Diversified / Microcap,GLOTTIS,,Glottis Limited
+,Diversified / Microcap,GMBREW,,GM Breweries Limited
+,Diversified / Microcap,GNA,,GNA Axles Limited
+,Diversified / Microcap,GNRL,,Gujarat Natural Resources Limited
+,Diversified / Microcap,GOACARBON,,Goa Carbon Limited
+,Diversified / Microcap,GOCLCORP,,GOCL Corporation Limited
+,Diversified / Microcap,GOCOLORS,,Go Fashion (India) Limited
+,Diversified / Microcap,GODAVARIB,,Godavari Biorefineries Limited
+,Diversified / Microcap,GOKUL,,Gokul Refoils and Solvent Limited
+,Diversified / Microcap,GOLDIAM,,Goldiam International Limited
+,Diversified / Microcap,GOLDTECH,,AION-TECH SOLUTIONS LIMITED
+,Diversified / Microcap,GOODLUCK,,Goodluck India Limited
+,Diversified / Microcap,GOODYEAR,,Goodyear India Limited
+,Diversified / Microcap,GOPAL,,Gopal Snacks Limited
+,Diversified / Microcap,GOYALALUM,,Goyal Aluminiums Limited
+,Diversified / Microcap,GPTHEALTH,,GPT Healthcare Limited
+,Diversified / Microcap,GPTINFRA,,GPT Infraprojects Limited
+,Diversified / Microcap,GRADIENTE,,Gradiente Infotainment Limited
+,Diversified / Microcap,GRANDOAK,,Grand Oak Canyons Distillery Limited
+,Diversified / Microcap,GRAUWEIL,,Grauer & Weil India Limited
+,Diversified / Microcap,GRAVISSHO,,Graviss Hospitality Limited
+,Diversified / Microcap,GREENLAM,,Greenlam Industries Limited
+,Diversified / Microcap,GREENPANEL,,Greenpanel Industries Limited
+,Diversified / Microcap,GREENPLY,,Greenply Industries Limited
+,Diversified / Microcap,GREENPOWER,,Orient Green Power Company Limited
+,Diversified / Microcap,GRINFRA,,G R Infraprojects Limited
+,Diversified / Microcap,GRMOVER,,GRM Overseas Limited
+,Diversified / Microcap,GROBTEA,,The Grob Tea Company Limited
+,Diversified / Microcap,GRPLTD,,GRP Limited
+,Diversified / Microcap,GSLSU,,Global Surfaces Limited
+,Diversified / Microcap,GSPCROP,,GSP Crop Science Limited
+,Diversified / Microcap,GSPLTRANS,,GSPL Transmission Limited
+,Diversified / Microcap,GSS,,GSS Infotech Limited
+,Diversified / Microcap,GTECJAINX,,G-TEC JAINX EDUCATION LIMITED
+,Diversified / Microcap,GTL,,GTL Limited
+,Diversified / Microcap,GTLINFRA,,GTL Infrastructure Limited
+,Diversified / Microcap,GTPL,,GTPL Hathway Limited
+,Diversified / Microcap,GUFICBIO,,Gufic Biosciences Limited
+,Diversified / Microcap,GUJALKALI,,Gujarat Alkalies and Chemicals Limited
+,Diversified / Microcap,GUJAPOLLO,,Gujarat Apollo Industries Limited
+,Diversified / Microcap,GUJENERGY,,GUJARAT ENERGY LIMITED
+,Diversified / Microcap,GUJRAFFIA,,Gujarat Raffia Industries Limited
+,Diversified / Microcap,GUJTHEM,,Gujarat Themis Biosyn Limited
+,Diversified / Microcap,GULFOILLUB,,Gulf Oil Lubricants India Limited
+,Diversified / Microcap,GULFPETRO,,GP Petroleums Limited
+,Diversified / Microcap,GULPOLY,,Gulshan Polyols Limited
+,Diversified / Microcap,GVKPIL,,GVK Power & Infrastructure Limited
+,Diversified / Microcap,GVPIL,,GE Power India Limited
+,Diversified / Microcap,GVPTECH,,GVP Infotech Limited
+,Diversified / Microcap,GYFTR,,Gyftr Limited
+,Diversified / Microcap,HALDER,,Halder Venture Limited
+,Diversified / Microcap,HALDYNGL,,Haldyn Glass Limited
+,Diversified / Microcap,HALEOSLABS,,HALEOS LABS LIMITED
+,Diversified / Microcap,HAPPYFORGE,,Happy Forgings Limited
+,Diversified / Microcap,HARDWYN,,Hardwyn India Limited
+,Diversified / Microcap,HARIOMPIPE,,Hariom Pipe Industries Limited
+,Diversified / Microcap,HARRMALAYA,,Harrisons  Malayalam Limited
+,Diversified / Microcap,HARSHA,,Harsha Engineers International Limited
+,Diversified / Microcap,HATHWAY,,Hathway Cable & Datacom Limited
+,Diversified / Microcap,HATSUN,,Hatsun Agro Product Limited
+,Diversified / Microcap,HAVISHA,,Sri Havisha Hospitality and Infrastructure Limited
+,Diversified / Microcap,HAWKINCOOK,,Hawkins Cookers Limited
+,Diversified / Microcap,HAZOOR,,Hazoor Multi Projects Limited
+,Diversified / Microcap,HBESD,,HB Estate Developers Limited
+,Diversified / Microcap,HBPOR,,HB Portfolio Limited
+,Diversified / Microcap,HBSL,,HB Stockholdings Limited
+,Diversified / Microcap,HCL-INSYS,,HCL Infosystems Limited
+,Diversified / Microcap,HDFIRE,,HD Fire Protect Limited
+,Diversified / Microcap,HEADSUP,,Heads UP Ventures Limited
+,Diversified / Microcap,HEALTHX,,Health X Platform Limited
+,Diversified / Microcap,HECPROJECT,,HEC Infra Projects Limited
+,Diversified / Microcap,HEIDELBERG,,HeidelbergCement India Limited
+,Diversified / Microcap,HERANBA,,Heranba Industries Limited
+,Diversified / Microcap,HEROMOTORS,,Hero Motors Limited
+,Diversified / Microcap,HESTERBIO,,Hester Biosciences Limited
+,Diversified / Microcap,HEXAGON,,Hexagon Nutrition Limited
+,Diversified / Microcap,HEXATRADEX,,Hexa Tradex Limited
+,Diversified / Microcap,HGM,,HandsOn Global Management (HGM) Limited
+,Diversified / Microcap,HGS,,Hinduja Global Solutions Limited
+,Diversified / Microcap,HIKAL,,Hikal Limited
+,Diversified / Microcap,HILINFRA,,Highway Infrastructure Limited
+,Diversified / Microcap,HILTON,,Hilton Metal Forging Limited
+,Diversified / Microcap,HIMATSEIDE,,Himatsingka Seide Limited
+,Diversified / Microcap,HINDADH,,Hindustan Adhesives Limited
+,Diversified / Microcap,HINDALUMI,,Hind Aluminium Industries Limited
+,Diversified / Microcap,HINDCOMPOS,,Hindustan Composites Limited
+,Diversified / Microcap,HINDCON,,Hindcon Chemicals Limited
+,Diversified / Microcap,HINDOILEXP,,Hindustan Oil Exploration Company Limited
+,Diversified / Microcap,HINDWAREAP,,Hindware Home Innovation Limited
+,Diversified / Microcap,HIRECT,,Hirect Limited
+,Diversified / Microcap,HISARMETAL,,Hisar Metal Industries Limited
+,Diversified / Microcap,HITECH,,Hi-Tech Pipes Limited
+,Diversified / Microcap,HITECHCORP,,Hitech Corporation Limited
+,Diversified / Microcap,HITECHGEAR,,The Hi-Tech Gears Limited
+,Diversified / Microcap,HLEGLAS,,HLE Glascoat Limited
+,Diversified / Microcap,HLVLTD,,HLV LIMITED
+,Diversified / Microcap,HMAAGRO,,HMA Agro Industries Limited
+,Diversified / Microcap,HMVL,,Hindustan Media Ventures Limited
+,Diversified / Microcap,HNDFDS,,Hindustan Foods Limited
+,Diversified / Microcap,HONDAPOWER,,Honda India Power Products Limited
+,Diversified / Microcap,HORIZONIND,,Horizon Industrial Parks Limited
+,Diversified / Microcap,HPAL,,HP Adhesives Limited
+,Diversified / Microcap,HPIL,,Hindprakash Industries Limited
+,Diversified / Microcap,HPL,,HPL Electric & Power Limited
+,Diversified / Microcap,HRYNSHP,,Hariyana Ship Breakers Limited
+,Diversified / Microcap,HTEL,,Hy-Tech Engineers Limited
+,Diversified / Microcap,HTMEDIA,,HT Media Limited
+,Diversified / Microcap,HUBTOWN,,Hubtown Limited
+,Diversified / Microcap,HUHTAMAKI,,Huhtamaki India Limited
+,Diversified / Microcap,HYBRIDFIN,,Hybrid Financial Services Limited
+,Diversified / Microcap,IBULLSLTD,,Indiabulls Limited
+,Diversified / Microcap,ICDSLTD,,ICDS Limited
+,Diversified / Microcap,ICEMAKE,,Ice Make Refrigeration Limited
+,Diversified / Microcap,ICICILIFE,,ICICI Life Insurance Limited
+,Diversified / Microcap,ICRA,,ICRA Limited
+,Diversified / Microcap,IDEAFORGE,,Ideaforge Technology Limited
+,Diversified / Microcap,IFBAGRO,,IFB Agro Industries Limited
+,Diversified / Microcap,IFGLEXPOR,,IFGL Refractories Limited
+,Diversified / Microcap,IGARASHI,,Igarashi Motors India Limited
+,Diversified / Microcap,IGCL,,Indogulf Cropsciences Limited
+,Diversified / Microcap,IGPL,,IG Petrochemicals Limited
+,Diversified / Microcap,IIRM,,IIRM Holdings India Limited
+,Diversified / Microcap,IITL,,Industrial Investment Trust Limited
+,Diversified / Microcap,IKIO,,IKIO Technologies Limited
+,Diversified / Microcap,IMAGICAA,,Imagicaaworld Entertainment Limited
+,Diversified / Microcap,IMPAL,,India Motor Parts and Accessories Limited
+,Diversified / Microcap,INA,,Insolation Energy Limited
+,Diversified / Microcap,INCREDIBLE,,INCREDIBLE INDUSTRIES LIMITED
+,Diversified / Microcap,INDBANK,,Indbank Merchant Banking Services Limited
+,Diversified / Microcap,INDIANCARD,,Indian Card Clothing Company Limited
+,Diversified / Microcap,INDIANHUME,,Indian Hume Pipe Company Limited
+,Diversified / Microcap,INDIQUBE,,Indiqube Spaces Limited
+,Diversified / Microcap,INDNIPPON,,India Nippon Electricals Limited
+,Diversified / Microcap,INDOAMIN,,Indo Amines Limited
+,Diversified / Microcap,INDOBORAX,,Indo Borax & Chemicals Limited
+,Diversified / Microcap,INDOCO,,Indoco Remedies Limited
+,Diversified / Microcap,INDOFARM,,Indo Farm Equipment Limited
+,Diversified / Microcap,INDOKEM,,Indokem Limited
+,Diversified / Microcap,INDOMIM,,INDO-MIM Limited
+,Diversified / Microcap,INDORAMA,,Indo Rama Synthetics (India) Limited
+,Diversified / Microcap,INDOSTAR,,IndoStar Capital Finance Limited
+,Diversified / Microcap,INDOTECH,,Indo Tech Transformers Limited
+,Diversified / Microcap,INDOTHAI,,Indo Thai Securities Limited
+,Diversified / Microcap,INDOUS,,Indo Us Biotech Limited
+,Diversified / Microcap,INDOWIND,,Indowind Energy Limited
+,Diversified / Microcap,INDPRUD,,Industrial & Prudential Investment Company Limited
+,Diversified / Microcap,INDRAMEDCO,,Indraprastha Medical Corporation Limited
+,Diversified / Microcap,INDSWFTLAB,,Ind-Swift Laboratories Limited
+,Diversified / Microcap,INDTERRAIN,,Indian Terrain Fashions Limited
+,Diversified / Microcap,INDTONER,,Indian Toners & Developers Limited
+,Diversified / Microcap,INFOBEAN,,InfoBeans Technologies Limited
+,Diversified / Microcap,INFOMEDIA,,Infomedia Press Limited
+,Diversified / Microcap,INGERRAND,,Ingersoll Rand (India) Limited
+,Diversified / Microcap,INNOVACAP,,Innova Captab Limited
+,Diversified / Microcap,INNOVANA,,Innovana Thinklabs Limited
+,Diversified / Microcap,INNOVISION,,Innovision Limited
+,Diversified / Microcap,INSECTICID,,Insecticides (India) Limited
+,Diversified / Microcap,INSPIRISYS,,Inspirisys Solutions Limited
+,Diversified / Microcap,INTENTECH,,Intense Technologies Limited
+,Diversified / Microcap,INTERARCH,,Interarch Building Solutions Limited
+,Diversified / Microcap,INTLCONV,,International Conveyors Limited
+,Diversified / Microcap,INVENTURE,,Inventure Growth & Securities Limited
+,Diversified / Microcap,INVPRECQ,,Investment & Precision Castings Limited
+,Diversified / Microcap,IOLCP,,IOL Chemicals and Pharmaceuticals Limited
+,Diversified / Microcap,IPL,,India Pesticides Limited
+,Diversified / Microcap,IPRINGLTD,,IP Rings Limited
+,Diversified / Microcap,IRIS,,IRIS RegTech Solutions Limited
+,Diversified / Microcap,IRISDOREME,,Iris Clothings Limited
+,Diversified / Microcap,IRMENERGY,,IRM Energy Limited
+,Diversified / Microcap,ISFT,,Intrasoft Technologies Limited
+,Diversified / Microcap,ISGEC,,Isgec Heavy Engineering Limited
+,Diversified / Microcap,ISHANCH,,Ishan Dyes and Chemicals Limited
+,Diversified / Microcap,ISTLTD,,I S T Limited
+,Diversified / Microcap,ITDC,,India Tourism Development Corporation Limited
+,Diversified / Microcap,ITL,,ITL Industries Limited
+,Diversified / Microcap,IVALUE,,Ivalue Infosolutions Limited
+,Diversified / Microcap,IVC,,IL&FS Investment Managers Limited
+,Diversified / Microcap,IVP,,IVP Limited
+,Diversified / Microcap,IWP,,The Indian Wood Products Company Limited
+,Diversified / Microcap,IZMO,,IZMO Limited
+,Diversified / Microcap,JAGRAN,,Jagran Prakashan Limited
+,Diversified / Microcap,JAGSNPHARM,,Jagsonpal Pharmaceuticals Limited
+,Diversified / Microcap,JAICORPLTD,,Jai Corp Limited
+,Diversified / Microcap,JAIPURKURT,,Nandani Creation Limited
+,Diversified / Microcap,JARO,,Jaro Institute of Technology Management and Research Limited
+,Diversified / Microcap,JASH,,Jash Engineering Limited
+,Diversified / Microcap,JAYAGROGN,,Jayant Agro Organics Limited
+,Diversified / Microcap,JAYBARMARU,,Jay Bharat Maruti Limited
+,Diversified / Microcap,JAYKAY,,Jaykay Enterprises Limited
+,Diversified / Microcap,JAYSREETEA,,Jayshree Tea & Industries Limited
+,Diversified / Microcap,JENBURPH,,Jenburkt Pharmaceuticals Limited
+,Diversified / Microcap,JETFREIGHT,,Jet Freight Logistics Limited
+,Diversified / Microcap,JGCHEM,,J.G.Chemicals Limited
+,Diversified / Microcap,JHS,,JHS Svendgaard Laboratories Limited
+,Diversified / Microcap,JINDALPHOT,,Jindal Photo Limited
+,Diversified / Microcap,JINDALPOLY,,Jindal Poly Films Limited
+,Diversified / Microcap,JINDRILL,,Jindal Drilling And Industries Limited
+,Diversified / Microcap,JINDWORLD,,Jindal Worldwide Limited
+,Diversified / Microcap,JISLDVREQS,,Jain Irrigation Systems Limited
+,Diversified / Microcap,JISLJALEQS,,Jain Irrigation Systems Limited
+,Diversified / Microcap,JITFINFRA,,JITF Infralogistics Limited
+,Diversified / Microcap,JKIL,,J.Kumar Infraprojects Limited
+,Diversified / Microcap,JKIPL,,Jinkushal Industries Limited
+,Diversified / Microcap,JMA,,Jullundur Motor Agency (Delhi) Limited
+,Diversified / Microcap,JNKINDIA,,JNK India Limited
+,Diversified / Microcap,JNPR,,Juniper Green Energy Limited
+,Diversified / Microcap,JOCIL,,Jocil Limited
+,Diversified / Microcap,JPL,,Jio Platforms Limited
+,Diversified / Microcap,JPOLYINVST,,Jindal Poly Investment and Finance Company Limited
+,Diversified / Microcap,JSIPL,,Jindal Supreme (India) Limited
+,Diversified / Microcap,JSWHL,,JSW Holdings Limited
+,Diversified / Microcap,JTEKTINDIA,,Jtekt India Limited
+,Diversified / Microcap,JTLIND,,JTL INDUSTRIES LIMITED
+,Diversified / Microcap,JUBLCPL,,Jubilant Agri and Consumer Products Limited
+,Diversified / Microcap,JUNIPER,,Juniper Hotels Limited
+,Diversified / Microcap,JYOTIRES,,Jyoti Resins & Adhesives Limited
+,Diversified / Microcap,JYOTISTRUC,,Jyoti Structures Limited
+,Diversified / Microcap,KABRAEXTRU,,Kabra Extrusion Technik Limited
+,Diversified / Microcap,KAKATCEM,,Kakatiya Cement Sugar & Industries Limited
+,Diversified / Microcap,KALAMANDIR,,Sai Silks (Kalamandir) Limited
+,Diversified / Microcap,KALPATARU,,Kalpataru Limited
+,Diversified / Microcap,KALYANI,,Kalyani Commercials Limited
+,Diversified / Microcap,KALYANIFRG,,Kalyani Forge Limited
+,Diversified / Microcap,KAMAHOLD,,Kama Holdings Limited
+,Diversified / Microcap,KAMANWALA,,Kamanwala Housing Construction Limited
+,Diversified / Microcap,KAMATHOTEL,,Kamat Hotels (I) Limited
+,Diversified / Microcap,KAMDHENU,,Kamdhenu Limited
+,Diversified / Microcap,KAMOPAINTS,,Kamdhenu Ventures Limited
+,Diversified / Microcap,KANANIIND,,Kanani Industries Limited
+,Diversified / Microcap,KANCHI,,Kanchi Karpooram Limited
+,Diversified / Microcap,KANCOTEA,,Kanco Tea & Industries Limited
+,Diversified / Microcap,KANOHAR,,Kanohar Electricals Limited
+,Diversified / Microcap,KANORICHEM,,Kanoria Chemicals & Industries Limited
+,Diversified / Microcap,KANPRPLA,,Kanpur Plastipack Limited
+,Diversified / Microcap,KAPSTON,,Kapston Services Limited
+,Diversified / Microcap,KARAMTARA,,Karamtara Engineering Limited
+,Diversified / Microcap,KARMAENG,,Karma Energy Limited
+,Diversified / Microcap,KAUSHALYA,,Kaushalya Infrastructure Development Corporation Limited
+,Diversified / Microcap,KAVDEFENCE,,Kavveri Defence & Wireless Technologies Limited
+,Diversified / Microcap,KAYA,,Kaya Limited
+,Diversified / Microcap,KCP,,KCP Limited
+,Diversified / Microcap,KCPSUGIND,,KCP Sugar and Industries Corporation Limited
+,Diversified / Microcap,KDDL,,KDDL Limited
+,Diversified / Microcap,KDGREEN,,KD Green Industries Limited
+,Diversified / Microcap,KECL,,Kirloskar Electric Company Limited
+,Diversified / Microcap,KEEPLEARN,,DSJ Keep Learning Limited
+,Diversified / Microcap,KELLTONTEC,,Kellton Tech Solutions Limited
+,Diversified / Microcap,KENNAMET,,Kennametal India Limited
+,Diversified / Microcap,KERNEX,,Kernex Microsystems (India) Limited
+,Diversified / Microcap,KESORAMIND,,Kesoram Industries Limited
+,Diversified / Microcap,KEYFINSERV,,Keynote Financial Services Limited
+,Diversified / Microcap,KHADIM,,Khadim India Limited
+,Diversified / Microcap,KHAICHEM,,Khaitan Chemicals & Fertilizers Limited
+,Diversified / Microcap,KHAITANLTD,,Khaitan (India) Limited
+,Diversified / Microcap,KHANDSE,,Khandwala Securities Limited
+,Diversified / Microcap,KHAZANCHI,,Khazanchi Jewellers Limited
+,Diversified / Microcap,KICL,,Kalyani Investment Company Limited
+,Diversified / Microcap,KILITCH,,Kilitch Drugs (India) Limited
+,Diversified / Microcap,KINGFA,,Kingfa Science & Technology (India) Limited
+,Diversified / Microcap,KIOCL,,KIOCL Limited
+,Diversified / Microcap,KIRANVYPAR,,Kiran Vyapar Limited
+,Diversified / Microcap,KIRIINDUS,,Kiri Industries Limited
+,Diversified / Microcap,KIRLFER,,Kirloskar Ferrous Industries Limited
+,Diversified / Microcap,KIRLOSIND,,Kirloskar Industries Limited
+,Diversified / Microcap,KISSHT,,OnEMI Technology Solutions Limited
+,Diversified / Microcap,KJMCFIN,,KJMC Financial Services Limited
+,Diversified / Microcap,KKCL,,Kewal Kiran Clothing Limited
+,Diversified / Microcap,KLBRENG-B,,Kilburn Engineering Limited
+,Diversified / Microcap,KMCSHIL,,K M C Speciality Hospitals (India) Limited
+,Diversified / Microcap,KMEW,,Knowledge Marine & Engineering Works Limited
+,Diversified / Microcap,KMSUGAR,,K.M.Sugar Mills Limited
+,Diversified / Microcap,KNACK,,Knack Packaging Limited
+,Diversified / Microcap,KNAGRI,,KN Agri Resources Limited
+,Diversified / Microcap,KOHINOOR,,Kohinoor Foods Limited
+,Diversified / Microcap,KOKUYOCMLN,,Kokuyo Camlin Limited
+,Diversified / Microcap,KOLTEPATIL,,Kolte - Patil Developers Limited
+,Diversified / Microcap,KOPRAN,,Kopran Limited
+,Diversified / Microcap,KOTARISUG,,Kothari Sugars And Chemicals Limited
+,Diversified / Microcap,KOTHARIPET,,Kothari Petrochemicals Limited
+,Diversified / Microcap,KOTHARIPRO,,Kothari Products Limited
+,Diversified / Microcap,KOTIC,,Kothari Industrial Corporation Limited
+,Diversified / Microcap,KOTYARK,,Kotyark Industries Limited
+,Diversified / Microcap,KOVAI,,Kovai Medical Center & Hospital Limited
+,Diversified / Microcap,KPEL,,K.P. Energy Limited
+,Diversified / Microcap,KPL,,Kwality Pharmaceuticals Limited
+,Diversified / Microcap,KREBSBIO,,Krebs Biochemicals and Industries Limited
+,Diversified / Microcap,KRIDHANINF,,Kridhan Infra Limited
+,Diversified / Microcap,KRISHANA,,Krishana Phoschem Limited
+,Diversified / Microcap,KRISHIVAL,,Krishival Foods Limited
+,Diversified / Microcap,KRISHNADEF,,Krishna Defence And Allied Industries Limited
+,Diversified / Microcap,KRITI,,Kriti Industries (India) Limited
+,Diversified / Microcap,KRITIKA,,Kritika Wires Limited
+,Diversified / Microcap,KRITINUT,,Kriti Nutrients Limited
+,Diversified / Microcap,KRONOX,,Kronox Lab Sciences Limited
+,Diversified / Microcap,KROSS,,Kross Limited
+,Diversified / Microcap,KRSNAA,,Krsnaa Diagnostics Limited
+,Diversified / Microcap,KRYSTAL,,Krystal Integrated Services Limited
+,Diversified / Microcap,KSE,,KSE Limited
+,Diversified / Microcap,KSHINTL,,KSH International Limited
+,Diversified / Microcap,KSHITIJPOL,,Kshitij Polyline Limited
+,Diversified / Microcap,KSL,,Kalyani Steels Limited
+,Diversified / Microcap,KSOLVES,,Ksolves India Limited
+,Diversified / Microcap,KSR,,KSR Footwear Limited
+,Diversified / Microcap,KUANTUM,,Kuantum Papers Limited
+,Diversified / Microcap,KUSUMGAR,,Kusumgar Limited
+,Diversified / Microcap,KWIL,,Kwality Wall's (India) Limited
+,Diversified / Microcap,LADDERUP,,Ladderup Finance Limited
+,Diversified / Microcap,LAGNAM,,Lagnam Spintex Limited
+,Diversified / Microcap,LAHOTIOV,,Lahoti Overseas Limited
+,Diversified / Microcap,LAKSHMIMIL,,Lakshmi Mills Company Limited
+,Diversified / Microcap,LAL,,Lorenzini Apparels Limited
+,Diversified / Microcap,LALITHAA,,Lalithaa Jewellery Mart Limited
+,Diversified / Microcap,LAMBODHARA,,Lambodhara Textiles Limited
+,Diversified / Microcap,LANCER,,Lancer Container Lines Limited
+,Diversified / Microcap,LANCORHOL,,Lancor Holdings Limited
+,Diversified / Microcap,LANDMARK,,Landmark Cars Limited
+,Diversified / Microcap,LANDSMILL,,Landsmill Green Limited
+,Diversified / Microcap,LAOPALA,,La Opala RG Limited
+,Diversified / Microcap,LASERPOWER,,Laser Power & Infra Limited
+,Diversified / Microcap,LATTEYS,,Latteys Industries Limited
+,Diversified / Microcap,LAXMICOT,,Laxmi Cotspin Limited
+,Diversified / Microcap,LAXMIDENTL,,Laxmi Dental Limited
+,Diversified / Microcap,LAXMIINDIA,,Laxmi India Finance Limited
+,Diversified / Microcap,LCCINFOTEC,,LCC Infotech Limited
+,Diversified / Microcap,LCCPROJECT,,LCC Projects Limited
+,Diversified / Microcap,LCL,,Lohia Corp Limited
+,Diversified / Microcap,LEAPIND,,LEAP India Limited
+,Diversified / Microcap,LEENEE,,Lee & Nee Softwares Exports Limited
+,Diversified / Microcap,LEMERITE,,Le Merite Exports Limited
+,Diversified / Microcap,LEXUS,,Lexus Granito (India) Limited
+,Diversified / Microcap,LFIC,,Lakshmi Finance & Industrial Corporation Limited
+,Diversified / Microcap,LGBBROSLTD,,LG Balakrishnan & Bros Limited
+,Diversified / Microcap,LGHL,,Laxmi Goldorna House Limited
+,Diversified / Microcap,LIBAS,,Libas Consumer Products Limited
+,Diversified / Microcap,LIBERTSHOE,,Liberty Shoes Limited
+,Diversified / Microcap,LIKHITHA,,Likhitha Infrastructure Limited
+,Diversified / Microcap,LINC,,Linc Limited
+,Diversified / Microcap,LINCOLN,,Lincoln Pharmaceuticals Limited
+,Diversified / Microcap,LKPSEC,,LKP Securities Limited
+,Diversified / Microcap,LMW,,LMW Limited
+,Diversified / Microcap,LOKESHMACH,,Lokesh Machines Limited
+,Diversified / Microcap,LORDSCHLO,,Lords Chloro Alkali Limited
+,Diversified / Microcap,LOTUSCHO,,Lotus Chocolate Company Limited
+,Diversified / Microcap,LOTUSEYE,,Lotus Eye Hospital and Institute Limited
+,Diversified / Microcap,LOVABLE,,Lovable Lingerie Limited
+,Diversified / Microcap,LOYALTEX,,Loyal Textile Mills Limited
+,Diversified / Microcap,LPDC,,Landmark Property Development Company Limited
+,Diversified / Microcap,LUMAXIND,,Lumax Industries Limited
+,Diversified / Microcap,LUMINO,,Lumino Industries Limited
+,Diversified / Microcap,LUXIND,,Lux Industries Limited
+,Diversified / Microcap,LYKALABS,,Lyka Labs Limited
+,Diversified / Microcap,MAANALU,,Maan Aluminium Limited
+,Diversified / Microcap,MACPOWER,,Macpower CNC Machines Limited
+,Diversified / Microcap,MADHAV,,Madhav Marbles and Granites Limited
+,Diversified / Microcap,MADHAVIPL,,Madhav Infra Projects Limited
+,Diversified / Microcap,MADHUCON,,Madhucon Projects Limited
+,Diversified / Microcap,MADRASFERT,,Madras Fertilizers Limited
+,Diversified / Microcap,MAFATIND,,Mafatlal Industries Limited
+,Diversified / Microcap,MAGADSUGAR,,Magadh Sugar & Energy Limited
+,Diversified / Microcap,MAGNUM,,Magnum Ventures Limited
+,Diversified / Microcap,MAHAPEXLTD,,Maha Rashtra Apex Corporation Limited
+,Diversified / Microcap,MAHASTEEL,,Mahamaya Steel Industries Limited
+,Diversified / Microcap,MAHEPC,,Mahindra EPC Irrigation Limited
+,Diversified / Microcap,MAHESHWARI,,Maheshwari Logistics Limited
+,Diversified / Microcap,MAHLIFE,,Mahindra Lifespace Developers Limited
+,Diversified / Microcap,MAHLOG,,Mahindra Logistics Limited
+,Diversified / Microcap,MAITHANALL,,Maithan Alloys Limited
+,Diversified / Microcap,MAJESAUT,,Majestic Auto Limited
+,Diversified / Microcap,MAKERSL,,Makers Laboratories Limited
+,Diversified / Microcap,MALLCOM,,Mallcom (India) Limited
+,Diversified / Microcap,MALUPAPER,,Malu Paper Mills Limited
+,Diversified / Microcap,MAMATA,,Mamata Machinery Limited
+,Diversified / Microcap,MANAKALUCO,,Manaksia Aluminium Company Limited
+,Diversified / Microcap,MANAKCOAT,,Manaksia Coated Metals & Industries Limited
+,Diversified / Microcap,MANAKSIA,,Manaksia Limited
+,Diversified / Microcap,MANAKSTEEL,,Manaksia Steels Limited
+,Diversified / Microcap,MANALIPETC,,Manali Petrochemicals Limited
+,Diversified / Microcap,MANBA,,Manba Finance Limited
+,Diversified / Microcap,MANCREDIT,,Mangal Credit and Fincorp Limited
+,Diversified / Microcap,MANGALAM,,Mangalam Drugs And Organics Limited
+,Diversified / Microcap,MANGLMCEM,,Mangalam Cement Limited
+,Diversified / Microcap,MANIKA,,Manika Plastech Limited
+,Diversified / Microcap,MANINDS,,Man Industries (India) Limited
+,Diversified / Microcap,MANINFRA,,Man Infraconstruction Limited
+,Diversified / Microcap,MANIPALHOS,,Manipal Health Enterprises Limited
+,Diversified / Microcap,MANOMAY,,Manomay Tex India Limited
+,Diversified / Microcap,MANORG,,Mangalam Organics Limited
+,Diversified / Microcap,MANUGRAPH,,Manugraph India Limited
+,Diversified / Microcap,MARALOVER,,Maral Overseas Limited
+,Diversified / Microcap,MARATHON,,Marathon Nextgen Realty Limited
+,Diversified / Microcap,MARINE,,Marine Electricals (India) Limited
+,Diversified / Microcap,MARKOLINES,,Markolines Pavement Technologies Limited
+,Diversified / Microcap,MARSONS,,Marsons Limited
+,Diversified / Microcap,MASFIN,,MAS Financial Services Limited
+,Diversified / Microcap,MASKINVEST,,Mask Investments Limited
+,Diversified / Microcap,MASTERTR,,Master Trust Limited
+,Diversified / Microcap,MATRIMONY,,Matrimony.Com Limited
+,Diversified / Microcap,MAWANASUG,,Mawana Sugars Limited
+,Diversified / Microcap,MAXESTATES,,Max Estates Limited
+,Diversified / Microcap,MAXIND,,Max India Limited
+,Diversified / Microcap,MAYURUNIQ,,Mayur Uniquoters Ltd
+,Diversified / Microcap,MAZDA,,Mazda Limited
+,Diversified / Microcap,MBAPL,,Madhya Bharat Agro Products Limited
+,Diversified / Microcap,MBECL,,Mcnally Bharat Engineering Company Limited
+,Diversified / Microcap,MBEL,,M & B Engineering Limited
+,Diversified / Microcap,MBLINFRA,,MBL Infrastructure Limited
+,Diversified / Microcap,MCCHRLS-B,,Mac Charles India Limited
+,Diversified / Microcap,MCL,,M TEK COPPER LIMITED
+,Diversified / Microcap,MCLEODRUSS,,Mcleod Russel India Limited
+,Diversified / Microcap,MCLOUD,,Magellanic Cloud Limited
+,Diversified / Microcap,MEDIASSIST,,Medi Assist Healthcare Services Limited
+,Diversified / Microcap,MEDICAMEQ,,Medicamen Biotech Limited
+,Diversified / Microcap,MEDICAPQ,,Medi Caps Limited
+,Diversified / Microcap,MEDICO,,Medico Remedies Limited
+,Diversified / Microcap,MEGASTAR,,Megastar Foods Limited
+,Diversified / Microcap,MEIL,,Mangal Electrical Industries Limited
+,Diversified / Microcap,MENNPIS,,Menon Pistons Limited
+,Diversified / Microcap,MENONBE,,Menon Bearings Limited
+,Diversified / Microcap,MERCANTILE,,Mercantile Ventures Limited
+,Diversified / Microcap,MERCURYEV,,Mercury Ev-Tech Limited
+,Diversified / Microcap,METROBRAND,,Metro Brands Limited
+,Diversified / Microcap,METROGLOBL,,Metroglobal Limited
+,Diversified / Microcap,MFML,,Mahalaxmi Fabric Mills Limited
+,Diversified / Microcap,MGEL,,Mangalam Global Enterprise Limited
+,Diversified / Microcap,MHLXMIRU,,Mahalaxmi Rubtech Limited
+,Diversified / Microcap,MHRIL,,Mahindra Holidays & Resorts India Limited
+,Diversified / Microcap,MICEL,,MIC Electronics Limited
+,Diversified / Microcap,MIDWESTLTD,,Midwest Limited
+,Diversified / Microcap,MIIL,,Meghna Infracon Infrastructure Limited
+,Diversified / Microcap,MILKYMIST,,Milky Mist Dairy Food Limited
+,Diversified / Microcap,MINALIND,,Minal Industries Limited
+,Diversified / Microcap,MINDTECK,,Mindteck (India) Limited
+,Diversified / Microcap,MIRZAINT,,Mirza International Limited
+,Diversified / Microcap,MITCON,,MITCON Consultancy & Engineering Services Limited
+,Diversified / Microcap,MITTAL,,Mittal Life Style Limited
+,Diversified / Microcap,MKEXIM,,M.K. Exim (India) Limited
+,Diversified / Microcap,MKPL,,M K Proteins Limited
+,Diversified / Microcap,MLKFOOD,,Milkfood Limited
+,Diversified / Microcap,MMFL,,MM Forgings Limited
+,Diversified / Microcap,MMP,,MMP Industries Limited
+,Diversified / Microcap,MMWL,,Media Matrix Worldwide Limited
+,Diversified / Microcap,MOBIKWIK,,One Mobikwik Systems Limited
+,Diversified / Microcap,MODINATUR,,Modi Naturals Limited
+,Diversified / Microcap,MODIRUBBER,,Modi Rubber Limited
+,Diversified / Microcap,MODIS,,Modis Navnirman Limited
+,Diversified / Microcap,MODISONLTD,,MODISON LIMITED
+,Diversified / Microcap,MODTHREAD,,Modern Threads (India) Limited
+,Diversified / Microcap,MOHITE,,Mohite Industries Limited
+,Diversified / Microcap,MOHITIND,,Mohit Industries Limited
+,Diversified / Microcap,MOKSH,,Moksh Ornaments Limited
+,Diversified / Microcap,MOL,,Meghmani Organics Limited
+,Diversified / Microcap,MOLBIO,,Molbio Diagnostics Limited
+,Diversified / Microcap,MOLDTECH,,Mold-Tek Technologies Limited
+,Diversified / Microcap,MOLDTKPAC,,Mold-Tek Packaging Limited
+,Diversified / Microcap,MOMSBELIEF,,Rays of Belief Limited
+,Diversified / Microcap,MONARCH,,Monarch Networth Capital Limited
+,Diversified / Microcap,MONEYBOXX,,Moneyboxx Finance Limited
+,Diversified / Microcap,MONEYVIEW,,Moneyview Limited
+,Diversified / Microcap,MONTECARLO,,Monte Carlo Fashions Limited
+,Diversified / Microcap,MOREPENLAB,,Morepen Laboratories Limited
+,Diversified / Microcap,MOSCHIP,,Moschip Technologies Limited
+,Diversified / Microcap,MOTISONS,,Motisons Jewellers Limited
+,Diversified / Microcap,MOTOGENFIN,,The Motor & General Finance Limited
+,Diversified / Microcap,MPDL,,MPDL Limited
+,Diversified / Microcap,MPIMANIPAL,,Manipal Payment and Identity Solutions Limited
+,Diversified / Microcap,MPSLTD,,MPS Limited
+,Diversified / Microcap,MSL,,Mangalam Seeds Limited
+,Diversified / Microcap,MSPL,,MSP Steel & Power Limited
+,Diversified / Microcap,MTEDUCARE,,MT Educare Limited
+,Diversified / Microcap,MTNL,,Mahanagar Telephone Nigam Limited
+,Diversified / Microcap,MUFIN,,Mufin Green Finance Limited
+,Diversified / Microcap,MUFTI,,Credo Brands Marketing Limited
+,Diversified / Microcap,MUKANDLTD,,Mukand Limited
+,Diversified / Microcap,MUKESHB,,Mukesh Babu Financial Services Limited
+,Diversified / Microcap,MUKKA,,Mukka Proteins Limited
+,Diversified / Microcap,MUKTAARTS,,Mukta Arts Limited
+,Diversified / Microcap,MUNJALAU,,Munjal Auto Industries Limited
+,Diversified / Microcap,MUNJALSHOW,,Munjal Showa Limited
+,Diversified / Microcap,MURUDCERA,,Murudeshwar Ceramics Limited
+,Diversified / Microcap,MUTHOOTCAP,,Muthoot Capital Services Limited
+,Diversified / Microcap,MUTHOOTMF,,Muthoot Microfin Limited
+,Diversified / Microcap,MVELECTRO,,MV Electrosystems Limited
+,Diversified / Microcap,MVGJL,,Manoj Vaibhav Gems N Jewellers Limited
+,Diversified / Microcap,MWL,,Mangalam Worldwide Limited
+,Diversified / Microcap,MYSORPETRO,,Mysore Petro Chemicals Limited
+,Diversified / Microcap,NACLIND,,NACL Industries Limited
+,Diversified / Microcap,NAGREEKCAP,,Nagreeka Capital & Infrastructure Limited
+,Diversified / Microcap,NAGREEKEXP,,Nagreeka Exports Limited
+,Diversified / Microcap,NAHARCAP,,Nahar Capital and Financial Services Limited
+,Diversified / Microcap,NAHARINDUS,,Nahar Industrial Enterprises Limited
+,Diversified / Microcap,NAHARPOLY,,Nahar Poly Films Limited
+,Diversified / Microcap,NAHARSPING,,Nahar Spinning Mills Limited
+,Diversified / Microcap,NARMADA,,Narmada Agrobase Limited
+,Diversified / Microcap,NATCAPSUQ,,Natural Capsules Limited
+,Diversified / Microcap,NATHBIOGEN,,Nath Bio-Genes (India) Limited
+,Diversified / Microcap,NATIONSTD,,National Standard (India) Limited
+,Diversified / Microcap,NAVKARCORP,,Navkar Corporation Limited
+,Diversified / Microcap,NAVKARURB,,Navkar Urbanstructure Limited
+,Diversified / Microcap,NAVNETEDUL,,Navneet Education Limited
+,Diversified / Microcap,NBIFIN,,N. B. I. Industrial Finance Company Limited
+,Diversified / Microcap,NCLIND,,NCL Industries Limited
+,Diversified / Microcap,NDGL,,Naga Dhunseri Group Limited
+,Diversified / Microcap,NDL,,Nandan Denim Limited
+,Diversified / Microcap,NDLVENTURE,,NDL Ventures Limited
+,Diversified / Microcap,NDRAUTO,,Ndr Auto Components Limited
+,Diversified / Microcap,NDTV,,New Delhi Television Limited
+,Diversified / Microcap,NEAGI,,Neelamalai Agro Industries Limited
+,Diversified / Microcap,NECCLTD,,North Eastern Carrying Corporation Limited
+,Diversified / Microcap,NECLIFE,,Nectar Lifesciences Limited
+,Diversified / Microcap,NELCAST,,Nelcast Limited
+,Diversified / Microcap,NELCO,,NELCO Limited
+,Diversified / Microcap,NEPHROPLUS,,Nephrocare Health Services Limited
+,Diversified / Microcap,NEUEON,,Neueon Corporation Limited
+,Diversified / Microcap,NEXTMEDIA,,Next Mediaworks Limited
+,Diversified / Microcap,NGIL,,Nakoda Group of Industries Limited
+,Diversified / Microcap,NGLFINE,,NGL Fine-Chem Limited
+,Diversified / Microcap,NIBE,,NIBE Limited
+,Diversified / Microcap,NIBL,,NRB Industrial Bearings Limited
+,Diversified / Microcap,NICCOPAR,,Nicco Parks & Resorts Limited
+,Diversified / Microcap,NIITLTD,,NIIT Limited
+,Diversified / Microcap,NIITMTS,,NIIT Learning Systems Limited
+,Diversified / Microcap,NILAINFRA,,Nila Infrastructures Limited
+,Diversified / Microcap,NILASPACES,,Nila Spaces Limited
+,Diversified / Microcap,NILE,,Nile Limited
+,Diversified / Microcap,NILKAMAL,,Nilkamal Limited
+,Diversified / Microcap,NIMBSPROJ,,Nimbus Projects Limited
+,Diversified / Microcap,NINSYS,,NINtec Systems Limited
+,Diversified / Microcap,NIPPOBATRY,,Indo-National Limited
+,Diversified / Microcap,NIRAJ,,Niraj Cement Structurals Limited
+,Diversified / Microcap,NIRAJISPAT,,Niraj Ispat Industries Limited
+,Diversified / Microcap,NIRLON,,Nirlon Limited
+,Diversified / Microcap,NITCO,,Nitco Limited
+,Diversified / Microcap,NITINSPIN,,Nitin Spinners Limited
+,Diversified / Microcap,NITIRAJ,,Nitiraj Engineers Limited
+,Diversified / Microcap,NITTAGELA,,Nitta Gelatin India Limited
+,Diversified / Microcap,NITYAS,,Nityas Gems and Jewellery Limited
+,Diversified / Microcap,NKIND,,NK Industries Limited
+,Diversified / Microcap,NOCIL,,NOCIL Limited
+,Diversified / Microcap,NOIDATOLL,,Noida Toll Bridge Company Limited
+,Diversified / Microcap,NORBTEAEXP,,Norben Tea & Exports Limited
+,Diversified / Microcap,NORTHARC,,Northern Arc Capital Limited
+,Diversified / Microcap,NOVAAGRI,,Nova Agritech Limited
+,Diversified / Microcap,NOVARTIND,,Novartis India Limited
+,Diversified / Microcap,NPST,,Network People Services Technologies Limited
+,Diversified / Microcap,NRAIL,,N R Agarwal Industries Limited
+,Diversified / Microcap,NRBBEARING,,NRB Bearing Limited
+,Diversified / Microcap,NRL,,Nupur Recyclers Limited
+,Diversified / Microcap,NSIL,,Nalwa Sons Investments Limited
+,Diversified / Microcap,NTCIND,,NTC Industries Limited
+,Diversified / Microcap,NUCLEUS,,Nucleus Software Exports Limited
+,Diversified / Microcap,NURECA,,Nureca Limited
+,Diversified / Microcap,OAL,,Oriental Aromatics Limited
+,Diversified / Microcap,OBCL,,OBCL Limited
+,Diversified / Microcap,OCCLLTD,,OCCL Limited
+,Diversified / Microcap,ODIGMA,,Odigma Consultancy Solutions Limited
+,Diversified / Microcap,ODYCORP,,Odyssey Corporation Limited
+,Diversified / Microcap,OILCOUNTUB,,Oil Country Tubular Limited
+,Diversified / Microcap,OMAXAUTO,,Omax Autos Limited
+,Diversified / Microcap,OMAXE,,Omaxe Limited
+,Diversified / Microcap,OMFREIGHT,,Om Freight Forwarders Limited
+,Diversified / Microcap,OMINFRAL,,OM INFRA LIMITED
+,Diversified / Microcap,OMNI,,Omnitech Engineering Limited
+,Diversified / Microcap,OMPOWER,,Om Power Transmission Limited
+,Diversified / Microcap,ONEGLOBAL,,One Global Service Provider Limited
+,Diversified / Microcap,ONELIFECAP,,Onelife Capital Advisors Limited
+,Diversified / Microcap,ONEPOINT,,One Point One Solutions Limited
+,Diversified / Microcap,ONIDA,,Onida Electronics Limited
+,Diversified / Microcap,ONIXSOLAR,,Onix Solar Energy Limited
+,Diversified / Microcap,ONMOBILE,,OnMobile Global Limited
+,Diversified / Microcap,ONWARDTEC,,Onward Technologies Limited
+,Diversified / Microcap,OPTIFIN,,Optimus Finance Limited
+,Diversified / Microcap,ORBTEXP,,Orbit Exports Limited
+,Diversified / Microcap,ORCHASP,,Orchasp Limited
+,Diversified / Microcap,ORCHPHARMA,,Orchid Pharma Limited
+,Diversified / Microcap,ORICONENT,,Oricon Enterprises Limited
+,Diversified / Microcap,ORIENTALTL,,Oriental Trimex Limited
+,Diversified / Microcap,ORIENTBELL,,Orient Bell Limited
+,Diversified / Microcap,ORIENTCABL,,Orient Cables (India) Limited
+,Diversified / Microcap,ORIENTCER,,ORIENT CERATECH LIMITED
+,Diversified / Microcap,ORIENTELEC,,Orient Electric Limited
+,Diversified / Microcap,ORIENTHOT,,Oriental Hotels Limited
+,Diversified / Microcap,ORIENTLTD,,Orient Press Limited
+,Diversified / Microcap,ORIENTPPR,,Orient Paper & Industries Limited
+,Diversified / Microcap,ORIENTTECH,,Orient Technologies Limited
+,Diversified / Microcap,ORIRAIL,,Oriental Rail Infrastructure Limited
+,Diversified / Microcap,ORISSAMINE,,The Orissa Minerals Development Company Limited
+,Diversified / Microcap,ORTINGLOBE,,ORTIN GLOBAL LIMITED
+,Diversified / Microcap,OSWALAGRO,,Oswal Agro Mills Limited
+,Diversified / Microcap,OSWALGREEN,,Oswal Greentech Limited
+,Diversified / Microcap,OSWALSEEDS,,ShreeOswal Seeds And Chemicals Limited
+,Diversified / Microcap,PACEDIGITK,,Pace Digitek Limited
+,Diversified / Microcap,PACIFICI,,Pacific Industries Limited
+,Diversified / Microcap,PAISALO,,Paisalo Digital Limited
+,Diversified / Microcap,PAKKA,,PAKKA LIMITED
+,Diversified / Microcap,PALASHSECU,,Palash Securities Limited
+,Diversified / Microcap,PALREDTEC,,Palred Technologies Limited
+,Diversified / Microcap,PANACEABIO,,Panacea Biotec Limited
+,Diversified / Microcap,PANACHE,,Panache Digilife Limited
+,Diversified / Microcap,PANAMAPET,,Panama Petrochem Limited
+,Diversified / Microcap,PANCHMAHQ,,Panchmahal Steel Limited
+,Diversified / Microcap,PANORAMA,,Panorama Studios International Limited
+,Diversified / Microcap,PANSARI,,Pansari Developers Limited
+,Diversified / Microcap,PAR,,Par Drugs And Chemicals Limited
+,Diversified / Microcap,PARACABLES,,Paramount Communications Limited
+,Diversified / Microcap,PARAGMILK,,Parag Milk Foods Limited
+,Diversified / Microcap,PARASHLTH,,Paras Healthcare Limited
+,Diversified / Microcap,PARASPETRO,,Paras Petrofils Limited
+,Diversified / Microcap,PARIN,,Parin Enterprises Limited
+,Diversified / Microcap,PARKHOTELS,,Apeejay Surrendra Park Hotels Limited
+,Diversified / Microcap,PARNAXLAB,,Parnax Lab Limited
+,Diversified / Microcap,PASHUPATI,,Pashupati Cotspin Limited
+,Diversified / Microcap,PASUPTAC,,Pasupati Acrylon Limited
+,Diversified / Microcap,PATELENG,,Patel Engineering Limited
+,Diversified / Microcap,PATELRMART,,Patel Retail Limited
+,Diversified / Microcap,PATINTLOG,,Patel Integrated Logistics Limited
+,Diversified / Microcap,PAUSHAKLTD,,Paushak Limited
+,Diversified / Microcap,PAVNAIND,,Pavna Industries Limited
+,Diversified / Microcap,PBMPOLY,,PBM Polytex Limited
+,Diversified / Microcap,PDMJEPAPER,,Pudumjee Paper Products Limited
+,Diversified / Microcap,PDSL,,PDS Limited
+,Diversified / Microcap,PEARLPOLY,,Pearl Polymers Limited
+,Diversified / Microcap,PENIND,,Pennar Industries Limited
+,Diversified / Microcap,PENINLAND,,Peninsula Land Limited
+,Diversified / Microcap,PERMAGN,,Permanent Magnets Limited
+,Diversified / Microcap,PERNIASPOP,,Purple Style Labs Limited
+,Diversified / Microcap,PFS,,PTC India Financial Services Limited
+,Diversified / Microcap,PGHH,,Procter & Gamble Hygiene and Health Care Limited
+,Diversified / Microcap,PGHL,,Procter & Gamble Health Limited
+,Diversified / Microcap,PHOENXINTL,,Phoenix International Limited
+,Diversified / Microcap,PIGL,,Power & Instrumentation (Gujarat) Limited
+,Diversified / Microcap,PILANIINVS,,Pilani Investment and Industries Corporation Limited
+,Diversified / Microcap,PILITA,,PIL ITALICA LIFESTYLE LIMITED
+,Diversified / Microcap,PIONEEREMB,,Pioneer Embroideries Limited
+,Diversified / Microcap,PIONRINV,,Pioneer Investcorp Limited
+,Diversified / Microcap,PITTIENG,,Pitti Engineering Limited
+,Diversified / Microcap,PIXTRANS,,Pix Transmissions Limited
+,Diversified / Microcap,PKTEA,,The Peria Karamalai Tea & Produce Company Limited
+,Diversified / Microcap,PLASTIBLEN,,Plastiblends India Limited
+,Diversified / Microcap,PLATIND,,Platinum Industries Limited
+,Diversified / Microcap,PLAZACABLE,,Plaza Wires Limited
+,Diversified / Microcap,PML,,Paul Merchants Limited
+,Diversified / Microcap,PNBGILTS,,PNB Gilts Limited
+,Diversified / Microcap,PNC,,PNC Media and Entertainment Limited
+,Diversified / Microcap,PNGSREVA,,PNGS Reva Diamond Jewellery Limited
+,Diversified / Microcap,POCL,,Pondy Oxides & Chemicals Limited
+,Diversified / Microcap,PODDARMENT,,Poddar Pigments Limited
+,Diversified / Microcap,POEL,,POCL Enterprises Limited
+,Diversified / Microcap,POKARNA,,Pokarna Limited
+,Diversified / Microcap,POLYPLEX,,Polyplex Corporation Limited
+,Diversified / Microcap,POLYSPIN,,Polyspin Exports Limited
+,Diversified / Microcap,PONNIERODE,,Ponni Sugars (Erode) Limited
+,Diversified / Microcap,POWERICA,,Powerica Limited
+,Diversified / Microcap,PPAP,,PPAP Automotive Limited
+,Diversified / Microcap,PPL,,Prakash Pipes Limited
+,Diversified / Microcap,PRABHA,,Prabha Energy Limited
+,Diversified / Microcap,PRADPME,,Pradeep Metals Limited
+,Diversified / Microcap,PRAENG,,Prajay Engineers Syndicate Limited
+,Diversified / Microcap,PRAKASH,,Prakash Industries Limited
+,Diversified / Microcap,PRAKASHSTL,,Prakash Steelage Limited
+,Diversified / Microcap,PRANAV,,Pranav Constructions Limited
+,Diversified / Microcap,PRASOLCHEM,,Prasol Chemicals Limited
+,Diversified / Microcap,PRAVEG,,Praveg Limited
+,Diversified / Microcap,PRAXIS,,Praxis Home Retail Limited
+,Diversified / Microcap,PRECAM,,Precision Camshafts Limited
+,Diversified / Microcap,PRECOT,,Precot Limited
+,Diversified / Microcap,PRECWIRE,,Precision Wires India Limited
+,Diversified / Microcap,PREMCO,,Premco Global Limited
+,Diversified / Microcap,PREMEXPLN,,Premier Explosives Limited
+,Diversified / Microcap,PREMIER,,Premier Limited
+,Diversified / Microcap,PREMIERPOL,,Premier Polyfilm Limited
+,Diversified / Microcap,PRIMESECU,,Prime Securities Limited
+,Diversified / Microcap,PRIMO,,Primo Chemicals Limited
+,Diversified / Microcap,PRINCEPIPE,,Prince Pipes And Fittings Limited
+,Diversified / Microcap,PRIORITY,,Priority Jewels Limited
+,Diversified / Microcap,PRISMX,,Prismx Global Ventures Limited
+,Diversified / Microcap,PRITI,,Priti International Limited
+,Diversified / Microcap,PRITIKAUTO,,Pritika Auto Industries Limited
+,Diversified / Microcap,PROSTARM,,Prostarm Info Systems Limited
+,Diversified / Microcap,PROTEAN,,Protean eGov Technologies Limited
+,Diversified / Microcap,PROZONER,,Prozone Realty Limited
+,Diversified / Microcap,PRUDMOULI,,Prudential Sugar Corporation Limited
+,Diversified / Microcap,PSB,,Punjab & Sind Bank
+,Diversified / Microcap,PSPPROJECT,,PSP Projects Limited
+,Diversified / Microcap,PTL,,PTL Enterprises Limited
+,Diversified / Microcap,PUNJABCHEM,,Punjab Chemicals & Crop Protection Limited
+,Diversified / Microcap,PVP,,PVP Ventures Limited
+,Diversified / Microcap,PVSL,,Popular Vehicles and Services Limited
+,Diversified / Microcap,PYRAMID,,Pyramid Technoplast Limited
+,Diversified / Microcap,QMSMEDI,,QMS Medical Allied Services Limited
+,Diversified / Microcap,QUADFUTURE,,Quadrant Future Tek Limited
+,Diversified / Microcap,QUICKHEAL,,Quick Heal Technologies Limited
+,Diversified / Microcap,QUINT,,Quint Digital Limited
+,Diversified / Microcap,QUINTEGRA,,Quintegra Solutions Limited
+,Diversified / Microcap,RACE,,Race Eco Chain Limited
+,Diversified / Microcap,RACLGEAR,,RACL Geartech Limited
+,Diversified / Microcap,RADAAN,,Radaan Mediaworks India Limited
+,Diversified / Microcap,RADHIKAJWE,,Radhika Jeweltech Limited
+,Diversified / Microcap,RADIANTCMS,,Radiant Cash Management Services Limited
+,Diversified / Microcap,RADIOCITY,,Music Broadcast Limited
+,Diversified / Microcap,RAJMET,,Rajnandini Metal Limited
+,Diversified / Microcap,RAJOOENG,,Rajoo Engineers Limited
+,Diversified / Microcap,RAJPALAYAM,,Rajapalayam Mills Limited
+,Diversified / Microcap,RAJRATAN,,Rajratan Global Wire Limited
+,Diversified / Microcap,RAJRILTD,,Raj Rayon Industries Limited
+,Diversified / Microcap,RAJSREESUG,,Rajshree Sugars & Chemicals Limited
+,Diversified / Microcap,RAJTV,,Raj Television Network Limited
+,Diversified / Microcap,RAMANEWS,,Shree Rama Newsprint Limited
+,Diversified / Microcap,RAMAPHO,,Rama Phosphates Limited
+,Diversified / Microcap,RAMASTEEL,,Rama Steel Tubes Limited
+,Diversified / Microcap,RAMBHAJO,,Advit Jewels Limited
+,Diversified / Microcap,RAMCOIND,,Ramco Industries Limited
+,Diversified / Microcap,RAMCOSYS,,Ramco Systems Limited
+,Diversified / Microcap,RAMKY,,Ramky Infrastructure Limited
+,Diversified / Microcap,RAMRAT,,Ram Ratna Wires Limited
+,Diversified / Microcap,RANASUG,,Rana Sugars Limited
+,Diversified / Microcap,RANEHOLDIN,,Rane Holdings Limited
+,Diversified / Microcap,RATNAVEER,,Ratnaveer Precision Engineering Limited
+,Diversified / Microcap,RAYMOND,,Raymond Limited
+,Diversified / Microcap,RAYMONDREL,,Raymond Realty Limited
+,Diversified / Microcap,RBZJEWEL,,RBZ Jewellers Limited
+,Diversified / Microcap,RCOM,,Reliance Communications Limited
+,Diversified / Microcap,REGAAL,,Regaal Resources Limited
+,Diversified / Microcap,REGENCERAM,,Regency Ceramics Limited
+,Diversified / Microcap,RELCHEMQ,,Reliance Chemotex Industries Limited
+,Diversified / Microcap,RELIABLE,,Reliable Data Services Limited
+,Diversified / Microcap,RELINFRA,,Reliance Infrastructure Limited
+,Diversified / Microcap,RELTD,,Ravindra Energy Limited
+,Diversified / Microcap,REMSONSIND,,Remsons Industries Limited
+,Diversified / Microcap,RENTOMOJO,,Rentomojo Limited
+,Diversified / Microcap,REPCOHOME,,Repco Home Finance Limited
+,Diversified / Microcap,REPL,,Rudrabhishek Enterprises Limited
+,Diversified / Microcap,REPRO,,Repro India Limited
+,Diversified / Microcap,RESPONIND,,Responsive Industries Limited
+,Diversified / Microcap,RETAIL,,JHS Svendgaard Retail Ventures Limited
+,Diversified / Microcap,RGL,,Renaissance Global Limited
+,Diversified / Microcap,RHETAN,,Rhetan TMT Limited
+,Diversified / Microcap,RHL,,Robust Hotels Limited
+,Diversified / Microcap,RICOAUTO,,Rico Auto Industries Limited
+,Diversified / Microcap,RIIL,,Reliance Industrial Infrastructure Limited
+,Diversified / Microcap,RIR,,RIR Power Electronics Limited
+,Diversified / Microcap,RISHABH,,Rishabh Instruments Limited
+,Diversified / Microcap,RITCO,,Ritco Logistics Limited
+,Diversified / Microcap,RKDL,,Ravi Kumar Distilleries Limited
+,Diversified / Microcap,RKEC,,RKEC Projects Limited
+,Diversified / Microcap,RKSWAMY,,R K Swamy Limited
+,Diversified / Microcap,RMC,,RMC Switchgears Limited
+,Diversified / Microcap,RMDRIP,,R M Drip and Sprinklers Systems Limited
+,Diversified / Microcap,RML,,Rane (Madras) Limited
+,Diversified / Microcap,RNBDENIMS,,R&B Denims Limited
+,Diversified / Microcap,ROHLTD,,Royal Orchid Hotels Limited
+,Diversified / Microcap,ROLEXRINGS,,Rolex Rings Limited
+,Diversified / Microcap,ROLLT,,Rollatainers Limited
+,Diversified / Microcap,ROML,,Raj Oil Mills Limited
+,Diversified / Microcap,ROSSARI,,Rossari Biotech Limited
+,Diversified / Microcap,ROSSELLIND,,Rossell India Limited
+,Diversified / Microcap,ROSSTECH,,Rossell Techsys Limited
+,Diversified / Microcap,ROTO,,Roto Pumps Limited
+,Diversified / Microcap,RPEL,,Raghav Productivity Enhancers Limited
+,Diversified / Microcap,RPGLIFE,,RPG Life Sciences Limited
+,Diversified / Microcap,RPPINFRA,,R.P.P. Infra Projects Limited
+,Diversified / Microcap,RPPL,,Rajshree Polypack Limited
+,Diversified / Microcap,RPSGVENT,,RPSG VENTURES LIMITED
+,Diversified / Microcap,RPTECH,,Rashi Peripherals Limited
+,Diversified / Microcap,RRECL,,RDB Real Estate Constructions Limited
+,Diversified / Microcap,RRIL,,RRIL Limited
+,Diversified / Microcap,RSDFIN,,RSD Finance Limited
+,Diversified / Microcap,RSL,,Rajputana Stainless Limited
+,Diversified / Microcap,RSSOFTWARE,,R. S. Software (India) Limited
+,Diversified / Microcap,RSWM,,RSWM Limited
+,Diversified / Microcap,RSYSTEMS,,R Systems International Limited
+,Diversified / Microcap,RTSPOWR,,RTS Power Corporation Limited
+,Diversified / Microcap,RUBFILA,,Rubfila International Limited
+,Diversified / Microcap,RUBYMILLS,,The Ruby Mills Limited
+,Diversified / Microcap,RUCHINFRA,,Ruchi Infrastructure Limited
+,Diversified / Microcap,RUCHIRA,,Ruchira Papers Limited
+,Diversified / Microcap,RUDRA,,Rudra Global Infra Products Limited
+,Diversified / Microcap,RUNWALENTR,,Runwal Enterprises Limited
+,Diversified / Microcap,RUPA,,Rupa & Company Limited
+,Diversified / Microcap,RUSHIL,,Rushil Decor Limited
+,Diversified / Microcap,RUSTOMJEE,,Keystone Realtors Limited
+,Diversified / Microcap,RVHL,,Ravinder Heights Limited
+,Diversified / Microcap,RVTH,,Revathi Equipment India Limited
+,Diversified / Microcap,S&SPOWER,,S&S Power Switchgears Limited
+,Diversified / Microcap,SAB,,SAB Industries Limited
+,Diversified / Microcap,SADBHAV,,Sadbhav Engineering Limited
+,Diversified / Microcap,SADBHIN,,Sadbhav Infrastructure Project Limited
+,Diversified / Microcap,SADHNANIQ,,Sadhana Nitrochem Limited
+,Diversified / Microcap,SAGARDEEP,,Sagardeep Alloys Limited
+,Diversified / Microcap,SAGCEM,,Sagar Cements Limited
+,Diversified / Microcap,SAHLIBHFI,,Shalibhadra Finance Limited
+,Diversified / Microcap,SAHYADRI,,Sahyadri Industries Limited
+,Diversified / Microcap,SAICAPI,,Sai Capital Limited
+,Diversified / Microcap,SAIPARENT,,Sai Parenterals Limited
+,Diversified / Microcap,SAKAR,,Sakar Healthcare Limited
+,Diversified / Microcap,SAKHTISUG,,Sakthi Sugars Limited
+,Diversified / Microcap,SAKSOFT,,Saksoft Limited
+,Diversified / Microcap,SAKUMA,,Sakuma Exports Limited
+,Diversified / Microcap,SALASAR,,Salasar Techno Engineering Limited
+,Diversified / Microcap,SALONA,,Salona Cotspin Limited
+,Diversified / Microcap,SALSTEEL,,S.A.L. Steel Limited
+,Diversified / Microcap,SALZERELEC,,Salzer Electronics Limited
+,Diversified / Microcap,SAMBANDAM,,Sambandam Spinning Mills Limited
+,Diversified / Microcap,SAMBHAAV,,Sambhaav Media Limited
+,Diversified / Microcap,SAMBHV,,Sambhv Steel Tubes Limited
+,Diversified / Microcap,SAMPANN,,Sampann Utpadan India Limited
+,Diversified / Microcap,SANATHAN,,Sanathan Textiles Limited
+,Diversified / Microcap,SANDESH,,The Sandesh Limited
+,Diversified / Microcap,SANDHAR,,Sandhar Technologies Limited
+,Diversified / Microcap,SANGAMIND,,Sangam (India) Limited
+,Diversified / Microcap,SANGHVIMOV,,Sanghvi Movers Limited
+,Diversified / Microcap,SANOFI,,Sanofi India Limited
+,Diversified / Microcap,SANSTAR,,Sanstar Limited
+,Diversified / Microcap,SAPPL,,Shree Ajit Pulp & Paper Limited
+,Diversified / Microcap,SARLAPOLY,,Sarla Performance Fibers Limited
+,Diversified / Microcap,SARVESHWAR,,Sarveshwar Foods Limited
+,Diversified / Microcap,SASKEN,,Sasken Technologies Limited
+,Diversified / Microcap,SATIA,,Satia Industries Limited
+,Diversified / Microcap,SATIN,,Satin Creditcare Network Limited
+,Diversified / Microcap,SAURASHCEM,,Saurashtra Cement Limited
+,Diversified / Microcap,SAYAJIHOTL,,Sayaji Hotels Limited
+,Diversified / Microcap,SAYAJIIND,,Sayaji Industries Limited
+,Diversified / Microcap,SBC,,SBC Exports Limited
+,Diversified / Microcap,SBCL,,Shivalik Bimetal Controls Limited
+,Diversified / Microcap,SBGLP,,Suratwwala Business Group Limited
+,Diversified / Microcap,SBIFUNDS,,SBI Funds Management Limited
+,Diversified / Microcap,SCANSTL,,Scan Steels Limited
+,Diversified / Microcap,SCHAND,,S Chand And Company Limited
+,Diversified / Microcap,SCILAL,,Shipping Corporation of India Land and Assets Limited
+,Diversified / Microcap,SCODATUBES,,Scoda Tubes Limited
+,Diversified / Microcap,SCPL,,Sheetal Cool Products Limited
+,Diversified / Microcap,SDBL,,Som Distilleries & Breweries Limited
+,Diversified / Microcap,SEAMECLTD,,Seamec Limited
+,Diversified / Microcap,SECMARK,,SecMark Consultancy Limited
+,Diversified / Microcap,SECURKLOUD,,SECUREKLOUD TECHNOLOGIES LIMITED
+,Diversified / Microcap,SEDEMAC,,SEDEMAC Mechatronics Limited
+,Diversified / Microcap,SEIL,,Shanti Educational Initiatives Limited
+,Diversified / Microcap,SEJALLTD,,Sejal Glass Limited
+,Diversified / Microcap,SEKURITIND,,Saint Gobain Sekurit India Limited
+,Diversified / Microcap,SEMAC,,Semac Construction Limited
+,Diversified / Microcap,SENORES,,Senores Pharmaceuticals Limited
+,Diversified / Microcap,SEPC,,SEPC Limited
+,Diversified / Microcap,SERVOTECH,,Servotech Renewable Power System Limited
+,Diversified / Microcap,SESHAPAPER,,Seshasayee Paper and Boards Limited
+,Diversified / Microcap,SETCO,,Setco Automotive Limited
+,Diversified / Microcap,SETL,,Standard Engineering Technology Limited
+,Diversified / Microcap,SEYAIND,,Seya Industries Limited
+,Diversified / Microcap,SGFIN,,SG Finserve Limited
+,Diversified / Microcap,SGIL,,Synergy Green Industries Limited
+,Diversified / Microcap,SGL,,STL Global Limited
+,Diversified / Microcap,SGLRES,,SGL Resources Limited
+,Diversified / Microcap,SGMART,,SG Mart Limited
+,Diversified / Microcap,SGRL,,Shree Ganesh Remedies Limited
+,Diversified / Microcap,SHADOWFAX,,Shadowfax Technologies Limited
+,Diversified / Microcap,SHAH,,Shah Metacorp Limited
+,Diversified / Microcap,SHAHALLOYS,,Shah Alloys Limited
+,Diversified / Microcap,SHAHINVEST,,Shah Investor's Home Limited
+,Diversified / Microcap,SHALBY,,Shalby Limited
+,Diversified / Microcap,SHALPAINTS,,Shalimar Paints Limited
+,Diversified / Microcap,SHANKARA,,Shankara Building Products Limited
+,Diversified / Microcap,SHANKESH,,Shankesh Jewellers Limited
+,Diversified / Microcap,SHANTI,,Shanti Overseas (India) Limited
+,Diversified / Microcap,SHANTIGEAR,,Shanthi Gears Limited
+,Diversified / Microcap,SHANTIGOLD,,Shanti Gold International Limited
+,Diversified / Microcap,SHARDAMOTR,,Sharda Motor Industries Limited
+,Diversified / Microcap,SHARDUL,,Shardul Securities Limited
+,Diversified / Microcap,SHBAJRG,,Shri Bajrang Alliance Limited
+,Diversified / Microcap,SHEKHAWATI,,Shekhawati Industries Limited
+,Diversified / Microcap,SHEMAROO,,Shemaroo Entertainment Limited
+,Diversified / Microcap,SHERVANI,,Shervani Industrial Syndicate Limited
+,Diversified / Microcap,SHILCTECH,,Shilchar Technologies Limited
+,Diversified / Microcap,SHILGRAVQ,,Shilp Gravures Limited
+,Diversified / Microcap,SHINDL,,Sharat Industries Limited
+,Diversified / Microcap,SHIPROCKET,,Shiprocket Limited
+,Diversified / Microcap,SHIVAAGRO,,Shiva Global Agro Industries Limited
+,Diversified / Microcap,SHIVACEM,,Shiva Cement Limited
+,Diversified / Microcap,SHIVALIK,,Shivalik Rasayan Limited
+,Diversified / Microcap,SHIVAM-RE1,,Shivam Autotech Ltd-RE
+,Diversified / Microcap,SHIVAMAUTO,,Shivam Autotech Limited
+,Diversified / Microcap,SHIVAMILLS,,Shiva Mills Limited
+,Diversified / Microcap,SHIVATEX,,Shiva Texyarn Limited
+,Diversified / Microcap,SHIVAUM,,Shiv Aum Steels Limited
+,Diversified / Microcap,SHK,,S H Kelkar and Company Limited
+,Diversified / Microcap,SHOPERSTOP,,Shoppers Stop Limited
+,Diversified / Microcap,SHRADDHA,,Shraddha Prime Projects Limited
+,Diversified / Microcap,SHRADHA,,Shradha Realty Limited
+,Diversified / Microcap,SHREDIGCEM,,Shree Digvijay Cement Co.Ltd
+,Diversified / Microcap,SHREEJISPG,,Shreeji Shipping Global Limited
+,Diversified / Microcap,SHREEPUSHK,,Shree Pushkar Chemicals & Fertilisers Limited
+,Diversified / Microcap,SHREERAMA,,Shree Rama Multi-Tech Limited
+,Diversified / Microcap,SHREYANIND,,Shreyans Industries Limited
+,Diversified / Microcap,SHRIKRISH,,Shri Krishna Devcon Limited
+,Diversified / Microcap,SHRINGARMS,,Shringar House of Mangalsutra Limited
+,Diversified / Microcap,SHRIRAMPPS,,Shriram Properties Limited
+,Diversified / Microcap,SHRJAGP,,Shri Jagdamba Polymers Limited
+,Diversified / Microcap,SHUKRAPHAR,,Shukra Pharmaceuticals Limited
+,Diversified / Microcap,SHYAMCENT,,Shyam Century Ferrous Limited
+,Diversified / Microcap,SHYAMTEL,,Shyam Telecom Limited
+,Diversified / Microcap,SICAGEN,,Sicagen India Limited
+,Diversified / Microcap,SICALLOG,,Sical Logistics Limited
+,Diversified / Microcap,SIEL,,Superior Industrial Enterprises Limited
+,Diversified / Microcap,SIGACHI,,Sigachi Industries Limited
+,Diversified / Microcap,SIGIND,,Signet Industries Limited
+,Diversified / Microcap,SIGMA,,Sigma Solve Limited
+,Diversified / Microcap,SIGMAADV,,SIGMA ADVANCED SYSTEMS LIMITED
+,Diversified / Microcap,SIGNPOST,,Signpost India Limited
+,Diversified / Microcap,SIKA,,Sika Interplant Systems Limited
+,Diversified / Microcap,SIKKO,,Sikko Industries Limited
+,Diversified / Microcap,SIL,,Standard Industries Limited
+,Diversified / Microcap,SILGO,,Silgo Retail Limited
+,Diversified / Microcap,SILINV,,SIL Investments Limited
+,Diversified / Microcap,SILVERTUC,,Silver Touch Technologies Limited
+,Diversified / Microcap,SIMPLEXINF,,Simplex Infrastructures Limited
+,Diversified / Microcap,SIMPLXREA,,Simplex Realty Limited
+,Diversified / Microcap,SINCLAIR,,Sinclairs Hotels Limited
+,Diversified / Microcap,SINDHUTRAD,,Sindhu Trade Links Limited
+,Diversified / Microcap,SINGERIND,,Singer India Limited
+,Diversified / Microcap,SINTERCOM,,Sintercom India Limited
+,Diversified / Microcap,SIRCA,,Sirca Paints India Limited
+,Diversified / Microcap,SIS,,SIS LIMITED
+,Diversified / Microcap,SIYSIL,,Siyaram Silk Mills Limited
+,Diversified / Microcap,SJS,,S.J.S. Enterprises Limited
+,Diversified / Microcap,SKMEGGPROD,,SKM Egg Products Export (India) Limited
+,Diversified / Microcap,SKYWAYS,,Skyways Air Services Limited
+,Diversified / Microcap,SMARTLINK,,Smartlink Holdings Limited
+,Diversified / Microcap,SMCGLOBAL,,SMC Global Securities Limited
+,Diversified / Microcap,SMLT,,Sarthak Metals Limited
+,Diversified / Microcap,SMSPHARMA,,SMS Pharmaceuticals Limited
+,Diversified / Microcap,SMT,,Sahajanand Medical Technologies Limited
+,Diversified / Microcap,SNOWMAN,,Snowman Logistics Limited
+,Diversified / Microcap,SOFTTECH,,Softtech Engineers Limited
+,Diversified / Microcap,SOLARA,,Solara Active Pharma Sciences Limited
+,Diversified / Microcap,SOLARWORLD,,Solarworld Energy Solutions Limited
+,Diversified / Microcap,SOLEX,,Solex Energy Limited
+,Diversified / Microcap,SOMANYCERA,,Somany Ceramics Limited
+,Diversified / Microcap,SOMATEX,,Soma Textiles & Industries Limited
+,Diversified / Microcap,SOMICONVEY,,Somi Conveyor Beltings Limited
+,Diversified / Microcap,SONA,,Sonaselection India Limited
+,Diversified / Microcap,SONAL,,Sonal Mercantile Limited
+,Diversified / Microcap,SONAMLTD,,SONAM LIMITED
+,Diversified / Microcap,SOTL,,Savita Oil Technologies Limited
+,Diversified / Microcap,SOUTHWEST,,South West Pinnacle Exploration Limited
+,Diversified / Microcap,SPAL,,S. P. Apparels Limited
+,Diversified / Microcap,SPANDANA,,Spandana Sphoorty Financial Limited
+,Diversified / Microcap,SPCENET,,Spacenet Enterprises India Limited
+,Diversified / Microcap,SPECIALITY,,Speciality Restaurants Limited
+,Diversified / Microcap,SPECTRUM,,Spectrum Electrical Industries Limited
+,Diversified / Microcap,SPENCERS,,Spencer's Retail Limited
+,Diversified / Microcap,SPIC,,Southern Petrochemicals Industries Corporation  Limited
+,Diversified / Microcap,SPLIL,,SPL Industries Limited
+,Diversified / Microcap,SPMLINFRA,,SPML Infra Limited
+,Diversified / Microcap,SPORTKING,,Sportking India Limited
+,Diversified / Microcap,SRD,,Shankar Lal Rampal Dye-Chem Limited
+,Diversified / Microcap,SREEL,,Sreeleathers Limited
+,Diversified / Microcap,SRGHFL,,SRG Housing Finance Limited
+,Diversified / Microcap,SRHHYPOLTD,,Sree Rayalaseema Hi-Strength Hypo Limited
+,Diversified / Microcap,SRIKPRIND,,Sri KPR Industries Limited
+,Diversified / Microcap,SRIT,,SRIT India Limited
+,Diversified / Microcap,SRM,,SRM Contractors Limited
+,Diversified / Microcap,SRTL,,Shree Ram Twistex Limited
+,Diversified / Microcap,SSDL,,Saraswati Saree Depot Limited
+,Diversified / Microcap,SSRETAIL,,SS Retail Limited
+,Diversified / Microcap,SSWL,,Steel Strips Wheels Limited
+,Diversified / Microcap,STALLION,,Stallion India Fluorochemicals Limited
+,Diversified / Microcap,STANLEY,,Stanley Lifestyles Limited
+,Diversified / Microcap,STARPAPER,,Star Paper Mills Limited
+,Diversified / Microcap,STARTECK,,Starteck Finance Limited
+,Diversified / Microcap,STCINDIA,,The State Trading Corporation of India Limited
+,Diversified / Microcap,STEAMHOUSE,,Steamhouse India Limited
+,Diversified / Microcap,STEELCAS,,Steelcast Limited
+,Diversified / Microcap,STEELCITY,,Steel City Securities Limited
+,Diversified / Microcap,STEELXIND,,STEEL EXCHANGE INDIA LIMITED
+,Diversified / Microcap,STEL,,Stel Holdings Limited
+,Diversified / Microcap,STERTOOLS,,Sterling Tools Limited
+,Diversified / Microcap,STLNETWORK,,STL Networks Limited
+,Diversified / Microcap,STLSTRINF,,Steel Strips Infrastructures Limited
+,Diversified / Microcap,STOVEKRAFT,,Stove Kraft Limited
+,Diversified / Microcap,STUDDS,,Studds Accessories Limited
+,Diversified / Microcap,STYLAMIND,,Stylam Industries Limited
+,Diversified / Microcap,STYLEBAAZA,,Baazar Style Retail Limited
+,Diversified / Microcap,SUBEXLTD,,Subex Limited
+,Diversified / Microcap,SUDARCOLOR,,Sudarshan Colorants India Limited
+,Diversified / Microcap,SUDARSHAN,,Sudarshan Pharma Industries Limited
+,Diversified / Microcap,SUKHJITS,,Sukhjit Starch & Chemicals Limited
+,Diversified / Microcap,SULA,,Sula Vineyards Limited
+,Diversified / Microcap,SUMEDHA,,Sumedha Fiscal Services Limited
+,Diversified / Microcap,SUMEETINDS,,Sumeet Industries Limited
+,Diversified / Microcap,SUMIT,,Sumit Woods Limited
+,Diversified / Microcap,SUMMITSEC,,Summit Securities Limited
+,Diversified / Microcap,SUNCLAY,,Sundaram Clayton Limited
+,Diversified / Microcap,SUNDARAM,,Sundaram Multi Pap Limited
+,Diversified / Microcap,SUNDRMBRAK,,Sundaram Brake Linings Limited
+,Diversified / Microcap,SUNDRMFAST,,Sundram Fasteners Limited
+,Diversified / Microcap,SUNDROP,,Sundrop Brands Limited
+,Diversified / Microcap,SUNFLAG,,Sunflag Iron And Steel Company Limited
+,Diversified / Microcap,SUNLOC,,Sunil Healthcare Limited
+,Diversified / Microcap,SUNRAKSHAK,,Sunrakshakk Industries India Limited
+,Diversified / Microcap,SUNSHIEL,,Sunshield Chemicals Limited
+,Diversified / Microcap,SUNSHINE,,Sunshine Pictures Limited
+,Diversified / Microcap,SUPERHOUSE,,Superhouse Limited
+,Diversified / Microcap,SUPERSPIN,,Super Spinning Mills Limited
+,Diversified / Microcap,SUPRAJIT,,Suprajit Engineering Limited
+,Diversified / Microcap,SUPREME,,Supreme Holdings & Hospitality (India) Limited
+,Diversified / Microcap,SUPREMEINF,,Supreme Infrastructure India Limited
+,Diversified / Microcap,SUPTANERY,,Super Tannery Limited
+,Diversified / Microcap,SURAJEST,,Suraj Estate Developers Limited
+,Diversified / Microcap,SURAJLTD,,Suraj Limited
+,Diversified / Microcap,SURAKSHA,,Suraksha Diagnostic Limited
+,Diversified / Microcap,SURANASOL,,Surana Solar Limited
+,Diversified / Microcap,SURANAT&P,,Surana Telecom and Power Limited
+,Diversified / Microcap,SURYALA,,Suryalata Spinning Mills Limited
+,Diversified / Microcap,SURYALAXMI,,Suryalakshmi Cotton Mills Limited
+,Diversified / Microcap,SURYODAY,,Suryoday Small Finance Bank Limited
+,Diversified / Microcap,SUTLEJTEX,,Sutlej Textiles and Industries Limited
+,Diversified / Microcap,SUVEN,,Suven Life Sciences Limited
+,Diversified / Microcap,SUVIDHAA,,Suvidhaa Infoserve Limited
+,Diversified / Microcap,SUYOG,,Suyog Telematics Limited
+,Diversified / Microcap,SVGLOBAL,,S V Global Mill Limited
+,Diversified / Microcap,SVLL,,Shree Vasu Logistics Limited
+,Diversified / Microcap,SVPGLOB,,SVP GLOBAL TEXTILES LIMITED
+,Diversified / Microcap,SWANDEF,,Swan Defence and Heavy Industries Limited
+,Diversified / Microcap,SWARAJ,,Swaraj Suiting Limited
+,Diversified / Microcap,SWARAJENG,,Swaraj Engines Limited
+,Diversified / Microcap,SWARNSAR,,Swarnsarita Jewels India Limited
+,Diversified / Microcap,SWASTIKAIN,,Swastika Infra Limited
+,Diversified / Microcap,SWELECTES,,Swelect Energy Systems Limited
+,Diversified / Microcap,SWISSMLTRY,,Swiss Military Consumer Goods Limited
+,Diversified / Microcap,SYMBIOTEC,,Symbiotec Pharmalab Limited
+,Diversified / Microcap,SYMPHONY,,Symphony Limited
+,Diversified / Microcap,SYNCOMF,,Syncom Formulations (India) Limited
+,Diversified / Microcap,SYSTMTXC,,Systematix Corporate Services Limited
+,Diversified / Microcap,TAALTECH,,Taal Tech Limited
+,Diversified / Microcap,TAINWALCHM,,Tainwala Chemical and Plastic (I) Limited
+,Diversified / Microcap,TAJGVK,,Taj GVK Hotels & Resorts Limited
+,Diversified / Microcap,TAKE,,TAKE Limited
+,Diversified / Microcap,TALBROAUTO,,Talbros Automotive Components Limited
+,Diversified / Microcap,TAMBOLIIN,,Tamboli Industries Limited
+,Diversified / Microcap,TANAA,,Taneja Aerospace & Aviation Limited
+,Diversified / Microcap,TARACHAND,,Tara Chand InfraLogistic Solutions Limited
+,Diversified / Microcap,TARAPUR,,Tarapur Transformers Limited
+,Diversified / Microcap,TARMAT,,Tarmat Limited
+,Diversified / Microcap,TARSONS,,Tarsons Products Limited
+,Diversified / Microcap,TASTYBITE,,Tasty Bite Eatables Limited
+,Diversified / Microcap,TATVA,,Tatva Chintan Pharma Chem Limited
+,Diversified / Microcap,TBZ,,Tribhovandas Bhimji Zaveri Limited
+,Diversified / Microcap,TCC,,TCC Concept Limited
+,Diversified / Microcap,TCI,,Transport Corporation of India Limited
+,Diversified / Microcap,TCIEXP,,TCI Express Limited
+,Diversified / Microcap,TCIFINANCE,,TCI Finance Limited
+,Diversified / Microcap,TCPLPACK,,TCPL Packaging Limited
+,Diversified / Microcap,TEAMGTY,,Team India Guaranty Limited
+,Diversified / Microcap,TEAMLEASE,,Teamlease Services Limited
+,Diversified / Microcap,TECHNOCRAF,,Technocraft Ventures Limited
+,Diversified / Microcap,TECHNVISN,,TechNVision Ventures Limited
+,Diversified / Microcap,TECILCHEM,,TECIL Chemicals and Hydro Power Limited
+,Diversified / Microcap,TEMBO,,Tembo Global Industries Limited
+,Diversified / Microcap,TEMPSENS,,Tempsens Instruments (India) Limited
+,Diversified / Microcap,TERAI,,Terai Tea Company Limited
+,Diversified / Microcap,TERASOFT,,Tera Software Limited
+,Diversified / Microcap,TEXINFRA,,Texmaco Infrastructure & Holdings Limited
+,Diversified / Microcap,TEXMOPIPES,,Texmo Pipes and Products Limited
+,Diversified / Microcap,TFCILTD,,Tourism Finance Corporation of India Limited
+,Diversified / Microcap,TFL,,Transwarranty Finance Limited
+,Diversified / Microcap,TGBHOTELS,,TGB Banquets And Hotels Limited
+,Diversified / Microcap,TGVSL,,TGV Sraac Limited
+,Diversified / Microcap,THACKER,,Thacker & Company Limited
+,Diversified / Microcap,THAKDEV,,Thakkers Developers Limited
+,Diversified / Microcap,THEINVEST,,The Investment Trust Of India Limited
+,Diversified / Microcap,THEJO,,Thejo Engineering Limited
+,Diversified / Microcap,THEMISMED,,Themis Medicare Limited
+,Diversified / Microcap,THOMASCOTT,,Thomas Scott (India) Limited
+,Diversified / Microcap,TICL,,Twamev Construction and Infrastructure Limited
+,Diversified / Microcap,TIGERLOGS,,Tiger Logistics (India) Limited
+,Diversified / Microcap,TIIL,,Technocraft Industries (India) Limited
+,Diversified / Microcap,TIJARIA,,Tijaria Polypipes Limited
+,Diversified / Microcap,TIKONA,,Tikona Communication Limited
+,Diversified / Microcap,TIL,,TIL Limited
+,Diversified / Microcap,TIMEX,,Timex Group India Limited
+,Diversified / Microcap,TINNARUBR,,Tinna Rubber and Infrastructure Limited
+,Diversified / Microcap,TIPSFILMS,,Tips Films Limited
+,Diversified / Microcap,TIRUMALCHM,,Thirumalai Chemicals Limited
+,Diversified / Microcap,TIRUPATIFL,,Tirupati Forge Limited
+,Diversified / Microcap,TNPETRO,,Tamilnadu PetroProducts Limited
+,Diversified / Microcap,TNPL,,Tamil Nadu Newsprint & Papers Limited
+,Diversified / Microcap,TNTELE,,Tamilnadu Telecommunication Limited
+,Diversified / Microcap,TOKYOPLAST,,Tokyo Plast International Limited
+,Diversified / Microcap,TOLINS,,Tolins Tyres Limited
+,Diversified / Microcap,TONBO,,Tonbo Imaging India Limited
+,Diversified / Microcap,TOTAL,,Total Transport Systems Limited
+,Diversified / Microcap,TOUCHWOOD,,Touchwood Entertainment Limited
+,Diversified / Microcap,TOYAMSL,,Toyam Sports Limited
+,Diversified / Microcap,TPHQ,,Teamo Productions HQ Limited
+,Diversified / Microcap,TPLPLASTEH,,TPL Plastech Limited
+,Diversified / Microcap,TRACXN,,Tracxn Technologies Limited
+,Diversified / Microcap,TRANSCOR,,Transcorp International Limited
+,Diversified / Microcap,TRANSPEK,,Transpek Industry Limited
+,Diversified / Microcap,TRANSWORLD,,TRANSWORLD SHIPPING LINES LIMITED
+,Diversified / Microcap,TREEHOUSE,,Tree House Education & Accessories Limited
+,Diversified / Microcap,TREJHARA,,TREJHARA SOLUTIONS LIMITED
+,Diversified / Microcap,TREL,,Transindia Real Estate Limited
+,Diversified / Microcap,TRF,,TRF Limited
+,Diversified / Microcap,TRIGYN,,Trigyn Technologies Limited
+,Diversified / Microcap,TRITONV,,Triton Valves Limited
+,Diversified / Microcap,TRIVENIPT,,Triveni Power Transmission Limited
+,Diversified / Microcap,TRU,,TruCap Finance Limited
+,Diversified / Microcap,TRUALT,,TruAlt Bioenergy Limited
+,Diversified / Microcap,TTKHLTCARE,,TTK Healthcare Limited
+,Diversified / Microcap,TTKPRESTIG,,TTK Prestige Limited
+,Diversified / Microcap,TTL,,T T Limited
+,Diversified / Microcap,TURTLEMINT,,Turtlemint Fintech Solutions Limited
+,Diversified / Microcap,TUTIALKA,,Tuticorin Alkali Chemicals & Fertilizers Limited
+,Diversified / Microcap,TVSELECT,,TVS Electronics Limited
+,Diversified / Microcap,TVSHLTD,,TVS Holdings Limited
+,Diversified / Microcap,TVSSRICHAK,,TVS Srichakra Limited
+,Diversified / Microcap,TVTODAY,,TV Today Network Limited
+,Diversified / Microcap,TVVISION,,TV Vision Limited
+,Diversified / Microcap,UCAL,,UCAL LIMITED
+,Diversified / Microcap,UDAYJEW,,Uday Jewellery Industries Limited
+,Diversified / Microcap,UDS,,Updater Services Limited
+,Diversified / Microcap,UEL,,Ujaas Energy Limited
+,Diversified / Microcap,UFBL,,United Foodbrands Limited
+,Diversified / Microcap,UFLEX,,UFLEX Limited
+,Diversified / Microcap,UFO,,UFO Moviez India Limited
+,Diversified / Microcap,UGARSUGAR,,The Ugar Sugar Works Limited
+,Diversified / Microcap,UGROCAP,,Ugro Capital Limited
+,Diversified / Microcap,ULTRAMAR,,Ultramarine & Pigments Limited
+,Diversified / Microcap,UMAEXPORTS,,Uma Exports Limited
+,Diversified / Microcap,UMESLTD,,Usha Martin Education & Solutions Limited
+,Diversified / Microcap,UMIYA-MRO,,UMIYA BUILDCON LIMITED
+,Diversified / Microcap,UNICHEMLAB,,Unichem Laboratories Limited
+,Diversified / Microcap,UNIDT,,United Drilling Tools Limited
+,Diversified / Microcap,UNIECOM,,Unicommerce Esolutions Limited
+,Diversified / Microcap,UNIENTER,,Uniphos Enterprises Limited
+,Diversified / Microcap,UNIINFO,,Uniinfo Telecom Services Limited
+,Diversified / Microcap,UNIMECH,,Unimech Aerospace and Manufacturing Limited
+,Diversified / Microcap,UNIPARTS,,Uniparts India Limited
+,Diversified / Microcap,UNITECH,,Unitech Limited
+,Diversified / Microcap,UNITEDPOLY,,United Polyfab Gujarat Limited
+,Diversified / Microcap,UNITEDTEA,,The United Nilgiri Tea Estates Company Limited
+,Diversified / Microcap,UNIVASTU,,Univastu India Limited
+,Diversified / Microcap,UNIVCABLES,,Universal Cables Limited
+,Diversified / Microcap,UNIVPHOTO,,Universus Photo Imagings Limited
+,Diversified / Microcap,UPHOT,,U P Hotels Limited
+,Diversified / Microcap,URAVIDEF,,Uravi Defence and Technology Limited
+,Diversified / Microcap,URJA,,Urja Global Limited
+,Diversified / Microcap,USK,,Udayshivakumar Infra Limited
+,Diversified / Microcap,UTKARSHBNK,,Utkarsh Small Finance Bank Limited
+,Diversified / Microcap,UTTAMSUGAR,,Uttam Sugar Mills Limited
+,Diversified / Microcap,UYFINCORP,,U. Y. Fincorp Limited
+,Diversified / Microcap,VADILALIND,,Vadilal Industries Limited
+,Diversified / Microcap,VADILENT,,Vadilal Enterprises Limited
+,Diversified / Microcap,VAISHALI,,Vaishali Pharma Limited
+,Diversified / Microcap,VAKRANGEE,,Vakrangee Limited
+,Diversified / Microcap,VALIANTLAB,,Valiant Laboratories Limited
+,Diversified / Microcap,VALIANTORG,,Valiant Organics Limited
+,Diversified / Microcap,VAML,,Vedanta Aluminium Metal Limited
+,Diversified / Microcap,VARDHACRLC,,Vardhman Acrylics Limited
+,Diversified / Microcap,VARDMNPOLY,,Vardhman Polytex Limited
+,Diversified / Microcap,VARMORA,,Varmora Granito Limited
+,Diversified / Microcap,VASCONEQ,,Vascon Engineers Limited
+,Diversified / Microcap,VASUPRADA,,Shri Vasuprada Plantations Limited
+,Diversified / Microcap,VASWANI,,Vaswani Industries Limited
+,Diversified / Microcap,VCL,,Vaxtex Cotfab Limited
+,Diversified / Microcap,VEDAVAAG,,VEDAVAAG Systems Limited
+,Diversified / Microcap,VEDPOWER,,Vedanta Power Limited
+,Diversified / Microcap,VEEDOL,,Veedol Corporation Limited
+,Diversified / Microcap,VEEGALAND,,Veegaland Developers Limited
+,Diversified / Microcap,VELJAN,,Veljan Denison Limited
+,Diversified / Microcap,VENKEYS,,Venky's (India) Limited
+,Diversified / Microcap,VENTIVE,,Ventive Hospitality Limited
+,Diversified / Microcap,VENUSPIPES,,Venus Pipes & Tubes Limited
+,Diversified / Microcap,VENUSREM,,Venus Remedies Limited
+,Diversified / Microcap,VERANDA,,Veranda Learning Solutions Limited
+,Diversified / Microcap,VERTOZ,,Vertoz Limited
+,Diversified / Microcap,VESUVIUS,,Vesuvius India Limited
+,Diversified / Microcap,VETO,,Veto Switchgears And Cables Limited
+,Diversified / Microcap,VGCL,,Vibrant Global Capital Limited
+,Diversified / Microcap,VGL,,VARVEE GLOBAL LIMITED
+,Diversified / Microcap,VHL,,Vardhman Holdings Limited
+,Diversified / Microcap,VHLTD,,Viceroy Hotels Limited
+,Diversified / Microcap,VIDHIING,,Vidhi Specialty Food Ingredients Limited
+,Diversified / Microcap,VIDYAWIRES,,Vidya Wires Limited
+,Diversified / Microcap,VIJIFIN,,Viji Finance Limited
+,Diversified / Microcap,VIJSOLX,,Vijay Solvex Limited
+,Diversified / Microcap,VIKASECO,,Vikas EcoTech Limited
+,Diversified / Microcap,VIKASLIFE,,Vikas Lifecare Limited
+,Diversified / Microcap,VIKRAN,,Vikran Engineering Limited
+,Diversified / Microcap,VIMTALABS,,Vimta Labs Limited
+,Diversified / Microcap,VINATIORGA,,Vinati Organics Limited
+,Diversified / Microcap,VINCOFE,,Vintage Coffee And Beverages Limited
+,Diversified / Microcap,VINDHYATEL,,Vindhya Telelinks Limited
+,Diversified / Microcap,VINEETLAB,,Vineet Laboratories Limited
+,Diversified / Microcap,VINNY,,Vinny Overseas Limited
+,Diversified / Microcap,VINYLINDIA,,Vinyl Chemicals (India) Limited
+,Diversified / Microcap,VIPCLOTHNG,,VIP Clothing Limited
+,Diversified / Microcap,VIPULLTD,,Vipul Limited
+,Diversified / Microcap,VIRAT,,Virat Industries Limited
+,Diversified / Microcap,VIRINCHI,,Virinchi Limited
+,Diversified / Microcap,VIRTUALG,,Virtual Global Education Limited
+,Diversified / Microcap,VISACHROME,,VISA Chrome Limited
+,Diversified / Microcap,VISAKAIND,,Visaka Industries Limited
+,Diversified / Microcap,VISHAL,,Vishal Fabrics Limited
+,Diversified / Microcap,VISHNU,,Vishnu Chemicals Limited
+,Diversified / Microcap,VISHWARAJ,,Vishwaraj Sugar Industries Limited
+,Diversified / Microcap,VISL,,Vedanta Iron and Steel Limited
+,Diversified / Microcap,VITAL,,Vital Chemtech Limited
+,Diversified / Microcap,VIVIANA,,Viviana Power Tech Limited
+,Diversified / Microcap,VIVIDHA,,Visagar Polytex Limited
+,Diversified / Microcap,VIVOBIOT,,Vivo Bio Tech Limited
+,Diversified / Microcap,VLEGOV,,VL E-Governance & IT Solutions Limited
+,Diversified / Microcap,VLSFINANCE,,VLS Finance Limited
+,Diversified / Microcap,VMSTMT,,VMS TMT Limited
+,Diversified / Microcap,VNL,,Vishal Nirmiti Limited
+,Diversified / Microcap,VOEPL,,Virtuoso Optoelectronics Limited
+,Diversified / Microcap,VOGL,,Vedanta Oil and Gas Limited
+,Diversified / Microcap,VOITHPAPR,,Voith Paper Fabrics India Limited
+,Diversified / Microcap,VPRPL,,Vishnu Prakash R Punglia Limited
+,Diversified / Microcap,VRAJ,,Vraj Iron and Steel Limited
+,Diversified / Microcap,VRLLOG,,VRL Logistics Limited
+,Diversified / Microcap,VSSL,,Vardhman Special Steels Limited
+,Diversified / Microcap,VSTIND,,VST Industries Limited
+,Diversified / Microcap,VSTL,,Vibhor Steel Tubes Limited
+,Diversified / Microcap,VSTTILLERS,,V.S.T Tillers Tractors Limited
+,Diversified / Microcap,VTMLTD,,VTM Limited
+,Diversified / Microcap,WAAREEINDO,,Indosolar Limited
+,Diversified / Microcap,WALCHANNAG,,Walchandnagar Industries Limited
+,Diversified / Microcap,WANBURY,,Wanbury Limited
+,Diversified / Microcap,WATERBASE,,Waterbase Limited
+,Diversified / Microcap,WCIL,,Western Carriers (India) Limited
+,Diversified / Microcap,WEALTH,,Wealth First Portfolio Managers Limited
+,Diversified / Microcap,WEIZMANIND,,Weizmann Limited
+,Diversified / Microcap,WEL,,Wonder Electricals Limited
+,Diversified / Microcap,WELINV,,Welspun Investments and Commercials Limited
+,Diversified / Microcap,WELSPLSOL,,Welspun Specialty Solutions Limited
+,Diversified / Microcap,WENDT,,Wendt (India) Limited
+,Diversified / Microcap,WEWIN,,WE WIN LIMITED
+,Diversified / Microcap,WHBRADY,,WH Brady & Company Limited
+,Diversified / Microcap,WHEELS,,Wheels India Limited
+,Diversified / Microcap,WILLAMAGOR,,Williamson Magor & Company Limited
+,Diversified / Microcap,WINDLAS,,Windlas Biotech Limited
+,Diversified / Microcap,WINDMACHIN,,Windsor Machines Limited
+,Diversified / Microcap,WIPL,,The Western India Plywoods Limited
+,Diversified / Microcap,WONDERLA,,Wonderla Holidays Limited
+,Diversified / Microcap,WORTHPERI,,Worth Peripherals Limited
+,Diversified / Microcap,WPIL,,WPIL Limited
+,Diversified / Microcap,WSI,,W S Industries (I) Limited
+,Diversified / Microcap,WSTCSTPAPR,,West Coast Paper Mills Limited
+,Diversified / Microcap,XCHANGING,,Xchanging Solutions Limited
+,Diversified / Microcap,XELPMOC,,Xelpmoc Design And Tech Limited
+,Diversified / Microcap,XPROINDIA,,Xpro India Limited
+,Diversified / Microcap,XTGLOBAL,,Xtglobal Infotech Limited
+,Diversified / Microcap,XTRANET,,Xtranet Technologies Limited
+,Diversified / Microcap,YASHO,,Yasho Industries Limited
+,Diversified / Microcap,YATRA,,Yatra Online Limited
+,Diversified / Microcap,YOGI,,Yogi Limited
+,Diversified / Microcap,YUKEN,,Yuken India Limited
+,Diversified / Microcap,ZEELEARN,,Zee Learn Limited
+,Diversified / Microcap,ZEEMEDIA,,Zee Media Corporation Limited
+,Diversified / Microcap,ZENITHEXPO,,Zenith Exports Limited
+,Diversified / Microcap,ZENITHSTL,,Zenith Steel Pipes & Industries Limited
+,Diversified / Microcap,ZETWERK,,Zetwerk Manufacturing Businesses Limited
+,Diversified / Microcap,ZFSTEERING,,ZF Steering Gear (India) Limited
+,Diversified / Microcap,ZIMLAB,,Zim Laboratories Limited
+,Diversified / Microcap,ZODIAC,,Zodiac Energy Limited
+,Diversified / Microcap,ZODIACLOTH,,Zodiac Clothing Company Limited
+,Diversified / Microcap,ZOTA,,Zota Health Care LImited
+,Diversified / Microcap,ZSARACOM,,Saraswati Commercial India Limited
+,Diversified / Microcap,ZUARI,,Zuari Agro Chemicals Limited
+,Diversified / Microcap,ZUARIIND,,ZUARI INDUSTRIES LIMITED
