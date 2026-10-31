@@ -31,12 +31,10 @@ def classify_sector(symbol, raw_industry):
     ind = str(raw_industry).strip()
     return ind if ind not in ['Unknown', '', 'nan', 'None'] else 'Diversified / Emerging'
 
-# V55: Dual-Engine Universe Discovery (Yahoo Finance India Screener API + NSE Archive)
 def update_universe_with_new_ipos(univ_df):
     existing_symbols = set(univ_df['Symbol'].astype(str).str.upper().str.strip())
     new_rows = []
 
-    # 1. Unblocked Yahoo Finance India Screener JSON API (Catches outside-750 movers automatically!)
     yf_urls = [
         "https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?scrIds=day_gainers_in&count=50",
         "https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?scrIds=most_actives_in&count=50"
@@ -57,7 +55,6 @@ def update_universe_with_new_ipos(univ_df):
                         existing_symbols.add(clean_sym)
         except: pass
 
-    # 2. NSE Archive Equity List Fallback
     try:
         req = urllib.request.Request("https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv", headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=8) as response:
@@ -395,14 +392,30 @@ def run_quantum_engine():
                 inst_base = min(0.65, max(0.32, 0.38 + (fii_curr * 0.35) + (wick_pct * 0.15)))
                 deliv_pct = round(inst_base, 4)
 
+            sector_name = classify_sector(symbol, row.get('Industry', 'Unknown'))
+            is_bank_or_fin = any(k in sector_name.lower() for k in ['bank', 'financial', 'nbfc', 'insurance'])
+
             fund_score, accum_status, dust_gem_score = 0, "NEUTRAL", 0
             debt_val = round(raw_debt, 2) if raw_debt is not None else 0.0
             if raw_in and raw_in >= 0.50: fund_score += 30
             if raw_inst and raw_inst >= 0.15: fund_score += 20
             if final_roe and final_roe > 0.15: fund_score += 20
-            if debt_val < 50: fund_score += 30
+            if debt_val < 50 or is_bank_or_fin: fund_score += 30
             if fund_score >= 70 and is_vdu and dist_from_52w_low < 0.30: accum_status = "💎 SILENT ACCUMULATION"
             elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
+
+            # V56: THE ANTI-JUNK FUNDAMENTAL QUALITY GATE
+            # Prevents high-debt, loss-making, or operator-pumped penny stocks from entering STRONG BUY or displacing solid stocks!
+            roe_num = float(final_roe) if final_roe is not None else 0.0
+            total_smart_ownership = prom_curr + fii_curr
+            passes_quality_gate = (
+                fund_score >= 50 and
+                roe_num >= 0.08 and
+                (debt_val < 85 or is_bank_or_fin) and
+                (0 < pe_val < 95 or is_bank_or_fin) and
+                total_smart_ownership >= 0.40 and
+                cur_close >= ema200 * 0.98
+            )
 
             fo_regime = "CASH STOCK"
             oi_chg_pct = 0.0
@@ -425,16 +438,13 @@ def run_quantum_engine():
                     oi_chg_pct = round((dsr - 1.0) * 0.01, 4)
                 oi_total = int(vol_30d * 3.5)
 
-            # V55: 4-STAGE "CATCH THE TRAIN BEFORE IT LEAVES" IGNITION ENGINE
             is_breakout = (cur_close > float(h.iloc[-21:-1].max())) if len(h) >= 21 else False
-            # Stage-A: Launchpad Coil (Strong Fundamentals, Stage-2 Uptrend, Near 52W High, Sweet-Spot RSI 52-67, High Delivery, NOT Overextended)
             is_launchpad_coil = (
-                fund_score >= 50 and cur_close >= ema20 and ema20 >= ema50 * 0.99 and cur_close > ema200 and
+                passes_quality_gate and cur_close >= ema20 and ema20 >= ema50 * 0.99 and
                 51.0 <= rsi <= 67.5 and 0.02 <= ret_20d <= 0.16 and disc_from_52w_high >= -0.15 and deliv_pct >= 0.44 and ret_1d >= -0.01
             )
-            # Stage-B: Day-1 Pocket Pivot Ignition (Catching Day 1 of motion before it runs away!)
             is_day1_pocket_pivot = (
-                0.012 <= ret_1d <= 0.048 and dsr >= 1.35 and cur_close >= ema20 and cur_close >= ema50 and
+                passes_quality_gate and 0.012 <= ret_1d <= 0.055 and dsr >= 1.35 and cur_close >= ema20 and cur_close >= ema50 and
                 48.0 <= rsi <= 68.5 and ret_20d <= 0.15 and wick_pct >= 0.60
             )
             is_capitulation = False
@@ -446,18 +456,20 @@ def run_quantum_engine():
                 alert_type = "🎯 LAUNCHPAD COIL (Pre-Breakout)"
             elif is_day1_pocket_pivot:
                 alert_type = "🔥 DAY-1 POCKET PIVOT (Fresh Motion)"
-            elif is_breakout and dsr > 1.25 and rsi <= 70:
+            elif is_breakout and dsr > 1.25 and rsi <= 70 and passes_quality_gate:
                 alert_type = "🚀 20D BREAKOUT (Early Stage)"
-            elif is_penny_spike and rsi <= 70:
-                alert_type = "🌋 MICROCAP AWAKENING"
-            elif is_vdu and cur_close > ema50 and 45 <= rsi <= 65:
+            elif is_penny_spike and rsi <= 70 and passes_quality_gate:
+                alert_type = "🌋 QUALITY MICROCAP AWAKENING"
+            elif is_penny_spike or (is_breakout and not passes_quality_gate):
+                alert_type = "⚠️ SPECULATIVE SPIKE (Weak Fund)"
+            elif is_vdu and cur_close > ema50 and 45 <= rsi <= 65 and passes_quality_gate:
                 alert_type = "⚡ VCP + VDU TIGHT COIL"
             elif ret_1d <= -0.05 and rsi <= 35 and (wick_pct > 0.35 or dsr >= 1.5):
                 is_capitulation = True
                 alert_type = "💥 CAPITULATION BOUNCE"
             elif cur_close < ema200 and slope_200 < 0:
                 alert_type = "📉 DOWNTREND (Avoid)"
-            elif cur_close > ema50 and cur_close < (ema50 * 1.04) and rsi >= 45:
+            elif cur_close > ema50 and cur_close < (ema50 * 1.04) and rsi >= 45 and passes_quality_gate:
                 alert_type = "🛡️ 50-EMA PULLBACK SUPPORT"
 
             try:
@@ -470,7 +482,6 @@ def run_quantum_engine():
             except:
                 atr14 = cur_close * 0.02
 
-            # V55 FIX: Institutional ATR Swing Structure (Never penalizes rising stocks in motion!)
             if is_capitulation:
                 sl_price = round(float(l.iloc[-1]) * 0.98, 2)
                 target_7 = round(cur_close + (4.0 * atr14), 2)
@@ -502,7 +513,6 @@ def run_quantum_engine():
                     events_list.append(f"🚀 POST-RESULT SURGE ({e_dt.strftime('%d-%b')})")
                     post_earnings_breakout = True
 
-            # Launchpad Alpha Score to rank the best profit-makers BEFORE they become overbought
             launchpad_score = round(
                 (fund_score * 0.40) +
                 (deliv_pct * 100 * 0.25) +
@@ -513,14 +523,14 @@ def run_quantum_engine():
             sort_priority = 6
             if earnings_blackout:
                 trading_verdict, sort_priority = "🚨 EARNINGS BLACKOUT (WAIT)", 5
-            elif alert_type in ["🎯 LAUNCHPAD COIL (Pre-Breakout)", "🔥 DAY-1 POCKET PIVOT (Fresh Motion)", "🚀 20D BREAKOUT (Early Stage)", "🌋 MICROCAP AWAKENING"]:
+            elif alert_type in ["🎯 LAUNCHPAD COIL (Pre-Breakout)", "🔥 DAY-1 POCKET PIVOT (Fresh Motion)", "🚀 20D BREAKOUT (Early Stage)", "🌋 QUALITY MICROCAP AWAKENING"]:
                 trading_verdict, sort_priority = f"🎯 STRONG BUY: ₹{round(cur_close, 2)}", 1
-            elif alert_type in ["⚡ VCP + VDU TIGHT COIL", "🛡️ 50-EMA PULLBACK SUPPORT"] and fund_score >= 50:
+            elif alert_type in ["⚡ VCP + VDU TIGHT COIL", "🛡️ 50-EMA PULLBACK SUPPORT"]:
                 trading_verdict, sort_priority = f"🟢 ACCUMULATE: ₹{round(cur_close, 2)}", 2
             elif is_capitulation:
                 trading_verdict, sort_priority = f"⚡ CONTRARIAN BOUNCE: ₹{round(cur_close, 2)}", 3
-            elif alert_type == "🚨 OVEREXTENDED (Train Left - Wait)":
-                trading_verdict, sort_priority = "⚠️ TRAIN LEFT / BOOK PROFIT", 4
+            elif alert_type in ["🚨 OVEREXTENDED (Train Left - Wait)", "⚠️ SPECULATIVE SPIKE (Weak Fund)"]:
+                trading_verdict, sort_priority = "⚠️ AVOID / CHECK FUNDAMENTALS", 4
             elif alert_type == "📉 DOWNTREND (Avoid)":
                 trading_verdict, sort_priority = "⛔ STRICT SKIP", 6
             else:
@@ -583,7 +593,8 @@ def run_quantum_engine():
             except: pass
 
             return {
-                'Symbol': symbol, 'Company': company_name, 'Industry': classify_sector(symbol, row.get('Industry', 'Unknown')),
+                'Symbol': symbol, 'Company': company_name, 'Industry': sector_name,
+                'Is_Microcap_Spike': is_penny_spike,
                 'Sort_Priority': sort_priority, 'Launchpad_Score': launchpad_score,
                 'Trading Verdict': trading_verdict, 'Alert Type': alert_type, 
                 'Entry Trigger': round(cur_close, 2), 'Stop Loss': sl_price, 'Target 7%': target_7, 'RSI_14': round(rsi, 2),
@@ -627,8 +638,11 @@ def run_quantum_engine():
     if is_eod_heavy_run:
         pd.concat([mem_df, pd.DataFrame(today_memory_records)]).drop_duplicates(subset=['Symbol', 'Date'], keep='last').to_csv("Historical_Holdings.csv", index=False)
 
-    # V55: Rank Momentum Swings by Sort_Priority and Launchpad_Score (Surfacing DIVISLAB, HAL, LOTUSDEV, SHYAMMETL, NAVINFLUOR, etc.)
-    top_swings = df[df['Sort_Priority'] <= 2].sort_values(by=["Sort_Priority", "Launchpad_Score", "R:R Ratio"], ascending=[True, False, False]).head(25)
+    # V56: 20-CORE FORTRESS + 5-MICROCAP QUOTA (Never throws out solid core compounders for microcap spikes!)
+    eligible_swings = df[df['Sort_Priority'] <= 2].sort_values(by=["Launchpad_Score", "Sort_Priority", "R:R Ratio"], ascending=[False, True, False])
+    core_swings = eligible_swings[~eligible_swings['Is_Microcap_Spike']].head(20)
+    micro_swings = eligible_swings[eligible_swings['Is_Microcap_Spike']].head(5)
+    top_swings = pd.concat([core_swings, micro_swings]).sort_values(by=["Launchpad_Score", "Sort_Priority"], ascending=[False, True]).head(25)
     used_syms = set(top_swings['Symbol'].tolist())
     
     top_inc = df[(df['Accumulation Status'] != "NEUTRAL") & (df['Sort_Priority'] <= 3) & (~df['Symbol'].isin(used_syms))].sort_values(by=["Opportunity Score", "Launchpad_Score"], ascending=[False, False]).head(20)
@@ -652,7 +666,7 @@ def run_quantum_engine():
         fo_df = df[df['Symbol'].isin(fo_universe)]
     fo_df[["Symbol", "Company", "Entry Trigger", "Ret_1D", "FO_Regime", "OI_Chg_Pct", "OI_Total", "RSI_14", "Volume Profile", "Machine_Prediction", "52W High Disc %", "Industry"]].to_csv("RAW_FO_DECRYPTOR.csv", index=False)
 
-    df.loc[top_swings.index].sort_values(by=["Sort_Priority", "Launchpad_Score", "R:R Ratio"], ascending=[True, False, False])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
+    df.loc[top_swings.index].sort_values(by=["Launchpad_Score", "Sort_Priority"], ascending=[False, True])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
     df.loc[top_inc.index].sort_values(by="Opportunity Score", ascending=False)[["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Div Yield", "Volume Profile", "Corp Event", "Catalyst Impact"]].to_csv("RAW_INCUBATOR.csv", index=False)
 
     sniper_rows = []
