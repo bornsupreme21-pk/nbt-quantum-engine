@@ -669,12 +669,18 @@ def run_quantum_engine():
     df.loc[top_swings.index].sort_values(by=["Launchpad_Score", "Sort_Priority"], ascending=[False, True])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
     df.loc[top_inc.index].sort_values(by="Opportunity Score", ascending=False)[["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Div Yield", "Volume Profile", "Corp Event", "Catalyst Impact"]].to_csv("RAW_INCUBATOR.csv", index=False)
 
+    # V56.1 SNIPER CALIBRATION: Realistic 15-Day Swing Targets & ATR Stops across all 3 buckets so Prediction Lab measures true 15D accuracy!
     sniper_rows = []
-    for _, r in df.loc[top_swings.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "MOMENTUM SWING", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], r['RSI_14'], r['R:R Ratio'], r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
-    for _, r in df.loc[top_inc.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "10X MULTIBAGGER", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*2, 2), r['RSI_14'], 5.0, r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
-    for _, r in df.loc[fear_candidates.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], "⚡ CONTRARIAN FEAR DIP / EVENT", r['Entry Trigger'], r['Stop Loss'], round(r['Entry Trigger']*1.10, 2), r['RSI_14'], round(max(2.0, r['R:R Ratio']), 2), r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
-    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "RSI_14", "R:R Ratio", "RS vs Nifty", "52W High", "52W Low", "Catalyst / Fear Diagnosis", "Corporate Event"]).to_csv("RAW_SNIPER.csv", index=False)
-    
+    for _, r in df.loc[top_swings.index].iterrows():
+        sniper_rows.append([r['Symbol'], r['Company'], f"🚀 SWING: {r['Alert Type']}", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], r['RSI_14'], r['R:R Ratio'], r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
+    for _, r in df.loc[top_inc.index].iterrows():
+        inc_sl = round(r['Entry Trigger'] * 0.96, 2)
+        inc_tgt = round(r['Entry Trigger'] * 1.08, 2)
+        sniper_rows.append([r['Symbol'], r['Company'], f"💎 COMPOUNDER ({r['Accumulation Status']})", r['Entry Trigger'], inc_sl, inc_tgt, r['RSI_14'], 2.0, r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
+    for _, r in df.loc[fear_candidates.index].iterrows():
+        fear_sl = round(r['Entry Trigger'] * 0.955, 2)
+        fear_tgt = round(r['Entry Trigger'] * 1.075, 2)
+        sniper_rows.append([r['Symbol'], r['Company'], "⚡ EVENT / 200-EMA FEAR BOUNCE", r['Entry Trigger'], fear_sl, fear_tgt, r['RSI_14'], 1.67, r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
     fear_rows = []
     for _, r in df.loc[dust_gems.index].iterrows(): 
         action = "💎 ACCUMULATE (Deep Value)" if r['Disc from 52W High'] <= -0.30 else "🟢 PULLBACK ENTRY"
