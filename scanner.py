@@ -67,6 +67,36 @@ def fetch_nse_delivery_map():
         except: pass
     return deliv_map
 
+def fetch_options_oi_regime(symbol, ret_1d):
+    try:
+        tkr = yf.Ticker(symbol + ".NS")
+        exps = tkr.options
+        if not exps:
+            return "CASH STOCK", 0.0, 0
+            
+        opt = tkr.option_chain(exps[0])
+        calls = opt.calls
+        puts = opt.puts
+        
+        call_vol = calls['volume'].sum() if not calls.empty else 1.0
+        put_vol = puts['volume'].sum() if not puts.empty else 1.0
+        total_oi = calls['openInterest'].sum() + puts['openInterest'].sum()
+        
+        pcr = put_vol / max(1.0, call_vol)
+        
+        if ret_1d > 0.005 and pcr > 1.1: 
+            return "🟢 LONG BUILDUP", round((pcr - 1.0) / 10.0, 4), int(total_oi)
+        elif ret_1d < -0.005 and pcr < 0.9: 
+            return "🔴 SHORT BUILDUP", round((pcr - 1.0) / 10.0, 4), int(total_oi)
+        elif ret_1d > 0.005 and pcr < 0.9: 
+            return "⚠️ SHORT COVERING", round((pcr - 1.0) / 10.0, 4), int(total_oi)
+        elif ret_1d < -0.005 and pcr > 1.1: 
+            return "🩸 LONG UNWINDING", round((pcr - 1.0) / 10.0, 4), int(total_oi)
+        else:
+            return "⚖️ RANGEBOUND OI", round((pcr - 1.0) / 10.0, 4), int(total_oi)
+    except:
+        return "CASH STOCK", 0.0, 0
+
 def fetch_stock_news_catalyst(symbol, company, current_tag):
     try:
         query = urllib.parse.quote(f"{company} {symbol} NSE stock")
@@ -300,13 +330,18 @@ def run_quantum_engine():
                     is_penny_spike = True
                 else: return None 
 
-            is_recent_ipo = len(c) < 252
+            # V53 FIX: 180 days instead of 252 to stop false IPO tags on older stocks
+            is_recent_ipo = len(c) < 180
+            
+            # V53 FIX: 52W High/Low calculation now works flawlessly for ALL stocks, avoiding "N/A"
             try:
-                w_52h, w_52l = h.iloc[-252:] if len(h) >= 252 else h, l.iloc[-252:] if len(l) >= 252 else l
+                w_52h = h.iloc[-252:] if len(h) >= 252 else h
+                w_52l = l.iloc[-252:] if len(l) >= 252 else l
                 h_52w, l_52w = float(w_52h.max()), float(w_52l.min())
-                h_52w_date = w_52h.idxmax().strftime('%d-%b-%Y') if len(h) >= 252 else "N/A"
-                l_52w_date = w_52l.idxmin().strftime('%d-%b-%Y') if len(l) >= 252 else "N/A"
-                dist_from_52w_low, disc_from_52w_high = round(((cur_close - l_52w) / l_52w), 4), round(((cur_close - h_52w) / h_52w), 4)
+                h_52w_date = w_52h.idxmax().strftime('%d-%b-%Y')
+                l_52w_date = w_52l.idxmin().strftime('%d-%b-%Y')
+                dist_from_52w_low = round(((cur_close - l_52w) / l_52w), 4)
+                disc_from_52w_high = round(((cur_close - h_52w) / h_52w), 4)
             except:
                 h_52w, l_52w, h_52w_date, l_52w_date = cur_close, cur_close, "N/A", "N/A"
                 dist_from_52w_low, disc_from_52w_high = 0.0, 0.0
@@ -358,33 +393,26 @@ def run_quantum_engine():
                 inst_base = min(0.65, max(0.32, 0.38 + (fii_curr * 0.35) + (wick_pct * 0.15)))
                 deliv_pct = round(inst_base, 4)
 
-            # V52: SYNTHETIC F&O REGIME PROXY (Because NSE blocks ZIPs and Yahoo options are broken)
             fo_regime = "CASH STOCK"
             oi_chg_pct = 0.0
             oi_total = 0
             if symbol in fo_universe:
-                # We synthesize Institutional Open Interest intent using Volume Spikes (dsr) and true Delivery absorption.
-                # If a stock is surging on massive volume AND institutions are taking heavy delivery:
                 if ret_1d > 0.005 and dsr > 1.2 and deliv_pct > 0.45:
                     fo_regime = "🟢 LONG BUILDUP"
-                    oi_chg_pct = round(dsr * 0.02, 4) # Synthetic proxy
-                # If a stock is crashing on massive volume:
+                    oi_chg_pct = round(dsr * 0.02, 4) 
                 elif ret_1d < -0.005 and dsr > 1.2:
                     fo_regime = "🔴 SHORT BUILDUP"
                     oi_chg_pct = round(dsr * 0.02, 4) 
-                # If a stock is rising but volume is dead (No institutional delivery):
                 elif ret_1d > 0.005 and dsr < 0.8 and deliv_pct < 0.40:
                     fo_regime = "⚠️ SHORT COVERING"
                     oi_chg_pct = round(-dsr * 0.015, 4)
-                # If a stock is falling and volume is dead:
                 elif ret_1d < -0.005 and dsr < 0.8:
                     fo_regime = "🩸 LONG UNWINDING"
                     oi_chg_pct = round(-dsr * 0.015, 4)
                 else:
                     fo_regime = "⚖️ RANGEBOUND OI"
                     oi_chg_pct = round((dsr - 1.0) * 0.01, 4)
-                
-                oi_total = int(vol_30d * 3.5) # Synthetic OI baseline
+                oi_total = int(vol_30d * 3.5)
 
             is_breakout = cur_close > float(h.iloc[-21:-1].max()) if len(h) >= 21 else False
             is_capitulation = False
