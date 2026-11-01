@@ -29,7 +29,7 @@ def classify_sector(symbol, raw_industry):
     sym = str(symbol).upper().strip()
     if sym in THEMATIC_MAP: return THEMATIC_MAP[sym]
     ind = str(raw_industry).strip()
-    return ind if ind not in ['Unknown', '', 'nan', 'None'] else 'Diversified / Emerging'
+    return ind if ind not in ['Unknown', '', 'nan', 'None'] else '🚀 BEYOND-750: Dynamic Mover'
 
 def update_universe_with_new_ipos(univ_df):
     existing_symbols = set(univ_df['Symbol'].astype(str).str.upper().str.strip())
@@ -51,7 +51,7 @@ def update_universe_with_new_ipos(univ_df):
                     clean_sym = sym.replace('.NS', '').strip()
                     if clean_sym and clean_sym not in existing_symbols:
                         name = str(q.get('shortName', q.get('longName', clean_sym))).strip()
-                        new_rows.append({'Company': name, 'Industry': 'Dynamic Mover', 'Symbol': clean_sym})
+                        new_rows.append({'Company': name, 'Industry': '🚀 BEYOND-750: Dynamic Mover', 'Symbol': clean_sym})
                         existing_symbols.add(clean_sym)
         except: pass
 
@@ -65,7 +65,7 @@ def update_universe_with_new_ipos(univ_df):
         for _, row in nse_df.iterrows():
             sym = str(row['SYMBOL']).strip().upper()
             if sym not in existing_symbols and len(existing_symbols) < 1100:
-                new_rows.append({'Company': str(row['NAME OF COMPANY']).strip(), 'Industry': 'Diversified / Emerging', 'Symbol': sym})
+                new_rows.append({'Company': str(row['NAME OF COMPANY']).strip(), 'Industry': '🚀 BEYOND-750: Emerging', 'Symbol': sym})
                 existing_symbols.add(sym)
     except: pass
 
@@ -285,16 +285,15 @@ def run_quantum_engine():
     except: return 
     
     nifty_20d_return = 0.0
+    nifty_returns = pd.Series(dtype=float)
+    nifty_var = 0.0
     try:
         nifty_c = raw_data['Close']['^NSEI'].dropna()
         if len(nifty_c) >= 21: nifty_20d_return = float((nifty_c.iloc[-1] / nifty_c.iloc[-21]) - 1)
         
-        # V57 FIX: Calculate true variance of Nifty for accurate Beta modeling
         nifty_returns = nifty_c.pct_change().dropna()
-        nifty_var = nifty_returns.var()
-    except:
-        nifty_returns = pd.Series(dtype=float)
-        nifty_var = 0.0
+        nifty_var = float(nifty_returns.var())
+    except: pass
 
     fundamentals = {}
     if is_eod_heavy_run:
@@ -356,19 +355,23 @@ def run_quantum_engine():
             ret_20d = round(((cur_close / float(c.iloc[-21])) - 1), 4) if len(c) >= 21 else 0.0
             rs_vs_nifty = round(ret_20d - nifty_20d_return, 4)
 
-            # V57 FIX: True Mathematical Beta Calculation (Replaces Broken Yahoo Dictionary)
+            # V59: Bulletproof Covariance Beta (Fixing the 1.05 flaw)
             try:
-                if len(c) >= 252 and nifty_var > 0:
-                    stk_returns = c.pct_change().dropna().iloc[-252:]
-                    aligned_nifty = nifty_returns.reindex(stk_returns.index).dropna()
-                    aligned_stk = stk_returns.reindex(aligned_nifty.index)
-                    cov_matrix = np.cov(aligned_stk, aligned_nifty)
-                    calc_beta = cov_matrix[0, 1] / cov_matrix[1, 1]
-                    beta_val = round(float(calc_beta), 2)
+                # We lower the window check to 60 days so recent IPOs get true calculations!
+                if len(c) >= 60 and nifty_var > 0:
+                    stk_returns = c.pct_change().dropna()
+                    # Align indices to ensure accurate covariance calculation
+                    aligned = pd.concat([stk_returns, nifty_returns], axis=1, join='inner').dropna()
+                    if len(aligned) >= 60:
+                        cov_matrix = np.cov(aligned.iloc[:, 0], aligned.iloc[:, 1])
+                        calc_beta = cov_matrix[0, 1] / cov_matrix[1, 1]
+                        beta_val = round(float(calc_beta), 2)
+                    else:
+                        beta_val = 1.0 if is_recent_ipo else 1.05
                 else:
-                    beta_val = 1.05
+                    beta_val = 1.0 if is_recent_ipo else 1.05
             except:
-                beta_val = 1.05
+                beta_val = 1.0 if is_recent_ipo else 1.05
 
             ema20 = float(c.ewm(span=20, adjust=False).mean().iloc[-1])
             ema50 = float(c.ewm(span=50, adjust=False).mean().iloc[-1])
