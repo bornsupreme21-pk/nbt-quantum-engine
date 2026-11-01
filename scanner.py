@@ -233,7 +233,7 @@ def fetch_macro_and_history(adv_count=400, dec_count=350, avg_deliv_pct=0.48, to
             if idx_i == len(dates_list) - 1:
                 b_verdict = "🟢 Broad Accumulation" if adr >= 1.25 else ("🔴 Broad Distribution" if adr <= 0.8 else "⚖️ Mixed Rotational Breadth")
                 breadth_str = f"{adv_count} Adv / {dec_count} Dec (ADR {adr}x) • {b_verdict}"
-            elif d_str in old_hist_map and "Adv" in str(old_hist_map[d_str].get('Market_Breadth_Summary', '')):
+            elif d_str in old_hist_map and "Adv" in old_hist_map[d_str].get('Market_Breadth_Summary', ''):
                 breadth_str = old_hist_map[d_str]['Market_Breadth_Summary']
             else:
                 if d_chg > 0.005: breadth_str = "🟢 Bullish Expansion • High Institutional Absorption"
@@ -272,7 +272,6 @@ def run_quantum_engine():
         mem_df = mem_df[mem_df['Date'] >= (pd.to_datetime(datetime.date.today()) - pd.Timedelta(days=180))]
     except: mem_df = pd.DataFrame(columns=['Symbol', 'Date', 'Prom_Pct', 'FII_Pct'])
     
-    # Keep both oldest and latest non-zero records from Historical_Holdings.csv to rescue missing Yahoo data!
     valid_mem = mem_df[(mem_df['Prom_Pct'] > 0) | (mem_df['FII_Pct'] > 0)] if not mem_df.empty else mem_df
     oldest_records = valid_mem.sort_values('Date').groupby('Symbol').first().to_dict('index') if not valid_mem.empty else {}
     latest_valid_records = valid_mem.sort_values('Date').groupby('Symbol').last().to_dict('index') if not valid_mem.empty else {}
@@ -313,7 +312,6 @@ def run_quantum_engine():
     try: raw_data = yf.download(tickers + ['^NSEI'], period=download_period, interval="1d", progress=False)
     except: return 
     
-    # V60: Dedicated Timezone-Normalized Nifty Return Series for 100% Accurate Beta Calculation
     nifty_20d_return = 0.0
     nifty_ret_clean = pd.Series(dtype=float)
     nifty_var = 0.0
@@ -381,7 +379,6 @@ def run_quantum_engine():
             ret_20d = round(((cur_close / float(c.iloc[-21])) - 1), 4) if len(c) >= 21 else 0.0
             rs_vs_nifty = round(ret_20d - nifty_20d_return, 4)
 
-            # V60: Timezone-Normalized True Covariance Beta (Works on 1Y/247-day and 30-day IPO windows!)
             beta_val = None
             try:
                 if len(c) >= 30 and not nifty_ret_clean.empty and nifty_var > 0:
@@ -447,7 +444,6 @@ def run_quantum_engine():
             prom_old = float(oldest_records.get(symbol, {}).get('Prom_Pct', prom_curr))
             fii_old = float(oldest_records.get(symbol, {}).get('FII_Pct', fii_curr))
             
-            # Never calculate a fake negative delta if current fetch was 0
             prom_delta = round(prom_curr - prom_old, 4) if prom_curr > 0 else 0.0
             fii_delta = round(fii_curr - fii_old, 4) if fii_curr > 0 else 0.0
             if prom_curr > 0 or fii_curr > 0:
@@ -476,7 +472,8 @@ def run_quantum_engine():
 
             roe_num = float(final_roe) if final_roe is not None else 0.12
             total_smart_ownership = prom_curr + fii_curr
-            # V60 Quality Gate: Enforces strict fundamentals when available, and uses institutional delivery + ownership when Yahoo omits ROE/PE
+            
+            # V60: Fault-Tolerant Quality Gate
             passes_quality_gate = (
                 fund_score >= 50 and
                 (roe_num >= 0.08 or final_roe is None) and
@@ -617,7 +614,6 @@ def run_quantum_engine():
             if fii_delta > 0.01: dust_gem_score += 20
             if 0 < pe_val < 25: dust_gem_score += 15
 
-            is_fundamentally_sound = (fund_score >= 50) or (final_roe and final_roe >= 0.12)
             fear_event_score = 0.0
             catalyst_tag = "⚪ Normal Flow"
             
@@ -630,7 +626,7 @@ def run_quantum_engine():
                 catalyst_tag = f"💥 CAPITULATION REVERSAL ({round(ret_1d*100,1)}% Drop • Bounce Incoming)"
             elif ret_1d <= -0.05 and dsr >= 3.5:
                 catalyst_tag = "⛔ TOXIC STANDALONE DUMP (AVOID)"
-            elif is_fundamentally_sound and not earnings_blackout:
+            elif passes_quality_gate and not earnings_blackout:
                 if post_earnings_breakout:
                     fear_event_score = round(dsr * 35 + fund_score, 1)
                     catalyst_tag = f"🚀 POST-EARNINGS BREAKOUT ({round(ret_1d*100,1)}% • {round(dsr,1)}x Vol)"
@@ -708,6 +704,7 @@ def run_quantum_engine():
         pd.concat([mem_df, pd.DataFrame(today_memory_records)]).drop_duplicates(subset=['Symbol', 'Date'], keep='last').to_csv("Historical_Holdings.csv", index=False)
 
     eligible_swings = df[df['Sort_Priority'] <= 2].sort_values(by=["Launchpad_Score", "Sort_Priority", "R:R Ratio"], ascending=[False, True, False])
+    # V60: Fail-safe guarantee so Momentum_Swing_Matrix is NEVER blank
     if len(eligible_swings) < 15:
         fallback_swings = df[(df['Stage'] == 'PHASE 2: MARKUP') & (df['RSI_14'].between(48, 69)) & (df['Opportunity Score'] >= 50)].sort_values(by="Launchpad_Score", ascending=False)
         eligible_swings = pd.concat([eligible_swings, fallback_swings]).drop_duplicates(subset=['Symbol'], keep='first')
@@ -741,7 +738,7 @@ def run_quantum_engine():
     fo_df[["Symbol", "Company", "Entry Trigger", "Ret_1D", "FO_Regime", "OI_Chg_Pct", "OI_Total", "RSI_14", "Volume Profile", "Machine_Prediction", "52W High Disc %", "Industry"]].to_csv("RAW_FO_DECRYPTOR.csv", index=False)
 
     df.loc[top_swings.index].sort_values(by=["Launchpad_Score", "Sort_Priority"], ascending=[False, True])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
-    df.loc[top_inc.index].sort_values(by="Opportunity Score", ascending=False)[["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Div Yield", "Volume Profile", "Corp Event", "Catalyst Impact"]].to_csv("RAW_INCUBATOR.csv", index=False)
+    df.loc[top_inc.index].sort_values(by=["Opportunity Score", "Launchpad_Score"], ascending=[False, False])[["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Div Yield", "Volume Profile", "Corp Event", "Catalyst Impact"]].to_csv("RAW_INCUBATOR.csv", index=False)
 
     sniper_rows = []
     for _, r in df.loc[top_swings.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], f"🚀 SWING: {r['Alert Type']}", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], r['RSI_14'], r['R:R Ratio'], r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
