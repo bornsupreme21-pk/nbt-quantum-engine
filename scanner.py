@@ -288,7 +288,13 @@ def run_quantum_engine():
     try:
         nifty_c = raw_data['Close']['^NSEI'].dropna()
         if len(nifty_c) >= 21: nifty_20d_return = float((nifty_c.iloc[-1] / nifty_c.iloc[-21]) - 1)
-    except: pass
+        
+        # V57 FIX: Calculate true variance of Nifty for accurate Beta modeling
+        nifty_returns = nifty_c.pct_change().dropna()
+        nifty_var = nifty_returns.var()
+    except:
+        nifty_returns = pd.Series(dtype=float)
+        nifty_var = 0.0
 
     fundamentals = {}
     if is_eod_heavy_run:
@@ -350,6 +356,20 @@ def run_quantum_engine():
             ret_20d = round(((cur_close / float(c.iloc[-21])) - 1), 4) if len(c) >= 21 else 0.0
             rs_vs_nifty = round(ret_20d - nifty_20d_return, 4)
 
+            # V57 FIX: True Mathematical Beta Calculation (Replaces Broken Yahoo Dictionary)
+            try:
+                if len(c) >= 252 and nifty_var > 0:
+                    stk_returns = c.pct_change().dropna().iloc[-252:]
+                    aligned_nifty = nifty_returns.reindex(stk_returns.index).dropna()
+                    aligned_stk = stk_returns.reindex(aligned_nifty.index)
+                    cov_matrix = np.cov(aligned_stk, aligned_nifty)
+                    calc_beta = cov_matrix[0, 1] / cov_matrix[1, 1]
+                    beta_val = round(float(calc_beta), 2)
+                else:
+                    beta_val = 1.05
+            except:
+                beta_val = 1.05
+
             ema20 = float(c.ewm(span=20, adjust=False).mean().iloc[-1])
             ema50 = float(c.ewm(span=50, adjust=False).mean().iloc[-1])
             ema200 = float(c.ewm(span=200, adjust=False).mean().iloc[-1])
@@ -404,8 +424,6 @@ def run_quantum_engine():
             if fund_score >= 70 and is_vdu and dist_from_52w_low < 0.30: accum_status = "💎 SILENT ACCUMULATION"
             elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
 
-            # V56: THE ANTI-JUNK FUNDAMENTAL QUALITY GATE
-            # Prevents high-debt, loss-making, or operator-pumped penny stocks from entering STRONG BUY or displacing solid stocks!
             roe_num = float(final_roe) if final_roe is not None else 0.0
             total_smart_ownership = prom_curr + fii_curr
             passes_quality_gate = (
@@ -572,7 +590,7 @@ def run_quantum_engine():
                     fear_event_score = round(abs(ret_5d) * 800 + fund_score, 1)
                     catalyst_tag = f"🌊 SECTOR CONTAGION DIP ({round(ret_5d*100,1)}% 5D • RSI {int(rsi)})"
 
-            expected_beta_move = float(info.get('beta', 1.05)) * nifty_20d_return if nifty_20d_return else 0
+            expected_beta_move = beta_val * nifty_20d_return if nifty_20d_return else 0
             alpha_spread = ret_1d - expected_beta_move
             if rsi >= 72 and ret_1d > 0.02: machine_pred = "⚠️ OVEREXTENDED (Profit Booking)"
             elif is_launchpad_coil or is_day1_pocket_pivot: machine_pred = "🚀 EARLY MOTION LAUNCHPAD (+Alpha)"
@@ -615,7 +633,7 @@ def run_quantum_engine():
                 'Div Yield': round(normalized_dy, 4), 
                 'QoQ Growth': round(max(-3.0, min(3.0, float(raw_q_growth))), 4) if raw_q_growth else 0.0, 'Volume Profile': "VDU" if is_vdu else "Normal",
                 'Corp Event': " | ".join(events_list) if events_list else "Regular Trading", 'Catalyst Impact': catalyst_tag, 'Fear_Event_Score': fear_event_score,
-                'Beta': round(float(info.get('beta', 1.05)), 2), 'Ret_1D': ret_1d, 'Ret_5D': ret_5d, 'Ret_20D': ret_20d, 'Ret_50D': round(((cur_close / float(c.iloc[-51])) - 1), 4) if len(c) >= 51 else 0.0,
+                'Beta': beta_val, 'Ret_1D': ret_1d, 'Ret_5D': ret_5d, 'Ret_20D': ret_20d, 'Ret_50D': round(((cur_close / float(c.iloc[-51])) - 1), 4) if len(c) >= 51 else 0.0,
                 'Best_Month': best_month, 'Worst_Month': worst_month
             }
         except Exception as e: return None
@@ -638,7 +656,6 @@ def run_quantum_engine():
     if is_eod_heavy_run:
         pd.concat([mem_df, pd.DataFrame(today_memory_records)]).drop_duplicates(subset=['Symbol', 'Date'], keep='last').to_csv("Historical_Holdings.csv", index=False)
 
-    # V56: 20-CORE FORTRESS + 5-MICROCAP QUOTA (Never throws out solid core compounders for microcap spikes!)
     eligible_swings = df[df['Sort_Priority'] <= 2].sort_values(by=["Launchpad_Score", "Sort_Priority", "R:R Ratio"], ascending=[False, True, False])
     core_swings = eligible_swings[~eligible_swings['Is_Microcap_Spike']].head(20)
     micro_swings = eligible_swings[eligible_swings['Is_Microcap_Spike']].head(5)
@@ -669,10 +686,8 @@ def run_quantum_engine():
     df.loc[top_swings.index].sort_values(by=["Launchpad_Score", "Sort_Priority"], ascending=[False, True])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
     df.loc[top_inc.index].sort_values(by="Opportunity Score", ascending=False)[["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Div Yield", "Volume Profile", "Corp Event", "Catalyst Impact"]].to_csv("RAW_INCUBATOR.csv", index=False)
 
-    # V56.1 SNIPER CALIBRATION: Realistic 15-Day Swing Targets & ATR Stops across all 3 buckets so Prediction Lab measures true 15D accuracy!
     sniper_rows = []
-    for _, r in df.loc[top_swings.index].iterrows():
-        sniper_rows.append([r['Symbol'], r['Company'], f"🚀 SWING: {r['Alert Type']}", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], r['RSI_14'], r['R:R Ratio'], r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
+    for _, r in df.loc[top_swings.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], f"🚀 SWING: {r['Alert Type']}", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], r['RSI_14'], r['R:R Ratio'], r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
     for _, r in df.loc[top_inc.index].iterrows():
         inc_sl = round(r['Entry Trigger'] * 0.96, 2)
         inc_tgt = round(r['Entry Trigger'] * 1.08, 2)
@@ -681,6 +696,8 @@ def run_quantum_engine():
         fear_sl = round(r['Entry Trigger'] * 0.955, 2)
         fear_tgt = round(r['Entry Trigger'] * 1.075, 2)
         sniper_rows.append([r['Symbol'], r['Company'], "⚡ EVENT / 200-EMA FEAR BOUNCE", r['Entry Trigger'], fear_sl, fear_tgt, r['RSI_14'], 1.67, r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
+    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "RSI_14", "R:R Ratio", "RS vs Nifty", "52W High", "52W Low", "Catalyst / Fear Diagnosis", "Corporate Event"]).to_csv("RAW_SNIPER.csv", index=False)
+    
     fear_rows = []
     for _, r in df.loc[dust_gems.index].iterrows(): 
         action = "💎 ACCUMULATE (Deep Value)" if r['Disc from 52W High'] <= -0.30 else "🟢 PULLBACK ENTRY"
