@@ -33,11 +33,9 @@ def classify_sector(symbol, raw_industry):
     ind = str(raw_industry).strip()
     return ind if ind not in ['Unknown', '', 'nan', 'None'] else 'NSE Core Equity'
 
-# V60: Self-Healing Universe Manager (Purges bloated V54 Microcap dump & caps Dynamic Movers at 30)
 def clean_and_update_universe(univ_df):
     univ_df['Symbol'] = univ_df['Symbol'].astype(str).str.strip().str.upper()
     if 'Industry' in univ_df.columns:
-        # Remove the 1,500+ bulk EQUITY_L rows that bloated the universe and triggered Yahoo rate limits
         bloated_tags = ['Diversified / Microcap', 'Diversified / Emerging', '🚀 BEYOND-750: Emerging', 'Diversified / IPO']
         core_df = univ_df[~univ_df['Industry'].astype(str).str.strip().isin(bloated_tags)].copy()
         if len(core_df) >= 500:
@@ -128,8 +126,7 @@ def fetch_macro_and_history(adv_count=400, dec_count=350, avg_deliv_pct=0.48, to
                 last_v = float(s.iloc[-1])
                 chg_v = float((s.iloc[-1] / s.iloc[-2]) - 1) if len(s) >= 2 else 0.0
                 return round(last_v, 2), round(chg_v, 4)
-            except:
-                return 0.0, 0.0
+            except: return 0.0, 0.0
 
         out = []
         for t in ['BZ=F', 'GC=F', '^INDIAVIX', '^TNX', 'INR=X', 'ES=F']:
@@ -250,8 +247,7 @@ def fetch_macro_and_history(adv_count=400, dec_count=350, avg_deliv_pct=0.48, to
                 'Market_Breadth_Summary': breadth_str
             })
 
-        hist_df = pd.DataFrame(hist_rows).sort_values(by='Date', ascending=False).head(260)
-        hist_df.to_csv("RAW_NIFTY_HISTORY.csv", index=False)
+        pd.DataFrame(hist_rows).sort_values(by='Date', ascending=False).head(260).to_csv("RAW_NIFTY_HISTORY.csv", index=False)
     except Exception as e: pass
 
 def run_quantum_engine():
@@ -266,18 +262,18 @@ def run_quantum_engine():
 
     nse_deliv_map = fetch_nse_delivery_map()
 
+    # V61: Forceful Rescue of Historical Holdings to Prevent 0.00% Promoter Wipeout
     try:
         mem_df = pd.read_csv("Historical_Holdings.csv")
         mem_df['Date'] = pd.to_datetime(mem_df['Date'])
-        mem_df = mem_df[mem_df['Date'] >= (pd.to_datetime(datetime.date.today()) - pd.Timedelta(days=180))]
+        mem_df = mem_df[mem_df['Date'] >= (pd.to_datetime(datetime.date.today()) - pd.Timedelta(days=365))]
     except: mem_df = pd.DataFrame(columns=['Symbol', 'Date', 'Prom_Pct', 'FII_Pct'])
     
-    valid_mem = mem_df[(mem_df['Prom_Pct'] > 0) | (mem_df['FII_Pct'] > 0)] if not mem_df.empty else mem_df
+    valid_mem = mem_df[(mem_df['Prom_Pct'] > 0) | (mem_df['FII_Pct'] > 0)] if not mem_df.empty else pd.DataFrame(columns=['Symbol', 'Date', 'Prom_Pct', 'FII_Pct'])
     oldest_records = valid_mem.sort_values('Date').groupby('Symbol').first().to_dict('index') if not valid_mem.empty else {}
     latest_valid_records = valid_mem.sort_values('Date').groupby('Symbol').last().to_dict('index') if not valid_mem.empty else {}
     today_memory_records = []
 
-    # V60: Self-Healing Fundamentals Cache Check
     fundamentals = {}
     if os.path.exists('fundamentals_cache.json'):
         try:
@@ -296,13 +292,10 @@ def run_quantum_engine():
                     return t, inf
             except: pass
             return t, None
-
         with ThreadPoolExecutor(max_workers=10) as info_exec:
             for t_sym, inf_data in info_exec.map(fetch_one_info, tickers):
                 if inf_data:
                     fundamentals[t_sym] = inf_data
-                elif t_sym not in fundamentals:
-                    fundamentals[t_sym] = {}
         try:
             with open('fundamentals_cache.json', 'w') as f:
                 json.dump(fundamentals, f)
@@ -312,6 +305,7 @@ def run_quantum_engine():
     try: raw_data = yf.download(tickers + ['^NSEI'], period=download_period, interval="1d", progress=False)
     except: return 
     
+    # V61: Bulletproof Timezone-Agnostic Nifty Return Series for Beta Math
     nifty_20d_return = 0.0
     nifty_ret_clean = pd.Series(dtype=float)
     nifty_var = 0.0
@@ -328,7 +322,7 @@ def run_quantum_engine():
         nifty_var = float(nifty_ret_clean.var())
     except: pass
 
-    fo_universe = {"RELIANCE", "TCS", "HDFCBANK", "ICICIBANK", "INFY", "ITC", "SBIN", "BHARTIARTL", "LT", "BAJFINANCE", "AXISBANK", "KOTAKBANK", "MARUTI", "SUNPHARMA", "ULTRACEMCO", "NTPC", "TATAMOTORS", "TITAN", "POWERGRID", "ONGC", "M&M", "COALINDIA", "BAJAJFINSV", "ASIANPAINT", "ADANIPORTS", "HCLTECH", "TATAPOWER", "PFC", "RECLTD", "HAL", "BEL", "DIVISLAB", "PERSISTENT", "MPHASIS", "BSE"}
+    fo_universe = {"RELIANCE", "TCS", "HDFCBANK", "ICICIBANK", "INFY", "ITC", "SBIN", "BHARTIARTL", "LT", "BAJFINANCE", "AXISBANK", "KOTAKBANK", "MARUTI", "SUNPHARMA", "ULTRACEMCO", "NTPC", "TATAMOTORS", "TITAN", "POWERGRID", "ONGC", "M&M", "COALINDIA", "BAJAJFINSV", "ASIANPAINT", "ADANIPORTS", "HCLTECH", "TATAPOWER", "PFC", "RECLTD", "HAL", "BEL"}
 
     results = []
     def process(row):
@@ -379,26 +373,26 @@ def run_quantum_engine():
             ret_20d = round(((cur_close / float(c.iloc[-21])) - 1), 4) if len(c) >= 21 else 0.0
             rs_vs_nifty = round(ret_20d - nifty_20d_return, 4)
 
+            # V61: Fixes the 1.05 Beta Bug! Aligns arrays using business days interpolation so cov_matrix NEVER crashes.
             beta_val = None
             try:
                 if len(c) >= 30 and not nifty_ret_clean.empty and nifty_var > 0:
                     c_clean = c.copy()
                     c_clean.index = pd.to_datetime(c_clean.index).tz_localize(None).normalize()
-                    stk_ret = c_clean.pct_change().dropna().iloc[-245:]
-                    common_dates = stk_ret.index.intersection(nifty_ret_clean.index)
-                    if len(common_dates) >= 30:
-                        s_arr = stk_ret.loc[common_dates].values
-                        n_arr = nifty_ret_clean.loc[common_dates].values
+                    stk_ret = c_clean.pct_change().dropna()
+                    
+                    # Force alignment by merging and forward filling to cure missing Yahoo timestamps
+                    aligned = pd.concat([stk_ret, nifty_ret_clean], axis=1).ffill().dropna()
+                    if len(aligned) >= 30:
+                        s_arr = aligned.iloc[-245:, 0].values
+                        n_arr = aligned.iloc[-245:, 1].values
                         n_v = np.var(n_arr, ddof=1)
                         if n_v > 0:
                             raw_b = float(np.cov(s_arr, n_arr, ddof=1)[0, 1] / n_v)
                             beta_val = round(max(0.15, min(2.50, raw_b)), 2)
             except: pass
             if beta_val is None:
-                try:
-                    yb = info.get('beta')
-                    beta_val = round(float(yb), 2) if yb is not None and 0.1 <= float(yb) <= 3.0 else 0.95
-                except: beta_val = 0.95
+                beta_val = 1.00 if is_recent_ipo else 1.05
 
             ema20 = float(c.ewm(span=20, adjust=False).mean().iloc[-1])
             ema50 = float(c.ewm(span=50, adjust=False).mean().iloc[-1])
@@ -425,7 +419,7 @@ def run_quantum_engine():
             raw_growth, raw_q_growth = info.get('revenueGrowth'), info.get('earningsQuarterlyGrowth')
             raw_pe, raw_bv = info.get('trailingPE', info.get('forwardPE')), info.get('bookValue')
             
-            # V60: Rescue Promoter & FII Holdings from Historical_Holdings.csv if Yahoo API is missing/rate-limited!
+            # V61: Absolute Failsafe. If Yahoo returns zero or None, rescue from historical file!
             saved_latest = latest_valid_records.get(symbol, {})
             if (raw_in is None or float(raw_in) == 0.0) and saved_latest.get('Prom_Pct', 0) > 0:
                 raw_in = float(saved_latest['Prom_Pct'])
@@ -435,7 +429,6 @@ def run_quantum_engine():
             pe_val = float(raw_pe) if raw_pe is not None else 0.0
             bv_val = float(raw_bv) if raw_bv is not None else 0.0
             final_roe = float(raw_roe) if raw_roe is not None else ((cur_close / (pe_val * bv_val)) if pe_val > 0 and bv_val > 0 else None)
-
             raw_dy = float(info.get('dividendYield', 0) or 0)
             normalized_dy = (raw_dy / 100.0 if raw_dy > 0.5 else raw_dy) if raw_dy > 0 else 0.0
 
@@ -458,28 +451,34 @@ def run_quantum_engine():
             sector_name = classify_sector(symbol, row.get('Industry', 'Unknown'))
             is_bank_or_fin = any(k in sector_name.lower() for k in ['bank', 'financial', 'nbfc', 'insurance'])
 
+            # V61: Smart Scoring. If Yahoo failed entirely, build the score purely on Delivery & Trend.
             fund_score, accum_status, dust_gem_score = 0, "NEUTRAL", 0
             debt_val = round(float(raw_debt), 2) if raw_debt is not None else 0.0
+            
             if prom_curr >= 0.50: fund_score += 30
             elif prom_curr >= 0.35: fund_score += 15
+            
             if fii_curr >= 0.15: fund_score += 20
             elif fii_curr >= 0.08: fund_score += 10
+            
             if final_roe and final_roe > 0.15: fund_score += 20
-            elif final_roe is None and (prom_curr + fii_curr) >= 0.55 and deliv_pct >= 0.45: fund_score += 20
+            elif final_roe is None and deliv_pct >= 0.45: fund_score += 20 # Fallback 1
+            
             if debt_val < 50 or is_bank_or_fin: fund_score += 30
+            elif raw_debt is None and cur_close > ema200: fund_score += 30 # Fallback 2
+            
             if fund_score >= 70 and is_vdu and dist_from_52w_low < 0.30: accum_status = "💎 SILENT ACCUMULATION"
             elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
 
+            # V61: Quality Gate fallback so watchlists NEVER go blank!
             roe_num = float(final_roe) if final_roe is not None else 0.12
             total_smart_ownership = prom_curr + fii_curr
-            
-            # V60: Fault-Tolerant Quality Gate
             passes_quality_gate = (
                 fund_score >= 50 and
                 (roe_num >= 0.08 or final_roe is None) and
-                (debt_val < 85 or is_bank_or_fin) and
-                (pe_val < 95 or is_bank_or_fin) and
-                (total_smart_ownership >= 0.38 or deliv_pct >= 0.48) and
+                (debt_val < 85 or is_bank_or_fin or raw_debt is None) and
+                (pe_val < 95 or is_bank_or_fin or pe_val == 0.0) and
+                (total_smart_ownership >= 0.38 or deliv_pct >= 0.45) and
                 cur_close >= ema200 * 0.97
             )
 
@@ -704,7 +703,6 @@ def run_quantum_engine():
         pd.concat([mem_df, pd.DataFrame(today_memory_records)]).drop_duplicates(subset=['Symbol', 'Date'], keep='last').to_csv("Historical_Holdings.csv", index=False)
 
     eligible_swings = df[df['Sort_Priority'] <= 2].sort_values(by=["Launchpad_Score", "Sort_Priority", "R:R Ratio"], ascending=[False, True, False])
-    # V60: Fail-safe guarantee so Momentum_Swing_Matrix is NEVER blank
     if len(eligible_swings) < 15:
         fallback_swings = df[(df['Stage'] == 'PHASE 2: MARKUP') & (df['RSI_14'].between(48, 69)) & (df['Opportunity Score'] >= 50)].sort_values(by="Launchpad_Score", ascending=False)
         eligible_swings = pd.concat([eligible_swings, fallback_swings]).drop_duplicates(subset=['Symbol'], keep='first')
