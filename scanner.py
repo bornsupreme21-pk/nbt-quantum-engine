@@ -250,6 +250,9 @@ def fetch_macro_and_history(adv_count=400, dec_count=350, avg_deliv_pct=0.48, to
         pd.DataFrame(hist_rows).sort_values(by='Date', ascending=False).head(260).to_csv("RAW_NIFTY_HISTORY.csv", index=False)
     except Exception as e: pass
 
+# ==============================================================================
+# PKB ALPHA HUNTER: 6-ENGINE DISCOVERY, 100-PT CAP-GROUP SCORING & NEAR-MISS LOG
+# ==============================================================================
 def export_alpha_hunter(df, raw_data):
     if df.empty or 'Close' not in raw_data.columns:
         return
@@ -291,6 +294,7 @@ def export_alpha_hunter(df, raw_data):
             continue
 
         vol_20d = float(v.iloc[-20:].mean())
+        vol_5d = float(v.iloc[-5:].mean())
         last_vol = float(v.iloc[-1])
         adtv_20d_cr = round((vol_20d * cur_c) / 10000000.0, 2)
         if adtv_20d_cr < 0.50:
@@ -363,6 +367,7 @@ def export_alpha_hunter(df, raw_data):
         has_neg_warning = ("RISK NEWS" in cat_impact) or ("TOXIC" in cat_impact) or ("EARNINGS" in corp_event and r_1d < 0)
         has_pos_catalyst = ("BULL NEWS" in cat_impact) or ("GOVT/POLICY" in cat_impact) or ("POST-RESULT SURGE" in corp_event) or ("WHALE" in corp_event) or ("FII" in corp_event)
 
+        # 6 Independent Hunting Engines
         e1_pre_breakout = (
             cur_c >= ema20 and ema20 >= ema20_prev5 and
             cur_c >= high_20d * 0.94 and cur_c <= high_20d * 1.015 and
@@ -459,6 +464,7 @@ def export_alpha_hunter(df, raw_data):
     adf['Passes_Gate'] = (~adf['Has_Neg_Warning']) & (adf['ADTV_20D_Cr'] >= 2.0) & (adf['RR_Ratio'] >= 2.0) & (adf['Engine_Count'] >= 1)
 
     out_rows = []
+    # 1. Top 5 Actionable Shortlist (Deduplicated)
     top5_pool = adf[adf['Passes_Gate']].sort_values(by=['Alpha_Score', 'Engine_Count', 'Up_Down_Vol_Ratio'], ascending=[False, False, False]).head(5)
     for rank_i, (_, r) in enumerate(top5_pool.iterrows(), 1):
         tier_label = "Elite 85+" if r['Alpha_Score'] >= 85 else ("Strong 75+" if r['Alpha_Score'] >= 75 else "Developing")
@@ -471,6 +477,7 @@ def export_alpha_hunter(df, raw_data):
             r['EOD_Vol_Mult'], r['Avg_Vol_20D'], inv_rule
         ])
 
+    # 2. Top 3 Per Hunting Engine
     engine_defs = [
         ('E1', '🔭 E1: PRE-BREAKOUT VCP'),
         ('E2', '🔭 E2: ACCUMULATION'),
@@ -490,6 +497,7 @@ def export_alpha_hunter(df, raw_data):
                 r['EOD_Vol_Mult'], r['Avg_Vol_20D'], inv_rule
             ])
 
+    # 3. Near-Miss Promotion Watchlist (Scores 65-74)
     near_miss_df = adf[(adf['Alpha_Score'] >= 65.0) & (adf['Alpha_Score'] < 75.0) & (~adf['Has_Neg_Warning'])].sort_values(by='Alpha_Score', ascending=False).head(15)
     near_miss_df[['Symbol', 'Alpha_Score']].to_csv("Alpha_Near_Miss.csv", index=False)
     for _, r in near_miss_df.head(8).iterrows():
@@ -646,7 +654,7 @@ def run_quantum_engine():
                             beta_val = round(max(0.15, min(2.50, raw_b)), 2)
             except: pass
             if beta_val is None:
-                beta_val = 1.00 if is_recent_ipo else 0.95
+                beta_val = 1.00 if is_recent_ipo else 1.05
 
             ema20 = float(c.ewm(span=20, adjust=False).mean().iloc[-1])
             ema50 = float(c.ewm(span=50, adjust=False).mean().iloc[-1])
@@ -709,10 +717,13 @@ def run_quantum_engine():
             
             if prom_curr >= 0.50: fund_score += 30
             elif prom_curr >= 0.35: fund_score += 15
+            
             if fii_curr >= 0.15: fund_score += 20
             elif fii_curr >= 0.08: fund_score += 10
+            
             if final_roe and final_roe > 0.15: fund_score += 20
             elif final_roe is None and deliv_pct >= 0.45: fund_score += 20
+            
             if debt_val < 50 or is_bank_or_fin: fund_score += 30
             elif raw_debt is None and cur_close > ema200: fund_score += 30
             
@@ -1043,6 +1054,7 @@ def run_quantum_engine():
         sector_df[sector_cols].sort_values(by=['ISAD (Breadth %)', 'Avg_1D_Flow'], ascending=[False, False]).to_csv("RAW_SECTOR.csv", index=False)
     except: pass
 
+    # Export PKB Alpha Hunter 6-Engine Master CSV
     export_alpha_hunter(df, raw_data)
 
 if __name__ == "__main__":
