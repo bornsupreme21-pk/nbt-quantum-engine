@@ -230,7 +230,7 @@ def fetch_macro_and_history(adv_count=400, dec_count=350, avg_deliv_pct=0.48, to
             if idx_i == len(dates_list) - 1:
                 b_verdict = "🟢 Broad Accumulation" if adr >= 1.25 else ("🔴 Broad Distribution" if adr <= 0.8 else "⚖️ Mixed Rotational Breadth")
                 breadth_str = f"{adv_count} Adv / {dec_count} Dec (ADR {adr}x) • {b_verdict}"
-            elif d_str in old_hist_map and "Adv" in old_hist_map[d_str].get('Market_Breadth_Summary', ''):
+            elif d_str in old_hist_map and "Adv" in str(old_hist_map[d_str].get('Market_Breadth_Summary', '')):
                 breadth_str = old_hist_map[d_str]['Market_Breadth_Summary']
             else:
                 if d_chg > 0.005: breadth_str = "🟢 Bullish Expansion • High Institutional Absorption"
@@ -250,6 +250,265 @@ def fetch_macro_and_history(adv_count=400, dec_count=350, avg_deliv_pct=0.48, to
         pd.DataFrame(hist_rows).sort_values(by='Date', ascending=False).head(260).to_csv("RAW_NIFTY_HISTORY.csv", index=False)
     except Exception as e: pass
 
+def export_alpha_hunter(df, raw_data):
+    if df.empty or 'Close' not in raw_data.columns:
+        return
+    try:
+        nifty_c = raw_data['Close']['^NSEI'].dropna()
+        n_ret_5d = float((nifty_c.iloc[-1] / nifty_c.iloc[-6]) - 1) if len(nifty_c) >= 6 else 0.0
+        n_ret_20d = float((nifty_c.iloc[-1] / nifty_c.iloc[-21]) - 1) if len(nifty_c) >= 21 else 0.0
+        n_ret_60d = float((nifty_c.iloc[-1] / nifty_c.iloc[-61]) - 1) if len(nifty_c) >= 61 else 0.0
+    except:
+        n_ret_5d, n_ret_20d, n_ret_60d = 0.0, 0.0, 0.0
+
+    sec_20d_map = df.groupby('Industry')['Ret_20D'].mean().to_dict() if 'Ret_20D' in df.columns else {}
+    sec_5d_map = df.groupby('Industry')['Ret_5D'].mean().to_dict() if 'Ret_5D' in df.columns else {}
+
+    prev_near_miss = {}
+    if os.path.exists("Alpha_Near_Miss.csv"):
+        try:
+            nm_df = pd.read_csv("Alpha_Near_Miss.csv")
+            for _, r in nm_df.iterrows():
+                prev_near_miss[str(r['Symbol']).strip().upper()] = float(r.get('Alpha_Score', 0))
+        except:
+            pass
+
+    alpha_records = []
+    for _, row in df.iterrows():
+        sym = str(row['Symbol']).strip().upper()
+        tkr = sym + ".NS"
+        if tkr not in raw_data['Close'].columns:
+            continue
+        c = raw_data['Close'][tkr].dropna()
+        if len(c) < 120:
+            continue
+        h = raw_data['High'][tkr].reindex(c.index).ffill()
+        l = raw_data['Low'][tkr].reindex(c.index).ffill()
+        v = raw_data['Volume'][tkr].reindex(c.index).fillna(0)
+
+        cur_c = float(c.iloc[-1])
+        if cur_c < 10.0 or int((v.iloc[-20:] <= 0).sum()) > 2:
+            continue
+
+        vol_20d = float(v.iloc[-20:].mean())
+        last_vol = float(v.iloc[-1])
+        adtv_20d_cr = round((vol_20d * cur_c) / 10000000.0, 2)
+        if adtv_20d_cr < 0.50:
+            continue
+
+        if adtv_20d_cr >= 25.0:
+            cap_group = "Group A (Large)"
+        elif adtv_20d_cr >= 8.0:
+            cap_group = "Group B (Mid)"
+        elif adtv_20d_cr >= 2.0:
+            cap_group = "Group C (Small)"
+        else:
+            cap_group = "Group D (Micro)"
+
+        r_1d = float((cur_c / c.iloc[-2]) - 1) if len(c) >= 2 else 0.0
+        r_5d = float((cur_c / c.iloc[-6]) - 1) if len(c) >= 6 else 0.0
+        r_20d = float((cur_c / c.iloc[-21]) - 1) if len(c) >= 21 else 0.0
+        r_60d = float((cur_c / c.iloc[-61]) - 1) if len(c) >= 61 else 0.0
+
+        rs_5d = r_5d - n_ret_5d
+        rs_20d = r_20d - n_ret_20d
+        rs_60d = r_60d - n_ret_60d
+        sec_name = str(row.get('Industry', 'NSE Core Equity'))
+        rs_vs_sector = r_20d - sec_20d_map.get(sec_name, n_ret_20d)
+        sec_5d_strength = sec_5d_map.get(sec_name, 0.0)
+
+        ema20_ser = c.ewm(span=20, adjust=False).mean()
+        ema50_ser = c.ewm(span=50, adjust=False).mean()
+        ema200_ser = c.ewm(span=200, adjust=False).mean()
+        ema20 = float(ema20_ser.iloc[-1])
+        ema20_prev5 = float(ema20_ser.iloc[-6]) if len(ema20_ser) >= 6 else ema20
+        ema50 = float(ema50_ser.iloc[-1])
+        ema200 = float(ema200_ser.iloc[-1])
+
+        std20 = c.rolling(20).std()
+        bb_width = (4.0 * std20) / ema20_ser
+        bb_curr = float(bb_width.iloc[-1]) if not np.isnan(bb_width.iloc[-1]) else 0.10
+        bb_avg20 = float(bb_width.iloc[-20:].mean()) if len(bb_width) >= 20 else bb_curr
+        is_bb_contracting = bb_curr <= (bb_avg20 * 0.92)
+
+        prev_c = c.shift(1)
+        tr = pd.concat([(h - l), (h - prev_c).abs(), (l - prev_c).abs()], axis=1).max(axis=1)
+        atr5 = float(tr.iloc[-5:].mean())
+        atr20 = float(tr.iloc[-20:].mean())
+        atr14 = float(tr.iloc[-14:].mean())
+        is_atr_declining = atr5 <= (atr20 * 0.92)
+
+        c_diff_10 = c.diff().iloc[-10:]
+        v_10 = v.iloc[-10:]
+        up_vol_10 = float(v_10[c_diff_10 > 0].sum())
+        dn_vol_10 = float(v_10[c_diff_10 < 0].sum())
+        up_dn_vol_ratio = round(min(5.0, up_vol_10 / max(1.0, dn_vol_10)), 2) if dn_vol_10 > 0 else 2.50
+
+        rng_10 = (h.iloc[-10:] - l.iloc[-10:]).replace(0, np.nan)
+        pos_10 = ((c.iloc[-10:] - l.iloc[-10:]) / rng_10).fillna(0.5)
+        upper_half_days = int((pos_10 >= 0.50).sum())
+        today_rng_pos = float(pos_10.iloc[-1])
+
+        vol_mult = round(last_vol / max(1.0, vol_20d), 2)
+        deliv_pct = float(row.get('Delivery_Pct', 0.45))
+        rsi_val = float(row.get('RSI_14', 50.0))
+
+        high_20d = float(h.iloc[-21:-1].max()) if len(h) >= 21 else float(h.max())
+        high_5d_prev = float(h.iloc[-6:-1].max()) if len(h) >= 6 else float(h.iloc[-2])
+        high_10d = float(h.iloc[-10:].max())
+        pullback_from_10d = (cur_c - high_10d) / high_10d if high_10d > 0 else 0.0
+
+        corp_event = str(row.get('Corp Event', 'Regular Trading'))
+        cat_impact = str(row.get('Catalyst Impact', '⚪ Normal Flow'))
+        has_neg_warning = ("RISK NEWS" in cat_impact) or ("TOXIC" in cat_impact) or ("EARNINGS" in corp_event and r_1d < 0)
+        has_pos_catalyst = ("BULL NEWS" in cat_impact) or ("GOVT/POLICY" in cat_impact) or ("POST-RESULT SURGE" in corp_event) or ("WHALE" in corp_event) or ("FII" in corp_event)
+
+        e1_pre_breakout = (
+            cur_c >= ema20 and ema20 >= ema20_prev5 and
+            cur_c >= high_20d * 0.94 and cur_c <= high_20d * 1.015 and
+            (is_bb_contracting or is_atr_declining) and
+            rs_20d >= -0.01 and 48.0 <= rsi_val <= 67.5
+        )
+        e2_accumulation = (
+            up_dn_vol_ratio >= 1.35 and deliv_pct >= 0.46 and
+            upper_half_days >= 6 and rs_vs_sector >= 0.0 and cur_c >= ema50
+        )
+        e3_momentum = (
+            cur_c > high_5d_prev and 0.01 <= r_1d <= 0.052 and
+            vol_mult >= 1.50 and today_rng_pos >= 0.72 and rs_5d > 0 and rsi_val <= 70.0
+        )
+        e4_dip_recovery = (
+            -0.10 <= pullback_from_10d <= -0.028 and cur_c >= ema200 and
+            (abs(cur_c - ema20) / ema20 <= 0.025 or abs(cur_c - ema50) / ema50 <= 0.025) and
+            r_1d > 0.004 and today_rng_pos >= 0.60 and last_vol <= vol_20d * 1.35
+        )
+        e5_rs_leader = (
+            rs_5d > 0.012 and rs_20d > 0.025 and rs_60d > 0.03 and
+            rs_vs_sector > 0.01 and rs_5d >= (rs_20d / 4.5) and cur_c >= ema20 and rsi_val <= 70.0
+        )
+        e6_catalyst = (
+            has_pos_catalyst and not has_neg_warning and
+            r_1d > 0.005 and (vol_mult >= 1.25 or deliv_pct >= 0.48)
+        )
+
+        tags = []
+        if e1_pre_breakout: tags.append("🔥 PRE-BREAKOUT VCP")
+        if e2_accumulation: tags.append("🐋 ACCUMULATION")
+        if e3_momentum:
+            mom_stage = "Early 1-3%" if r_1d <= 0.03 else "Estab 3-5%"
+            tags.append(f"🚀 IGNITION ({mom_stage})")
+        if e4_dip_recovery: tags.append("🛡️ DIP RECOVERY")
+        if e5_rs_leader: tags.append("⚡ RS LEADER")
+        if e6_catalyst: tags.append("📰 CATALYST")
+
+        swing_low_5d = float(l.iloc[-5:].min())
+        raw_sl = max(swing_low_5d * 0.992, cur_c - (1.6 * atr14), cur_c * 0.962)
+        sl_price = round(min(raw_sl, cur_c * 0.985), 2)
+        risk = max(0.01, cur_c - sl_price)
+        target_price = round(cur_c + max(risk * 2.25, 3.2 * atr14, cur_c * 0.055), 2)
+        rr_ratio = round((target_price - cur_c) / risk, 2)
+
+        alpha_records.append({
+            'Symbol': sym, 'Cap_Group': cap_group, 'Close': cur_c, 'Ret_1D': r_1d,
+            'RSI_14': round(rsi_val, 2), 'Up_Down_Vol_Ratio': up_dn_vol_ratio,
+            'Delivery_Pct': round(deliv_pct, 4), 'RS_20D': round(rs_20d, 4),
+            'RS_5D': round(rs_5d, 4), 'RS_vs_Sec': round(rs_vs_sector, 4),
+            'Sec_5D': sec_5d_strength, 'ADTV_20D_Cr': adtv_20d_cr,
+            'Entry_Trigger': round(cur_c * 1.002 if e1_pre_breakout else cur_c, 2),
+            'Stop_Loss': sl_price, 'Target': target_price, 'RR_Ratio': rr_ratio,
+            'EOD_Vol_Mult': vol_mult, 'Avg_Vol_20D': int(max(1, round(vol_20d))),
+            'Fund_Score_Raw': float(row.get('Opportunity Score', 50)),
+            'Has_Neg_Warning': has_neg_warning, 'Has_Pos_Catalyst': has_pos_catalyst,
+            'E1': e1_pre_breakout, 'E2': e2_accumulation, 'E3': e3_momentum,
+            'E4': e4_dip_recovery, 'E5': e5_rs_leader, 'E6': e6_catalyst,
+            'Engine_Count': len(tags),
+            'Confluence_Tags': " + ".join(tags) if tags else "📊 BASE SCAN",
+            'Cat_Text': cat_impact
+        })
+
+    adf = pd.DataFrame(alpha_records)
+    if adf.empty:
+        return
+
+    adf['Pct_Vol'] = adf.groupby('Cap_Group')['Up_Down_Vol_Ratio'].rank(pct=True) * 0.6 + adf.groupby('Cap_Group')['EOD_Vol_Mult'].rank(pct=True) * 0.4
+    adf['Pct_Deliv'] = adf.groupby('Cap_Group')['Delivery_Pct'].rank(pct=True)
+    adf['Pct_RS'] = adf.groupby('Cap_Group')['RS_20D'].rank(pct=True) * 0.6 + adf.groupby('Cap_Group')['RS_5D'].rank(pct=True) * 0.4
+
+    scores = []
+    for _, r in adf.iterrows():
+        s_price = 15.0 if (52 <= r['RSI_14'] <= 67 and r['Ret_1D'] >= 0) else (11.0 if 46 <= r['RSI_14'] <= 70 else 6.0)
+        s_vol = round(min(15.0, float(r['Pct_Vol']) * 15.0 + (2.0 if r['Up_Down_Vol_Ratio'] >= 1.5 else 0.0)), 1)
+        s_deliv = round(min(10.0, float(r['Pct_Deliv']) * 10.0 + (1.5 if r['Delivery_Pct'] >= 0.50 else 0.0)), 1)
+        s_rs = round(min(15.0, float(r['Pct_RS']) * 15.0 + (2.0 if r['RS_5D'] > 0 and r['RS_20D'] > 0 else 0.0)), 1)
+        s_sec = 10.0 if (r['Sec_5D'] > 0.005 and r['RS_vs_Sec'] > 0) else (7.0 if r['RS_vs_Sec'] >= 0 else 4.0)
+        s_setup = min(15.0, 7.0 * min(1, r['Engine_Count']) + 4.0 * max(0, r['Engine_Count'] - 1))
+        s_fund = round(min(10.0, (r['Fund_Score_Raw'] / 100.0) * 10.0), 1)
+        s_cat = 5.0 if r['Has_Pos_Catalyst'] else (0.0 if r['Has_Neg_Warning'] else 2.5)
+        s_rr = 5.0 if (r['RR_Ratio'] >= 2.0 and r['ADTV_20D_Cr'] >= 2.0) else (2.5 if r['RR_Ratio'] >= 1.6 else 0.0)
+        scores.append(round(min(100.0, s_price + s_vol + s_deliv + s_rs + s_sec + s_setup + s_fund + s_cat + s_rr), 1))
+
+    adf['Alpha_Score'] = scores
+
+    for idx in adf.index:
+        sym = adf.at[idx, 'Symbol']
+        cur_sc = adf.at[idx, 'Alpha_Score']
+        if sym in prev_near_miss and cur_sc >= 75.0:
+            old_sc = prev_near_miss[sym]
+            adf.at[idx, 'Confluence_Tags'] = f"🚀 PROMOTED ({old_sc:.0f}→{cur_sc:.0f}) | " + adf.at[idx, 'Confluence_Tags']
+
+    adf['Passes_Gate'] = (~adf['Has_Neg_Warning']) & (adf['ADTV_20D_Cr'] >= 2.0) & (adf['RR_Ratio'] >= 2.0) & (adf['Engine_Count'] >= 1)
+
+    out_rows = []
+    top5_pool = adf[adf['Passes_Gate']].sort_values(by=['Alpha_Score', 'Engine_Count', 'Up_Down_Vol_Ratio'], ascending=[False, False, False]).head(5)
+    for rank_i, (_, r) in enumerate(top5_pool.iterrows(), 1):
+        tier_label = "Elite 85+" if r['Alpha_Score'] >= 85 else ("Strong 75+" if r['Alpha_Score'] >= 75 else "Developing")
+        bucket_str = f"🏆 TOP #{rank_i} BOARD ({tier_label} • {r['Cap_Group']})"
+        inv_rule = f"Hold > VWAP & ₹{r['Stop_Loss']} SL | {r['Cat_Text'][:42]}"
+        out_rows.append([
+            r['Symbol'], bucket_str, r['Alpha_Score'], r['Confluence_Tags'], r['RSI_14'],
+            r['Up_Down_Vol_Ratio'], r['Delivery_Pct'], r['RS_20D'], r['ADTV_20D_Cr'],
+            r['Entry_Trigger'], r['Stop_Loss'], r['Target'], r['RR_Ratio'],
+            r['EOD_Vol_Mult'], r['Avg_Vol_20D'], inv_rule
+        ])
+
+    engine_defs = [
+        ('E1', '🔭 E1: PRE-BREAKOUT VCP'),
+        ('E2', '🔭 E2: ACCUMULATION'),
+        ('E3', '🔭 E3: MOMENTUM IGNITION'),
+        ('E4', '🔭 E4: SMART DIP RECOVERY'),
+        ('E5', '🔭 E5: RS LEADER'),
+        ('E6', '🔭 E6: CATALYST HUNTER')
+    ]
+    for e_col, e_label in engine_defs:
+        e_sub = adf[adf[e_col] & (~adf['Has_Neg_Warning'])].sort_values(by=['Alpha_Score', 'Up_Down_Vol_Ratio'], ascending=[False, False]).head(3)
+        for _, r in e_sub.iterrows():
+            inv_rule = f"Reject if < ₹{r['Stop_Loss']} SL | {r['Cat_Text'][:45]}"
+            out_rows.append([
+                r['Symbol'], f"{e_label} ({r['Cap_Group']})", r['Alpha_Score'], r['Confluence_Tags'], r['RSI_14'],
+                r['Up_Down_Vol_Ratio'], r['Delivery_Pct'], r['RS_20D'], r['ADTV_20D_Cr'],
+                r['Entry_Trigger'], r['Stop_Loss'], r['Target'], r['RR_Ratio'],
+                r['EOD_Vol_Mult'], r['Avg_Vol_20D'], inv_rule
+            ])
+
+    near_miss_df = adf[(adf['Alpha_Score'] >= 65.0) & (adf['Alpha_Score'] < 75.0) & (~adf['Has_Neg_Warning'])].sort_values(by='Alpha_Score', ascending=False).head(15)
+    near_miss_df[['Symbol', 'Alpha_Score']].to_csv("Alpha_Near_Miss.csv", index=False)
+    for _, r in near_miss_df.head(8).iterrows():
+        inv_rule = f"Promote if > ₹{r['Entry_Trigger']} & Vol > 1.5x | {r['Cat_Text'][:38]}"
+        out_rows.append([
+            r['Symbol'], f"📈 NEAR-MISS WATCH ({r['Cap_Group']})", r['Alpha_Score'], r['Confluence_Tags'], r['RSI_14'],
+            r['Up_Down_Vol_Ratio'], r['Delivery_Pct'], r['RS_20D'], r['ADTV_20D_Cr'],
+            r['Entry_Trigger'], r['Stop_Loss'], r['Target'], r['RR_Ratio'],
+            r['EOD_Vol_Mult'], r['Avg_Vol_20D'], inv_rule
+        ])
+
+    cols = [
+        "Symbol", "Hunter_Bucket", "Alpha_Score", "Confluence_Tags", "RSI_14",
+        "Up_Down_Vol_Ratio", "Delivery_Pct", "RS_20D", "ADTV_20D_Cr",
+        "Entry_Trigger", "Stop_Loss", "Target", "RR_Ratio",
+        "EOD_Vol_Mult", "Avg_Vol_20D", "Catalyst_Invalidation"
+    ]
+    pd.DataFrame(out_rows, columns=cols).to_csv("RAW_ALPHA_HUNTER.csv", index=False)
+
 def run_quantum_engine():
     now_ist = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
     current_mins_global = now_ist.hour * 60 + now_ist.minute
@@ -262,7 +521,6 @@ def run_quantum_engine():
 
     nse_deliv_map = fetch_nse_delivery_map()
 
-    # V61: Forceful Rescue of Historical Holdings to Prevent 0.00% Promoter Wipeout
     try:
         mem_df = pd.read_csv("Historical_Holdings.csv")
         mem_df['Date'] = pd.to_datetime(mem_df['Date'])
@@ -305,7 +563,6 @@ def run_quantum_engine():
     try: raw_data = yf.download(tickers + ['^NSEI'], period=download_period, interval="1d", progress=False)
     except: return 
     
-    # V61: Bulletproof Timezone-Agnostic Nifty Return Series for Beta Math
     nifty_20d_return = 0.0
     nifty_ret_clean = pd.Series(dtype=float)
     nifty_var = 0.0
@@ -322,7 +579,7 @@ def run_quantum_engine():
         nifty_var = float(nifty_ret_clean.var())
     except: pass
 
-    fo_universe = {"RELIANCE", "TCS", "HDFCBANK", "ICICIBANK", "INFY", "ITC", "SBIN", "BHARTIARTL", "LT", "BAJFINANCE", "AXISBANK", "KOTAKBANK", "MARUTI", "SUNPHARMA", "ULTRACEMCO", "NTPC", "TATAMOTORS", "TITAN", "POWERGRID", "ONGC", "M&M", "COALINDIA", "BAJAJFINSV", "ASIANPAINT", "ADANIPORTS", "HCLTECH", "TATAPOWER", "PFC", "RECLTD", "HAL", "BEL"}
+    fo_universe = {"RELIANCE", "TCS", "HDFCBANK", "ICICIBANK", "INFY", "ITC", "SBIN", "BHARTIARTL", "LT", "BAJFINANCE", "AXISBANK", "KOTAKBANK", "MARUTI", "SUNPHARMA", "ULTRACEMCO", "NTPC", "TATAMOTORS", "TITAN", "POWERGRID", "ONGC", "M&M", "COALINDIA", "BAJAJFINSV", "ASIANPAINT", "ADANIPORTS", "HCLTECH", "TATAPOWER", "PFC", "RECLTD", "HAL", "BEL", "DIVISLAB", "PERSISTENT", "MPHASIS", "BSE"}
 
     results = []
     def process(row):
@@ -373,15 +630,12 @@ def run_quantum_engine():
             ret_20d = round(((cur_close / float(c.iloc[-21])) - 1), 4) if len(c) >= 21 else 0.0
             rs_vs_nifty = round(ret_20d - nifty_20d_return, 4)
 
-            # V61: Fixes the 1.05 Beta Bug! Aligns arrays using business days interpolation so cov_matrix NEVER crashes.
             beta_val = None
             try:
                 if len(c) >= 30 and not nifty_ret_clean.empty and nifty_var > 0:
                     c_clean = c.copy()
                     c_clean.index = pd.to_datetime(c_clean.index).tz_localize(None).normalize()
                     stk_ret = c_clean.pct_change().dropna()
-                    
-                    # Force alignment by merging and forward filling to cure missing Yahoo timestamps
                     aligned = pd.concat([stk_ret, nifty_ret_clean], axis=1).ffill().dropna()
                     if len(aligned) >= 30:
                         s_arr = aligned.iloc[-245:, 0].values
@@ -392,7 +646,7 @@ def run_quantum_engine():
                             beta_val = round(max(0.15, min(2.50, raw_b)), 2)
             except: pass
             if beta_val is None:
-                beta_val = 1.00 if is_recent_ipo else 1.05
+                beta_val = 1.00 if is_recent_ipo else 0.95
 
             ema20 = float(c.ewm(span=20, adjust=False).mean().iloc[-1])
             ema50 = float(c.ewm(span=50, adjust=False).mean().iloc[-1])
@@ -419,7 +673,6 @@ def run_quantum_engine():
             raw_growth, raw_q_growth = info.get('revenueGrowth'), info.get('earningsQuarterlyGrowth')
             raw_pe, raw_bv = info.get('trailingPE', info.get('forwardPE')), info.get('bookValue')
             
-            # V61: Absolute Failsafe. If Yahoo returns zero or None, rescue from historical file!
             saved_latest = latest_valid_records.get(symbol, {})
             if (raw_in is None or float(raw_in) == 0.0) and saved_latest.get('Prom_Pct', 0) > 0:
                 raw_in = float(saved_latest['Prom_Pct'])
@@ -451,26 +704,21 @@ def run_quantum_engine():
             sector_name = classify_sector(symbol, row.get('Industry', 'Unknown'))
             is_bank_or_fin = any(k in sector_name.lower() for k in ['bank', 'financial', 'nbfc', 'insurance'])
 
-            # V61: Smart Scoring. If Yahoo failed entirely, build the score purely on Delivery & Trend.
             fund_score, accum_status, dust_gem_score = 0, "NEUTRAL", 0
             debt_val = round(float(raw_debt), 2) if raw_debt is not None else 0.0
             
             if prom_curr >= 0.50: fund_score += 30
             elif prom_curr >= 0.35: fund_score += 15
-            
             if fii_curr >= 0.15: fund_score += 20
             elif fii_curr >= 0.08: fund_score += 10
-            
             if final_roe and final_roe > 0.15: fund_score += 20
-            elif final_roe is None and deliv_pct >= 0.45: fund_score += 20 # Fallback 1
-            
+            elif final_roe is None and deliv_pct >= 0.45: fund_score += 20
             if debt_val < 50 or is_bank_or_fin: fund_score += 30
-            elif raw_debt is None and cur_close > ema200: fund_score += 30 # Fallback 2
+            elif raw_debt is None and cur_close > ema200: fund_score += 30
             
             if fund_score >= 70 and is_vdu and dist_from_52w_low < 0.30: accum_status = "💎 SILENT ACCUMULATION"
             elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
 
-            # V61: Quality Gate fallback so watchlists NEVER go blank!
             roe_num = float(final_roe) if final_roe is not None else 0.12
             total_smart_ownership = prom_curr + fii_curr
             passes_quality_gate = (
@@ -794,6 +1042,8 @@ def run_quantum_engine():
         sector_cols = ['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_1D_Flow', 'Avg_5D_Flow', 'Avg_Money_Flow', 'Avg_50D_Flow', 'Hist_Best_Month', 'Hist_Worst_Month', 'Smart Money Direction', '2-Year Macro Prediction']
         sector_df[sector_cols].sort_values(by=['ISAD (Breadth %)', 'Avg_1D_Flow'], ascending=[False, False]).to_csv("RAW_SECTOR.csv", index=False)
     except: pass
+
+    export_alpha_hunter(df, raw_data)
 
 if __name__ == "__main__":
     run_quantum_engine()
