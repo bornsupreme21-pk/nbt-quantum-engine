@@ -1,31 +1,21 @@
 Industry,Sector Status,ISAD (Breadth %),Avg_1D_Flow,Avg_5D_Flow,Avg_Money_Flow,Avg_50D_Flow,Hist_Best_Month,Hist_Worst_Month,Smart Money Direction,2-Year Macro Prediction
-EMS & Semiconductors,🔥 DOMINANT,100.0,0.19,-3.31,-15.0,-0.82,June,February,⚠️ SECTOR EXHAUSTION,PLI Manufacturing & Digital Export Cycle
-Dynamic Mover,🔥 DOMINANT,100.0,-0.87,-0.01,6.77,3.85,January,February,🌊 SECTOR MOMENTUM,Idiosyncratic / Stock Specific
-Textiles & Apparel,🔥 DOMINANT,100.0,-14.49,-34.53,34.2,10.33,October,November,🌊 SECTOR MOMENTUM,Idiosyncratic / Stock Specific
-Media Entertainment & Publication,🔥 DOMINANT,75.0,1.82,8.3,12.01,16.48,May,December,🌊 SECTOR MOMENTUM,Idiosyncratic / Stock Specific
-Telecommunication,🔥 DOMINANT,71.4,-1.61,-3.07,-5.42,-0.06,April,January,⚠️ SECTOR EXHAUSTION,PLI Manufacturing & Digital Export Cycle
-Automobile and Auto Components,🔥 DOMINANT,55.6,1.24,6.47,8.09,-0.4,April,January,🌊 SECTOR MOMENTUM,Rate Cut & Credit Expansion Cycle
-Healthcare,🔥 DOMINANT,47.6,2.29,5.6,6.93,2.45,May,January,🌊 SECTOR MOMENTUM,Defensive Consumption & Margin Expansion
-🚀 BEYOND-750: Dynamic Mover,🔄 EMERGING,40.0,12.47,15.45,14.81,7.05,N/A,N/A,🌊 SECTOR MOMENTUM,Idiosyncratic / Stock Specific
-PSU Banks,🔄 EMERGING,40.0,3.85,6.59,10.48,3.06,November,July,🌊 SECTOR MOMENTUM,Rate Cut & Credit Expansion Cycle
-Information Technology,🔄 EMERGING,37.5,-0.01,1.47,4.48,-1.64,October,February,🌊 SECTOR MOMENTUM,PLI Manufacturing & Digital Export Cycle
-Services,🔄 EMERGING,35.3,0.85,4.72,1.1,-5.87,April,January,⚖️ NEUTRAL FLOW,Idiosyncratic / Stock Specific
-Utilities,🔄 EMERGING,33.3,2.37,2.02,-6.15,-11.39,April,August,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
-Textiles,🔄 EMERGING,33.3,1.35,5.62,4.4,-0.1,April,February,🌊 SECTOR MOMENTUM,Idiosyncratic / Stock Specific
-Construction,🔄 EMERGING,30.8,1.73,4.84,1.57,-5.92,April,February,⚖️ NEUTRAL FLOW,Idiosyncratic / Stock Specific
-Capital Goods,🔄 EMERGING,30.0,1.57,2.94,-3.88,-8.15,April,February,⚠️ SECTOR EXHAUSTION,Govt Capex & Defense Supercycle
-Realty,🔄 EMERGING,27.3,-0.33,3.74,3.61,-4.27,April,January,🌊 SECTOR MOMENTUM,Rate Cut & Credit Expansion Cycle
-Consumer Services,🔄 EMERGING,26.1,-0.49,3.38,0.12,-8.39,April,January,⚖️ NEUTRAL FLOW,Defensive Consumption & Margin Expansion
-Defense & Aerospace,🔄 EMERGING,25.0,2.78,7.34,3.35,-14.56,April,February,🌊 SECTOR MOMENTUM,Govt Capex & Defense Supercycle
-Consumer Durables,🔄 EMERGING,25.0,0.87,5.22,0.12,-6.73,April,January,⚖️ NEUTRAL FLOW,Defensive Consumption & Margin Expansion
-Financial Services,🔄 EMERGING,23.5,0.71,6.23,0.84,-7.63,April,March,⚖️ NEUTRAL FLOW,Rate Cut & Credit Expansion Cycle
-Fast Moving Consumer Goods,🔄 EMERGING,21.4,0.64,4.85,-0.7,-10.56,April,January,⚖️ NEUTRAL FLOW,Defensive Consumption & Margin Expansion
-Power,🔄 EMERGING,16.7,1.93,3.19,0.34,-6.56,April,January,⚖️ NEUTRAL FLOW,Govt Capex & Defense Supercycle
-Chemicals,🔄 EMERGING,16.0,1.51,5.03,-1.58,-7.76,April,February,⚖️ NEUTRAL FLOW,Idiosyncratic / Stock Specific
-Oil Gas & Consumable Fuels,⚠️ WASHOUT,12.5,0.53,7.95,8.21,1.52,April,January,🌊 SECTOR MOMENTUM,Idiosyncratic / Stock Specific
-Metals & Mining,⚠️ WASHOUT,12.5,0.43,3.87,1.69,-9.1,April,February,⚖️ NEUTRAL FLOW,Idiosyncratic / Stock Specific
-Railways & Infra EPC,⚠️ WASHOUT,0.0,3.7,9.57,8.59,-6.54,April,February,🌊 SECTOR MOMENTUM,Govt Capex & Defense Supercycle
-"Power, Renewables & PSU",⚠️ WASHOUT,0.0,2.89,6.22,3.2,-6.08,April,August,🌊 SECTOR MOMENTUM,Govt Capex & Defense Supercycle
-Construction Materials,⚠️ WASHOUT,0.0,0.95,5.26,7.5,-6.24,April,February,🌊 SECTOR MOMENTUM,Idiosyncratic / Stock Specific
-Diversified,⚠️ WASHOUT,0.0,-0.41,2.28,-3.39,-16.35,February,January,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
-Private Banks,⚠️ WASHOUT,0.0,-0.92,8.41,4.1,4.44,April,July,🌊 SECTOR MOMENTUM,Rate Cut & Credit Expansion Cycle
+Healthcare,🔥 DOMINANT,60.0,3.12,6.78,8.76,5.05,May,January,🌊 SECTOR MOMENTUM,Defensive Consumption & Margin Expansion
+🚀 BEYOND-750: Dynamic Mover,🔥 DOMINANT,50.0,23.76,27.45,24.96,3.49,May,January,🌊 SECTOR MOMENTUM,Idiosyncratic / Stock Specific
+Realty,🔥 DOMINANT,50.0,0.73,3.4,6.77,2.13,April,February,🌊 SECTOR MOMENTUM,Rate Cut & Credit Expansion Cycle
+Consumer Services,🔥 DOMINANT,50.0,-0.61,11.26,16.42,10.32,July,January,🌊 SECTOR MOMENTUM,Defensive Consumption & Margin Expansion
+Fast Moving Consumer Goods,🔄 EMERGING,33.3,1.29,6.31,-1.39,-7.54,April,January,⚖️ NEUTRAL FLOW,Defensive Consumption & Margin Expansion
+Chemicals,🔄 EMERGING,25.0,0.57,4.48,-3.72,-9.15,April,August,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
+Financial Services,🔄 EMERGING,20.0,0.12,3.62,-4.32,-15.36,April,March,⚠️ SECTOR EXHAUSTION,Rate Cut & Credit Expansion Cycle
+Capital Goods,⚠️ WASHOUT,12.5,2.66,1.02,-3.8,-12.31,May,January,⚠️ SECTOR EXHAUSTION,Govt Capex & Defense Supercycle
+Railways & Infra EPC,⚠️ WASHOUT,0.0,2.95,9.94,6.5,-9.65,April,February,🌊 SECTOR MOMENTUM,Govt Capex & Defense Supercycle
+Consumer Durables,⚠️ WASHOUT,0.0,1.31,6.36,4.38,-9.89,February,January,🌊 SECTOR MOMENTUM,Defensive Consumption & Margin Expansion
+Information Technology,⚠️ WASHOUT,0.0,1.1,6.28,-0.74,-12.42,May,February,⚖️ NEUTRAL FLOW,PLI Manufacturing & Digital Export Cycle
+Metals & Mining,⚠️ WASHOUT,0.0,0.66,3.57,-0.59,-12.56,May,April,⚖️ NEUTRAL FLOW,Idiosyncratic / Stock Specific
+Diversified,⚠️ WASHOUT,0.0,0.51,1.57,-5.07,-13.61,March,February,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
+Dynamic Mover,⚠️ WASHOUT,0.0,0.44,3.54,-4.72,-11.64,January,June,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
+Textiles,⚠️ WASHOUT,0.0,0.42,7.44,-0.9,-13.6,April,February,⚖️ NEUTRAL FLOW,Idiosyncratic / Stock Specific
+Power,⚠️ WASHOUT,0.0,0.3,3.44,5.22,-4.85,June,January,🌊 SECTOR MOMENTUM,Govt Capex & Defense Supercycle
+Automobile and Auto Components,⚠️ WASHOUT,0.0,-0.32,3.48,9.96,-1.43,April,February,🌊 SECTOR MOMENTUM,Rate Cut & Credit Expansion Cycle
+Oil Gas & Consumable Fuels,⚠️ WASHOUT,0.0,-0.6,8.18,7.67,0.67,April,July,🌊 SECTOR MOMENTUM,Idiosyncratic / Stock Specific
+Construction,⚠️ WASHOUT,0.0,-0.82,0.65,-11.54,-24.89,April,January,⚠️ SECTOR EXHAUSTION,Idiosyncratic / Stock Specific
+Construction Materials,⚠️ WASHOUT,0.0,-2.68,3.44,6.67,-4.11,April,September,🌊 SECTOR MOMENTUM,Idiosyncratic / Stock Specific
