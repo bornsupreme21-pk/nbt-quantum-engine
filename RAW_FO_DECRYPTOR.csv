@@ -1,1 +1,5 @@
 Symbol,Company,Entry Trigger,Ret_1D,FO_Regime,OI_Chg_Pct,OI_Total,RSI_14,Volume Profile,Machine_Prediction,52W High Disc %,Industry
+ONGC,OIL AND NATURAL GAS CORP.,234.8,0.0056,🟢 LONG BUILDUP,0.0583,42656945,58.15,Normal,🟢 POSITIVE BIAS (Tracking Trend),-0.2332,Oil Gas & Consumable Fuels
+POWERGRID,POWER GRID CORP. LTD.,263.75,0.0225,🟢 LONG BUILDUP,0.0329,38904967,60.18,Normal,🟢 POSITIVE BIAS (Tracking Trend),-0.1751,Power
+M&M,MAHINDRA & MAHINDRA LTD,3465.0,0.053,🟢 LONG BUILDUP,0.0496,10626451,81.16,Normal,⚠️ OVEREXTENDED (Profit Booking),-0.0882,Automobile and Auto Components
+ULTRACEMCO,ULTRATECH CEMENT LIMITED,12362.0,0.0071,🟢 LONG BUILDUP,0.0244,1068611,72.06,Normal,🟢 POSITIVE BIAS (Tracking Trend),-0.0378,Construction Materials
