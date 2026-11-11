@@ -1,8 +1,6 @@
 Industry,Sector Status,ISAD (Breadth %),Avg_1D_Flow,Avg_5D_Flow,Avg_Money_Flow,Avg_50D_Flow,Hist_Best_Month,Hist_Worst_Month,Smart Money Direction
-Capital Goods,🔥 DOMINANT,50.0,3.07,3.08,-2.82,-8.51,April,February,⚖️ NEUTRAL FLOW
-Fast Moving Consumer Goods,🔥 DOMINANT,50.0,2.04,5.76,7.21,-5.5,April,August,🌊 SECTOR MOMENTUM
-Financial Services,🔄 EMERGING,25.0,2.63,7.32,1.29,-8.76,June,October,⚖️ NEUTRAL FLOW
-Power,⚠️ WASHOUT,0.0,4.11,12.7,7.09,-9.32,April,January,🌊 SECTOR MOMENTUM
-Healthcare,⚠️ WASHOUT,0.0,2.23,5.19,3.85,12.38,May,January,🌊 SECTOR MOMENTUM
-Chemicals,⚠️ WASHOUT,0.0,2.0,6.33,-4.55,-13.27,April,January,⚠️ SECTOR EXHAUSTION
-Realty,⚠️ WASHOUT,0.0,-1.73,4.01,2.73,-6.75,April,January,⚖️ NEUTRAL FLOW
+Healthcare,🔥 DOMINANT,100.0,-0.45,4.95,24.71,14.1,October,January,🌊 SECTOR MOMENTUM
+Information Technology,🔥 DOMINANT,100.0,-1.1,-2.03,3.22,5.65,October,February,🌊 SECTOR MOMENTUM
+Consumer Services,⚠️ WASHOUT,0.0,4.52,4.36,-1.69,-18.5,July,June,⚖️ NEUTRAL FLOW
+Automobile and Auto Components,⚠️ WASHOUT,0.0,-0.21,2.74,-6.73,-22.27,April,February,⚠️ SECTOR EXHAUSTION
+Realty,⚠️ WASHOUT,0.0,-1.11,8.43,7.57,-2.35,April,August,🌊 SECTOR MOMENTUM
