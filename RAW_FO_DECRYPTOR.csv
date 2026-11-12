@@ -1,4 +1,1 @@
 Symbol,Company,Entry Trigger,Ret_1D,FO_Regime,OI_Chg_Pct,OI_Total,RSI_14,Volume Profile,Machine_Prediction,52W High Disc %,Industry
-BHARTIARTL,BHARTI AIRTEL LIMITED,2096.0,-0.0062,⚖️ RANGEBOUND OI,0.0009,33078657,68.89,Normal,🔴 BEARISH DRAG (Weak vs Nifty),-0.024,Telecommunication
-AXISBANK,AXIS BANK LIMITED,1342.9,0.0049,⚖️ RANGEBOUND OI,0.0046,25374029,69.61,Normal,🟢 POSITIVE BIAS (Tracking Trend),-0.0524,Private Banks
-TATAPOWER,TATA POWER CO LTD,357.0,-0.0083,🔴 SHORT BUILDUP,0.0901,19205474,52.61,Normal,🔴 BEARISH DRAG (Weak vs Nifty),-0.2273,"Power, Renewables & PSU"
