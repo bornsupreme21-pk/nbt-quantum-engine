@@ -1,25 +1,13 @@
 Industry,Sector Status,ISAD (Breadth %),Avg_1D_Flow,Avg_5D_Flow,Avg_Money_Flow,Avg_50D_Flow,Hist_Best_Month,Hist_Worst_Month,Smart Money Direction
-Media Entertainment & Publication,🔥 DOMINANT,100.0,-0.69,3.78,18.84,35.89,October,January,🌊 SECTOR MOMENTUM
-Textiles,🔥 DOMINANT,100.0,-2.12,4.59,10.16,12.6,June,April,🌊 SECTOR MOMENTUM
-Capital Goods,🔥 DOMINANT,75.0,-0.43,1.76,-4.02,-3.85,April,January,⚠️ SECTOR EXHAUSTION
-Healthcare,🔥 DOMINANT,71.4,-0.39,0.06,11.67,10.3,May,January,🌊 SECTOR MOMENTUM
-Services,🔥 DOMINANT,66.7,-0.2,2.71,11.14,1.7,April,February,🌊 SECTOR MOMENTUM
-Consumer Services,🔥 DOMINANT,66.7,-0.3,1.04,-5.76,-12.71,April,January,⚠️ SECTOR EXHAUSTION
-Automobile and Auto Components,🔥 DOMINANT,50.0,0.04,3.63,8.16,1.01,April,February,🌊 SECTOR MOMENTUM
-Oil Gas & Consumable Fuels,🔥 DOMINANT,50.0,-0.46,1.83,-9.59,-5.81,January,February,⚠️ SECTOR EXHAUSTION
-Realty,🔥 DOMINANT,50.0,-1.38,2.43,11.44,2.59,April,January,🌊 SECTOR MOMENTUM
-Financial Services,🔥 DOMINANT,41.7,-0.14,4.6,6.17,-1.29,April,March,🌊 SECTOR MOMENTUM
-Chemicals,🔄 EMERGING,33.3,-1.39,-1.24,-13.29,-9.9,April,January,⚠️ SECTOR EXHAUSTION
-Information Technology,🔄 EMERGING,30.0,-0.71,-2.19,1.97,-2.73,October,February,⚖️ NEUTRAL FLOW
-🚀 BEYOND-750: Emerging,🔄 EMERGING,21.4,1.02,2.91,1.39,-3.36,April,January,⚖️ NEUTRAL FLOW
-Fast Moving Consumer Goods,🔄 EMERGING,16.7,-1.65,0.09,-1.31,-1.07,April,January,⚖️ NEUTRAL FLOW
-🚀 BEYOND-750: Dynamic Mover,⚠️ WASHOUT,0.0,2.98,-0.63,-0.02,-11.5,April,January,⚖️ NEUTRAL FLOW
-Consumer Durables,⚠️ WASHOUT,0.0,-0.27,-0.52,-3.54,-8.58,April,January,⚠️ SECTOR EXHAUSTION
-Construction Materials,⚠️ WASHOUT,0.0,-0.37,0.65,17.98,-5.9,April,January,🌊 SECTOR MOMENTUM
-Metals & Mining,⚠️ WASHOUT,0.0,-0.52,-1.07,-2.88,-10.29,May,February,⚖️ NEUTRAL FLOW
-Dynamic Mover,⚠️ WASHOUT,0.0,-0.75,-5.11,-6.46,-11.9,January,June,⚠️ SECTOR EXHAUSTION
-Private Banks,⚠️ WASHOUT,0.0,-0.89,3.98,5.25,2.38,April,July,🌊 SECTOR MOMENTUM
+Telecommunication,🔥 DOMINANT,100.0,4.73,-2.09,2.44,41.71,April,March,⚖️ NEUTRAL FLOW
+Consumer Services,🔥 DOMINANT,100.0,0.94,1.75,22.73,20.65,October,January,🌊 SECTOR MOMENTUM
+Chemicals,🔥 DOMINANT,100.0,-1.19,12.34,2.09,13.39,April,March,⚖️ NEUTRAL FLOW
+Automobile and Auto Components,🔥 DOMINANT,100.0,-2.2,-5.88,9.76,-1.22,April,January,🌊 SECTOR MOMENTUM
+Financial Services,⚠️ WASHOUT,0.0,1.05,10.6,9.36,8.67,April,February,🌊 SECTOR MOMENTUM
+Capital Goods,⚠️ WASHOUT,0.0,0.48,-1.04,-2.34,-11.52,May,February,⚖️ NEUTRAL FLOW
+Metals & Mining,⚠️ WASHOUT,0.0,-0.02,0.3,-5.86,-12.91,May,February,⚠️ SECTOR EXHAUSTION
+🚀 BEYOND-750: Emerging,⚠️ WASHOUT,0.0,-0.8,-5.55,-15.16,0.0,N/A,N/A,⚠️ SECTOR EXHAUSTION
 "Power, Renewables & PSU",⚠️ WASHOUT,0.0,-0.9,2.06,-2.03,-5.52,April,August,⚖️ NEUTRAL FLOW
-Construction,⚠️ WASHOUT,0.0,-1.8,1.74,-4.24,-19.38,April,February,⚠️ SECTOR EXHAUSTION
-Railways & Infra EPC,⚠️ WASHOUT,0.0,-2.36,2.1,0.05,-5.5,April,February,⚖️ NEUTRAL FLOW
-Power,⚠️ WASHOUT,0.0,-3.79,-0.8,-6.45,-16.03,May,February,⚠️ SECTOR EXHAUSTION
+Healthcare,⚠️ WASHOUT,0.0,-1.64,0.75,1.99,-10.12,June,January,⚖️ NEUTRAL FLOW
+Realty,⚠️ WASHOUT,0.0,-1.79,3.24,1.92,-15.13,April,January,⚖️ NEUTRAL FLOW
+🚀 BEYOND-750: Dynamic Mover,⚠️ WASHOUT,0.0,-4.39,-18.05,-42.63,-48.34,N/A,N/A,⚠️ SECTOR EXHAUSTION
