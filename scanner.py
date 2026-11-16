@@ -641,4 +641,354 @@ def run_quantum_engine():
             
             sector_name = classify_sector(symbol, row.get('Industry', 'Unknown'))
             is_dynamic_mover = "BEYOND" in sector_name.upper()
-            if is_dynamic_mover and not is_liquid and not is_
+            if is_dynamic_mover and not is_liquid and not is_penny_spike: return None
+
+            is_recent_ipo = len(c) < 180
+            try:
+                w_52h = h.iloc[-252:] if len(h) >= 252 else h
+                w_52l = l.iloc[-252:] if len(l) >= 252 else l
+                h_52w, l_52w = float(w_52h.max()), float(w_52l.min())
+                h_52w_date, l_52w_date = w_52h.idxmax().strftime('%d-%b-%Y'), w_52l.idxmin().strftime('%d-%b-%Y')
+                dist_from_52w_low, disc_from_52w_high = round(((cur_close - l_52w) / l_52w), 4), round(((cur_close - h_52w) / h_52w), 4)
+            except:
+                h_52w, l_52w, h_52w_date, l_52w_date = cur_close, cur_close, "N/A", "N/A"
+                dist_from_52w_low, disc_from_52w_high = 0.0, 0.0
+
+            ret_5d = round(((cur_close / float(c.iloc[-6])) - 1), 4) if len(c) >= 6 else 0.0
+            ret_20d = round(((cur_close / float(c.iloc[-21])) - 1), 4) if len(c) >= 21 else 0.0
+            rs_vs_nifty = round(ret_20d - nifty_20d_return, 4)
+
+            beta_val = None
+            try:
+                if len(c) >= 30 and not nifty_ret_clean.empty and nifty_var > 0:
+                    c_clean = c.copy()
+                    c_clean.index = pd.to_datetime(c_clean.index).tz_localize(None).normalize()
+                    stk_ret = c_clean.pct_change().dropna()
+                    aligned = pd.concat([stk_ret, nifty_ret_clean], axis=1).ffill().dropna()
+                    if len(aligned) >= 30:
+                        s_arr, n_arr = aligned.iloc[-245:, 0].values, aligned.iloc[-245:, 1].values
+                        n_v = np.var(n_arr, ddof=1)
+                        if n_v > 0:
+                            raw_b = float(np.cov(s_arr, n_arr, ddof=1)[0, 1] / n_v)
+                            beta_val = round(max(0.15, min(2.50, raw_b)), 2)
+            except: pass
+            if beta_val is None: beta_val = 1.00 if is_recent_ipo else 1.05
+
+            ema20, ema50, ema200 = float(c.ewm(span=20, adjust=False).mean().iloc[-1]), float(c.ewm(span=50, adjust=False).mean().iloc[-1]), float(c.ewm(span=200, adjust=False).mean().iloc[-1])
+            slope_200 = ema200 - float(c.ewm(span=200, adjust=False).mean().iloc[-20]) if len(c) >= 25 else 0.0
+            
+            projected_vol = last_vol * 1.35 
+            dsr = projected_vol / vol_30d if vol_30d > 0 else 1.0
+            is_vdu = dsr <= 0.55
+            
+            try:
+                delta = c.diff()
+                gain, loss = delta.where(delta > 0, 0.0), -delta.where(delta < 0, 0.0)
+                avg_gain, avg_loss = gain.ewm(alpha=1/14, adjust=False).mean(), loss.ewm(alpha=1/14, adjust=False).mean()
+                rs = avg_gain / avg_loss
+                rsi = float(100 - (100 / (1 + rs)).iloc[-1])
+                if np.isnan(rsi): rsi = 50.0
+            except: rsi = 50.0
+
+            raw_in, raw_inst = info.get('heldPercentInsiders'), info.get('heldPercentInstitutions')
+            raw_roe, raw_debt = info.get('returnOnEquity'), info.get('debtToEquity')
+            raw_growth, raw_q_growth = info.get('revenueGrowth'), info.get('earningsQuarterlyGrowth')
+            raw_pe, raw_bv = info.get('trailingPE', info.get('forwardPE')), info.get('bookValue')
+            
+            saved_latest = latest_valid_records.get(symbol, {})
+            if (raw_in is None or float(raw_in) == 0.0) and saved_latest.get('Prom_Pct', 0) > 0: raw_in = float(saved_latest['Prom_Pct'])
+            if (raw_inst is None or float(raw_inst) == 0.0) and saved_latest.get('FII_Pct', 0) > 0: raw_inst = float(saved_latest['FII_Pct'])
+
+            pe_val = float(raw_pe) if raw_pe is not None else 0.0
+            bv_val = float(raw_bv) if raw_bv is not None else 0.0
+            final_roe = float(raw_roe) if raw_roe is not None else ((cur_close / (pe_val * bv_val)) if pe_val > 0 and bv_val > 0 else None)
+            raw_dy = float(info.get('dividendYield', 0) or 0)
+            normalized_dy = (raw_dy / 100.0 if raw_dy > 0.5 else raw_dy) if raw_dy > 0 else 0.0
+
+            prom_curr, fii_curr = float(raw_in) if raw_in else 0.0, float(raw_inst) if raw_inst else 0.0
+            prom_old = float(oldest_records.get(symbol, {}).get('Prom_Pct', prom_curr))
+            fii_old = float(oldest_records.get(symbol, {}).get('FII_Pct', fii_curr))
+            
+            prom_delta, fii_delta = round(prom_curr - prom_old, 4) if prom_curr > 0 else 0.0, round(fii_curr - fii_old, 4) if fii_curr > 0 else 0.0
+            if prom_curr > 0 or fii_curr > 0: today_memory_records.append({'Symbol': symbol, 'Date': datetime.date.today(), 'Prom_Pct': prom_curr, 'FII_Pct': fii_curr})
+
+            if symbol in nse_deliv_map: deliv_pct = nse_deliv_map[symbol]
+            else: deliv_pct = round(min(0.65, max(0.32, 0.38 + (fii_curr * 0.35) + (wick_pct * 0.15))), 4)
+
+            is_bank_or_fin = any(k in sector_name.lower() for k in ['bank', 'financial', 'nbfc', 'insurance'])
+
+            fund_score, accum_status, dust_gem_score = 0, "NEUTRAL", 0
+            debt_val = round(float(raw_debt), 2) if raw_debt is not None else 0.0
+            if prom_curr >= 0.50: fund_score += 30
+            elif prom_curr >= 0.35: fund_score += 15
+            if fii_curr >= 0.15: fund_score += 20
+            elif fii_curr >= 0.08: fund_score += 10
+            if final_roe and final_roe > 0.15: fund_score += 20
+            elif final_roe is None and deliv_pct >= 0.45: fund_score += 20
+            if debt_val < 50 or is_bank_or_fin: fund_score += 30
+            elif raw_debt is None and cur_close > ema200: fund_score += 30
+            
+            if fund_score >= 70 and is_vdu and dist_from_52w_low < 0.30: accum_status = "💎 SILENT ACCUMULATION"
+            elif fund_score >= 70: accum_status = "🟢 STRONG HOLDINGS"
+
+            roe_num = float(final_roe) if final_roe is not None else 0.12
+            total_smart_ownership = prom_curr + fii_curr
+            passes_quality_gate = (
+                fund_score >= 50 and (roe_num >= 0.08 or final_roe is None) and
+                (debt_val < 85 or is_bank_or_fin or raw_debt is None) and
+                (pe_val < 95 or is_bank_or_fin or pe_val == 0.0) and
+                (total_smart_ownership >= 0.38 or deliv_pct >= 0.45) and cur_close >= ema200 * 0.97
+            )
+
+            fo_regime, oi_chg_pct, oi_total = "CASH STOCK", 0.0, 0
+            if symbol in fo_universe:
+                if ret_1d > 0.005 and dsr > 1.2 and deliv_pct > 0.45: fo_regime, oi_chg_pct = "🟢 LONG BUILDUP", round(dsr * 0.02, 4) 
+                elif ret_1d < -0.005 and dsr > 1.2: fo_regime, oi_chg_pct = "🔴 SHORT BUILDUP", round(dsr * 0.02, 4) 
+                elif ret_1d > 0.005 and dsr < 0.8 and deliv_pct < 0.40: fo_regime, oi_chg_pct = "⚠️ SHORT COVERING", round(-dsr * 0.015, 4)
+                elif ret_1d < -0.005 and dsr < 0.8: fo_regime, oi_chg_pct = "🩸 LONG UNWINDING", round(-dsr * 0.015, 4)
+                else: fo_regime, oi_chg_pct = "⚖️ RANGEBOUND OI", round((dsr - 1.0) * 0.01, 4)
+                oi_total = int(vol_30d * 3.5)
+
+            is_breakout = (cur_close > float(h.iloc[-21:-1].max())) if len(h) >= 21 else False
+            is_launchpad_coil = (passes_quality_gate and cur_close >= ema20 * 0.995 and ema20 >= ema50 * 0.985 and 50.0 <= rsi <= 68.0 and 0.015 <= ret_20d <= 0.18 and disc_from_52w_high >= -0.18 and deliv_pct >= 0.42 and ret_1d >= -0.015)
+            is_day1_pocket_pivot = (passes_quality_gate and 0.01 <= ret_1d <= 0.06 and dsr >= 1.3 and cur_close >= ema20 and cur_close >= ema50 and 48.0 <= rsi <= 69.0 and ret_20d <= 0.18 and wick_pct >= 0.58)
+            is_capitulation = False
+            alert_type = "Standard"
+            
+            if rsi > 73 or ret_20d > 0.22: alert_type = "🚨 OVEREXTENDED (Train Left - Wait)"
+            elif is_launchpad_coil: alert_type = "🎯 LAUNCHPAD COIL (Pre-Breakout)"
+            elif is_day1_pocket_pivot: alert_type = "🔥 DAY-1 POCKET PIVOT (Fresh Motion)"
+            elif is_breakout and dsr > 1.2 and rsi <= 70 and passes_quality_gate: alert_type = "🚀 20D BREAKOUT (Early Stage)"
+            elif is_penny_spike and rsi <= 70 and passes_quality_gate: alert_type = "🌋 QUALITY MICROCAP AWAKENING"
+            elif is_penny_spike or (is_breakout and not passes_quality_gate): alert_type = "⚠️ SPECULATIVE SPIKE (Weak Fund)"
+            elif is_vdu and cur_close > ema50 and 44 <= rsi <= 66 and passes_quality_gate: alert_type = "⚡ VCP + VDU TIGHT COIL"
+            elif ret_1d <= -0.05 and rsi <= 35 and (wick_pct > 0.35 or dsr >= 1.5): is_capitulation, alert_type = True, "💥 CAPITULATION BOUNCE"
+            elif cur_close < ema200 and slope_200 < 0: alert_type = "📉 DOWNTREND (Avoid)"
+            elif cur_close > ema50 and cur_close < (ema50 * 1.05) and rsi >= 44 and passes_quality_gate: alert_type = "🛡️ 50-EMA PULLBACK SUPPORT"
+
+            try:
+                prev_c = c.shift(1)
+                tr = pd.concat([(h.iloc[-14:] - l.iloc[-14:]), (h.iloc[-14:] - prev_c.iloc[-14:]).abs(), (l.iloc[-14:] - prev_c.iloc[-14:]).abs()], axis=1).max(axis=1)
+                atr14 = float(tr.mean())
+            except: atr14 = cur_close * 0.02
+
+            if is_capitulation:
+                sl_price = round(float(l.iloc[-1]) * 0.98, 2)
+                target_7 = round(cur_close + (4.0 * atr14), 2)
+            else:
+                swing_stop = max(cur_close - (1.8 * atr14), cur_close * 0.962)
+                sl_price = round(min(swing_stop, cur_close * 0.985), 2)
+                target_7 = round(cur_close + max(cur_close * 0.075, 3.2 * atr14), 2)
+
+            risk = max(0.01, cur_close - sl_price)
+            rr_ratio = round((target_7 - cur_close) / risk, 2)
+
+            events_list, earnings_blackout, post_earnings_breakout = [], False, False
+            if is_recent_ipo: events_list.append("🆕 RECENT IPO")
+            if prom_delta > 0.01: events_list.append(f"🐋 PROMOTER WHALE ENTRY (+{round(prom_delta*100, 1)}%)")
+            if fii_delta > 0.01: events_list.append(f"🏦 FII INSTITUTIONAL BUY (+{round(fii_delta*100, 1)}%)")
+            
+            ex_div_ts = info.get('exDividendDate')
+            if ex_div_ts:
+                ex_dt = datetime.datetime.fromtimestamp(int(ex_div_ts)).date()
+                if 0 <= (ex_dt - datetime.date.today()).days <= 10: events_list.append(f"💰 EX-DIVIDEND SHIELD ({ex_dt.strftime('%d-%b')})")
+            
+            earnings_ts = info.get('earningsTimestamp', info.get('earningsTimestampStart'))
+            if earnings_ts:
+                e_dt = datetime.datetime.fromtimestamp(int(earnings_ts)).date()
+                if 0 <= (e_dt - datetime.date.today()).days <= 5: 
+                    events_list.append(f"📅 BOARD / EARNINGS ({e_dt.strftime('%d-%b')})")
+                    earnings_blackout = True
+                elif -5 <= (e_dt - datetime.date.today()).days < 0 and ret_1d > 0.015 and dsr >= 1.8: 
+                    events_list.append(f"🚀 POST-RESULT SURGE ({e_dt.strftime('%d-%b')})")
+                    post_earnings_breakout = True
+
+            sort_priority = 6
+            if earnings_blackout: trading_verdict, sort_priority = "🚨 EARNINGS BLACKOUT (WAIT)", 5
+            elif alert_type in ["🎯 LAUNCHPAD COIL (Pre-Breakout)", "🔥 DAY-1 POCKET PIVOT (Fresh Motion)", "🚀 20D BREAKOUT (Early Stage)", "🌋 QUALITY MICROCAP AWAKENING"]: trading_verdict, sort_priority = f"🎯 STRONG BUY: ₹{round(cur_close, 2)}", 1
+            elif alert_type in ["⚡ VCP + VDU TIGHT COIL", "🛡️ 50-EMA PULLBACK SUPPORT"]: trading_verdict, sort_priority = f"🟢 ACCUMULATE: ₹{round(cur_close, 2)}", 2
+            elif is_capitulation: trading_verdict, sort_priority = f"⚡ CONTRARIAN BOUNCE: ₹{round(cur_close, 2)}", 3
+            elif alert_type in ["🚨 OVEREXTENDED (Train Left - Wait)", "⚠️ SPECULATIVE SPIKE (Weak Fund)"]: trading_verdict, sort_priority = "⚠️ AVOID / CHECK FUNDAMENTALS", 4
+            elif alert_type == "📉 DOWNTREND (Avoid)": trading_verdict, sort_priority = "⛔ STRICT SKIP", 6
+            else: trading_verdict, sort_priority = "⏳ WAIT", 3
+
+            if final_roe and final_roe >= 0.15: dust_gem_score += 25
+            elif final_roe and final_roe >= 0.10: dust_gem_score += 10
+            if prom_curr >= 0.50: dust_gem_score += 15
+            if fii_curr >= 0.15: dust_gem_score += 15
+            if debt_val < 30: dust_gem_score += 15
+            if disc_from_52w_high <= -0.30: dust_gem_score += 30
+            elif disc_from_52w_high <= -0.20: dust_gem_score += 20
+            elif disc_from_52w_high <= -0.12: dust_gem_score += 10
+            if prom_delta > 0.005: dust_gem_score += 20
+            if fii_delta > 0.01: dust_gem_score += 20
+            if 0 < pe_val < 25: dust_gem_score += 15
+
+            fear_event_score = 0.0
+            catalyst_tag = "⚪ Normal Flow"
+            
+            if is_launchpad_coil: catalyst_tag = f"🎯 PRE-BREAKOUT COIL (RSI {int(rsi)} • Deliv {int(deliv_pct*100)}% • {round(disc_from_52w_high*100,1)}% from 52W High)"
+            elif is_day1_pocket_pivot: catalyst_tag = f"🔥 DAY-1 IGNITION (+{round(ret_1d*100,1)}% 1D • {round(dsr,1)}x Vol • Fresh Motion)"
+            elif is_capitulation: fear_event_score, catalyst_tag = 1000 + fund_score, f"💥 CAPITULATION REVERSAL ({round(ret_1d*100,1)}% Drop • Bounce Incoming)"
+            elif ret_1d <= -0.05 and dsr >= 3.5: catalyst_tag = "⛔ TOXIC STANDALONE DUMP (AVOID)"
+            elif passes_quality_gate and not earnings_blackout:
+                if post_earnings_breakout: fear_event_score, catalyst_tag = round(dsr * 35 + fund_score, 1), f"🚀 POST-EARNINGS BREAKOUT ({round(ret_1d*100,1)}% • {round(dsr,1)}x Vol)"
+                elif -0.08 <= ret_1d <= -0.025 and cur_close >= ema200 * 0.97 and dsr < 3.2: fear_event_score, catalyst_tag = round(abs(ret_1d) * 1000 + fund_score, 1), f"😱 FEAR DIP ({round(ret_1d*100,1)}% 1D) • Intact 200-EMA"
+                elif -0.12 <= ret_5d <= -0.045 and rsi <= 42 and cur_close >= ema200 * 0.95: fear_event_score, catalyst_tag = round(abs(ret_5d) * 800 + fund_score, 1), f"🌊 SECTOR CONTAGION DIP ({round(ret_5d*100,1)}% 5D • RSI {int(rsi)})"
+
+            expected_beta_move = beta_val * nifty_20d_return if nifty_20d_return else 0
+            alpha_spread = ret_1d - expected_beta_move
+            if rsi >= 72 and ret_1d > 0.02: machine_pred = "⚠️ OVEREXTENDED (Profit Booking)"
+            elif is_launchpad_coil or is_day1_pocket_pivot: machine_pred = "🚀 EARLY MOTION LAUNCHPAD (+Alpha)"
+            elif rsi <= 35 and alpha_spread >= 0: machine_pred = "💎 OVERSOLD REBOUND (Strong Floor)"
+            elif alpha_spread >= 0.0075 and ret_1d > 0: machine_pred = "🟢 BULLISH OUTPERFORMER (+Alpha)"
+            elif ret_1d > 0 and nifty_20d_return < -0.003: machine_pred = "⚡ CONTRA STRENGTH (Defying Nifty)"
+            elif alpha_spread <= -0.0075 and ret_1d < 0: machine_pred = "🔴 BEARISH DRAG (Weak vs Nifty)"
+            elif ret_1d >= 0: machine_pred = "🟢 POSITIVE BIAS (Tracking Trend)"
+            else: machine_pred = "⚖️ MILD DRIFT / CONSOLIDATING"
+
+            best_month, worst_month = "N/A", "N/A"
+            try:
+                c_monthly = c.groupby(c.index.to_period('M')).last()
+                m_ret = c_monthly.pct_change().dropna()
+                if len(m_ret) > 12:
+                    m_avg = m_ret.groupby(m_ret.index.strftime('%B')).mean()
+                    if not m_avg.empty: best_month, worst_month = m_avg.idxmax(), m_avg.idxmin()
+            except: pass
+
+            launchpad_score = round((fund_score * 0.40) + (deliv_pct * 100 * 0.25) + ((1.0 + max(-0.30, disc_from_52w_high)) * 100 * 0.20) + (max(0, 70 - abs(rsi - 60)) * 0.15), 2)
+
+            return {
+                'Symbol': symbol, 'Company': company_name, 'Industry': sector_name,
+                'Is_Microcap_Spike': is_penny_spike,
+                'Sort_Priority': sort_priority, 'Trading Verdict': trading_verdict, 'Alert Type': alert_type, 
+                'Entry Trigger': round(cur_close, 2), 'Stop Loss': sl_price, 'Target 7%': target_7, 'RSI_14': round(rsi, 2),
+                'Delivery_Pct': deliv_pct, 'Last_Vol': last_vol,
+                'FO_Regime': fo_regime, 'OI_Total': oi_total, 'OI_Chg_Pct': oi_chg_pct, 'Machine_Prediction': machine_pred,
+                '52W High Disc %': disc_from_52w_high, 'Launchpad_Score': launchpad_score,
+                'F&O Ceiling': round(np.ceil(cur_close / 50.0) * 50.0, 2) if cur_close > 200 else round(np.ceil(cur_close / 10.0) * 10.0, 2), 
+                '52W High': round(h_52w, 2), '52W High Date': h_52w_date, '52W Low': round(l_52w, 2), '52W Low Date': l_52w_date,
+                'R:R Ratio': rr_ratio, 'Pos Size (₹5k Risk)': int(max(1, round(5000.0 / risk))) if risk > 0 else 1, 'RS vs Nifty': rs_vs_nifty,
+                'Opportunity Score': fund_score, 'Dust_Gem_Score': dust_gem_score, 'Stage': "PHASE 2: MARKUP" if (cur_close > ema200 and slope_200 > 0) else "PHASE 1/4", 
+                'Accumulation Status': accum_status, 
+                'Promoter Holding': round(prom_curr, 4), 'Promoter Delta': prom_delta,
+                'FII/DII': round(fii_curr, 4), 'FII Delta': fii_delta, 
+                'Dist from 52W Low': dist_from_52w_low, 'Disc from 52W High': disc_from_52w_high,
+                'Debt-to-Eq': debt_val if debt_val > 0 else 0.0, 'Growth': round(max(-3.0, min(3.0, float(raw_growth))), 4) if raw_growth else 0.0, 
+                'ROE': round(final_roe, 4) if final_roe else 0.0, 'PE Ratio': round(pe_val, 2) if pe_val > 0 else 0.0, 
+                'Book Value': round(bv_val, 2) if bv_val > 0 else 0.0,
+                'Div Yield': round(normalized_dy, 4), 
+                'QoQ Growth': round(max(-3.0, min(3.0, float(raw_q_growth))), 4) if raw_q_growth else 0.0, 'Volume Profile': "VDU" if is_vdu else "Normal",
+                'Corp Event': " | ".join(events_list) if events_list else "Regular Trading", 'Catalyst Impact': catalyst_tag, 'Fear_Event_Score': fear_event_score,
+                'Beta': beta_val, 'Ret_1D': ret_1d, 'Ret_5D': ret_5d, 'Ret_20D': ret_20d, 'Ret_50D': round(((cur_close / float(c.iloc[-51])) - 1), 4) if len(c) >= 51 else 0.0,
+                'Best_Month': best_month, 'Worst_Month': worst_month
+            }
+        except Exception as e: return None
+
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = {executor.submit(process, row): row for _, row in univ.iterrows()}
+        for f in as_completed(futures):
+            res = f.result()
+            if res: results.append(res)
+
+    df = pd.DataFrame(results)
+    if df.empty: return
+
+    adv_count = int((df['Ret_1D'] > 0).sum())
+    dec_count = int((df['Ret_1D'] < 0).sum())
+    avg_deliv_pct = float(df['Delivery_Pct'].mean()) if 'Delivery_Pct' in df.columns else 0.48
+    total_univ_vol = float(df['Last_Vol'].sum()) if 'Last_Vol' in df.columns else 0
+    fetch_macro_and_history(adv_count, dec_count, avg_deliv_pct, total_univ_vol)
+    
+    if today_memory_records:
+        pd.concat([mem_df, pd.DataFrame(today_memory_records)]).drop_duplicates(subset=['Symbol', 'Date'], keep='last').to_csv("Historical_Holdings.csv", index=False)
+
+    eligible_swings = df[df['Sort_Priority'] <= 2].sort_values(by=["Sort_Priority", "R:R Ratio"], ascending=[True, False])
+    if len(eligible_swings) < 15:
+        fallback_swings = df[(df['Stage'] == 'PHASE 2: MARKUP') & (df['RSI_14'].between(48, 69)) & (df['Opportunity Score'] >= 50)]
+        eligible_swings = pd.concat([eligible_swings, fallback_swings]).drop_duplicates(subset=['Symbol'], keep='first')
+    core_swings = eligible_swings[~eligible_swings['Is_Microcap_Spike']].head(20)
+    micro_swings = eligible_swings[eligible_swings['Is_Microcap_Spike']].head(5)
+    top_swings = pd.concat([core_swings, micro_swings]).sort_values(by=["Sort_Priority"], ascending=[True]).head(25)
+    used_syms = set(top_swings['Symbol'].tolist())
+    
+    top_inc = df[(df['Accumulation Status'] != "NEUTRAL") & (df['Sort_Priority'] <= 3) & (~df['Symbol'].isin(used_syms))].sort_values(by=["Opportunity Score"], ascending=[False]).head(20)
+    if len(top_inc) < 15:
+        fb_inc = df[(df['Opportunity Score'] >= 60) & (~df['Symbol'].isin(used_syms))].sort_values(by=["Opportunity Score"], ascending=[False]).head(20)
+        top_inc = pd.concat([top_inc, fb_inc]).drop_duplicates(subset=['Symbol'], keep='first').head(20)
+    used_syms.update(top_inc['Symbol'].tolist())
+    
+    fear_candidates = df[(df['Fear_Event_Score'] > 0) & (~df['Symbol'].isin(used_syms))].sort_values(by="Fear_Event_Score", ascending=False).head(40)
+    used_syms.update(fear_candidates['Symbol'].tolist())
+    dust_gems = df[(df['Disc from 52W High'] <= -0.15) & (~df['Symbol'].isin(used_syms))].sort_values(by="Dust_Gem_Score", ascending=False).head(40)
+
+    core_portfolio = {'PFC', 'RELIANCE', 'IRFC', 'IRB', 'MSUMI', 'NMDC', 'ITC', 'BEL'}
+    all_news_syms = set(top_swings['Symbol']).union(set(top_inc['Symbol'])).union(set(fear_candidates['Symbol'])).union(set(dust_gems['Symbol'])).union(core_portfolio).union(set(df[df['Corp Event'] != "Regular Trading"]['Symbol'].head(25)))
+
+    with ThreadPoolExecutor(max_workers=8) as news_exec:
+        future_to_idx = {news_exec.submit(fetch_stock_news_catalyst, df.at[i, 'Symbol'], df.at[i, 'Company'], df.at[i, 'Catalyst Impact']): i for i in df[df['Symbol'].isin(all_news_syms)].index.tolist()}
+        for fut in as_completed(future_to_idx):
+            try: df.at[future_to_idx[fut], 'Catalyst Impact'] = fut.result()
+            except: pass
+
+    fo_df = df[df['FO_Regime'] != "CASH STOCK"].sort_values(by="OI_Total", ascending=False)
+    if fo_df.empty:
+        fo_df = df[df['Symbol'].isin(fo_universe)]
+    fo_df[["Symbol", "Company", "Entry Trigger", "Ret_1D", "FO_Regime", "OI_Chg_Pct", "OI_Total", "RSI_14", "Volume Profile", "Machine_Prediction", "52W High Disc %", "Industry"]].to_csv("RAW_FO_DECRYPTOR.csv", index=False)
+
+    df.loc[top_swings.index].sort_values(by=["Sort_Priority"], ascending=[True])[["Symbol", "Company", "Trading Verdict", "Alert Type", "Entry Trigger", "Stop Loss", "Target 7%", "Pos Size (₹5k Risk)", "RSI_14", "RS vs Nifty", "F&O Ceiling", "52W High", "52W High Date", "52W Low", "52W Low Date", "Debt-to-Eq", "Growth", "PE Ratio", "Book Value", "Corp Event", "Catalyst Impact"]].to_csv("RAW_SWINGS.csv", index=False)
+    df.loc[top_inc.index].sort_values(by=["Opportunity Score"], ascending=[False])[["Symbol", "Company", "Accumulation Status", "Opportunity Score", "Promoter Holding", "FII/DII", "Dist from 52W Low", "Debt-to-Eq", "ROE", "QoQ Growth", "Div Yield", "Volume Profile", "Corp Event", "Catalyst Impact"]].to_csv("RAW_INCUBATOR.csv", index=False)
+
+    sniper_rows = []
+    for _, r in df.loc[top_swings.index].iterrows(): sniper_rows.append([r['Symbol'], r['Company'], f"🚀 SWING: {r['Alert Type']}", r['Entry Trigger'], r['Stop Loss'], r['Target 7%'], r['RSI_14'], r['R:R Ratio'], r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
+    for _, r in df.loc[top_inc.index].iterrows():
+        inc_sl = round(r['Entry Trigger'] * 0.96, 2)
+        inc_tgt = round(r['Entry Trigger'] * 1.08, 2)
+        sniper_rows.append([r['Symbol'], r['Company'], f"💎 COMPOUNDER ({r['Accumulation Status']})", r['Entry Trigger'], inc_sl, inc_tgt, r['RSI_14'], 2.0, r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
+    for _, r in df.loc[fear_candidates.index].iterrows():
+        fear_sl = round(r['Entry Trigger'] * 0.955, 2)
+        fear_tgt = round(r['Entry Trigger'] * 1.075, 2)
+        sniper_rows.append([r['Symbol'], r['Company'], "⚡ EVENT / 200-EMA FEAR BOUNCE", r['Entry Trigger'], fear_sl, fear_tgt, r['RSI_14'], 1.67, r['RS vs Nifty'], r['52W High'], r['52W Low'], r['Catalyst Impact'], r['Corp Event']])
+    pd.DataFrame(sniper_rows, columns=["Symbol", "Company", "Watchlist Type", "Trigger Price", "Stop Loss", "Target", "RSI_14", "R:R Ratio", "RS vs Nifty", "52W High", "52W Low", "Catalyst / Fear Diagnosis", "Corporate Event"]).to_csv("RAW_SNIPER.csv", index=False)
+    
+    fear_rows = []
+    for _, r in df.loc[dust_gems.index].iterrows(): 
+        action = "💎 ACCUMULATE (Deep Value)" if r['Disc from 52W High'] <= -0.30 else "🟢 PULLBACK ENTRY"
+        target_rebound = round(r['Entry Trigger'] * 1.15, 2)
+        fear_sl = round(r['Entry Trigger'] * 0.90, 2)
+        target_buy = f"₹{round(r['Entry Trigger']*0.98, 2)} - ₹{round(r['Entry Trigger']*1.01, 2)}"
+        fear_rows.append([r['Symbol'], r['Company'], action, r['Entry Trigger'], target_buy, fear_sl, target_rebound, r['RSI_14'], r['Disc from 52W High'], r['Dist from 52W Low'], r['Dust_Gem_Score'], r['PE Ratio'], r['ROE'], r['Promoter Holding'], r['FII/DII'], r['Debt-to-Eq'], r['Corp Event']])
+    pd.DataFrame(fear_rows, columns=["Symbol", "Company", "Actionable Verdict", "Live CMP", "Target Buy Zone", "Fear Stop Loss", "Rebound Target (+15%)", "RSI_14", "Disc from 52W High", "Dist from 52W Low", "Dust Gem Score", "PE Ratio", "ROE", "Promoter %", "FII/DII %", "Debt-to-Eq", "Corporate Event"]).to_csv("RAW_FEAR_DIP.csv", index=False)
+
+    df.sort_values(by="Promoter Holding", ascending=False)[["Symbol", "Company", "Opportunity Score", "Promoter Holding", "Promoter Delta", "FII/DII", "FII Delta", "Debt-to-Eq", "ROE", "Div Yield", "Industry", "Beta", "Ret_20D", "Disc from 52W High", "RSI_14", "Delivery_Pct"]].to_csv("RAW_PROMOTER.csv", index=False)
+
+    try:
+        sector_df = df.groupby('Industry').agg(
+            Total_Stocks=('Symbol', 'count'), Uptrend_Count=('Stage', lambda x: (x == 'PHASE 2: MARKUP').sum()),
+            Avg_1D_Flow=('Ret_1D', lambda x: round(x.mean() * 100, 2)), Avg_5D_Flow=('Ret_5D', lambda x: round(x.mean() * 100, 2)),
+            Avg_Money_Flow=('Ret_20D', lambda x: round(x.mean() * 100, 2)), Avg_50D_Flow=('Ret_50D', lambda x: round(x.mean() * 100, 2)),
+            Smart_Money_FII=('FII Delta', lambda x: round(x.mean() * 100, 2)), Smart_Money_Prom=('Promoter Delta', lambda x: round(x.mean() * 100, 2)),
+            Hist_Best_Month=('Best_Month', lambda x: x.mode()[0] if len(x.mode()) > 0 else "N/A"), 
+            Hist_Worst_Month=('Worst_Month', lambda x: x.mode()[0] if len(x.mode()) > 0 else "N/A")
+        ).reset_index()
+        sector_df['ISAD (Breadth %)'] = round((sector_df['Uptrend_Count'] / sector_df['Total_Stocks']) * 100, 1)
+        sector_df['Sector Status'] = np.where(sector_df['ISAD (Breadth %)'] > 40, "🔥 DOMINANT", np.where(sector_df['ISAD (Breadth %)'] < 15, "⚠️ WASHOUT", "🔄 EMERGING"))
+        
+        def get_smart_money(row):
+            total_flow = row['Smart_Money_FII'] + row['Smart_Money_Prom']
+            if total_flow >= 0.1 and row['Avg_Money_Flow'] > 0: return "💰 SMART MONEY INFLOW"
+            if total_flow <= -0.1 and row['Avg_Money_Flow'] < 0: return "🩸 RETAIL TRAP (Inst. Exiting)"
+            if row['Avg_Money_Flow'] > 3.0: return "🌊 SECTOR MOMENTUM"
+            if row['Avg_Money_Flow'] < -3.0: return "⚠️ SECTOR EXHAUSTION"
+            return "⚖️ NEUTRAL FLOW"
+        sector_df['Smart Money Direction'] = sector_df.apply(get_smart_money, axis=1)
+            
+        sector_cols = ['Industry', 'Sector Status', 'ISAD (Breadth %)', 'Avg_1D_Flow', 'Avg_5D_Flow', 'Avg_Money_Flow', 'Avg_50D_Flow', 'Hist_Best_Month', 'Hist_Worst_Month', 'Smart Money Direction']
+        sector_df[sector_cols].sort_values(by=['ISAD (Breadth %)', 'Avg_1D_Flow'], ascending=[False, False]).to_csv("RAW_SECTOR.csv", index=False)
+    except: pass
+
+    export_alpha_hunter(df, raw_data)
+    export_smart_sip_vault(df, raw_data)
+
+if __name__ == "__main__":
+    run_quantum_engine()
