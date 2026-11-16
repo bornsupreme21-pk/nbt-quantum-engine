@@ -1088,6 +1088,6 @@ def run_quantum_engine():
     # Export Alpha Hunter data if the function exists
     if 'export_alpha_hunter' in globals():
         export_alpha_hunter(df, raw_data)
-
+export_smart_sip_vault(df, raw_data)
 if __name__ == "__main__":
     run_quantum_engine()
