@@ -265,8 +265,7 @@ def fetch_macro_and_history(adv_count=400, dec_count=350, avg_deliv_pct=0.48, to
     except Exception as e: pass
 
 def export_alpha_hunter(df, raw_data):
-    if df.empty or 'Close' not in raw_data.columns:
-        return
+    if df.empty or 'Close' not in raw_data.columns: return
     try:
         nifty_c = raw_data['Close']['^NSEI'].dropna()
         n_ret_5d = float((nifty_c.iloc[-1] / nifty_c.iloc[-6]) - 1) if len(nifty_c) >= 6 else 0.0
@@ -282,8 +281,7 @@ def export_alpha_hunter(df, raw_data):
     if os.path.exists("Alpha_Near_Miss.csv"):
         try:
             nm_df = pd.read_csv("Alpha_Near_Miss.csv")
-            for _, r in nm_df.iterrows():
-                prev_near_miss[str(r['Symbol']).strip().upper()] = float(r.get('Alpha_Score', 0))
+            for _, r in nm_df.iterrows(): prev_near_miss[str(r['Symbol']).strip().upper()] = float(r.get('Alpha_Score', 0))
         except: pass
 
     alpha_records = []
@@ -316,9 +314,7 @@ def export_alpha_hunter(df, raw_data):
         r_20d = float((cur_c / c.iloc[-21]) - 1) if len(c) >= 21 else 0.0
         r_60d = float((cur_c / c.iloc[-61]) - 1) if len(c) >= 61 else 0.0
 
-        rs_5d = r_5d - n_ret_5d
-        rs_20d = r_20d - n_ret_20d
-        rs_60d = r_60d - n_ret_60d
+        rs_5d, rs_20d, rs_60d = r_5d - n_ret_5d, r_20d - n_ret_20d, r_60d - n_ret_60d
         sec_name = str(row.get('Industry', 'NSE Core Equity'))
         rs_vs_sector = r_20d - sec_20d_map.get(sec_name, n_ret_20d)
         sec_5d_strength = sec_5d_map.get(sec_name, 0.0)
@@ -337,15 +333,11 @@ def export_alpha_hunter(df, raw_data):
 
         prev_c = c.shift(1)
         tr = pd.concat([(h - l), (h - prev_c).abs(), (l - prev_c).abs()], axis=1).max(axis=1)
-        atr5 = float(tr.iloc[-5:].mean())
-        atr20 = float(tr.iloc[-20:].mean())
-        atr14 = float(tr.iloc[-14:].mean())
+        atr5, atr20, atr14 = float(tr.iloc[-5:].mean()), float(tr.iloc[-20:].mean()), float(tr.iloc[-14:].mean())
         is_atr_declining = atr5 <= (atr20 * 0.92)
 
-        c_diff_10 = c.diff().iloc[-10:]
-        v_10 = v.iloc[-10:]
-        up_vol_10 = float(v_10[c_diff_10 > 0].sum())
-        dn_vol_10 = float(v_10[c_diff_10 < 0].sum())
+        c_diff_10, v_10 = c.diff().iloc[-10:], v.iloc[-10:]
+        up_vol_10, dn_vol_10 = float(v_10[c_diff_10 > 0].sum()), float(v_10[c_diff_10 < 0].sum())
         up_dn_vol_ratio = round(min(5.0, up_vol_10 / max(1.0, dn_vol_10)), 2) if dn_vol_10 > 0 else 2.50
 
         rng_10 = (h.iloc[-10:] - l.iloc[-10:]).replace(0, np.nan)
@@ -501,7 +493,6 @@ def export_smart_sip_vault(df, raw_data):
         if len(c) < 50: continue
         
         h = raw_data['High'][tkr].reindex(c.index).ffill()
-        l = raw_data['Low'][tkr].reindex(c.index).ffill()
         
         cur_c = float(c.iloc[-1])
         ema200 = float(c.ewm(span=200, adjust=False).mean().iloc[-1]) if len(c) >= 200 else cur_c
@@ -554,6 +545,17 @@ def run_quantum_engine():
     
     univ = clean_and_update_universe(univ)
     tickers = (univ['Symbol'] + '.NS').tolist()
+
+    # V64 FIX: Guarantee all 15 Core Vault SIP Stocks are ALWAYS downloaded even if dropped from screener
+    core_vault_syms = [
+        "RELIANCE", "HDFCBANK", "LT", "HAL", "BEL", 
+        "TATAPOWER", "RVNL", "CDSL", "DIXON", "NETWEB", 
+        "VOLTAS", "TITAN", "ZOMATO", "GROWW", "KPITTECH"
+    ]
+    for s in core_vault_syms:
+        if s + '.NS' not in tickers:
+            tickers.append(s + '.NS')
+
     nse_deliv_map = fetch_nse_delivery_map()
 
     try:
@@ -856,8 +858,6 @@ def run_quantum_engine():
                     if not m_avg.empty: best_month, worst_month = m_avg.idxmax(), m_avg.idxmin()
             except: pass
 
-            launchpad_score = round((fund_score * 0.40) + (deliv_pct * 100 * 0.25) + ((1.0 + max(-0.30, disc_from_52w_high)) * 100 * 0.20) + (max(0, 70 - abs(rsi - 60)) * 0.15), 2)
-
             return {
                 'Symbol': symbol, 'Company': company_name, 'Industry': sector_name,
                 'Is_Microcap_Spike': is_penny_spike,
@@ -865,7 +865,7 @@ def run_quantum_engine():
                 'Entry Trigger': round(cur_close, 2), 'Stop Loss': sl_price, 'Target 7%': target_7, 'RSI_14': round(rsi, 2),
                 'Delivery_Pct': deliv_pct, 'Last_Vol': last_vol,
                 'FO_Regime': fo_regime, 'OI_Total': oi_total, 'OI_Chg_Pct': oi_chg_pct, 'Machine_Prediction': machine_pred,
-                '52W High Disc %': disc_from_52w_high, 'Launchpad_Score': launchpad_score,
+                '52W High Disc %': disc_from_52w_high,
                 'F&O Ceiling': round(np.ceil(cur_close / 50.0) * 50.0, 2) if cur_close > 200 else round(np.ceil(cur_close / 10.0) * 10.0, 2), 
                 '52W High': round(h_52w, 2), '52W High Date': h_52w_date, '52W Low': round(l_52w, 2), '52W Low Date': l_52w_date,
                 'R:R Ratio': rr_ratio, 'Pos Size (₹5k Risk)': int(max(1, round(5000.0 / risk))) if risk > 0 else 1, 'RS vs Nifty': rs_vs_nifty,
