@@ -481,7 +481,85 @@ def export_alpha_hunter(df, raw_data):
 
     cols = ["Symbol", "Hunter_Bucket", "Alpha_Score", "Confluence_Tags", "RSI_14", "Up_Down_Vol_Ratio", "Delivery_Pct", "RS_20D", "ADTV_20D_Cr", "Entry_Trigger", "Stop_Loss", "Target", "RR_Ratio", "EOD_Vol_Mult", "Avg_Vol_20D", "Catalyst_Invalidation"]
     pd.DataFrame(out_rows, columns=cols).to_csv("RAW_ALPHA_HUNTER.csv", index=False)
+# ==============================================================================
+# PKB SMART SIP VAULT: LONG-TERM ACCUMULATION ENGINE
+# ==============================================================================
+def export_smart_sip_vault(df, raw_data):
+    # The Core 15 Vault
+    core_vault_syms = [
+        "RELIANCE", "HDFCBANK", "LT", "HAL", "BEL", 
+        "TATAPOWER", "RVNL", "CDSL", "DIXON", "NETWEB", 
+        "VOLTAS", "TITAN", "ZOMATO", "GROWW", "KPITTECH"
+    ]
+    
+    # Allow dynamic additions via GitHub
+    if os.path.exists("Smart_SIP_Vault_List.csv"):
+        try:
+            custom_list = pd.read_csv("Smart_SIP_Vault_List.csv")['Symbol'].tolist()
+            core_vault_syms.extend([s.strip().upper() for s in custom_list])
+            core_vault_syms = list(set(core_vault_syms))
+        except: pass
 
+    sip_records = []
+    for sym in core_vault_syms:
+        tkr = sym + ".NS"
+        if tkr not in raw_data['Close'].columns: continue
+        c = raw_data['Close'][tkr].dropna()
+        if len(c) < 50: continue
+        
+        h = raw_data['High'][tkr].reindex(c.index).ffill()
+        l = raw_data['Low'][tkr].reindex(c.index).ffill()
+        
+        cur_c = float(c.iloc[-1])
+        ema200 = float(c.ewm(span=200, adjust=False).mean().iloc[-1]) if len(c) >= 200 else cur_c
+        
+        try: high_52w = float(h.iloc[-252:].max())
+        except: high_52w = cur_c
+        
+        disc_52w = round(((cur_c - high_52w) / high_52w), 4) if high_52w > 0 else 0.0
+        dist_200ema = round(((cur_c - ema200) / ema200), 4) if ema200 > 0 else 0.0
+        
+        try:
+            delta = c.diff()
+            gain = delta.where(delta > 0, 0.0)
+            loss = -delta.where(delta < 0, 0.0)
+            avg_gain = gain.ewm(alpha=1/14, adjust=False).mean()
+            avg_loss = loss.ewm(alpha=1/14, adjust=False).mean()
+            rs = avg_gain / avg_loss
+            rsi_14 = float(100 - (100 / (1 + rs)).iloc[-1])
+            if np.isnan(rsi_14): rsi_14 = 50.0
+        except: rsi_14 = 50.0
+
+        # SIP Accumulation Logic: Buy if near 200-EMA, 15%+ discount, or RSI capitulation
+        action = "⏳ ACCUMULATING CASH (Wait)"
+        if dist_200ema <= 0.02 or disc_52w <= -0.15 or rsi_14 <= 35:
+            action = "💰 DEPLOY SIP CAPITAL NOW"
+
+        # Try to pull fundamentals if available in the main df
+        row_match = df[df['Symbol'] == sym]
+        if not row_match.empty:
+            comp = str(row_match.iloc[0].get('Company', sym))
+            roe = float(row_match.iloc[0].get('ROE', 0.0))
+            debt = float(row_match.iloc[0].get('Debt-to-Eq', 0.0))
+        else:
+            comp = sym
+            roe, debt = 0.0, 0.0
+
+        sip_records.append({
+            'Symbol': sym,
+            'Company': comp,
+            'Action_Status': action,
+            'Live_CMP': cur_c,
+            'EMA_200': round(ema200, 2),
+            'Dist_200EMA': dist_200ema,
+            'Disc_52W': disc_52w,
+            'RSI_14': round(rsi_14, 2),
+            'ROE': roe,
+            'Debt_Eq': debt
+        })
+
+    if sip_records:
+        pd.DataFrame(sip_records).to_csv("RAW_SMART_SIP.csv", index=False)
 def run_quantum_engine():
     now_ist = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
     current_mins_global = now_ist.hour * 60 + now_ist.minute
