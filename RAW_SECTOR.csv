@@ -1,33 +1,16 @@
 Industry,Sector Status,ISAD (Breadth %),Avg_1D_Flow,Avg_5D_Flow,Avg_Money_Flow,Avg_50D_Flow,Hist_Best_Month,Hist_Worst_Month,Smart Money Direction
-Forest Materials,🔥 DOMINANT,100.0,-0.21,1.09,-6.2,-5.26,N/A,N/A,⚠️ SECTOR EXHAUSTION
-Media Entertainment & Publication,🔥 DOMINANT,62.5,-0.48,3.03,7.65,15.7,N/A,N/A,🌊 SECTOR MOMENTUM
-Healthcare,🔥 DOMINANT,54.3,-0.37,2.02,7.67,0.95,N/A,N/A,🌊 SECTOR MOMENTUM
-Private Banks,🔥 DOMINANT,50.0,-0.67,4.99,12.05,10.3,N/A,N/A,🌊 SECTOR MOMENTUM
-PSU Banks,🔥 DOMINANT,50.0,-0.72,8.22,14.1,9.38,N/A,N/A,🌊 SECTOR MOMENTUM
-Automobile and Auto Components,🔥 DOMINANT,43.8,-0.4,2.17,7.07,-1.98,N/A,N/A,🌊 SECTOR MOMENTUM
-Services,🔥 DOMINANT,42.3,0.9,3.35,2.58,-0.87,N/A,N/A,⚖️ NEUTRAL FLOW
-Telecommunication,🔥 DOMINANT,41.7,1.03,0.21,0.83,0.26,N/A,N/A,⚖️ NEUTRAL FLOW
-Textiles,🔥 DOMINANT,41.7,-0.39,-1.87,1.16,-1.0,N/A,N/A,⚖️ NEUTRAL FLOW
-🚀 BEYOND-750: Dynamic Mover,🔄 EMERGING,40.0,0.72,2.54,-2.01,-0.72,N/A,N/A,⚖️ NEUTRAL FLOW
-Capital Goods,🔄 EMERGING,40.0,0.1,1.85,-4.57,-7.13,N/A,N/A,⚠️ SECTOR EXHAUSTION
-Oil Gas & Consumable Fuels,🔄 EMERGING,35.3,-0.24,2.19,3.18,2.06,N/A,N/A,🌊 SECTOR MOMENTUM
-🚀 BEYOND-750: Emerging,🔄 EMERGING,34.9,0.28,1.6,-2.66,-3.08,N/A,N/A,⚖️ NEUTRAL FLOW
-Information Technology,🔄 EMERGING,33.3,-0.43,-0.78,-0.38,-3.42,N/A,N/A,⚖️ NEUTRAL FLOW
-Dynamic Mover,🔄 EMERGING,33.3,-0.85,-3.9,-6.68,-11.31,N/A,N/A,⚠️ SECTOR EXHAUSTION
-EMS & Semiconductors,🔄 EMERGING,33.3,-1.08,1.63,-2.19,-5.33,N/A,N/A,⚖️ NEUTRAL FLOW
-Consumer Services,🔄 EMERGING,31.1,-0.7,1.1,1.76,-3.95,N/A,N/A,⚖️ NEUTRAL FLOW
-Financial Services,🔄 EMERGING,27.8,-0.59,3.28,2.45,-3.58,N/A,N/A,⚖️ NEUTRAL FLOW
-Utilities,🔄 EMERGING,25.0,-1.4,1.69,-8.16,-9.92,N/A,N/A,⚠️ SECTOR EXHAUSTION
-Fast Moving Consumer Goods,🔄 EMERGING,24.4,-0.79,1.2,-0.52,-4.73,N/A,N/A,⚖️ NEUTRAL FLOW
-Power,🔄 EMERGING,22.2,-1.28,0.53,-1.33,-2.97,N/A,N/A,⚖️ NEUTRAL FLOW
-Consumer Durables,🔄 EMERGING,20.0,-0.68,2.76,0.65,-5.06,N/A,N/A,⚖️ NEUTRAL FLOW
-Construction,🔄 EMERGING,19.0,-0.87,2.0,-0.56,-7.89,N/A,N/A,⚖️ NEUTRAL FLOW
-Construction Materials,🔄 EMERGING,18.8,-1.29,0.23,7.34,-3.15,N/A,N/A,🌊 SECTOR MOMENTUM
-Chemicals,🔄 EMERGING,17.8,-0.34,3.11,-3.45,-6.87,N/A,N/A,⚠️ SECTOR EXHAUSTION
-Realty,🔄 EMERGING,17.6,-1.57,1.71,4.92,-1.83,N/A,N/A,🌊 SECTOR MOMENTUM
-Defense & Aerospace,🔄 EMERGING,16.7,-1.28,-1.13,-3.53,-13.73,N/A,N/A,⚠️ SECTOR EXHAUSTION
-Metals & Mining,⚠️ WASHOUT,12.5,-0.94,0.53,0.16,-8.59,N/A,N/A,⚖️ NEUTRAL FLOW
-Textiles & Apparel,⚠️ WASHOUT,0.0,4.85,-27.16,14.74,5.36,N/A,N/A,🌊 SECTOR MOMENTUM
-Diversified,⚠️ WASHOUT,0.0,0.55,3.21,-2.96,-9.25,N/A,N/A,⚖️ NEUTRAL FLOW
-"Power, Renewables & PSU",⚠️ WASHOUT,0.0,-1.46,-1.04,-0.18,-1.51,N/A,N/A,⚖️ NEUTRAL FLOW
-Railways & Infra EPC,⚠️ WASHOUT,0.0,-2.2,3.28,1.56,-4.4,N/A,N/A,⚖️ NEUTRAL FLOW
+Textiles,🔥 DOMINANT,100.0,4.07,2.2,6.52,16.29,May,April,🌊 SECTOR MOMENTUM
+Private Banks,🔥 DOMINANT,100.0,1.98,4.45,6.12,9.18,April,July,🌊 SECTOR MOMENTUM
+Consumer Services,🔥 DOMINANT,100.0,1.06,3.19,15.29,14.59,July,January,🌊 SECTOR MOMENTUM
+Automobile and Auto Components,🔥 DOMINANT,100.0,0.66,0.12,-6.65,-6.05,May,January,⚠️ SECTOR EXHAUSTION
+Healthcare,🔥 DOMINANT,66.7,-1.04,-2.17,4.67,-5.91,May,February,🌊 SECTOR MOMENTUM
+Chemicals,🔥 DOMINANT,50.0,0.64,-2.54,2.36,-1.62,April,December,⚖️ NEUTRAL FLOW
+Construction,🔄 EMERGING,33.3,0.55,2.24,8.09,-3.15,April,February,🌊 SECTOR MOMENTUM
+🚀 BEYOND-750: Dynamic Mover,⚠️ WASHOUT,0.0,9.57,16.99,14.85,8.18,April,March,🌊 SECTOR MOMENTUM
+Fast Moving Consumer Goods,⚠️ WASHOUT,0.0,1.94,1.24,-10.08,-11.94,April,January,⚠️ SECTOR EXHAUSTION
+PSU Banks,⚠️ WASHOUT,0.0,1.21,4.61,13.28,6.1,November,January,🌊 SECTOR MOMENTUM
+Financial Services,⚠️ WASHOUT,0.0,0.65,2.54,1.05,-5.69,April,February,⚖️ NEUTRAL FLOW
+Consumer Durables,⚠️ WASHOUT,0.0,0.16,-0.94,-0.85,-5.55,April,March,⚖️ NEUTRAL FLOW
+Capital Goods,⚠️ WASHOUT,0.0,-0.1,-1.31,-12.7,-20.46,April,February,⚠️ SECTOR EXHAUSTION
+Dynamic Mover,⚠️ WASHOUT,0.0,-0.13,-5.94,-8.55,-11.01,January,June,⚠️ SECTOR EXHAUSTION
+Information Technology,⚠️ WASHOUT,0.0,-1.05,-4.61,-3.62,2.82,October,February,⚠️ SECTOR EXHAUSTION
