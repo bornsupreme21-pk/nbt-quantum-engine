@@ -360,54 +360,210 @@ def export_alpha_hunter(df, raw_data):
     cols = ["Symbol", "Hunter_Bucket", "Alpha_Score", "Confluence_Tags", "RSI_14", "Up_Down_Vol_Ratio", "Delivery_Pct", "RS_20D", "ADTV_20D_Cr", "Entry_Trigger", "Stop_Loss", "Target", "RR_Ratio", "EOD_Vol_Mult", "Avg_Vol_20D", "Catalyst_Invalidation"]
     pd.DataFrame(out_rows, columns=cols).to_csv("RAW_ALPHA_HUNTER.csv", index=False)
 
+# ==============================================================================
+# PKB SMART SIP VAULT V2: 3-PILLAR MACHINE ACCUMULATION PRICE + MULTI-EMA + S/R
+# ==============================================================================
 def export_smart_sip_vault(df, raw_data):
-    core_vault_syms = ["RELIANCE", "HDFCBANK", "LT", "HAL", "BEL", "TATAPOWER", "RVNL", "CDSL", "DIXON", "NETWEB", "VOLTAS", "TITAN", "ZOMATO", "GROWW", "KPITTECH"]
+    core_vault_syms = [
+        "RELIANCE", "HDFCBANK", "LT", "HAL", "BEL",
+        "TATAPOWER", "RVNL", "CDSL", "DIXON", "NETWEB",
+        "VOLTAS", "TITAN", "ETERNAL", "GROWW", "KPITTECH"
+    ]
     if os.path.exists("Smart_SIP_Vault_List.csv"):
         try:
-            custom_list = pd.read_csv("Smart_SIP_Vault_List.csv")['Symbol'].tolist()
-            core_vault_syms.extend([s.strip().upper() for s in custom_list])
-            core_vault_syms = list(set(core_vault_syms))
-        except: pass
+            custom_list = pd.read_csv("Smart_SIP_Vault_List.csv")['Symbol'].dropna().tolist()
+            for s in custom_list:
+                cs = str(s).strip().upper()
+                if cs and cs not in core_vault_syms:
+                    core_vault_syms.append(cs)
+        except:
+            pass
+
+    # Load cached fundamentals (and fetch live .info ONLY if missing for these 15 core stocks)
+    fund_cache = {}
+    if os.path.exists("fundamentals_cache.json"):
+        try:
+            with open("fundamentals_cache.json", "r") as f:
+                fund_cache = json.load(f)
+        except:
+            fund_cache = {}
+
+    # Ensure any Core Vault ticker missing from raw_data (e.g., ETERNAL or newly added CSV tickers) is downloaded
+    missing_tkrs = [s + ".NS" for s in core_vault_syms if 'Close' not in raw_data.columns or (s + ".NS") not in raw_data['Close'].columns]
+    extra_data = {}
+    if missing_tkrs:
+        for mt in missing_tkrs:
+            try:
+                dl = yf.download(mt, period="1y", interval="1d", progress=False)
+                if not dl.empty:
+                    extra_data[mt] = dl
+            except:
+                pass
+
+    def _get_ohlc(tkr):
+        if 'Close' in raw_data.columns and tkr in raw_data['Close'].columns:
+            c = raw_data['Close'][tkr]
+            h = raw_data['High'][tkr]
+            l = raw_data['Low'][tkr]
+        elif tkr in extra_data:
+            dl = extra_data[tkr]
+            c = dl['Close'][tkr] if isinstance(dl['Close'], pd.DataFrame) else dl['Close']
+            h = dl['High'][tkr] if isinstance(dl['High'], pd.DataFrame) else dl['High']
+            l = dl['Low'][tkr] if isinstance(dl['Low'], pd.DataFrame) else dl['Low']
+        else:
+            return None, None, None
+        if isinstance(c, pd.DataFrame): c = c.iloc[:, 0]
+        if isinstance(h, pd.DataFrame): h = h.iloc[:, 0]
+        if isinstance(l, pd.DataFrame): l = l.iloc[:, 0]
+        c = pd.to_numeric(c, errors='coerce').dropna()
+        if len(c) < 30:
+            return None, None, None
+        h = pd.to_numeric(h, errors='coerce').reindex(c.index).ffill()
+        l = pd.to_numeric(l, errors='coerce').reindex(c.index).ffill()
+        return c, h, l
+
+    def _calc_wilder_rsi(c_ser, period=14):
+        if len(c_ser) < period + 2:
+            return 50.0
+        delta = c_ser.diff().dropna()
+        gain = delta.clip(lower=0.0)
+        loss = (-delta).clip(lower=0.0)
+        ag = float(gain.ewm(alpha=1.0 / period, min_periods=period, adjust=False).mean().iloc[-1])
+        al = float(loss.ewm(alpha=1.0 / period, min_periods=period, adjust=False).mean().iloc[-1])
+        if np.isnan(ag) or np.isnan(al):
+            return 50.0
+        if al == 0.0:
+            return 100.0 if ag > 0 else 50.0
+        return round(100.0 - (100.0 / (1.0 + (ag / al))), 2)
 
     sip_records = []
     for sym in core_vault_syms:
         tkr = sym + ".NS"
-        if tkr not in raw_data['Close'].columns: continue
-        c = raw_data['Close'][tkr].dropna()
-        if len(c) < 50: continue
-        
-        h = raw_data['High'][tkr].reindex(c.index).ffill()
-        cur_c = float(c.iloc[-1])
-        ema200 = float(c.ewm(span=200, adjust=False).mean().iloc[-1]) if len(c) >= 200 else cur_c
-        try: high_52w = float(h.iloc[-252:].max())
-        except: high_52w = cur_c
-        
-        disc_52w = round(((cur_c - high_52w) / high_52w), 4) if high_52w > 0 else 0.0
-        dist_200ema = round(((cur_c - ema200) / ema200), 4) if ema200 > 0 else 0.0
-        
-        try:
-            delta = c.diff()
-            gain, loss = delta.where(delta > 0, 0.0), -delta.where(delta < 0, 0.0)
-            avg_gain, avg_loss = gain.ewm(alpha=1/14, adjust=False).mean(), loss.ewm(alpha=1/14, adjust=False).mean()
-            rsi_14 = float(100 - (100 / (1 + (avg_gain / avg_loss)))).iloc[-1]
-            if np.isnan(rsi_14): rsi_14 = 50.0
-        except: rsi_14 = 50.0
+        c, h, l = _get_ohlc(tkr)
+        if c is None:
+            continue
 
-        action = "💰 DEPLOY SIP CAPITAL NOW" if (dist_200ema <= 0.02 or disc_52w <= -0.15 or rsi_14 <= 35) else "⏳ ACCUMULATING CASH (Wait)"
-        trigger_price = ema200 * 1.02
-        drop_needed = round(((trigger_price - cur_c) / cur_c), 4) if cur_c > trigger_price else 0.0
+        cur_c = round(float(c.iloc[-1]), 2)
+        ema20 = round(float(c.ewm(span=20, adjust=False).mean().iloc[-1]), 2)
+        ema50 = round(float(c.ewm(span=50, adjust=False).mean().iloc[-1]), 2)
+        ema200 = round(float(c.ewm(span=200, adjust=False).mean().iloc[-1]), 2) if len(c) >= 100 else ema50
+        rsi_14 = _calc_wilder_rsi(c, 14)
 
-        row_match = df[df['Symbol'] == sym]
+        w_h = h.iloc[-252:] if len(h) >= 252 else h
+        w_l = l.iloc[-252:] if len(l) >= 252 else l
+        high_52w = round(float(w_h.max()), 2)
+        low_52w = round(float(w_l.min()), 2)
+
+        # Support & Resistance Zones (60-day & 20-day pivot confluence)
+        sup_60 = float(l.iloc[-60:].quantile(0.12)) if len(l) >= 60 else float(l.min())
+        sup_20 = float(l.iloc[-20:].min())
+        lower_emas = [e for e in [ema20, ema50, ema200] if e <= cur_c * 1.01]
+        support_zone = round(max(low_52w, min(cur_c * 0.99, (0.50 * sup_60 + 0.30 * sup_20 + 0.20 * (max(lower_emas) if lower_emas else sup_60)))), 2)
+
+        res_60 = float(h.iloc[-60:].quantile(0.90)) if len(h) >= 60 else float(h.max())
+        res_20 = float(h.iloc[-20:].max())
+        resistance_zone = round(min(high_52w, max(cur_c * 1.01, (0.50 * res_60 + 0.50 * res_20))), 2)
+
+        info = fund_cache.get(tkr, {}) if isinstance(fund_cache.get(tkr), dict) else {}
+        if not info or ('freeCashflow' not in info and 'bookValue' not in info and 'targetLowPrice' not in info):
+            try:
+                live_inf = yf.Ticker(tkr).info
+                if isinstance(live_inf, dict) and len(live_inf) > 5:
+                    info = live_inf
+            except:
+                pass
+
+        row_match = df[df['Symbol'] == sym] if not df.empty else pd.DataFrame()
         if not row_match.empty:
-            comp, roe, debt = str(row_match.iloc[0].get('Company', sym)), float(row_match.iloc[0].get('ROE', 0.0)), float(row_match.iloc[0].get('Debt-to-Eq', 0.0))
+            rm = row_match.iloc[0]
+            comp = str(rm.get('Company', sym))
+            sector = str(rm.get('Industry', info.get('sector', 'NSE Core')))
+            roe = float(info.get('returnOnEquity') or rm.get('ROE') or 0.0)
+            debt_eq = float(rm.get('Debt-to-Eq') or 0.0)
+            deliv_pct = float(rm.get('Delivery_Pct') or 0.45)
+            smart_own = float(rm.get('Promoter Holding') or 0.0) + float(rm.get('FII/DII') or 0.0)
         else:
-            comp, roe, debt = sym, 0.0, 0.0
+            comp = str(info.get('shortName') or info.get('longName') or sym)
+            sector = str(info.get('sector') or 'NSE Core')
+            roe = float(info.get('returnOnEquity') or 0.0)
+            debt_eq = float(info.get('debtToEquity') or 0.0)
+            deliv_pct = 0.48
+            smart_own = float(info.get('heldPercentInsiders') or 0.0) + float(info.get('heldPercentInstitutions') or 0.0)
+
+        is_fin = any(k in sector.lower() for k in ['bank', 'financial', 'nbfc', 'insurance']) or sym in ['HDFCBANK', 'GROWW', 'CDSL']
+        bv = float(info.get('bookValue') or 0.0)
+        fwd_eps = float(info.get('forwardEps') or info.get('trailingEps') or 0.0)
+        fcf = float(info.get('freeCashflow') or 0.0)
+        ocf = float(info.get('operatingCashflow') or 0.0)
+        cash_res = float(info.get('totalCash') or 0.0)
+        tot_debt = float(info.get('totalDebt') or 0.0)
+        shares_out = float(info.get('sharesOutstanding') or 0.0)
+
+        # PILLAR 1: Technical Floor (40%) — Downtrend-safe so falling knives don't anchor to old 200-EMA
+        if cur_c < ema50 and ema50 < ema200:
+            tech_floor = min(cur_c * 0.98, (0.65 * support_zone) + (0.35 * ema20))
+        else:
+            tech_floor = min(cur_c * 1.02, (0.30 * ema50) + (0.45 * ema200) + (0.25 * support_zone))
+
+        # PILLAR 2: Fundamental, Cash Flow & Reserves Anchor (35%)
+        fund_estimates = []
+        if is_fin:
+            if bv > 0:
+                pb_fair = min(4.5, max(1.6, (roe if roe > 0 else 0.14) * 14.5))
+                fund_estimates.append(bv * pb_fair)
+            if fwd_eps > 0:
+                fund_estimates.append(fwd_eps * 18.0)
+            pb_str = f"P/B {cur_c / bv:.1f}x" if bv > 0 else "Fin/NBFC"
+            fin_health = f"{pb_str} | ROE {roe * 100:.1f}% | Book ₹{bv:.0f} | Bank/Fin"
+        else:
+            net_cash_ps = ((cash_res - tot_debt) / shares_out) if shares_out > 0 else 0.0
+            cf_val = fcf if fcf > 0 else (ocf * 0.75 if ocf > 0 else 0.0)
+            if cf_val > 0 and shares_out > 0:
+                cf_mult = 22.0 if roe >= 0.20 else 16.0
+                fund_estimates.append((cf_val / shares_out) * cf_mult + max(0.0, net_cash_ps))
+            if fwd_eps > 0:
+                pe_mult = 26.0 if roe >= 0.22 else (20.0 if roe >= 0.14 else 15.0)
+                fund_estimates.append(fwd_eps * pe_mult)
+            cf_cr = (fcf / 1e7) if fcf != 0 else (ocf / 1e7)
+            cf_lbl = "FCF" if fcf != 0 else "OCF"
+            cash_cr = cash_res / 1e7
+            fin_health = f"{cf_lbl} ₹{cf_cr:,.0f}Cr | Cash ₹{cash_cr:,.0f}Cr | ROE {roe * 100:.1f}% | D/E {debt_eq:.1f}"
+
+        if fund_estimates:
+            fund_anchor = max(cur_c * 0.72, min(cur_c * 1.05, float(np.median(fund_estimates))))
+        else:
+            fund_anchor = tech_floor * (1.02 if roe >= 0.18 else 0.96)
+
+        # PILLAR 3: Street Rating & Trading/Delivery Interest Floor (25%)
+        t_low = float(info.get('targetLowPrice') or 0.0)
+        t_mean = float(info.get('targetMeanPrice') or 0.0)
+        rec_key = str(info.get('recommendationKey') or 'hold').upper().replace('_', ' ')
+        if t_low > 0:
+            street_base = t_low
+        elif t_mean > 0:
+            street_base = t_mean * 0.80
+        else:
+            street_base = tech_floor
+        flow_adj = 1.02 if (deliv_pct >= 0.50 and smart_own >= 0.60) else (0.97 if deliv_pct < 0.35 else 1.0)
+        street_floor = max(cur_c * 0.75, min(cur_c * 1.05, street_base * flow_adj))
+        t_str = f"Floor ₹{t_low:.0f}" if t_low > 0 else (f"Mean ₹{t_mean:.0f}" if t_mean > 0 else "Tech Floor")
+        street_flow = f"{rec_key} ({t_str}) | Deliv {deliv_pct * 100:.1f}% | Own {smart_own * 100:.0f}%"
+
+        # Blended 3-Pillar Machine Accumulation Price
+        machine_price = round((0.40 * tech_floor) + (0.35 * fund_anchor) + (0.25 * street_floor), 2)
+        machine_price = round(max(low_52w * 0.92, min(high_52w * 0.92, machine_price)), 2)
 
         sip_records.append({
-            'Symbol': sym, 'Company': comp, 'Action_Status': action, 'Live_CMP': cur_c, 'EMA_200': round(ema200, 2),
-            'Dist_200EMA': dist_200ema, 'Disc_52W': disc_52w, 'RSI_14': round(rsi_14, 2), 'ROE': roe, 'Debt_Eq': debt, 'Drop_Needed': drop_needed
+            'Symbol': sym, 'Company': comp, 'Live_CMP': cur_c, 'Machine_Accum': machine_price,
+            'EMA_20': ema20, 'EMA_50': ema50, 'EMA_200': ema200,
+            'Support_Zone': support_zone, 'Resistance_Zone': resistance_zone,
+            'High_52W': high_52w, 'Low_52W': low_52w, 'RSI_14': rsi_14,
+            'Fin_Health': fin_health, 'Street_Flow': street_flow,
+            'ROE': round(roe, 4), 'Debt_Eq': round(debt_eq, 2), 'Delivery_Pct': round(deliv_pct, 4)
         })
-    if sip_records: pd.DataFrame(sip_records).to_csv("RAW_SMART_SIP.csv", index=False)
+
+    if sip_records:
+        pd.DataFrame(sip_records).to_csv("RAW_SMART_SIP.csv", index=False)
 
 def run_quantum_engine():
     now_ist = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
