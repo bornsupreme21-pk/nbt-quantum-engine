@@ -2,45 +2,47 @@ name: Quantum Scanner Automation
 
 on:
   schedule:
-    # 1) 08:00 AM IST (02:30 UTC) - Overnight News & Pre-Market
-    - cron: '30 2 * * 1-5'
-    # 2) 09:30 AM IST (04:00 UTC) - Opening Bell Momentum Settle
-    - cron: '0 4 * * 1-5'
-    # 3) 11:30 AM IST (06:00 UTC) - Mid-Morning Trend Confirmation
-    - cron: '0 6 * * 1-5'
-    # 4) 01:00 PM IST (07:30 UTC) - Govt Policy Break & EU Open
-    - cron: '30 7 * * 1-5'
-    # 5) 02:30 PM IST (09:00 UTC) - Institutional Accumulation Hour
-    - cron: '0 9 * * 1-5'
-    # 6) 04:30 PM IST (11:00 UTC) - EOD Heavy Master Sync (Post-4:15 Trade Mod)
-    - cron: '0 11 * * 1-5'
+    # Monday to Friday ONLY (1-5) | Converted from IST (UTC+5:30) to UTC
+    - cron: '55 3 * * 1-5'   # 09:25 AM IST - Opening Volatility & 9:30 AM VWAP Check
+    - cron: '30 5 * * 1-5'   # 11:00 AM IST - Mid-Morning Trend Confirmation
+    - cron: '0 7 * * 1-5'    # 12:30 PM IST - Mid-Day / European Cue Pulse
+    - cron: '30 8 * * 1-5'   # 02:00 PM IST - Afternoon Institutional Build-Up
+    - cron: '40 9 * * 1-5'   # 03:10 PM IST - Pre-Close / BTST Execution Window
+    - cron: '30 12 * * 1-5'  # 06:00 PM IST - EOD Heavy Run (Fundamentals + Official NSE Delivery %)
   workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: quantum-scanner-sync
+  cancel-in-progress: false
 
 jobs:
   build-and-scan:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
-          pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install yfinance pandas numpy
 
-      - name: Run SEBI-Compliant Quantum Market Engine
+      - name: Run Quantum Scanner Engine
         run: python scanner.py
 
-      - name: Commit and Push CSVs to GitHub
+      - name: Commit and push updated data
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add *.csv *.json
-          git commit -m "Auto-refresh SEBI 385-min intraday data & capitulation signals" || echo "No changes to commit"
-          git pull --rebase origin main || true
-          git push origin HEAD:main
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git diff --staged --quiet || git commit -m "Auto-update NBT-Quantum Market Data"
+          git pull --rebase origin main
+          git push
